@@ -1,0 +1,868 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "calculus_1",
+    "name_ko": "미분적분학 1"
+  },
+  "unit": {
+    "unit_id": "calc1_ch05_integrals",
+    "name_ko": "적분",
+    "order": 5,
+    "description": "리만합과 넓이의 정의에서 시작해 정적분의 성질, 미적분학의 기본 정리, 순변화 정리, 치환법까지 적분의 기본 이론을 정리하는 단원이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": [
+      "chapter05 Integrals.md",
+      "volume1_chapter5_integrals.md"
+    ],
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 사항"
+    ]
+  },
+  "conventions": {
+    "independent_variable": "x",
+    "dependent_function": "f(x)",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "calculus.riemann_sum_and_area",
+      "order": 1,
+      "name_ko": "리만합과 넓이·거리의 근사",
+      "definition": "구간 [a,b]를 n개의 같은 길이(Δx=(b-a)/n)의 부분구간으로 나누고, 각 부분구간의 표본점 x_i*에서의 함숫값을 이용한 직사각형 넓이의 합 Σf(x_i*)Δx을 리만합이라 한다. n→∞일 때 이 합의 극한이 곡선 아래 넓이(또는 속도 그래프로부터의 이동 거리)를 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "rectangle_approximation",
+          "name_ko": "직사각형 근사합",
+          "role": "definition",
+          "latex": "\\sum_{i=1}^n f(x_i^*)\\,\\Delta x,\\qquad\\Delta x=\\frac{b-a}{n}",
+          "cas": "Sum(f(x_i)*Dx, (i, 1, n))"
+        },
+        {
+          "formula_id": "area_as_limit",
+          "name_ko": "넓이의 정의",
+          "role": "definition",
+          "latex": "A=\\lim_{n\\to\\infty}\\sum_{i=1}^n f(x_i^*)\\,\\Delta x",
+          "cas": "limit(Sum(f(x_i)*Dx, (i,1,n)), n, oo)"
+        },
+        {
+          "formula_id": "sum_of_squares",
+          "name_ko": "제곱의 합 공식",
+          "role": "lemma",
+          "latex": "\\sum_{i=1}^n i^2=\\frac{n(n+1)(2n+1)}{6}",
+          "cas": "summation(i**2, (i,1,n))"
+        },
+        {
+          "formula_id": "distance_as_area",
+          "name_ko": "속도로부터 거리",
+          "role": "application",
+          "latex": "d=\\lim_{n\\to\\infty}\\sum_{i=1}^n f(t_i)\\,\\Delta t",
+          "cas": "limit(Sum(v(t_i)*Dt, (i,1,n)), n, oo)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "continuity_ensures_limit_exists",
+          "description": "넓이의 정의는 f가 연속이라는(따라서 극한이 항상 존재한다는) 가정 위에 세워진다.",
+          "rule": {
+            "property": "f_continuous_on_a_b",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "sample_point_choice_independent",
+          "description": "표본점 x_i*를 왼쪽 끝점·오른쪽 끝점·중점 등 어디로 잡아도 n→∞일 때 같은 극한값에 수렴한다.",
+          "rule": {
+            "property": "limit_independent_of_sample_point_choice",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "upper_lower_sum",
+          "description": "증가함수 구간에서 왼쪽 끝점을 쓰면 하합(실제보다 작은 근사), 오른쪽 끝점을 쓰면 상합(실제보다 큰 근사)이 되며, n이 커질수록 상합과 하합의 차이가 줄어든다."
+        },
+        {
+          "property_id": "distance_is_inverse_of_velocity_problem",
+          "description": "거리 문제는 속도 문제의 역문제로, 속도를 알 때 이동 거리를 구하는 것은 속도 그래프 아래 넓이를 구하는 것과 같다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.indefinite_integral",
+          "name_ko": "원시함수(부정적분)",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "calculus.integral"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_riemann_sum",
+          "verb": "calculate",
+          "description": "왼쪽·오른쪽 끝점 리만합을 계산한다."
+        },
+        {
+          "objective_id": "estimate_area_via_limit",
+          "verb": "estimate",
+          "description": "리만합의 극한으로 곡선 아래 넓이를 근사·정의한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.riemann_sum.sample_point_changes_limit",
+          "title": "표본점 선택이 극한값을 바꾼다고 오해",
+          "description": "왼쪽 끝점과 오른쪽 끝점의 리만합이 n→∞에서도 다른 값에 수렴한다고 생각한다.",
+          "diagnosis_tag": "assume_sample_point_changes_limit_value",
+          "feedback": "연속함수에서는 표본점을 어디로 선택하든 n→∞일 때 같은 극한값에 수렴하며, 유한한 n에서만 근삿값의 정확도가 다르다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "riemann_sum_calculation",
+          "area_limit_estimation"
+        ],
+        "supported_answer_types": [
+          "numerical_approximation",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "numeric_tolerance"
+        ]
+      },
+      "tags": [
+        "riemann_sum",
+        "area_approximation"
+      ]
+    },
+    {
+      "concept_id": "calculus.integral",
+      "order": 2,
+      "name_ko": "정적분의 정의와 적분가능성",
+      "definition": "정적분 ∫[a,b]f(x)dx는 리만합의 극한 lim(n→∞)Σf(x_i*)Δx으로 정의된다. f가 [a,b]에서 연속이거나 유한개의 도약 불연속점을 가지면 f는 [a,b]에서 적분가능하다.",
+      "formulas": [
+        {
+          "formula_id": "definite_integral_def",
+          "name_ko": "정적분의 정의",
+          "role": "definition",
+          "latex": "\\int_a^bf(x)\\,dx=\\lim_{n\\to\\infty}\\sum_{i=1}^nf(x_i^*)\\,\\Delta x",
+          "cas": "Integral(f(x), (x, a, b))"
+        },
+        {
+          "formula_id": "integrability_theorem",
+          "name_ko": "적분가능성 정리",
+          "role": "theorem",
+          "latex": "f\\text{가 }[a,b]\\text{에서 연속이거나 유한개의 도약 불연속점}\\implies f\\text{는 }[a,b]\\text{에서 적분가능}",
+          "cas": "is_integrable(f, a, b)"
+        },
+        {
+          "formula_id": "orientation_convention",
+          "name_ko": "적분 방향 규약",
+          "role": "convention",
+          "latex": "\\int_b^af(x)\\,dx=-\\int_a^bf(x)\\,dx,\\qquad\\int_a^af(x)\\,dx=0",
+          "cas": "-Integral(f(x), (x,a,b))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "integrability_required",
+          "description": "정적분이 존재하려면 적분가능성 정리의 조건(연속 또는 유한개의 도약 불연속)을 만족해야 한다. 무한 불연속점이 있으면 일반적인(부정적분이 아닌 이상적분) 의미로는 적분가능하지 않다.",
+          "rule": {
+            "property": "f_integrable_on_a_b",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "net_area_interpretation",
+          "description": "f가 양수값만 가지면 정적분은 곡선 아래 넓이이고, 음수도 가지면 실제(순) 넓이(x축 위 넓이-x축 아래 넓이)로 해석된다."
+        },
+        {
+          "property_id": "integration_variable_is_dummy",
+          "description": "정적분 값은 적분변수 표기와 무관하다: ∫f(x)dx=∫f(t)dt=∫f(r)dr."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.riemann_sum_and_area",
+          "name_ko": "리만합과 넓이·거리의 근사",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.integral_properties",
+        "calculus.fundamental_theorem_of_calculus_part2"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "verify_integrability",
+          "verb": "verify",
+          "description": "함수가 주어진 구간에서 적분가능한지 판정한다."
+        },
+        {
+          "objective_id": "apply_orientation_convention",
+          "verb": "apply",
+          "description": "적분 방향 규약을 이용해 적분 순서가 바뀐 정적분을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.integral.always_nonnegative",
+          "title": "정적분을 항상 양수인 넓이로 착각",
+          "description": "f가 음수인 구간이 있는데도 정적분 값이 항상 0 이상이라고 가정한다.",
+          "diagnosis_tag": "assume_definite_integral_always_nonnegative",
+          "feedback": "정적분은 순(실제) 넓이이므로 f가 음수인 구간에서는 음의 기여를 하며, 전체 값이 음수가 될 수 있다."
+        },
+        {
+          "misconception_id": "calculus.integral.ignore_infinite_discontinuity",
+          "title": "무한 불연속점이 있어도 적분가능하다고 가정",
+          "description": "f(x)=1/x^2처럼 구간 안에 무한 불연속점이 있는 함수에 정적분 정의를 그대로 적용한다.",
+          "diagnosis_tag": "assume_integrable_despite_infinite_discontinuity",
+          "feedback": "적분가능성 정리는 연속 또는 유한개의 도약 불연속만 보장하며, 무한 불연속점이 있으면 일반적인 리만 적분으로는 적분가능하지 않다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "integrability_check",
+          "orientation_convention_application"
+        ],
+        "supported_answer_types": [
+          "boolean",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "definite_integral",
+        "integrability"
+      ]
+    },
+    {
+      "concept_id": "calculus.integral_properties",
+      "order": 3,
+      "name_ko": "정적분의 성질과 중점 법칙",
+      "definition": "정적분은 선형성, 구간의 가법성, 대소 비교 성질(1~8)을 만족한다. 성질 1~5는 a,b의 대소와 무관하게 성립하고, 대소 비교 성질(6~8)은 a≤b일 때만 성립한다. 중점 법칙은 각 부분구간의 중점에서의 함숫값으로 정적분을 근사하는 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "integral_linearity",
+          "name_ko": "정적분의 선형성",
+          "role": "theorem",
+          "latex": "\\int_a^b[f(x)+g(x)]dx=\\int_a^bf\\,dx+\\int_a^bg\\,dx,\\qquad\\int_a^bcf(x)dx=c\\int_a^bf\\,dx",
+          "cas": "Integral(f(x)+g(x), (x,a,b))"
+        },
+        {
+          "formula_id": "integral_additivity",
+          "name_ko": "구간의 가법성",
+          "role": "theorem",
+          "latex": "\\int_a^cf(x)dx+\\int_c^bf(x)dx=\\int_a^bf(x)dx",
+          "cas": "Integral(f(x),(x,a,c))+Integral(f(x),(x,c,b))"
+        },
+        {
+          "formula_id": "integral_comparison",
+          "name_ko": "대소 비교 성질",
+          "role": "theorem",
+          "latex": "f(x)\\ge g(x)\\ (a\\le x\\le b)\\implies\\int_a^bf\\,dx\\ge\\int_a^bg\\,dx,\\qquad m\\le f(x)\\le M\\implies m(b-a)\\le\\int_a^bf\\,dx\\le M(b-a)",
+          "cas": "Integral(f(x),(x,a,b)) >= Integral(g(x),(x,a,b))"
+        },
+        {
+          "formula_id": "midpoint_rule",
+          "name_ko": "중점 법칙",
+          "role": "approximation",
+          "latex": "\\int_a^bf(x)dx\\approx\\sum_{i=1}^nf(\\bar x_i)\\Delta x,\\qquad\\bar x_i=\\tfrac12(x_{i-1}+x_i)",
+          "cas": "Sum(f((x[i-1]+x[i])/2)*Dx, (i,1,n))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "properties_1_5_any_order",
+          "description": "선형성·가법성(성질 1~5)은 a<b, a=b, a>b 어느 경우에도 성립한다.",
+          "rule": {
+            "property": "linearity_additivity_order_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "comparison_needs_a_leq_b",
+          "description": "대소 비교 성질(6~8)은 a≤b인 경우에만 성립한다.",
+          "rule": {
+            "property": "a",
+            "operator": "less_or_equal",
+            "value": "b"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "midpoint_more_accurate",
+          "description": "중점 법칙은 일반적으로 왼쪽·오른쪽 끝점을 이용한 근사보다 더 정확한 근삿값을 제공하는 경우가 많다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.integral",
+          "name_ko": "정적분의 정의와 적분가능성",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_integral_properties",
+          "verb": "apply",
+          "description": "선형성·가법성·대소 비교 성질로 정적분을 계산하거나 부등식을 증명한다."
+        },
+        {
+          "objective_id": "apply_midpoint_rule",
+          "verb": "calculate",
+          "description": "중점 법칙으로 정적분의 근삿값을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.integral_properties.comparison_without_a_leq_b",
+          "title": "a>b인데도 대소 비교 성질 적용",
+          "description": "a>b인 경우에도 f≥g이면 ∫f≥∫g라는 대소 비교 성질을 그대로 적용한다.",
+          "diagnosis_tag": "apply_comparison_property_without_a_leq_b",
+          "feedback": "대소 비교 성질(6~8)은 a≤b일 때만 성립하며, a>b이면 방향 규약을 먼저 적용해 부호를 확인해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "integral_property_application",
+          "midpoint_rule_estimation",
+          "integral_inequality_proof"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "numerical_approximation",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "numeric_tolerance",
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "integral_properties",
+        "midpoint_rule"
+      ]
+    },
+    {
+      "concept_id": "calculus.fundamental_theorem_of_calculus_part1",
+      "order": 4,
+      "name_ko": "미적분학의 기본 정리 1부(누적함수의 도함수)",
+      "definition": "f가 [a,b]에서 연속이고 g(x)=∫[a,x]f(t)dt이면, g는 [a,b]에서 연속이고 (a,b)에서 미분가능하며 g'(x)=f(x)이다. 즉 적분한 뒤 미분하면 원래 함수가 복원된다.",
+      "formulas": [
+        {
+          "formula_id": "ftc1",
+          "name_ko": "미적분학의 기본 정리 1부",
+          "role": "theorem",
+          "latex": "f\\text{가 }[a,b]\\text{연속},\\ g(x)=\\int_a^xf(t)\\,dt\\implies g'(x)=f(x)",
+          "cas": "diff(Integral(f(t), (t, a, x)), x)"
+        },
+        {
+          "formula_id": "ftc1_chain_rule_variant",
+          "name_ko": "가변 상한과 연쇄법칙의 결합",
+          "role": "corollary",
+          "latex": "\\frac{d}{dx}\\int_a^{g(x)}f(t)\\,dt=f(g(x))\\cdot g'(x)",
+          "cas": "diff(Integral(f(t), (t, a, g(x))), x)"
+        },
+        {
+          "formula_id": "ftc1_variable_bounds",
+          "name_ko": "양쪽 적분한계가 변수인 경우",
+          "role": "corollary",
+          "latex": "\\frac{d}{dx}\\int_{u(x)}^{v(x)}f(t)\\,dt=f(v(x))v'(x)-f(u(x))u'(x)",
+          "cas": "diff(Integral(f(t), (t, u(x), v(x))), x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "f_continuous_on_ab_ftc1",
+          "description": "f가 [a,b]에서 연속이어야 한다(증명은 극값 정리, 정적분의 대소 비교 성질, 조임정리를 이용한다).",
+          "rule": {
+            "property": "f_continuous_on_a_b",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "variable_bound_differentiable",
+          "description": "상한(또는 하한)이 x의 함수인 경우, 그 함수가 미분가능해야 연쇄법칙을 결합해 적용할 수 있다.",
+          "rule": {
+            "property": "bound_function_differentiable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "integrate_then_differentiate_recovers_f",
+          "description": "FTC1은 '먼저 적분한 다음 미분하면 원래 함수를 다시 얻는다'는 것을 의미하며, 미분과 적분이 서로 역과정임을 보여준다."
+        },
+        {
+          "property_id": "differentiates_non_elementary_functions",
+          "description": "프레넬 함수 S(x)=∫[0,x]sin(πt²/2)dt처럼 초등함수로 닫힌 형태를 갖지 않는 함수도 FTC1에 의해 바로 미분할 수 있다(S'(x)=sin(πx²/2))."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.integral",
+          "name_ko": "정적분의 정의와 적분가능성",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.chain_rule",
+          "name_ko": "연쇄법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.fundamental_theorem_of_calculus_part2"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "differentiate_accumulation_function",
+          "verb": "calculate",
+          "description": "누적함수 g(x)=∫[a,x]f(t)dt의 도함수를 구한다."
+        },
+        {
+          "objective_id": "differentiate_variable_bound_integral",
+          "verb": "calculate",
+          "description": "상한·하한이 함수인 정적분의 도함수를 연쇄법칙과 결합해 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.ftc1.forget_chain_rule_on_variable_bound",
+          "title": "가변 상한 미분에서 연쇄법칙 누락",
+          "description": "d/dx ∫[a,g(x)]f(t)dt를 f(g(x))로만 쓰고 g'(x)를 곱하지 않는다.",
+          "diagnosis_tag": "forget_chain_rule_in_ftc1_variable_bound",
+          "feedback": "상한이 x의 함수 g(x)인 경우 연쇄법칙에 따라 f(g(x))에 g'(x)를 곱해야 한다."
+        },
+        {
+          "misconception_id": "calculus.ftc1.lower_bound_sign_error",
+          "title": "하한이 변수일 때 부호 누락",
+          "description": "d/dx ∫[g(x)]^a f(t)dt(하한이 변수)를 부호 없이 f(g(x))g'(x)로 계산한다.",
+          "diagnosis_tag": "forget_negative_sign_for_variable_lower_bound",
+          "feedback": "하한이 g(x)인 경우 방향 규약에 의해 부호가 반대가 되어 -f(g(x))g'(x)가 된다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "accumulation_function_derivative",
+          "variable_bound_integral_derivative"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "fundamental_theorem_of_calculus",
+        "accumulation_function"
+      ]
+    },
+    {
+      "concept_id": "calculus.fundamental_theorem_of_calculus_part2",
+      "order": 5,
+      "name_ko": "미적분학의 기본 정리 2부(정적분의 계산)",
+      "definition": "f가 [a,b]에서 연속이면 ∫[a,b]f(x)dx=F(b)-F(a)이다(F는 f의 임의의 원시함수, F'=f). 이는 정적분을 리만합의 극한 대신 원시함수의 끝점 값 차이로 간단히 계산할 수 있게 해준다.",
+      "formulas": [
+        {
+          "formula_id": "ftc2",
+          "name_ko": "미적분학의 기본 정리 2부",
+          "role": "theorem",
+          "latex": "f\\text{가 }[a,b]\\text{에서 연속}\\implies\\int_a^bf(x)\\,dx=F(b)-F(a)",
+          "cas": "F(b) - F(a)"
+        },
+        {
+          "formula_id": "ftc2_bracket_notation",
+          "name_ko": "괄호 표기",
+          "role": "notation",
+          "latex": "\\int_a^bf(x)\\,dx=\\Big[F(x)\\Big]_a^b",
+          "cas": "F(x).subs(x,b) - F(x).subs(x,a)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "f_continuous_on_a_b_ftc2",
+          "description": "f가 [a,b]에서 연속이어야 한다. 불연속점(특히 무한 불연속)이 있는 구간에 FTC2를 기계적으로 적용하면 모순된 결과(음수 넓이 등)를 얻는다.",
+          "rule": {
+            "property": "f_continuous_on_a_b",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "any_antiderivative_works",
+          "description": "F는 f의 임의의 원시함수를 사용해도 무방하며, 가장 간단한 것을 선택하면 된다(상수 C는 계산 과정에서 상쇄된다).",
+          "rule": {
+            "property": "any_antiderivative_of_f",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "avoids_riemann_sum_computation",
+          "description": "리만합의 극한으로 직접 계산하는 대신 원시함수의 두 끝점 값의 차만으로 정적분을 계산할 수 있게 해준다."
+        },
+        {
+          "property_id": "physical_displacement_interpretation",
+          "description": "v(t)가 속도, s(t)가 위치함수(즉 s는 v의 원시함수)이면 ∫[a,b]v(t)dt=s(b)-s(a)(이동한 변위)이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.fundamental_theorem_of_calculus_part1",
+          "name_ko": "미적분학의 기본 정리 1부(누적함수의 도함수)",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.indefinite_integral",
+          "name_ko": "원시함수(부정적분)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.net_change_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "evaluate_definite_integral_via_ftc2",
+          "verb": "calculate",
+          "description": "원시함수를 구해 FTC2로 정적분을 계산한다."
+        },
+        {
+          "objective_id": "verify_continuity_before_ftc2",
+          "verb": "verify",
+          "description": "FTC2를 적용하기 전에 피적분함수가 구간에서 연속인지 확인한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.ftc2.apply_despite_discontinuity",
+          "title": "불연속 구간에 FTC2 강행 적용",
+          "description": "f(x)=1/x^2처럼 구간 안에 무한 불연속점이 있는데도 FTC2를 그대로 적용해 정적분을 계산한다.",
+          "diagnosis_tag": "apply_ftc2_despite_discontinuity",
+          "feedback": "FTC2는 f가 [a,b]에서 연속일 때만 성립한다. 불연속점이 있으면 이상적분으로 별도 취급하거나 구간을 나누어야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "definite_integral_evaluation",
+          "displacement_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "fundamental_theorem_of_calculus",
+        "definite_integral_evaluation"
+      ]
+    },
+    {
+      "concept_id": "calculus.net_change_theorem",
+      "order": 6,
+      "name_ko": "순변화 정리와 변위·이동 거리",
+      "definition": "순변화 정리는 변화율의 정적분이 순변화량과 같다는 것(∫[a,b]F'(x)dx=F(b)-F(a), FTC2의 재구성)이다. 물체가 왼쪽·오른쪽으로 모두 움직일 수 있을 때 변위는 v(t)를 그대로 적분한 값이고, 이동 거리는 |v(t)|를 적분한 값이다.",
+      "formulas": [
+        {
+          "formula_id": "net_change_theorem",
+          "name_ko": "순변화 정리",
+          "role": "theorem",
+          "latex": "\\int_a^bF'(x)\\,dx=F(b)-F(a)",
+          "cas": "F(b)-F(a)"
+        },
+        {
+          "formula_id": "displacement_vs_distance",
+          "name_ko": "변위와 이동 거리",
+          "role": "definition",
+          "latex": "\\text{변위}=\\int_{t_1}^{t_2}v(t)\\,dt,\\qquad\\text{이동 거리}=\\int_{t_1}^{t_2}|v(t)|\\,dt",
+          "cas": "Integral(Abs(v(t)), (t, t1, t2))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "f_prime_continuous",
+          "description": "순변화 정리는 F가 [a,b]에서 연속인 도함수 F'를 가질 때 성립한다(FTC2의 재구성).",
+          "rule": {
+            "property": "F_prime_continuous_on_a_b",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "distance_needs_sign_split",
+          "description": "이동 거리를 구하려면 v(t)≥0인 구간과 v(t)<0인 구간을 나누어 절댓값을 적분해야 한다.",
+          "rule": {
+            "property": "velocity_sign_intervals_separated",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "net_change_broad_applications",
+          "description": "순변화 정리는 저수조 부피 변화, 화학반응 농도 변화, 막대의 질량(선밀도 적분), 인구의 순증가, 생산비용 증가(한계비용의 적분), 물체의 변위·속도 변화량 등 다양한 분야에 적용된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.fundamental_theorem_of_calculus_part2",
+          "name_ko": "미적분학의 기본 정리 2부(정적분의 계산)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_net_change_theorem",
+          "verb": "apply",
+          "description": "변화율을 적분해 순변화량을 구한다."
+        },
+        {
+          "objective_id": "distinguish_displacement_and_distance",
+          "verb": "distinguish",
+          "description": "속도함수를 적분해 변위와 이동 거리를 각각 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.net_change.confuse_displacement_distance",
+          "title": "변위와 이동 거리를 동일시",
+          "description": "속도가 음수인 구간이 있는데도 v(t)를 그대로 적분한 변위 값을 이동 거리로 제시한다.",
+          "diagnosis_tag": "confuse_displacement_with_total_distance",
+          "feedback": "변위는 v(t)를 그대로 적분한 값(방향 포함, 음수 가능)이고, 이동 거리는 |v(t)|를 적분한 값(항상 0 이상)이다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "net_change_calculation",
+          "displacement_and_distance_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 3
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "net_change_theorem",
+        "displacement",
+        "distance"
+      ]
+    },
+    {
+      "concept_id": "calculus.substitution",
+      "order": 7,
+      "name_ko": "치환법",
+      "definition": "연쇄법칙의 역과정으로, u=g(x)로 치환해 ∫f(g(x))g'(x)dx를 ∫f(u)du로 바꾸어 계산하는 적분법이다. 정적분에서는 적분한계도 u에 대한 값으로 바꾸어야 한다. 우함수·기함수는 대칭구간 적분에서 지름길을 제공한다.",
+      "formulas": [
+        {
+          "formula_id": "substitution_indefinite",
+          "name_ko": "치환법칙(부정적분)",
+          "role": "theorem",
+          "latex": "\\int f(g(x))g'(x)\\,dx=\\int f(u)\\,du\\quad(u=g(x))",
+          "cas": "Integral(f(g(x))*diff(g(x),x), x)"
+        },
+        {
+          "formula_id": "substitution_definite",
+          "name_ko": "치환법칙(정적분)",
+          "role": "theorem",
+          "latex": "\\int_a^bf(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du",
+          "cas": "Integral(f(u), (u, g(a), g(b)))"
+        },
+        {
+          "formula_id": "symmetric_function_integral",
+          "name_ko": "대칭함수의 적분",
+          "role": "corollary",
+          "latex": "f\\text{ 우함수}:\\int_{-a}^af(x)dx=2\\int_0^af(x)dx,\\qquad f\\text{ 기함수}:\\int_{-a}^af(x)dx=0",
+          "cas": "2*Integral(f(x), (x, 0, a))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "g_differentiable_f_continuous_on_range",
+          "description": "치환법칙은 u=g(x)가 미분가능하고 치역이 구간 I이며, f가 I 위에서 연속이어야 성립한다(연쇄법칙으로부터 증명).",
+          "rule": {
+            "property": "g_differentiable_and_f_continuous_on_range_of_g",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "definite_integral_bounds_must_change",
+          "description": "정적분에서 치환할 때는 적분변수뿐 아니라 적분한계도 새로운 변수 u에 대한 값으로 바꾸어야 한다.",
+          "rule": {
+            "property": "integration_bounds_converted_to_u",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "symmetric_interval_required",
+          "description": "대칭함수의 적분 성질은 적분구간이 원점에 대해 대칭인 [-a,a]일 때만 적용된다.",
+          "rule": {
+            "property": "interval_symmetric_about_origin",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "choose_u_with_derivative_present",
+          "description": "적당한 치환 u를 고르는 것이 핵심이다: 피적분함수 안의 어떤 함수를 u로 선택했을 때, 그 도함수(상수배 제외)가 피적분함수 안에 함께 있어야 한다."
+        },
+        {
+          "property_id": "definite_no_need_to_revert",
+          "description": "정적분에서 적분한계를 u에 대한 값으로 바꿨다면, x로 되돌리지 않고 u에 관한 식으로 계산을 마칠 수 있다."
+        },
+        {
+          "property_id": "symmetry_intuition",
+          "description": "우함수는 [-a,0]과 [0,a]의 넓이가 같아서 두 배가 되고, 기함수는 두 부분의 넓이가 부호만 반대라서 상쇄되어 0이 된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.chain_rule",
+          "name_ko": "연쇄법칙",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.fundamental_theorem_of_calculus_part2",
+          "name_ko": "미적분학의 기본 정리 2부(정적분의 계산)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "choose_substitution_variable",
+          "verb": "identify",
+          "description": "적분에 알맞은 치환 변수 u를 선택한다."
+        },
+        {
+          "objective_id": "apply_substitution_to_indefinite_integral",
+          "verb": "apply",
+          "description": "치환법으로 부정적분을 계산하고 원래 변수로 되돌린다."
+        },
+        {
+          "objective_id": "apply_substitution_to_definite_integral",
+          "verb": "apply",
+          "description": "정적분에서 적분한계를 바꾸어 치환법으로 계산한다."
+        },
+        {
+          "objective_id": "use_symmetry_shortcut",
+          "verb": "apply",
+          "description": "우함수·기함수 판별로 대칭구간 정적분을 간단히 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.substitution.forget_bound_conversion",
+          "title": "정적분 치환에서 적분한계 변환 누락",
+          "description": "정적분을 u로 치환하면서 적분한계를 그대로 a, b로 둔 채 계산을 마친다.",
+          "diagnosis_tag": "forget_to_convert_integration_bounds",
+          "feedback": "적분한계를 u에 대한 값(g(a), g(b))으로 바꾸지 않았다면, 최종 결과를 다시 x로 되돌린 뒤 원래의 a, b를 대입해야 한다."
+        },
+        {
+          "misconception_id": "calculus.substitution.symmetry_on_asymmetric_interval",
+          "title": "비대칭 구간에도 대칭함수 지름길 적용",
+          "description": "적분구간이 [-a,a] 형태가 아닌데도 우함수·기함수의 대칭 적분 공식을 적용한다.",
+          "diagnosis_tag": "apply_symmetric_integral_shortcut_on_asymmetric_interval",
+          "feedback": "대칭함수의 적분 지름길은 구간이 원점에 대해 대칭인 [-a,a]일 때만 유효하다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "indefinite_integral_substitution",
+          "definite_integral_substitution",
+          "symmetric_interval_shortcut"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "substitution_rule",
+        "u_substitution",
+        "symmetric_function"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,968 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "calculus_2",
+    "name_ko": "미분적분학 2"
+  },
+  "unit": {
+    "unit_id": "calc2_v2_ch06_power_series",
+    "name_ko": "멱급수",
+    "order": 1,
+    "description": "멱급수의 정의와 수렴반지름·수렴구간, 멱급수의 대수적 성질과 항별 미분·적분, Taylor·Maclaurin 급수와 오차 추정, 이항급수와 멱급수의 응용을 정리하는 단원이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "volume2_chapter6_power_series.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 사항"
+    ]
+  },
+  "conventions": {
+    "independent_variable": "x",
+    "dependent_function": "f(x)",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "calculus.power_series_definition_and_convergence",
+      "order": 1,
+      "name_ko": "멱급수의 정의, 수렴반지름과 수렴구간",
+      "definition": "점 x=a를 중심으로 하는 멱급수 Σc_n(x-a)^n은 x=a에서만 수렴하거나, 모든 실수에서 수렴하거나, 어떤 R>0에 대해 |x-a|<R에서 수렴하고 |x-a|>R에서 발산하는 세 가지 형태 중 하나를 갖는다. 이 R을 수렴반지름이라 하며, 비율판정법이나 근판정법으로 구할 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "power_series_def",
+          "name_ko": "멱급수의 정의",
+          "role": "definition",
+          "latex": "\\sum_{n=0}^\\infty c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+\\cdots",
+          "cas": "Sum(c_n*(x-a)**n, (n,0,oo))"
+        },
+        {
+          "formula_id": "radius_of_convergence_ratio",
+          "name_ko": "비율판정법에 의한 수렴반지름",
+          "role": "theorem",
+          "latex": "\\lim_{n\\to\\infty}\\left|\\frac{c_{n+1}}{c_n}\\right|=\\ell\\implies R=\\frac1\\ell\\ (\\ell=0\\Rightarrow R=\\infty,\\ \\ell=\\infty\\Rightarrow R=0)",
+          "cas": "1/limit(Abs(c[n+1]/c[n]), n, oo)"
+        },
+        {
+          "formula_id": "radius_of_convergence_root",
+          "name_ko": "근판정법에 의한 수렴반지름",
+          "role": "theorem",
+          "latex": "R=\\frac{1}{\\limsup_{n\\to\\infty}\\sqrt[n]{|c_n|}}",
+          "cas": "1/limsup(Abs(c_n)**(1/n), n, oo)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ratio_root_test_determines_open_interval_only",
+          "description": "비율판정법이나 근판정법은 보통 열린구간(a-R,a+R)만 결정한다. 끝점에서는 판정값이 1이 되는 경우가 많으므로 원래 급수에 직접 대입해 별도로 검사해야 한다.",
+          "rule": {
+            "property": "endpoint_convergence_checked_separately",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "three_convergence_patterns",
+          "description": "멱급수는 (1) 중심에서만 수렴, (2) 모든 실수에서 수렴, (3) 어떤 R>0에 대해 |x-a|<R에서 수렴·|x-a|>R에서 발산 중 하나의 패턴을 갖는다."
+        },
+        {
+          "property_id": "converges_at_center_always",
+          "description": "멱급수는 중심 x=a에서는 항상 수렴한다(모든 항이 0이 되므로)."
+        },
+        {
+          "property_id": "interval_four_possible_forms",
+          "description": "수렴구간은 (a-R,a+R), [a-R,a+R), (a-R,a+R], [a-R,a+R] 네 가지 형태 중 하나이며, 한쪽 끝점만 포함될 수도 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.ratio_and_root_tests",
+          "name_ko": "비판정법과 근판정법",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.power_series_as_function"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_radius_of_convergence",
+          "verb": "calculate",
+          "description": "비율판정법 또는 근판정법으로 멱급수의 수렴반지름을 구한다."
+        },
+        {
+          "objective_id": "determine_interval_of_convergence",
+          "verb": "calculate",
+          "description": "끝점을 원래 급수에 대입해 검사하여 수렴구간을 확정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.power_series_convergence.radius_equals_interval",
+          "title": "수렴반지름과 수렴구간을 같은 개념으로 착각",
+          "description": "수렴반지름 R을 구한 뒤 수렴구간이 항상 (a-R,a+R)이라고 단정한다.",
+          "diagnosis_tag": "confuse_radius_with_interval_of_convergence",
+          "feedback": "수렴반지름 R은 열린구간의 크기만 정하며, 끝점 a±R의 포함 여부는 원래 급수에 직접 대입해 따로 확인해야 한다."
+        },
+        {
+          "misconception_id": "calculus.power_series_convergence.skip_endpoint_check",
+          "title": "끝점 검사 생략",
+          "description": "비율판정법으로 R을 구한 뒤 끝점을 검사하지 않고 수렴구간을 (a-R,a+R)로 확정한다.",
+          "diagnosis_tag": "skip_endpoint_convergence_check",
+          "feedback": "끝점에서는 비율판정법의 극한값이 보통 1이 되어 판정 불가이므로, 각 끝점을 원래 급수에 대입해 별도의 급수 판정법으로 확인해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "radius_of_convergence_calculation",
+          "interval_of_convergence_determination",
+          "endpoint_convergence_check"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "interval"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "power_series",
+        "radius_of_convergence",
+        "interval_of_convergence"
+      ]
+    },
+    {
+      "concept_id": "calculus.power_series_as_function",
+      "order": 2,
+      "name_ko": "기하급수와 멱급수로 정의된 함수",
+      "definition": "기하급수 1/(1-x)=Σx^n(|x|<1)은 여러 함수의 멱급수를 만드는 기본식이다. 수렴구간 안에서 멱급수는 부분합 S_N(x)의 극한으로 하나의 함수 f(x)=Σc_n(x-a)^n을 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "geometric_series_as_power_series",
+          "name_ko": "기하급수 형태",
+          "role": "definition",
+          "latex": "\\frac{1}{1-x}=\\sum_{n=0}^\\infty x^n,\\qquad-1<x<1",
+          "cas": "1/(1-x)"
+        },
+        {
+          "formula_id": "power_series_partial_sum",
+          "name_ko": "멱급수의 부분합",
+          "role": "definition",
+          "latex": "S_N(x)=\\sum_{n=0}^Nc_n(x-a)^n,\\qquad f(x)=\\lim_{N\\to\\infty}S_N(x)",
+          "cas": "Sum(c_n*(x-a)**n, (n,0,N))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "defined_only_within_interval",
+          "description": "멱급수가 정의하는 함수 f(x)는 수렴구간 안에서만 의미를 가진다.",
+          "rule": {
+            "property": "x_within_interval_of_convergence",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "partial_sums_approach_f",
+          "description": "N이 증가할수록 부분합 S_N(x)은 수렴구간 안에서 함수 f(x)에 가까워진다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.power_series_definition_and_convergence",
+          "name_ko": "멱급수의 정의, 수렴반지름과 수렴구간",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.series_convergence",
+          "name_ko": "급수의 수렴, 기하급수, 발산판정법",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.power_series_term_by_term_calculus"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "represent_function_as_geometric_power_series",
+          "verb": "transform",
+          "description": "간단한 유리함수를 기하급수 기본식으로부터 멱급수로 표현한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.power_series_function.valid_outside_interval",
+          "title": "수렴구간 밖에서도 멱급수 표현이 성립한다고 착각",
+          "description": "1/(1-x)=Σx^n을 |x|≥1인 x에도 그대로 적용한다.",
+          "diagnosis_tag": "apply_power_series_representation_outside_interval",
+          "feedback": "멱급수가 함수를 나타내는 것은 수렴구간 안에서만 유효하다. |x|≥1에서는 우변 급수가 발산한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "geometric_power_series_representation"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 3
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "power_series",
+        "geometric_series"
+      ]
+    },
+    {
+      "concept_id": "calculus.power_series_algebra",
+      "order": 3,
+      "name_ko": "멱급수의 대수적 연산과 계수의 유일성",
+      "definition": "공통 수렴구간에서 두 멱급수는 항별로 더하거나 뺄 수 있고, 상수배도 항별로 적용된다. 두 멱급수의 곱은 코시 곱(Cauchy product)으로 계산한다. 두 멱급수가 어떤 열린구간에서 같은 함수를 나타내면 같은 차수의 계수는 서로 같다(계수의 유일성).",
+      "formulas": [
+        {
+          "formula_id": "power_series_sum_diff",
+          "name_ko": "멱급수의 합과 차",
+          "role": "theorem",
+          "latex": "\\sum a_nx^n\\pm\\sum b_nx^n=\\sum(a_n\\pm b_n)x^n",
+          "cas": "Sum(a_n+b_n, (n,0,oo))"
+        },
+        {
+          "formula_id": "power_series_scalar_multiple",
+          "name_ko": "멱급수의 상수배",
+          "role": "theorem",
+          "latex": "c\\sum a_nx^n=\\sum ca_nx^n",
+          "cas": "c*Sum(a_n*x**n, (n,0,oo))"
+        },
+        {
+          "formula_id": "cauchy_product",
+          "name_ko": "멱급수의 곱(코시 곱)",
+          "role": "theorem",
+          "latex": "\\left(\\sum a_nx^n\\right)\\left(\\sum b_nx^n\\right)=\\sum_{n=0}^\\infty\\left(\\sum_{k=0}^na_kb_{n-k}\\right)x^n",
+          "cas": "Sum(Sum(a_k*b[n-k], (k,0,n)), (n,0,oo))"
+        },
+        {
+          "formula_id": "coefficient_uniqueness",
+          "name_ko": "계수의 유일성",
+          "role": "theorem",
+          "latex": "\\sum a_n(x-a)^n=\\sum b_n(x-a)^n\\ (\\text{열린구간에서})\\implies a_n=b_n",
+          "cas": "Eq(a_n, b_n)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "common_interval_required",
+          "description": "합·차·곱 연산은 두 멱급수가 공통 수렴구간에서 수렴할 때 성립한다.",
+          "rule": {
+            "property": "both_series_converge_on_common_interval",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "cauchy_product_collect_same_degree",
+          "description": "급수의 곱에서는 같은 차수(x^n)의 모든 항(a_k b_{n-k}의 합)을 합쳐야 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.power_series_definition_and_convergence",
+          "name_ko": "멱급수의 정의, 수렴반지름과 수렴구간",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.taylor_maclaurin_series"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "combine_power_series",
+          "verb": "calculate",
+          "description": "멱급수의 합·차·상수배를 계산한다."
+        },
+        {
+          "objective_id": "compute_cauchy_product",
+          "verb": "calculate",
+          "description": "두 멱급수의 코시 곱으로 x^n의 계수를 구한다."
+        },
+        {
+          "objective_id": "apply_coefficient_uniqueness",
+          "verb": "apply",
+          "description": "계수의 유일성으로 미정계수를 결정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.power_series_algebra.miss_cauchy_product_terms",
+          "title": "코시 곱에서 일부 항 누락",
+          "description": "x^n의 계수를 구할 때 a_k b_{n-k} 조합 중 일부만 더한다.",
+          "diagnosis_tag": "incomplete_cauchy_product_sum",
+          "feedback": "x^n 계수는 k=0부터 n까지 모든 a_k b_{n-k}의 합이며, 어느 하나라도 빠지면 안 된다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "power_series_combination",
+          "cauchy_product_calculation",
+          "coefficient_determination"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "power_series",
+        "cauchy_product"
+      ]
+    },
+    {
+      "concept_id": "calculus.power_series_term_by_term_calculus",
+      "order": 4,
+      "name_ko": "멱급수의 항별 미분·적분과 변수 치환",
+      "definition": "수렴반지름이 R인 멱급수 f(x)=Σc_n(x-a)^n은 |x-a|<R에서 항별로 미분·적분할 수 있으며, 미분·적분한 급수의 수렴반지름도 R로 같다(끝점의 수렴 여부는 달라질 수 있음). 기본 멱급수의 x 자리에 g(x)를 대입하는 변수 치환으로도 새 급수를 얻을 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "term_by_term_differentiation",
+          "name_ko": "항별 미분",
+          "role": "theorem",
+          "latex": "f'(x)=\\sum_{n=1}^\\infty nc_n(x-a)^{n-1}\\quad(|x-a|<R)",
+          "cas": "Sum(n*c_n*(x-a)**(n-1), (n,1,oo))"
+        },
+        {
+          "formula_id": "term_by_term_integration",
+          "name_ko": "항별 적분",
+          "role": "theorem",
+          "latex": "\\int_a^xf(t)\\,dt=\\sum_{n=0}^\\infty\\frac{c_n}{n+1}(x-a)^{n+1}\\quad(|x-a|<R)",
+          "cas": "Sum(c_n/(n+1)*(x-a)**(n+1), (n,0,oo))"
+        },
+        {
+          "formula_id": "geometric_series_derivative",
+          "name_ko": "기하급수의 미분",
+          "role": "example",
+          "latex": "\\frac{1}{(1-x)^2}=\\sum_{n=1}^\\infty nx^{n-1}=\\sum_{n=0}^\\infty(n+1)x^n",
+          "cas": "diff(1/(1-x), x)"
+        },
+        {
+          "formula_id": "geometric_series_integral",
+          "name_ko": "기하급수의 적분",
+          "role": "example",
+          "latex": "-\\ln(1-x)=\\sum_{n=1}^\\infty\\frac{x^n}{n},\\qquad\\ln(1+x)=\\sum_{n=1}^\\infty(-1)^{n+1}\\frac{x^n}{n}",
+          "cas": "-log(1-x)"
+        },
+        {
+          "formula_id": "power_series_substitution",
+          "name_ko": "변수 치환",
+          "role": "technique",
+          "latex": "\\frac{1}{1-g(x)}=\\sum_{n=0}^\\infty[g(x)]^n\\quad(|g(x)|<1)",
+          "cas": "1/(1-g(x))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "term_by_term_within_radius_only",
+          "description": "항별 미분·적분은 수렴반지름 내부(|x-a|<R)에서만 적용한다.",
+          "rule": {
+            "property": "x_within_radius_of_convergence",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "substitution_needs_new_convergence_check",
+          "description": "변수 치환 후에는 새로운 수렴조건(|g(x)|<1 등)을 다시 계산해야 한다.",
+          "rule": {
+            "property": "convergence_condition_recomputed_after_substitution",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "radius_preserved_endpoint_may_change",
+          "description": "미분·적분 후 수렴반지름은 원래와 같지만, 끝점에서의 수렴 여부는 달라질 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.power_series_as_function",
+          "name_ko": "기하급수와 멱급수로 정의된 함수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.binomial_series_and_series_applications"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "differentiate_power_series_term_by_term",
+          "verb": "calculate",
+          "description": "멱급수를 항별로 미분해 새로운 급수를 구한다."
+        },
+        {
+          "objective_id": "integrate_power_series_term_by_term",
+          "verb": "calculate",
+          "description": "멱급수를 항별로 적분해 새로운 급수를 구한다."
+        },
+        {
+          "objective_id": "substitute_into_known_series",
+          "verb": "transform",
+          "description": "기본 멱급수에 변수 치환을 적용해 새로운 함수의 급수를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.term_by_term.radius_unchanged_endpoint_assumed_same",
+          "title": "미분·적분 후 끝점 수렴도 그대로라고 가정",
+          "description": "미분·적분해도 수렴반지름이 같으므로 끝점의 수렴 여부까지 원래 급수와 같다고 가정한다.",
+          "diagnosis_tag": "assume_endpoint_convergence_unchanged_after_term_by_term_operation",
+          "feedback": "수렴반지름은 미분·적분 후에도 유지되지만, 끝점에서의 수렴 여부는 새로 확인해야 한다(예: ln(1+x) 급수는 x=1에서 수렴하지만 x=-1에서는 발산)."
+        },
+        {
+          "misconception_id": "calculus.substitution.skip_new_convergence_check",
+          "title": "변수 치환 후 수렴조건 재계산 생략",
+          "description": "1/(1-x)=Σx^n에 x 대신 g(x)를 대입하면서 |x|<1 조건을 그대로 사용한다.",
+          "diagnosis_tag": "skip_recomputing_convergence_after_substitution",
+          "feedback": "변수 치환 후에는 |g(x)|<1 같은 새로운 수렴조건을 다시 계산해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "term_by_term_differentiation",
+          "term_by_term_integration",
+          "power_series_substitution"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "power_series",
+        "term_by_term_differentiation",
+        "term_by_term_integration"
+      ]
+    },
+    {
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "order": 5,
+      "name_ko": "Taylor 급수와 Maclaurin 급수",
+      "definition": "f가 x=a에서 충분히 여러 번 미분가능할 때 n차 Taylor 다항식 P_n(x)=Σ[k=0,n]f^{(k)}(a)/k!·(x-a)^k를 무한히 확장한 것이 Taylor 급수다. 중심이 a=0인 Taylor 급수를 Maclaurin 급수라 한다. 멱급수 f(x)=Σc_n(x-a)^n이 f의 Taylor 급수라면 c_n=f^{(n)}(a)/n!이다.",
+      "formulas": [
+        {
+          "formula_id": "taylor_polynomial",
+          "name_ko": "Taylor 다항식",
+          "role": "definition",
+          "latex": "P_n(x)=\\sum_{k=0}^n\\frac{f^{(k)}(a)}{k!}(x-a)^k",
+          "cas": "Sum(diff(f(x),x,k).subs(x,a)/factorial(k)*(x-a)**k, (k,0,n))"
+        },
+        {
+          "formula_id": "taylor_series",
+          "name_ko": "Taylor 급수",
+          "role": "definition",
+          "latex": "f(x)=\\sum_{n=0}^\\infty\\frac{f^{(n)}(a)}{n!}(x-a)^n",
+          "cas": "Sum(diff(f(x),x,n).subs(x,a)/factorial(n)*(x-a)**n, (n,0,oo))"
+        },
+        {
+          "formula_id": "maclaurin_series",
+          "name_ko": "Maclaurin 급수",
+          "role": "special_case",
+          "latex": "f(x)=\\sum_{n=0}^\\infty\\frac{f^{(n)}(0)}{n!}x^n",
+          "cas": "Sum(diff(f(x),x,n).subs(x,0)/factorial(n)*x**n, (n,0,oo))"
+        },
+        {
+          "formula_id": "taylor_coefficient",
+          "name_ko": "Taylor 계수",
+          "role": "theorem",
+          "latex": "c_n=\\frac{f^{(n)}(a)}{n!}",
+          "cas": "diff(f(x),x,n).subs(x,a)/factorial(n)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "requires_infinite_differentiability",
+          "description": "Taylor 급수를 정의하려면 f가 x=a에서 무한번 미분가능해야 한다.",
+          "rule": {
+            "property": "f_infinitely_differentiable_at_a",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "series_may_not_equal_function",
+          "description": "함수가 무한번 미분가능하더라도 Taylor 급수의 합이 반드시 원래 함수와 같지는 않다. 나머지 R_n(x)=f(x)-P_n(x)에 대해 lim R_n(x)=0이어야 Taylor 급수가 f(x)에 수렴한다.",
+          "rule": {
+            "property": "limit_of_remainder_is_zero",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "polynomial_finite_series_infinite",
+          "description": "Taylor 다항식은 유한합이고 Taylor 급수는 무한합이다."
+        },
+        {
+          "property_id": "even_odd_function_terms",
+          "description": "짝함수는 일반적으로 짝수차 항만, 홀함수는 홀수차 항만 Taylor(Maclaurin) 급수에 나타난다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.higher_order_derivatives",
+          "name_ko": "고계도함수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.power_series_definition_and_convergence",
+          "name_ko": "멱급수의 정의, 수렴반지름과 수렴구간",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.common_maclaurin_series",
+        "calculus.taylor_remainder_and_error_bound"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "construct_taylor_polynomial",
+          "verb": "construct",
+          "description": "주어진 함수와 중심으로 n차 Taylor 다항식을 구한다."
+        },
+        {
+          "objective_id": "derive_taylor_series",
+          "verb": "construct",
+          "description": "고계도함수로부터 함수의 Taylor(Maclaurin) 급수를 구한다."
+        },
+        {
+          "objective_id": "extract_taylor_coefficients",
+          "verb": "calculate",
+          "description": "주어진 멱급수 표현에서 Taylor 계수를 이용해 도함수 값을 역산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.taylor_series.infinitely_differentiable_implies_equal",
+          "title": "무한번 미분가능하면 항상 함수와 일치한다고 오해",
+          "description": "f가 무한번 미분가능하기만 하면 Taylor 급수가 항상 f(x)와 같다고 가정한다.",
+          "diagnosis_tag": "assume_infinite_differentiability_implies_taylor_equals_function",
+          "feedback": "무한번 미분가능해도 Taylor 급수가 원래 함수와 다를 수 있다(나머지 R_n(x)이 0으로 수렴하는지 별도로 확인해야 한다)."
+        },
+        {
+          "misconception_id": "calculus.taylor_series.polynomial_vs_series_confusion",
+          "title": "Taylor 다항식과 Taylor 급수를 혼동",
+          "description": "유한 차수의 Taylor 다항식을 무한급수인 Taylor 급수와 같은 것으로 취급한다.",
+          "diagnosis_tag": "confuse_taylor_polynomial_with_taylor_series",
+          "feedback": "Taylor 다항식은 유한합이고 Taylor 급수는 무한합이며, 둘은 다른 대상이다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "taylor_polynomial_construction",
+          "taylor_series_derivation",
+          "taylor_coefficient_extraction"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "taylor_series",
+        "maclaurin_series",
+        "taylor_polynomial"
+      ]
+    },
+    {
+      "concept_id": "calculus.common_maclaurin_series",
+      "order": 6,
+      "name_ko": "대표적인 Maclaurin 급수",
+      "definition": "e^x, sin x, cos x, ln(1+x), arctan x 등 자주 쓰이는 함수의 Maclaurin 급수와 각각의 수렴구간이다.",
+      "formulas": [
+        {
+          "formula_id": "exp_maclaurin",
+          "name_ko": "자연지수함수",
+          "role": "example",
+          "latex": "e^x=\\sum_{n=0}^\\infty\\frac{x^n}{n!},\\qquad-\\infty<x<\\infty",
+          "cas": "exp(x)"
+        },
+        {
+          "formula_id": "sin_maclaurin",
+          "name_ko": "사인함수",
+          "role": "example",
+          "latex": "\\sin x=\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n+1}}{(2n+1)!},\\qquad-\\infty<x<\\infty",
+          "cas": "sin(x)"
+        },
+        {
+          "formula_id": "cos_maclaurin",
+          "name_ko": "코사인함수",
+          "role": "example",
+          "latex": "\\cos x=\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n}}{(2n)!},\\qquad-\\infty<x<\\infty",
+          "cas": "cos(x)"
+        },
+        {
+          "formula_id": "ln_maclaurin",
+          "name_ko": "로그함수",
+          "role": "example",
+          "latex": "\\ln(1+x)=\\sum_{n=1}^\\infty(-1)^{n+1}\\frac{x^n}{n},\\qquad-1<x\\le1",
+          "cas": "log(1+x)"
+        },
+        {
+          "formula_id": "arctan_maclaurin",
+          "name_ko": "역탄젠트함수",
+          "role": "example",
+          "latex": "\\arctan x=\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n+1}}{2n+1},\\qquad-1\\le x\\le1",
+          "cas": "atan(x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "series_valid_only_within_stated_interval",
+          "description": "각 급수는 명시된 수렴구간 안에서만 해당 함수와 같다(예: ln(1+x) 급수는 x=-1에서 발산하므로 (-1,1]).",
+          "rule": {
+            "property": "x_within_stated_convergence_interval",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "exp_sin_cos_entire",
+          "description": "e^x, sin x, cos x의 Maclaurin 급수는 모든 실수에서 수렴한다(수렴반지름 무한대)."
+        },
+        {
+          "property_id": "log_arctan_finite_radius",
+          "description": "ln(1+x)와 arctan x는 수렴반지름이 1로 유한하며, 끝점 포함 여부가 서로 다르다(ln(1+x)는 x=1 포함·x=-1 제외, arctan x는 양 끝점 모두 포함)."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.taylor_maclaurin_series",
+          "name_ko": "Taylor 급수와 Maclaurin 급수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.binomial_series_and_series_applications"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "recall_common_maclaurin_series",
+          "verb": "identify",
+          "description": "대표적인 함수의 Maclaurin 급수와 수렴구간을 기억하고 활용한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.common_maclaurin.ln_sign_confusion",
+          "title": "ln(1+x)와 -ln(1-x)의 부호 혼동",
+          "description": "ln(1+x)의 급수와 -ln(1-x)의 급수를 부호 구분 없이 같은 식으로 사용한다.",
+          "diagnosis_tag": "confuse_ln_1_plus_x_and_ln_1_minus_x_series",
+          "feedback": "-ln(1-x)=Σx^n/n이고 ln(1+x)=Σ(-1)^{n+1}x^n/n으로, x를 -x로 바꾼 관계이며 부호가 다르다."
+        },
+        {
+          "misconception_id": "calculus.common_maclaurin.assume_all_entire",
+          "title": "모든 대표 급수가 전체 실수에서 수렴한다고 가정",
+          "description": "ln(1+x)나 arctan x의 급수도 e^x처럼 모든 실수에서 수렴한다고 가정한다.",
+          "diagnosis_tag": "assume_all_common_series_converge_everywhere",
+          "feedback": "e^x, sin x, cos x는 모든 실수에서 수렴하지만, ln(1+x)와 arctan x는 수렴반지름이 1로 제한된다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "common_series_recall",
+          "series_convergence_interval_identification"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "interval"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "maclaurin_series",
+        "reference_table"
+      ]
+    },
+    {
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "order": 7,
+      "name_ko": "Taylor 정리와 오차 추정",
+      "definition": "Taylor 정리에 의해 f(x)=P_n(x)+R_n(x)이며, 나머지항은 Lagrange 형태로 R_n(x)=f^{(n+1)}(c)/(n+1)!·(x-a)^{n+1}(c는 a와 x 사이의 어떤 값)로 표현된다. 구간에서 |f^{(n+1)}(z)|≤M이면 |R_n(x)|≤M/(n+1)!·|x-a|^{n+1}(Taylor 부등식)로 오차의 상한을 추정할 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "taylor_theorem",
+          "name_ko": "Taylor 정리",
+          "role": "theorem",
+          "latex": "f(x)=P_n(x)+R_n(x)",
+          "cas": "P_n(x) + R_n(x)"
+        },
+        {
+          "formula_id": "lagrange_remainder",
+          "name_ko": "Lagrange 나머지항",
+          "role": "theorem",
+          "latex": "R_n(x)=\\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\\quad(c\\text{는 }a,x\\text{ 사이})",
+          "cas": "diff(f(x),x,n+1).subs(x,c)/factorial(n+1)*(x-a)**(n+1)"
+        },
+        {
+          "formula_id": "taylor_inequality",
+          "name_ko": "Taylor 부등식",
+          "role": "corollary",
+          "latex": "|f^{(n+1)}(z)|\\le M\\implies|R_n(x)|\\le\\frac{M}{(n+1)!}|x-a|^{n+1}",
+          "cas": "M/factorial(n+1)*Abs(x-a)**(n+1)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "m_bound_on_derivative",
+          "description": "Taylor 부등식을 쓰려면 관심 구간에서 (n+1)차 도함수의 상한 M을 알아야 한다.",
+          "rule": {
+            "property": "M_bound_on_n_plus_1_derivative_known",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "taylor_inequality_uses",
+          "description": "Taylor 부등식은 (1) Taylor 다항식의 최대오차 추정, (2) 필요한 차수 결정, (3) Taylor 급수가 실제 함수에 수렴함을 확인하는 데 사용된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.taylor_maclaurin_series",
+          "name_ko": "Taylor 급수와 Maclaurin 급수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "estimate_taylor_error",
+          "verb": "estimate",
+          "description": "Taylor 부등식으로 근사 오차의 상한을 구한다."
+        },
+        {
+          "objective_id": "determine_required_degree",
+          "verb": "calculate",
+          "description": "목표 오차 이내가 되도록 필요한 Taylor 다항식의 차수를 결정한다."
+        },
+        {
+          "objective_id": "verify_series_convergence_via_remainder",
+          "verb": "verify",
+          "description": "나머지항이 0으로 수렴함을 보여 Taylor 급수가 원래 함수와 일치함을 확인한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.taylor_remainder.wrong_derivative_order",
+          "title": "나머지항에 n차 도함수 사용",
+          "description": "R_n(x) 공식에 f^{(n)}(c) 대신 f^{(n+1)}(c)를 써야 하는데 n차 도함수를 사용한다.",
+          "diagnosis_tag": "use_wrong_derivative_order_in_remainder",
+          "feedback": "Lagrange 나머지항은 (n+1)차 도함수 f^{(n+1)}(c)를 사용하며, n차 도함수가 아니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "taylor_error_estimation",
+          "required_degree_determination"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "numerical_approximation"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "numeric_tolerance",
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "taylor_remainder",
+        "error_bound"
+      ]
+    },
+    {
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "order": 8,
+      "name_ko": "이항급수와 멱급수의 응용",
+      "definition": "이항급수는 (1+x)^r=Σ(r choose n)x^n(|x|<1)이며, 일반화된 이항계수는 (r choose n)=r(r-1)...(r-n+1)/n!이다. 알려진 멱급수에 변수 치환·상수배·합차·곱·항별 미분·적분을 적용해 새 급수를 만들 수 있고, 초등함수로 원시함수를 표현하기 어려운 적분이나 0/0 극한도 멱급수로 계산할 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "generalized_binomial_coefficient",
+          "name_ko": "일반화된 이항계수",
+          "role": "definition",
+          "latex": "\\binom{r}{n}=\\frac{r(r-1)(r-2)\\cdots(r-n+1)}{n!},\\qquad\\binom{r}{0}=1",
+          "cas": "binomial(r, n)"
+        },
+        {
+          "formula_id": "binomial_series",
+          "name_ko": "이항급수",
+          "role": "theorem",
+          "latex": "(1+x)^r=\\sum_{n=0}^\\infty\\binom{r}{n}x^n,\\qquad|x|<1",
+          "cas": "Sum(binomial(r,n)*x**n, (n,0,oo))"
+        },
+        {
+          "formula_id": "series_integration_example",
+          "name_ko": "멱급수를 이용한 적분 예시",
+          "role": "example",
+          "latex": "e^{-x^2}=\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n}}{n!}\\implies\\int e^{-x^2}dx=C+\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n+1}}{(2n+1)n!}",
+          "cas": "Integral(exp(-x**2), x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "binomial_series_general_radius",
+          "description": "이항급수의 일반적인 수렴반지름은 |x|<1이며, 끝점의 수렴 여부는 r의 값에 따라 따로 판단해야 한다.",
+          "rule": {
+            "property": "abs_x",
+            "operator": "less_than",
+            "value": 1
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "binomial_reduces_to_polynomial_for_nonneg_integer_r",
+          "description": "r이 음이 아닌 정수이면 이항계수가 어느 n을 넘으면 0이 되어 이항급수가 유한한 이항정리로 축소된다."
+        },
+        {
+          "property_id": "series_limits_via_leading_term",
+          "description": "함수의 Taylor 급수에서 가장 낮은 차수의 비영항을 이용하면 0/0 형태 극한의 주된 거동을 확인할 수 있다(예: x→0에서 e^x-1-x의 주된 항은 x²/2)."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.power_series_term_by_term_calculus",
+          "name_ko": "멱급수의 항별 미분·적분과 변수 치환",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.common_maclaurin_series",
+          "name_ko": "대표적인 Maclaurin 급수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "expand_binomial_series",
+          "verb": "construct",
+          "description": "주어진 r에 대해 이항급수를 전개한다."
+        },
+        {
+          "objective_id": "integrate_via_power_series",
+          "verb": "calculate",
+          "description": "초등함수로 원시함수를 구하기 어려운 함수를 멱급수의 항별 적분으로 근사·표현한다."
+        },
+        {
+          "objective_id": "evaluate_limit_via_series",
+          "verb": "calculate",
+          "description": "Taylor 급수의 최저차 비영항으로 부정형 극한을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.binomial_series.endpoint_assumed_uniform",
+          "title": "이항급수 끝점 수렴을 r과 무관하게 판단",
+          "description": "이항급수의 끝점(x=±1) 수렴 여부가 r 값과 무관하게 항상 같다고 가정한다.",
+          "diagnosis_tag": "assume_binomial_series_endpoint_convergence_independent_of_r",
+          "feedback": "이항급수의 끝점 수렴 여부는 지수 r의 값에 따라 달라지므로 매번 따로 판단해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "binomial_series_expansion",
+          "series_based_integration",
+          "series_based_limit_evaluation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_tolerance"
+        ]
+      },
+      "tags": [
+        "binomial_series",
+        "power_series_application"
+      ]
+    }
+  ]
+}

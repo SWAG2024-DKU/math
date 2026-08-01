@@ -1,0 +1,716 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "calculus_1",
+    "name_ko": "미분적분학 1"
+  },
+  "unit": {
+    "unit_id": "calc1_ch07_techniques_of_integration",
+    "name_ko": "적분법",
+    "order": 7,
+    "description": "부분적분, 삼각함수의 적분, 삼각치환, 부분분수, 이상적분까지 초등함수 공식표만으로 풀리지 않는 적분을 계산하는 고급 기법을 정리하는 단원이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "chapter07 Techniques of Integration.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 사항"
+    ]
+  },
+  "conventions": {
+    "independent_variable": "x",
+    "dependent_function": "f(x)",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "calculus.integration_by_parts",
+      "order": 1,
+      "name_ko": "부분적분",
+      "definition": "곱의 미분법칙에 대응하는 적분법으로, 치환법이 연쇄법칙에 대응하듯 부분적분은 곱법칙에 대응한다. ∫u dv=uv-∫v du 형태로, 어려운 적분을 더 쉬운 다른 적분으로 바꾼다.",
+      "formulas": [
+        {
+          "formula_id": "integration_by_parts",
+          "name_ko": "부분적분 공식",
+          "role": "theorem",
+          "latex": "\\int f(x)g'(x)\\,dx=f(x)g(x)-\\int g(x)f'(x)\\,dx,\\qquad\\int u\\,dv=uv-\\int v\\,du",
+          "cas": "f(x)*g(x) - Integral(g(x)*diff(f(x),x), x)"
+        },
+        {
+          "formula_id": "integration_by_parts_definite",
+          "name_ko": "정적분에 대한 부분적분",
+          "role": "theorem",
+          "latex": "\\int_a^bf(x)g'(x)\\,dx=\\Big[f(x)g(x)\\Big]_a^b-\\int_a^bg(x)f'(x)\\,dx",
+          "cas": "f(b)*g(b)-f(a)*g(a) - Integral(g(x)*diff(f(x),x), (x,a,b))"
+        },
+        {
+          "formula_id": "reduction_formula_sin",
+          "name_ko": "점화공식 예시(sin^n x)",
+          "role": "example",
+          "latex": "\\int\\sin^nx\\,dx=-\\frac1n\\cos x\\sin^{n-1}x+\\frac{n-1}n\\int\\sin^{n-2}x\\,dx",
+          "cas": "-cos(x)*sin(x)**(n-1)/n + (n-1)/n*Integral(sin(x)**(n-2), x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "u_dv_selection_criteria",
+          "description": "u, dv를 선택할 때: u는 미분했을 때 더 간단한(적어도 더 복잡하지 않은) 함수가 되어야 하고, dv는 원시함수 v를 구할 수 있어야 한다.",
+          "rule": {
+            "property": "u_simplifies_and_dv_integrable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "definite_needs_continuous_derivatives",
+          "description": "정적분 형태는 f', g'이 연속이어야 성립한다.",
+          "rule": {
+            "property": "f_prime_and_g_prime_continuous",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "derived_from_product_rule",
+          "description": "곱법칙 d/dx[f(x)g(x)]=f(x)g'(x)+g(x)f'(x)를 부정적분으로 표현하고 정리하면 부분적분 공식이 유도된다."
+        },
+        {
+          "property_id": "log_and_inverse_trig_as_u",
+          "description": "로그함수·역삼각함수처럼 도함수가 더 간단해지는 함수는 u로 선택하기 좋다(예: ∫ln x dx는 u=ln x, dv=dx)."
+        },
+        {
+          "property_id": "self_referential_equation_trick",
+          "description": "부분적분을 반복 적용해 원래 적분으로 되돌아오는 경우(예: ∫e^x sin x dx), 원래 적분을 미지수로 하는 방정식으로 보고 풀 수 있다."
+        },
+        {
+          "property_id": "reduction_formula_pattern",
+          "description": "점화공식은 거듭제곱의 지수를 하나씩 줄여가며 반복 적용해 최종적으로 기본 적분으로 귀결시키며, cos^n x, tan^n x, sec^n x, (ln x)^n, x^n e^x 등에도 유사하게 성립한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.product_rule",
+          "name_ko": "곱법칙",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.indefinite_integral",
+          "name_ko": "원시함수(부정적분)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.trigonometric_integrals"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "choose_u_and_dv",
+          "verb": "select",
+          "description": "주어진 적분에서 적절한 u와 dv를 선택한다."
+        },
+        {
+          "objective_id": "apply_integration_by_parts",
+          "verb": "apply",
+          "description": "부분적분 공식을 적용해 적분을 계산한다."
+        },
+        {
+          "objective_id": "solve_self_referential_integral",
+          "verb": "solve",
+          "description": "반복된 부분적분에서 원래 적분이 다시 나타나는 경우 방정식으로 풀어낸다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.integration_by_parts.wrong_u_choice",
+          "title": "u, dv를 잘못 선택해 더 복잡한 적분 생성",
+          "description": "미분하면 더 복잡해지는 함수를 u로 선택해 원래보다 어려운 적분을 만든다(예: ∫x sin x dx에서 u=sin x, dv=x dx로 선택).",
+          "diagnosis_tag": "wrong_u_dv_selection_in_integration_by_parts",
+          "feedback": "u는 미분하면 더 간단해지는 함수, dv는 원시함수를 구할 수 있는 함수로 선택해야 한다. 잘못 선택하면 더 어려운 적분이 나온다."
+        },
+        {
+          "misconception_id": "calculus.integration_by_parts.forget_sign",
+          "title": "부분적분 공식의 부호 누락",
+          "description": "∫u dv=uv+∫v du처럼 부호를 빠뜨린다.",
+          "diagnosis_tag": "forget_negative_sign_in_integration_by_parts",
+          "feedback": "부분적분 공식은 ∫u dv=uv-∫v du로, 두 번째 항에 음의 부호가 붙는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "integration_by_parts_application",
+          "reduction_formula_application",
+          "self_referential_integral_solving"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "integration_by_parts",
+        "reduction_formula"
+      ]
+    },
+    {
+      "concept_id": "calculus.trigonometric_integrals",
+      "order": 2,
+      "name_ko": "삼각함수의 적분",
+      "definition": "sin^m x cos^n x, tan^m x sec^n x 등 삼각함수가 결합된 적분을, 삼각함수 항등식으로 하나의 인수를 분리해 치환하거나 반각공식으로 전개해 계산하는 체계적인 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "sin_cos_power_odd",
+          "name_ko": "사인·코사인 거듭제곱(홀수 인수 분리)",
+          "role": "technique",
+          "latex": "\\cos^{2k+1}x=(1-\\sin^2x)^k\\cos x\\ (u=\\sin x),\\qquad\\sin^{2k+1}x=(1-\\cos^2x)^k\\sin x\\ (u=\\cos x)",
+          "cas": "(1-sin(x)**2)**k*cos(x)"
+        },
+        {
+          "formula_id": "sin_cos_power_even",
+          "name_ko": "사인·코사인 거듭제곱(모두 짝수: 반각공식)",
+          "role": "technique",
+          "latex": "\\sin^2x=\\tfrac12(1-\\cos2x),\\qquad\\cos^2x=\\tfrac12(1+\\cos2x)",
+          "cas": "(1-cos(2*x))/2"
+        },
+        {
+          "formula_id": "tan_sec_power",
+          "name_ko": "탄젠트·시컨트 거듭제곱",
+          "role": "technique",
+          "latex": "\\sec^{2k}x=(1+\\tan^2x)^{k-1}\\sec^2x\\ (u=\\tan x),\\qquad\\tan^{2k+1}x\\sec^nx=(\\sec^2x-1)^k\\sec^{n-1}x\\sec x\\tan x\\ (u=\\sec x)",
+          "cas": "(1+tan(x)**2)**(k-1)*sec(x)**2"
+        },
+        {
+          "formula_id": "tan_sec_basic_integrals",
+          "name_ko": "필수 보조 공식",
+          "role": "lemma",
+          "latex": "\\int\\tan x\\,dx=\\ln|\\sec x|+C,\\qquad\\int\\sec x\\,dx=\\ln|\\sec x+\\tan x|+C",
+          "cas": "log(Abs(sec(x)+tan(x)))"
+        },
+        {
+          "formula_id": "product_to_sum",
+          "name_ko": "곱을 합차로 바꾸는 공식",
+          "role": "identity",
+          "latex": "\\sin A\\cos B=\\tfrac12[\\sin(A-B)+\\sin(A+B)]",
+          "cas": "(sin(A-B)+sin(A+B))/2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "half_angle_only_when_both_even",
+          "description": "사인·코사인 거듭제곱이 둘 다 짝수인 경우에만 반각공식을 써야 한다. 홀수 인수가 하나라도 있으면 치환법이 더 간단하다.",
+          "rule": {
+            "property": "both_exponents_even",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "sec_proof_uses_multiply_trick",
+          "description": "sec x dx의 적분 공식은 분자·분모에 sec x+tan x를 곱하는 방법으로 증명된다.",
+          "rule": {
+            "property": "sec_integral_derivation_method",
+            "operator": "equals",
+            "value": "multiply_by_sec_plus_tan"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "cot_csc_analogous_to_tan_sec",
+          "description": "cot^m x csc^n x 형태는 항등식 1+cot^2x=csc^2x를 이용해 tan, sec의 경우와 같은 방식으로 다룰 수 있다."
+        },
+        {
+          "property_id": "sec_cubed_needs_integration_by_parts",
+          "description": "일반 지침에 해당하지 않는 조합(예: sec^3 x)은 부분적분이 필요하며, 도중에 원래 적분이 다시 나타나 방정식으로 풀어야 할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.trig_derivatives",
+          "name_ko": "삼각함수의 도함수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.substitution",
+          "name_ko": "치환법",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.integration_by_parts",
+        "calculus.trigonometric_substitution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "classify_trig_integral_case",
+          "verb": "classify",
+          "description": "삼각함수 적분의 거듭제곱 조합(홀수/짝수)에 따라 적절한 전략을 선택한다."
+        },
+        {
+          "objective_id": "compute_trig_integral",
+          "verb": "calculate",
+          "description": "치환 또는 반각공식으로 삼각함수 결합 적분을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.trig_integrals.half_angle_with_odd_power",
+          "title": "홀수 거듭제곱에도 반각공식 적용",
+          "description": "sin, cos 중 하나가 홀수 거듭제곱인데도 치환 대신 반각공식으로 전개를 시도해 계산이 불필요하게 복잡해진다.",
+          "diagnosis_tag": "apply_half_angle_formula_with_odd_power_present",
+          "feedback": "홀수 거듭제곱이 하나라도 있으면 그 인수 하나를 분리해 u=sin x(또는 cos x)로 치환하는 것이 반각공식보다 간단하다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "trig_power_integral_calculation",
+          "trig_integral_strategy_selection"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "trigonometric_integral",
+        "half_angle_formula"
+      ]
+    },
+    {
+      "concept_id": "calculus.trigonometric_substitution",
+      "order": 3,
+      "name_ko": "삼각치환",
+      "definition": "√(a²-x²), √(a²+x²), √(x²-a²) 형태의 근호가 있는 적분에서, x를 삼각함수의 식(x=a sinθ, a tanθ, a secθ)으로 역치환하여 근호를 삼각함수의 완전제곱 항등식으로 없애는 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "trig_sub_table",
+          "name_ko": "삼각치환표",
+          "role": "table",
+          "latex": "\\sqrt{a^2-x^2}:x=a\\sin\\theta;\\quad\\sqrt{a^2+x^2}:x=a\\tan\\theta;\\quad\\sqrt{x^2-a^2}:x=a\\sec\\theta",
+          "cas": "a*sin(theta)"
+        },
+        {
+          "formula_id": "ellipse_area",
+          "name_ko": "타원의 넓이",
+          "role": "application",
+          "latex": "A=\\pi ab\\quad(a=b=r\\text{이면 원의 넓이 }\\pi r^2)",
+          "cas": "pi*a*b"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "theta_range_for_one_to_one",
+          "description": "역치환이 가능하려면 θ↦x가 일대일함수여야 하므로, θ를 각 경우에 지정된 범위(√(a²-x²)는 -π/2≤θ≤π/2, √(a²+x²)는 -π/2<θ<π/2, √(x²-a²)는 0≤θ<π/2 또는 π≤θ<3π/2)로 제한해야 한다.",
+          "rule": {
+            "property": "theta_restricted_to_specified_range",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "complete_square_first",
+          "description": "근호 속이 완전제곱식이 아닌 경우(예: √(3-2x-x²))는 먼저 완전제곱식으로 고친 뒤 삼각치환을 적용한다.",
+          "rule": {
+            "property": "radicand_is_perfect_square_form",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "right_triangle_back_substitution",
+          "description": "치환 후 얻은 θ에 대한 식을 다시 x로 되돌리려면, θ를 한 각으로 갖는 직각삼각형을 그려 다른 삼각함수 값을 x로 표현하는 것이 표준적인 방법이다."
+        },
+        {
+          "property_id": "not_always_best_method",
+          "description": "삼각치환이 가능하더라도 항상 최선은 아니다: u=x²+4 같은 단순 치환으로 더 쉽게 풀리는 경우도 있으므로 먼저 더 간단한 방법이 있는지 확인해야 한다."
+        },
+        {
+          "property_id": "hyperbolic_substitution_alternative",
+          "description": "쌍곡선치환(x=a cosh t 또는 a sinh t)으로도 √(x²-a²), √(a²+x²) 형태를 대안적으로 처리할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.hyperbolic_functions",
+          "name_ko": "쌍곡선함수",
+          "importance": "recommended"
+        },
+        {
+          "concept_id": "calculus.substitution",
+          "name_ko": "치환법",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.trigonometric_integrals"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "select_trig_substitution",
+          "verb": "select",
+          "description": "근호의 형태에 맞는 삼각치환(sin, tan, sec)을 선택한다."
+        },
+        {
+          "objective_id": "convert_back_via_right_triangle",
+          "verb": "transform",
+          "description": "직각삼각형을 그려 θ에 대한 결과를 x에 대한 식으로 되돌린다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.trig_sub.wrong_case_selection",
+          "title": "삼각치환표의 세 경우 혼동",
+          "description": "√(a²+x²)에 x=a sinθ를, 또는 √(a²-x²)에 x=a tanθ를 적용하는 등 근호 속 부호에 맞지 않는 치환을 선택한다.",
+          "diagnosis_tag": "wrong_trig_substitution_case",
+          "feedback": "근호 속 부호와 항의 순서(a²-x², a²+x², x²-a²)에 따라 sin, tan, sec 중 정해진 치환을 써야 한다."
+        },
+        {
+          "misconception_id": "calculus.trig_sub.skip_complete_square",
+          "title": "완전제곱 정리 없이 삼각치환 시도",
+          "description": "√(3-2x-x²)처럼 완전제곱 형태가 아닌 근호에 곧바로 삼각치환표를 적용하려 한다.",
+          "diagnosis_tag": "apply_trig_substitution_without_completing_square",
+          "feedback": "근호 속이 a²±x² 또는 x²-a² 형태가 아니면 먼저 완전제곱식으로 정리한 뒤 삼각치환을 적용해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "trig_substitution_selection",
+          "trig_substitution_integral_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "trigonometric_substitution"
+      ]
+    },
+    {
+      "concept_id": "calculus.partial_fractions",
+      "order": 4,
+      "name_ko": "부분분수에 의한 유리함수의 적분",
+      "definition": "유리함수를 이미 적분법을 아는 더 간단한 분수들의 합(부분분수)으로 분해해 적분하는 방법이다. 분모 Q(x)는 항상 일차인자와 기약 이차인자의 곱으로 인수분해되며, 각 인자의 반복 여부(경우 I~IV)에 따라 분해 형태가 달라진다.",
+      "formulas": [
+        {
+          "formula_id": "improper_fraction_division",
+          "name_ko": "가분수의 다항식 나눗셈",
+          "role": "preprocessing",
+          "latex": "f(x)=\\frac{P(x)}{Q(x)}=S(x)+\\frac{R(x)}{Q(x)},\\qquad\\deg R<\\deg Q",
+          "cas": "div(P(x), Q(x))"
+        },
+        {
+          "formula_id": "partial_fraction_case1",
+          "name_ko": "경우 I: 서로 다른 일차인수",
+          "role": "decomposition",
+          "latex": "\\frac{R(x)}{Q(x)}=\\frac{A_1}{a_1x+b_1}+\\cdots+\\frac{A_k}{a_kx+b_k}",
+          "cas": "apart(R(x)/Q(x), x)"
+        },
+        {
+          "formula_id": "partial_fraction_case2",
+          "name_ko": "경우 II: 중복된 일차인수",
+          "role": "decomposition",
+          "latex": "\\frac{A_1}{a_1x+b_1}+\\frac{A_2}{(a_1x+b_1)^2}+\\cdots+\\frac{A_r}{(a_1x+b_1)^r}",
+          "cas": "apart(R(x)/Q(x), x)"
+        },
+        {
+          "formula_id": "partial_fraction_case3_4",
+          "name_ko": "경우 III·IV: 기약 이차인수(비중복/중복)",
+          "role": "decomposition",
+          "latex": "\\frac{Ax+B}{ax^2+bx+c}\\ (\\text{비중복}),\\qquad\\sum_{i=1}^r\\frac{A_ix+B_i}{(ax^2+bx+c)^i}\\ (\\text{중복})",
+          "cas": "apart(R(x)/Q(x), x)"
+        },
+        {
+          "formula_id": "linear_factor_special_integral",
+          "name_ko": "일차인수의 특수 적분 공식",
+          "role": "corollary",
+          "latex": "\\int\\frac{dx}{x^2-a^2}=\\frac{1}{2a}\\ln\\left|\\frac{x-a}{x+a}\\right|+C",
+          "cas": "1/(2*a)*log(Abs((x-a)/(x+a)))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "proper_fraction_required",
+          "description": "진분수(deg R<deg Q)여야 부분분수 분해가 바로 적용되며, 가분수는 먼저 다항식 나눗셈을 해야 한다.",
+          "rule": {
+            "property": "deg_R",
+            "operator": "less_than",
+            "value": "deg_Q"
+          }
+        },
+        {
+          "condition_id": "irreducible_quadratic_discriminant",
+          "description": "경우 III·IV의 이차인수 ax²+bx+c는 기약(판별식 b²-4ac<0)이어야 한다.",
+          "rule": {
+            "property": "discriminant",
+            "operator": "less_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "coefficient_determination_methods",
+          "description": "계수 A,B,C,...를 구하는 두 방법: (1) 양변의 다항식 계수를 비교해 연립방정식을 세우는 방법, (2) 분모를 0으로 만드는 x값을 대입해 일부 항을 소거하는 방법."
+        },
+        {
+          "property_id": "quadratic_case_splits_log_and_arctan",
+          "description": "경우 III·IV의 이차인수 항은 분모를 완전제곱식으로 고친 뒤 치환하면 로그함수 항과 tan⁻¹ 항으로 나뉘어 적분된다."
+        },
+        {
+          "property_id": "sometimes_direct_substitution_simpler",
+          "description": "부분분수로 분해하지 않고 직접 치환하는 것이 더 쉬운 경우도 있다(예: ∫(x²+1)/(x(x²+3))dx는 u=x³+3x가 더 간단)."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.logarithmic_derivative",
+          "name_ko": "로그함수의 도함수와 로그 미분법",
+          "importance": "recommended"
+        },
+        {
+          "concept_id": "calculus.inverse_trig_derivatives",
+          "name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "decompose_rational_function",
+          "verb": "transform",
+          "description": "유리함수를 경우에 맞는 부분분수 형태로 분해한다."
+        },
+        {
+          "objective_id": "solve_for_coefficients",
+          "verb": "calculate",
+          "description": "계수비교법 또는 대입법으로 부분분수의 미정계수를 구한다."
+        },
+        {
+          "objective_id": "integrate_partial_fractions",
+          "verb": "calculate",
+          "description": "분해된 부분분수를 각각 적분해 원래 유리함수의 원시함수를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.partial_fractions.skip_improper_check",
+          "title": "가분수 확인 없이 바로 분해 시도",
+          "description": "분자 차수가 분모 차수 이상인데도 다항식 나눗셈 없이 바로 부분분수 분해를 적용한다.",
+          "diagnosis_tag": "skip_polynomial_division_before_partial_fractions",
+          "feedback": "부분분수 분해는 진분수에서만 바로 적용된다. 가분수는 먼저 다항식 나눗셈으로 몫과 나머지를 분리해야 한다."
+        },
+        {
+          "misconception_id": "calculus.partial_fractions.wrong_case_for_repeated_factor",
+          "title": "중복 인수에 비중복 형태 적용",
+          "description": "(x-1)² 같은 중복된 일차인수에 A/(x-1) 하나의 항만 배정하고 A/(x-1)²을 빠뜨린다.",
+          "diagnosis_tag": "missing_repeated_factor_terms",
+          "feedback": "r번 중복된 일차인수는 A_1/(ax+b)부터 A_r/(ax+b)^r까지 r개의 항을 모두 포함해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "partial_fraction_decomposition",
+          "partial_fraction_integration"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "partial_fractions",
+        "rational_function_integration"
+      ]
+    },
+    {
+      "concept_id": "calculus.improper_integral",
+      "order": 5,
+      "name_ko": "이상적분",
+      "definition": "정적분의 정의를 확장해, 적분구간이 무한하거나(형태 1) 피적분함수가 구간 안의 어떤 점에서 무한대로 발산하는 경우(형태 2)를 극한으로 다룬다. 극한이 유한하게 존재하면 수렴, 존재하지 않으면 발산한다고 한다.",
+      "formulas": [
+        {
+          "formula_id": "improper_type1",
+          "name_ko": "형태 1: 무한구간",
+          "role": "definition",
+          "latex": "\\int_a^\\infty f(x)\\,dx=\\lim_{t\\to\\infty}\\int_a^tf(x)\\,dx,\\qquad\\int_{-\\infty}^\\infty f(x)\\,dx=\\int_{-\\infty}^af\\,dx+\\int_a^\\infty f\\,dx",
+          "cas": "limit(Integral(f(x),(x,a,t)), t, oo)"
+        },
+        {
+          "formula_id": "p_integral_test",
+          "name_ko": "p-적분 판정",
+          "role": "test",
+          "latex": "\\int_1^\\infty\\frac{1}{x^p}\\,dx:\\ p>1\\implies\\text{수렴}\\left(=\\frac1{p-1}\\right),\\quad p\\le1\\implies\\text{발산}",
+          "cas": "limit(Integral(1/x**p, (x,1,t)), t, oo)"
+        },
+        {
+          "formula_id": "improper_type2",
+          "name_ko": "형태 2: 불연속 피적분함수",
+          "role": "definition",
+          "latex": "f\\text{가 }b\\text{에서 불연속}:\\int_a^bf(x)\\,dx=\\lim_{t\\to b^-}\\int_a^tf(x)\\,dx",
+          "cas": "limit(Integral(f(x),(x,a,t)), t, b, '-')"
+        },
+        {
+          "formula_id": "comparison_theorem",
+          "name_ko": "비교 정리",
+          "role": "theorem",
+          "latex": "f(x)\\ge g(x)\\ge0\\ (x\\ge a):\\ \\int_a^\\infty f\\,dx\\text{ 수렴}\\implies\\int_a^\\infty g\\,dx\\text{ 수렴};\\quad\\int_a^\\infty g\\,dx\\text{ 발산}\\implies\\int_a^\\infty f\\,dx\\text{ 발산}",
+          "cas": "converges(Integral(g(x),(x,a,oo)))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "type2_locate_discontinuity_first",
+          "description": "형태 2에서는 반드시 피적분함수의 불연속점(수직점근선)을 먼저 파악해야 한다. 구간 내부의 불연속점을 놓치고 평범한 정적분처럼 계산하면 잘못된 값을 얻는다.",
+          "rule": {
+            "property": "discontinuity_identified_before_evaluation",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "comparison_needs_nonnegative",
+          "description": "비교 정리는 f, g가 x≥a에서 연속이고 f(x)≥g(x)≥0일 때 적용된다.",
+          "rule": {
+            "property": "f_g_nonnegative_and_continuous",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "comparison_only_determines_convergence",
+          "description": "비교 정리는 수렴·발산만 판정할 뿐 적분의 정확한 값은 알려주지 않으며, 역은 성립하지 않는다(더 작은 함수가 수렴해도 더 큰 함수는 발산할 수 있다)."
+        },
+        {
+          "property_id": "p_boundary_diverges",
+          "description": "p=1은 경계값으로, p적분은 p=1에서 발산한다(등호가 발산 쪽에 포함됨)."
+        },
+        {
+          "property_id": "internal_discontinuity_split",
+          "description": "구간 내부 c에서 불연속이면 c를 기준으로 구간을 나누어 각각 이상적분으로 계산하고, 둘 다 수렴할 때만 전체가 수렴한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.limit_at_infinity_and_horizontal_asymptote",
+          "name_ko": "무한대에서의 극한과 수평점근선",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.fundamental_theorem_of_calculus_part2",
+          "name_ko": "미적분학의 기본 정리 2부(정적분의 계산)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "classify_improper_integral_type",
+          "verb": "classify",
+          "description": "주어진 적분이 형태 1(무한구간)인지 형태 2(불연속)인지 판별한다."
+        },
+        {
+          "objective_id": "evaluate_improper_integral",
+          "verb": "calculate",
+          "description": "극한을 이용해 이상적분의 수렴값을 계산하거나 발산을 판정한다."
+        },
+        {
+          "objective_id": "apply_comparison_theorem",
+          "verb": "apply",
+          "description": "비교 정리로 정확한 값을 구하기 어려운 이상적분의 수렴·발산을 판정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.improper_integral.miss_interior_discontinuity",
+          "title": "구간 내부의 불연속점 누락",
+          "description": "∫[0,3] dx/(x-1)처럼 구간 내부에 불연속점(x=1)이 있는데도 양 끝점만 확인하고 평범한 정적분으로 계산한다.",
+          "diagnosis_tag": "miss_interior_discontinuity_in_improper_integral",
+          "feedback": "피적분함수가 구간 전체에서 연속인지 반드시 먼저 확인해야 하며, 내부에 불연속점이 있으면 그 점을 기준으로 구간을 나누어 각각 이상적분으로 다루어야 한다."
+        },
+        {
+          "misconception_id": "calculus.improper_integral.comparison_converse",
+          "title": "비교 정리의 역을 참으로 오해",
+          "description": "더 작은 함수가 수렴한다는 사실만으로 더 큰 함수도 수렴한다고 결론짓는다.",
+          "diagnosis_tag": "assume_comparison_theorem_converse",
+          "feedback": "비교 정리는 더 큰 함수가 수렴하면 더 작은 함수도 수렴하고, 더 작은 함수가 발산하면 더 큰 함수도 발산한다는 방향으로만 성립하며, 그 역은 일반적으로 성립하지 않는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "improper_integral_type_classification",
+          "improper_integral_evaluation",
+          "comparison_theorem_application"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "boolean",
+          "classification"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_tolerance"
+        ]
+      },
+      "tags": [
+        "improper_integral",
+        "comparison_theorem",
+        "p_integral"
+      ]
+    }
+  ]
+}

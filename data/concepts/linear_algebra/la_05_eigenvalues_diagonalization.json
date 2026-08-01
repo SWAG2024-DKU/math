@@ -1,0 +1,764 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "linear_algebra",
+    "name_ko": "선형대수학"
+  },
+  "unit": {
+    "unit_id": "la_05_eigenvalues_diagonalization",
+    "name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+    "order": 5,
+    "description": "선형변환 시 방향은 변하지 않고 스케일만 변하는 고유한 축을 분석한다. 복잡한 행렬을 대각화하여 연산을 단순화하고 대칭행렬의 직교 성질과 이차 형식의 주축을 규명한다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "05_선형대수학_PART5.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "matrix_variable": "A, D, P, Q, X",
+    "vector_variable": "u, v, x, b",
+    "scalar_variable": "c, lambda, k",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "la.eigen.eigenvalue",
+      "order": 1,
+      "name_ko": "특성방정식과 고윳값(Eigenvalue) 계산",
+      "definition": "정사각행렬 A에 의한 변환 결과가 자기 자신의 스칼라배가 되도록 하는 특정 스칼라 값을 고윳값이라 하며, det(A - lambda I) = 0을 통해 특성다항식의 근을 찾는 알고리즘이다.",
+      "formulas": [
+        {
+          "formula_id": "eigenvalue_definition",
+          "name_ko": "고윳값의 정의",
+          "role": "definition",
+          "latex": "A\\mathbf{x} = \\lambda\\mathbf{x}",
+          "cas": "Eq(A * x, lambda_val * x)"
+        },
+        {
+          "formula_id": "characteristic_equation",
+          "name_ko": "특성방정식",
+          "role": "definition",
+          "latex": "\\det(A - \\lambda I) = 0",
+          "cas": "det(A - lambda_val * Eye(A.shape[0])) == 0"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "square_matrix_for_eigen",
+          "description": "행렬 A는 반드시 n x n 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "is_square_matrix",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "trace_and_determinant_relation",
+          "description": "고윳값들의 총합은 대각합(Trace)과 같고, 총곱은 행렬식(det(A))과 일치한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.determinant.cofactor",
+          "name_ko": "행렬식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.identity_matrix",
+          "name_ko": "항등행렬",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.polynomial_roots",
+          "name_ko": "다항식의 근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.eigenvector"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_eigenvalues",
+          "verb": "calculate",
+          "description": "특성방정식을 풀어 고윳값을 산출한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.eigenvalue.dimension_mismatch",
+          "title": "차원 붕괴 연산",
+          "description": "A - lambda I를 계산할 때 항등행렬 I를 곱하지 않고 A - lambda로 표기하여 행렬과 스칼라를 직접 뺀다.",
+          "diagnosis_tag": "matrix_scalar_subtraction_error",
+          "feedback": "스칼라 lambda는 대각 성분에만 빼야 하므로 반드시 항등행렬 I를 곱한 A - lambda I 형태로 연산해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "eigenvalue_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar_list"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "characteristic_polynomial_check"
+        ]
+      },
+      "tags": [
+        "eigenvalue",
+        "characteristic_equation",
+        "trace",
+        "determinant"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.eigenvector",
+      "order": 2,
+      "name_ko": "고유벡터(Eigenvector) 및 고유공간(Eigenspace) 구하기",
+      "definition": "산출된 고윳값을 (A - lambda I)x = 0 동차방정식에 대입하여 도출한 영벡터가 아닌 해벡터를 고유벡터라 하며, 이 해공간 전체를 고유공간이라 한다.",
+      "formulas": [
+        {
+          "formula_id": "eigenspace_definition",
+          "name_ko": "고유공간 정의",
+          "role": "definition",
+          "latex": "E_\\lambda = N(A - \\lambda I)",
+          "cas": "null_space(A - lambda_val * Eye(A.shape[0]))"
+        },
+        {
+          "formula_id": "geometric_multiplicity",
+          "name_ko": "기하적 중복도",
+          "role": "formula",
+          "latex": "\\dim(E_\\lambda) = n - \\text{Rank}(A - \\lambda I)",
+          "cas": "n - rank(A - lambda_val * Eye(n))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "no_zero_eigenvector",
+          "description": "도출된 기저 벡터는 절대로 영벡터가 되어서는 안 된다.",
+          "rule": {
+            "property": "is_nonzero_vector",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "multiplicity_bound",
+          "description": "항상 1 <= 기하적 중복도 <= 대수적 중복도 관계가 성립한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.space.null_space",
+          "name_ko": "영공간 기저 추출",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.space.rank_nullity",
+          "name_ko": "랭크-차원 정리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.eigen.eigenvalue",
+          "name_ko": "고윳값",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.diagonalization"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_eigenvectors",
+          "verb": "calculate",
+          "description": "고윳값에 대응하는 고유벡터와 고유공간의 기저를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.eigenvector.zero_vector_error",
+          "title": "영벡터 고유벡터화",
+          "description": "시스템의 유일해로 자명해(x = 0)가 나왔을 때 이를 고유벡터로 제출한다.",
+          "diagnosis_tag": "zero_vector_as_eigenvector",
+          "feedback": "고유벡터는 정의상 영벡터가 될 수 없습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "eigenvector_calculation"
+        ],
+        "supported_answer_types": [
+          "vector_list"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "matrix_multiplication_zero_check"
+        ]
+      },
+      "tags": [
+        "eigenvector",
+        "eigenspace",
+        "geometric_multiplicity"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.diagonalization",
+      "order": 3,
+      "name_ko": "행렬의 대각화 (Diagonalization)",
+      "definition": "행렬 A에 기저 변환을 적용하여 대각 성분 이외에는 모두 0인 대각행렬 D로 단순화하는 기법으로, A = PDP^-1 형태로 분해한다.",
+      "formulas": [
+        {
+          "formula_id": "diagonalization_formula",
+          "name_ko": "대각화 분해식",
+          "role": "definition",
+          "latex": "A = P D P^{-1}",
+          "cas": "Eq(A, P * D * P.inv())"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "n_linearly_independent_eigenvectors",
+          "description": "n x n 행렬이 대각화되려면 n개의 선형독립인 고유벡터를 확보해야 한다.",
+          "rule": {
+            "property": "has_n_linearly_independent_eigenvectors",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "distinct_eigenvalues_diagonalizable",
+          "description": "서로 다른 n개의 실수 고윳값을 가지면 무조건 대각화 가능하다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.space.change_of_basis",
+          "name_ko": "기저 변환",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.matrix.inverse_gauss_jordan",
+          "name_ko": "가역행렬",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.space.linear_independence",
+          "name_ko": "선형독립",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.powers"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "perform_diagonalization",
+          "verb": "calculate",
+          "description": "행렬을 대각화하여 P와 D 행렬을 도출한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.diagonalization.index_mismatch",
+          "title": "P와 D의 인덱스 불일치",
+          "description": "전이행렬 P의 열벡터 배치 순서와 D의 고윳값 배치 순서를 짝지어 매핑하지 않고 무작위로 섞는다.",
+          "diagnosis_tag": "diagonalization_mapping_error",
+          "feedback": "P의 각 열에 있는 고유벡터와 D의 대각 성분에 있는 고윳값의 인덱스는 반드시 일치해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "matrix_diagonalization"
+        ],
+        "supported_answer_types": [
+          "matrix_pair"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "matrix_equivalence"
+        ]
+      },
+      "tags": [
+        "diagonalization",
+        "transition_matrix",
+        "eigenvector_matrix"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.powers",
+      "order": 4,
+      "name_ko": "행렬 거듭제곱 A^k 및 행렬 지수함수 계산",
+      "definition": "대각화된 D 행렬의 거듭제곱 성질을 활용하여 극단적으로 큰 차수의 행렬 곱 A^k를 O(1) 수준의 복잡도로 계산하는 응용이다.",
+      "formulas": [
+        {
+          "formula_id": "matrix_power_formula",
+          "name_ko": "행렬의 거듭제곱",
+          "role": "formula",
+          "latex": "A^k = P D^k P^{-1}",
+          "cas": "P * (D**k) * P.inv()"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "matrix_must_be_diagonalizable",
+          "description": "초기 행렬 A가 반드시 대각화 가능해야 한다.",
+          "rule": {
+            "property": "is_diagonalizable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "dominant_eigenvalue_behavior",
+          "description": "시간이 무한히 흐를 때 시스템의 최종 수렴 상태는 절댓값이 가장 큰 고윳값에 의해 지배된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.diagonalization",
+          "name_ko": "대각화 분해",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.symmetric_diagonalization"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_matrix_power",
+          "verb": "calculate",
+          "description": "대각화를 이용하여 행렬의 거듭제곱을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.powers.distribution_error",
+          "title": "전이행렬의 거듭제곱 누적 오류",
+          "description": "A^k를 전개할 때 P^k D^k (P^-1)^k로 괄호를 풀어버려 상쇄 원리를 파괴한다.",
+          "diagnosis_tag": "matrix_power_distribution_error",
+          "feedback": "중간의 P^-1 P가 항등행렬로 상쇄되므로 P D^k P^-1 형태로 계산해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "matrix_power_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "matrix_equivalence"
+        ]
+      },
+      "tags": [
+        "matrix_powers",
+        "dynamical_system",
+        "diagonalization"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.symmetric_diagonalization",
+      "order": 5,
+      "name_ko": "대칭행렬의 직교 대각화 (Orthogonal Diagonalization)",
+      "definition": "실수 대칭행렬은 고유벡터들이 100% 직교하므로 정규직교행렬 Q를 이용하여 A = QDQ^T로 더 견고하게 대각화하는 알고리즘이다.",
+      "formulas": [
+        {
+          "formula_id": "orthogonal_diagonalization_formula",
+          "name_ko": "직교 대각화 분해",
+          "role": "definition",
+          "latex": "A = Q D Q^T, \\quad Q^{-1} = Q^T",
+          "cas": "Eq(A, Q * D * Q.T)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "must_be_real_symmetric",
+          "description": "연산 대상 행렬은 반드시 실수 대칭행렬(A = A^T)이어야 한다.",
+          "rule": {
+            "property": "is_real_symmetric",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "real_eigenvalues_guaranteed",
+          "description": "실수 대칭행렬의 고윳값은 무조건 실수로만 도출되며 중근이 발생해도 대각화가 100% 보장된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.matrix.transpose_symmetric",
+          "name_ko": "대칭행렬",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.orthonormal_set",
+          "name_ko": "정규직교집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.gram_schmidt",
+          "name_ko": "그람-슈미트 직교화",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.eigen.diagonalization",
+          "name_ko": "대각화",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.spectral_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_orthogonal_diagonalization",
+          "verb": "calculate",
+          "description": "실수 대칭행렬의 직교 대각화를 수행한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.symmetric_diagonalization.gram_schmidt_omission",
+          "title": "단일 고유공간 내부의 정규화 누락",
+          "description": "중복 고윳값에서 도출된 기저 벡터들이 서로 수직이 아님에도 그람-슈미트를 거치지 않고 Q에 넣는다.",
+          "diagnosis_tag": "missing_gram_schmidt_for_repeated_eigenvalues",
+          "feedback": "중근에 해당하는 고유공간 내부의 벡터들은 그람-슈미트 직교화를 통해 수직하게 만들어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "orthogonal_diagonalization_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix_pair"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "orthogonal_matrix_check"
+        ]
+      },
+      "tags": [
+        "orthogonal_diagonalization",
+        "symmetric_matrix",
+        "spectral_property"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.spectral_theorem",
+      "order": 6,
+      "name_ko": "스펙트럼 정리 (Spectral Theorem)",
+      "definition": "실수 대칭행렬 A를 각 정규직교 고유벡터들이 스팬하는 1차원 부분공간으로의 사영 행렬 조각들로 완전 분해하여 선형결합 형태로 합산하는 이론이다.",
+      "formulas": [
+        {
+          "formula_id": "spectral_decomposition_formula",
+          "name_ko": "스펙트럼 분해",
+          "role": "definition",
+          "latex": "A = \\lambda_1 (\\mathbf{q}_1 \\mathbf{q}_1^T) + \\cdots + \\lambda_n (\\mathbf{q}_n \\mathbf{q}_n^T)",
+          "cas": "sum(eigenvals[i] * Outer(q_i, q_i) for i in range(n))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "orthonormal_basis_for_spectral",
+          "description": "고유벡터 집합은 반드시 크기가 1인 정규직교 기저로 구성되어야 한다.",
+          "rule": {
+            "property": "basis_is_orthonormal",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "pca_foundation",
+          "description": "주성분 분석(PCA) 등 차원 축소의 이론적 뼈대가 된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.symmetric_diagonalization",
+          "name_ko": "직교 대각화",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.projection",
+          "name_ko": "부분공간 사영행렬",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.quadratic_forms"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_spectral_decomposition",
+          "verb": "calculate",
+          "description": "대칭행렬의 스펙트럼 분해를 수행한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.spectral_theorem.outer_vs_inner_confusion",
+          "title": "내적과 외적의 텐서 혼동",
+          "description": "랭크 1 사영행렬을 만드는 외적 식 q_i q_i^T를 스칼라 내적 식 q_i^T q_i로 치환한다.",
+          "diagnosis_tag": "outer_inner_product_confusion",
+          "feedback": "사영행렬 조각은 열벡터와 행벡터의 곱인 외적(Outer product) 형태여야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "spectral_decomposition_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix_list"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "matrix_equivalence"
+        ]
+      },
+      "tags": [
+        "spectral_theorem",
+        "spectral_decomposition",
+        "outer_product"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.quadratic_forms",
+      "order": 7,
+      "name_ko": "이차 형식 (Quadratic Forms)과 주축 정리",
+      "definition": "x^T A x 꼴로 표현되는 동차 2차 다항식을 나타내며, 직교 대각화를 통해 혼합항을 소거하고 주축을 직교 좌표계에 정렬하는 과정이다.",
+      "formulas": [
+        {
+          "formula_id": "quadratic_form_definition",
+          "name_ko": "이차 형식의 대수적 표현",
+          "role": "definition",
+          "latex": "Q(\\mathbf{x}) = \\mathbf{x}^T A \\mathbf{x} = \\sum_{i,j} a_{ij} x_i x_j",
+          "cas": "x.T * A * x"
+        },
+        {
+          "formula_id": "principal_axes_theorem",
+          "name_ko": "주축 변환",
+          "role": "formula",
+          "latex": "Q(\\mathbf{y}) = \\lambda_1 y_1^2 + \\cdots + \\lambda_n y_n^2",
+          "cas": "y.T * D * y"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "matrix_must_be_symmetric_for_quadratic",
+          "description": "중앙 행렬 A는 반드시 대칭행렬(a_ij = a_ji)로 세팅되어야 한다.",
+          "rule": {
+            "property": "is_symmetric_matrix",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "cross_product_elimination",
+          "description": "혼합항을 소거하여 고윳값이 각 축의 팽창 계수가 되는 표준 기하 도형으로 정렬한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.symmetric_diagonalization",
+          "name_ko": "대칭행렬의 직교 대각화",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.positive_definite"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "perform_principal_axes_transform",
+          "verb": "calculate",
+          "description": "이차 형식의 주축 변환을 수행하고 혼합항을 소거한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.quadratic_forms.coefficient_split_error",
+          "title": "대칭행렬 텐서 분할 누락",
+          "description": "혼합항 계수를 대칭행렬 성분에 반반씩 나누어 담지 않고 한쪽에 몰아넣는다.",
+          "diagnosis_tag": "symmetric_coefficient_split_error",
+          "feedback": "혼합항 계수는 a_12와 a_21 자리에 정확히 절반씩 나누어 대칭 구조를 유지해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "quadratic_form_transformation"
+        ],
+        "supported_answer_types": [
+          "matrix",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "quadratic_form_equivalence"
+        ]
+      },
+      "tags": [
+        "quadratic_forms",
+        "principal_axes_theorem",
+        "cross_product"
+      ]
+    },
+    {
+      "concept_id": "la.eigen.positive_definite",
+      "order": 8,
+      "name_ko": "양의 정부호 행렬 (Positive Definite Matrix) 판정",
+      "definition": "영벡터가 아닌 모든 입력 x에 대해 이차 형식 x^T A x의 값이 항상 양수가 되도록 보장하는 대칭행렬의 극값 안정성 판정 기준이다.",
+      "formulas": [
+        {
+          "formula_id": "positive_definite_definition",
+          "name_ko": "양의 정부호 조건",
+          "role": "definition",
+          "latex": "\\mathbf{x}^T A \\mathbf{x} > 0 \\quad (\\forall \\mathbf{x} \\neq \\mathbf{0})",
+          "cas": "all_eigenvalues_positive(A)"
+        },
+        {
+          "formula_id": "principal_minor_criterion",
+          "name_ko": "주소행렬식 판정",
+          "role": "formula",
+          "latex": "\\Delta_k > 0 \\quad (k = 1, \\dots, n)",
+          "cas": "all(principal_minor(A, k) > 0)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "matrix_must_be_symmetric_for_pd",
+          "description": "해당 판정법들은 행렬 A가 실수 대칭행렬일 때만 성립한다.",
+          "rule": {
+            "property": "is_real_symmetric",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "positive_definite_invertibility",
+          "description": "양의 정부호 행렬은 무조건 가역행렬이며 역행렬 역시 양의 정부호이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.quadratic_forms",
+          "name_ko": "이차 형식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.eigen.eigenvalue",
+          "name_ko": "고윳값",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.determinant.cofactor",
+          "name_ko": "소행렬식",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.symmetric_diagonalization"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "test_positive_definite",
+          "verb": "evaluate",
+          "description": "주어진 대칭행렬이 양의 정부호인지 판정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.eigen.positive_definite.diagonal_sign_error",
+          "title": "대각 성분 직관 오류",
+          "description": "대칭행렬의 대각선 성분들이 모두 양수라고 해서 전체 행렬이 무조건 양의 정부호일 것이라고 단정한다.",
+          "diagnosis_tag": "diagonal_elements_only_error",
+          "feedback": "대각 성분이 양수여도 비대각 성분의 영향력 때문에 음의 고윳값이 발생할 수 있으므로 고윳값이나 주소행렬식을 직접 확인해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "positive_definite_test"
+        ],
+        "supported_answer_types": [
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "eigenvalue_sign_check"
+        ]
+      },
+      "tags": [
+        "positive_definite",
+        "quadratic_form",
+        "principal_minor",
+        "stability"
+      ]
+    }
+  ]
+}

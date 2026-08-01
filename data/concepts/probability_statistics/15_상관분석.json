@@ -1,0 +1,2864 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "probability_statistics",
+    "name_ko": "확률과 통계"
+  },
+  "unit": {
+    "unit_id": "ps_15_correlation",
+    "name_ko": "상관분석",
+    "order": 15,
+    "description": "상관분석에서 필요한 핵심 개념과 공식을 정리한다. 계산식뿐 아니라 적용 조건과 해석상의 주의점을 함께 확인하는 것이 중요하다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "15_correlation_analysis.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "random_variable": "X",
+    "sample_notation": [
+      "X1",
+      "X2",
+      "...",
+      "Xn"
+    ],
+    "population_parameters": [
+      "mu",
+      "sigma^2",
+      "p",
+      "theta"
+    ],
+    "formula_display": "latex",
+    "formula_computation": "hybrid_symbolic_numeric_and_rule_verified",
+    "result_classification": [
+      "definition",
+      "exact",
+      "asymptotic",
+      "approximation",
+      "bound",
+      "empirical_criterion"
+    ],
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "ps.correlation.kendall_tau_a",
+      "order": 1,
+      "name_ko": "Kendall τ-a",
+      "definition": "일치쌍과 불일치쌍의 차이를 전체 쌍 수로 나눈 동점 미보정 Kendall 순위상관계수다. 동점이 있어도 계산할 수 있지만 동점을 보정하지 않는다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.kendall_tau_a.formula_01",
+          "name_ko": "상관계수",
+          "role": "correlation_coefficient",
+          "latex": "\\tau=\\frac{C-D}{\\binom n2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.kendall_tau_a.condition_01",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.kendall_tau_a.condition_02",
+          "description": "$C$와 $D$는 동일한 $n$개 쌍에서 계산한 유효한 일치쌍·불일치쌍 수여야 한다.",
+          "rule": {
+            "property": "concordant_discordant_counts_valid",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.kendall_tau_a.condition_03",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.kendall_tau_a.property_01",
+          "description": "동점이 있어도 τ-a는 계산할 수 있지만 동점 보정을 하지 않으므로, 동점이 있는 자료에서는 τ-b를 우선 고려한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.kendall_correlation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.kendall_tau_a.objective_01",
+          "verb": "apply",
+          "description": "Kendall τ-a의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "kendall_correlation",
+        "kendall_tau_a"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.kendall_tau_b",
+      "order": 2,
+      "name_ko": "Kendall τ-b",
+      "definition": "일치쌍 수 $C$, 불일치쌍 수 $D$, $X$에만 동점인 쌍 수 $T_x$, $Y$에만 동점인 쌍 수 $T_y$를 사용해 동점을 보정한 Kendall 순위상관계수다. 두 변수에 동시에 동점인 쌍은 $T_x,T_y$에 포함하지 않는다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.kendall_tau_b.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\tau_b=\\frac{C-D}{\\sqrt{(C+D+T_x)(C+D+T_y)}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.kendall_tau_b.condition_01",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.kendall_tau_b.condition_02",
+          "description": "분모의 두 동점보정 항은 양수여야 한다.",
+          "rule": {
+            "property": "kendall_tau_b_denominator_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.kendall_tau_b.condition_03",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.kendall_tau_b.condition_04",
+          "description": "$C,D,T_x,T_y$는 동일한 표본쌍에서 일관되게 집계한 비음수 정수여야 한다.",
+          "rule": {
+            "property": "kendall_pair_counts_nonnegative_integers",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.kendall_tau_b.property_01",
+          "description": "$T_x$는 $X$에서만 동점이고 $Y$에서는 동점이 아닌 쌍의 수다."
+        },
+        {
+          "property_id": "ps.correlation.kendall_tau_b.property_02",
+          "description": "$T_y$는 $Y$에서만 동점이고 $X$에서는 동점이 아닌 쌍의 수다."
+        },
+        {
+          "property_id": "ps.correlation.kendall_tau_b.property_03",
+          "description": "분모의 두 인수가 모두 양수일 때 $\\tau_b$가 정의된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.kendall_correlation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.kendall_tau_b.objective_01",
+          "verb": "apply",
+          "description": "Kendall τ-b의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "kendall_correlation",
+        "kendall_tau_b"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.spearman_no_tie_difference_formula",
+      "order": 3,
+      "name_ko": "Spearman 무동점 차이공식",
+      "definition": "동점이 없을 때 순위차 제곱합으로 Spearman 상관을 계산한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.spearman_no_tie_difference_formula.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "r_s\n=\n1-\n\\frac{6\\sum_{i=1}^{n}d_i^2}{n(n^2-1)}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.spearman_no_tie_difference_formula.condition_01",
+          "description": "동점이 없어야 한다.",
+          "rule": {
+            "property": "ties_present",
+            "operator": "equals",
+            "value": false
+          }
+        },
+        {
+          "condition_id": "ps.correlation.spearman_no_tie_difference_formula.condition_02",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.spearman_no_tie_difference_formula.condition_03",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.rank",
+          "name_ko": "순위",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.correlation.pearson_correlation",
+          "name_ko": "Pearson 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.combination",
+          "name_ko": "조합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.rank_correlation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.spearman_no_tie_difference_formula.objective_01",
+          "verb": "apply",
+          "description": "Spearman 무동점 차이공식의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "correlation_calculation",
+          "relationship_interpretation",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check",
+          "symbolic_equivalence",
+          "numerical_tolerance"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "rank_correlation",
+        "spearman_no_tie_difference_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.spearman_rank_correlation",
+      "order": 4,
+      "name_ko": "Spearman 순위상관",
+      "definition": "두 변수의 순위를 매긴 뒤 순위의 Pearson 상관으로 단조 연관성을 측정한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.spearman_rank_correlation.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "r_s\n=\n\\frac{\n\\sum_{i=1}^{n}(R_i-\\bar R)(S_i-\\bar S)\n}{\n\\sqrt{\n\\sum_{i=1}^{n}(R_i-\\bar R)^2\n\\sum_{i=1}^{n}(S_i-\\bar S)^2\n}\n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.spearman_rank_correlation.condition_01",
+          "description": "짝지어진 관측 수는 $n\\ge2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.spearman_rank_correlation.condition_02",
+          "description": "동점에는 평균순위 등 명시한 순위 규칙을 사용해야 한다.",
+          "rule": {
+            "property": "tie_ranking_rule_documented",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.spearman_rank_correlation.condition_03",
+          "description": "두 순위 중 적어도 하나의 분산이 0이면 상관계수가 정의되지 않는다.",
+          "rule": {
+            "property": "both_rank_variances_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.spearman_rank_correlation.condition_04",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.rank",
+          "name_ko": "순위",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.correlation.pearson_correlation",
+          "name_ko": "Pearson 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.combination",
+          "name_ko": "조합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.rank_correlation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.spearman_rank_correlation.objective_01",
+          "verb": "apply",
+          "description": "Spearman 순위상관의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "correlation_calculation",
+          "relationship_interpretation",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check",
+          "symbolic_equivalence",
+          "numerical_tolerance"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "rank_correlation",
+        "spearman_rank_correlation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.pearson_affine_transformation",
+      "order": 5,
+      "name_ko": "Pearson 상관계수의 아핀변환 성질",
+      "definition": "0이 아닌 척도변환과 위치이동에 대한 상관계수의 부호 변화를 나타낸다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.pearson_affine_transformation.formula_01",
+          "name_ko": "상관 변환",
+          "role": "correlation_transformation",
+          "latex": "r(a+bX,c+dY)=\\operatorname{sign}(bd)\\,r(X,Y)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.pearson_affine_transformation.condition_01",
+          "description": "$\\operatorname{Var}(X)>0$이고 $\\operatorname{Var}(Y)>0$이어야 한다.",
+          "rule": {
+            "property": "original_variances_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.pearson_affine_transformation.condition_02",
+          "description": "$b\\ne0$이고 $d\\ne0$이어야 한다.",
+          "rule": {
+            "property": "affine_scale_coefficients_nonzero",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.pearson_affine_transformation.condition_03",
+          "description": "X와 Y의 분산은 유한해야 한다.",
+          "rule": {
+            "property": "original_variances_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.pearson_affine_transformation.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.sample_pearson_correlation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.pearson_affine_transformation.objective_01",
+          "verb": "identify",
+          "description": "Pearson 상관계수의 아핀변환 성질의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_affine_transformation.objective_02",
+          "verb": "apply",
+          "description": "Pearson 상관계수의 아핀변환 성질의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_affine_transformation.objective_03",
+          "verb": "interpret",
+          "description": "Pearson 상관계수의 아핀변환 성질의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "pearson_correlation",
+        "pearson_affine_transformation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.pearson_correlation",
+      "order": 6,
+      "name_ko": "Pearson 상관계수",
+      "definition": "두 수치형 변수의 선형 관계 방향과 강도를 측정한다. 세부 공식은 적용 조건별 관련 개념으로 분리한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.pearson_correlation.property_01",
+          "description": "서로 다른 적용 조건을 갖는 공식을 한 조건 목록에 결합하지 않고 세부 개념으로 분리한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.sample_pearson_correlation",
+        "ps.correlation.pearson_affine_transformation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.pearson_correlation.objective_01",
+          "verb": "identify",
+          "description": "Pearson 상관계수의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_correlation.objective_02",
+          "verb": "apply",
+          "description": "Pearson 상관계수의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_correlation.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Pearson 상관계수의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.correlation.pearson_correlation.misconception_01",
+          "title": "Pearson 상관계수 관련 오해 1",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_correlation_pearson_correlation_misconception_01",
+          "feedback": "r=0은 비선형 관계가 없다는 뜻이 아니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 문제 생성에는 related_concepts의 세부 개념을 사용한다."
+      },
+      "tags": [
+        "correlation",
+        "pearson_correlation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.sample_pearson_correlation",
+      "order": 7,
+      "name_ko": "표본 Pearson 상관계수",
+      "definition": "짝지어진 두 수치형 변수의 표본 선형상관을 계산한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.sample_pearson_correlation.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "r=\n\\frac{\n\\sum_{i=1}^{n}(x_i-\\bar x)(y_i-\\bar y)\n}{\n\\sqrt{\n\\left\\{\\sum_{i=1}^{n}(x_i-\\bar x)^2\\right\\}\n\\left\\{\\sum_{i=1}^{n}(y_i-\\bar y)^2\\right\\}\n}\n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.sample_pearson_correlation.condition_01",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.sample_pearson_correlation.condition_02",
+          "description": "$n$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.sample_pearson_correlation.condition_03",
+          "description": "$s_x^2>0$이어야 한다.",
+          "rule": {
+            "property": "sample_variance_x",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.correlation.sample_pearson_correlation.condition_04",
+          "description": "$s_y^2>0$이어야 한다.",
+          "rule": {
+            "property": "sample_variance_y",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.sample_pearson_correlation.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.pearson_affine_transformation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.sample_pearson_correlation.objective_01",
+          "verb": "identify",
+          "description": "표본 Pearson 상관계수의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.sample_pearson_correlation.objective_02",
+          "verb": "apply",
+          "description": "표본 Pearson 상관계수의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.sample_pearson_correlation.objective_03",
+          "verb": "interpret",
+          "description": "표본 Pearson 상관계수의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "pearson_correlation",
+        "sample_pearson_correlation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.rank_correlation",
+      "order": 8,
+      "name_ko": "순위상관",
+      "definition": "관측값의 순위에 기반하여 두 변수의 단조 관계 또는 쌍별 순서 일치 정도를 측정한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.rank_correlation.property_01",
+          "description": "비정규 자료나 이상치가 있는 자료에서 Pearson 상관계수보다 강건할 수 있다."
+        },
+        {
+          "property_id": "ps.correlation.rank_correlation.property_02",
+          "description": "Spearman은 단조 관계를, Kendall은 관측쌍의 순서 일치 정도를 나타낸다."
+        },
+        {
+          "property_id": "ps.correlation.rank_correlation.property_03",
+          "description": "각 변수에서 관측값의 서열 비교가 가능해야 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.rank",
+          "name_ko": "순위",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.correlation.pearson_correlation",
+          "name_ko": "Pearson 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.combination",
+          "name_ko": "조합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.pearson_correlation",
+        "ps.correlation.correlation_test",
+        "ps.correlation.spearman_rank_correlation",
+        "ps.correlation.spearman_no_tie_difference_formula",
+        "ps.correlation.kendall_tau_a"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.rank_correlation.objective_01",
+          "verb": "identify",
+          "description": "순위상관의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.rank_correlation.objective_02",
+          "verb": "apply",
+          "description": "순위상관의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.rank_correlation.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 순위상관의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.correlation.rank_correlation.misconception_01",
+          "title": "순위상관 관련 오해 1",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_correlation_rank_correlation_misconception_01",
+          "feedback": "Spearman 상관은 선형성보다 단조성을 측정한다."
+        },
+        {
+          "misconception_id": "ps.correlation.rank_correlation.misconception_02",
+          "title": "순위상관 관련 오해 2",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_correlation_rank_correlation_misconception_02",
+          "feedback": "순위상관도 인과관계를 의미하지 않는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "correlation",
+        "rank_correlation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.correlation_test",
+      "order": 9,
+      "name_ko": "상관계수 검정",
+      "definition": "독립인 쌍변량 정규표본에서 $H_0:\\rho=0$을 검정할 때 표본상관계수로부터 정확한 t 기준통계량을 구성한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.correlation_test.formula_01",
+          "name_ko": "정확 검정통계량",
+          "role": "exact_test_statistic",
+          "latex": "t=r\\sqrt{\\frac{n-2}{1-r^2}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.correlation_test.condition_01",
+          "description": "$n>2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_than",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.condition_02",
+          "description": "$|r|<1$이어야 한다.",
+          "rule": {
+            "property": "absolute_sample_correlation",
+            "operator": "less_than",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.condition_03",
+          "description": "정확한 t기준분포에는 i.i.d. 쌍변량 정규표본이 필요하다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_bivariate_normal"
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.condition_04",
+          "description": "정확한 t 기준분포는 $H_0:\\rho=0$ 아래에서 사용한다.",
+          "rule": {
+            "property": "null_population_correlation",
+            "operator": "equals",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.condition_05",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.correlation_test.property_01",
+          "description": "표본크기가 크면 작은 상관도 유의할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.continuous_distributions.student_t",
+          "name_ko": "t분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.rank_correlation",
+        "ps.correlation.partial_correlation_causality",
+        "ps.correlation.correlation_test.df"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.correlation_test.objective_01",
+          "verb": "identify",
+          "description": "상관계수 검정의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_test.objective_02",
+          "verb": "apply",
+          "description": "상관계수 검정의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_test.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 상관계수 검정의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.correlation.correlation_test.misconception_01",
+          "title": "통계적 유의성과 실질적 강도 구분 오류",
+          "description": "통계적 유의성과 실질적 강도를 같은 개념으로 취급한다.",
+          "diagnosis_tag": "ps_correlation_correlation_test_misconception_01",
+          "feedback": "통계적 유의성과 실질적 강도를 구분한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "correlation_test",
+        "testing"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.correlation_test.df",
+      "order": 10,
+      "name_ko": "Pearson 상관 t검정의 자유도",
+      "definition": "Pearson 상관 t검정의 자유도를 나타낸다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.correlation_test.df.formula_01",
+          "name_ko": "자유도",
+          "role": "degrees_of_freedom",
+          "latex": "df=n-2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.correlation_test.df.condition_01",
+          "description": "$n>2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_than",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.df.condition_02",
+          "description": "$|r|<1$이어야 한다.",
+          "rule": {
+            "property": "absolute_sample_correlation",
+            "operator": "less_than",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.df.condition_03",
+          "description": "정확한 t기준분포에는 i.i.d. 쌍변량 정규표본이 필요하다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_bivariate_normal"
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.df.condition_04",
+          "description": "정확한 t 기준분포는 $H_0:\\rho=0$ 아래에서 사용한다.",
+          "rule": {
+            "property": "null_population_correlation",
+            "operator": "equals",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_test.df.condition_05",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.correlation_test.df.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.continuous_distributions.student_t",
+          "name_ko": "t분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.correlation_test",
+        "ps.correlation.rank_correlation",
+        "ps.correlation.partial_correlation_causality"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.correlation_test.df.objective_01",
+          "verb": "identify",
+          "description": "Pearson 상관 t검정의 자유도의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_test.df.objective_02",
+          "verb": "apply",
+          "description": "Pearson 상관 t검정의 자유도를 적용 조건 아래에서 사용한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_test.df.objective_03",
+          "verb": "verify",
+          "description": "Pearson 상관 t검정의 자유도의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "correlation_test",
+        "testing",
+        "formula_atomic"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.partial_correlation_causality",
+      "order": 11,
+      "name_ko": "부분상관과 인과성",
+      "definition": "다른 변수의 선형효과를 통제한 뒤 두 변수의 관계를 측정한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.partial_correlation_causality.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "r_{xy\\cdot z}\n=\n\\frac{r_{xy}-r_{xz}r_{yz}}\n{\\sqrt{(1-r_{xz}^2)(1-r_{yz}^2)}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.partial_correlation_causality.condition_01",
+          "description": "$|r_{xz}|<1$이어야 한다.",
+          "rule": {
+            "property": "absolute_r_xz",
+            "operator": "less_than",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.correlation.partial_correlation_causality.condition_02",
+          "description": "$|r_{yz}|<1$이어야 한다.",
+          "rule": {
+            "property": "absolute_r_yz",
+            "operator": "less_than",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.correlation.partial_correlation_causality.condition_03",
+          "description": "필요한 표본상관들이 정의되어 있어야 한다.",
+          "rule": {
+            "property": "pairwise_correlations_defined",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.partial_correlation_causality.property_01",
+          "description": "관측되지 않은 교란은 여전히 남을 수 있다."
+        },
+        {
+          "property_id": "ps.correlation.partial_correlation_causality.property_02",
+          "description": "통제변수와 관계가 선형이라는 가정이 필요하다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.correlation_test",
+        "ps.correlation.spearman_no_tie_difference_formula"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.partial_correlation_causality.objective_01",
+          "verb": "identify",
+          "description": "부분상관과 인과성의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_causality.objective_02",
+          "verb": "apply",
+          "description": "부분상관과 인과성의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_causality.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 부분상관과 인과성의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.correlation.partial_correlation_causality.misconception_01",
+          "title": "부분상관과 인과성 관련 오해 1",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_correlation_partial_correlation_causality_misconception_01",
+          "feedback": "부분상관도 인과효과를 자동으로 의미하지 않는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "partial_correlation_causality"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.kendall_correlation",
+      "order": 12,
+      "name_ko": "Kendall 순위상관",
+      "definition": "Kendall 순위상관계수는 관측쌍의 일치·불일치 여부를 이용해 두 변수의 순서 관계를 측정한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.kendall_correlation.property_01",
+          "description": "동점이 없을 때 $\\tau=\\frac{C-D}{\\binom n2}$ 이다."
+        },
+        {
+          "property_id": "ps.correlation.kendall_correlation.property_02",
+          "description": "$C$는 일치쌍 수, $D$는 불일치쌍 수이다."
+        },
+        {
+          "property_id": "ps.correlation.kendall_correlation.property_03",
+          "description": "동점이 있으면 일반적으로 Kendall의 $\\tau_b$를 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.spearman_no_tie_difference_formula",
+        "ps.correlation.partial_correlation_test",
+        "ps.correlation.kendall_tau_a",
+        "ps.correlation.kendall_tau_b"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.kendall_correlation.objective_01",
+          "verb": "identify",
+          "description": "Kendall 순위상관의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.kendall_correlation.objective_02",
+          "verb": "apply",
+          "description": "Kendall 순위상관의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.kendall_correlation.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Kendall 순위상관의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "correlation",
+        "kendall_correlation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.partial_correlation_test",
+      "order": 13,
+      "name_ko": "부분상관 검정",
+      "definition": "여러 통제변수의 선형효과를 제거한 부분상관계수의 유의성 검정과 자유도를 다룬다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.partial_correlation_test.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.partial_correlation_test.f01",
+        "ps.correlation.partial_correlation_test.f02",
+        "ps.correlation.kendall_correlation",
+        "ps.correlation.inference_interpretation_cautions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.objective_01",
+          "verb": "identify",
+          "description": "부분상관 검정의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.objective_02",
+          "verb": "apply",
+          "description": "부분상관 검정의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 부분상관 검정의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "correlation",
+        "partial_correlation_test",
+        "testing"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.inference_interpretation_cautions",
+      "order": 14,
+      "name_ko": "추론과 해석의 추가 주의",
+      "definition": "Fisher 변환을 이용한 Pearson 상관 신뢰구간은 쌍변량 정규모형 또는 충분히 큰 표본에서의 근사 추론이다. 심한 비정규성, 이상치, 군집·시계열 의존이 있으면 순열법, bootstrap 또는 자료구조에 맞는 모형을 고려한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_01",
+          "description": "Fisher 변환을 이용한 Pearson 상관 신뢰구간은 쌍변량 정규모형 또는 충분히 큰 표본에서의 근사 추론이다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_02",
+          "description": "상관계수 하나만으로 관계 형태를 판단하지 않고 반드시 산점도와 영향점을 확인한다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_03",
+          "description": "다음 현상도 구분해야 한다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_04",
+          "description": "Simpson 역설: 층을 합친 상관과 층별 상관의 방향이 다를 수 있다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_05",
+          "description": "측정오차: 독립적인 고전적 측정오차는 상관을 약화시킬 수 있다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_06",
+          "description": "단순회귀에서는 특히 설명변수의 고전적 측정오차가 기울기를 0 방향으로 감쇠시킬 수 있지만, 반응변수의 독립적 측정오차는 일반적으로 기울기를 같은 방식으로 감쇠시키기보다 오차분산과 표준오차를 증가시킨다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_07",
+          "description": "다중검정: 많은 변수쌍의 상관을 동시에 검정하면 FWER 또는 FDR을 통제한다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_08",
+          "description": "비선형 의존: Pearson·Spearman으로 포착되지 않는 관계에는 distance correlation, mutual information 등의 보조 지표를 고려할 수 있다."
+        },
+        {
+          "property_id": "ps.correlation.inference_interpretation_cautions.property_09",
+          "description": "심한 비정규성, 이상치, 군집·시계열 의존이 있으면 순열법, bootstrap 또는 자료구조에 맞는 모형을 고려한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.partial_correlation_test",
+        "ps.correlation.correlation_defined_conditions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.inference_interpretation_cautions.objective_01",
+          "verb": "identify",
+          "description": "추론과 해석의 추가 주의의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.inference_interpretation_cautions.objective_02",
+          "verb": "apply",
+          "description": "추론과 해석의 추가 주의의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.inference_interpretation_cautions.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 추론과 해석의 추가 주의의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.correlation.inference_interpretation_cautions.misconception_01",
+          "title": "다음 현상도 구분 오류",
+          "description": "다음 현상도 구분하지 않는다.",
+          "diagnosis_tag": "ps_correlation_inference_interpretation_cautions_misconception_01",
+          "feedback": "다음 현상도 구분해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "inference_interpretation_cautions"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.correlation_defined_conditions",
+      "order": 15,
+      "name_ko": "상관계수의 정의 가능 조건",
+      "definition": "Pearson 모상관계수는 두 변수의 분산이 모두 유한하고 양수일 때 정의된다. $0<\\operatorname{Var}(X)<\\infty, \\qquad 0<\\operatorname{Var}(Y)<\\infty$ 한 변수가 상수이면 공분산은 계산할 수 있어도 표준편차로 나눌 수 없으므로 상관계수는 정의되지 않는다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.correlation_defined_conditions.property_01",
+          "description": "정의와 적용 조건을 함께 고려해야 올바르게 해석할 수 있다."
+        },
+        {
+          "property_id": "ps.correlation.correlation_defined_conditions.property_02",
+          "description": "Pearson 모상관계수는 두 변수의 분산이 모두 유한하고 양수일 때 정의된다."
+        },
+        {
+          "property_id": "ps.correlation.correlation_defined_conditions.property_03",
+          "description": "$0<\\operatorname{Var}(X)<\\infty, \\qquad 0<\\operatorname{Var}(Y)<\\infty$ 한 변수가 상수이면 공분산은 계산할 수 있어도 표준편차로 나눌 수 없으므로 상관계수는 정의되지 않는다."
+        },
+        {
+          "property_id": "ps.correlation.correlation_defined_conditions.property_04",
+          "description": "수학적 전제/제약: $0<\\operatorname{Var}(X)<\\infty, \\qquad 0<\\operatorname{Var}(Y)<\\infty$"
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.inference_interpretation_cautions",
+        "ps.correlation.correlation_matrix"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.correlation_defined_conditions.objective_01",
+          "verb": "identify",
+          "description": "상관계수의 정의 가능 조건의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_defined_conditions.objective_02",
+          "verb": "apply",
+          "description": "상관계수의 정의 가능 조건의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_defined_conditions.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 상관계수의 정의 가능 조건의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "정의 가능성 또는 적분가능성 조건을 나타내는 개념이므로 계산 문제 생성에서는 비활성화한다."
+      },
+      "tags": [
+        "correlation",
+        "correlation_defined_conditions"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.correlation_matrix",
+      "order": 16,
+      "name_ko": "상관행렬의 대칭성",
+      "definition": "상관행렬은 대칭행렬이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.correlation_matrix.formula_01",
+          "name_ko": "행렬 성질",
+          "role": "matrix_property",
+          "latex": "R=R^T"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.correlation_matrix.condition_01",
+          "description": "$R$은 실수 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "matrix_square_real",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.condition_02",
+          "description": "벡터 $a$의 차원은 $R$과 적합해야 한다.",
+          "rule": {
+            "property": "vector_dimension_conformable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.condition_03",
+          "description": "R은 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "matrix_square",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.condition_04",
+          "description": "모든 변수의 분산은 유한해야 한다.",
+          "rule": {
+            "property": "all_variable_variances_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.condition_05",
+          "description": "모든 변수의 분산은 양수여야 한다.",
+          "rule": {
+            "property": "all_variable_variances_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.condition_06",
+          "description": "행렬 차원 $p\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+          "rule": {
+            "property": "matrix_dimension_positive_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.correlation_matrix.property_01",
+          "description": "확률벡터의 상관행렬 $R$은 대칭이며 대각원소가 1이고 양의 준정부호다."
+        },
+        {
+          "property_id": "ps.correlation.correlation_matrix.property_02",
+          "description": "$a^TRa\\ge0$ 모든 임의의 숫자 조합이 유효한 상관행렬이 되는 것은 아니다."
+        },
+        {
+          "property_id": "ps.correlation.correlation_matrix.property_03",
+          "description": "결측자료를 변수쌍마다 서로 다른 관측으로 계산하면 추정 상관행렬이 양의 준정부호가 아닐 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.correlation_defined_conditions",
+        "ps.correlation.precision_matrix_partial_correlation",
+        "ps.correlation.correlation_matrix.unit_diagonal",
+        "ps.correlation.correlation_matrix.positive_semidefinite"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.correlation_matrix.objective_01",
+          "verb": "identify",
+          "description": "상관행렬의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_matrix.objective_02",
+          "verb": "apply",
+          "description": "상관행렬의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_matrix.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 상관행렬의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "correlation_matrix",
+        "matrix"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.correlation_matrix.positive_semidefinite",
+      "order": 17,
+      "name_ko": "상관행렬의 양의 준정부호성",
+      "definition": "상관행렬은 양의 준정부호행렬이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.correlation_matrix.positive_semidefinite.formula_01",
+          "name_ko": "행렬 성질",
+          "role": "matrix_property",
+          "latex": "a^TRa\\ge0\\quad\\text{for all }a\\in\\mathbb R^p"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.correlation_matrix.positive_semidefinite.condition_01",
+          "description": "$R$은 실수 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "matrix_square_real",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.positive_semidefinite.condition_02",
+          "description": "벡터 $a$의 차원은 $R$과 적합해야 한다.",
+          "rule": {
+            "property": "vector_dimension_conformable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.positive_semidefinite.condition_03",
+          "description": "R은 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "matrix_square",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.positive_semidefinite.condition_04",
+          "description": "모든 변수의 분산은 유한해야 한다.",
+          "rule": {
+            "property": "all_variable_variances_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.positive_semidefinite.condition_05",
+          "description": "모든 변수의 분산은 양수여야 한다.",
+          "rule": {
+            "property": "all_variable_variances_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.positive_semidefinite.condition_06",
+          "description": "행렬 차원 $p\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+          "rule": {
+            "property": "matrix_dimension_positive_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.correlation_matrix.positive_semidefinite.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.correlation_matrix",
+        "ps.correlation.correlation_defined_conditions",
+        "ps.correlation.precision_matrix_partial_correlation",
+        "ps.correlation.correlation_matrix.unit_diagonal"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.correlation_matrix.positive_semidefinite.objective_01",
+          "verb": "identify",
+          "description": "상관행렬의 양의 준정부호성의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_matrix.positive_semidefinite.objective_02",
+          "verb": "apply",
+          "description": "상관행렬의 양의 준정부호성을 적용 조건 아래에서 사용한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_matrix.positive_semidefinite.objective_03",
+          "verb": "verify",
+          "description": "상관행렬의 양의 준정부호성의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "correlation_matrix",
+        "matrix",
+        "formula_atomic"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.correlation_matrix.unit_diagonal",
+      "order": 18,
+      "name_ko": "상관행렬의 단위 대각",
+      "definition": "상관행렬의 모든 대각원소는 1이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.correlation_matrix.unit_diagonal.formula_01",
+          "name_ko": "행렬 성질",
+          "role": "matrix_property",
+          "latex": "\\operatorname{diag}(R)=\\mathbf 1"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.correlation_matrix.unit_diagonal.condition_01",
+          "description": "$R$은 실수 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "matrix_square_real",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.unit_diagonal.condition_02",
+          "description": "벡터 $a$의 차원은 $R$과 적합해야 한다.",
+          "rule": {
+            "property": "vector_dimension_conformable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.unit_diagonal.condition_03",
+          "description": "R은 정사각행렬이어야 한다.",
+          "rule": {
+            "property": "matrix_square",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.unit_diagonal.condition_04",
+          "description": "모든 변수의 분산은 유한해야 한다.",
+          "rule": {
+            "property": "all_variable_variances_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.unit_diagonal.condition_05",
+          "description": "모든 변수의 분산은 양수여야 한다.",
+          "rule": {
+            "property": "all_variable_variances_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.correlation_matrix.unit_diagonal.condition_06",
+          "description": "행렬 차원 $p\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+          "rule": {
+            "property": "matrix_dimension_positive_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.correlation_matrix.unit_diagonal.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.correlation_matrix",
+        "ps.correlation.correlation_defined_conditions",
+        "ps.correlation.precision_matrix_partial_correlation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.correlation_matrix.unit_diagonal.objective_01",
+          "verb": "identify",
+          "description": "상관행렬의 단위 대각의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_matrix.unit_diagonal.objective_02",
+          "verb": "apply",
+          "description": "상관행렬의 단위 대각을 적용 조건 아래에서 사용한다."
+        },
+        {
+          "objective_id": "ps.correlation.correlation_matrix.unit_diagonal.objective_03",
+          "verb": "verify",
+          "description": "상관행렬의 단위 대각의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "correlation_matrix",
+        "matrix",
+        "formula_atomic"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.precision_matrix_partial_correlation",
+      "order": 19,
+      "name_ko": "정밀도행렬과 부분상관",
+      "definition": "공분산행렬 $\\Sigma$가 가역이고 정밀도행렬을 $\\Omega=\\Sigma^{-1}$라 하면, 나머지 모든 변수를 통제한 $i,j$의 부분상관은 $\\rho_{ij\\cdot -ij} = -\\frac{\\Omega_{ij}} {\\sqrt{\\Omega_{ii}\\Omega_{jj}}}$ 이다. 다변량 정규분포에서는 $\\Omega_{ij}=0$이 해당 두 변수의 나머지 변수들에 대한 조건부 독립과 연결된다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.precision_matrix_partial_correlation.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\rho_{ij\\cdot -ij}\n=\n-\\frac{\\Omega_{ij}}\n{\\sqrt{\\Omega_{ii}\\Omega_{jj}}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.precision_matrix_partial_correlation.condition_01",
+          "description": "$\\Sigma$는 가역인 공분산행렬이어야 한다.",
+          "rule": {
+            "property": "covariance_matrix_invertible",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.precision_matrix_partial_correlation.condition_02",
+          "description": "$\\Omega=\\Sigma^{-1}$의 대각원소 $\\Omega_{ii},\\Omega_{jj}$는 양수여야 한다.",
+          "rule": {
+            "property": "precision_diagonal_entries_positive",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.precision_matrix_partial_correlation.property_01",
+          "description": "공분산행렬 $\\Sigma$가 가역이고 정밀도행렬을 $\\Omega=\\Sigma^{-1}$라 하면, 나머지 모든 변수를 통제한 $i,j$의 부분상관은 $\\rho_{ij\\cdot -ij} = -\\frac{\\Omega_{ij}} {\\sqrt{\\Omega_{ii}\\Omega_{jj}}}$ 이다."
+        },
+        {
+          "property_id": "ps.correlation.precision_matrix_partial_correlation.property_02",
+          "description": "다변량 정규분포에서는 $\\Omega_{ij}=0$이 해당 두 변수의 나머지 변수들에 대한 조건부 독립과 연결된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.correlation_matrix"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.precision_matrix_partial_correlation.objective_01",
+          "verb": "identify",
+          "description": "정밀도행렬과 부분상관의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.precision_matrix_partial_correlation.objective_02",
+          "verb": "apply",
+          "description": "정밀도행렬과 부분상관의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.correlation.precision_matrix_partial_correlation.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 정밀도행렬과 부분상관의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "precision_matrix_partial_correlation",
+        "matrix"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.pearson_fisher_transform",
+      "order": 20,
+      "name_ko": "Pearson 상관계수의 Fisher z 변환",
+      "definition": "표본 Pearson 상관계수를 Fisher z 척도로 변환하고 쌍변량 정규모형에서 큰 표본 근사 표준오차를 사용한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.correlation.pearson_fisher_transform.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.pearson_fisher_transform.f01",
+        "ps.correlation.pearson_fisher_transform.f02",
+        "ps.correlation.spearman_no_tie_difference_formula"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.objective_01",
+          "verb": "apply",
+          "description": "Pearson 상관계수의 Fisher z 변환의 수식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "pearson",
+        "fisher_z"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.partial_correlation_test.f01",
+      "order": 21,
+      "name_ko": "부분상관 검정 — 정확 검정통계량",
+      "definition": "이 개념은 부분상관 검정에서 사용하는 정확 검정통계량 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.partial_correlation_test.f01.formula_01",
+          "name_ko": "정확 검정통계량",
+          "role": "exact_test_statistic",
+          "latex": "t=\nr_{xy\\cdot Z}\n\\sqrt{\\frac{n-q-2}{1-r_{xy\\cdot Z}^2}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.partial_correlation_test.f01.condition_01",
+          "description": "잔차 자유도는 $n-q-2>0$이어야 한다.",
+          "rule": {
+            "property": "residual_degrees_of_freedom",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.correlation.partial_correlation_test.f01.condition_02",
+          "description": "$|r_{xy\\cdot Z}|<1$이어야 한다.",
+          "rule": {
+            "property": "absolute_partial_correlation",
+            "operator": "less_than",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.correlation.partial_correlation_test.f01.condition_03",
+          "description": "정확한 t 기준분포에는 다변량 정규모형 또는 동등한 정상 선형모형이 필요하다.",
+          "rule": {
+            "property": "exact_partial_correlation_reference_model",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.partial_correlation_test.f01.condition_04",
+          "description": "정확한 t 기준분포는 $H_0:\\rho_{xy\\cdot Z}=0$ 아래에서 사용한다.",
+          "rule": {
+            "property": "null_partial_correlation",
+            "operator": "equals",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.partial_correlation_test.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.partial_correlation_test",
+        "ps.correlation.kendall_correlation",
+        "ps.correlation.inference_interpretation_cautions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.f01.objective_01",
+          "verb": "identify",
+          "description": "부분상관 검정 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.f01.objective_02",
+          "verb": "apply",
+          "description": "부분상관 검정 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.f01.objective_03",
+          "verb": "verify",
+          "description": "부분상관 검정 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "partial_correlation_test",
+        "testing",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.partial_correlation_test.f02",
+      "order": 22,
+      "name_ko": "부분상관 검정 — 자유도",
+      "definition": "이 개념은 부분상관 검정에서 사용하는 자유도 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.partial_correlation_test.f02.formula_01",
+          "name_ko": "자유도",
+          "role": "degrees_of_freedom",
+          "latex": "df=n-q-2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.partial_correlation_test.f02.condition_01",
+          "description": "$n-q-2>0$이어야 한다.",
+          "rule": {
+            "property": "residual_degrees_of_freedom",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.correlation.partial_correlation_test.f02.condition_02",
+          "description": "$n,q\\in\\mathbb Z$이어야 한다.",
+          "rule": {
+            "property": "sample_size_and_control_count_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.partial_correlation_test.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.partial_correlation_test",
+        "ps.correlation.kendall_correlation",
+        "ps.correlation.inference_interpretation_cautions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.f02.objective_01",
+          "verb": "identify",
+          "description": "부분상관 검정 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.f02.objective_02",
+          "verb": "apply",
+          "description": "부분상관 검정 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.correlation.partial_correlation_test.f02.objective_03",
+          "verb": "verify",
+          "description": "부분상관 검정 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "correlation",
+        "partial_correlation_test",
+        "testing",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.pearson_fisher_transform.f01",
+      "order": 23,
+      "name_ko": "Pearson 상관계수의 Fisher z 변환 — 변환식",
+      "definition": "이 개념은 Pearson 상관계수의 Fisher z 변환에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.pearson_fisher_transform.f01.formula_01",
+          "name_ko": "변환식",
+          "role": "transformation",
+          "latex": "z_r=\\frac12\\log\\left(\\frac{1+r}{1-r}\\right)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.pearson_fisher_transform.f01.condition_01",
+          "description": "$|r|<1$이어야 한다.",
+          "rule": {
+            "property": "absolute_sample_correlation",
+            "operator": "less_than",
+            "value": 1
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.pearson_fisher_transform.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.pearson_fisher_transform",
+        "ps.correlation.spearman_no_tie_difference_formula"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.f01.objective_01",
+          "verb": "identify",
+          "description": "변환식의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.f01.objective_02",
+          "verb": "apply",
+          "description": "변환식을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.f01.objective_03",
+          "verb": "verify",
+          "description": "변환식의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "pearson",
+        "fisher_z",
+        "formula_atomic",
+        "transformation"
+      ]
+    },
+    {
+      "concept_id": "ps.correlation.pearson_fisher_transform.f02",
+      "order": 24,
+      "name_ko": "Pearson 상관계수의 Fisher z 변환 — 근사 표준오차",
+      "definition": "이 개념은 Pearson 상관계수의 Fisher z 변환에서 사용하는 근사 표준오차 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.correlation.pearson_fisher_transform.f02.formula_01",
+          "name_ko": "근사 표준오차",
+          "role": "approximate_standard_error",
+          "latex": "\\operatorname{SE}(z_r)\\approx\\frac{1}{\\sqrt{n-3}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.correlation.pearson_fisher_transform.f02.condition_01",
+          "description": "표준오차 $1/\\sqrt{n-3}$를 위해 $n>3$이어야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_than",
+            "value": 3
+          }
+        },
+        {
+          "condition_id": "ps.correlation.pearson_fisher_transform.f02.condition_02",
+          "description": "정확한 고전적 Fisher 변환 근사에는 i.i.d. 쌍변량 정규표본을 사용한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_bivariate_normal"
+          }
+        },
+        {
+          "condition_id": "ps.correlation.pearson_fisher_transform.f02.condition_03",
+          "description": "모상관계수는 $-1<\\rho<1$이어야 한다.",
+          "rule": {
+            "property": "population_correlation_in_open_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.pearson_fisher_transform.f02.condition_04",
+          "description": "$z_r$의 정규근사와 표준오차 근사가 타당한 표본크기여야 한다.",
+          "rule": {
+            "property": "fisher_z_normal_approximation_adequate",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.correlation.pearson_fisher_transform.f02.condition_05",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.correlation.pearson_fisher_transform.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.covariance_correlation",
+          "name_ko": "공분산과 상관계수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.descriptive_statistics.dispersion",
+          "name_ko": "산포도",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.simple_linear_regression.regression_model",
+          "name_ko": "회귀모형",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.correlation.pearson_fisher_transform",
+        "ps.correlation.spearman_no_tie_difference_formula"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.f02.objective_01",
+          "verb": "identify",
+          "description": "근사 표준오차의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.f02.objective_02",
+          "verb": "apply",
+          "description": "근사 표준오차를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.correlation.pearson_fisher_transform.f02.objective_03",
+          "verb": "verify",
+          "description": "근사 표준오차의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "correlation_calculation",
+          "relationship_interpretation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "correlation_range_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "pearson",
+        "fisher_z",
+        "formula_atomic",
+        "approximate_standard_error"
+      ]
+    }
+  ]
+}

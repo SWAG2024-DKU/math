@@ -1,0 +1,608 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "linear_algebra",
+    "name_ko": "선형대수학"
+  },
+  "unit": {
+    "unit_id": "la_06_advanced_applications",
+    "name_ko": "현대적 심화 응용",
+    "order": 6,
+    "description": "데이터 마이닝, 머신러닝, 시스템 제어에서 핵심적으로 사용되는 특이값 분해(SVD)와 차원 축소 이론을 다룬다. 정사각·대칭행렬의 성질을 임의의 직사각행렬과 복소수 공간으로 한계까지 일반화하는 최종 모듈이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "06_선형대수학_PART6.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "matrix_variable": "A, U, V, X, S, J, M",
+    "vector_variable": "u, v, x, b",
+    "scalar_variable": "c, i, j, k, r, sigma, lambda",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "la.advanced.svd",
+      "order": 1,
+      "name_ko": "특이값 분해 (Singular Value Decomposition, SVD)",
+      "definition": "정사각행렬에만 국한되던 고윳값 분해를 일반화하여 임의의 m x n 직사각행렬 A를 회전, 스케일링, 회전이라는 세 가지 기하학적 직교 변환의 조합으로 완전 분해하는 행렬 분해 기법이다.",
+      "formulas": [
+        {
+          "formula_id": "svd_formula",
+          "name_ko": "SVD 분해 모델",
+          "role": "definition",
+          "latex": "A = U \\Sigma V^T",
+          "cas": "U, S, V = Matrix(A).singular_value_decomposition()"
+        },
+        {
+          "formula_id": "singular_values_definition",
+          "name_ko": "특이값 정의",
+          "role": "formula",
+          "latex": "\\sigma_i = \\sqrt{\\lambda_i(A^T A)}",
+          "cas": "sqrt(eigenvals(A.T * A))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "positive_semi_definite_gram_matrix",
+          "description": "특이값을 구하기 위한 A^T A는 양의 반정부호 대칭행렬이므로 고윳값은 항상 0 이상의 실수여야 한다.",
+          "rule": {
+            "property": "is_positive_semi_definite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "svd_rank_equality",
+          "description": "행렬의 랭크는 0이 아닌 특이값의 개수 r과 정확히 일치한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.symmetric_diagonalization",
+          "name_ko": "대칭행렬의 직교 대각화",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.complement",
+          "name_ko": "4대 부분공간",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.orthonormal_set",
+          "name_ko": "직교행렬",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.advanced.compact_svd",
+        "la.advanced.pseudoinverse"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_svd",
+          "verb": "calculate",
+          "description": "임의의 행렬에 대해 SVD를 수행하여 U, Sigma, V 행렬을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.advanced.svd.matrix_domain_reversal",
+          "title": "U와 V의 연산 행렬 역전",
+          "description": "V를 구해야 하는데 AA^T를 계산하거나 U를 구해야 하는데 A^TA를 계산한다.",
+          "diagnosis_tag": "svd_domain_matrix_reversal",
+          "feedback": "V는 A^T A의 고유벡터로 구성되고, U는 A A^T의 고유벡터로 구성됩니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "svd_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix_tuple"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "svd_reconstruction_check"
+        ]
+      },
+      "tags": [
+        "svd",
+        "singular_value_decomposition",
+        "matrix_decomposition"
+      ]
+    },
+    {
+      "concept_id": "la.advanced.compact_svd",
+      "order": 2,
+      "name_ko": "축소 SVD (Compact SVD)와 행렬 근사",
+      "definition": "원본 SVD에서 0인 특이값과 영공간 벡터를 제거하여 연산을 최적화하고 상위 k개의 특이값만 남겨 노이즈를 제거한 최적의 저랭크 근사를 구현하는 과정이다.",
+      "formulas": [
+        {
+          "formula_id": "truncated_svd_formula",
+          "name_ko": "절단 SVD",
+          "role": "formula",
+          "latex": "A_k = \\sum_{i=1}^{k} \\sigma_i \\mathbf{u}_i \\mathbf{v}_i^T",
+          "cas": "sum(sigma_i * outer(u_i, v_i) for i in range(k))"
+        },
+        {
+          "formula_id": "eckart_young_mirsky",
+          "name_ko": "Eckart-Young-Mirsky 정리",
+          "role": "theorem",
+          "latex": "\\min_{\\text{Rank}(B)=k} \\|A - B\\|_F = \\|A - A_k\\|_F = \\sqrt{\\sum_{i=k+1}^{r} \\sigma_i^2}",
+          "cas": "sqrt(sum(S[i]**2 for i in range(k, r)))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "descending_order_singular_values",
+          "description": "외적을 합산하는 스펙트럼 분해 방식을 적용할 때 특이값이 큰 순서대로 내림차순 정렬되어 있어야 한다.",
+          "rule": {
+            "property": "singular_values_sorted_descending",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "optimal_low_rank_approximation",
+          "description": "절단 SVD로 만든 랭크 k 행렬은 원본과의 프로베니우스 노름 오차가 가장 작은 최적의 근사치이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.advanced.svd",
+          "name_ko": "특이값 분해 (SVD)",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.eigen.spectral_theorem",
+          "name_ko": "외적",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.norm_distance",
+          "name_ko": "노름(Norm)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.advanced.pca"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_truncated_svd",
+          "verb": "calculate",
+          "description": "절단 SVD를 활용해 저랭크 행렬 근사를 수행한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.advanced.compact_svd.dimension_mismatch_error",
+          "title": "축소 시 차원 분리 누락",
+          "description": "Sigma 행렬에서 0 블록 행을 잘라낼 때 U 행렬의 열 차원을 함께 제거하지 않고 연산을 시도한다.",
+          "diagnosis_tag": "compact_svd_dimension_mismatch",
+          "feedback": "축소 SVD 적용 시 Sigma와 매칭되는 U와 V의 행렬 차원도 함께 축소해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "compact_svd_approximation"
+        ],
+        "supported_answer_types": [
+          "matrix"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "frobenius_norm_check"
+        ]
+      },
+      "tags": [
+        "compact_svd",
+        "truncated_svd",
+        "low_rank_approximation"
+      ]
+    },
+    {
+      "concept_id": "la.advanced.pseudoinverse",
+      "order": 3,
+      "name_ko": "의사역행렬 (Pseudoinverse)",
+      "definition": "역행렬이 존재하지 않는 비정사각 행렬이나 특이행렬에 대하여 가역행렬의 역행렬 기능을 가장 완벽하게 흉내 내는 일반화된 역행렬 A^+를 SVD를 통해 구성한다.",
+      "formulas": [
+        {
+          "formula_id": "pseudoinverse_formula",
+          "name_ko": "무어-펜로즈 역행렬 구성",
+          "role": "definition",
+          "latex": "A^+ = V \\Sigma^+ U^T",
+          "cas": "V * S_pseudo * U.T"
+        },
+        {
+          "formula_id": "least_squares_pseudoinverse",
+          "name_ko": "의사역행렬을 이용한 최소제곱해",
+          "role": "formula",
+          "latex": "\\hat{\\mathbf{x}} = A^+ \\mathbf{b}",
+          "cas": "A_pseudo * b"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "recovers_standard_inverse_when_invertible",
+          "description": "가역인 정사각행렬에 적용하면 본래의 역행렬과 100% 일치해야 한다.",
+          "rule": {
+            "property": "recovers_inverse",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "minimum_norm_least_squares",
+          "description": "해의 무수히 많은 경우 의사역행렬을 이용한 해는 노름이 가장 짧은 최적의 해를 산출한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.advanced.svd",
+          "name_ko": "특이값 분해 (SVD)",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.least_squares",
+          "name_ko": "최소제곱법",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.ortho.least_squares"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_pseudoinverse",
+          "verb": "calculate",
+          "description": "SVD를 이용해 행렬의 무어-펜로즈 의사역행렬을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.advanced.pseudoinverse.transpose_shape_omission",
+          "title": "대각행렬 전치 누락",
+          "description": "Sigma의 대각 성분만 역수로 바꾸고 행렬의 껍데기 차원을 전치하는 것을 잊는다.",
+          "diagnosis_tag": "pseudoinverse_shape_error",
+          "feedback": "Sigma^+를 만들 때는 대각 성분의 역수 변환뿐만 아니라 행렬의 형태도 m x n에서 n x m으로 전치해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "pseudoinverse_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "moore_penrose_conditions_check"
+        ]
+      },
+      "tags": [
+        "pseudoinverse",
+        "moore_penrose",
+        "least_squares"
+      ]
+    },
+    {
+      "concept_id": "la.advanced.pca",
+      "order": 4,
+      "name_ko": "주성분 분석 (Principal Component Analysis, PCA)",
+      "definition": "다차원 공간의 데이터 포인트들이 가진 분산이 가장 극대화되는 직교 축을 순차적으로 찾아 정보 손실을 최소화하며 데이터 차원을 축소하는 통계적 선형대수 알고리즘이다.",
+      "formulas": [
+        {
+          "formula_id": "covariance_matrix_formula",
+          "name_ko": "공분산 행렬",
+          "role": "definition",
+          "latex": "S = \\frac{1}{n-1} X^T X",
+          "cas": "(1 / (n - 1)) * X.T * X"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "mean_centering_required",
+          "description": "공분산을 계산하기 전 모든 데이터의 각 피처에 대해 평균을 0으로 맞추는 중심화 전처리를 수행해야 한다.",
+          "rule": {
+            "property": "is_mean_centered",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "principal_axes_maximizes_variance",
+          "description": "제1 주성분은 분산이 가장 큰 축이며 주성분들은 새로운 정규직교기저가 된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.symmetric_diagonalization",
+          "name_ko": "대칭행렬의 직교 대각화",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.advanced.compact_svd",
+          "name_ko": "축소 SVD",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.advanced.compact_svd"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "perform_pca",
+          "verb": "calculate",
+          "description": "데이터 행렬에 대해 PCA를 수행하여 주성분 축을 도출한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.advanced.pca.mean_centering_omission",
+          "title": "평균 중심화 전처리 누락",
+          "description": "데이터의 원점을 맞추지 않고 원본 데이터를 그대로 공분산 연산에 넣는다.",
+          "diagnosis_tag": "missing_mean_centering",
+          "feedback": "PCA 수행 전 반드시 데이터를 평균 중심화(Mean Centering)해야 올바른 분산 축을 찾을 수 있습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "pca_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix",
+          "vector_list"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "covariance_eigen_check"
+        ]
+      },
+      "tags": [
+        "pca",
+        "principal_component_analysis",
+        "dimensionality_reduction",
+        "covariance"
+      ]
+    },
+    {
+      "concept_id": "la.advanced.complex_space",
+      "order": 5,
+      "name_ko": "복소 내적 공간 (Hermitian & Unitary Matrices)",
+      "definition": "성분이 복소수인 벡터 공간으로 선형대수 체계를 확장하며 켤레 전치 연산자를 도입해 내적과 노름이 실수계열과 동일하게 작동하도록 모델링한다.",
+      "formulas": [
+        {
+          "formula_id": "conjugate_transpose_def",
+          "name_ko": "켤레 전치",
+          "role": "definition",
+          "latex": "A^* = \\overline{A}^T",
+          "cas": "Matrix(A).H"
+        },
+        {
+          "formula_id": "complex_inner_product",
+          "name_ko": "복소 내적",
+          "role": "definition",
+          "latex": "\\langle \\mathbf{u}, \\mathbf{v} \\rangle = \\mathbf{u}^* \\mathbf{v}",
+          "cas": "Dot(u.H, v)"
+        },
+        {
+          "formula_id": "unitary_matrix_condition",
+          "name_ko": "유니타리 행렬 조건",
+          "role": "property",
+          "latex": "U^* U = I",
+          "cas": "U.H * U == Eye()"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "conjugate_symmetry_in_complex",
+          "description": "복소 내적에서는 교환법칙이 성립하지 않으며 순서를 바꿀 때 켤레 복소수가 튀어나오는 제약을 반영해야 한다.",
+          "rule": {
+            "property": "satisfies_conjugate_symmetry",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "hermitian_real_spectrum",
+          "description": "에르미트 행렬의 고윳값은 성분이 복소수임에도 무조건 100% 실수라는 보장을 갖는다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.matrix.transpose_symmetric",
+          "name_ko": "대칭행렬",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.ortho.orthonormal_set",
+          "name_ko": "직교행렬",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.advanced.svd"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_complex_inner_product",
+          "verb": "calculate",
+          "description": "복소 벡터 공간에서 켤레 전치와 복소 내적을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.advanced.complex_space.real_dot_product_misuse",
+          "title": "복소 벡터의 자기 내적 차원 파괴",
+          "description": "복소 벡터의 노름을 구할 때 u^* u가 아닌 실수 방식인 u^T u를 강제 적용한다.",
+          "diagnosis_tag": "complex_norm_error",
+          "feedback": "복소 벡터의 노름을 구할 때는 반드시 켤레 전치인 u^* u를 사용하여 허수가 상쇄되도록 해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "complex_inner_product_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "complex_conjugate_check"
+        ]
+      },
+      "tags": [
+        "complex_inner_product",
+        "hermitian_matrix",
+        "unitary_matrix",
+        "conjugate_transpose"
+      ]
+    },
+    {
+      "concept_id": "la.advanced.jordan_form",
+      "order": 6,
+      "name_ko": "조르당 표준형 (Jordan Canonical Form)",
+      "definition": "고유벡터가 부족하여 대각화가 불가능한 결함 행렬을 대각행렬에 가장 근사한 형태인 주대각선 위가 1인 블록 행렬 구조로 기저 변환하는 알고리즘이다.",
+      "formulas": [
+        {
+          "formula_id": "jordan_decomposition_formula",
+          "name_ko": "조르당 분해 모델",
+          "role": "definition",
+          "latex": "A = M J M^{-1}",
+          "cas": "J, M = Matrix(A).jordan_form()"
+        },
+        {
+          "formula_id": "generalized_eigenvector_chain",
+          "name_ko": "일반화 고유벡터 체인",
+          "role": "formula",
+          "latex": "(A - \\lambda I)\\mathbf{v}_k = \\mathbf{v}_{k-1}",
+          "cas": "Eq((A - lambda_val * Eye(n)) * v_k, v_k_minus_1)"
+        },
+        {
+          "formula_id": "jordan_block_structure",
+          "name_ko": "조르당 블록 구조",
+          "role": "formula",
+          "latex": "J_i = \\begin{bmatrix} \\lambda & 1 & 0 \\\\ 0 & \\lambda & 1 \\\\ 0 & 0 & \\lambda \\end{bmatrix}",
+          "cas": "JordanBlock(lambda_val, k)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "recovers_diagonal_if_diagonalizable",
+          "description": "대각화 가능한 행렬에 적용하면 1이 붙은 블록은 생성되지 않고 대각행렬 D 그 자체로 출력되어야 한다.",
+          "rule": {
+            "property": "recovers_diagonal_matrix",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "generalized_eigenvectors_span",
+          "description": "일반화 고유벡터들은 선형독립이 보장되어 모자란 기저의 수를 채워 공간 전체를 스팬할 수 있게 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.eigen.diagonalization",
+          "name_ko": "대각화 가능성",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.eigen.eigenvector",
+          "name_ko": "고유벡터 공간",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "la.eigen.diagonalization"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_jordan_form",
+          "verb": "calculate",
+          "description": "결함 행렬에 대한 조르당 표준형과 전이행렬 M을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "la.advanced.jordan_form.chain_mapping_reversal",
+          "title": "고유벡터 체인의 매핑 역전",
+          "description": "연쇄 방정식을 통해 기저를 찾을 때 일반 고유벡터에서 출발하는 역추적 순서를 반대로 매핑한다.",
+          "diagnosis_tag": "jordan_chain_reversal_error",
+          "feedback": "일반화 고유벡터 체인은 기초 고유벡터 v_1부터 시작하여 상위 벡터로 순차적으로 연쇄 방정식을 풀어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "jordan_canonical_form_calculation"
+        ],
+        "supported_answer_types": [
+          "matrix_pair"
+        ],
+        "difficulty_range": {
+          "min": 4,
+          "max": 5
+        },
+        "recommended_validators": [
+          "jordan_similarity_check"
+        ]
+      },
+      "tags": [
+        "jordan_canonical_form",
+        "generalized_eigenvector",
+        "defective_matrix"
+      ]
+    }
+  ]
+}

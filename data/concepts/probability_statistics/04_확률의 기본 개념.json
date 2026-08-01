@@ -1,0 +1,2839 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "probability_statistics",
+    "name_ko": "확률과 통계"
+  },
+  "unit": {
+    "unit_id": "ps_04_probability_basics",
+    "name_ko": "확률의 기본 개념",
+    "order": 4,
+    "description": "확률의 기본 개념에서 필요한 핵심 개념과 공식을 정리한다. 계산식뿐 아니라 적용 조건과 해석상의 주의점을 함께 확인하는 것이 중요하다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "04_probability_basics.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "random_variable": "X",
+    "sample_notation": [
+      "X1",
+      "X2",
+      "...",
+      "Xn"
+    ],
+    "population_parameters": [
+      "mu",
+      "sigma^2",
+      "p",
+      "theta"
+    ],
+    "formula_display": "latex",
+    "formula_computation": "hybrid_symbolic_numeric_and_rule_verified",
+    "result_classification": [
+      "definition",
+      "exact",
+      "asymptotic",
+      "approximation",
+      "bound",
+      "empirical_criterion"
+    ],
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "ps.probability_basics.continuity_from_above",
+      "order": 1,
+      "name_ko": "확률의 위로부터 연속성",
+      "definition": "감소 사건열의 교집합에 대해 확률이 극한으로 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.continuity_from_above.formula_01",
+          "name_ko": "limit relation",
+          "role": "limit_relation",
+          "latex": "A_n\\downarrow A\\quad\\Longrightarrow\\quad P(A_n)\\to P(A)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.continuity_from_above.condition_01",
+          "description": "$A_{n+1}\\subseteq A_n$이고 $A=\\bigcap_nA_n$이어야 한다.",
+          "rule": {
+            "property": "event_sequence_decreases_to_limit",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.continuity_from_above.objective_01",
+          "verb": "apply",
+          "description": "확률의 위로부터 연속성의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "demorgan_probability_continuity",
+        "probability",
+        "continuity_from_above"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.continuity_from_below",
+      "order": 2,
+      "name_ko": "확률의 아래로부터 연속성",
+      "definition": "증가 사건열의 합집합에 대해 확률이 극한으로 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.continuity_from_below.formula_01",
+          "name_ko": "limit relation",
+          "role": "limit_relation",
+          "latex": "A_n\\uparrow A\\quad\\Longrightarrow\\quad P(A_n)\\to P(A)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.continuity_from_below.condition_01",
+          "description": "$A_n\\subseteq A_{n+1}$이고 $A=\\bigcup_nA_n$이어야 한다.",
+          "rule": {
+            "property": "event_sequence_increases_to_limit",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.continuity_from_below.objective_01",
+          "verb": "apply",
+          "description": "확률의 아래로부터 연속성의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "demorgan_probability_continuity",
+        "probability",
+        "continuity_from_below"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.de_morgan_laws",
+      "order": 3,
+      "name_ko": "De Morgan 법칙",
+      "definition": "합집합과 교집합의 여집합 관계를 나타내는 집합 항등식이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.de_morgan_laws.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.de_morgan_laws.f01",
+        "ps.probability_basics.de_morgan_laws.f02",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.objective_01",
+          "verb": "apply",
+          "description": "De Morgan 법칙의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "demorgan_probability_continuity",
+        "probability",
+        "de_morgan_laws"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_space_sample_space_events",
+      "order": 4,
+      "name_ko": "확률공간, 표본공간과 사건",
+      "definition": "확률공간은 $(\\Omega,\\mathcal F,P)$로 나타낸다. $\\Omega$는 가능한 모든 결과의 집합인 표본공간, $\\mathcal F$는 사건으로 허용되는 부분집합들의 $\\sigma$-대수, $P$는 확률측도다. 유한·가산 표본공간에서는 흔히 모든 부분집합을 사건으로 취급하지만, 일반적인 비가산 공간에서는 가측집합만 사건으로 사용한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_space_sample_space_events.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_space_sample_space_events.f01",
+        "ps.probability_basics.probability_space_sample_space_events.f02",
+        "ps.probability_basics.probability_space_sample_space_events.f03",
+        "ps.probability_basics.probability_axioms"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.objective_01",
+          "verb": "identify",
+          "description": "확률공간, 표본공간과 사건의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.objective_02",
+          "verb": "apply",
+          "description": "확률공간, 표본공간과 사건의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률공간, 표본공간과 사건의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "probability_space_sample_space_events",
+        "probability",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_axioms",
+      "order": 5,
+      "name_ko": "확률 공리",
+      "definition": "확률은 사건에 0과 1 사이의 수를 부여하는 함수다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_axioms.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 수열",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_axioms.f01",
+        "ps.probability_basics.probability_axioms.f02",
+        "ps.probability_basics.probability_axioms.f03",
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_properties"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.objective_01",
+          "verb": "identify",
+          "description": "확률 공리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.objective_02",
+          "verb": "apply",
+          "description": "확률 공리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률 공리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "probability_axioms",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_properties",
+      "order": 6,
+      "name_ko": "확률의 기본 성질",
+      "definition": "여사건·합사건·포함관계의 확률을 계산한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_properties.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 확률공리",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_properties.f01",
+        "ps.probability_basics.probability_properties.f02",
+        "ps.probability_basics.probability_properties.f03",
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_properties.objective_01",
+          "verb": "identify",
+          "description": "확률의 기본 성질의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.objective_02",
+          "verb": "apply",
+          "description": "확률의 기본 성질의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률의 기본 성질의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "probability_properties",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.demorgan_probability_continuity",
+      "order": 7,
+      "name_ko": "De Morgan 법칙과 확률의 연속성",
+      "definition": "사건열이 $A_n\\uparrow A$이면 $P(A_n)\\to P(A)$",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.demorgan_probability_continuity.property_01",
+          "description": "정의와 적용 조건을 함께 고려해야 올바르게 해석할 수 있다."
+        },
+        {
+          "property_id": "ps.probability_basics.demorgan_probability_continuity.property_02",
+          "description": "$(A\\cup B)^c=A^c\\cap B^c$ $(A\\cap B)^c=A^c\\cup B^c$ 사건열이 $A_n\\uparrow A$이면 $P(A_n)\\to P(A)$ 사건열이 $A_n\\downarrow A$이면 $P(A_n)\\to P(A)$ 확률측도에서는 $P(A_1)\\le 1$이므로 유한측도 조건이 자동으로 충족된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_properties",
+        "ps.probability_basics.bonferroni_inequality",
+        "ps.probability_basics.de_morgan_laws",
+        "ps.probability_basics.continuity_from_below",
+        "ps.probability_basics.continuity_from_above"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.demorgan_probability_continuity.objective_01",
+          "verb": "identify",
+          "description": "De Morgan 법칙과 확률의 연속성의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.demorgan_probability_continuity.objective_02",
+          "verb": "apply",
+          "description": "De Morgan 법칙과 확률의 연속성의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.demorgan_probability_continuity.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 De Morgan 법칙과 확률의 연속성의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.probability_basics.demorgan_probability_continuity.misconception_01",
+          "title": "De Morgan 법칙과 확률의 연속성 관련 오해 1",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_probability_basics_demorgan_probability_continuity_misconception_01",
+          "feedback": "$(A\\cup B)^c=A^c\\cap B^c$ $(A\\cap B)^c=A^c\\cup B^c$ 사건열이 $A_n\\uparrow A$이면 $P(A_n)\\to P(A)$ 사건열이 $A_n\\downarrow A$이면 $P(A_n)\\to P(A)$ 확률측도에서는 $P(A_1)\\le 1$이므로 유한측도 조건이 자동으로 충족된다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "demorgan_probability_continuity",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.bonferroni_inequality",
+      "order": 8,
+      "name_ko": "Bonferroni 부등식",
+      "definition": "두 사건에 대해 $P(A\\cap B)\\ge P(A)+P(B)-1$ 이 성립한다. 일반적으로 $P\\left(\\bigcap_{i=1}^{n}A_i\\right) \\ge 1-\\sum_{i=1}^{n}P(A_i^c)$ 이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.bonferroni_inequality.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.bonferroni_inequality.f01",
+        "ps.probability_basics.bonferroni_inequality.f02",
+        "ps.probability_basics.demorgan_probability_continuity",
+        "ps.probability_basics.monotonicity_set_difference"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.objective_01",
+          "verb": "identify",
+          "description": "Bonferroni 부등식의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.objective_02",
+          "verb": "apply",
+          "description": "Bonferroni 부등식의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Bonferroni 부등식의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "bonferroni_inequality",
+        "inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.monotonicity_set_difference",
+      "order": 9,
+      "name_ko": "확률의 단조성과 차집합",
+      "definition": "$A\\subseteq B$이면 $P(B\\setminus A)=P(B)-P(A)$ 이며, 따라서 $P(A)\\le P(B)$이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.monotonicity_set_difference.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.monotonicity_set_difference.f01",
+        "ps.probability_basics.monotonicity_set_difference.f02",
+        "ps.probability_basics.bonferroni_inequality",
+        "ps.probability_basics.sigma_algebra_conditions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.objective_01",
+          "verb": "identify",
+          "description": "확률의 단조성과 차집합의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.objective_02",
+          "verb": "apply",
+          "description": "확률의 단조성과 차집합의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률의 단조성과 차집합의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "monotonicity_set_difference",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.sigma_algebra_conditions",
+      "order": 10,
+      "name_ko": "$\\sigma$-대수의 조건",
+      "definition": "사건의 모음 $\\mathcal F$가 $\\Omega$ 위의 $\\sigma$-대수라는 것은 다음을 뜻한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.sigma_algebra_conditions.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.sigma_algebra_conditions.f01",
+        "ps.probability_basics.sigma_algebra_conditions.f02",
+        "ps.probability_basics.sigma_algebra_conditions.f03",
+        "ps.probability_basics.monotonicity_set_difference",
+        "ps.probability_basics.zero_probability_impossibility"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.objective_01",
+          "verb": "identify",
+          "description": "$\\sigma$-대수의 조건의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.objective_02",
+          "verb": "apply",
+          "description": "$\\sigma$-대수의 조건의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 $\\sigma$-대수의 조건의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "probability_basics",
+        "sigma_algebra_conditions"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.zero_probability_impossibility",
+      "order": 11,
+      "name_ko": "확률 0과 불가능성",
+      "definition": "$P(A)=0$이라고 해서 사건 $A$가 논리적으로 불가능하다는 뜻은 아니다. 예를 들어 연속균등분포에서 특정 한 점을 정확히 관측할 확률은 0이지만 그 점은 표본공간에 포함될 수 있다. 마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분해야 한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.zero_probability_impossibility.property_01",
+          "description": "$P(A)=0$이라고 해서 사건 $A$가 논리적으로 불가능하다는 뜻은 아니다."
+        },
+        {
+          "property_id": "ps.probability_basics.zero_probability_impossibility.property_02",
+          "description": "예를 들어 연속균등분포에서 특정 한 점을 정확히 관측할 확률은 0이지만 그 점은 표본공간에 포함될 수 있다."
+        },
+        {
+          "property_id": "ps.probability_basics.zero_probability_impossibility.property_03",
+          "description": "마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분해야 한다."
+        },
+        {
+          "property_id": "ps.probability_basics.zero_probability_impossibility.property_04",
+          "description": "확률 0과 불가능성 개념의 정의와 수식을 적용할 수 있는 자료형·정의역 조건을 만족해야 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.sigma_algebra_conditions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.zero_probability_impossibility.objective_01",
+          "verb": "identify",
+          "description": "확률 0과 불가능성의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.zero_probability_impossibility.objective_02",
+          "verb": "apply",
+          "description": "확률 0과 불가능성의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.zero_probability_impossibility.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률 0과 불가능성의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.probability_basics.zero_probability_impossibility.misconception_01",
+          "title": "마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분 오류",
+          "description": "마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분하지 않는다.",
+          "diagnosis_tag": "ps_probability_basics_zero_probability_impossibility_misconception_01",
+          "feedback": "마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "zero_probability_impossibility",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.de_morgan_laws.f01",
+      "order": 12,
+      "name_ko": "De Morgan 법칙 — 핵심 관계식",
+      "definition": "이 개념은 De Morgan 법칙에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.de_morgan_laws.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "(A\\cup B)^c=A^c\\cap B^c"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.de_morgan_laws.f01.condition_01",
+          "description": "여집합은 동일한 전체집합 $\\Omega$에 대해 정의되어야 한다.",
+          "rule": {
+            "property": "common_universe_for_complements",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.de_morgan_laws.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.de_morgan_laws",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.f01.objective_01",
+          "verb": "identify",
+          "description": "De Morgan 법칙 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.f01.objective_02",
+          "verb": "apply",
+          "description": "De Morgan 법칙 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.f01.objective_03",
+          "verb": "verify",
+          "description": "De Morgan 법칙 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "demorgan_probability_continuity",
+        "probability",
+        "de_morgan_laws",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.de_morgan_laws.f02",
+      "order": 13,
+      "name_ko": "De Morgan 법칙 — 핵심 관계식",
+      "definition": "이 개념은 De Morgan 법칙에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.de_morgan_laws.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "(A\\cap B)^c=A^c\\cup B^c"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.de_morgan_laws.f02.condition_01",
+          "description": "여집합은 동일한 전체집합 $\\Omega$에 대해 정의되어야 한다.",
+          "rule": {
+            "property": "common_universe_for_complements",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.de_morgan_laws.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.de_morgan_laws",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.f02.objective_01",
+          "verb": "identify",
+          "description": "De Morgan 법칙 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.f02.objective_02",
+          "verb": "apply",
+          "description": "De Morgan 법칙 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.de_morgan_laws.f02.objective_03",
+          "verb": "verify",
+          "description": "De Morgan 법칙 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "demorgan_probability_continuity",
+        "probability",
+        "de_morgan_laws",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_space_sample_space_events.f01",
+      "order": 14,
+      "name_ko": "확률공간, 표본공간과 사건 — 정의",
+      "definition": "이 개념은 확률공간, 표본공간과 사건에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.probability_space_sample_space_events.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "(\\Omega,\\mathcal F,P)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_space_sample_space_events.f01.condition_01",
+          "description": "$\\Omega$가 표본공간으로 정의되어 있어야 한다.",
+          "rule": {
+            "property": "sample_space_defined",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_space_sample_space_events.f01.condition_02",
+          "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다.",
+          "rule": {
+            "property": "event_family_is_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_space_sample_space_events.f01.condition_03",
+          "description": "$P$는 $\\mathcal F$ 위에 정의된 확률측도여야 한다.",
+          "rule": {
+            "property": "probability_measure_defined_on_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_space_sample_space_events.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_axioms"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f01.objective_01",
+          "verb": "identify",
+          "description": "확률공간, 표본공간과 사건 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f01.objective_02",
+          "verb": "apply",
+          "description": "확률공간, 표본공간과 사건 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f01.objective_03",
+          "verb": "verify",
+          "description": "확률공간, 표본공간과 사건 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_space_sample_space_events",
+        "probability",
+        "sampling",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_space_sample_space_events.f02",
+      "order": 15,
+      "name_ko": "확률공간, 표본공간과 사건 — 정의",
+      "definition": "이 개념은 확률공간, 표본공간과 사건에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.probability_space_sample_space_events.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "A\\text{는 사건}\\quad\\Longleftrightarrow\\quad A\\in\\mathcal F\\subseteq2^\\Omega"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_space_sample_space_events.f02.condition_01",
+          "description": "$\\Omega$가 표본공간으로 정의되어 있어야 한다.",
+          "rule": {
+            "property": "sample_space_defined",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_space_sample_space_events.f02.condition_02",
+          "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다.",
+          "rule": {
+            "property": "event_family_is_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_space_sample_space_events.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_axioms"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f02.objective_01",
+          "verb": "identify",
+          "description": "확률공간, 표본공간과 사건 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f02.objective_02",
+          "verb": "apply",
+          "description": "확률공간, 표본공간과 사건 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f02.objective_03",
+          "verb": "verify",
+          "description": "확률공간, 표본공간과 사건 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_space_sample_space_events",
+        "probability",
+        "sampling",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_space_sample_space_events.f03",
+      "order": 16,
+      "name_ko": "확률공간, 표본공간과 사건 — 성질",
+      "definition": "이 개념은 확률공간, 표본공간과 사건에서 사용하는 성질 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.probability_space_sample_space_events.f03.formula_01",
+          "name_ko": "성질",
+          "role": "property",
+          "latex": "A,B\\in\\mathcal F\\quad\\Longrightarrow\\quad A^c,\\ A\\cup B,\\ A\\cap B\\in\\mathcal F"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_space_sample_space_events.f03.condition_01",
+          "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다.",
+          "rule": {
+            "property": "family_is_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_space_sample_space_events.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_axioms"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f03.objective_01",
+          "verb": "identify",
+          "description": "확률공간, 표본공간과 사건 수식 3의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f03.objective_02",
+          "verb": "apply",
+          "description": "확률공간, 표본공간과 사건 수식 3을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_space_sample_space_events.f03.objective_03",
+          "verb": "verify",
+          "description": "확률공간, 표본공간과 사건 수식 3의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_space_sample_space_events",
+        "probability",
+        "sampling",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_axioms.f01",
+      "order": 17,
+      "name_ko": "확률의 비음수성 공리",
+      "definition": "확률 공리에서 확률의 비음수성 공리에 해당하는 적용 조건이나 보조 내용을 정리한 비활성 개념이다.",
+      "formulas": [],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f01.condition_01",
+          "description": "$A\\in\\mathcal F$여야 한다.",
+          "rule": {
+            "property": "event_in_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f01.condition_02",
+          "description": "$P$는 $\\mathcal F$ 위의 확률측도여야 한다.",
+          "rule": {
+            "property": "probability_measure_defined_on_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_axioms.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        },
+        {
+          "property_id": "ps.probability_basics.probability_axioms.f01.property_02",
+          "description": "수학적 전제/제약: $P(A)\\ge 0$"
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 수열",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_properties"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f01.objective_01",
+          "verb": "identify",
+          "description": "확률의 비음수성 공리의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f01.objective_02",
+          "verb": "apply",
+          "description": "확률의 비음수성 공리을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f01.objective_03",
+          "verb": "verify",
+          "description": "확률의 비음수성 공리의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_axioms",
+        "probability",
+        "formula_atomic",
+        "axiom"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_axioms.f02",
+      "order": 18,
+      "name_ko": "확률의 정규화 공리",
+      "definition": "확률 공리에서 확률의 정규화 공리에 해당하는 적용 조건이나 보조 내용을 정리한 비활성 개념이다.",
+      "formulas": [],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f02.condition_01",
+          "description": "$P$는 $\\mathcal F$ 위의 확률측도여야 한다.",
+          "rule": {
+            "property": "probability_measure_defined_on_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f02.condition_02",
+          "description": "$\\Omega$는 표본공간이어야 한다.",
+          "rule": {
+            "property": "sample_space_defined",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_axioms.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        },
+        {
+          "property_id": "ps.probability_basics.probability_axioms.f02.property_02",
+          "description": "수학적 전제/제약: $P(\\Omega)=1$"
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 수열",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_properties"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f02.objective_01",
+          "verb": "identify",
+          "description": "확률의 정규화 공리의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f02.objective_02",
+          "verb": "apply",
+          "description": "확률의 정규화 공리을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f02.objective_03",
+          "verb": "verify",
+          "description": "확률의 정규화 공리의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_axioms",
+        "probability",
+        "formula_atomic",
+        "axiom"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_axioms.f03",
+      "order": 19,
+      "name_ko": "확률의 가산가법성 공리",
+      "definition": "확률 공리에서 확률의 가산가법성 공리에 해당하는 적용 조건이나 보조 내용을 정리한 비활성 개념이다.",
+      "formulas": [],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f03.condition_01",
+          "description": "모든 $A_i\\in\\mathcal F$여야 한다.",
+          "rule": {
+            "property": "all_events_in_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f03.condition_02",
+          "description": "사건열 $(A_i)$는 쌍별로 서로 배반이어야 한다.",
+          "rule": {
+            "property": "events_pairwise_disjoint",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_axioms.f03.condition_03",
+          "description": "$P$는 $\\mathcal F$ 위의 확률측도여야 한다.",
+          "rule": {
+            "property": "probability_measure_defined_on_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_axioms.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        },
+        {
+          "property_id": "ps.probability_basics.probability_axioms.f03.property_02",
+          "description": "수학적 전제/제약: $P\\left(\\bigcup_{i=1}^{\\infty}A_i\\right) = \\sum_{i=1}^{\\infty}P(A_i)$"
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 수열",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.probability_space_sample_space_events",
+        "ps.probability_basics.probability_properties"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f03.objective_01",
+          "verb": "identify",
+          "description": "확률의 가산가법성 공리의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f03.objective_02",
+          "verb": "apply",
+          "description": "확률의 가산가법성 공리을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_axioms.f03.objective_03",
+          "verb": "verify",
+          "description": "확률의 가산가법성 공리의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_axioms",
+        "probability",
+        "formula_atomic",
+        "axiom"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_properties.f01",
+      "order": 20,
+      "name_ko": "확률의 기본 성질 — 핵심 관계식",
+      "definition": "이 개념은 확률의 기본 성질에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.probability_properties.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A^c)=1-P(A)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_properties.f01.condition_01",
+          "description": "$A$는 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "event_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_properties.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 확률공리",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_properties",
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f01.objective_01",
+          "verb": "identify",
+          "description": "확률의 기본 성질 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f01.objective_02",
+          "verb": "apply",
+          "description": "확률의 기본 성질 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f01.objective_03",
+          "verb": "verify",
+          "description": "확률의 기본 성질 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_properties",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_properties.f02",
+      "order": 21,
+      "name_ko": "확률의 기본 성질 — 핵심 관계식",
+      "definition": "이 개념은 확률의 기본 성질에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.probability_properties.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_properties.f02.condition_01",
+          "description": "$A$는 사건이어야 한다.",
+          "rule": {
+            "property": "event_A_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_properties.f02.condition_02",
+          "description": "$B$는 사건이어야 한다.",
+          "rule": {
+            "property": "event_B_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_properties.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 확률공리",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_properties",
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f02.objective_01",
+          "verb": "identify",
+          "description": "확률의 기본 성질 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f02.objective_02",
+          "verb": "apply",
+          "description": "확률의 기본 성질 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f02.objective_03",
+          "verb": "verify",
+          "description": "확률의 기본 성질 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_properties",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.probability_properties.f03",
+      "order": 22,
+      "name_ko": "확률의 기본 성질 — 확률의 단조성",
+      "definition": "이 개념은 확률의 기본 성질에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.probability_properties.f03.formula_01",
+          "name_ko": "확률의 단조성",
+          "role": "probability_order_relation",
+          "latex": "A\\subseteq B\\quad\\Longrightarrow\\quad P(A)\\le P(B)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.probability_properties.f03.condition_01",
+          "description": "$A$는 사건이어야 한다.",
+          "rule": {
+            "property": "event_A_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_properties.f03.condition_02",
+          "description": "$B$는 사건이어야 한다.",
+          "rule": {
+            "property": "event_B_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.probability_properties.f03.condition_03",
+          "description": "$A\\subseteq B$여야 한다.",
+          "rule": {
+            "property": "event_inclusion",
+            "operator": "equals",
+            "value": "A_subset_B"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.probability_properties.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합, 확률공리",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.probability_properties",
+        "ps.probability_basics.probability_axioms",
+        "ps.probability_basics.demorgan_probability_continuity"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f03.objective_01",
+          "verb": "identify",
+          "description": "확률의 기본 성질 수식 3의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f03.objective_02",
+          "verb": "apply",
+          "description": "확률의 기본 성질 수식 3을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.probability_properties.f03.objective_03",
+          "verb": "verify",
+          "description": "확률의 기본 성질 수식 3의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "probability_properties",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.bonferroni_inequality.f01",
+      "order": 23,
+      "name_ko": "Bonferroni 부등식 — 상계·하계",
+      "definition": "이 개념은 Bonferroni 부등식에서 사용하는 상계 또는 하계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.bonferroni_inequality.f01.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P(A\\cap B)\\ge P(A)+P(B)-1"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f01.condition_01",
+          "description": "$A$는 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "event_A_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f01.condition_02",
+          "description": "$B$는 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "event_B_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.bonferroni_inequality.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.bonferroni_inequality",
+        "ps.probability_basics.demorgan_probability_continuity",
+        "ps.probability_basics.monotonicity_set_difference"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.f01.objective_01",
+          "verb": "identify",
+          "description": "Bonferroni 부등식 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.f01.objective_02",
+          "verb": "apply",
+          "description": "Bonferroni 부등식 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.f01.objective_03",
+          "verb": "verify",
+          "description": "Bonferroni 부등식 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "bonferroni_inequality",
+        "inequality",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.bonferroni_inequality.f02",
+      "order": 24,
+      "name_ko": "Bonferroni 부등식 — 상계·하계",
+      "definition": "이 개념은 Bonferroni 부등식에서 사용하는 상계 또는 하계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.bonferroni_inequality.f02.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n\\ge 1-\\sum_{i=1}^{n}P(A_i^c)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f02.condition_01",
+          "description": "사건 $A_1,\\ldots,A_n$은 동일한 확률공간에 속해야 한다.",
+          "rule": {
+            "property": "same_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f02.condition_02",
+          "description": "일반 교집합 하계의 사건 수는 $n\\in\\mathbb N$이어야 한다.",
+          "rule": {
+            "property": "event_count",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f02.condition_03",
+          "description": "식에 등장하는 모든 사건은 같은 확률공간의 시그마 대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f02.condition_04",
+          "description": "`event_count`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "event_count_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.bonferroni_inequality.f02.condition_05",
+          "description": "모든 사건은 동일한 확률공간의 시그마대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable_in_common_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.bonferroni_inequality.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.bonferroni_inequality",
+        "ps.probability_basics.demorgan_probability_continuity",
+        "ps.probability_basics.monotonicity_set_difference"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.f02.objective_01",
+          "verb": "identify",
+          "description": "Bonferroni 부등식 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.f02.objective_02",
+          "verb": "apply",
+          "description": "Bonferroni 부등식 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.bonferroni_inequality.f02.objective_03",
+          "verb": "verify",
+          "description": "Bonferroni 부등식 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "bonferroni_inequality",
+        "inequality",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.monotonicity_set_difference.f01",
+      "order": 25,
+      "name_ko": "확률의 단조성과 차집합 — 핵심 관계식",
+      "definition": "이 개념은 확률의 단조성과 차집합에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.monotonicity_set_difference.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(B\\setminus A)=P(B)-P(A)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.monotonicity_set_difference.f01.condition_01",
+          "description": "$A\\subseteq B$이고 두 사건이 같은 확률공간에 속해야 한다.",
+          "rule": {
+            "property": "A_subset_of_B",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.monotonicity_set_difference.f01.condition_02",
+          "description": "식에 등장하는 모든 사건은 같은 확률공간의 시그마 대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.monotonicity_set_difference.f01.condition_03",
+          "description": "모든 사건은 동일한 확률공간의 시그마대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable_in_common_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.monotonicity_set_difference.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.monotonicity_set_difference",
+        "ps.probability_basics.bonferroni_inequality",
+        "ps.probability_basics.sigma_algebra_conditions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.f01.objective_01",
+          "verb": "identify",
+          "description": "확률의 단조성과 차집합 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.f01.objective_02",
+          "verb": "apply",
+          "description": "확률의 단조성과 차집합 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.f01.objective_03",
+          "verb": "verify",
+          "description": "확률의 단조성과 차집합 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "monotonicity_set_difference",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.monotonicity_set_difference.f02",
+      "order": 26,
+      "name_ko": "확률의 단조성과 차집합 — 핵심 관계식",
+      "definition": "이 개념은 확률의 단조성과 차집합에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.monotonicity_set_difference.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A\\setminus B)=P(A)-P(A\\cap B)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.monotonicity_set_difference.f02.condition_01",
+          "description": "$A,B$가 같은 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "same_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.monotonicity_set_difference.f02.condition_02",
+          "description": "식에 등장하는 모든 사건은 같은 확률공간의 시그마 대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.probability_basics.monotonicity_set_difference.f02.condition_03",
+          "description": "모든 사건은 동일한 확률공간의 시그마대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable_in_common_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.probability_basics.monotonicity_set_difference.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.monotonicity_set_difference",
+        "ps.probability_basics.bonferroni_inequality",
+        "ps.probability_basics.sigma_algebra_conditions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.f02.objective_01",
+          "verb": "identify",
+          "description": "확률의 단조성과 차집합 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.f02.objective_02",
+          "verb": "apply",
+          "description": "확률의 단조성과 차집합 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.monotonicity_set_difference.f02.objective_03",
+          "verb": "verify",
+          "description": "확률의 단조성과 차집합 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "monotonicity_set_difference",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.sigma_algebra_conditions.f01",
+      "order": 27,
+      "name_ko": "$\\sigma$-대수의 조건 — 정의",
+      "definition": "$\\sigma$-대수의 전체집합 포함 공리를 독립된 정의식으로 다룬다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.sigma_algebra_conditions.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\Omega\\in\\mathcal F"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.sigma_algebra_conditions.f01.condition_01",
+          "description": "$\\mathcal F$는 $\\Omega$의 부분집합들로 이루어진 집합족이어야 한다.",
+          "rule": {
+            "property": "event_family_on_sample_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.sigma_algebra_conditions",
+        "ps.probability_basics.monotonicity_set_difference",
+        "ps.probability_basics.zero_probability_impossibility"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f01.objective_01",
+          "verb": "identify",
+          "description": "$\\sigma$-대수의 조건 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f01.objective_02",
+          "verb": "apply",
+          "description": "$\\sigma$-대수의 조건 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f01.objective_03",
+          "verb": "verify",
+          "description": "$\\sigma$-대수의 조건 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check",
+          "symbolic_equivalence",
+          "numerical_tolerance"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "sigma_algebra_conditions",
+        "formula_atomic",
+        "axiom"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.sigma_algebra_conditions.f02",
+      "order": 28,
+      "name_ko": "$\\sigma$-대수의 조건 — 정의",
+      "definition": "$\\sigma$-대수의 여집합 닫힘 공리를 독립된 정의식으로 다룬다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.sigma_algebra_conditions.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "A\\in\\mathcal F\\Longrightarrow A^c\\in\\mathcal F"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.sigma_algebra_conditions.f02.condition_01",
+          "description": "$\\mathcal F$는 $\\Omega$의 부분집합들로 이루어진 집합족이어야 한다.",
+          "rule": {
+            "property": "event_family_on_sample_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.sigma_algebra_conditions",
+        "ps.probability_basics.monotonicity_set_difference",
+        "ps.probability_basics.zero_probability_impossibility"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f02.objective_01",
+          "verb": "identify",
+          "description": "$\\sigma$-대수의 조건 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f02.objective_02",
+          "verb": "apply",
+          "description": "$\\sigma$-대수의 조건 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f02.objective_03",
+          "verb": "verify",
+          "description": "$\\sigma$-대수의 조건 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check",
+          "symbolic_equivalence",
+          "numerical_tolerance"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "sigma_algebra_conditions",
+        "formula_atomic",
+        "axiom"
+      ]
+    },
+    {
+      "concept_id": "ps.probability_basics.sigma_algebra_conditions.f03",
+      "order": 29,
+      "name_ko": "$\\sigma$-대수의 조건 — 정의",
+      "definition": "$\\sigma$-대수의 가산합집합 닫힘 공리를 독립된 정의식으로 다룬다.",
+      "formulas": [
+        {
+          "formula_id": "ps.probability_basics.sigma_algebra_conditions.f03.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "A_1,A_2,\\ldots\\in\\mathcal F\\Longrightarrow\\bigcup_{n=1}^{\\infty}A_n\\in\\mathcal F"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.probability_basics.sigma_algebra_conditions.f03.condition_01",
+          "description": "$\\mathcal F$는 $\\Omega$의 부분집합들로 이루어진 집합족이어야 한다.",
+          "rule": {
+            "property": "event_family_on_sample_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.counting.addition_multiplication_rules",
+          "name_ko": "합의 법칙과 곱의 법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.probability_basics.sigma_algebra_conditions",
+        "ps.probability_basics.monotonicity_set_difference",
+        "ps.probability_basics.zero_probability_impossibility"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f03.objective_01",
+          "verb": "identify",
+          "description": "$\\sigma$-대수의 조건 수식 3의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f03.objective_02",
+          "verb": "apply",
+          "description": "$\\sigma$-대수의 조건 수식 3을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.probability_basics.sigma_algebra_conditions.f03.objective_03",
+          "verb": "verify",
+          "description": "$\\sigma$-대수의 조건 수식 3의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check",
+          "symbolic_equivalence",
+          "numerical_tolerance"
+        ]
+      },
+      "tags": [
+        "probability_basics",
+        "sigma_algebra_conditions",
+        "formula_atomic",
+        "axiom"
+      ]
+    }
+  ]
+}

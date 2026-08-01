@@ -1,0 +1,574 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "calculus_1",
+    "name_ko": "미분적분학 1"
+  },
+  "unit": {
+    "unit_id": "calc1_ch06_applications_of_integration",
+    "name_ko": "적분의 응용",
+    "order": 6,
+    "description": "두 곡선 사이의 넓이, 절단면법·원판법·고리법·원통셸법을 이용한 회전체(및 일반 입체)의 부피 계산을 정리하는 단원이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": [
+      "chapter06 Applications of Integration.md",
+      "volume1_chapter6_applications_of_integration.md"
+    ],
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 사항"
+    ]
+  },
+  "conventions": {
+    "independent_variable": "x",
+    "dependent_function": "f(x)",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "calculus.area_between_curves",
+      "order": 1,
+      "name_ko": "곡선 사이의 넓이",
+      "definition": "구간 [a,b]에서 f(x)≥g(x)이면 두 곡선 y=f(x), y=g(x)와 직선 x=a,x=b로 둘러싸인 영역의 넓이는 ∫[a,b][f(x)-g(x)]dx이다. 위·아래 관계가 구간 안에서 바뀌면 절댓값을 취하거나 교점 기준으로 구간을 나눈다. 영역의 모양에 따라 y에 대해 적분(오른쪽 경계-왼쪽 경계)하는 것이 더 간단할 수도 있다.",
+      "formulas": [
+        {
+          "formula_id": "area_between_curves_x",
+          "name_ko": "x에 대한 넓이",
+          "role": "definition",
+          "latex": "A=\\int_a^b[f(x)-g(x)]\\,dx\\quad(f(x)\\ge g(x)\\text{ on }[a,b])",
+          "cas": "Integral(f(x)-g(x), (x,a,b))"
+        },
+        {
+          "formula_id": "area_between_curves_abs",
+          "name_ko": "부호가 바뀌는 경우",
+          "role": "generalization",
+          "latex": "A=\\int_a^b|f(x)-g(x)|\\,dx",
+          "cas": "Integral(Abs(f(x)-g(x)), (x,a,b))"
+        },
+        {
+          "formula_id": "area_between_curves_y",
+          "name_ko": "y에 대한 넓이",
+          "role": "alternative_form",
+          "latex": "A=\\int_c^d[x_R(y)-x_L(y)]\\,dy",
+          "cas": "Integral(xR(y)-xL(y), (y,c,d))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "f_g_continuous_order_fixed",
+          "description": "f, g는 연속함수여야 하며, x에 대해 적분할 때는 구간 전체에서 위·아래 경계가 바뀌지 않아야 한다(바뀌면 절댓값을 취하거나 구간을 나눈다).",
+          "rule": {
+            "property": "upper_lower_order_constant_on_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "intersections_determine_bounds",
+          "description": "교점을 먼저 구해 적분구간(경계값)을 정해야 한다.",
+          "rule": {
+            "property": "integration_bounds_from_intersections",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "riemann_sum_origin",
+          "description": "넓이 공식은 대표 근사 직사각형(폭 Δx, 높이 f(x)-g(x))의 리만합의 극한으로 유도되며, g(x)=0인 특수한 경우 곡선 아래 넓이의 정의와 일치한다."
+        },
+        {
+          "property_id": "choose_x_or_y_by_shape",
+          "description": "위(또는 오른쪽) 경계나 아래(또는 왼쪽) 경계가 하나의 곡선으로 표현되는 변수를 택하면 계산이 간단해진다."
+        },
+        {
+          "property_id": "symmetry_shortcut_for_area",
+          "description": "영역이 대칭이면 절반만 적분하고 2배 하는 방식으로 계산을 간단히 할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.integral",
+          "name_ko": "정적분의 정의와 적분가능성",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.fundamental_theorem_of_calculus_part2",
+          "name_ko": "미적분학의 기본 정리 2부(정적분의 계산)",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.volume_by_cross_section"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "find_intersection_points",
+          "verb": "calculate",
+          "description": "두 곡선의 교점을 구해 적분구간을 결정한다."
+        },
+        {
+          "objective_id": "compute_area_between_curves",
+          "verb": "calculate",
+          "description": "두 곡선 사이의 넓이를 x 또는 y에 대한 적분으로 계산한다."
+        },
+        {
+          "objective_id": "handle_sign_change_area",
+          "verb": "apply",
+          "description": "위·아래 관계가 바뀌는 영역의 넓이를 절댓값이나 구간 분할로 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.area_between_curves.single_formula_despite_swap",
+          "title": "경계가 바뀌는데도 하나의 식으로 적분",
+          "description": "구간 중간에 위·아래 관계가 바뀌는데도 f(x)-g(x)를 그대로 적분해 넓이를 계산한다.",
+          "diagnosis_tag": "integrate_without_accounting_for_boundary_swap",
+          "feedback": "위/아래 경계가 구간 전체에서 하나의 곡선으로 유지되지 않으면 절댓값을 쓰거나 교점을 기준으로 구간을 나누어 각각 적분해야 한다."
+        },
+        {
+          "misconception_id": "calculus.area_between_curves.reverse_subtraction",
+          "title": "위쪽·아래쪽(또는 오른쪽·왼쪽) 함수 순서 반대로 계산",
+          "description": "아래쪽 함수에서 위쪽 함수를 빼서 음의 넓이를 얻는다.",
+          "diagnosis_tag": "subtract_functions_in_wrong_order",
+          "feedback": "넓이는 항상 위쪽(또는 오른쪽) 함수에서 아래쪽(또는 왼쪽) 함수를 빼야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "area_between_curves_calculation",
+          "intersection_point_calculation",
+          "variable_choice_for_area"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_sampling"
+        ]
+      },
+      "tags": [
+        "area_between_curves"
+      ]
+    },
+    {
+      "concept_id": "calculus.volume_by_cross_section",
+      "order": 2,
+      "name_ko": "절단면법에 의한 부피",
+      "definition": "절단면의 넓이가 A(x)인 입체를 x=a에서 x=b까지 적분하면 부피 V=∫[a,b]A(x)dx를 얻는다. 절단면은 원, 고리뿐 아니라 정사각형, 삼각형, 반원 등 기하학적으로 정의되는 임의의 모양일 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "volume_by_cross_section",
+          "name_ko": "절단면법",
+          "role": "definition",
+          "latex": "V=\\lim_{n\\to\\infty}\\sum_{i=1}^nA(x_i^*)\\Delta x=\\int_a^bA(x)\\,dx",
+          "cas": "Integral(A(x), (x,a,b))"
+        },
+        {
+          "formula_id": "square_cross_section",
+          "name_ko": "정사각형 절단면",
+          "role": "special_case",
+          "latex": "A(x)=[s(x)]^2",
+          "cas": "s(x)**2"
+        },
+        {
+          "formula_id": "equilateral_triangle_cross_section",
+          "name_ko": "정삼각형 절단면",
+          "role": "special_case",
+          "latex": "A(x)=\\frac{\\sqrt3}{4}[s(x)]^2",
+          "cas": "sqrt(3)/4*s(x)**2"
+        },
+        {
+          "formula_id": "semicircle_cross_section",
+          "name_ko": "반원 절단면",
+          "role": "special_case",
+          "latex": "A(x)=\\frac{\\pi}{8}[d(x)]^2",
+          "cas": "pi/8*d(x)**2"
+        },
+        {
+          "formula_id": "sphere_volume_derivation",
+          "name_ko": "구의 부피(절단면 유도)",
+          "role": "example",
+          "latex": "A(x)=\\pi(r^2-x^2)\\implies V=\\int_{-r}^r\\pi(r^2-x^2)\\,dx=\\frac43\\pi r^3",
+          "cas": "Integral(pi*(r**2-x**2), (x,-r,r))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "cross_section_perpendicular_and_continuous",
+          "description": "A(x)는 연속(또는 적분가능)이어야 하며, 절단면은 선택한 적분축에 수직이어야 한다.",
+          "rule": {
+            "property": "cross_section_perpendicular_to_axis_and_integrable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "cross_section_shape_flexible",
+          "description": "절단면이 반드시 원이나 고리일 필요는 없다: 밑면이 원이고 절단면이 정삼각형인 입체, 사각뿔, 쐐기 모양처럼 기하학적으로 정의되는 절단면 넓이 A(x)를 직접 구해 적분하는 방식도 가능하다."
+        },
+        {
+          "property_id": "midpoint_rule_for_complex_area",
+          "description": "절단면 넓이 함수 A(x)가 복잡할 때는 중점 법칙으로 부피의 근삿값을 구할 수 있다."
+        },
+        {
+          "property_id": "similar_triangles_for_pyramid",
+          "description": "닮음비를 이용해 절단면 넓이(예: 사각뿔의 A(x)=(L²/h²)x²)를 구할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.integral",
+          "name_ko": "정적분의 정의와 적분가능성",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.volume_by_disk_and_washer"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "determine_cross_section_area_function",
+          "verb": "construct",
+          "description": "입체의 기하학적 조건으로부터 절단면 넓이 함수 A(x)를 구한다."
+        },
+        {
+          "objective_id": "compute_volume_by_cross_section",
+          "verb": "calculate",
+          "description": "절단면법으로 입체의 부피를 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.cross_section.assume_only_circular",
+          "title": "절단면이 항상 원이라고 가정",
+          "description": "절단면법을 회전체(원판·고리)에만 쓸 수 있다고 오해하고, 정사각형·삼각형 등 다른 절단면 문제에 적용하지 못한다.",
+          "diagnosis_tag": "assume_cross_section_must_be_circular",
+          "feedback": "절단면법은 절단면 넓이 A(x)를 구할 수 있으면 원, 고리뿐 아니라 정사각형·삼각형·반원 등 어떤 모양에도 적용할 수 있다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "cross_section_area_construction",
+          "volume_by_cross_section_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_sampling"
+        ]
+      },
+      "tags": [
+        "volume",
+        "cross_section_method"
+      ]
+    },
+    {
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "order": 3,
+      "name_ko": "원판법과 고리법",
+      "definition": "회전체의 절단면이 회전축에 맞닿아 있으면(내부가 비어있지 않으면) 원판(A=π·반지름²), 회전축에서 떨어져 있으면(내부가 비어있으면) 고리(A=π·외부반지름²-π·내부반지름²)가 된다. 반지름은 항상 좌표값이 아니라 회전축까지의 거리로 계산해야 한다.",
+      "formulas": [
+        {
+          "formula_id": "disk_method",
+          "name_ko": "원판법",
+          "role": "special_case",
+          "latex": "A(x)=\\pi[R(x)]^2,\\qquad V=\\pi\\int_a^b[R(x)]^2\\,dx",
+          "cas": "pi*Integral(R(x)**2, (x,a,b))"
+        },
+        {
+          "formula_id": "washer_method",
+          "name_ko": "고리법",
+          "role": "special_case",
+          "latex": "A(x)=\\pi[R(x)]^2-\\pi[r(x)]^2,\\qquad V=\\pi\\int_a^b\\left([R(x)]^2-[r(x)]^2\\right)dx",
+          "cas": "pi*Integral(R(x)**2-r(x)**2, (x,a,b))"
+        },
+        {
+          "formula_id": "axis_distance",
+          "name_ko": "회전축까지의 거리",
+          "role": "auxiliary_formula",
+          "latex": "\\text{축 }y=k:\\ |f(x)-k|,\\qquad\\text{축 }x=h:\\ |g(y)-h|",
+          "cas": "Abs(f(x)-k)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "washer_r_geq_r",
+          "description": "고리법에서는 R≥r≥0이어야 하며, 외부반지름과 내부반지름 모두 회전축으로부터의 거리로 정의해야 한다.",
+          "rule": {
+            "property": "R",
+            "operator": "greater_or_equal",
+            "value": "r"
+          }
+        },
+        {
+          "condition_id": "cross_section_perpendicular_to_axis",
+          "description": "절단면은 회전축에 수직이어야 한다.",
+          "rule": {
+            "property": "cross_section_perpendicular_to_rotation_axis",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "disk_is_special_washer",
+          "description": "원판법은 고리법에서 내부반지름이 0인 특수한 경우다."
+        },
+        {
+          "property_id": "region_touches_axis_or_not",
+          "description": "영역이 회전축에 붙어 있으면 원판, 회전축에서 떨어져 있으면(가운데가 비면) 고리이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.volume_by_cross_section",
+          "name_ko": "절단면법에 의한 부피",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.area_between_curves",
+          "name_ko": "곡선 사이의 넓이",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "calculus.volume_by_cylindrical_shells"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "distinguish_disk_and_washer",
+          "verb": "distinguish",
+          "description": "영역과 회전축의 위치 관계로 원판법과 고리법을 구분한다."
+        },
+        {
+          "objective_id": "compute_radius_as_distance_to_axis",
+          "verb": "calculate",
+          "description": "회전축이 좌표축이 아닐 때 반지름을 축까지의 거리로 계산한다."
+        },
+        {
+          "objective_id": "compute_volume_by_disk_or_washer",
+          "verb": "calculate",
+          "description": "원판법 또는 고리법으로 회전체의 부피를 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.disk_washer.radius_as_coordinate",
+          "title": "반지름을 좌표값으로 착각",
+          "description": "회전축이 좌표축이 아닌데도(예: y=2, x=-1) 반지름을 그냥 f(x)나 x값으로 사용한다.",
+          "diagnosis_tag": "use_coordinate_instead_of_distance_to_axis",
+          "feedback": "반지름은 곡선 위의 점에서 회전축까지의 거리이며, 회전축이 좌표축이 아니면 |f(x)-k| 같은 거리 공식으로 다시 계산해야 한다."
+        },
+        {
+          "misconception_id": "calculus.disk_washer.swap_radii",
+          "title": "외부반지름과 내부반지름을 바꿔 계산",
+          "description": "고리법에서 R과 r의 순서를 바꿔 A(x)=π[r(x)]²-π[R(x)]²로 계산한다.",
+          "diagnosis_tag": "swap_outer_and_inner_radius",
+          "feedback": "고리법의 넓이는 외부반지름의 제곱에서 내부반지름의 제곱을 빼야 하며(R≥r), 순서를 바꾸면 안 된다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "disk_method_volume",
+          "washer_method_volume",
+          "axis_distance_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_sampling"
+        ]
+      },
+      "tags": [
+        "disk_method",
+        "washer_method",
+        "volume_of_revolution"
+      ]
+    },
+    {
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "order": 4,
+      "name_ko": "원통셸 방법에 의한 부피",
+      "definition": "회전축과 평행한 대표 직사각형을 회전시켜 만든 얇은 원통껍질(반지름 r, 높이 h, 두께 Δr)의 부피 근사 2πrhΔr을 리만합의 극한으로 적분한 것이 원통셸법이다. 곡선을 x=g(y) 형태로 풀기 어려울 때 고리법의 대안으로 유용하다.",
+      "formulas": [
+        {
+          "formula_id": "cylindrical_shell_approx",
+          "name_ko": "원통셸의 근사 부피",
+          "role": "approximation",
+          "latex": "\\Delta V\\approx2\\pi rh\\,\\Delta r=[\\text{원둘레}]\\times[\\text{높이}]\\times[\\text{두께}]",
+          "cas": "2*pi*r*h*Dr"
+        },
+        {
+          "formula_id": "cylindrical_shell_general",
+          "name_ko": "일반 원통셸 공식",
+          "role": "definition",
+          "latex": "V=2\\pi\\int_a^br(x)h(x)\\,dx",
+          "cas": "2*pi*Integral(r(x)*h(x), (x,a,b))"
+        },
+        {
+          "formula_id": "cylindrical_shell_y_axis",
+          "name_ko": "y축 둘레 회전(0≤a<b)",
+          "role": "special_case",
+          "latex": "V=\\int_a^b2\\pi x\\,f(x)\\,dx\\quad(f(x)\\ge0,\\ 0\\le a<b)",
+          "cas": "2*pi*Integral(x*f(x), (x,a,b))"
+        },
+        {
+          "formula_id": "cylindrical_shell_arbitrary_axis",
+          "name_ko": "임의의 직선 x=k 둘레 회전",
+          "role": "generalization",
+          "latex": "r(x)=|x-k|,\\qquad V=2\\pi\\int_a^b|x-k|\\,h(x)\\,dx",
+          "cas": "2*pi*Integral(Abs(x-k)*h(x), (x,a,b))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "shell_parallel_to_axis",
+          "description": "대표 직사각형(셸)이 회전축과 평행해야 하며, 반지름은 회전축까지의 거리, 높이는 영역의 위아래(또는 좌우) 차이여야 한다.",
+          "rule": {
+            "property": "representative_rectangle_parallel_to_axis",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "y_axis_case_nonnegative_a",
+          "description": "y축 둘레 회전의 기본형 V=∫2πxf(x)dx는 0≤a<b(원점과 겹치지 않는 구간)를 전제로 하며, 음의 x가 포함되면 반지름을 |x|로 해석해야 한다.",
+          "rule": {
+            "property": "a",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "shell_useful_when_disk_hard",
+          "description": "원통셸 방법이 유리한 경우: 곡선의 방정식을 x=g(y) 형태로 풀기 어렵거나(3차식 이상), 극값의 좌표를 구해야 하는 등 고리 방법이 번거로운 경우."
+        },
+        {
+          "property_id": "shell_works_for_x_axis_too",
+          "description": "원통셸 방법은 회전축이 x축인 경우에도 쓸 수 있다: 곡선을 x=g(y) 형태로 바꾸고 y에 관해 적분한다(반지름 y, 높이는 x의 함수)."
+        },
+        {
+          "property_id": "same_volume_different_route",
+          "description": "원통셸 방법은 리만합 Σ2πx_i*f(x_i*)Δx의 극한으로 유도되며, 원판·고리 방법과 같은 부피를 다른 경로로 계산한다."
+        },
+        {
+          "property_id": "method_choice_depends_on_problem",
+          "description": "같은 회전체라도 원판/고리 방법과 원통셸 방법 중 어느 것이 더 쉬운지는 문제마다 다르다. 방정식을 x에 대해 풀기 쉬우면 원판/고리, y에 대해 풀기 쉬우면 원통셸이 유리한 경우가 많다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.volume_by_disk_and_washer",
+          "name_ko": "원판법과 고리법",
+          "importance": "recommended"
+        },
+        {
+          "concept_id": "calculus.riemann_sum_and_area",
+          "name_ko": "리만합과 넓이·거리의 근사",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "identify_shell_radius_and_height",
+          "verb": "identify",
+          "description": "주어진 회전축에 대해 원통셸의 반지름과 높이를 파악한다."
+        },
+        {
+          "objective_id": "compute_volume_by_shells",
+          "verb": "calculate",
+          "description": "원통셸법으로 회전체의 부피를 계산한다."
+        },
+        {
+          "objective_id": "choose_disk_or_shell_method",
+          "verb": "evaluate",
+          "description": "문제 상황에 따라 원판·고리법과 원통셸법 중 더 간단한 방법을 선택한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.shells.swap_radius_and_height",
+          "title": "반지름과 높이를 서로 바꿔 대입",
+          "description": "원통셸 공식 V=∫2πx f(x)dx에서 x(반지름)와 f(x)(높이)의 역할을 바꿔 계산한다.",
+          "diagnosis_tag": "swap_shell_radius_and_height",
+          "feedback": "x는 회전축까지의 거리(반지름), f(x)는 셸의 높이이며 이 둘을 바꾸면 안 된다."
+        },
+        {
+          "misconception_id": "calculus.shells.perpendicular_confusion",
+          "title": "원통셸의 대표 직사각형 방향 혼동",
+          "description": "원판·고리법처럼 회전축에 수직인 직사각형을 그려 원통셸 공식에 대입한다.",
+          "diagnosis_tag": "confuse_shell_rectangle_orientation",
+          "feedback": "원통셸법의 대표 직사각형은 회전축과 평행해야 하며, 회전축에 수직인 직사각형은 원판·고리법에서 쓰인다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "cylindrical_shell_volume_calculation",
+          "shell_vs_disk_method_selection"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_sampling"
+        ]
+      },
+      "tags": [
+        "cylindrical_shell_method",
+        "volume_of_revolution"
+      ]
+    }
+  ]
+}

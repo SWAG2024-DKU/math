@@ -1,0 +1,929 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "calculus_1",
+    "name_ko": "미분적분학 1"
+  },
+  "unit": {
+    "unit_id": "calc1_ch09_parametric_equations_and_polar_coordinates",
+    "name_ko": "매개방정식과 극좌표",
+    "order": 9,
+    "description": "매개변수로 정의되는 곡선과 그 미적분(접선·넓이·호의 길이), 극좌표계와 극곡선의 넓이·길이, 원뿔곡선의 표준형까지 정리하는 단원이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "chapter09 Parametric Equations and Polar Coordinates.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 사항"
+    ]
+  },
+  "conventions": {
+    "independent_variable": "x",
+    "dependent_function": "f(x)",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "calculus.parametric_curves",
+      "order": 1,
+      "name_ko": "매개변수로 정의되는 곡선",
+      "definition": "수직선 판정을 통과하지 못해 y=f(x) 형태로 나타낼 수 없는 곡선도, x와 y를 제3의 매개변수 t의 함수 x=f(t), y=g(t)로 나타내면 표현할 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "parametric_equations",
+          "name_ko": "매개방정식",
+          "role": "definition",
+          "latex": "x=f(t),\\qquad y=g(t)",
+          "cas": "(f(t), g(t))"
+        },
+        {
+          "formula_id": "circle_parametrization",
+          "name_ko": "원의 매개방정식",
+          "role": "example",
+          "latex": "x=h+r\\cos t,\\qquad y=k+r\\sin t,\\qquad0\\le t\\le2\\pi",
+          "cas": "(h+r*cos(t), k+r*sin(t))"
+        },
+        {
+          "formula_id": "cycloid_parametrization",
+          "name_ko": "사이클로이드",
+          "role": "example",
+          "latex": "x=r(\\theta-\\sin\\theta),\\qquad y=r(1-\\cos\\theta)",
+          "cas": "(r*(theta-sin(theta)), r*(1-cos(theta)))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "restricted_t_gives_start_end",
+          "description": "t가 구간 [a,b]로 제한되면 (f(a),g(a))가 시작점, (f(b),g(b))가 끝점이다.",
+          "rule": {
+            "property": "t_restricted_to_a_b",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "elimination_not_always_possible",
+          "description": "매개변수를 소거해 x, y만의 방정식을 얻을 수 있는 경우도 있지만 항상 가능한 것은 아니다.",
+          "rule": {
+            "property": "parameter_elimination_possible",
+            "operator": "not_equals",
+            "value": "always"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "elimination_loses_direction_info",
+          "description": "매개변수를 소거하면 곡선의 모양만 알 수 있고, 매개방정식이 담고 있는 각 시각의 위치·운동 방향 정보는 사라진다."
+        },
+        {
+          "property_id": "same_curve_different_parametrization",
+          "description": "같은 곡선(점의 집합)이라도 서로 다른 매개방정식으로 표현될 수 있다(예: 단위원을 한 번 도는 표현과 두 번 도는 표현)."
+        },
+        {
+          "property_id": "trivial_parametrization_of_explicit_function",
+          "description": "y=f(x) 형태의 그래프는 x=t, y=f(t)로 매개화할 수 있다."
+        },
+        {
+          "property_id": "cycloid_brachistochrone_tautochrone",
+          "description": "사이클로이드는 최단강하선(중력만으로 A에서 B까지 가장 빨리 미끄러지는 곡선) 문제와 등시곡선(출발 높이와 무관하게 도달 시간이 같은 곡선) 문제의 해다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.function",
+          "name_ko": "함수, 정의역과 치역",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.parametric_tangent_line"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "sketch_parametric_curve",
+          "verb": "represent",
+          "description": "매개방정식으로부터 곡선의 개형을 그린다."
+        },
+        {
+          "objective_id": "eliminate_parameter",
+          "verb": "transform",
+          "description": "가능한 경우 매개변수를 소거해 x, y의 방정식을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.parametric_curves.eliminated_equation_preserves_direction",
+          "title": "소거된 방정식에 방향 정보가 남아있다고 착각",
+          "description": "매개변수를 소거해 얻은 x, y의 방정식만으로 운동 방향이나 몇 번 지나가는지를 판단하려 한다.",
+          "diagnosis_tag": "assume_eliminated_equation_preserves_direction_info",
+          "feedback": "매개변수를 소거하면 곡선의 모양만 남고, 방향·속도·중복 횟수 같은 정보는 사라진다. 이런 정보가 필요하면 매개방정식 자체를 봐야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "parametric_curve_sketching",
+          "parameter_elimination"
+        ],
+        "supported_answer_types": [
+          "equation",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "parametric_curve",
+        "cycloid"
+      ]
+    },
+    {
+      "concept_id": "calculus.parametric_tangent_line",
+      "order": 2,
+      "name_ko": "매개변수곡선의 접선과 이계도함수",
+      "definition": "매개곡선 x=f(t), y=g(t)의 접선의 기울기는 연쇄법칙으로부터 dy/dx=(dy/dt)/(dx/dt)이다(dx/dt≠0). 이계도함수는 dy/dx를 다시 t에 관해 미분한 뒤 dx/dt로 나누어 구한다.",
+      "formulas": [
+        {
+          "formula_id": "parametric_tangent_slope",
+          "name_ko": "접선의 기울기",
+          "role": "theorem",
+          "latex": "\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}\\quad(dx/dt\\neq0)",
+          "cas": "diff(g(t),t)/diff(f(t),t)"
+        },
+        {
+          "formula_id": "parametric_second_derivative",
+          "name_ko": "이계도함수",
+          "role": "theorem",
+          "latex": "\\frac{d^2y}{dx^2}=\\frac{\\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)}{dx/dt}",
+          "cas": "diff(dydx, t)/diff(f(t),t)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "dx_dt_nonzero_for_tangent",
+          "description": "접선 공식은 dx/dt≠0일 때 성립한다. dy/dt=0, dx/dt≠0이면 수평접선, dy/dt≠0, dx/dt=0이면 수직접선이며, 둘 다 0이면 다른 방법(로피탈 법칙 등)이 필요하다.",
+          "rule": {
+            "property": "dx_dt",
+            "operator": "not_equals",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "self_intersection_multiple_tangents",
+          "description": "자기교차점에서는 서로 다른 t값이 같은 점 (x,y)에 대응하며, 각 t값에서 별개의 접선 기울기를 가질 수 있다."
+        },
+        {
+          "property_id": "lhopital_at_singular_point",
+          "description": "dx/dt=dy/dt=0이 되는 특이점(사이클로이드의 꼭짓점 등)에서는 로피탈 법칙으로 접선의 기울기를 구할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.parametric_curves",
+          "name_ko": "매개변수로 정의되는 곡선",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.chain_rule",
+          "name_ko": "연쇄법칙",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.parametric_area_arc_length_and_surface"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_parametric_tangent_slope",
+          "verb": "calculate",
+          "description": "매개곡선의 접선의 기울기를 구한다."
+        },
+        {
+          "objective_id": "find_horizontal_vertical_tangents",
+          "verb": "calculate",
+          "description": "수평접선·수직접선이 나타나는 t값을 찾는다."
+        },
+        {
+          "objective_id": "compute_parametric_second_derivative",
+          "verb": "calculate",
+          "description": "매개곡선의 이계도함수를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.parametric_tangent.wrong_second_derivative",
+          "title": "이계도함수를 (d²y/dt²)/(d²x/dt²)로 착각",
+          "description": "매개곡선의 이계도함수를 dy/dx 공식과 유사하게 (d²y/dt²)을 (d²x/dt²)으로 직접 나눈다.",
+          "diagnosis_tag": "wrong_parametric_second_derivative_formula",
+          "feedback": "이계도함수는 (dy/dx)를 다시 t에 관해 미분한 뒤 dx/dt로 나누어야 하며, d²y/dt²을 d²x/dt²으로 직접 나누는 것이 아니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "parametric_tangent_slope_calculation",
+          "horizontal_vertical_tangent_identification",
+          "parametric_second_derivative_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar",
+          "set"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "parametric_curve",
+        "tangent_line"
+      ]
+    },
+    {
+      "concept_id": "calculus.parametric_area_arc_length_and_surface",
+      "order": 3,
+      "name_ko": "매개변수곡선의 넓이·호의 길이·곡면 넓이",
+      "definition": "매개곡선 아래 넓이는 A=∫y dx=∫g(t)f'(t)dt(치환적분)로, 호의 길이는 L=∫√((dx/dt)²+(dy/dt)²)dt로, x축 회전 곡면의 넓이는 S=∫2πy√((dx/dt)²+(dy/dt)²)dt로 계산한다. 이 공식들은 곡선이 매개변수 구간에서 정확히 한 번만 그려질 때만 정확하다.",
+      "formulas": [
+        {
+          "formula_id": "parametric_area",
+          "name_ko": "매개곡선의 넓이",
+          "role": "theorem",
+          "latex": "A=\\int_a^by\\,dx=\\int_\\alpha^\\beta g(t)f'(t)\\,dt",
+          "cas": "Integral(g(t)*diff(f(t),t), (t, alpha, beta))"
+        },
+        {
+          "formula_id": "parametric_arc_length",
+          "name_ko": "매개곡선의 호의 길이",
+          "role": "theorem",
+          "latex": "L=\\int_\\alpha^\\beta\\sqrt{\\left(\\frac{dx}{dt}\\right)^2+\\left(\\frac{dy}{dt}\\right)^2}\\,dt",
+          "cas": "Integral(sqrt(diff(f(t),t)**2+diff(g(t),t)**2), (t,alpha,beta))"
+        },
+        {
+          "formula_id": "parametric_speed",
+          "name_ko": "속력",
+          "role": "application",
+          "latex": "v(t)=s'(t)=\\sqrt{\\left(\\frac{dx}{dt}\\right)^2+\\left(\\frac{dy}{dt}\\right)^2}",
+          "cas": "sqrt(diff(f(t),t)**2+diff(g(t),t)**2)"
+        },
+        {
+          "formula_id": "parametric_surface_area",
+          "name_ko": "곡면의 넓이(x축 회전)",
+          "role": "theorem",
+          "latex": "S=\\int_\\alpha^\\beta2\\pi y\\sqrt{\\left(\\frac{dx}{dt}\\right)^2+\\left(\\frac{dy}{dt}\\right)^2}\\,dt\\quad(g(t)\\ge0)",
+          "cas": "Integral(2*pi*g(t)*sqrt(diff(f(t),t)**2+diff(g(t),t)**2), (t,alpha,beta))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "traced_exactly_once",
+          "description": "호의 길이·곡면 넓이 공식은 곡선이 매개변수 구간에서 정확히 한 번만 지나가야 정확한 값을 준다. 두 번 그려지면 실제 길이의 배수로 잘못 계산된다.",
+          "rule": {
+            "property": "curve_traced_exactly_once_on_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "surface_needs_nonnegative_y",
+          "description": "x축 회전 곡면 넓이 공식은 g(t)≥0을 전제로 한다.",
+          "rule": {
+            "property": "g(t)",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "cycloid_area_and_length",
+          "description": "사이클로이드의 한 호 아래 넓이는 구르는 원의 넓이의 3배(3πr²)이고, 한 호의 길이는 원의 반지름의 8배(8r)이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.substitution",
+          "name_ko": "치환법",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.arc_length",
+          "name_ko": "호의 길이",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.parametric_tangent_line"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_parametric_area",
+          "verb": "calculate",
+          "description": "매개곡선 아래 넓이를 치환적분으로 계산한다."
+        },
+        {
+          "objective_id": "compute_parametric_arc_length",
+          "verb": "calculate",
+          "description": "매개곡선의 호의 길이를 계산한다."
+        },
+        {
+          "objective_id": "verify_curve_traced_once",
+          "verb": "verify",
+          "description": "공식 적용 전에 곡선이 구간에서 정확히 한 번만 그려지는지 확인한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.parametric_area_length.repeated_trace",
+          "title": "중복해서 그려지는 구간에 그대로 공식 적용",
+          "description": "단위원을 두 번 도는 매개화처럼 곡선이 구간에서 두 번 그려지는데도 호의 길이 공식을 그대로 적용해 실제 길이의 2배를 얻는다.",
+          "diagnosis_tag": "apply_arc_length_formula_on_repeated_trace",
+          "feedback": "호의 길이·곡면 넓이 공식은 곡선이 매개변수 구간에서 정확히 한 번 그려질 때만 성립한다. 몇 번 그려지는지 먼저 확인해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "parametric_area_calculation",
+          "parametric_arc_length_calculation",
+          "parametric_surface_area_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_tolerance"
+        ]
+      },
+      "tags": [
+        "parametric_curve",
+        "arc_length",
+        "surface_area"
+      ]
+    },
+    {
+      "concept_id": "calculus.polar_coordinates",
+      "order": 4,
+      "name_ko": "극좌표계와 극곡선",
+      "definition": "극(원점)과 극축을 기준으로 점까지의 거리 r과 극축으로부터의 각 θ로 점을 나타내는 좌표계다. 한 점은 (r,θ+2nπ), (-r,θ+(2n+1)π) 등 무한히 많은 표현을 가지며, r<0이면 점은 θ의 반대쪽에 있다.",
+      "formulas": [
+        {
+          "formula_id": "polar_to_cartesian",
+          "name_ko": "극좌표 → 직교좌표",
+          "role": "transformation",
+          "latex": "x=r\\cos\\theta,\\qquad y=r\\sin\\theta",
+          "cas": "(r*cos(theta), r*sin(theta))"
+        },
+        {
+          "formula_id": "cartesian_to_polar",
+          "name_ko": "직교좌표 → 극좌표",
+          "role": "transformation",
+          "latex": "r^2=x^2+y^2,\\qquad\\tan\\theta=\\frac{y}{x}",
+          "cas": "(sqrt(x**2+y**2), atan2(y,x))"
+        },
+        {
+          "formula_id": "common_polar_curves",
+          "name_ko": "대표적인 극곡선",
+          "role": "example",
+          "latex": "r=a\\pm b\\sin\\theta,\\ r=a\\pm b\\cos\\theta\\ (\\text{리마송}),\\qquad r=a\\sin n\\theta,\\ r=a\\cos n\\theta\\ (\\text{장미 곡선})",
+          "cas": "a+b*sin(theta)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "point_not_unique",
+          "description": "극좌표에서 한 점은 유일하게 표현되지 않는다: (r,θ)는 (r,θ+2nπ), (-r,θ+(2n+1)π)와 같은 점을 나타낸다(n은 정수).",
+          "rule": {
+            "property": "polar_representation_not_unique",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "theta_from_quadrant_not_tan_alone",
+          "description": "tanθ=y/x만으로는 θ가 유일하게 결정되지 않으므로, 점이 실제로 있는 사분면을 보고 θ를 정해야 한다.",
+          "rule": {
+            "property": "theta_determined_by_quadrant",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "symmetry_tests",
+          "description": "θ→-θ 불변이면 극축 대칭, r→-r 또는 θ→π+θ 불변이면 극(원점) 대칭, θ→π-θ 불변이면 θ=π/2(세로축) 대칭이다."
+        },
+        {
+          "property_id": "sketch_via_r_theta_graph",
+          "description": "극곡선의 개형은 r을 θ의 함수로 직교좌표에 먼저 그린 뒤, 그 증가·감소 패턴을 따라가며 그리는 방법이 유용하다."
+        },
+        {
+          "property_id": "circle_and_cardioid_examples",
+          "description": "r=2cosθ는 중심 (1,0), 반지름 1인 원 (x-1)²+y²=1과 동치이며, r=1+sinθ는 심장형, r=cos2θ는 4엽 장미다."
+        },
+        {
+          "property_id": "rose_curve_petal_count",
+          "description": "장미 곡선 r=a sin nθ(또는 a cos nθ)는 n이 홀수이면 n엽, 짝수이면 2n엽이다."
+        },
+        {
+          "property_id": "limacon_equal_coefficients_cardioid",
+          "description": "리마송 r=a±b sinθ(또는 a±b cosθ)에서 a=b이면 심장형이 된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.inverse_trig_function",
+          "name_ko": "역삼각함수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.polar_area"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "convert_between_polar_and_cartesian",
+          "verb": "transform",
+          "description": "극좌표와 직교좌표를 상호 변환한다."
+        },
+        {
+          "objective_id": "identify_polar_curve_symmetry",
+          "verb": "classify",
+          "description": "극곡선의 대칭성(극축, 극, θ=π/2)을 판정한다."
+        },
+        {
+          "objective_id": "sketch_polar_curve",
+          "verb": "represent",
+          "description": "리마송·장미 곡선 등 대표적인 극곡선의 개형을 그린다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.polar.tan_theta_alone_determines_theta",
+          "title": "tanθ=y/x만으로 θ 결정",
+          "description": "tanθ=y/x를 풀어 나온 각을 사분면 확인 없이 그대로 θ로 사용한다.",
+          "diagnosis_tag": "determine_theta_from_tan_without_quadrant_check",
+          "feedback": "같은 tanθ값이 0≤θ<2π에서 두 번 나타나므로, 점이 실제로 있는 사분면을 확인해 올바른 θ를 선택해야 한다."
+        },
+        {
+          "misconception_id": "calculus.polar.unique_representation_assumption",
+          "title": "극좌표 표현이 유일하다고 가정",
+          "description": "한 점에 대응하는 극좌표 표현이 (r,θ) 하나뿐이라고 가정한다.",
+          "diagnosis_tag": "assume_unique_polar_representation",
+          "feedback": "극좌표에서 한 점은 (r,θ+2nπ), (-r,θ+(2n+1)π) 등 무한히 많은 표현을 가진다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "polar_cartesian_conversion",
+          "polar_symmetry_classification",
+          "polar_curve_identification"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "classification",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "polar_coordinates",
+        "polar_curve",
+        "symmetry"
+      ]
+    },
+    {
+      "concept_id": "calculus.polar_area",
+      "order": 5,
+      "name_ko": "극좌표에서 넓이",
+      "definition": "부채꼴 넓이 공식 A=½r²θ를 극한으로 확장해, r=f(θ)≥0(θ가 a에서 b까지 영역을 정확히 한 번씩 스침)인 영역의 넓이는 A=∫[a,b]½[f(θ)]²dθ이고, 두 극곡선 f(θ)≥g(θ)≥0 사이의 넓이는 A=∫[a,b]½{[f(θ)]²-[g(θ)]²}dθ이다.",
+      "formulas": [
+        {
+          "formula_id": "sector_area",
+          "name_ko": "부채꼴의 넓이",
+          "role": "lemma",
+          "latex": "A=\\tfrac12r^2\\theta",
+          "cas": "r**2*theta/2"
+        },
+        {
+          "formula_id": "polar_region_area",
+          "name_ko": "극영역의 넓이",
+          "role": "theorem",
+          "latex": "A=\\int_a^b\\tfrac12[f(\\theta)]^2\\,d\\theta=\\int_a^b\\tfrac12r^2\\,d\\theta",
+          "cas": "Integral(f(theta)**2/2, (theta,a,b))"
+        },
+        {
+          "formula_id": "polar_area_between_curves",
+          "name_ko": "두 극곡선 사이의 넓이",
+          "role": "theorem",
+          "latex": "A=\\int_a^b\\tfrac12\\{[f(\\theta)]^2-[g(\\theta)]^2\\}\\,d\\theta",
+          "cas": "Integral((f(theta)**2-g(theta)**2)/2, (theta,a,b))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "sweeps_region_exactly_once",
+          "description": "넓이 공식은 f가 양의 연속함수이고, 회전하는 반직선이 영역을 정확히 한 번씩만 스쳐 지나가야 성립한다.",
+          "rule": {
+            "property": "region_swept_exactly_once",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "intersections_need_graph_check",
+          "description": "두 극곡선의 교점을 구할 때 극좌표의 다중 표현 때문에 대수적으로만 풀면 일부 교점(특히 원점)을 놓칠 수 있으므로 그래프로 확인해야 한다.",
+          "rule": {
+            "property": "intersections_verified_graphically",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "rose_petal_area_example",
+          "description": "4엽 장미 r=cos2θ의 한 잎의 넓이는 ∫[-π/4,π/4]½cos²2θ dθ=π/8이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.polar_coordinates",
+          "name_ko": "극좌표계와 극곡선",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "calculus.polar_arc_length_and_tangent"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_polar_region_area",
+          "verb": "calculate",
+          "description": "극영역의 넓이를 적분으로 계산한다."
+        },
+        {
+          "objective_id": "find_polar_curve_intersections",
+          "verb": "calculate",
+          "description": "두 극곡선의 교점을 대수적·그래프적으로 함께 확인해 구한다."
+        },
+        {
+          "objective_id": "compute_area_between_polar_curves",
+          "verb": "calculate",
+          "description": "두 극곡선 사이 영역의 넓이를 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.polar_area.miss_origin_intersection",
+          "title": "원점 교점을 대수적 풀이에서 놓침",
+          "description": "두 극곡선의 방정식을 연립해서만 교점을 구하고, 각 곡선이 서로 다른 θ에서 원점을 지나는 경우를 놓친다.",
+          "diagnosis_tag": "miss_origin_intersection_in_polar_curves",
+          "feedback": "극좌표의 다중 표현 때문에 대수적 풀이만으로는 원점 같은 교점을 놓칠 수 있으므로 그래프로 반드시 확인해야 한다."
+        },
+        {
+          "misconception_id": "calculus.polar_area.forget_half_factor",
+          "title": "극좌표 넓이 공식에서 1/2 누락",
+          "description": "A=∫r²dθ로 계산해 실제 넓이의 2배를 얻는다.",
+          "diagnosis_tag": "forget_one_half_in_polar_area_formula",
+          "feedback": "극좌표 넓이 공식은 부채꼴 넓이 ½r²θ에서 유도되므로 반드시 ½ 계수를 포함해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "polar_area_calculation",
+          "polar_curve_intersection",
+          "area_between_polar_curves"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence",
+          "numeric_tolerance"
+        ]
+      },
+      "tags": [
+        "polar_area"
+      ]
+    },
+    {
+      "concept_id": "calculus.polar_arc_length_and_tangent",
+      "order": 6,
+      "name_ko": "극곡선의 호의 길이와 접선",
+      "definition": "극곡선 r=f(θ)를 x=r cosθ, y=r sinθ의 매개방정식으로 보면, 매개변수곡선의 호의 길이·접선 공식을 그대로 적용해 극곡선 고유의 공식을 얻는다.",
+      "formulas": [
+        {
+          "formula_id": "polar_as_parametric",
+          "name_ko": "극곡선의 매개변수 표현",
+          "role": "transformation",
+          "latex": "x=r\\cos\\theta=f(\\theta)\\cos\\theta,\\qquad y=r\\sin\\theta=f(\\theta)\\sin\\theta",
+          "cas": "(f(theta)*cos(theta), f(theta)*sin(theta))"
+        },
+        {
+          "formula_id": "polar_arc_length",
+          "name_ko": "극곡선의 호의 길이",
+          "role": "theorem",
+          "latex": "L=\\int_a^b\\sqrt{r^2+\\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta",
+          "cas": "Integral(sqrt(r(theta)**2+diff(r(theta),theta)**2), (theta,a,b))"
+        },
+        {
+          "formula_id": "polar_tangent_slope",
+          "name_ko": "극곡선의 접선의 기울기",
+          "role": "theorem",
+          "latex": "\\frac{dy}{dx}=\\frac{\\dfrac{dr}{d\\theta}\\sin\\theta+r\\cos\\theta}{\\dfrac{dr}{d\\theta}\\cos\\theta-r\\sin\\theta}",
+          "cas": "(diff(r(theta),theta)*sin(theta)+r(theta)*cos(theta))/(diff(r(theta),theta)*cos(theta)-r(theta)*sin(theta))"
+        },
+        {
+          "formula_id": "polar_tangent_at_pole",
+          "name_ko": "극에서의 접선(r=0일 때)",
+          "role": "special_case",
+          "latex": "\\frac{dy}{dx}=\\tan\\theta",
+          "cas": "tan(theta)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "tangent_derived_via_product_rule",
+          "description": "극곡선의 접선 공식은 θ를 매개변수로 하는 dy/dx=(dy/dθ)/(dx/dθ)에 곱법칙을 적용해 유도된다.",
+          "rule": {
+            "property": "tangent_formula_derived_from_product_rule",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "pole_tangent_shortcut",
+          "description": "접선이 극(원점)을 지날 때는 r=0이 되는 θ값을 이용해 dy/dx=tanθ로 간단히 구할 수 있다."
+        },
+        {
+          "property_id": "cardioid_length_example",
+          "description": "심장형 r=1+sinθ의 전체 길이는 L=8이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.parametric_area_arc_length_and_surface",
+          "name_ko": "매개변수곡선의 넓이·호의 길이·곡면 넓이",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.polar_coordinates",
+          "name_ko": "극좌표계와 극곡선",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_polar_arc_length",
+          "verb": "calculate",
+          "description": "극곡선의 호의 길이를 계산한다."
+        },
+        {
+          "objective_id": "compute_polar_tangent_slope",
+          "verb": "calculate",
+          "description": "극곡선의 접선의 기울기를 구한다."
+        },
+        {
+          "objective_id": "find_pole_tangent",
+          "verb": "calculate",
+          "description": "극을 지나는 접선의 기울기를 r=0인 θ값으로 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.polar_tangent.confuse_dr_dtheta_with_dy_dx",
+          "title": "dr/dθ를 접선의 기울기로 착각",
+          "description": "극곡선의 접선의 기울기를 dy/dx 대신 dr/dθ로 잘못 계산한다.",
+          "diagnosis_tag": "confuse_dr_dtheta_with_tangent_slope",
+          "feedback": "극곡선의 접선의 기울기는 dr/dθ가 아니라 x=r cosθ, y=r sinθ로부터 유도된 (dy/dθ)/(dx/dθ) 공식으로 구해야 한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "polar_arc_length_calculation",
+          "polar_tangent_slope_calculation",
+          "pole_tangent_calculation"
+        ],
+        "supported_answer_types": [
+          "scalar",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "polar_curve",
+        "arc_length",
+        "tangent_line"
+      ]
+    },
+    {
+      "concept_id": "calculus.conic_sections",
+      "order": 7,
+      "name_ko": "원뿔곡선(포물선·타원·쌍곡선)",
+      "definition": "원뿔을 평면으로 자를 때 나타나는 곡선으로, 포물선은 초점과 준선까지의 거리가 같은 점들의 집합, 타원은 두 초점까지의 거리의 합이 일정한 점들의 집합, 쌍곡선은 두 초점까지의 거리의 차가 일정한 점들의 집합으로 정의되며 각각 표준 방정식을 갖는다.",
+      "formulas": [
+        {
+          "formula_id": "parabola_standard_form",
+          "name_ko": "포물선의 표준형",
+          "role": "standard_form",
+          "latex": "x^2=4py\\ (\\text{초점}(0,p),\\text{준선}y=-p),\\qquad y^2=4px\\ (\\text{초점}(p,0),\\text{준선}x=-p)",
+          "cas": "Eq(x**2, 4*p*y)"
+        },
+        {
+          "formula_id": "ellipse_standard_form",
+          "name_ko": "타원의 표준형(가로축)",
+          "role": "standard_form",
+          "latex": "\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1\\ (a\\ge b>0,\\ c^2=a^2-b^2,\\ \\text{초점}(\\pm c,0))",
+          "cas": "Eq(x**2/a**2+y**2/b**2, 1)"
+        },
+        {
+          "formula_id": "ellipse_standard_form_vertical",
+          "name_ko": "타원의 표준형(세로축)",
+          "role": "standard_form",
+          "latex": "\\frac{x^2}{b^2}+\\frac{y^2}{a^2}=1\\ (a\\ge b>0,\\ c^2=a^2-b^2,\\ \\text{초점}(0,\\pm c))",
+          "cas": "Eq(x**2/b**2+y**2/a**2, 1)"
+        },
+        {
+          "formula_id": "hyperbola_standard_form",
+          "name_ko": "쌍곡선의 표준형(가로축)",
+          "role": "standard_form",
+          "latex": "\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1\\ (c^2=a^2+b^2,\\ \\text{초점}(\\pm c,0),\\ \\text{점근선}y=\\pm\\tfrac ba x)",
+          "cas": "Eq(x**2/a**2-y**2/b**2, 1)"
+        },
+        {
+          "formula_id": "hyperbola_standard_form_vertical",
+          "name_ko": "쌍곡선의 표준형(세로축)",
+          "role": "standard_form",
+          "latex": "\\frac{y^2}{a^2}-\\frac{x^2}{b^2}=1\\ (c^2=a^2+b^2,\\ \\text{초점}(0,\\pm c),\\ \\text{점근선}y=\\pm\\tfrac ab x)",
+          "cas": "Eq(y**2/a**2-x**2/b**2, 1)"
+        },
+        {
+          "formula_id": "shifted_conic",
+          "name_ko": "이동된 원뿔곡선",
+          "role": "transformation",
+          "latex": "\\text{표준형에서 }x\\to x-h,\\ y\\to y-k\\ (\\text{중심 또는 꼭짓점 }(h,k))",
+          "cas": "standard_form.subs({x: x-h, y: y-k})"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ellipse_c_less_than_a",
+          "description": "타원은 c<a(즉 a²-b²>0)이어야 하며, c=0이면 a=b가 되어 원(타원의 특수한 경우)이 된다.",
+          "rule": {
+            "property": "c",
+            "operator": "less_than",
+            "value": "a"
+          }
+        },
+        {
+          "condition_id": "shifted_conic_needs_completing_square",
+          "description": "이동된 원뿔곡선의 방정식을 얻으려면 먼저 x², y² 항을 완전제곱식으로 정리해 표준형과 대조해야 한다.",
+          "rule": {
+            "property": "equation_completed_to_square_form",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "hyperbola_no_y_intercept",
+          "description": "쌍곡선은 x=0을 대입하면 y²<0이 되어 y절편이 없으며, |x|≥a인 두 분지로만 이루어진다."
+        },
+        {
+          "property_id": "reflective_properties_applications",
+          "description": "포물선의 반사성질은 전조등·반사망원경·위성 안테나에, 타원의 반사성질은 쇄석술·속삭이는 회랑·행성 궤도(케플러 법칙)에 응용된다."
+        },
+        {
+          "property_id": "hyperbola_in_science_and_economics",
+          "description": "쌍곡선은 보일의 법칙, 옴의 법칙, 수요·공급 곡선 등 자연과학·경제학의 방정식 그래프로 자주 등장한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.elementary_function_classification",
+          "name_ko": "선형모델·다항식·거듭제곱함수·유리함수·대수함수·초월함수",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "calculus.polar_coordinates"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "identify_conic_type",
+          "verb": "classify",
+          "description": "방정식으로부터 포물선·타원·쌍곡선을 판별한다."
+        },
+        {
+          "objective_id": "find_conic_elements",
+          "verb": "calculate",
+          "description": "초점, 꼭짓점, 준선, 점근선 등 원뿔곡선의 요소를 구한다."
+        },
+        {
+          "objective_id": "convert_general_to_standard_form",
+          "verb": "transform",
+          "description": "일반형 방정식을 완전제곱식으로 정리해 표준형(이동된 형태)으로 바꾼다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "calculus.conic.swap_c_squared_sign",
+          "title": "c²의 부호 규칙 혼동",
+          "description": "타원에서 c²=a²+b²을, 쌍곡선에서 c²=a²-b²을 사용해 부호를 서로 바꾼다.",
+          "diagnosis_tag": "swap_c_squared_formula_between_ellipse_and_hyperbola",
+          "feedback": "타원은 c²=a²-b², 쌍곡선은 c²=a²+b²이다."
+        },
+        {
+          "misconception_id": "calculus.conic.hyperbola_y_intercept_assumption",
+          "title": "쌍곡선에 존재하지 않는 절편을 구하려 시도",
+          "description": "x²/a²-y²/b²=1 형태의 쌍곡선에서 x=0을 대입해 y절편을 구하려 한다.",
+          "diagnosis_tag": "assume_hyperbola_has_missing_intercept",
+          "feedback": "이 형태의 쌍곡선은 x=0에서 y²<0이 되어 y절편이 존재하지 않는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "conic_type_classification",
+          "conic_element_calculation",
+          "general_to_standard_form_conversion"
+        ],
+        "supported_answer_types": [
+          "classification",
+          "expression",
+          "equation"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "symbolic_equivalence"
+        ]
+      },
+      "tags": [
+        "conic_section",
+        "parabola",
+        "ellipse",
+        "hyperbola"
+      ]
+    }
+  ]
+}

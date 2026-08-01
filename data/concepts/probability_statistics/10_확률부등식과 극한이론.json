@@ -1,0 +1,4954 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "probability_statistics",
+    "name_ko": "확률과 통계"
+  },
+  "unit": {
+    "unit_id": "ps_10_inequalities_limit_theory",
+    "name_ko": "확률부등식과 극한이론",
+    "order": 10,
+    "description": "확률부등식과 극한이론의 핵심 정의, 공식, 적용 조건, 주요 성질과 오개념을 문제 생성·검증에 활용할 수 있도록 구조화한 단원이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "10_probability_inequalities_and_limit_theory.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "random_variable": "X",
+    "sample_notation": [
+      "X1",
+      "X2",
+      "...",
+      "Xn"
+    ],
+    "population_parameters": [
+      "mu",
+      "sigma^2",
+      "p",
+      "theta"
+    ],
+    "formula_display": "latex",
+    "formula_computation": "hybrid_symbolic_numeric_and_rule_verified",
+    "result_classification": [
+      "definition",
+      "exact",
+      "asymptotic",
+      "approximation",
+      "bound",
+      "empirical_criterion"
+    ],
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "ps.inequalities_limit_theory.borel_cantelli_first",
+      "order": 1,
+      "name_ko": "제1 Borel–Cantelli 보조정리",
+      "definition": "사건확률의 합이 유한하면 무한히 자주 발생할 확률은 0이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.borel_cantelli_first.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.borel_cantelli_first.f02",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_first.objective_01",
+          "verb": "apply",
+          "description": "제1 Borel–Cantelli 보조정리의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "borel_cantelli",
+        "borel_cantelli_first"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.borel_cantelli_second",
+      "order": 2,
+      "name_ko": "제2 Borel–Cantelli 보조정리",
+      "definition": "독립 사건들의 확률합이 발산하면 무한히 자주 발생할 확률은 1이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.borel_cantelli_second.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.borel_cantelli_second.f02",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_second.objective_01",
+          "verb": "apply",
+          "description": "제2 Borel–Cantelli 보조정리의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "borel_cantelli",
+        "borel_cantelli_second"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.chernoff_bound",
+      "order": 3,
+      "name_ko": "Chernoff 상계",
+      "definition": "지수 Markov 부등식과 MGF를 이용해 꼬리확률을 상계한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.chernoff_bound.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chernoff_bound.f01",
+        "ps.inequalities_limit_theory.chernoff_bound.f02",
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.objective_01",
+          "verb": "apply",
+          "description": "Chernoff 상계의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "jensen_chernoff",
+        "inequality",
+        "chernoff_bound"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.continuous_mapping_theorem",
+      "order": 4,
+      "name_ko": "연속사상정리",
+      "definition": "확률수렴 또는 분포수렴은 극한점에서 연속인 함수에 의해 보존된다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.continuous_mapping_theorem.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "X_n\\xrightarrow{d}X\\quad\\Longrightarrow\\quad g(X_n)\\xrightarrow{d}g(X)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.continuous_mapping_theorem.condition_01",
+          "description": "$X_n\\xrightarrow{d}X$이어야 한다.",
+          "rule": {
+            "property": "base_convergence",
+            "operator": "equals",
+            "value": "in_distribution"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.continuous_mapping_theorem.condition_02",
+          "description": "$g$는 $X$가 취하는 값에서 거의 확실하게 연속이어야 한다.",
+          "rule": {
+            "property": "mapping_continuous_at_limit_almost_surely",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.continuous_mapping_theorem.objective_01",
+          "verb": "apply",
+          "description": "연속사상정리의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky",
+        "continuous_mapping_theorem"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.dominated_convergence",
+      "order": 5,
+      "name_ko": "지배수렴정리",
+      "definition": "거의 확실한 수렴과 적분가능한 지배변수 아래에서 기댓값 극한을 교환한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.dominated_convergence.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "E[X_n]\\to E[X]"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.dominated_convergence.condition_01",
+          "description": "$X_n\\to X$가 거의 확실하게 성립해야 한다.",
+          "rule": {
+            "property": "almost_sure_convergence",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.dominated_convergence.condition_02",
+          "description": "모든 $n$에 대해 $|X_n|\\le Y$가 거의 확실하게 성립해야 한다.",
+          "rule": {
+            "property": "dominated_by_integrable_random_variable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.dominated_convergence.condition_03",
+          "description": "$E|Y|<\\infty$이어야 한다.",
+          "rule": {
+            "property": "dominating_variable_integrable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.fatou_dominated_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.dominated_convergence.objective_01",
+          "verb": "apply",
+          "description": "지배수렴정리의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "fatou_dominated_convergence",
+        "dominated_convergence"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.fatou_lemma",
+      "order": 6,
+      "name_ko": "Fatou 보조정리",
+      "definition": "비음수 가측확률변수열의 하극한 기댓값을 기댓값 하극한으로 상계한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.fatou_lemma.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "E[\\liminf_{n\\to\\infty}X_n]\n\\le\n\\liminf_{n\\to\\infty}E[X_n]"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.fatou_lemma.condition_01",
+          "description": "각 $X_n$은 가측이어야 한다.",
+          "rule": {
+            "property": "sequence_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.fatou_lemma.condition_02",
+          "description": "각 $X_n\\ge0$이어야 한다.",
+          "rule": {
+            "property": "sequence_nonnegative",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.fatou_dominated_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.fatou_lemma.objective_01",
+          "verb": "apply",
+          "description": "Fatou 보조정리의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "fatou_dominated_convergence",
+        "fatou_lemma"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.jensen_inequality",
+      "order": 7,
+      "name_ko": "Jensen 부등식",
+      "definition": "볼록함수와 적분 가능한 확률변수에 대한 기댓값 부등식이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.jensen_inequality.objective_01",
+          "verb": "apply",
+          "description": "Jensen 부등식의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "6장의 수식별 Jensen 개념과 중복되므로 탐색용 개요로 비활성화한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "jensen_chernoff",
+        "inequality",
+        "jensen_inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.slutsky_ratio",
+      "order": 8,
+      "name_ko": "Slutsky 정리의 비율",
+      "definition": "분포수렴 변수와 0이 아닌 상수로 확률수렴하는 분모의 비율 극한을 구한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.slutsky_ratio.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "\\frac{X_n}{Y_n}\\xrightarrow{d}\\frac{X}{c}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.slutsky_ratio.condition_01",
+          "description": "$X_n\\xrightarrow d X$이고 $Y_n\\xrightarrow p c$이어야 한다.",
+          "rule": {
+            "property": "slutsky_base_convergences_hold",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.slutsky_ratio.condition_02",
+          "description": "$c\\ne0$이어야 한다.",
+          "rule": {
+            "property": "probability_limit_constant",
+            "operator": "not_equals",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_ratio.objective_01",
+          "verb": "apply",
+          "description": "Slutsky 정리의 비율의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky",
+        "slutsky_ratio"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.slutsky_sum_product",
+      "order": 9,
+      "name_ko": "Slutsky 정리의 합과 곱",
+      "definition": "분포수렴 변수와 상수로 확률수렴하는 변수를 더하거나 곱한 극한을 구한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.slutsky_sum_product.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.slutsky_sum_product.f01",
+        "ps.inequalities_limit_theory.slutsky_sum_product.f02",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.objective_01",
+          "verb": "apply",
+          "description": "Slutsky 정리의 합과 곱의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky",
+        "slutsky_sum_product"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.markov_inequality",
+      "order": 10,
+      "name_ko": "Markov 부등식",
+      "definition": "비음수 확률변수 $X$와 $a>0$에 대해 $P(X\\ge a)\\le\\frac{E[X]}{a}$ 이다. $X\\ge0$이고 $E[X]<\\infty$가 필요하다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.markov_inequality.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P(X\\ge a)\\le\\frac{E[X]}{a}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.markov_inequality.condition_01",
+          "description": "$X\\ge0$이어야 한다.",
+          "rule": {
+            "property": "random_variable_nonnegative",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.markov_inequality.condition_02",
+          "description": "$E[X]<\\infty$이어야 한다.",
+          "rule": {
+            "property": "expectation_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.markov_inequality.condition_03",
+          "description": "$a>0$이어야 한다.",
+          "rule": {
+            "property": "threshold",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.markov_inequality.property_01",
+          "description": "비음수 확률변수 $X$와 $a>0$에 대해 $P(X\\ge a)\\le\\frac{E[X]}{a}$ 이다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.markov_inequality.property_02",
+          "description": "$X\\ge0$이고 $E[X]<\\infty$가 필요하다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chebyshev_inequality"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.markov_inequality.objective_01",
+          "verb": "identify",
+          "description": "Markov 부등식의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.markov_inequality.objective_02",
+          "verb": "apply",
+          "description": "Markov 부등식의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.markov_inequality.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Markov 부등식의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "markov_inequality",
+        "inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.chebyshev_inequality",
+      "order": 11,
+      "name_ko": "Chebyshev 부등식",
+      "definition": "$E[X]=\\mu$, $\\operatorname{Var}(X)=\\sigma^2<\\infty$이면 모든 $\\varepsilon>0$에 대해 $P(|X-\\mu|\\ge\\varepsilon)\\le\\frac{\\sigma^2}{\\varepsilon^2}$ 이다. 특히 $\\sigma>0$이고 $k>0$일 때 $P(|X-\\mu|\\ge k\\sigma)\\le\\frac1{k^2}$ 이다. $\\sigma=0$이면 $X=\\mu$가 거의 확실하게 성립하므로 $k\\sigma=0$을 대입한 위 형태를 사용하지 않고 퇴화분포로 별도 해석한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.chebyshev_inequality.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chebyshev_inequality.f01",
+        "ps.inequalities_limit_theory.chebyshev_inequality.f02",
+        "ps.inequalities_limit_theory.markov_inequality",
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.objective_01",
+          "verb": "identify",
+          "description": "Chebyshev 부등식의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.objective_02",
+          "verb": "apply",
+          "description": "Chebyshev 부등식의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Chebyshev 부등식의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "chebyshev_inequality",
+        "inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.jensen_chernoff",
+      "order": 12,
+      "name_ko": "Jensen 부등식과 Chernoff 상계",
+      "definition": "확률변수 $X$가 적분 가능하고, $\\phi$가 $X$의 값이 속하는 볼록집합에서 볼록하며 양변이 정의되면 $\\phi(E[X])\\le E[\\phi(X)]$ 이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.jensen_chernoff.property_01",
+          "description": "해당 $t>0$에서 $M_X(t)<\\infty$이면 $P(X\\ge a)\\le e^{-ta}M_X(t)$ 이므로 $P(X\\ge a)\\le\\inf_{\\substack{t>0\\\\M_X(t)<\\infty}}e^{-ta}M_X(t)$ 이다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.jensen_chernoff.property_02",
+          "description": "확률변수 $X$가 적분 가능하고, $\\phi$가 $X$의 값이 속하는 볼록집합에서 볼록하며 양변이 정의되면 $\\phi(E[X])\\le E[\\phi(X)]$ 이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chebyshev_inequality",
+        "ps.inequalities_limit_theory.random_variable_convergence",
+        "ps.inequalities_limit_theory.jensen_inequality",
+        "ps.inequalities_limit_theory.chernoff_bound"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.jensen_chernoff.objective_01",
+          "verb": "identify",
+          "description": "Jensen 부등식과 Chernoff 상계의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.jensen_chernoff.objective_02",
+          "verb": "apply",
+          "description": "Jensen 부등식과 Chernoff 상계의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.jensen_chernoff.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Jensen 부등식과 Chernoff 상계의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "jensen_chernoff",
+        "inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.almost_sure_convergence",
+      "order": 13,
+      "name_ko": "거의확실수렴",
+      "definition": "거의 모든 표본점에서 확률변수열이 점별 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.almost_sure_convergence.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "X_n\\xrightarrow{a.s.}X\n\\iff\nP\\left(\\lim_{n\\to\\infty}X_n=X\\right)=1"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.almost_sure_convergence.condition_01",
+          "description": "$X_n$과 $X$는 같은 확률공간 위에 정의되어야 한다.",
+          "rule": {
+            "property": "random_variables_share_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.almost_sure_convergence.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.almost_sure_convergence.objective_01",
+          "verb": "identify",
+          "description": "거의확실수렴의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.almost_sure_convergence.objective_02",
+          "verb": "apply",
+          "description": "거의확실수렴의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.almost_sure_convergence.objective_03",
+          "verb": "interpret",
+          "description": "거의확실수렴의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "almost_sure_convergence"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.convergence_in_distribution",
+      "order": 14,
+      "name_ko": "분포수렴",
+      "definition": "극한분포 CDF의 모든 연속점에서 CDF가 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.convergence_in_distribution.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "X_n\\xrightarrow{d}X\n\\iff\nF_{X_n}(x)\\to F_X(x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.convergence_in_distribution.condition_01",
+          "description": "CDF 수렴은 $F_X$의 모든 연속점에서 확인한다.",
+          "rule": {
+            "property": "cdf_checked_at_continuity_points",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_in_distribution.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_in_distribution.objective_01",
+          "verb": "identify",
+          "description": "분포수렴의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_in_distribution.objective_02",
+          "verb": "apply",
+          "description": "분포수렴의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_in_distribution.objective_03",
+          "verb": "interpret",
+          "description": "분포수렴의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "convergence_in_distribution"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.convergence_in_probability",
+      "order": 15,
+      "name_ko": "확률수렴",
+      "definition": "모든 양의 오차수준에서 차이가 그보다 클 확률이 0으로 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.convergence_in_probability.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "X_n\\xrightarrow{P}X\n\\iff\nP(|X_n-X|>\\varepsilon)\\to0"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.convergence_in_probability.condition_01",
+          "description": "모든 $\\varepsilon>0$에 대해 확인해야 한다.",
+          "rule": {
+            "property": "epsilon",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.convergence_in_probability.condition_02",
+          "description": "$X_n$과 $X$는 같은 확률공간 위에 정의되어야 한다.",
+          "rule": {
+            "property": "random_variables_share_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_in_probability.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_in_probability.objective_01",
+          "verb": "identify",
+          "description": "확률수렴의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_in_probability.objective_02",
+          "verb": "apply",
+          "description": "확률수렴의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_in_probability.objective_03",
+          "verb": "interpret",
+          "description": "확률수렴의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "convergence_in_probability"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.convergence_mode_implications",
+      "order": 16,
+      "name_ko": "확률수렴 방식 사이의 함의",
+      "definition": "표준적인 수렴방식 사이의 함의 관계를 정리한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_mode_implications.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.convergence_mode_implications.f01",
+        "ps.inequalities_limit_theory.convergence_mode_implications.f02",
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.objective_01",
+          "verb": "identify",
+          "description": "확률수렴 방식 사이의 함의의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.objective_02",
+          "verb": "apply",
+          "description": "확률수렴 방식 사이의 함의의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.objective_03",
+          "verb": "interpret",
+          "description": "확률수렴 방식 사이의 함의의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "convergence_mode_implications"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.l1_convergence",
+      "order": 17,
+      "name_ko": "$L^1$ 수렴",
+      "definition": "절대오차의 기댓값이 0으로 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.l1_convergence.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "X_n\\xrightarrow{L^1}X\n\\iff\nE|X_n-X|\\to0"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.l1_convergence.condition_01",
+          "description": "$E|X_n-X|$가 각 n에서 유한하고 정의되어야 한다.",
+          "rule": {
+            "property": "absolute_difference_expectations_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.l1_convergence.condition_02",
+          "description": "$X_n$과 $X$는 같은 확률공간 위에 정의되어야 한다.",
+          "rule": {
+            "property": "random_variables_on_common_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.l1_convergence.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.l1_convergence.objective_01",
+          "verb": "identify",
+          "description": "$L^1$ 수렴의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.l1_convergence.objective_02",
+          "verb": "apply",
+          "description": "$L^1$ 수렴의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.l1_convergence.objective_03",
+          "verb": "interpret",
+          "description": "$L^1$ 수렴의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "l1_convergence"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.l2_convergence",
+      "order": 18,
+      "name_ko": "$L^2$ 수렴",
+      "definition": "제곱오차의 기댓값이 0으로 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.l2_convergence.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "X_n\\xrightarrow{L^2}X\n\\iff\nE[(X_n-X)^2]\\to0"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.l2_convergence.condition_01",
+          "description": "$E[(X_n-X)^2]$가 각 n에서 유한하고 정의되어야 한다.",
+          "rule": {
+            "property": "squared_difference_expectations_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.l2_convergence.condition_02",
+          "description": "$X_n$과 $X$는 같은 확률공간 위에 정의되어야 한다.",
+          "rule": {
+            "property": "random_variables_on_common_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.l2_convergence.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.l2_convergence.objective_01",
+          "verb": "identify",
+          "description": "$L^2$ 수렴의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.l2_convergence.objective_02",
+          "verb": "apply",
+          "description": "$L^2$ 수렴의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.l2_convergence.objective_03",
+          "verb": "interpret",
+          "description": "$L^2$ 수렴의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "l2_convergence"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.random_variable_convergence",
+      "order": 19,
+      "name_ko": "확률변수열의 수렴",
+      "definition": "확률변수열의 수렴의 정의, 공식, 적용 조건과 해석을 다룬다. 세부 공식은 적용 조건별 관련 개념으로 분리한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.random_variable_convergence.property_01",
+          "description": "서로 다른 적용 조건을 갖는 공식을 한 조건 목록에 결합하지 않고 세부 개념으로 분리한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.almost_sure_convergence",
+        "ps.inequalities_limit_theory.convergence_in_probability",
+        "ps.inequalities_limit_theory.l1_convergence",
+        "ps.inequalities_limit_theory.l2_convergence",
+        "ps.inequalities_limit_theory.convergence_in_distribution",
+        "ps.inequalities_limit_theory.convergence_mode_implications"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.random_variable_convergence.objective_01",
+          "verb": "identify",
+          "description": "확률변수열의 수렴의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.random_variable_convergence.objective_02",
+          "verb": "apply",
+          "description": "확률변수열의 수렴의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.random_variable_convergence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률변수열의 수렴의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 문제 생성에는 related_concepts의 세부 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.continuous_mapping_slutsky",
+      "order": 20,
+      "name_ko": "연속사상정리와 Slutsky 정리",
+      "definition": "$X_n\\xrightarrow{d}X$이고 $g$가 $X$가 취하는 값에서 거의 확실하게 연속이면 $g(X_n)\\xrightarrow{d}g(X)$ 이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.continuous_mapping_slutsky.property_01",
+          "description": "또한 $X_n\\xrightarrow{d}X,\\qquad Y_n\\xrightarrow{P}c$ 이면 $X_n+Y_n\\xrightarrow{d}X+c, \\qquad X_nY_n\\xrightarrow{d}cX$ 또한 $c\\ne0$이면 $\\frac{X_n}{Y_n}\\xrightarrow{d}\\frac{X}{c}$ 이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.random_variable_convergence",
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.continuous_mapping_theorem",
+        "ps.inequalities_limit_theory.slutsky_sum_product",
+        "ps.inequalities_limit_theory.slutsky_ratio"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.continuous_mapping_slutsky.objective_01",
+          "verb": "identify",
+          "description": "연속사상정리와 Slutsky 정리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.continuous_mapping_slutsky.objective_02",
+          "verb": "apply",
+          "description": "연속사상정리와 Slutsky 정리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.continuous_mapping_slutsky.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 연속사상정리와 Slutsky 정리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.law_large_numbers",
+      "order": 21,
+      "name_ko": "대수의 법칙",
+      "definition": "$i.i.d.$ 확률변수 $X_1,X_2,\\ldots$가 $E|X_1|<\\infty$이고 $E[X_1]=\\mu$이면 대표적인 약한 및 강한 대수의 법칙에 의해 $\\bar X_n\\xrightarrow{P}\\mu$ 및 $\\bar X_n\\xrightarrow{a.s.}\\mu$ 가 성립한다. Chebyshev 부등식을 이용한 초급 증명에서는 흔히 $\\operatorname{Var}(X_1)<\\infty$를 가정한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.law_large_numbers.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.law_large_numbers.f01",
+        "ps.inequalities_limit_theory.law_large_numbers.f02",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky",
+        "ps.inequalities_limit_theory.central_limit_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.objective_01",
+          "verb": "identify",
+          "description": "대수의 법칙의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.objective_02",
+          "verb": "apply",
+          "description": "대수의 법칙의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 대수의 법칙의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "law_large_numbers"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+      "order": 22,
+      "name_ko": "중심극한정리",
+      "definition": "$X_1,X_2,\\ldots$가 $i.i.d.$이고 $E[X_i]=\\mu,\\qquad 0<\\operatorname{Var}(X_i)=\\sigma^2<\\infty$ 이면 $\\frac{\\sum_{i=1}^{n}X_i-n\\mu}{\\sigma\\sqrt n} \\xrightarrow{d}N(0,1)$ 이다. 동치인 표본평균 형태는 $\\frac{\\bar X_n-\\mu}{\\sigma/\\sqrt n} \\xrightarrow{d}N(0,1)$ 이다. 따라서 큰 표본에서 $\\bar X_n\\approx N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)$ 으로 근사한다. 필요한 표본크기는 원분포의 왜도, 꼬리, 이상치에 따라 달라지므로 $n\\ge30$을 절대 규칙으로 사용하지 않는다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.central_limit_theorem.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.central_limit_theorem.f02",
+        "ps.inequalities_limit_theory.central_limit_theorem.f03",
+        "ps.inequalities_limit_theory.central_limit_theorem.f04",
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.objective_01",
+          "verb": "identify",
+          "description": "중심극한정리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.objective_02",
+          "verb": "apply",
+          "description": "중심극한정리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 중심극한정리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "central_limit_theorem"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.borel_cantelli",
+      "order": 23,
+      "name_ko": "Borel--Cantelli 보조정리",
+      "definition": "사건열 $A_n$에 대해 $\\sum_{n=1}^{\\infty}P(A_n)<\\infty$ 이면 $P(A_n\\ \\text{i.o.})=0$ 이다. 반대로 사건들이 독립이고 $\\sum_{n=1}^{\\infty}P(A_n)=\\infty$ 이면 $P(A_n\\ \\text{i.o.})=1$ 이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.borel_cantelli.property_01",
+          "description": "사건열 $A_n$에 대해 $\\sum_{n=1}^{\\infty}P(A_n)<\\infty$ 이면 $P(A_n\\ \\text{i.o.})=0$ 이다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.borel_cantelli.property_02",
+          "description": "반대로 사건들이 독립이고 $\\sum_{n=1}^{\\infty}P(A_n)=\\infty$ 이면 $P(A_n\\ \\text{i.o.})=1$ 이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.central_limit_theorem",
+        "ps.inequalities_limit_theory.fatou_dominated_convergence",
+        "ps.inequalities_limit_theory.borel_cantelli_first",
+        "ps.inequalities_limit_theory.borel_cantelli_second"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli.objective_01",
+          "verb": "identify",
+          "description": "Borel--Cantelli 보조정리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli.objective_02",
+          "verb": "apply",
+          "description": "Borel--Cantelli 보조정리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Borel--Cantelli 보조정리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "borel_cantelli"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.fatou_dominated_convergence",
+      "order": 24,
+      "name_ko": "Fatou 보조정리와 지배수렴정리",
+      "definition": "비음수 확률변수열 $X_n$에 대해 Fatou 보조정리는 $E[\\liminf_{n\\to\\infty}X_n] \\le \\liminf_{n\\to\\infty}E[X_n]$ 를 준다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.property_01",
+          "description": "$X_n\\to X$가 거의 확실하게 성립하고 적분 가능한 확률변수 $Y$가 존재하여 모든 $n$에 대해 $|X_n|\\le Y$이면 지배수렴정리에 의해 $E[X_n]\\to E[X]$ 이다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.property_02",
+          "description": "확률변수의 극한과 기댓값의 순서를 교환하려면 이런 추가 조건이 필요하다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.property_03",
+          "description": "지배수렴정리는 $X_n\\to X$가 거의 확실하게 성립해야 한다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.property_04",
+          "description": "적분 가능한 확률변수 $Y$가 존재하여 모든 $n$에 대해 $|X_n|\\le Y$이고 $E[|Y|]<\\infty$여야 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.borel_cantelli",
+        "ps.inequalities_limit_theory.hoeffding_inequality",
+        "ps.inequalities_limit_theory.fatou_lemma",
+        "ps.inequalities_limit_theory.dominated_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.objective_01",
+          "verb": "identify",
+          "description": "Fatou 보조정리와 지배수렴정리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.objective_02",
+          "verb": "apply",
+          "description": "Fatou 보조정리와 지배수렴정리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.fatou_dominated_convergence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Fatou 보조정리와 지배수렴정리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "fatou_dominated_convergence"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "order": 25,
+      "name_ko": "Hoeffding 부등식",
+      "definition": "독립 확률변수 $X_i\\in[a_i,b_i]$이고 $S_n=\\sum_iX_i$이면 모든 $t>0$에 대해 $P(S_n-E[S_n]\\ge t) \\le \\exp\\left( -\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2} \\right)$ 이다. 양쪽 꼬리에 대해서는 우변에 2를 곱한 상계를 사용할 수 있다. 이는 유한분산만 사용하는 Chebyshev 부등식보다 강하지만 독립성과 유계성이라는 더 강한 조건이 필요하다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.hoeffding_inequality.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P(S_n-E[S_n]\\ge t)\n\\le\n\\exp\\left(\n-\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2}\n\\right)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.hoeffding_inequality.condition_01",
+          "description": "$\\sum_i(b_i-a_i)^2=0$이면 합이 퇴화하므로 비퇴화 상계식과 별도로 처리한다.",
+          "rule": {
+            "property": "sum_squared_ranges",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.hoeffding_inequality.condition_02",
+          "description": "Hoeffding 상계의 편차수준은 $t>0$이어야 한다.",
+          "rule": {
+            "property": "deviation_threshold",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.hoeffding_inequality.condition_03",
+          "description": "확률변수들은 독립이어야 한다.",
+          "rule": {
+            "property": "random_variables_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.hoeffding_inequality.condition_04",
+          "description": "각 $X_i\\in[a_i,b_i]$가 거의 확실하게 성립해야 한다.",
+          "rule": {
+            "property": "each_variable_almost_surely_bounded",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.hoeffding_inequality.property_01",
+          "description": "독립 확률변수 $X_i\\in[a_i,b_i]$이고 $S_n=\\sum_iX_i$이면 모든 $t>0$에 대해 $P(S_n-E[S_n]\\ge t) \\le \\exp\\left( -\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2} \\right)$ 이다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.hoeffding_inequality.property_02",
+          "description": "양쪽 꼬리에 대해서는 우변에 2를 곱한 상계를 사용할 수 있다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.hoeffding_inequality.property_03",
+          "description": "이는 유한분산만 사용하는 Chebyshev 부등식보다 강하지만 독립성과 유계성이라는 더 강한 조건이 필요하다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.fatou_dominated_convergence",
+        "ps.inequalities_limit_theory.clt_limitations"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.hoeffding_inequality.objective_01",
+          "verb": "identify",
+          "description": "Hoeffding 부등식의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.hoeffding_inequality.objective_02",
+          "verb": "apply",
+          "description": "Hoeffding 부등식의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.hoeffding_inequality.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Hoeffding 부등식의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "hoeffding_inequality",
+        "inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.clt_limitations",
+      "order": 26,
+      "name_ko": "중심극한정리의 적용 한계",
+      "definition": "중심극한정리는 표준화된 합의 분포수렴을 말하며, 원자료가 정규분포가 된다는 뜻이 아니다. 또한 꼬리확률, 극단 분위수, 매우 왜도가 큰 분포에서는 중앙 부분보다 수렴이 느릴 수 있다. 평균이나 분산이 존재하지 않는 분포에는 현재 제시한 고전적 i.i.d. 중심극한정리를 적용할 수 없다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.clt_limitations.property_01",
+          "description": "또한 꼬리확률, 극단 분위수, 매우 왜도가 큰 분포에서는 중앙 부분보다 수렴이 느릴 수 있다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.clt_limitations.property_02",
+          "description": "평균이나 분산이 존재하지 않는 분포에는 현재 제시한 고전적 i.i.d."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.clt_limitations.property_03",
+          "description": "중심극한정리를 적용할 수 없다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.clt_limitations.property_04",
+          "description": "중심극한정리의 적용 한계 개념의 정의와 수식을 적용할 수 있는 자료형·정의역 조건을 만족해야 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.hoeffding_inequality",
+        "ps.inequalities_limit_theory.cantelli_inequality"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.clt_limitations.objective_01",
+          "verb": "identify",
+          "description": "중심극한정리의 적용 한계의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.clt_limitations.objective_02",
+          "verb": "apply",
+          "description": "중심극한정리의 적용 한계의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.clt_limitations.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 중심극한정리의 적용 한계의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.inequalities_limit_theory.clt_limitations.misconception_01",
+          "title": "중심극한정리의 적용 한계 관련 오해 1",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_inequalities_limit_theory_clt_limitations_misconception_01",
+          "feedback": "중심극한정리는 표준화된 합의 분포수렴을 말하며, 원자료가 정규분포가 된다는 뜻이 아니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "clt_limitations"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.cantelli_inequality",
+      "order": 27,
+      "name_ko": "Cantelli 부등식",
+      "definition": "$E[X]=\\mu$, $\\operatorname{Var}(X)=\\sigma^2<\\infty$이면 모든 $a>0$에 대해 $P(X-\\mu\\ge a) \\le \\frac{\\sigma^2}{\\sigma^2+a^2}$ 이다. 이는 한쪽 꼬리만 관심 있을 때 Chebyshev 부등식보다 강한 상계를 줄 수 있다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.cantelli_inequality.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P(X-\\mu\\ge a)\n\\le\n\\frac{\\sigma^2}{\\sigma^2+a^2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.cantelli_inequality.condition_01",
+          "description": "Cantelli 부등식에는 유한한 평균과 분산이 필요하다.",
+          "rule": {
+            "property": "variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.cantelli_inequality.condition_02",
+          "description": "편차 경계는 $a>0$이어야 한다.",
+          "rule": {
+            "property": "deviation_threshold",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.cantelli_inequality.property_01",
+          "description": "$E[X]=\\mu$, $\\operatorname{Var}(X)=\\sigma^2<\\infty$이면 모든 $a>0$에 대해 $P(X-\\mu\\ge a) \\le \\frac{\\sigma^2}{\\sigma^2+a^2}$ 이다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.cantelli_inequality.property_02",
+          "description": "이는 한쪽 꼬리만 관심 있을 때 Chebyshev 부등식보다 강한 상계를 줄 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.clt_limitations",
+        "ps.inequalities_limit_theory.berry_esseen"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.cantelli_inequality.objective_01",
+          "verb": "identify",
+          "description": "Cantelli 부등식의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.cantelli_inequality.objective_02",
+          "verb": "apply",
+          "description": "Cantelli 부등식의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.cantelli_inequality.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Cantelli 부등식의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "cantelli_inequality",
+        "inequality"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.berry_esseen",
+      "order": 28,
+      "name_ko": "Berry--Esseen 정리",
+      "definition": "$i.i.d.$ 확률변수들이 평균 $\\mu$, 분산 $0<\\sigma^2<\\infty$와 유한한 3차 절대중심적률 $\\rho=E|X_1-\\mu|^3<\\infty$ 를 가지면 어떤 보편상수 $C$에 대해 $\\sup_x\\left| P\\left(\\frac{\\sum_{i=1}^nX_i-n\\mu}{\\sigma\\sqrt n}\\le x\\right) -\\Phi(x) \\right| \\le \\frac{C\\rho}{\\sigma^3\\sqrt n}$ 이다. 이 결과는 중심극한정리의 정규근사 오차가 분포의 3차 절대적률과 표본크기에 영향을 받음을 정량화한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.berry_esseen.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.berry_esseen.f02",
+        "ps.inequalities_limit_theory.cantelli_inequality",
+        "ps.inequalities_limit_theory.convergence_reverse_implications"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.objective_01",
+          "verb": "identify",
+          "description": "Berry--Esseen 정리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.objective_02",
+          "verb": "apply",
+          "description": "Berry--Esseen 정리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 Berry--Esseen 정리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "berry_esseen"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.convergence_reverse_implications",
+      "order": 29,
+      "name_ko": "수렴 개념의 역방향이 일반적으로 실패하는 이유",
+      "definition": "분포수렴은 확률수렴을 일반적으로 함의하지 않는다. 확률수렴은 거의 확실 수렴을 일반적으로 함의하지 않는다. 거의 확실 수렴만으로 $L^1$ 수렴이 보장되지 않는다. 기대값의 수렴에는 균등적분가능성 또는 지배조건 같은 추가 조건이 필요하다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_reverse_implications.property_01",
+          "description": "분포수렴은 확률수렴을 일반적으로 함의하지 않는다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_reverse_implications.property_02",
+          "description": "확률수렴은 거의 확실 수렴을 일반적으로 함의하지 않는다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_reverse_implications.property_03",
+          "description": "거의 확실 수렴만으로 $L^1$ 수렴이 보장되지 않는다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_reverse_implications.property_04",
+          "description": "기대값의 수렴에는 균등적분가능성 또는 지배조건 같은 추가 조건이 필요하다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.berry_esseen"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_reverse_implications.objective_01",
+          "verb": "identify",
+          "description": "수렴 개념의 역방향이 일반적으로 실패하는 이유의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_reverse_implications.objective_02",
+          "verb": "apply",
+          "description": "수렴 개념의 역방향이 일반적으로 실패하는 이유의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_reverse_implications.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 수렴 개념의 역방향이 일반적으로 실패하는 이유의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "convergence_reverse_implications"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02",
+      "order": 30,
+      "name_ko": "제1 Borel–Cantelli 보조정리 — 핵심 관계식",
+      "definition": "이 개념은 제1 Borel–Cantelli 보조정리에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A_n\\ \\text{i.o.})=0"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.condition_01",
+          "description": "$\\sum_nP(A_n)<\\infty$이어야 한다.",
+          "rule": {
+            "property": "sum_event_probabilities_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.borel_cantelli_first",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.objective_01",
+          "verb": "identify",
+          "description": "제1 Borel–Cantelli 보조정리 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.objective_02",
+          "verb": "apply",
+          "description": "제1 Borel–Cantelli 보조정리 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.objective_03",
+          "verb": "verify",
+          "description": "제1 Borel–Cantelli 보조정리 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "borel_cantelli",
+        "borel_cantelli_first",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02",
+      "order": 31,
+      "name_ko": "제2 Borel–Cantelli 보조정리 — 핵심 관계식",
+      "definition": "이 개념은 제2 Borel–Cantelli 보조정리에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A_n\\ \\text{i.o.})=1"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.condition_01",
+          "description": "사건들은 서로 독립이어야 한다.",
+          "rule": {
+            "property": "events_mutually_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.condition_02",
+          "description": "$\\sum_nP(A_n)=\\infty$이어야 한다.",
+          "rule": {
+            "property": "sum_event_probabilities_diverges",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.borel_cantelli_second",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.objective_01",
+          "verb": "identify",
+          "description": "제2 Borel–Cantelli 보조정리 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.objective_02",
+          "verb": "apply",
+          "description": "제2 Borel–Cantelli 보조정리 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.objective_03",
+          "verb": "verify",
+          "description": "제2 Borel–Cantelli 보조정리 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "borel_cantelli",
+        "borel_cantelli_second",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.chernoff_bound.f01",
+      "order": 32,
+      "name_ko": "Chernoff 상계 — 고정 t 상계",
+      "definition": "MGF가 유한한 양의 $t$를 사용하여 우측 꼬리확률을 지수적으로 상계한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.chernoff_bound.f01.formula_01",
+          "name_ko": "고정 $t$에 대한 Chernoff 상계",
+          "role": "bound",
+          "latex": "P(X\\ge a)\\le e^{-ta}M_X(t)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.chernoff_bound.f01.condition_01",
+          "description": "$t>0$이어야 한다.",
+          "rule": {
+            "property": "chernoff_parameter",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.chernoff_bound.f01.condition_02",
+          "description": "해당 $t$에서 $M_X(t)<\\infty$이어야 한다.",
+          "rule": {
+            "property": "mgf_finite_at_t",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.chernoff_bound.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chernoff_bound",
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.f01.objective_01",
+          "verb": "identify",
+          "description": "Chernoff 상계 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.f01.objective_02",
+          "verb": "apply",
+          "description": "Chernoff 상계 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.f01.objective_03",
+          "verb": "verify",
+          "description": "Chernoff 상계 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "jensen_chernoff",
+        "inequality",
+        "chernoff_bound",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.chernoff_bound.f02",
+      "order": 33,
+      "name_ko": "Chernoff 상계 — 최적화 상계",
+      "definition": "허용되는 양의 $t$에 대해 지수 상계를 최소화하여 가장 작은 Chernoff 상계를 얻는다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.chernoff_bound.f02.formula_01",
+          "name_ko": "최적화된 Chernoff 상계",
+          "role": "bound",
+          "latex": "P(X\\ge a)\\le\\inf_{\\substack{t>0\\\\M_X(t)<\\infty}}e^{-ta}M_X(t)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.chernoff_bound.f02.condition_01",
+          "description": "양의 $t$ 중 $M_X(t)<\\infty$인 값이 적어도 하나 존재해야 한다.",
+          "rule": {
+            "property": "exists_positive_t_with_finite_mgf",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.chernoff_bound.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chernoff_bound",
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.f02.objective_01",
+          "verb": "identify",
+          "description": "Chernoff 상계 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.f02.objective_02",
+          "verb": "apply",
+          "description": "Chernoff 상계 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chernoff_bound.f02.objective_03",
+          "verb": "verify",
+          "description": "Chernoff 상계 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "jensen_chernoff",
+        "inequality",
+        "chernoff_bound",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01",
+      "order": 34,
+      "name_ko": "점근 결과",
+      "definition": "Slutsky 정리의 합과 곱에서 점근 결과에 해당하는 적용 조건이나 보조 내용을 정리한 비활성 개념이다.",
+      "formulas": [],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01.condition_01",
+          "description": "$X_n\\xrightarrow d X$이고 $Y_n\\xrightarrow p c$이어야 한다.",
+          "rule": {
+            "property": "slutsky_base_convergences_hold",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        },
+        {
+          "property_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01.property_02",
+          "description": "수학적 전제/제약: $X_n\\xrightarrow{d}X,\\qquad Y_n\\xrightarrow{P}c$"
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.slutsky_sum_product",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01.objective_01",
+          "verb": "identify",
+          "description": "점근 결과의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01.objective_02",
+          "verb": "apply",
+          "description": "점근 결과를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f01.objective_03",
+          "verb": "verify",
+          "description": "점근 결과의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "정리의 결론이 아니라 적용 전제이므로 공식 계산 문제 생성에서는 비활성화한다."
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky",
+        "slutsky_sum_product",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02",
+      "order": 35,
+      "name_ko": "Slutsky 정리의 합과 곱 — 점근 기준분포",
+      "definition": "분포수렴하는 수열과 상수로 확률수렴하는 수열의 합에 대한 결과다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "X_n+Y_n\\xrightarrow{d}X+c"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.condition_01",
+          "description": "$X_n\\xrightarrow d X$이고 $Y_n\\xrightarrow p c$이어야 한다.",
+          "rule": {
+            "property": "slutsky_base_convergences_hold",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.slutsky_sum_product",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky",
+        "ps.inequalities_limit_theory.slutsky_sum_product.f02_product"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.objective_01",
+          "verb": "identify",
+          "description": "점근 결과 (2)의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.objective_02",
+          "verb": "apply",
+          "description": "점근 결과 (2)을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.objective_03",
+          "verb": "verify",
+          "description": "점근 결과 (2)의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky",
+        "slutsky_sum_product",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product",
+      "order": 36,
+      "name_ko": "Slutsky 정리의 곱",
+      "definition": "분포수렴하는 수열과 상수로 확률수렴하는 수열의 곱에 대한 결과다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "X_nY_n\\xrightarrow{d}cX"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.condition_01",
+          "description": "$X_n\\xrightarrow d X$이고 $Y_n\\xrightarrow p c$이어야 한다.",
+          "rule": {
+            "property": "slutsky_base_convergences_hold",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.slutsky_sum_product.f02",
+        "ps.inequalities_limit_theory.slutsky_sum_product",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.objective_01",
+          "verb": "identify",
+          "description": "Slutsky 정리의 곱의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.objective_02",
+          "verb": "apply",
+          "description": "Slutsky 정리의 곱을 적용 조건 아래에서 사용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.objective_03",
+          "verb": "verify",
+          "description": "Slutsky 정리의 곱의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "continuous_mapping_slutsky",
+        "slutsky_sum_product",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01",
+      "order": 37,
+      "name_ko": "Chebyshev 부등식 — 상계·하계",
+      "definition": "이 개념은 Chebyshev 부등식에서 사용하는 상계 또는 하계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P(|X-\\mu|\\ge\\varepsilon)\\le\\frac{\\sigma^2}{\\varepsilon^2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.condition_01",
+          "description": "$E[X]$와 $\\operatorname{Var}(X)<\\infty$가 존재해야 한다.",
+          "rule": {
+            "property": "finite_mean_and_variance",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.condition_02",
+          "description": "$\\varepsilon>0$이어야 한다.",
+          "rule": {
+            "property": "epsilon",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chebyshev_inequality",
+        "ps.inequalities_limit_theory.markov_inequality",
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.objective_01",
+          "verb": "identify",
+          "description": "Chebyshev 부등식 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.objective_02",
+          "verb": "apply",
+          "description": "Chebyshev 부등식 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.objective_03",
+          "verb": "verify",
+          "description": "Chebyshev 부등식 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "chebyshev_inequality",
+        "inequality",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02",
+      "order": 38,
+      "name_ko": "Chebyshev 부등식 — 상계·하계",
+      "definition": "이 개념은 Chebyshev 부등식에서 사용하는 상계 또는 하계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "P(|X-\\mu|\\ge k\\sigma)\\le\\frac1{k^2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.condition_01",
+          "description": "$0<\\sigma^2<\\infty$이어야 한다.",
+          "rule": {
+            "property": "variance_finite_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.condition_02",
+          "description": "$k>0$이어야 한다.",
+          "rule": {
+            "property": "standard_deviation_multiplier",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.chebyshev_inequality",
+        "ps.inequalities_limit_theory.markov_inequality",
+        "ps.inequalities_limit_theory.jensen_chernoff"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.objective_01",
+          "verb": "identify",
+          "description": "Chebyshev 부등식 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.objective_02",
+          "verb": "apply",
+          "description": "Chebyshev 부등식 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.objective_03",
+          "verb": "verify",
+          "description": "Chebyshev 부등식 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "chebyshev_inequality",
+        "inequality",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01",
+      "order": 39,
+      "name_ko": "확률수렴 방식 사이의 함의 — 점근 기준분포",
+      "definition": "이 개념은 확률수렴 방식 사이의 함의에서 사용하는 점근 분포 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "X_n\\xrightarrow{L^2}X\n\\Longrightarrow X_n\\xrightarrow{L^1}X\n\\Longrightarrow X_n\\xrightarrow{P}X\n\\Longrightarrow X_n\\xrightarrow{d}X"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.condition_01",
+          "description": "거의확실수렴과 확률수렴을 비교할 변수들은 같은 확률공간 위에 정의되어야 한다.",
+          "rule": {
+            "property": "random_variables_share_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.convergence_mode_implications",
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.objective_01",
+          "verb": "identify",
+          "description": "점근 결과의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.objective_02",
+          "verb": "apply",
+          "description": "점근 결과를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.objective_03",
+          "verb": "verify",
+          "description": "점근 결과의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "convergence_mode_implications",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02",
+      "order": 40,
+      "name_ko": "확률수렴 방식 사이의 함의 — 점근 결과",
+      "definition": "이 개념은 확률수렴 방식 사이의 함의에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "X_n\\xrightarrow{a.s.}X\n\\Longrightarrow X_n\\xrightarrow{P}X"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.condition_01",
+          "description": "거의확실수렴과 확률수렴을 비교할 변수들은 같은 확률공간 위에 정의되어야 한다.",
+          "rule": {
+            "property": "random_variables_share_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.convergence_mode_implications",
+        "ps.inequalities_limit_theory.random_variable_convergence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.objective_01",
+          "verb": "identify",
+          "description": "점근 결과 (2)의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.objective_02",
+          "verb": "apply",
+          "description": "점근 결과 (2)을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.objective_03",
+          "verb": "verify",
+          "description": "점근 결과 (2)의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "random_variable_convergence",
+        "probability",
+        "convergence_mode_implications",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.law_large_numbers.f01",
+      "order": 41,
+      "name_ko": "대수의 법칙 — 점근 결과",
+      "definition": "이 개념은 대수의 법칙에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.law_large_numbers.f01.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "\\bar X_n\\xrightarrow{P}\\mu"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.law_large_numbers.f01.condition_01",
+          "description": "$X_1,X_2,\\ldots$는 i.i.d.여야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.law_large_numbers.f01.condition_02",
+          "description": "$E|X_1|<\\infty$이고 $\\mu=E[X_1]$이어야 한다.",
+          "rule": {
+            "property": "absolute_first_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.law_large_numbers.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky",
+        "ps.inequalities_limit_theory.central_limit_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.f01.objective_01",
+          "verb": "identify",
+          "description": "점근 결과의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.f01.objective_02",
+          "verb": "apply",
+          "description": "점근 결과를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.f01.objective_03",
+          "verb": "verify",
+          "description": "점근 결과의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "law_large_numbers",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.law_large_numbers.f02",
+      "order": 42,
+      "name_ko": "대수의 법칙 — 점근 결과",
+      "definition": "이 개념은 대수의 법칙에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.law_large_numbers.f02.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "\\bar X_n\\xrightarrow{a.s.}\\mu"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.law_large_numbers.f02.condition_01",
+          "description": "$X_1,X_2,\\ldots$는 i.i.d.여야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.law_large_numbers.f02.condition_02",
+          "description": "$E|X_1|<\\infty$이고 $\\mu=E[X_1]$이어야 한다.",
+          "rule": {
+            "property": "absolute_first_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.law_large_numbers.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.continuous_mapping_slutsky",
+        "ps.inequalities_limit_theory.central_limit_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.f02.objective_01",
+          "verb": "identify",
+          "description": "점근 결과 (2)의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.f02.objective_02",
+          "verb": "apply",
+          "description": "점근 결과 (2)을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.law_large_numbers.f02.objective_03",
+          "verb": "verify",
+          "description": "점근 결과 (2)의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "law_large_numbers",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.central_limit_theorem.f02",
+      "order": 43,
+      "name_ko": "중심극한정리 — 점근 결과",
+      "definition": "이 개념은 중심극한정리에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.formula_01",
+          "name_ko": "점근 결과",
+          "role": "asymptotic_result",
+          "latex": "\\frac{\\sum_{i=1}^{n}X_i-n\\mu}{\\sigma\\sqrt n}\n\\xrightarrow{d}N(0,1)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.condition_01",
+          "description": "표준 중심극한정리에는 $X_1,X_2,\\ldots$가 독립동일분포여야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.condition_02",
+          "description": "표준 중심극한정리에는 유한한 평균 $E[X_i]=\\mu$가 필요하다.",
+          "rule": {
+            "property": "first_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.condition_03",
+          "description": "표준 중심극한정리에는 $0<\\operatorname{Var}(X_i)=\\sigma^2<\\infty$가 필요하다.",
+          "rule": {
+            "property": "variance_finite_and_positive",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.central_limit_theorem",
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.objective_01",
+          "verb": "identify",
+          "description": "점근 결과의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.objective_02",
+          "verb": "apply",
+          "description": "점근 결과를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.objective_03",
+          "verb": "verify",
+          "description": "점근 결과의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "central_limit_theorem",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.central_limit_theorem.f03",
+      "order": 44,
+      "name_ko": "중심극한정리 — 점근 기준분포",
+      "definition": "이 개념은 중심극한정리에서 사용하는 점근 분포 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "\\frac{\\bar X_n-\\mu}{\\sigma/\\sqrt n}\n\\xrightarrow{d}N(0,1)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.condition_01",
+          "description": "표준 중심극한정리에는 $X_1,X_2,\\ldots$가 독립동일분포여야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.condition_02",
+          "description": "표준 중심극한정리에는 유한한 평균 $E[X_i]=\\mu$가 필요하다.",
+          "rule": {
+            "property": "first_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.condition_03",
+          "description": "표준 중심극한정리에는 $0<\\operatorname{Var}(X_i)=\\sigma^2<\\infty$가 필요하다.",
+          "rule": {
+            "property": "variance_finite_and_positive",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.central_limit_theorem",
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.objective_01",
+          "verb": "identify",
+          "description": "점근 결과 (2)의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.objective_02",
+          "verb": "apply",
+          "description": "점근 결과 (2)을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.objective_03",
+          "verb": "verify",
+          "description": "점근 결과 (2)의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "central_limit_theorem",
+        "formula_atomic",
+        "asymptotic_result"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.central_limit_theorem.f04",
+      "order": 45,
+      "name_ko": "중심극한정리 — 근사식",
+      "definition": "이 개념은 중심극한정리에서 사용하는 근사식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.formula_01",
+          "name_ko": "근사식",
+          "role": "approximation",
+          "latex": "\\bar X_n\\approx N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.condition_01",
+          "description": "표본은 i.i.d.이어야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.condition_02",
+          "description": "모집단 평균 $\\mu$가 유한해야 한다.",
+          "rule": {
+            "property": "population_mean_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.condition_03",
+          "description": "모집단 분산은 양수여야 한다.",
+          "rule": {
+            "property": "population_variance",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.condition_04",
+          "description": "모집단 분산은 유한해야 한다.",
+          "rule": {
+            "property": "population_variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.condition_05",
+          "description": "유한표본 정규근사로 사용할 때에는 분포의 왜도와 꼬리를 고려해 $n$이 충분히 커야 한다.",
+          "rule": {
+            "property": "sample_size_sufficient_for_normal_approximation",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.condition_06",
+          "description": "표본크기가 원분포의 왜도와 꼬리를 고려할 때 정규근사를 정당화할 만큼 커야 한다.",
+          "rule": {
+            "property": "normal_approximation_quality_adequate",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.central_limit_theorem",
+        "ps.inequalities_limit_theory.law_large_numbers",
+        "ps.inequalities_limit_theory.borel_cantelli"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.objective_01",
+          "verb": "identify",
+          "description": "근사식의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.objective_02",
+          "verb": "apply",
+          "description": "근사식을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.objective_03",
+          "verb": "verify",
+          "description": "근사식의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "central_limit_theorem",
+        "formula_atomic",
+        "approximation"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.berry_esseen.f02",
+      "order": 46,
+      "name_ko": "Berry--Esseen 정리 — 상계·하계",
+      "definition": "표준화된 표본평균의 분포와 표준정규분포 사이의 최대 오차를 상계한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.berry_esseen.f02.formula_01",
+          "name_ko": "상계·하계",
+          "role": "bound",
+          "latex": "\\sup_x\\left|P\\!\\left(\\frac{\\sqrt n(\\bar X-\\mu)}{\\sigma}\\le x\\right)-\\Phi(x)\\right|\\le \\frac{C\\rho}{\\sigma^3\\sqrt n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_01",
+          "description": "대표적인 Berry--Esseen 정리는 i.i.d. 확률변수에 적용한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_02",
+          "description": "표본크기는 n>=1이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_03",
+          "description": "표본크기 n은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_04",
+          "description": "$\\sigma^2>0$이어야 한다.",
+          "rule": {
+            "property": "population_variance",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_05",
+          "description": "$\\sigma^2<\\infty$이어야 한다.",
+          "rule": {
+            "property": "population_variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_06",
+          "description": "$E|X_i-\\mu|^3<\\infty$이어야 한다.",
+          "rule": {
+            "property": "third_absolute_centered_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.f02.condition_07",
+          "description": "$\\rho=E|X_i-\\mu|^3$로 정의한다.",
+          "rule": {
+            "property": "rho_defined_as_third_absolute_centered_moment",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.berry_esseen.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.berry_esseen",
+        "ps.inequalities_limit_theory.cantelli_inequality",
+        "ps.inequalities_limit_theory.convergence_reverse_implications",
+        "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.f02.objective_01",
+          "verb": "identify",
+          "description": "Berry--Esseen 정리 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.f02.objective_02",
+          "verb": "apply",
+          "description": "Berry--Esseen 정리 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.f02.objective_03",
+          "verb": "verify",
+          "description": "Berry--Esseen 정리 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "berry_esseen",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment",
+      "order": 47,
+      "name_ko": "Berry–Esseen의 3차 절대중심적률",
+      "definition": "Berry–Esseen 상계에 사용하는 3차 절대중심적률 ρ를 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\rho=E|X_i-\\mu|^3"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_01",
+          "description": "대표적인 Berry--Esseen 정리는 i.i.d. 확률변수에 적용한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_02",
+          "description": "표본크기는 n>=1이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_03",
+          "description": "표본크기 n은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_04",
+          "description": "$\\sigma^2>0$이어야 한다.",
+          "rule": {
+            "property": "population_variance",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_05",
+          "description": "$\\sigma^2<\\infty$이어야 한다.",
+          "rule": {
+            "property": "population_variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_06",
+          "description": "$E|X_i-\\mu|^3<\\infty$이어야 한다.",
+          "rule": {
+            "property": "third_absolute_centered_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.condition_07",
+          "description": "$\\rho=E|X_i-\\mu|^3$로 정의한다.",
+          "rule": {
+            "property": "rho_defined_as_third_absolute_centered_moment",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.sequence_limits",
+          "name_ko": "수열의 극한",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.inequalities_limit_theory.berry_esseen.f02",
+        "ps.inequalities_limit_theory.berry_esseen",
+        "ps.inequalities_limit_theory.cantelli_inequality",
+        "ps.inequalities_limit_theory.convergence_reverse_implications"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.objective_01",
+          "verb": "identify",
+          "description": "Berry–Esseen의 3차 절대중심적률의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.objective_02",
+          "verb": "apply",
+          "description": "Berry–Esseen의 3차 절대중심적률을 적용 조건 아래에서 사용한다."
+        },
+        {
+          "objective_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.objective_03",
+          "verb": "verify",
+          "description": "Berry–Esseen의 3차 절대중심적률의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "inequalities_limit_theory",
+        "berry_esseen",
+        "formula_atomic",
+        "core_formula"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3125 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "probability_statistics",
+    "name_ko": "확률과 통계"
+  },
+  "unit": {
+    "unit_id": "ps_02_descriptive_statistics",
+    "name_ko": "자료의 정리와 기술통계",
+    "order": 2,
+    "description": "자료의 정리와 기술통계에서 필요한 핵심 개념과 공식을 정리한다. 계산식뿐 아니라 적용 조건과 해석상의 주의점을 함께 확인하는 것이 중요하다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "02_data_summary_and_descriptive_statistics.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "random_variable": "X",
+    "sample_notation": [
+      "X1",
+      "X2",
+      "...",
+      "Xn"
+    ],
+    "population_parameters": [
+      "mu",
+      "sigma^2",
+      "p",
+      "theta"
+    ],
+    "formula_display": "latex",
+    "formula_computation": "hybrid_symbolic_numeric_and_rule_verified",
+    "result_classification": [
+      "definition",
+      "exact",
+      "asymptotic",
+      "approximation",
+      "bound",
+      "empirical_criterion"
+    ],
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "ps.descriptive_statistics.geometric_mean",
+      "order": 1,
+      "name_ko": "기하평균",
+      "definition": "양수 자료의 곱셈적 중심을 나타내며 성장률과 배수 변화의 누적을 요약한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.geometric_mean.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "G=\\left(\\prod_{i=1}^{n}x_i\\right)^{1/n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.geometric_mean.condition_01",
+          "description": "관측값은 모두 양수여야 한다.",
+          "rule": {
+            "property": "all_observations_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.geometric_mean.condition_02",
+          "description": "자료 개수는 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.geometric_mean.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.geometric_mean.property_01",
+          "description": "0 또는 음수를 포함하는 자료에는 표준 실수 기하평균을 그대로 사용하지 않는다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.geometric_harmonic_means"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.geometric_mean.objective_01",
+          "verb": "apply",
+          "description": "기하평균의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "geometric_harmonic_means",
+        "geometric_mean"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.harmonic_mean",
+      "order": 2,
+      "name_ko": "조화평균",
+      "definition": "역수의 산술평균의 역수로 정의되며 동일 거리 평균속도 등 비율 평균에 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.harmonic_mean.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "H=\\frac{n}{\\sum_{i=1}^{n}1/x_i}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.harmonic_mean.condition_01",
+          "description": "각 관측값은 0이 아니어야 한다.",
+          "rule": {
+            "property": "all_observations_nonzero",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.harmonic_mean.condition_02",
+          "description": "역수의 합은 0이 아니어야 한다.",
+          "rule": {
+            "property": "sum_of_reciprocals",
+            "operator": "not_equals",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.harmonic_mean.condition_03",
+          "description": "자료 개수는 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.harmonic_mean.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.harmonic_mean.property_01",
+          "description": "통상적인 양수 자료에서는 조화평균이 잘 정의된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.geometric_harmonic_means"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.harmonic_mean.objective_01",
+          "verb": "apply",
+          "description": "조화평균의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "geometric_harmonic_means",
+        "harmonic_mean"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.range_iqr",
+      "order": 3,
+      "name_ko": "범위와 사분위범위",
+      "definition": "자료의 전체 폭과 중앙 50%의 폭을 나타내는 기술통계량이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.range_iqr.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.range_iqr.f01",
+        "ps.descriptive_statistics.range_iqr.f02",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.objective_01",
+          "verb": "apply",
+          "description": "범위와 사분위범위의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion",
+        "range_iqr"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.sample_variance_standard_deviation",
+      "order": 4,
+      "name_ko": "표본분산과 표본표준편차",
+      "definition": "표본의 제곱편차를 자유도 $n-1$로 나눈 분산과 그 제곱근이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.sample_variance_standard_deviation.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.sample_variance_standard_deviation.f01",
+        "ps.descriptive_statistics.sample_variance_standard_deviation.f02",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.objective_01",
+          "verb": "apply",
+          "description": "표본분산과 표본표준편차의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion",
+        "sample_variance_standard_deviation"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.frequency_distribution_graphs",
+      "order": 5,
+      "name_ko": "도수분포와 그래프",
+      "definition": "자료를 구간이나 범주별로 나누어 빈도와 형태를 요약한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.frequency_distribution_graphs.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.frequency_distribution_graphs.f01",
+        "ps.descriptive_statistics.frequency_distribution_graphs.f02",
+        "ps.descriptive_statistics.central_tendency"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.objective_01",
+          "verb": "identify",
+          "description": "도수분포와 그래프의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.objective_02",
+          "verb": "apply",
+          "description": "도수분포와 그래프의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 도수분포와 그래프의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "frequency_distribution_graphs",
+        "distribution"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.central_tendency",
+      "order": 6,
+      "name_ko": "중심위치",
+      "definition": "자료의 대표적인 위치를 하나의 값으로 요약한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.central_tendency.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.arithmetic",
+          "name_ko": "합과 나눗셈",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.central_tendency.f01",
+        "ps.descriptive_statistics.central_tendency.f02",
+        "ps.descriptive_statistics.frequency_distribution_graphs",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.objective_01",
+          "verb": "identify",
+          "description": "중심위치의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.objective_02",
+          "verb": "apply",
+          "description": "중심위치의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 중심위치의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "central_tendency"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.dispersion",
+      "order": 7,
+      "name_ko": "산포도",
+      "definition": "산포도에는 범위·IQR과 표본분산·표준편차처럼 적용 조건이 다른 지표가 포함된다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.dispersion.property_01",
+          "description": "표준편차는 원자료와 단위가 같다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.central_tendency",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.range_iqr",
+        "ps.descriptive_statistics.sample_variance_standard_deviation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.dispersion.objective_01",
+          "verb": "identify",
+          "description": "산포도의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.dispersion.objective_02",
+          "verb": "apply",
+          "description": "산포도의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.dispersion.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 산포도의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.descriptive_statistics.dispersion.misconception_01",
+          "title": "표준편차와 표준오차 혼동",
+          "description": "표준편차와 표준오차를 혼동한다.",
+          "diagnosis_tag": "ps_descriptive_statistics_dispersion_misconception_01",
+          "feedback": "표준편차와 표준오차를 혼동하지 않는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.position_shape",
+      "order": 8,
+      "name_ko": "표준점수(z-score)",
+      "definition": "관측값이 평균에서 표준편차의 몇 배만큼 떨어져 있는지를 나타내는 표준화 점수다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.position_shape.formula_01",
+          "name_ko": "standard score",
+          "role": "standard_score",
+          "latex": "z=(x-\\mu)/\\sigma"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.position_shape.condition_01",
+          "description": "평균 $\\mu$는 유한해야 한다.",
+          "rule": {
+            "property": "mean_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.position_shape.condition_02",
+          "description": "표준편차는 $\\sigma>0$이어야 한다.",
+          "rule": {
+            "property": "standard_deviation",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.position_shape.condition_03",
+          "description": "표준편차는 유한해야 한다.",
+          "rule": {
+            "property": "standard_deviation_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.position_shape.condition_04",
+          "description": "표준화할 관측값 $x$는 유한한 수치여야 한다.",
+          "rule": {
+            "property": "observation_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.position_shape.property_01",
+          "description": "$z>0$이면 평균보다 크고 $z<0$이면 평균보다 작다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean_variance",
+          "name_ko": "평균과 분산",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.dispersion",
+        "ps.descriptive_statistics.covariance_cv_outliers"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.position_shape.objective_01",
+          "verb": "identify",
+          "description": "위치와 형태의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.position_shape.objective_02",
+          "verb": "apply",
+          "description": "위치와 형태의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.position_shape.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 위치와 형태의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.descriptive_statistics.position_shape.misconception_01",
+          "title": "표준편차 0에서의 표준화",
+          "description": "모든 값이 같아 $\\sigma=0$이면 z점수를 계산할 수 있다고 생각한다.",
+          "diagnosis_tag": "ps_descriptive_statistics_position_shape_misconception_01",
+          "feedback": "분모가 0이므로 z점수는 정의되지 않는다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "standard_score",
+        "z_score"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.covariance_cv_outliers",
+      "order": 9,
+      "name_ko": "공분산·변동계수·이상치 기준",
+      "definition": "표본공분산은 짝지어진 관측쌍 $(x_i,y_i)$가 $n\\ge2$개 있을 때 다음과 같이 정의한다. $s_{xy}=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})$ 변동계수는 단위가 다른 양의 비율척도 자료의 상대적 산포를 비교할 때 사용한다. $CV=\\frac{s}{\\bar{x}},\\qquad \\bar{x}>0$ 상자그림에서 흔히 사용하는 잠재적 이상치 경계는 다음과 같다. $Q_1-1.5IQR,\\qquad Q_3+1.5IQR$ 분산 계산식은 다음과 같이 변형할 수 있다. $\\sum_{i=1}^{n}(x_i-\\bar{x})^2 =\\sum_{i=1}^{n}x_i^2-n\\bar{x}^2$",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.covariance_cv_outliers.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.covariance_cv_outliers.f01",
+        "ps.descriptive_statistics.covariance_cv_outliers.f02",
+        "ps.descriptive_statistics.covariance_cv_outliers.f03",
+        "ps.descriptive_statistics.covariance_cv_outliers.f04",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.ecdf_robust_dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.objective_01",
+          "verb": "identify",
+          "description": "공분산·변동계수·이상치 기준의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.objective_02",
+          "verb": "apply",
+          "description": "공분산·변동계수·이상치 기준의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 공분산·변동계수·이상치 기준의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "covariance_cv_outliers",
+        "variance"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.ecdf_robust_dispersion",
+      "order": 10,
+      "name_ko": "경험적 분포함수와 강건한 산포도",
+      "definition": "경험적 분포함수는 다음과 같다. $F_n(x)=\\frac{1}{n}\\sum_{i=1}^{n}I(X_i\\le x)$ 중앙절대편차는 다음과 같다. $MAD=\\operatorname{median}\\left(|X_i-\\operatorname{median}(X)|\\right)$ 정규분포의 표준편차를 강건하게 추정할 때 흔히 $1.4826\\,MAD$를 사용한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.ecdf_robust_dispersion.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.ecdf_robust_dispersion.f01",
+        "ps.descriptive_statistics.ecdf_robust_dispersion.f02",
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.geometric_harmonic_means"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.objective_01",
+          "verb": "identify",
+          "description": "경험적 분포함수와 강건한 산포도의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.objective_02",
+          "verb": "apply",
+          "description": "경험적 분포함수와 강건한 산포도의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 경험적 분포함수와 강건한 산포도의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "ecdf_robust_dispersion",
+        "distribution"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.geometric_harmonic_means",
+      "order": 11,
+      "name_ko": "기하평균과 조화평균",
+      "definition": "기하평균과 조화평균은 서로 다른 정의역 조건을 갖는 평균이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.geometric_harmonic_means.property_01",
+          "description": "정의와 적용 조건을 함께 고려해야 올바르게 해석할 수 있다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.geometric_harmonic_means.property_02",
+          "description": "양수 자료의 조화평균은 $H=\\frac{n}{\\sum_{i=1}^{n}1/x_i}$ 이며 동일한 거리에서의 평균속도처럼 분모에 관측값이 들어가는 비율을 평균낼 때 유용하다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.ecdf_robust_dispersion",
+        "ps.descriptive_statistics.skewness_kurtosis_moments",
+        "ps.descriptive_statistics.geometric_mean",
+        "ps.descriptive_statistics.harmonic_mean"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.geometric_harmonic_means.objective_01",
+          "verb": "identify",
+          "description": "기하평균과 조화평균의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.geometric_harmonic_means.objective_02",
+          "verb": "apply",
+          "description": "기하평균과 조화평균의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.geometric_harmonic_means.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 기하평균과 조화평균의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "geometric_harmonic_means"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.skewness_kurtosis_moments",
+      "order": 12,
+      "name_ko": "왜도와 첨도의 모멘트 정의",
+      "definition": "모집단의 3차·4차 표준화 중심적률은 다음과 같다. $\\gamma_1=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^3\\right]$ $\\beta_2=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^4\\right]$ 정규분포의 $\\beta_2$는 3이고 초과첨도 $\\gamma_2=\\beta_2-3$은 0이다. 표본 왜도·첨도는 여러 보정 정의가 존재하므로 소프트웨어나 교재의 계산식을 명시해야 한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.skewness_kurtosis_moments.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.skewness_kurtosis_moments.f01",
+        "ps.descriptive_statistics.skewness_kurtosis_moments.f02",
+        "ps.descriptive_statistics.geometric_harmonic_means",
+        "ps.descriptive_statistics.trimmed_mean_quantile_rules"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.objective_01",
+          "verb": "identify",
+          "description": "왜도와 첨도의 모멘트 정의의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.objective_02",
+          "verb": "apply",
+          "description": "왜도와 첨도의 모멘트 정의의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 왜도와 첨도의 모멘트 정의의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "skewness_kurtosis_moments"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules",
+      "order": 13,
+      "name_ko": "절사평균과 분위수 계산 규칙",
+      "definition": "양쪽 꼬리에서 같은 비율의 관측값을 제거한 뒤 계산한 평균을 절사평균이라고 한다. 평균보다 극단값에 강건하고 중앙값보다 자료를 더 많이 활용하는 절충적 위치통계량이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.property_01",
+          "description": "양쪽 꼬리에서 같은 비율의 관측값을 제거한 뒤 계산한 평균을 절사평균이라고 한다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.property_02",
+          "description": "평균보다 극단값에 강건하고 중앙값보다 자료를 더 많이 활용하는 절충적 위치통계량이다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.property_03",
+          "description": "표본 분위수는 소프트웨어와 교재에 따라 보간 규칙이 다를 수 있다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.property_04",
+          "description": "따라서 재현성이 중요하면 사용한 분위수 정의 또는 소프트웨어의 계산 방식을 함께 기록한다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.property_05",
+          "description": "절사평균과 분위수 계산 규칙 개념의 정의와 수식을 적용할 수 있는 자료형·정의역 조건을 만족해야 한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.skewness_kurtosis_moments",
+        "ps.descriptive_statistics.weighted_mean_interpretation"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.objective_01",
+          "verb": "identify",
+          "description": "절사평균과 분위수 계산 규칙의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.objective_02",
+          "verb": "apply",
+          "description": "절사평균과 분위수 계산 규칙의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 절사평균과 분위수 계산 규칙의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "trimmed_mean_quantile_rules"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.weighted_mean_interpretation",
+      "order": 14,
+      "name_ko": "가중평균의 해석",
+      "definition": "가중평균 $\\bar x_w=\\frac{\\sum_i w_i x_i}{\\sum_i w_i}, \\qquad \\sum_i w_i\\ne0$ 에서 통계적 평균으로 해석하려면 보통 $w_i\\ge0$을 사용한다. 가중치가 빈도, 표본설계가중치, 역분산가중치 중 무엇을 뜻하는지에 따라 분산과 표준오차 계산이 달라진다. 모든 가중치를 단순 반복횟수로 해석해서는 안 된다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.weighted_mean_interpretation.property_01",
+          "description": "가중평균 $\\bar x_w=\\frac{\\sum_i w_i x_i}{\\sum_i w_i}, \\qquad \\sum_i w_i\\ne0$ 에서 통계적 평균으로 해석하려면 보통 $w_i\\ge0$을 사용한다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.weighted_mean_interpretation.property_02",
+          "description": "가중치가 빈도, 표본설계가중치, 역분산가중치 중 무엇을 뜻하는지에 따라 분산과 표준오차 계산이 달라진다."
+        },
+        {
+          "property_id": "ps.descriptive_statistics.weighted_mean_interpretation.property_03",
+          "description": "모든 가중치를 단순 반복횟수로 해석해서는 안 된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.trimmed_mean_quantile_rules"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.weighted_mean_interpretation.objective_01",
+          "verb": "identify",
+          "description": "가중평균의 해석의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.weighted_mean_interpretation.objective_02",
+          "verb": "apply",
+          "description": "가중평균의 해석의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.weighted_mean_interpretation.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 가중평균의 해석의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "가중평균 공식은 central_tendency.f02에서 생성한다. 이 항목은 해석용 개요로만 유지한다."
+      },
+      "tags": [
+        "descriptive_statistics",
+        "weighted_mean_interpretation"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.range_iqr.f01",
+      "order": 15,
+      "name_ko": "범위와 사분위범위 — 정의",
+      "definition": "표본의 최댓값과 최솟값 차이로 범위를 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.range_iqr.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\operatorname{Range}=x_{\\max}-x_{\\min}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.range_iqr.f01.condition_01",
+          "description": "자료가 적어도 하나 있어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.range_iqr.f01.condition_02",
+          "description": "최댓값과 최솟값이 유한하게 존재해야 한다.",
+          "rule": {
+            "property": "finite_minimum_and_maximum_exist",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.range_iqr.f01.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.range_iqr.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.range_iqr",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.f01.objective_01",
+          "verb": "identify",
+          "description": "범위와 사분위범위 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.f01.objective_02",
+          "verb": "apply",
+          "description": "범위와 사분위범위 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.f01.objective_03",
+          "verb": "verify",
+          "description": "범위와 사분위범위 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion",
+        "range_iqr",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.range_iqr.f02",
+      "order": 16,
+      "name_ko": "범위와 사분위범위 — 핵심 관계식",
+      "definition": "이 개념은 범위와 사분위범위에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.range_iqr.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "IQR=Q_3-Q_1"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.range_iqr.f02.condition_01",
+          "description": "사분위수를 정의할 자료는 적어도 하나 이상이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.range_iqr.f02.condition_02",
+          "description": "유한표본 사분위수의 보간 또는 순위 규약을 명시해야 한다.",
+          "rule": {
+            "property": "quantile_convention_specified",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.range_iqr.f02.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.range_iqr.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.range_iqr",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.f02.objective_01",
+          "verb": "identify",
+          "description": "범위와 사분위범위 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.f02.objective_02",
+          "verb": "apply",
+          "description": "범위와 사분위범위 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.range_iqr.f02.objective_03",
+          "verb": "verify",
+          "description": "범위와 사분위범위 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion",
+        "range_iqr",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01",
+      "order": 17,
+      "name_ko": "표본분산과 표본표준편차 — 핵심 관계식",
+      "definition": "이 개념은 표본분산과 표본표준편차에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "s^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar x)^2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.condition_01",
+          "description": "표본분산을 정의하려면 $n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.condition_02",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.sample_variance_standard_deviation",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.objective_01",
+          "verb": "identify",
+          "description": "표본분산과 표본표준편차 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.objective_02",
+          "verb": "apply",
+          "description": "표본분산과 표본표준편차 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.objective_03",
+          "verb": "verify",
+          "description": "표본분산과 표본표준편차 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion",
+        "sample_variance_standard_deviation",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02",
+      "order": 18,
+      "name_ko": "표본분산과 표본표준편차 — 핵심 관계식",
+      "definition": "이 개념은 표본분산과 표본표준편차에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "s=\\sqrt{s^2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.condition_01",
+          "description": "표본분산을 정의하려면 $n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.condition_02",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.mean",
+          "name_ko": "평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.square_root",
+          "name_ko": "제곱근",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.sample_variance_standard_deviation",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.objective_01",
+          "verb": "identify",
+          "description": "표본분산과 표본표준편차 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.objective_02",
+          "verb": "apply",
+          "description": "표본분산과 표본표준편차 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.objective_03",
+          "verb": "verify",
+          "description": "표본분산과 표본표준편차 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "dispersion",
+        "sample_variance_standard_deviation",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01",
+      "order": 19,
+      "name_ko": "도수분포와 그래프 — 정의",
+      "definition": "이 개념은 도수분포와 그래프에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\text{상대도수}=\\frac{\\text{도수}}{\\text{전체 관측수}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.condition_01",
+          "description": "전체 관측수는 0보다 커야 한다.",
+          "rule": {
+            "property": "total_observation_count",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.condition_02",
+          "description": "도수는 0 이상의 정수여야 한다.",
+          "rule": {
+            "property": "category_frequency",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.condition_03",
+          "description": "도수는 전체 관측수를 넘을 수 없다.",
+          "rule": {
+            "property": "category_frequency_not_exceed_total",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.condition_04",
+          "description": "도수는 정수여야 한다.",
+          "rule": {
+            "property": "category_frequency_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.frequency_distribution_graphs",
+        "ps.descriptive_statistics.central_tendency"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.objective_01",
+          "verb": "identify",
+          "description": "도수분포와 그래프 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.objective_02",
+          "verb": "apply",
+          "description": "도수분포와 그래프 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.objective_03",
+          "verb": "verify",
+          "description": "도수분포와 그래프 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "frequency_distribution_graphs",
+        "distribution",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02",
+      "order": 20,
+      "name_ko": "도수분포와 그래프 — 정의",
+      "definition": "이 개념은 도수분포와 그래프에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\text{누적도수}=\\text{현재 계급까지의 도수 합}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.condition_01",
+          "description": "범주 또는 계급은 누적할 순서가 정해져 있어야 한다.",
+          "rule": {
+            "property": "categories_or_classes_ordered",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.condition_02",
+          "description": "각 도수는 비음수여야 한다.",
+          "rule": {
+            "property": "frequencies_nonnegative",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.frequency_distribution_graphs",
+        "ps.descriptive_statistics.central_tendency"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.objective_01",
+          "verb": "identify",
+          "description": "도수분포와 그래프 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.objective_02",
+          "verb": "apply",
+          "description": "도수분포와 그래프 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.objective_03",
+          "verb": "verify",
+          "description": "도수분포와 그래프 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "frequency_distribution_graphs",
+        "distribution",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.central_tendency.f01",
+      "order": 21,
+      "name_ko": "중심위치 — 정의",
+      "definition": "유한한 수치형 관측값의 합을 관측수로 나눈 산술평균을 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.central_tendency.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\bar x=\\frac1n\\sum_{i=1}^{n}x_i"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.central_tendency.f01.condition_01",
+          "description": "관측값의 수는 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.central_tendency.f01.condition_02",
+          "description": "모든 관측값은 유한한 수치여야 한다.",
+          "rule": {
+            "property": "observations_finite_numeric",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.central_tendency.f01.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.central_tendency.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.arithmetic",
+          "name_ko": "합과 나눗셈",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.central_tendency",
+        "ps.descriptive_statistics.frequency_distribution_graphs",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.f01.objective_01",
+          "verb": "identify",
+          "description": "중심위치 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.f01.objective_02",
+          "verb": "apply",
+          "description": "중심위치 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.f01.objective_03",
+          "verb": "verify",
+          "description": "중심위치 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "central_tendency",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.central_tendency.f02",
+      "order": 22,
+      "name_ko": "중심위치 — 핵심 관계식",
+      "definition": "이 개념은 중심위치에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.central_tendency.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "\\bar x_w=\\frac{\\sum_i w_i x_i}{\\sum_i w_i}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.central_tendency.f02.condition_01",
+          "description": "가중평균을 정의하려면 $\\sum_iw_i\\ne0$이어야 한다.",
+          "rule": {
+            "property": "sum_of_weights",
+            "operator": "not_equals",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.central_tendency.f02.condition_02",
+          "description": "통계적 평균으로 해석할 때에는 보통 $w_i\\ge0$인 가중치를 사용한다.",
+          "rule": {
+            "property": "weights_nonnegative",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.central_tendency.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.arithmetic",
+          "name_ko": "합과 나눗셈",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.central_tendency",
+        "ps.descriptive_statistics.frequency_distribution_graphs",
+        "ps.descriptive_statistics.dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.f02.objective_01",
+          "verb": "identify",
+          "description": "중심위치 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.f02.objective_02",
+          "verb": "apply",
+          "description": "중심위치 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.central_tendency.f02.objective_03",
+          "verb": "verify",
+          "description": "중심위치 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "central_tendency",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.covariance_cv_outliers.f01",
+      "order": 23,
+      "name_ko": "공분산·변동계수·이상치 기준 — 정의",
+      "definition": "이 개념은 공분산·변동계수·이상치 기준에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "s_{xy}=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.condition_01",
+          "description": "짝지어진 관측쌍의 수는 $n\\ge2$여야 한다.",
+          "rule": {
+            "property": "paired_sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.condition_02",
+          "description": "$n>1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_than",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.condition_03",
+          "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "paired_sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.ecdf_robust_dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.objective_01",
+          "verb": "identify",
+          "description": "표본공분산의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.objective_02",
+          "verb": "apply",
+          "description": "표본공분산을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.objective_03",
+          "verb": "verify",
+          "description": "표본공분산의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "covariance_cv_outliers",
+        "variance",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.covariance_cv_outliers.f02",
+      "order": 24,
+      "name_ko": "공분산·변동계수·이상치 기준 — 정의",
+      "definition": "이 개념은 공분산·변동계수·이상치 기준에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "CV=\\frac{s}{\\bar{x}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.condition_01",
+          "description": "전통적인 변동계수 $CV=s/\\bar x$에는 $\\bar x>0$이 필요하다.",
+          "rule": {
+            "property": "sample_mean",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.condition_02",
+          "description": "변동계수는 절대적 영점이 의미 있는 비율척도에서 해석한다.",
+          "rule": {
+            "property": "measurement_scale",
+            "operator": "equals",
+            "value": "ratio"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.ecdf_robust_dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.objective_01",
+          "verb": "identify",
+          "description": "변동계수의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.objective_02",
+          "verb": "apply",
+          "description": "변동계수을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.objective_03",
+          "verb": "verify",
+          "description": "변동계수의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "covariance_cv_outliers",
+        "variance",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.covariance_cv_outliers.f03",
+      "order": 25,
+      "name_ko": "공분산·변동계수·이상치 기준 — 경험적 기준",
+      "definition": "상자그림의 잠재적 이상치를 판정하는 하한 울타리다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.formula_01",
+          "name_ko": "경험적 기준",
+          "role": "empirical_criterion",
+          "latex": "LF=Q_1-1.5IQR"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.condition_01",
+          "description": "사분위수와 IQR을 계산하는 규칙을 일관되게 사용해야 한다.",
+          "rule": {
+            "property": "quartile_rule_consistent",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.ecdf_robust_dispersion",
+        "ps.descriptive_statistics.covariance_cv_outliers.upper_fence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.objective_01",
+          "verb": "identify",
+          "description": "Tukey IQR 이상치 경계의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.objective_02",
+          "verb": "apply",
+          "description": "Tukey IQR 이상치 경계을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.objective_03",
+          "verb": "verify",
+          "description": "Tukey IQR 이상치 경계의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "covariance_cv_outliers",
+        "variance",
+        "formula_atomic",
+        "empirical_criterion"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence",
+      "order": 26,
+      "name_ko": "IQR 상한 울타리",
+      "definition": "상자그림의 잠재적 이상치를 판정하는 상한 울타리다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence.formula_01",
+          "name_ko": "경험적 기준",
+          "role": "empirical_criterion",
+          "latex": "UF=Q_3+1.5IQR"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence.condition_01",
+          "description": "사분위수와 IQR을 계산하는 규칙을 일관되게 사용해야 한다.",
+          "rule": {
+            "property": "quartile_rule_consistent",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.covariance_cv_outliers.f03",
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.ecdf_robust_dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence.objective_01",
+          "verb": "identify",
+          "description": "IQR 상한 울타리의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence.objective_02",
+          "verb": "apply",
+          "description": "IQR 상한 울타리을 적용 조건 아래에서 사용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "covariance_cv_outliers",
+        "variance",
+        "formula_atomic",
+        "empirical_criterion"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.covariance_cv_outliers.f04",
+      "order": 27,
+      "name_ko": "공분산·변동계수·이상치 기준 — 정의",
+      "definition": "이 개념은 공분산·변동계수·이상치 기준에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\sum_{i=1}^{n}(x_i-\\bar{x})^2\n=\\sum_{i=1}^{n}x_i^2-n\\bar{x}^2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.condition_01",
+          "description": "관측값의 수는 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.condition_02",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.position_shape",
+        "ps.descriptive_statistics.ecdf_robust_dispersion"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.objective_01",
+          "verb": "identify",
+          "description": "편차제곱합 계산 항등식의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.objective_02",
+          "verb": "apply",
+          "description": "편차제곱합 계산 항등식을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.objective_03",
+          "verb": "verify",
+          "description": "편차제곱합 계산 항등식의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "covariance_cv_outliers",
+        "variance",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01",
+      "order": 28,
+      "name_ko": "경험적 분포함수와 강건한 산포도 — 정의",
+      "definition": "이 개념은 경험적 분포함수와 강건한 산포도에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "F_n(x)=\\frac{1}{n}\\sum_{i=1}^{n}I(X_i\\le x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.condition_01",
+          "description": "경험적 분포함수와 MAD를 계산하려면 관측값이 적어도 하나인 표본, 즉 $n\\ge1$이 필요하다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.condition_02",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.ecdf_robust_dispersion",
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.geometric_harmonic_means"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.objective_01",
+          "verb": "identify",
+          "description": "경험적 분포함수와 강건한 산포도 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.objective_02",
+          "verb": "apply",
+          "description": "경험적 분포함수와 강건한 산포도 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.objective_03",
+          "verb": "verify",
+          "description": "경험적 분포함수와 강건한 산포도 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "ecdf_robust_dispersion",
+        "distribution",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02",
+      "order": 29,
+      "name_ko": "경험적 분포함수와 강건한 산포도 — 강건 산포도",
+      "definition": "이 개념은 경험적 분포함수와 강건한 산포도에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.formula_01",
+          "name_ko": "강건 산포도",
+          "role": "robust_dispersion",
+          "latex": "MAD=\\operatorname{median}\\left(|X_i-\\operatorname{median}(X)|\\right)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.condition_01",
+          "description": "경험적 분포함수와 MAD를 계산하려면 관측값이 적어도 하나인 표본, 즉 $n\\ge1$이 필요하다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.condition_02",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.ecdf_robust_dispersion",
+        "ps.descriptive_statistics.covariance_cv_outliers",
+        "ps.descriptive_statistics.geometric_harmonic_means"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.objective_01",
+          "verb": "identify",
+          "description": "경험적 분포함수와 강건한 산포도 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.objective_02",
+          "verb": "apply",
+          "description": "경험적 분포함수와 강건한 산포도 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.objective_03",
+          "verb": "verify",
+          "description": "경험적 분포함수와 강건한 산포도 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "ecdf_robust_dispersion",
+        "distribution",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01",
+      "order": 30,
+      "name_ko": "왜도와 첨도의 모멘트 정의 — 정의",
+      "definition": "표준화된 3차 중심모멘트로 모집단 왜도를 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\gamma_1=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^3\\right]"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.condition_01",
+          "description": "모집단 표준편차는 $\\sigma>0$이어야 한다.",
+          "rule": {
+            "property": "population_standard_deviation",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.condition_02",
+          "description": "$E|X-\\mu|^3<\\infty$이어야 한다.",
+          "rule": {
+            "property": "third_absolute_central_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.skewness_kurtosis_moments",
+        "ps.descriptive_statistics.geometric_harmonic_means",
+        "ps.descriptive_statistics.trimmed_mean_quantile_rules"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.objective_01",
+          "verb": "identify",
+          "description": "왜도와 첨도의 모멘트 정의 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.objective_02",
+          "verb": "apply",
+          "description": "왜도와 첨도의 모멘트 정의 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.objective_03",
+          "verb": "verify",
+          "description": "왜도와 첨도의 모멘트 정의 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "skewness_kurtosis_moments",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02",
+      "order": 31,
+      "name_ko": "왜도와 첨도의 모멘트 정의 — 정의",
+      "definition": "표준화된 4차 중심모멘트로 모집단 첨도를 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\beta_2=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^4\\right]"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.condition_01",
+          "description": "모집단 표준편차는 $\\sigma>0$이어야 한다.",
+          "rule": {
+            "property": "population_standard_deviation",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.condition_02",
+          "description": "$E[(X-\\mu)^4]<\\infty$이어야 한다.",
+          "rule": {
+            "property": "fourth_central_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.foundations.variable_data_types",
+          "name_ko": "변수와 자료의 유형",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.mean_ratio",
+          "name_ko": "평균과 비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.descriptive_statistics.skewness_kurtosis_moments",
+        "ps.descriptive_statistics.geometric_harmonic_means",
+        "ps.descriptive_statistics.trimmed_mean_quantile_rules"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.objective_01",
+          "verb": "identify",
+          "description": "왜도와 첨도의 모멘트 정의 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.objective_02",
+          "verb": "apply",
+          "description": "왜도와 첨도의 모멘트 정의 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.objective_03",
+          "verb": "verify",
+          "description": "왜도와 첨도의 모멘트 정의 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "descriptive_statistics",
+        "skewness_kurtosis_moments",
+        "formula_atomic",
+        "core_formula"
+      ]
+    }
+  ]
+}

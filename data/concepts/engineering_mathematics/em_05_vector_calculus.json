@@ -1,0 +1,1167 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "engineering_mathematics",
+    "name_ko": "공학수학"
+  },
+  "unit": {
+    "unit_id": "em_05_vector_calculus",
+    "name_ko": "벡터미적분",
+    "order": 5,
+    "description": "스칼라장과 벡터장의 미분·적분을 다룬다. Gradient, divergence, curl, 선적분·면적분과 주요 적분정리가 핵심이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "05_공학수학_PART5.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "matrix_variable": "J",
+    "vector_variable": "F, u, r, n",
+    "scalar_variable": "f, P, Q, R, phi, r, theta, z, rho, phi_sph",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "em.vector.scalar_vector_fields",
+      "order": 1,
+      "name_ko": "스칼라장과 벡터장",
+      "definition": "공간의 각 점에 스칼라값 또는 벡터값을 대응시키는 함수다.",
+      "formulas": [
+        {
+          "formula_id": "scalar_field_def",
+          "name_ko": "스칼라장 함수표현",
+          "role": "definition",
+          "latex": "f:\\mathbb{R}^n\\to\\mathbb{R}",
+          "cas": "f: R**n -> R"
+        },
+        {
+          "formula_id": "vector_field_def",
+          "name_ko": "벡터장 함수표현",
+          "role": "definition",
+          "latex": "\\mathbf{F}:\\mathbb{R}^n\\to\\mathbb{R}^m",
+          "cas": "F: R**n -> R**m"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "domain_and_continuity_check",
+          "description": "함수의 정의역과 성분별 연속성·미분가능성을 확인해야 한다.",
+          "rule": {
+            "property": "domain_continuous_differentiable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "physical_examples",
+          "description": "온도·압력은 스칼라장, 속도·힘은 벡터장의 대표 예다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.multivariate_function",
+          "name_ko": "다변수함수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.vector",
+          "name_ko": "벡터",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.gradient_directional_derivative"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "distinguish_fields",
+          "verb": "identify",
+          "description": "스칼라장과 벡터장의 개념을 구별하고 물리적 예시를 이해한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.scalar_vector_fields.magnitude_field_confusion",
+          "title": "벡터장의 크기와 원래 벡터장 정보 혼동",
+          "description": "벡터장의 크기 |F|는 스칼라장이지만 원래 벡터장과 같은 정보를 갖는다고 오인한다.",
+          "diagnosis_tag": "confuse_vector_field_with_magnitude",
+          "feedback": "벡터장의 크기 |F|는 방향 정보를 잃어버린 스칼라장이므로 원래 벡터장과 완전히 같은 정보를 갖지 않습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "field_identification"
+        ],
+        "supported_answer_types": [
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 2
+        },
+        "recommended_validators": [
+          "field_check"
+        ]
+      },
+      "tags": [
+        "scalar_field",
+        "vector_field",
+        "multivariate"
+      ]
+    },
+    {
+      "concept_id": "em.vector.gradient_directional_derivative",
+      "order": 2,
+      "name_ko": "Gradient와 방향도함수",
+      "definition": "Gradient는 스칼라장의 편미분을 모은 벡터이며, 방향도함수는 특정 방향의 순간 변화율이다.",
+      "formulas": [
+        {
+          "formula_id": "gradient_formula",
+          "name_ko": "그래디언트 정의",
+          "role": "definition",
+          "latex": "\\nabla f=(f_x,f_y,f_z)",
+          "cas": "Matrix([diff(f, x), diff(f, y), diff(f, z)])"
+        },
+        {
+          "formula_id": "directional_derivative_formula",
+          "name_ko": "방향도함수 정의",
+          "role": "definition",
+          "latex": "D_{\\mathbf{u}}f=\\nabla f\\cdot\\mathbf{u}",
+          "cas": "Dot(Gradient(f), u)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "differentiable_f_unit_vector_u",
+          "description": "f가 해당 점에서 미분 가능하고 u가 단위벡터여야 한다.",
+          "rule": {
+            "property": "f_differentiable_u_is_unit",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "gradient_perpendicular_to_level_surface",
+          "description": "nbnabla f는 등위면에 수직이며 최대 방향도함수는 ||nabla f||이고 방향은 gradient 방향이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.partial_derivative",
+          "name_ko": "편미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.dot_product",
+          "name_ko": "내적",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.unit_vector",
+          "name_ko": "단위벡터",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.divergence",
+        "em.vector.curl"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_gradient_directional_derivative",
+          "verb": "calculate",
+          "description": "스칼라장의 그래디언트와 특정 단위벡터 방향의 방향도함수를 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.gradient_directional_derivative.non_unit_vector",
+          "title": "비단위벡터를 방향도함수에 사용 하는 오류",
+          "description": "방향도함수를 구할 때 크기가 1이 아닌 일반 벡터를 그대로 대입한다.",
+          "diagnosis_tag": "use_non_unit_vector_for_directional_derivative",
+          "feedback": "방향도함수 공식에서 방향을 나타내는 벡터 u는 반드시 크기가 1인 단위벡터여야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "gradient_directional_derivative_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "gradient",
+        "directional_derivative",
+        "partial_derivative"
+      ]
+    },
+    {
+      "concept_id": "em.vector.divergence",
+      "order": 3,
+      "name_ko": "Divergence",
+      "definition": "벡터장이 한 점에서 퍼져 나가거나 모이는 정도를 나타내는 스칼라량이다.",
+      "formulas": [
+        {
+          "formula_id": "divergence_formula_3d",
+          "name_ko": "3차원 발산 공식",
+          "role": "definition",
+          "latex": "\\nabla\\cdot\\mathbf{F}=P_x+Q_y+R_z",
+          "cas": "diff(P, x) + diff(Q, y) + diff(R, z)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "vector_field_differentiable_components",
+          "description": "벡터장 성분들이 필요한 편미분을 가져야 한다.",
+          "rule": {
+            "property": "components_have_partial_derivatives",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "source_sink_interpretation",
+          "description": "양수는 원천, 음수는 흡수원 경향을 뜻하며 비압축성 유동은 발산이 0이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.partial_derivative",
+          "name_ko": "편미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.scalar_vector_fields",
+          "name_ko": "벡터장",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.curl",
+        "em.vector.divergence_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_divergence",
+          "verb": "calculate",
+          "description": "주어진 벡터장의 발산(Divergence)을 계산하고 물리적 의미를 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.divergence.result_is_vector",
+          "title": "발산 결과의 타입 혼동",
+          "description": "발산 연산의 결과가 벡터장이라고 오인한다.",
+          "diagnosis_tag": "confuse_divergence_result_type",
+          "feedback": "발산(Divergence)은 벡터장에 내적 형태의 미분을 취해 스칼라장을 만드는 연산입니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "divergence_calculation"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "divergence",
+        "vector_calculus",
+        "source_sink"
+      ]
+    },
+    {
+      "concept_id": "em.vector.curl",
+      "order": 4,
+      "name_ko": "Curl",
+      "definition": "벡터장의 국소적인 회전 경향을 나타내는 벡터다.",
+      "formulas": [
+        {
+          "formula_id": "curl_determinant_formula",
+          "name_ko": "컬 행렬식 공식",
+          "role": "definition",
+          "latex": "\\nabla\\times\\mathbf{F} = \\begin{vmatrix} \\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\ \\partial_x&\\partial_y&\\partial_z\\\\ P&Q&R \\end{vmatrix}",
+          "cas": "Curl(F)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "3d_vector_field_differentiable",
+          "description": "3차원 벡터장 성분들이 필요한 편미분을 가져야 한다.",
+          "rule": {
+            "property": "3d_vector_field_differentiable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "conservative_field_condition",
+          "description": "단순연결 영역에서 충분히 매끄러운 벡터장의 curl이 0이면 보존장일 가능성이 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "algebra.cross_product",
+          "name_ko": "외적",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.partial_derivative",
+          "name_ko": "편미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.scalar_vector_fields",
+          "name_ko": "벡터장",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.divergence",
+        "em.vector.stokes_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_curl",
+          "verb": "calculate",
+          "description": "3차원 벡터장의 회전(Curl)을 행렬식 전개를 통해 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.curl.zero_curl_global_conservative",
+          "title": "curl이 0일 때 전역 보존장 보장 오해",
+          "description": "curl이 0이면 영역의 위상과 관계없이 항상 전역 보존장이라고 단정한다.",
+          "diagnosis_tag": "assume_global_conservative_from_zero_curl",
+          "feedback": "curl이 0이어도 영역이 단순연결이 아니면 전역 보존장이 아닐 수 있습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "curl_calculation"
+        ],
+        "supported_answer_types": [
+          "vector"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "vector_equivalence"
+        ]
+      },
+      "tags": [
+        "curl",
+        "rotation",
+        "vector_calculus"
+      ]
+    },
+    {
+      "concept_id": "em.vector.laplacian",
+      "order": 5,
+      "name_ko": "Laplacian",
+      "definition": "스칼라장에 gradient를 취한 뒤 divergence를 취한 2계 미분연산자다.",
+      "formulas": [
+        {
+          "formula_id": "laplacian_cartesian",
+          "name_ko": "직교좌표계 라플라시안",
+          "role": "definition",
+          "latex": "\\nabla^2f = f_{xx}+f_{yy}+f_{zz}",
+          "cas": "diff(f, (x, 2)) + diff(f, (y, 2)) + diff(f, (z, 2))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "second_order_differentiable",
+          "description": "f가 2계 편미분 가능해야 한다.",
+          "rule": {
+            "property": "f_second_order_differentiable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "harmonic_functions",
+          "description": "라플라시안이 0인 함수는 조화함수이며 열·전위·확산 문제에 나타난다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.vector.gradient_directional_derivative",
+          "name_ko": "Gradient",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.divergence",
+          "name_ko": "divergence",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.partial_derivative",
+          "name_ko": "2계 편미분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.cylindrical_spherical_coordinates"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_laplacian",
+          "verb": "calculate",
+          "description": "스칼라장의 라플라시안을 계산하고 조화함수의 성질을 이해한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.laplacian.first_derivative_sum",
+          "title": "1계 편미분 단순 합산 오인",
+          "description": "라플라시안을 단순히 1계 편미분들의 합으로 착각한다.",
+          "diagnosis_tag": "confuse_laplacian_with_first_derivatives",
+          "feedback": "라플라시안은 2계 편미분들의 합(f_{xx} + f_{yy} + f_{zz})으로 정의됩니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "laplacian_calculation"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "laplacian",
+        "harmonic_function",
+        "second_derivative"
+      ]
+    },
+    {
+      "concept_id": "em.vector.line_integrals",
+      "order": 6,
+      "name_ko": "곡선 매개화와 선적분",
+      "definition": "곡선을 하나의 매개변수로 나타내고 스칼라장 또는 벡터장을 곡선을 따라 적분하는 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "differential_arc_length",
+          "name_ko": "호의 길이 미소량",
+          "role": "formula",
+          "latex": "ds=\\|\\mathbf{r}'(t)\\|dt",
+          "cas": "Norm(Derivative(r, t)) * dt"
+        },
+        {
+          "formula_id": "scalar_line_integral",
+          "name_ko": "스칼라 선적분",
+          "role": "definition",
+          "latex": "\\int_C f\\,ds = \\int_a^b f(\\mathbf{r}(t))\\|\\mathbf{r}'(t)\\|dt",
+          "cas": "Integral(f(r(t)) * Norm(r_prime(t)), (t, a, b))"
+        },
+        {
+          "formula_id": "vector_line_integral",
+          "name_ko": "벡터장 선적분",
+          "role": "definition",
+          "latex": "\\int_C\\mathbf{F}\\cdot d\\mathbf{r} = \\int_a^b \\mathbf{F}(\\mathbf{r}(t))\\cdot\\mathbf{r}'(t)\\,dt",
+          "cas": "Integral(Dot(F(r(t)), r_prime(t)), (t, a, b))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "curve_piecewise_smooth_field_continuous",
+          "description": "곡선은 조각별 매끄러워야 하고 장은 곡선 위에서 연속이어야 한다.",
+          "rule": {
+            "property": "curve_smooth_field_continuous",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "orientation_dependence_line_integral",
+          "description": "스칼라 선적분은 방향에 무관하지만 벡터장 선적분은 방향을 반대로 하면 부호가 바뀐다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.vector_derivative",
+          "name_ko": "벡터함수 미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.integral",
+          "name_ko": "정적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.dot_product",
+          "name_ko": "내적",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.conservative_fields_potentials",
+        "em.vector.stokes_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_line_integrals",
+          "verb": "calculate",
+          "description": "매개화된 곡선을 따라 스칼라장과 벡터장의 선적분을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.line_integrals.orientation_scalar_confusion",
+          "title": "스칼라 선적분 방향성 오인",
+          "description": "스칼라 선적분도 적분 방향을 반대로 하면 부호가 바뀐다고 착각한다.",
+          "diagnosis_tag": "confuse_scalar_line_integral_orientation",
+          "feedback": "스칼라 선적분 int C f ds는 경로의 방향에 무관하며, 방향에 따라 부호가 바뀌는 것은 벡터장 선적분입니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "line_integral_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "line_integral",
+        "parametrization",
+        "vector_field"
+      ]
+    },
+    {
+      "concept_id": "em.vector.conservative_fields_potentials",
+      "order": 7,
+      "name_ko": "보존장과 퍼텐셜함수",
+      "definition": "어떤 스칼라함수의 gradient로 표현되는 벡터장을 보존장이라 한다.",
+      "formulas": [
+        {
+          "formula_id": "conservative_field_def",
+          "name_ko": "보존장 정의",
+          "role": "definition",
+          "latex": "\\mathbf{F}=\\nabla\\phi",
+          "cas": "Eq(F, Gradient(phi))"
+        },
+        {
+          "formula_id": "fundamental_theorem_line_integrals",
+          "name_ko": "선적분의 기본정리",
+          "role": "formula",
+          "latex": "\\int_C\\mathbf{F}\\cdot d\\mathbf{r} = \\phi(B)-\\phi(A)",
+          "cas": "Eq(LineIntegral(F, C), phi(B) - phi(A))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "potential_exists_simply_connected_curl_zero",
+          "description": "퍼텐셜함수가 존재해야 하며 단순연결 영역에서 ∇×F=0은 대표적인 충분조건이다.",
+          "rule": {
+            "property": "potential_exists_simply_connected_curl_zero",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "path_independence",
+          "description": "선적분이 경로와 무관하며 닫힌곡선 적분은 0이고 퍼텐셜은 상수만큼 차이가 나도 같다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.vector.gradient_directional_derivative",
+          "name_ko": "Gradient",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.curl",
+          "name_ko": "curl",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.total_differential",
+          "name_ko": "완전미분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.line_integrals",
+        "em.vector.green_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "identify_conservative_field",
+          "verb": "evaluate",
+          "description": "벡터장이 보존장인지 판정하고 퍼텐셜함수를 구해 선적분을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.conservative_fields_potentials.unique_potential",
+          "title": "퍼텐셜함수의 유일성 오해",
+          "description": "퍼텐셜함수 phi가 단 하나의 식만 존재한다고 오인한다.",
+          "diagnosis_tag": "assume_unique_potential",
+          "feedback": "퍼텐셜함수는 임의의 상수 차이만큼 여러 개 존재할 수 있습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "conservative_field_verification"
+        ],
+        "supported_answer_types": [
+          "boolean",
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "conservative_field",
+        "potential_function",
+        "path_independence"
+      ]
+    },
+    {
+      "concept_id": "em.vector.surface_integrals_flux",
+      "order": 8,
+      "name_ko": "곡면 매개화와 Flux",
+      "definition": "곡면을 두 매개변수로 나타내고 벡터장이 곡면을 통과하는 유량을 계산하는 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "surface_area_element",
+          "name_ko": "면적 미소량",
+          "role": "formula",
+          "latex": "dS = \\|\\mathbf{r}_u\\times\\mathbf{r}_v\\>du\\,dv",
+          "cas": "Norm(Cross(Derivative(r, u), Derivative(r, v)))"
+        },
+        {
+          "formula_id": "surface_integral_flux",
+          "name_ko": "플럭스 면적분 정의",
+          "role": "definition",
+          "latex": "\\iint_S\\mathbf{F}\\cdot\\mathbf{n}\\,dS = \\iint_D \\mathbf{F}(\\mathbf{r}(u,v))\\cdot(\\mathbf{r}_u\\times\\mathbf{r}_v)\\,du\\,dv",
+          "cas": "Integral(Dot(F, Cross(r_u, r_v)), (u, du_min, du_max), (v, dv_min, dv_max))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "surface_smooth_orientable_non_zero_cross",
+          "description": "곡면이 조각별 매끄럽고 방향 가능해야 하며 r_u × r_v != 0이어야 한다.",
+          "rule": {
+            "property": "surface_smooth_orientable_cross_non_zero",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "orientation_sign_flux",
+          "description": "법선방향을 바꾸면 flux의 부호가 바뀐다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.partial_derivative",
+          "name_ko": "편미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.cross_product",
+          "name_ko": "외적",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.double_integral",
+          "name_ko": "이중적분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.stokes_theorem",
+        "em.vector.divergence_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_surface_flux",
+          "verb": "calculate",
+          "description": "매개화된 곡면을 통과하는 벡터장의 플럭스(Flux)를 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.surface_integrals_flux.cross_product_order",
+          "title": "외적 순서에 따른 부호 오류",
+          "description": "r_u와 r_v의 외적 순서를 무심코 바꿔서 플럭스 부호를 틀린다.",
+          "diagnosis_tag": "wrong_cross_product_order_surface",
+          "feedback": "r_u × r_v의 순서를 바꾸면 법선 벡터의 방향이 반대가 되어 플럭스 결과의 부호가 바뀝니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "surface_integral_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "surface_integral",
+        "flux",
+        "parametrization",
+        "normal_vector"
+      ]
+    },
+    {
+      "concept_id": "em.vector.green_theorem",
+      "order": 9,
+      "name_ko": "Green 정리",
+      "definition": "평면의 닫힌곡선 선적분을 내부 영역의 이중적분으로 바꾸는 정리다.",
+      "formulas": [
+        {
+          "formula_id": "green_theorem_formula",
+          "name_ko": "Green 정리 공식",
+          "role": "definition",
+          "latex": "\\oint_C P\\,dx+Q\\,dy = \\iint_D(Q_x-P_y)\\,dA",
+          "cas": "Eq(LineIntegral(P*dx + Q*dy, C), DoubleIntegral(diff(Q, x) - diff(P, y), D))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "closed_curve_positive_orientation_differentiable",
+          "description": "C는 D의 양의 방향 경계이고 조각별 매끄러워야 하며 P, Q는 연속 편미분을 가져야 한다.",
+          "rule": {
+            "property": "curve_closed_positive_p_q_differentiable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "plane_stokes_special_case",
+          "description": "평면에서 Stokes 정리의 특수한 경우이며 순환형과 flux형이 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.vector.line_integrals",
+          "name_ko": "선적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.double_integral",
+          "name_ko": "이중적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.partial_derivative",
+          "name_ko": "편미분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.stokes_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_green_theorem",
+          "verb": "solve",
+          "description": "Green 정리를 이용해 선적분을 이중적분으로 바꾸어 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.green_theorem.wrong_orientation",
+          "title": "경로 방향 오류",
+          "description": "시계 방향 경로에 대해 부호 조정 없이 Green 정리를 그대로 적용한다.",
+          "diagnosis_tag": "wrong_curve_orientation_green",
+          "feedback": "Green 정리는 곡선이 영역을 왼쪽에 두고 도는 양의 방향(반시계 방향)일 때 성립하므로 시계 방향이면 부호가 반대가 됩니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "green_theorem_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "green_theorem",
+        "line_integral",
+        "double_integral"
+      ]
+    },
+    {
+      "concept_id": "em.vector.stokes_theorem",
+      "order": 10,
+      "name_ko": "Stokes 정리",
+      "definition": "곡면 경계의 순환을 곡면 위 curl의 flux로 변환하는 정리다.",
+      "formulas": [
+        {
+          "formula_id": "stokes_theorem_formula",
+          "name_ko": "스토크스 정리 공식",
+          "role": "definition",
+          "latex": "\\oint_{\\partial S}\\mathbf{F}\\cdot d\\mathbf{r} = \\iint_S(\\nabla\\times\\mathbf{F})\\cdot\\mathbf{n}\\,dS",
+          "cas": "Eq(LineIntegral(F, boundary(S)), SurfaceIntegral(Dot(Curl(F), n), S))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "surface_orientable_right_hand_rule",
+          "description": "곡면은 방향 가능해야 하며 경계방향과 법선방향은 오른손규칙에 맞아야 한다.",
+          "rule": {
+            "property": "surface_orientable_right_hand_rule",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "share_boundary_surface_flexibility",
+          "description": "같은 경계를 공유하는 계산하기 쉬운 다른 곡면을 선택할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.vector.curl",
+          "name_ko": "Curl",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.line_integrals",
+          "name_ko": "선적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.surface_integrals_flux",
+          "name_ko": "면적분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.green_theorem",
+        "em.vector.divergence_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_stokes_theorem",
+          "verb": "solve",
+          "description": "스토크스 정리를 이용해 선적분을 면적분으로 변환하거나 그 역으로 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.stokes_theorem.right_hand_rule_violation",
+          "title": "오른손 법칙 위반 오류",
+          "description": "경계 곡선의 방향과 곡면의 법선 벡터 방향을 오른손 법칙에 맞추지 않고 임의로 설정한다.",
+          "diagnosis_tag": "violate_right_hand_rule_stokes",
+          "feedback": "스토크스 정리를 적용할 때 곡면의 법선 방향과 경계 곡선의 진행 방향은 반드시 오른손 법칙을 만족해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "stokes_theorem_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "stokes_theorem",
+        "curl",
+        "line_integral",
+        "surface_integral"
+      ]
+    },
+    {
+      "concept_id": "em.vector.divergence_theorem",
+      "order": 11,
+      "name_ko": "발산정리",
+      "definition": "닫힌곡면을 통과하는 전체 flux를 내부 부피에서 divergence를 적분한 값으로 바꾸는 정리다.",
+      "formulas": [
+        {
+          "formula_id": "divergence_theorem_formula",
+          "name_ko": "발산정리 공식",
+          "role": "definition",
+          "latex": "\\iint_{\\partial V}\\mathbf{F}\\cdot\\mathbf{n}\\,dS = \\iiint_V\\nabla\\cdot\\mathbf{F}\\,dV",
+          "cas": "Eq(SurfaceIntegral(Dot(F, n), boundary(V)), VolumeIntegral(Divergence(F), V))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "closed_surface_outward_normal_differentiable",
+          "description": "닫힌곡면에서 바깥쪽 법선을 사용하며 벡터장은 영역에서 연속 편미분 가능해야 한다.",
+          "rule": {
+            "property": "closed_surface_outward_normal_differentiable",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "local_source_to_total_flux",
+          "description": "국소 원천밀도와 전체 유출량을 연결한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.vector.divergence",
+          "name_ko": "Divergence",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.triple_integral",
+          "name_ko": "삼중적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.vector.surface_integrals_flux",
+          "name_ko": "면적분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.stokes_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_divergence_theorem",
+          "verb": "solve",
+          "description": "발산정리를 이용해 닫힌 곡면의 플럭스를 삼중적분으로 변환하여 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.divergence_theorem.open_surface_misuse",
+          "title": "열린 곡면에 발산정리 적용 오류",
+          "description": "닫혀 있지 않은 일반 곡면의 플럭스를 구할 때 발산정리를 곧바로 적용한다.",
+          "diagnosis_tag": "apply_divergence_theorem_to_open_surface",
+          "feedback": "발산정리는 반드시 완전히 둘러싸인 '닫힌 곡면'의 플럭스에만 적용할 수 있습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "divergence_theorem_calculation"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "divergence_theorem",
+        "flux",
+        "triple_integral",
+        "closed_surface"
+      ]
+    },
+    {
+      "concept_id": "em.vector.cylindrical_spherical_coordinates",
+      "order": 12,
+      "name_ko": "원통·구면좌표와 Jacobian",
+      "definition": "대칭성이 있는 3차원 영역을 효율적으로 표현하는 좌표변환이다.",
+      "formulas": [
+        {
+          "formula_id": "cylindrical_coordinates",
+          "name_ko": "원통좌표 변환 및 체적요소",
+          "role": "definition",
+          "latex": "x=r\\cos\\theta,\\quad y=r\\sin\\theta,\\quad dV=r\\,dr\\,d\\theta\\,dz",
+          "cas": "Eq(dV, r * dr * dtheta * dz)"
+        },
+        {
+          "formula_id": "spherical_coordinates",
+          "name_ko": "구면좌표 변환 및 체적요소",
+          "role": "definition",
+          "latex": "x=\\rho\\sin\\phi\\cos\\theta,\\quad y=\\rho\\sin\\phi\\sin\\theta,\\quad z=\\rho\\cos\\phi,\\quad dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta",
+          "cas": "Eq(dV, rho**2 * sin(phi) * drho * dphi * dtheta)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "clear_convention_one_to_one",
+          "description": "좌표 convention을 명확히 하고 변환이 일대일인 영역을 사용해야 한다.",
+          "rule": {
+            "property": "convention_clear_one_to_one",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "simplifies_symmetric_integrals",
+          "description": "원통·구 대칭 적분의 영역과 피적분 함수를 단순화한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.trigonometry",
+          "name_ko": "삼각함수",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.multiple_integral",
+          "name_ko": "다중적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.jacobian",
+          "name_ko": "Jacobian",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.vector.laplacian"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "use_coordinate_transforms",
+          "verb": "calculate",
+          "description": "원통좌표와 구면좌표로 변환하여 다중적분을 계산한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.vector.cylindrical_spherical_coordinates.missing_jacobian_factor",
+          "title": "야코비안 인자 누락 오류",
+          "description": "좌표 변환 시 원통좌표의 r이나 구면좌표의 \\rho^2 \\sin\\phi 등의 야코비안 인자를 빠뜨린다.",
+          "diagnosis_tag": "missing_jacobian_in_coordinates",
+          "feedback": "원통좌표계에서는 r, 구면좌표계에서는 \\rho^2 \\sin\\phi라는 야코비안(체적요소)을 반드시 곱해주어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "coordinate_transformation_integration"
+        ],
+        "supported_answer_types": [
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "expression_equivalence"
+        ]
+      },
+      "tags": [
+        "cylindrical_coordinates",
+        "spherical_coordinates",
+        "jacobian",
+        "multiple_integral"
+      ]
+    }
+  ]
+}

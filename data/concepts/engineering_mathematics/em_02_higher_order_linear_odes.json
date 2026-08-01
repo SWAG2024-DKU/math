@@ -1,0 +1,1072 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "engineering_mathematics",
+    "name_ko": "공학수학"
+  },
+  "unit": {
+    "unit_id": "em_02_higher_order_linear_odes",
+    "name_ko": "고계 선형 상미분방정식",
+    "order": 2,
+    "description": "2계 이상의 선형 상미분방정식을 다룬다. 동차해의 구조, 특성방정식, 비동차 특수해와 초기조건 적용이 중심이다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "02_공학수학_PART2.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "matrix_variable": "A",
+    "vector_variable": "x",
+    "scalar_variable": "C, c, k, m, r",
+    "formula_display": "latex",
+    "formula_computation": "sympy",
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "em.ode.higher_order_linear",
+      "order": 1,
+      "name_ko": "2계 고계 선형 상미분방정식",
+      "definition": "미지함수와 각 계수의 도함수들이 모두 1차로 나타나는 n계 방정식이다.",
+      "formulas": [
+        {
+          "formula_id": "higher_order_linear_general_form",
+          "name_ko": "n계 선형 ODE 일반형",
+          "role": "definition",
+          "latex": "a_n(x)y^{(n)}+\\cdots+a_1(x)y'+a_0(x)y=g(x)",
+          "cas": "Eq(sum(a_k(x) * Derivative(y, (x, k)) for k in range(n+1)), g(x))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "leading_coefficient_nonzero",
+          "description": "최고계수 a_n(x) != 0인 구간에서 표준형으로 나눌 수 있어야 한다.",
+          "rule": {
+            "property": "leading_coefficient_not_zero",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "homogeneous_vs_nonhomogeneous",
+          "description": "g=0이면 동차, g!=0이면 비동차이며 일반해에는 보통 n개의 독립적인 임의상수가 포함된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.derivative",
+          "name_ko": "고계 미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.ode.first_order_intro",
+          "name_ko": "1계 ODE",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.space.linear_independence",
+          "name_ko": "선형대수의 선형독립",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.superposition_space"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "classify_higher_order_ode",
+          "verb": "identify",
+          "description": "고계 선형 상미분방정식의 구조와 동차·비동차 여부를 판정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.higher_order_linear.coefficient_linearity",
+          "title": "계수함수의 선형성 오해",
+          "description": "계수함수 a_k(x)도 반드시 1차 선형 함수여야 한다고 오인한다.",
+          "diagnosis_tag": "confuse_coefficient_linearity",
+          "feedback": "선형 방정식에서 1차여야 하는 것은 미지함수 y와 그 도함수들이며, 계수함수 a_k(x)는 비선형 함수여도 상관없습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "higher_order_ode_classification"
+        ],
+        "supported_answer_types": [
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 2
+        },
+        "recommended_validators": [
+          "ode_form_check"
+        ]
+      },
+      "tags": [
+        "higher_order_ode",
+        "linear_ode",
+        "homogeneous"
+      ]
+    },
+    {
+      "concept_id": "em.ode.superposition_space",
+      "order": 2,
+      "name_ko": "중첩원리와 해공간",
+      "definition": "선형 동차방정식의 해들의 선형결합이 다시 해가 되는 성질이다.",
+      "formulas": [
+        {
+          "formula_id": "superposition_operator",
+          "name_ko": "선형 동차연산자 성질",
+          "role": "definition",
+          "latex": "L[y]=0,\\quad L[y_1]=L[y_2]=0 \\implies L[c_1y_1+c_2y_2]=0",
+          "cas": "Eq(L(c1*y1 + c2*y2), 0)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "linear_and_homogeneous",
+          "description": "방정식이 선형이고 동차여야 한다.",
+          "rule": {
+            "property": "is_linear_and_homogeneous",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "solution_space_dimension",
+          "description": "n계 동차 선형방정식의 해공간은 적절한 구간에서 n차원 벡터공간을 이룬다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.vector.linear_combination",
+          "name_ko": "선형결합",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.space.vector_space_axiom",
+          "name_ko": "벡터공간",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.linear_operator",
+          "name_ko": "선형연산자",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.wronskian",
+        "em.ode.nonhomogeneous_structure"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_superposition_principle",
+          "verb": "evaluate",
+          "description": "선형 동차방정식의 중첩원리를 이해하고 해공간의 성질을 파악한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.superposition_space.nonhomogeneous_superposition",
+          "title": "비동차방정식에서의 중첩원리 오적용",
+          "description": "비동차방정식의 두 해를 더해도 같은 방정식의 해가 된다고 착각한다.",
+          "diagnosis_tag": "misapply_superposition_to_nonhomogeneous",
+          "feedback": "중첩원리는 선형 동차방정식에만 적용되며 비동차방정식의 두 해의 합은 해가 되지 않습니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "superposition_verification"
+        ],
+        "supported_answer_types": [
+          "boolean"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "superposition_check"
+        ]
+      },
+      "tags": [
+        "superposition",
+        "solution_space",
+        "homogeneous"
+      ]
+    },
+    {
+      "concept_id": "em.ode.wronskian",
+      "order": 3,
+      "name_ko": "Wronskian과 기본해집합",
+      "definition": "여러 함수 또는 해의 선형독립성을 판정하는 데 쓰는 행렬식이다.",
+      "formulas": [
+        {
+          "formula_id": "wronskian_determinant",
+          "name_ko": "론스키안 행렬식",
+          "role": "definition",
+          "latex": "W(y_1,\\dots,y_n) = \\det\\left[y_j^{(i-1)}\\right]",
+          "cas": "Matrix([[y_1, y_2, ..., y_n], [Derivative(y_1, x), ..., Derivative(y_n, x)], ...]).det()"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "differentiability_and_interval",
+          "description": "함수들이 같은 구간에서 충분히 미분 가능해야 하며 선형 ODE 해들의 경우 한 점에서 W != 0이어야 한다.",
+          "rule": {
+            "property": "differentiable_and_non_zero_at_point",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "fundamental_set_basis",
+          "description": "기본해집합은 해공간의 기저가 되며 W != 0이면 구간 전체에서 선형독립이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "la.determinant.cofactor",
+          "name_ko": "행렬식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.space.linear_independence",
+          "name_ko": "선형독립",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.derivative",
+          "name_ko": "고계 미분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.variation_of_parameters"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "compute_wronskian",
+          "verb": "calculate",
+          "description": "주어진 함수들의 론스키안을 계산하고 선형독립성을 판정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.wronskian.zero_wronskian_dependence",
+          "title": "론스키안 0과 선형종속의 절대적 동치 오해",
+          "description": "론스키안이 0이면 임의의 함수들이 항상 선형종속이라고 단정한다.",
+          "diagnosis_tag": "misinterpret_zero_wronskian",
+          "feedback": "일반 함수들의 론스키안이 0이어도 선형독립일 수 있으며, 선형 ODE의 해들에 대해서만 강력한 판정이 성립합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "wronskian_calculation"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "wronskian_check"
+        ]
+      },
+      "tags": [
+        "wronskian",
+        "fundamental_set",
+        "linear_independence"
+      ]
+    },
+    {
+      "concept_id": "em.ode.constant_coefficient_homogeneous",
+      "order": 4,
+      "name_ko": "상수계수 동차방정식과 특성방정식",
+      "definition": "지수형 해를 가정하여 상수계수 선형 동차방정식을 다항방정식으로 변환하는 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "constant_coefficient_ode",
+          "name_ko": "상수계수 동차방정식",
+          "role": "definition",
+          "latex": "a_ny^{(n)}+\\cdots+a_1y'+a_0y=0",
+          "cas": "Eq(sum(a_k * Derivative(y, (x, k)) for k in range(n+1)), 0)"
+        },
+        {
+          "formula_id": "exponential_ansatz",
+          "name_ko": "지수형 해 가정",
+          "role": "formula",
+          "latex": "y=e^{rx}",
+          "cas": "Eq(y, exp(r * x))"
+        },
+        {
+          "formula_id": "characteristic_equation",
+          "name_ko": "특성방정식",
+          "role": "formula",
+          "latex": "a_nr^n+\\cdots+a_1r+a_0=0",
+          "cas": "Eq(sum(a_k * r**k for k in range(n+1)), 0)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "constant_coefficients_and_homogeneous",
+          "description": "계수가 상수이고 방정식이 선형 동차일 때 적용한다.",
+          "rule": {
+            "property": "is_constant_coefficient_homogeneous",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "characteristic_roots_determine_solution",
+          "description": "특성근의 종류와 중복도가 기본해의 형태를 결정한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.exponential",
+          "name_ko": "지수함수 미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.polynomial_roots",
+          "name_ko": "다항방정식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "algebra.complex_number",
+          "name_ko": "복소수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.characteristic_roots_solutions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "set_up_characteristic_equation",
+          "verb": "solve",
+          "description": "상수계수 동차방정식의 특성방정식을 세우고 근을 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.constant_coefficient_homogeneous.wrong_order_mapping",
+          "title": "계수 순서 대응 오류",
+          "description": "미분방정식의 도함수 차수와 특성다항식의 거듭제곱 순서를 거꾸로 대응시킨다.",
+          "diagnosis_tag": "wrong_characteristic_mapping",
+          "feedback": "y^{(k)}의 계수 a_k는 특성다항식에서 r^k의 계수로 정확히 대응되어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "characteristic_equation_setup"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "characteristic_equation_check"
+        ]
+      },
+      "tags": [
+        "characteristic_equation",
+        "constant_coefficient",
+        "homogeneous_ode"
+      ]
+    },
+    {
+      "concept_id": "em.ode.characteristic_roots_solutions",
+      "order": 5,
+      "name_ko": "특성근에 따른 동차해",
+      "definition": "서로 다른 실근, 중근, 복소근에 따라 기본해를 구성하는 규칙이다.",
+      "formulas": [
+        {
+          "formula_id": "distinct_real_roots",
+          "name_ko": "서로 다른 실근 해",
+          "role": "formula",
+          "latex": "y_h=\\sum_i C_ie^{r_ix}",
+          "cas": "Sum(C_i * exp(r_i * x), i)"
+        },
+        {
+          "formula_id": "repeated_roots",
+          "name_ko": "중근 해",
+          "role": "formula",
+          "latex": "e^{rx},xe^{rx},\\dots,x^{m-1}e^{rx}",
+          "cas": "[x**k * exp(r * x) for k in range(m)]"
+        },
+        {
+          "formula_id": "complex_roots",
+          "name_ko": "복소근 해",
+          "role": "formula",
+          "latex": "e^{\\alpha x}\\cos\\beta x,\\quad e^{\\alpha x}\\sin\\beta x",
+          "cas": "[exp(alpha * x) * cos(beta * x), exp(alpha * x) * sin(beta * x)]"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "real_coefficients_conjugate_complex",
+          "description": "실수계수 방정식의 복소근은 켤레쌍으로 나타나며 중근은 중복도만큼 x 거듭제곱을 곱해야 한다.",
+          "rule": {
+            "property": "real_coefficients_rules_applied",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "complete_independent_solutions",
+          "description": "차수만큼 독립해를 얻어야 완전한 일반해가 된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.ode.constant_coefficient_homogeneous",
+          "name_ko": "특성방정식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.euler_formula",
+          "name_ko": "Euler 공식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.space.linear_independence",
+          "name_ko": "선형독립",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.constant_coefficient_homogeneous"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "construct_homogeneous_solution",
+          "verb": "solve",
+          "description": "특성근의 종류에 따라 동차방정식의 일반해를 구성한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.characteristic_roots_solutions.repeated_root_reuse",
+          "title": "중근에서 같은 지수함수 반복 사용 오류",
+          "description": "중근 r에 대해 e^{rx}, e^{rx}, ...와 같이 x를 곱하지 않고 같은 함수를 여러 번 쓴다.",
+          "diagnosis_tag": "repeated_root_x_power_omission",
+          "feedback": "중근의 중복도가 m일 때 e^{rx}에 x^0부터 x^{m-1}까지 곱해주어야 독립인 해가 됩니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "homogeneous_ode_solution_construction"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "ode_solution_check"
+        ]
+      },
+      "tags": [
+        "characteristic_roots",
+        "homogeneous_solution",
+        "repeated_roots",
+        "complex_roots"
+      ]
+    },
+    {
+      "concept_id": "em.ode.nonhomogeneous_structure",
+      "order": 6,
+      "name_ko": "비동차방정식의 해 구조",
+      "definition": "비동차 선형방정식의 전체해를 동차 일반해와 하나의 특수해의 합으로 나타내는 구조다.",
+      "formulas": [
+        {
+          "formula_id": "nonhomogeneous_general_solution",
+          "name_ko": "비동차방정식 전체해 구조",
+          "role": "definition",
+          "latex": "y=y_h+y_p",
+          "cas": "Eq(y, y_h + y_p)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "yh_yp_conditions",
+          "description": "y_h는 대응 동차방정식의 일반해이고 y_p는 원래 방정식을 만족하는 하나의 특수해여야 한다.",
+          "rule": {
+            "property": "yh_is_homogeneous_general_yp_is_particular",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "particular_solution_difference",
+          "description": "특수해는 유일하지 않지만 서로 다른 특수해의 차이는 동차해이므로 전체 해집합은 같다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.ode.superposition_space",
+          "name_ko": "중첩원리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.ode.characteristic_roots_solutions",
+          "name_ko": "동차해",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.method_of_undetermined_coefficients",
+        "em.ode.variation_of_parameters"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "understand_nonhomogeneous_structure",
+          "verb": "evaluate",
+          "description": "비동차 선형방정식의 해가 동차해와 특수해의 합으로 구성됨을 이해한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.nonhomogeneous_structure.only_particular_solution",
+          "title": "특수해를 일반해로 오인",
+          "description": "특수해 y_p 하나만 구하고 그것이 방정식의 일반해라고 생각한다.",
+          "diagnosis_tag": "confuse_particular_with_general",
+          "feedback": "전체 일반해는 동차해 y_h와 특수해 y_p의 합(y = y_h + y_p)이어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "nonhomogeneous_solution_structure"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "ode_solution_check"
+        ]
+      },
+      "tags": [
+        "nonhomogeneous_ode",
+        "general_solution",
+        "particular_solution"
+      ]
+    },
+    {
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "order": 7,
+      "name_ko": "미정계수법과 공진",
+      "definition": "우변의 함수형에 맞는 특수해 형태를 가정하고 계수를 구하는 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "resonance_adjustment",
+          "name_ko": "공진 시 특수해 보정",
+          "role": "formula",
+          "latex": "y_p=x^sY(x)",
+          "cas": "Eq(y_p, x**s * Y(x))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "constant_coefficient_special_rhs",
+          "description": "상수계수 선형 비동차방정식이며 우변이 다항식, 지수함수, 사인·코사인의 유한 조합일 때 적합하다.",
+          "rule": {
+            "property": "constant_coefficient_and_closed_rhs",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "resonance_multiplicity",
+          "description": "가정형이 동차해와 겹치면 대응 특성근의 중복도만큼 x를 곱한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.ode.constant_coefficient_homogeneous",
+          "name_ko": "특성방정식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.derivative",
+          "name_ko": "다항식·지수·삼각함수 미분",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.variation_of_parameters"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_undetermined_coefficients",
+          "verb": "solve",
+          "description": "미정계수법을 이용하여 비동차방정식의 특수해를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.method_of_undetermined_coefficients.resonance_omission",
+          "title": "공진(중복) 시 x 곱하기 누락",
+          "description": "가정한 특수해가 동차해와 겹치는데도 x^s를 곱하지 않고 그대로 대입한다.",
+          "diagnosis_tag": "missing_resonance_factor",
+          "feedback": "특수해 가정이 동차해와 중복되면 특성근의 중복도만큼 x^s를 곱해주어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "undetermined_coefficients_solving"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "ode_solution_check"
+        ]
+      },
+      "tags": [
+        "undetermined_coefficients",
+        "resonance",
+        "particular_solution"
+      ]
+    },
+    {
+      "concept_id": "em.ode.variation_of_parameters",
+      "order": 8,
+      "name_ko": "매개변수변환법",
+      "definition": "동차 기본해의 상수계수를 함수로 바꾸어 비동차 특수해를 구하는 일반적 방법이다.",
+      "formulas": [
+        {
+          "formula_id": "second_order_standard_form",
+          "name_ko": "2계 표준형",
+          "role": "definition",
+          "latex": "y''+p(x)y'+q(x)y=g(x)",
+          "cas": "Eq(Derivative(y, (x, 2)) + p(x)*Derivative(y, x) + q(x)*y, g(x))"
+        },
+        {
+          "formula_id": "variation_of_parameters_particular",
+          "name_ko": "매개변수변환법 특수해",
+          "role": "formula",
+          "latex": "y_p=u_1y_1+u_2y_2",
+          "cas": "Eq(y_p, u_1*y_1 + u_2*y_2)"
+        },
+        {
+          "formula_id": "u_prime_formulas",
+          "name_ko": "u_1', u_2' 공식",
+          "role": "formula",
+          "latex": "u_1'=-\\frac{y_2g}{W},\\qquad u_2'=\\frac{y_1g}{W}",
+          "cas": "Eq(Derivative(u_1, x), -y_2*g/W) & Eq(Derivative(u_2, x), y_1*g/W)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "known_fundamental_set_and_wronskian_nonzero",
+          "description": "동차 기본해 y_1, y_2가 알려져 있고 W != 0인 구간에서 방정식을 표준형으로 정리한 후 적용한다.",
+          "rule": {
+            "property": "standard_form_and_wronskian_nonzero",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "broader_applicability",
+          "description": "미정계수법보다 적용 범위가 넓지만 적분이 복잡할 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.ode.wronskian",
+          "name_ko": "Wronskian",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.integral",
+          "name_ko": "적분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.ode.nonhomogeneous_structure",
+          "name_ko": "비동차방정식의 해 구조",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.method_of_undetermined_coefficients"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "apply_variation_of_parameters",
+          "verb": "solve",
+          "description": "매개변수변환법을 이용하여 비동차방정식의 특수해를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.variation_of_parameters.standard_form_omission",
+          "title": "표준형 변환 누락 오류",
+          "description": "최고차항 계수가 1이 아닌 상태에서 곧바로 매개변수변환 공식을 적용한다.",
+          "diagnosis_tag": "missing_standard_form_conversion",
+          "feedback": "매개변수변환 공식을 쓰기 전에 반드시 방정식의 최고차항 계수를 1로 나누어 표준형으로 만들어야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "variation_of_parameters_solving"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "ode_solution_check"
+        ]
+      },
+      "tags": [
+        "variation_of_parameters",
+        "wronskian",
+        "particular_solution"
+      ]
+    },
+    {
+      "concept_id": "em.ode.euler_cauchy",
+      "order": 9,
+      "name_ko": "Euler–Cauchy 방정식",
+      "definition": "독립변수의 거듭제곱이 도함수 차수와 대응하는 가변계수 선형방정식이다.",
+      "formulas": [
+        {
+          "formula_id": "euler_cauchy_second_order",
+          "name_ko": "2계 오일러-코시 방정식",
+          "role": "definition",
+          "latex": "ax^2y''+bxy'+cy=0",
+          "cas": "Eq(a * x**2 * Derivative(y, (x, 2)) + b * x * Derivative(y, x) + c * y, 0)"
+        },
+        {
+          "formula_id": "euler_cauchy_ansatz",
+          "name_ko": "거듭제곱 해 가정",
+          "role": "formula",
+          "latex": "y=x^m",
+          "cas": "Eq(y, x**m)"
+        },
+        {
+          "formula_id": "euler_cauchy_auxiliary",
+          "name_ko": "보조방정식",
+          "role": "formula",
+          "latex": "am(m-1)+bm+c=0",
+          "cas": "Eq(a * m * (m - 1) + b * m + c, 0)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "x_nonzero_interval",
+          "description": "x = 0을 제외한 x > 0 또는 x < 0 구간에서 다룬다.",
+          "rule": {
+            "property": "x_non_zero_interval",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "similar_root_structure",
+          "description": "근의 유형에 따라 상수계수 방정식과 유사한 해 구조를 가지며 복소근에서는 ln|x|가 포함된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "calculus.power_rule",
+          "name_ko": "거듭제곱 미분",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.logarithm",
+          "name_ko": "로그치환",
+          "importance": "required"
+        },
+        {
+          "concept_id": "em.ode.constant_coefficient_homogeneous",
+          "name_ko": "특성방정식",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.constant_coefficient_homogeneous"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "solve_euler_cauchy",
+          "verb": "solve",
+          "description": "오일러-코시 방정식을 거듭제곱 해 가정을 통해 풀고 일반해를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.euler_cauchy.exponential_ansatz_misuse",
+          "title": "지수함수 해 가정 오적용",
+          "description": "오일러-코시 방정식에 상수계수 방정식처럼 y = e^{rx}를 직접 가정하여 푼다.",
+          "diagnosis_tag": "wrong_euler_cauchy_ansatz",
+          "feedback": "오일러-코시 방정식에서는 y = e^{rx} 대신 y = x^m 형태의 거듭제곱 해를 가정해야 합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "euler_cauchy_solving"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "ode_solution_check"
+        ]
+      },
+      "tags": [
+        "euler_cauchy",
+        "variable_coefficient",
+        "power_ansatz"
+      ]
+    },
+    {
+      "concept_id": "em.ode.higher_order_ivp",
+      "order": 10,
+      "name_ko": "고계 초기값 문제",
+      "definition": "n계 방정식과 한 점에서의 0계부터 (n-1)계까지의 값들을 함께 주는 문제다.",
+      "formulas": [
+        {
+          "formula_id": "higher_order_ivp_conditions",
+          "name_ko": "고계 초기조건 모음",
+          "role": "definition",
+          "latex": "y(x_0)=c_0,\\quad y'(x_0)=c_1,\\quad\\dots,\\quad y^{(n-1)}(x_0)=c_{n-1}",
+          "cas": "Eq(Derivative(y, (x, k)).subs(x, x_0), c_k)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "continuity_and_non_zero_leading_coefficient",
+          "description": "계수함수와 우변이 초기점 근방에서 연속이고 최고계수가 0이 아니어야 유일해가 보장된다.",
+          "rule": {
+            "property": "ivp_conditions_continuous_leading_non_zero",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "determines_arbitrary_constants",
+          "description": "일반해의 n개 임의상수를 n개의 초기조건으로 결정한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.ode.nonhomogeneous_structure",
+          "name_ko": "일반해",
+          "importance": "required"
+        },
+        {
+          "concept_id": "la.matrix.system_form",
+          "name_ko": "연립일차방정식",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.derivative",
+          "name_ko": "고계 도함수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.mechanical_vibrations"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "solve_higher_order_ivp",
+          "verb": "solve",
+          "description": "고계 미분방정식의 초기값 문제를 풀고 임의상수를 결정한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.higher_order_ivp.insufficient_conditions",
+          "title": "초기조건 개수 부족 오류",
+          "description": "n계 방정식임에도 n개 미만 조우한 초기조건으로 모든 임의상수를 확정하려 한다.",
+          "diagnosis_tag": "insufficient_initial_conditions",
+          "feedback": "n계 방정식의 유일한 특수해를 구하려면 y부터 y^{(n-1)}까지 총 n개의 초기조건이 필요합니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "higher_order_ivp_solving"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "ivp_solution_check"
+        ]
+      },
+      "tags": [
+        "higher_order_ivp",
+        "initial_value_problem",
+        "uniqueness"
+      ]
+    },
+    {
+      "concept_id": "em.ode.mechanical_vibrations",
+      "order": 11,
+      "name_ko": "기계진동",
+      "definition": "질량-스프링-감쇠 시스템의 운동을 2계 선형 ODE로 모델링한 것이다.",
+      "formulas": [
+        {
+          "formula_id": "mass_spring_damper_ode",
+          "name_ko": "질량-스프링-감쇠 방정식",
+          "role": "definition",
+          "latex": "mx''+cx'+kx=F(t)",
+          "cas": "Eq(m * Derivative(y, (t, 2)) + c * Derivative(y, t) + k * y, F(t))"
+        },
+        {
+          "formula_id": "natural_frequency_and_damping_ratio",
+          "name_ko": "고유진동수와 감쇠비",
+          "role": "formula",
+          "latex": "\\omega_0=\\sqrt{\\frac{k}{m}},\\qquad \\zeta=\\frac{c}{2\\sqrt{mk}}",
+          "cas": "Eq(omega_0, sqrt(k/m)) & Eq(zeta, c / (2 * sqrt(m*k)))"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "physical_parameters_positive",
+          "description": "질점, 선형 스프링, 점성감쇠를 가정하며 m > 0, k > 0, c >= 0이다.",
+          "rule": {
+            "property": "m_positive_k_positive_c_nonnegative",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "damping_types_and_resonance",
+          "description": "zeta < 1은 부족감쇠, zeta = 1은 임계감쇠, zeta > 1은 과감쇠이며 주기외력에서는 공진을 분석한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "em.ode.constant_coefficient_homogeneous",
+          "name_ko": "2계 상수계수 ODE",
+          "importance": "required"
+        },
+        {
+          "concept_id": "calculus.trigonometry",
+          "name_ko": "삼각함수",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "em.ode.method_of_undetermined_coefficients"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "model_and_solve_vibrations",
+          "verb": "solve",
+          "description": "기계진동 시스템을 2계 미분방정식으로 모델링하고 감쇠 상태에 따른 해를 구한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "em.ode.mechanical_vibrations.critical_damping_condition_confusion",
+          "title": "임계감쇠 조건 부호 및 대소 혼동",
+          "description": "임계감쇠 조건인 c^2 = 4mk를 c = 4mk 등 잘못된 관계로 암기하거나 대소 관계를 반대로 해석한다.",
+          "diagnosis_tag": "confuse_critical_damping_relation",
+          "feedback": "임계감쇠 조건은 c^2 = 4mk이며, 부족감쇠는 c^2 < 4mk, 과감쇠는 c^2 > 4mk입니다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "mechanical_vibration_solving"
+        ],
+        "supported_answer_types": [
+          "expression"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "vibration_model_check"
+        ]
+      },
+      "tags": [
+        "mechanical_vibrations",
+        "mass_spring_damper",
+        "damping",
+        "resonance"
+      ]
+    }
+  ]
+}

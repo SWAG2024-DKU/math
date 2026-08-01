@@ -1,0 +1,5135 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "probability_statistics",
+    "name_ko": "확률과 통계"
+  },
+  "unit": {
+    "unit_id": "ps_11_sampling_distributions",
+    "name_ko": "표본분포",
+    "order": 11,
+    "description": "표본분포에서 필요한 핵심 개념과 공식을 정리한다. 계산식뿐 아니라 적용 조건과 해석상의 주의점을 함께 확인하는 것이 중요하다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "11_sampling_distributions.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "random_variable": "X",
+    "sample_notation": [
+      "X1",
+      "X2",
+      "...",
+      "Xn"
+    ],
+    "population_parameters": [
+      "mu",
+      "sigma^2",
+      "p",
+      "theta"
+    ],
+    "formula_display": "latex",
+    "formula_computation": "hybrid_symbolic_numeric_and_rule_verified",
+    "result_classification": [
+      "definition",
+      "exact",
+      "asymptotic",
+      "approximation",
+      "bound",
+      "empirical_criterion"
+    ],
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "ps.sampling_distributions.normal_sample_mean_exact",
+      "order": 1,
+      "name_ko": "정규모집단 표본평균의 정확분포",
+      "definition": "정규모집단의 i.i.d. 표본평균은 모든 표본크기에서 정규분포를 따른다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.normal_sample_mean_exact.formula_01",
+          "name_ko": "분포 관계",
+          "role": "distribution_relation",
+          "latex": "\\bar X\\sim N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.normal_sample_mean_exact.condition_01",
+          "description": "표본은 i.i.d. 정규표본이어야 한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_normal"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.normal_sample_mean_exact.condition_02",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.normal_sample_mean_exact.condition_03",
+          "description": "$\\sigma>0$이어야 비퇴화 표준화를 사용할 수 있다.",
+          "rule": {
+            "property": "population_standard_deviation",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.normal_sample_mean_exact.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.normal_exact_sampling_distributions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.normal_sample_mean_exact.objective_01",
+          "verb": "apply",
+          "description": "정규모집단 표본평균의 정확분포의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "normal_exact_sampling_distributions",
+        "distribution",
+        "sampling",
+        "normal_sample_mean_exact"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.order_statistic_density",
+      "order": 2,
+      "name_ko": "순서통계량의 밀도",
+      "definition": "절대연속 i.i.d. 표본의 $k$번째 순서통계량 밀도다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.order_statistic_density.formula_01",
+          "name_ko": "확률밀도함수",
+          "role": "density",
+          "latex": "f_{X_{(k)}}(x)=\n\\frac{n!}{(k-1)!(n-k)!}\n[F(x)]^{k-1}[1-F(x)]^{n-k}f(x)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.order_statistic_density.condition_01",
+          "description": "표본은 i.i.d. 절대연속분포에서 추출되어야 한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_absolutely_continuous"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistic_density.condition_02",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistic_density.condition_03",
+          "description": "$n$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistic_density.condition_04",
+          "description": "$k\\ge1$이어야 한다.",
+          "rule": {
+            "property": "order_index",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistic_density.condition_05",
+          "description": "$k$는 정수여야 한다.",
+          "rule": {
+            "property": "order_index_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistic_density.condition_06",
+          "description": "$k\\le n$이어야 한다.",
+          "rule": {
+            "property": "order_index_not_exceed_sample_size",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.pooled_se_order_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.order_statistic_density.objective_01",
+          "verb": "apply",
+          "description": "순서통계량의 밀도의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "pooled_se_order_density",
+        "order_statistic_density"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.pooled_two_proportion_se",
+      "order": 3,
+      "name_ko": "두 비율 검정의 결합 표준오차",
+      "definition": "귀무가설 $p_1=p_2$ 아래에서 두 표본의 성공수를 결합해 표준오차를 계산한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.pooled_two_proportion_se.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.pooled_two_proportion_se.f01",
+        "ps.sampling_distributions.pooled_two_proportion_se.f02",
+        "ps.sampling_distributions.pooled_se_order_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.objective_01",
+          "verb": "apply",
+          "description": "두 비율 검정의 결합 표준오차의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "pooled_se_order_density",
+        "pooled_two_proportion_se"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_variance_unbiasedness",
+      "order": 4,
+      "name_ko": "표본분산의 불편성",
+      "definition": "i.i.d. 표본에서 $n-1$ 분모의 표본분산은 모분산의 불편추정량이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_variance_unbiasedness.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "E[S^2]=\\sigma^2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_unbiasedness.condition_01",
+          "description": "$n\\ge2$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_unbiasedness.condition_02",
+          "description": "표본은 동일한 모집단에서 얻은 i.i.d. 표본이어야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_unbiasedness.condition_03",
+          "description": "모집단의 제2적률이 유한해야 한다.",
+          "rule": {
+            "property": "population_second_moment_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_unbiasedness.condition_04",
+          "description": "$n$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_variance_moments"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_unbiasedness.objective_01",
+          "verb": "apply",
+          "description": "표본분산의 불편성의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_variance_moments",
+        "variance",
+        "sampling",
+        "sample_variance_unbiasedness"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_variance_variance_normal",
+      "order": 5,
+      "name_ko": "정규모집단 표본분산의 분산",
+      "definition": "정규모집단에서 표본분산 자체의 분산을 나타낸다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_variance_variance_normal.formula_01",
+          "name_ko": "분산",
+          "role": "variance",
+          "latex": "\\operatorname{Var}(S^2)=\\frac{2\\sigma^4}{n-1}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_variance_normal.condition_01",
+          "description": "표본은 i.i.d. 정규표본이어야 한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_normal"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_variance_normal.condition_02",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_variance_normal.condition_03",
+          "description": "$\\sigma^2<\\infty$이어야 한다.",
+          "rule": {
+            "property": "population_variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_variance_normal.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_variance_moments"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_variance_normal.objective_01",
+          "verb": "apply",
+          "description": "정규모집단 표본분산의 분산의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_variance_moments",
+        "variance",
+        "sampling",
+        "sample_variance_variance_normal"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.student_t_exact",
+      "order": 6,
+      "name_ko": "Student t 통계량의 정확분포",
+      "definition": "정규표본에서 미지 모분산을 표본분산으로 대체한 평균 통계량은 t분포를 따른다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.student_t_exact.formula_01",
+          "name_ko": "정확 검정통계량",
+          "role": "exact_test_statistic",
+          "latex": "T=\\frac{\\bar X-\\mu}{S/\\sqrt n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.condition_01",
+          "description": "표본은 i.i.d. 정규표본이어야 한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_normal"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.condition_02",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.condition_03",
+          "description": "$S>0$이어야 통계량이 정의된다.",
+          "rule": {
+            "property": "sample_standard_deviation",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.student_t_exact.reference_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.student_t_exact.objective_01",
+          "verb": "apply",
+          "description": "Student t 통계량의 정확분포의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "normal_exact_sampling_distributions",
+        "distribution",
+        "sampling",
+        "student_t_exact"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.student_t_exact.reference_distribution",
+      "order": 7,
+      "name_ko": "정규표본 평균 t통계량의 기준분포",
+      "definition": "정규표본에서 t통계량은 자유도 n-1의 t분포를 따른다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.student_t_exact.reference_distribution.formula_01",
+          "name_ko": "정확 기준분포",
+          "role": "exact_distribution",
+          "latex": "T\\sim t_{n-1}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.reference_distribution.condition_01",
+          "description": "표본은 i.i.d. 정규표본이어야 한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_normal"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.reference_distribution.condition_02",
+          "description": "$n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.reference_distribution.condition_03",
+          "description": "$S>0$이어야 통계량이 정의된다.",
+          "rule": {
+            "property": "sample_standard_deviation",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.student_t_exact.reference_distribution.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.student_t_exact.reference_distribution.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.student_t_exact",
+        "ps.sampling_distributions.normal_exact_sampling_distributions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.student_t_exact.reference_distribution.objective_01",
+          "verb": "identify",
+          "description": "정규표본 평균 t통계량의 기준분포의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.student_t_exact.reference_distribution.objective_02",
+          "verb": "apply",
+          "description": "정규표본 평균 t통계량의 기준분포를 적용 조건 아래에서 사용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "normal_exact_sampling_distributions",
+        "distribution",
+        "sampling",
+        "student_t_exact"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.variance_ratio_f_exact",
+      "order": 8,
+      "name_ko": "두 표본분산비의 정확 F분포",
+      "definition": "서로 독립인 두 정규표본의 표본분산을 모분산으로 표준화한 비율은 F분포를 따른다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.variance_ratio_f_exact.formula_01",
+          "name_ko": "분포 관계",
+          "role": "distribution_relation",
+          "latex": "\\frac{S_1^2/\\sigma_1^2}{S_2^2/\\sigma_2^2}\n\\sim F_{n_1-1,n_2-1}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.variance_ratio_f_exact.condition_01",
+          "description": "두 표본은 서로 독립이어야 한다.",
+          "rule": {
+            "property": "two_samples_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.variance_ratio_f_exact.condition_02",
+          "description": "각 표본은 정규모집단의 i.i.d. 표본이어야 한다.",
+          "rule": {
+            "property": "both_samples_iid_normal",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.variance_ratio_f_exact.condition_03",
+          "description": "$n_1,n_2\\ge2$여야 한다.",
+          "rule": {
+            "property": "both_sample_sizes_at_least_two",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.variance_ratio_f_exact.condition_04",
+          "description": "$\\sigma_1^2,\\sigma_2^2>0$이어야 한다.",
+          "rule": {
+            "property": "population_variances_positive",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.normal_exact_sampling_distributions"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.variance_ratio_f_exact.objective_01",
+          "verb": "apply",
+          "description": "두 표본분산비의 정확 F분포의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "normal_exact_sampling_distributions",
+        "distribution",
+        "sampling",
+        "variance_ratio_f_exact"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.random_sample_statistic",
+      "order": 9,
+      "name_ko": "확률표본과 통계량",
+      "definition": "모집단에서 독립동일분포로 추출된 관측값과 그 함수인 통계량을 다룬다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.random_sample_statistic.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.random_sample_statistic.f01",
+        "ps.sampling_distributions.random_sample_statistic.f02",
+        "ps.sampling_distributions.sample_mean_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.objective_01",
+          "verb": "identify",
+          "description": "확률표본과 통계량의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.objective_02",
+          "verb": "apply",
+          "description": "확률표본과 통계량의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률표본과 통계량의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "random_sample_statistic",
+        "probability",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_mean_distribution",
+      "order": 10,
+      "name_ko": "표본평균의 분포",
+      "definition": "표본평균이 반복표본추출에서 어떤 분포를 갖는지 다룬다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_mean_distribution.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_mean_distribution.f01",
+        "ps.sampling_distributions.sample_mean_distribution.f02",
+        "ps.sampling_distributions.sample_mean_distribution.f03",
+        "ps.sampling_distributions.random_sample_statistic",
+        "ps.sampling_distributions.sample_variance_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.objective_01",
+          "verb": "identify",
+          "description": "표본평균의 분포의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.objective_02",
+          "verb": "apply",
+          "description": "표본평균의 분포의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 표본평균의 분포의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_mean_distribution",
+        "distribution",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_variance_distribution",
+      "order": 11,
+      "name_ko": "표본분산의 분포",
+      "definition": "정규모집단에서 표본분산의 분포를 다룬다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_variance_distribution.formula_01",
+          "name_ko": "분포 관계",
+          "role": "distribution_relation",
+          "latex": "\\frac{(n-1)S^2}{\\sigma^2}\\sim\\chi^2_{n-1}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_distribution.condition_01",
+          "description": "표본크기는 정수 $n\\ge2$여야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_distribution.condition_02",
+          "description": "표본은 i.i.d.이어야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_distribution.condition_03",
+          "description": "정확한 카이제곱 분포에는 모집단이 정규분포여야 한다.",
+          "rule": {
+            "property": "population_distribution",
+            "operator": "equals",
+            "value": "normal"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_distribution.condition_04",
+          "description": "$\\sigma^2>0$이어야 비퇴화 피벗을 사용한다.",
+          "rule": {
+            "property": "population_variance",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_variance_distribution.condition_05",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_variance_distribution.property_01",
+          "description": "정규모집단에서는 $\\bar X$와 $S^2$가 독립이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.continuous_distributions.chi_square",
+          "name_ko": "카이제곱분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_mean_distribution",
+        "ps.sampling_distributions.two_sample_statistics"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_distribution.objective_01",
+          "verb": "identify",
+          "description": "표본분산의 분포의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_distribution.objective_02",
+          "verb": "apply",
+          "description": "표본분산의 분포의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_distribution.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 표본분산의 분포의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.sampling_distributions.sample_variance_distribution.misconception_01",
+          "title": "분모가 n인지 n-1인지 확인 누락",
+          "description": "분모가 n인지 n-1인지 확인하지 않는다.",
+          "diagnosis_tag": "ps_sampling_distributions_sample_variance_distribution_misconception_01",
+          "feedback": "분모가 n인지 n-1인지 확인한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_variance_distribution",
+        "distribution",
+        "variance",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.two_sample_statistics",
+      "order": 12,
+      "name_ko": "두 표본 통계량",
+      "definition": "두 독립집단의 평균·비율·분산 차이의 표본분포를 다룬다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.two_sample_statistics.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.sample_mean",
+          "name_ko": "표본평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.sample_proportion",
+          "name_ko": "표본비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.two_sample_statistics.f01",
+        "ps.sampling_distributions.two_sample_statistics.f02",
+        "ps.sampling_distributions.sample_variance_distribution",
+        "ps.sampling_distributions.order_statistics"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.objective_01",
+          "verb": "identify",
+          "description": "두 표본 통계량의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.objective_02",
+          "verb": "apply",
+          "description": "두 표본 통계량의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 두 표본 통계량의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "two_sample_statistics",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.order_statistics",
+      "order": 13,
+      "name_ko": "순서통계량",
+      "definition": "표본을 크기순으로 배열한 통계량을 다룬다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.order_statistics.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.joint_distribution",
+          "name_ko": "결합분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.order_statistics.f01",
+        "ps.sampling_distributions.order_statistics.f02",
+        "ps.sampling_distributions.two_sample_statistics",
+        "ps.sampling_distributions.sd_estimated_se"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.objective_01",
+          "verb": "identify",
+          "description": "순서통계량의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.objective_02",
+          "verb": "apply",
+          "description": "순서통계량의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 순서통계량의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "order_statistics"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sd_estimated_se",
+      "order": 14,
+      "name_ko": "표준편차와 추정 표준오차의 구분",
+      "definition": "두 독립 표본비율 차이의 이론적 표준편차는 $SD(\\hat p_1-\\hat p_2) =\\sqrt{\\frac{p_1(1-p_1)}{n_1} +\\frac{p_2(1-p_2)}{n_2}}$ 이다. 실제 자료에서 비결합 추정 표준오차는 $\\widehat{SE}(\\hat p_1-\\hat p_2) =\\sqrt{\\frac{\\hat p_1(1-\\hat p_1)}{n_1} +\\frac{\\hat p_2(1-\\hat p_2)}{n_2}}$ 로 계산한다. 귀무가설 $p_1=p_2$ 검정에서는 결합비율을 사용하는 표준오차가 사용될 수 있다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sd_estimated_se.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sd_estimated_se.f01",
+        "ps.sampling_distributions.sd_estimated_se.f02",
+        "ps.sampling_distributions.order_statistics",
+        "ps.sampling_distributions.sample_proportion_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.objective_01",
+          "verb": "identify",
+          "description": "표준편차와 추정 표준오차의 구분의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.objective_02",
+          "verb": "apply",
+          "description": "표준편차와 추정 표준오차의 구분의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 표준편차와 추정 표준오차의 구분의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "sd_estimated_se",
+        "estimation"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_proportion_distribution",
+      "order": 15,
+      "name_ko": "표본비율의 분포",
+      "definition": "$X\\sim\\operatorname{Bin}(n,p)$이고 $\\hat p=X/n$이면 $E[\\hat p]=p$, $\\operatorname{Var}(\\hat p)=p(1-p)/n$이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_proportion_distribution.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution.f01",
+        "ps.sampling_distributions.sample_proportion_distribution.f02",
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.sample_proportion_asymptotic_normality"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.objective_01",
+          "verb": "identify",
+          "description": "표본비율의 분포의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.objective_02",
+          "verb": "apply",
+          "description": "표본비율의 분포의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 표본비율의 분포의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_proportion_distribution",
+        "distribution",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.normal_exact_sampling_distributions",
+      "order": 16,
+      "name_ko": "정규모집단의 정확한 표본분포",
+      "definition": "정규모집단에서 $\\bar X\\sim N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)$ 이고 $T=\\frac{\\bar X-\\mu}{S/\\sqrt n}\\sim t_{n-1}$ 이다. 또한 서로 독립인 두 정규표본에 대해 $\\frac{S_1^2/\\sigma_1^2}{S_2^2/\\sigma_2^2} \\sim F_{n_1-1,n_2-1}$ 이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.normal_exact_sampling_distributions.property_01",
+          "description": "정규모집단에서 $\\bar X\\sim N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)$ 이고 $T=\\frac{\\bar X-\\mu}{S/\\sqrt n}\\sim t_{n-1}$ 이다."
+        },
+        {
+          "property_id": "ps.sampling_distributions.normal_exact_sampling_distributions.property_02",
+          "description": "또한 서로 독립인 두 정규표본에 대해 $\\frac{S_1^2/\\sigma_1^2}{S_2^2/\\sigma_2^2} \\sim F_{n_1-1,n_2-1}$ 이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution",
+        "ps.sampling_distributions.pooled_se_order_density",
+        "ps.sampling_distributions.normal_sample_mean_exact",
+        "ps.sampling_distributions.student_t_exact",
+        "ps.sampling_distributions.variance_ratio_f_exact"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.normal_exact_sampling_distributions.objective_01",
+          "verb": "identify",
+          "description": "정규모집단의 정확한 표본분포의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.normal_exact_sampling_distributions.objective_02",
+          "verb": "apply",
+          "description": "정규모집단의 정확한 표본분포의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.normal_exact_sampling_distributions.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 정규모집단의 정확한 표본분포의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "normal_exact_sampling_distributions",
+        "distribution",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.pooled_se_order_density",
+      "order": 17,
+      "name_ko": "결합 표준오차와 순서통계량 밀도",
+      "definition": "귀무가설 $H_0:p_1=p_2$에서 결합비율은 $\\hat p=\\frac{X_1+X_2}{n_1+n_2}$ 이며 검정용 표준오차는 $SE_0=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}$ 이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.pooled_se_order_density.property_01",
+          "description": "연속형 $i.i.d.$ 표본의 $k$번째 순서통계량 밀도는 $f_{X_{(k)}}(x)= \\frac{n!}{(k-1)!(n-k)!} [F(x)]^{k-1}[1-F(x)]^{n-k}f(x)$ 이다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.finite_population_sample_mean",
+        "ps.sampling_distributions.pooled_two_proportion_se",
+        "ps.sampling_distributions.order_statistic_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.pooled_se_order_density.objective_01",
+          "verb": "identify",
+          "description": "결합 표준오차와 순서통계량 밀도의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.pooled_se_order_density.objective_02",
+          "verb": "apply",
+          "description": "결합 표준오차와 순서통계량 밀도의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.pooled_se_order_density.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 결합 표준오차와 순서통계량 밀도의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "pooled_se_order_density"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean",
+      "order": 18,
+      "name_ko": "유한모집단에서의 표본평균",
+      "definition": "크기 $N\\ge2$인 유한모집단에서 $1\\le n\\le N$인 크기 $n$의 단순무작위 비복원표본을 추출한다고 하자. 모집단 분산을 $S_N^2=\\frac{1}{N-1}\\sum_{i=1}^{N}(Y_i-\\bar Y)^2$ 로 정의하면 $E[\\bar y]=\\bar Y$ $\\operatorname{Var}(\\bar y) =\\left(1-\\frac{n}{N}\\right)\\frac{S_N^2}{n}$ 이다. $\\sqrt{1-n/N}$를 유한모집단수정계수라고 한다. 복원추출이나 모집단에 비해 표본추출률이 매우 작을 때에는 이 계수가 1에 가까워진다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.finite_population_sample_mean.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.finite_population_sample_mean.f01",
+        "ps.sampling_distributions.finite_population_sample_mean.f02",
+        "ps.sampling_distributions.finite_population_sample_mean.f03",
+        "ps.sampling_distributions.pooled_se_order_density",
+        "ps.sampling_distributions.exact_asymptotic_sampling"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.objective_01",
+          "verb": "identify",
+          "description": "유한모집단에서의 표본평균의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.objective_02",
+          "verb": "apply",
+          "description": "유한모집단에서의 표본평균의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 유한모집단에서의 표본평균의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "finite_population_sample_mean",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.exact_asymptotic_sampling",
+      "order": 19,
+      "name_ko": "정확 표본분포와 점근 표본분포",
+      "definition": "정규모집단의 $t$, $\\chi^2$, $F$ 관계는 명시된 가정 아래 유한표본에서 정확하다. 일반 모집단에서 표본평균이나 표본비율의 정규성은 중심극한정리에 기반한 점근적 근사다. 실제 표준오차는 미지 모수를 추정량으로 대체하므로 이론적 표준편차와 구분한다.",
+      "formulas": [],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.exact_asymptotic_sampling.condition_01",
+          "description": "정규모집단의 $t$, $\\chi^2$, $F$ 관계는 명시된 가정 아래 유한표본에서 정확하다.",
+          "rule": {
+            "property": "normality_condition",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.exact_asymptotic_sampling.property_01",
+          "description": "일반 모집단에서 표본평균이나 표본비율의 정규성은 중심극한정리에 기반한 점근적 근사다."
+        },
+        {
+          "property_id": "ps.sampling_distributions.exact_asymptotic_sampling.property_02",
+          "description": "실제 표준오차는 미지 모수를 추정량으로 대체하므로 이론적 표준편차와 구분한다."
+        },
+        {
+          "property_id": "ps.sampling_distributions.exact_asymptotic_sampling.property_03",
+          "description": "이 세 종류를 혼합하지 않고 각각 [정확], [점근], [추정 표준오차]로 표시한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.finite_population_sample_mean",
+        "ps.sampling_distributions.sample_variance_moments"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.exact_asymptotic_sampling.objective_01",
+          "verb": "identify",
+          "description": "정확 표본분포와 점근 표본분포의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.exact_asymptotic_sampling.objective_02",
+          "verb": "apply",
+          "description": "정확 표본분포와 점근 표본분포의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.exact_asymptotic_sampling.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 정확 표본분포와 점근 표본분포의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 3,
+          "max": 5
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "exact_asymptotic_sampling",
+        "distribution",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_variance_moments",
+      "order": 20,
+      "name_ko": "표본분산의 기댓값과 분산",
+      "definition": "$n\\ge2$인 $i.i.d.$ 표본에서 $E[X_i^2]<\\infty$이면 $E[S^2]=\\sigma^2$ 이므로 분모가 $n-1$인 표본분산은 모분산의 불편추정량이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_variance_moments.property_01",
+          "description": "정규모집단에서는 $\\operatorname{Var}(S^2)=\\frac{2\\sigma^4}{n-1}$ 가 성립한다."
+        },
+        {
+          "property_id": "ps.sampling_distributions.sample_variance_moments.property_02",
+          "description": "일반 모집단에서는 표본분산의 분산이 4차 중심적률에 의존한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.exact_asymptotic_sampling",
+        "ps.sampling_distributions.order_statistics_beta",
+        "ps.sampling_distributions.sample_variance_unbiasedness",
+        "ps.sampling_distributions.sample_variance_variance_normal"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_moments.objective_01",
+          "verb": "identify",
+          "description": "표본분산의 기댓값과 분산의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_moments.objective_02",
+          "verb": "apply",
+          "description": "표본분산의 기댓값과 분산의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_variance_moments.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 표본분산의 기댓값과 분산의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_variance_moments",
+        "variance",
+        "sampling"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.order_statistics_beta",
+      "order": 21,
+      "name_ko": "순서통계량과 Beta 분포",
+      "definition": "절대연속형 CDF $F$에서 추출한 i.i.d. 표본의 $k$번째 순서통계량에 대해 $F(X_{(k)})\\sim\\operatorname{Beta}(k,n-k+1)$ 이다. 이 결과는 표본분위수의 분포와 비모수 신뢰구간을 구성하는 데 사용된다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.order_statistics_beta.formula_01",
+          "name_ko": "분포 관계",
+          "role": "distribution_relation",
+          "latex": "F(X_{(k)})\\sim\\operatorname{Beta}(k,n-k+1)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics_beta.condition_01",
+          "description": "표본은 공통 연속 CDF $F$에서 추출한 i.i.d. 표본이어야 한다.",
+          "rule": {
+            "property": "sample_is_iid_continuous",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics_beta.condition_02",
+          "description": "순서통계량 번호는 $1\\le k\\le n$이어야 한다.",
+          "rule": {
+            "property": "order_index_valid",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.order_statistics_beta.property_01",
+          "description": "절대연속형 CDF $F$에서 추출한 i.i.d."
+        },
+        {
+          "property_id": "ps.sampling_distributions.order_statistics_beta.property_02",
+          "description": "표본의 $k$번째 순서통계량에 대해 $F(X_{(k)})\\sim\\operatorname{Beta}(k,n-k+1)$ 이다."
+        },
+        {
+          "property_id": "ps.sampling_distributions.order_statistics_beta.property_03",
+          "description": "이 결과는 표본분위수의 분포와 비모수 신뢰구간을 구성하는 데 사용된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_variance_moments",
+        "ps.sampling_distributions.sample_mean_variance_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics_beta.objective_01",
+          "verb": "identify",
+          "description": "순서통계량과 Beta 분포의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics_beta.objective_02",
+          "verb": "apply",
+          "description": "순서통계량과 Beta 분포의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics_beta.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 순서통계량과 Beta 분포의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "order_statistics_beta",
+        "distribution"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_mean_variance_independence",
+      "order": 22,
+      "name_ko": "표본평균과 표본분산의 독립성",
+      "definition": "i.i.d. 정규표본에서는 표본평균과 표본분산이 독립이다. 일반 모집단에서는 이 독립성이 자동으로 성립하지 않는다.",
+      "formulas": [],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_variance_independence.condition_01",
+          "description": "표본은 i.i.d. 정규표본이어야 한다.",
+          "rule": {
+            "property": "sampling_model",
+            "operator": "equals",
+            "value": "iid_normal"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_variance_independence.condition_02",
+          "description": "$n\\ge2$여야 표본분산이 정의된다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_variance_independence.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_mean_variance_independence.property_01",
+          "description": "일반 비정규 모집단에서는 표본평균과 표본분산의 독립을 가정하지 않는다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.order_statistics_beta"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_variance_independence.objective_01",
+          "verb": "identify",
+          "description": "표본평균과 표본분산의 독립성의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_variance_independence.objective_02",
+          "verb": "apply",
+          "description": "표본평균과 표본분산의 독립성의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_variance_independence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 표본평균과 표본분산의 독립성의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_mean_variance_independence",
+        "variance",
+        "sampling",
+        "independence"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality",
+      "order": 23,
+      "name_ko": "표본비율의 점근정규성",
+      "definition": "고정된 $0<p<1$에서 이항표본 크기 $n$이 증가하면 표준화된 표본비율은 표준정규분포로 수렴한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality.formula_01",
+          "name_ko": "점근 기준분포",
+          "role": "asymptotic_distribution",
+          "latex": "\\frac{\\hat p-p}{\\sqrt{p(1-p)/n}}\n\\xrightarrow{d}N(0,1)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality.condition_01",
+          "description": "표본은 $X\\sim\\operatorname{Bin}(n,p)$인 이항표본이어야 한다.",
+          "rule": {
+            "property": "sampling_distribution",
+            "operator": "equals",
+            "value": "binomial"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality.condition_02",
+          "description": "모비율은 고정된 $0<p<1$이어야 한다.",
+          "rule": {
+            "property": "population_proportion_in_open_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality.condition_03",
+          "description": "점근 결과는 $n\\to\\infty$에서 해석한다.",
+          "rule": {
+            "property": "asymptotic_index",
+            "operator": "equals",
+            "value": "n_to_infinity"
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality.objective_01",
+          "verb": "apply",
+          "description": "표본비율의 점근정규성의 수식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sample_proportion",
+        "clt"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.pooled_two_proportion_se.f01",
+      "order": 24,
+      "name_ko": "두 비율 검정의 결합 표준오차 — 핵심 관계식",
+      "definition": "이 개념은 두 비율 검정의 결합 표준오차에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "\\hat p=\\frac{X_1+X_2}{n_1+n_2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_01",
+          "description": "첫 번째 표본크기는 정수 $n_1\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_1",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_02",
+          "description": "두 번째 표본크기는 정수 $n_2\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_2",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_03",
+          "description": "`sample_size_1`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_1_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_04",
+          "description": "`sample_size_2`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_2_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_05",
+          "description": "$x_1\\ge0$이어야 한다.",
+          "rule": {
+            "property": "success_count_1",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_06",
+          "description": "$x_1$은 정수여야 한다.",
+          "rule": {
+            "property": "success_count_1_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_07",
+          "description": "$x_1\\le n_1$이어야 한다.",
+          "rule": {
+            "property": "success_count_1_not_exceed_sample_size",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_08",
+          "description": "$x_2\\ge0$이어야 한다.",
+          "rule": {
+            "property": "success_count_2",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_09",
+          "description": "$x_2$은 정수여야 한다.",
+          "rule": {
+            "property": "success_count_2_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.condition_10",
+          "description": "$x_2\\le n_2$이어야 한다.",
+          "rule": {
+            "property": "success_count_2_not_exceed_sample_size",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.pooled_two_proportion_se",
+        "ps.sampling_distributions.pooled_se_order_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.objective_01",
+          "verb": "identify",
+          "description": "두 비율 검정의 결합 표준오차 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.objective_02",
+          "verb": "apply",
+          "description": "두 비율 검정의 결합 표준오차 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.objective_03",
+          "verb": "verify",
+          "description": "두 비율 검정의 결합 표준오차 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "pooled_se_order_density",
+        "pooled_two_proportion_se",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.pooled_two_proportion_se.f02",
+      "order": 25,
+      "name_ko": "두 비율 검정의 결합 표준오차 — 표준오차",
+      "definition": "이 개념은 두 비율 검정의 결합 표준오차에서 사용하는 표준오차 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.formula_01",
+          "name_ko": "표준오차",
+          "role": "standard_error",
+          "latex": "SE_0=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.condition_01",
+          "description": "두 표본은 서로 독립이어야 한다.",
+          "rule": {
+            "property": "two_samples_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.condition_02",
+          "description": "$n_1,n_2>0$이어야 한다.",
+          "rule": {
+            "property": "both_sample_sizes_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.condition_03",
+          "description": "귀무가설은 $p_1=p_2$이어야 한다.",
+          "rule": {
+            "property": "null_hypothesis_equal_proportions",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.condition_04",
+          "description": "두 집단은 서로 독립인 이항표본이어야 한다.",
+          "rule": {
+            "property": "two_independent_binomial_samples",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.condition_05",
+          "description": "$\\hat p=(x_1+x_2)/(n_1+n_2)$로 계산되어야 한다.",
+          "rule": {
+            "property": "pooled_proportion_defined_from_counts",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.pooled_two_proportion_se",
+        "ps.sampling_distributions.pooled_se_order_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.objective_01",
+          "verb": "identify",
+          "description": "두 비율 검정의 결합 표준오차 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.objective_02",
+          "verb": "apply",
+          "description": "두 비율 검정의 결합 표준오차 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.objective_03",
+          "verb": "verify",
+          "description": "두 비율 검정의 결합 표준오차 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "pooled_se_order_density",
+        "pooled_two_proportion_se",
+        "formula_atomic",
+        "standard_error"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.random_sample_statistic.f01",
+      "order": 26,
+      "name_ko": "확률표본과 통계량 — 분포 관계",
+      "definition": "이 개념은 확률표본과 통계량에서 사용하는 분포 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.random_sample_statistic.f01.formula_01",
+          "name_ko": "분포 관계",
+          "role": "distribution_relation",
+          "latex": "X_1,\\ldots,X_n\\overset{iid}{\\sim}F"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.random_sample_statistic.f01.condition_01",
+          "description": "표본설계가 독립동일분포 가정에 부합해야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.random_sample_statistic.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.random_sample_statistic",
+        "ps.sampling_distributions.sample_mean_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.f01.objective_01",
+          "verb": "identify",
+          "description": "분포 관계의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.f01.objective_02",
+          "verb": "apply",
+          "description": "분포 관계를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.f01.objective_03",
+          "verb": "verify",
+          "description": "분포 관계의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "random_sample_statistic",
+        "probability",
+        "sampling",
+        "formula_atomic",
+        "distribution_relation"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.random_sample_statistic.f02",
+      "order": 27,
+      "name_ko": "확률표본과 통계량 — 정의",
+      "definition": "이 개념은 확률표본과 통계량에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.random_sample_statistic.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "T=T(X_1,\\ldots,X_n)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.random_sample_statistic.f02.condition_01",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.random_sample_statistic.f02.condition_02",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.random_sample_statistic.f02.condition_03",
+          "description": "관측벡터가 정의되어 있어야 한다.",
+          "rule": {
+            "property": "sample_vector_defined",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.random_sample_statistic.f02.condition_04",
+          "description": "통계량 함수 T가 정의되어 있어야 한다.",
+          "rule": {
+            "property": "statistic_function_defined",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.random_sample_statistic.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.random_sample_statistic",
+        "ps.sampling_distributions.sample_mean_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.f02.objective_01",
+          "verb": "identify",
+          "description": "확률표본과 통계량 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.f02.objective_02",
+          "verb": "apply",
+          "description": "확률표본과 통계량 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.random_sample_statistic.f02.objective_03",
+          "verb": "verify",
+          "description": "확률표본과 통계량 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "random_sample_statistic",
+        "probability",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_mean_distribution.f01",
+      "order": 28,
+      "name_ko": "표본평균의 분포 — 적률 관계",
+      "definition": "이 개념은 표본평균의 분포에서 사용하는 적률 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_mean_distribution.f01.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "E[\\bar X]=\\mu"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f01.condition_01",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f01.condition_02",
+          "description": "각 $X_i$는 유한한 공통 평균 $\\mu$를 가져야 한다.",
+          "rule": {
+            "property": "common_finite_mean",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f01.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_mean_distribution.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_mean_distribution",
+        "ps.sampling_distributions.random_sample_statistic",
+        "ps.sampling_distributions.sample_variance_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f01.objective_01",
+          "verb": "identify",
+          "description": "표본평균의 분포 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f01.objective_02",
+          "verb": "apply",
+          "description": "표본평균의 분포 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f01.objective_03",
+          "verb": "verify",
+          "description": "표본평균의 분포 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_mean_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_mean_distribution.f02",
+      "order": 29,
+      "name_ko": "표본평균의 분포 — 분산",
+      "definition": "이 개념은 표본평균의 분포에서 사용하는 분산 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_mean_distribution.f02.formula_01",
+          "name_ko": "분산",
+          "role": "variance",
+          "latex": "\\operatorname{Var}(\\bar X)=\\sigma^2/n"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f02.condition_01",
+          "description": "$X_1,\\ldots,X_n$이 공통 평균 $\\mu$와 공통 유한분산 $\\sigma^2$를 갖는 독립표본이어야 한다. 보통 $X_i\\overset{iid}{\\sim}F$로 가정한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f02.condition_02",
+          "description": "공통 모집단 분산이 유한해야 한다.",
+          "rule": {
+            "property": "common_variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f02.condition_03",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f02.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_mean_distribution.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_mean_distribution",
+        "ps.sampling_distributions.random_sample_statistic",
+        "ps.sampling_distributions.sample_variance_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f02.objective_01",
+          "verb": "identify",
+          "description": "표본평균의 분포 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f02.objective_02",
+          "verb": "apply",
+          "description": "표본평균의 분포 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f02.objective_03",
+          "verb": "verify",
+          "description": "표본평균의 분포 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_mean_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_mean_distribution.f03",
+      "order": 30,
+      "name_ko": "표본평균의 분포 — 표준오차",
+      "definition": "이 개념은 표본평균의 분포에서 사용하는 표준오차 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_mean_distribution.f03.formula_01",
+          "name_ko": "표준오차",
+          "role": "standard_error",
+          "latex": "SE(\\bar X)=\\frac{\\sigma}{\\sqrt n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f03.condition_01",
+          "description": "$X_1,\\ldots,X_n$이 공통 평균 $\\mu$와 공통 유한분산 $\\sigma^2$를 갖는 독립표본이어야 한다. 보통 $X_i\\overset{iid}{\\sim}F$로 가정한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f03.condition_02",
+          "description": "모집단 분산은 유한해야 한다.",
+          "rule": {
+            "property": "population_variance_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f03.condition_03",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f03.condition_04",
+          "description": "$\\sigma\\ge0$이어야 한다.",
+          "rule": {
+            "property": "population_standard_deviation",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_mean_distribution.f03.condition_05",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_mean_distribution.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.expectation_variance",
+          "name_ko": "기댓값과 분산",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_mean_distribution",
+        "ps.sampling_distributions.random_sample_statistic",
+        "ps.sampling_distributions.sample_variance_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f03.objective_01",
+          "verb": "identify",
+          "description": "표본평균의 분포 수식 3의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f03.objective_02",
+          "verb": "apply",
+          "description": "표본평균의 분포 수식 3을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_mean_distribution.f03.objective_03",
+          "verb": "verify",
+          "description": "표본평균의 분포 수식 3의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_mean_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.two_sample_statistics.f01",
+      "order": 31,
+      "name_ko": "두 표본 통계량 — 분산",
+      "definition": "이 개념은 두 표본 통계량에서 사용하는 분산 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.two_sample_statistics.f01.formula_01",
+          "name_ko": "분산",
+          "role": "variance",
+          "latex": "\\operatorname{Var}(\\bar X_1-\\bar X_2)=\\sigma_1^2/n_1+\\sigma_2^2/n_2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_01",
+          "description": "각 집단 내부 관측은 i.i.d.이거나 적어도 서로 무상관이고 공통분산을 가져야 한다.",
+          "rule": {
+            "property": "within_group_iid_or_uncorrelated",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_02",
+          "description": "두 모집단 분산은 모두 유한해야 한다.",
+          "rule": {
+            "property": "both_population_variances_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_03",
+          "description": "$n_1\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_1",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_04",
+          "description": "$n_2\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_2",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_05",
+          "description": "$n_1$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_1_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_06",
+          "description": "$n_2$는 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_2_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f01.condition_07",
+          "description": "두 표본은 독립이어야 한다.",
+          "rule": {
+            "property": "two_samples_independent",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.two_sample_statistics.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.sample_mean",
+          "name_ko": "표본평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.sample_proportion",
+          "name_ko": "표본비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.two_sample_statistics",
+        "ps.sampling_distributions.sample_variance_distribution",
+        "ps.sampling_distributions.order_statistics"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.f01.objective_01",
+          "verb": "identify",
+          "description": "두 표본 통계량 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.f01.objective_02",
+          "verb": "apply",
+          "description": "두 표본 통계량 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.f01.objective_03",
+          "verb": "verify",
+          "description": "두 표본 통계량 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "two_sample_statistics",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.two_sample_statistics.f02",
+      "order": 32,
+      "name_ko": "두 표본 통계량 — 핵심 관계식",
+      "definition": "이 개념은 두 표본 통계량에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.two_sample_statistics.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "SD(\\hat p_1-\\hat p_2)=\\sqrt{p_1(1-p_1)/n_1+p_2(1-p_2)/n_2}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_01",
+          "description": "두 집단은 서로 독립인 Bernoulli/이항표본이어야 한다.",
+          "rule": {
+            "property": "two_independent_binomial_samples",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_02",
+          "description": "$0\\le p_1\\le1$이어야 한다.",
+          "rule": {
+            "property": "probability_1_in_closed_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_03",
+          "description": "$0\\le p_2\\le1$이어야 한다.",
+          "rule": {
+            "property": "probability_2_in_closed_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_04",
+          "description": "$n_1\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_1",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_05",
+          "description": "$n_2\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_2",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_06",
+          "description": "$n_1$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_1_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_07",
+          "description": "$n_2$는 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_2_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.two_sample_statistics.f02.condition_08",
+          "description": "두 표본은 독립이어야 한다.",
+          "rule": {
+            "property": "two_samples_independent",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.two_sample_statistics.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "statistics.sample_mean",
+          "name_ko": "표본평균",
+          "importance": "required"
+        },
+        {
+          "concept_id": "statistics.sample_proportion",
+          "name_ko": "표본비율",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.two_sample_statistics",
+        "ps.sampling_distributions.sample_variance_distribution",
+        "ps.sampling_distributions.order_statistics"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.f02.objective_01",
+          "verb": "identify",
+          "description": "두 표본 통계량 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.f02.objective_02",
+          "verb": "apply",
+          "description": "두 표본 통계량 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.two_sample_statistics.f02.objective_03",
+          "verb": "verify",
+          "description": "두 표본 통계량 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "two_sample_statistics",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.order_statistics.f01",
+      "order": 33,
+      "name_ko": "순서통계량 — 정의",
+      "definition": "이 개념은 순서통계량에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.order_statistics.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "X_{(1)}\\le\\cdots\\le X_{(n)}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics.f01.condition_01",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics.f01.condition_02",
+          "description": "관측값을 정렬할 수 있는 전순서가 정의되어 있어야 한다.",
+          "rule": {
+            "property": "sample_space_orderable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics.f01.condition_03",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.order_statistics.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.joint_distribution",
+          "name_ko": "결합분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.order_statistics",
+        "ps.sampling_distributions.two_sample_statistics",
+        "ps.sampling_distributions.sd_estimated_se"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.f01.objective_01",
+          "verb": "identify",
+          "description": "순서통계량 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.f01.objective_02",
+          "verb": "apply",
+          "description": "순서통계량 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.f01.objective_03",
+          "verb": "verify",
+          "description": "순서통계량 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "order_statistics",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.order_statistics.f02",
+      "order": 34,
+      "name_ko": "순서통계량 — 정의",
+      "definition": "이 개념은 순서통계량에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.order_statistics.f02.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "F_{X_{(n)}}(x)=F(x)^n"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics.f02.condition_01",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics.f02.condition_02",
+          "description": "$X_1,\\ldots,X_n$은 공통 CDF $F$를 갖는 i.i.d. 표본이어야 한다.",
+          "rule": {
+            "property": "sampling_structure",
+            "operator": "equals",
+            "value": "iid"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.order_statistics.f02.condition_03",
+          "description": "$n$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.order_statistics.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.multivariate_distributions.joint_distribution",
+          "name_ko": "결합분포",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.order_statistics",
+        "ps.sampling_distributions.two_sample_statistics",
+        "ps.sampling_distributions.sd_estimated_se"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.f02.objective_01",
+          "verb": "identify",
+          "description": "순서통계량 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.f02.objective_02",
+          "verb": "apply",
+          "description": "순서통계량 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.order_statistics.f02.objective_03",
+          "verb": "verify",
+          "description": "순서통계량 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "order_statistics",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sd_estimated_se.f01",
+      "order": 35,
+      "name_ko": "표준편차와 추정 표준오차의 구분 — 핵심 관계식",
+      "definition": "이 개념은 표준편차와 추정 표준오차의 구분에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sd_estimated_se.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "SD(\\hat p_1-\\hat p_2)\n=\\sqrt{\\frac{p_1(1-p_1)}{n_1}\n+\\frac{p_2(1-p_2)}{n_2}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f01.condition_01",
+          "description": "$0\\le p_1,p_2\\le1$이어야 한다.",
+          "rule": {
+            "property": "population_proportions_in_closed_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f01.condition_02",
+          "description": "두 표본은 독립이어야 한다.",
+          "rule": {
+            "property": "two_samples_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f01.condition_03",
+          "description": "$n_1\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_1",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f01.condition_04",
+          "description": "$n_1$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_1_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f01.condition_05",
+          "description": "$n_2\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_2",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f01.condition_06",
+          "description": "$n_2$는 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_2_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sd_estimated_se.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.order_statistics",
+        "ps.sampling_distributions.sample_proportion_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.f01.objective_01",
+          "verb": "identify",
+          "description": "표준편차와 추정 표준오차의 구분 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.f01.objective_02",
+          "verb": "apply",
+          "description": "표준편차와 추정 표준오차의 구분 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.f01.objective_03",
+          "verb": "verify",
+          "description": "표준편차와 추정 표준오차의 구분 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sd_estimated_se",
+        "estimation",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sd_estimated_se.f02",
+      "order": 36,
+      "name_ko": "표준편차와 추정 표준오차의 구분 — 표준오차",
+      "definition": "이 개념은 표준편차와 추정 표준오차의 구분에서 사용하는 표준오차 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sd_estimated_se.f02.formula_01",
+          "name_ko": "표준오차",
+          "role": "standard_error",
+          "latex": "\\widehat{SE}(\\hat p_1-\\hat p_2)\n=\\sqrt{\\frac{\\hat p_1(1-\\hat p_1)}{n_1}\n+\\frac{\\hat p_2(1-\\hat p_2)}{n_2}}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_01",
+          "description": "두 표본은 독립이어야 한다.",
+          "rule": {
+            "property": "two_samples_independent",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_02",
+          "description": "$n_1\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_1",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_03",
+          "description": "$n_1$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_1_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_04",
+          "description": "$n_2\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size_2",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_05",
+          "description": "$n_2$는 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_2_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_06",
+          "description": "$\\hat p_1\\ge0$이어야 한다.",
+          "rule": {
+            "property": "sample_proportion_1",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_07",
+          "description": "$\\hat p_1\\le1$이어야 한다.",
+          "rule": {
+            "property": "sample_proportion_1",
+            "operator": "less_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_08",
+          "description": "$\\hat p_2\\ge0$이어야 한다.",
+          "rule": {
+            "property": "sample_proportion_2",
+            "operator": "greater_or_equal",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sd_estimated_se.f02.condition_09",
+          "description": "$\\hat p_2\\le1$이어야 한다.",
+          "rule": {
+            "property": "sample_proportion_2",
+            "operator": "less_or_equal",
+            "value": 1
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sd_estimated_se.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.order_statistics",
+        "ps.sampling_distributions.sample_proportion_distribution"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.f02.objective_01",
+          "verb": "identify",
+          "description": "표준편차와 추정 표준오차의 구분 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.f02.objective_02",
+          "verb": "apply",
+          "description": "표준편차와 추정 표준오차의 구분 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sd_estimated_se.f02.objective_03",
+          "verb": "verify",
+          "description": "표준편차와 추정 표준오차의 구분 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sd_estimated_se",
+        "estimation",
+        "formula_atomic",
+        "standard_error"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_proportion_distribution.f01",
+      "order": 37,
+      "name_ko": "표본비율의 분포 — 정의",
+      "definition": "성공횟수 X를 표본크기 n으로 나누어 표본비율을 정의한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_proportion_distribution.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "\\hat p=\\frac{X}{n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f01.condition_01",
+          "description": "$X\\sim\\operatorname{Bin}(n,p)$인 이항표본 구조가 필요하다.",
+          "rule": {
+            "property": "sampling_distribution",
+            "operator": "equals",
+            "value": "binomial"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f01.condition_02",
+          "description": "표본크기는 정수이고 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f01.condition_03",
+          "description": "모비율은 $0\\le p\\le1$이어야 한다.",
+          "rule": {
+            "property": "population_proportion_in_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f01.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_proportion_distribution.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution",
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.sample_proportion_asymptotic_normality",
+        "ps.sampling_distributions.sample_proportion_binomial_model"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f01.objective_01",
+          "verb": "identify",
+          "description": "분포 관계의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f01.objective_02",
+          "verb": "apply",
+          "description": "분포 관계를 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f01.objective_03",
+          "verb": "verify",
+          "description": "분포 관계의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_proportion_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "distribution_relation"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_proportion_binomial_model",
+      "order": 38,
+      "name_ko": "표본비율의 이항표본 모형",
+      "definition": "표본비율의 분자 성공횟수는 이항분포를 따른다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_proportion_binomial_model.formula_01",
+          "name_ko": "분포 관계",
+          "role": "distribution_relation",
+          "latex": "X\\sim\\operatorname{Bin}(n,p)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_binomial_model.condition_01",
+          "description": "$X\\sim\\operatorname{Bin}(n,p)$인 이항표본 구조가 필요하다.",
+          "rule": {
+            "property": "sampling_distribution",
+            "operator": "equals",
+            "value": "binomial"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_binomial_model.condition_02",
+          "description": "표본크기는 정수이고 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_binomial_model.condition_03",
+          "description": "모비율은 $0\\le p\\le1$이어야 한다.",
+          "rule": {
+            "property": "population_proportion_in_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_binomial_model.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_proportion_binomial_model.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution.f01",
+        "ps.sampling_distributions.sample_proportion_distribution",
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.sample_proportion_asymptotic_normality"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_binomial_model.objective_01",
+          "verb": "identify",
+          "description": "표본비율의 이항표본 모형의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_binomial_model.objective_02",
+          "verb": "apply",
+          "description": "표본비율의 이항표본 모형을 적용 조건 아래에서 사용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_proportion_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "distribution_relation"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_proportion_distribution.f02",
+      "order": 39,
+      "name_ko": "표본비율의 분포 — 적률 관계",
+      "definition": "이항표본에서 표본비율의 평균은 모집단 비율과 같다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_proportion_distribution.f02.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "E[\\hat p]=p"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02.condition_01",
+          "description": "$X\\sim\\operatorname{Bin}(n,p)$인 이항표본 구조가 필요하다.",
+          "rule": {
+            "property": "sampling_distribution",
+            "operator": "equals",
+            "value": "binomial"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02.condition_02",
+          "description": "표본크기는 정수이고 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02.condition_03",
+          "description": "모비율은 $0\\le p\\le1$이어야 한다.",
+          "rule": {
+            "property": "population_proportion_in_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_proportion_distribution.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution",
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.sample_proportion_asymptotic_normality",
+        "ps.sampling_distributions.sample_proportion_distribution.f02_variance"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f02.objective_01",
+          "verb": "identify",
+          "description": "표본비율의 분포 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f02.objective_02",
+          "verb": "apply",
+          "description": "표본비율의 분포 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f02.objective_03",
+          "verb": "verify",
+          "description": "표본비율의 분포 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_proportion_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance",
+      "order": 40,
+      "name_ko": "표본비율의 분산",
+      "definition": "이항표본에서 표본비율의 분산이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.formula_01",
+          "name_ko": "분산",
+          "role": "variance",
+          "latex": "\\operatorname{Var}(\\hat p)=\\frac{p(1-p)}{n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.condition_01",
+          "description": "$X\\sim\\operatorname{Bin}(n,p)$인 이항표본 구조가 필요하다.",
+          "rule": {
+            "property": "sampling_distribution",
+            "operator": "equals",
+            "value": "binomial"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.condition_02",
+          "description": "표본크기는 정수이고 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.condition_03",
+          "description": "모비율은 $0\\le p\\le1$이어야 한다.",
+          "rule": {
+            "property": "population_proportion_in_unit_interval",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.condition_04",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.sample_proportion_distribution.f02",
+        "ps.sampling_distributions.sample_proportion_distribution",
+        "ps.sampling_distributions.sd_estimated_se",
+        "ps.sampling_distributions.normal_exact_sampling_distributions",
+        "ps.sampling_distributions.sample_proportion_asymptotic_normality"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.objective_01",
+          "verb": "identify",
+          "description": "표본비율의 분산의 수식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.objective_02",
+          "verb": "apply",
+          "description": "표본비율의 분산을 적용 조건 아래에서 사용한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.objective_03",
+          "verb": "verify",
+          "description": "표본비율의 분산의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "sample_proportion_distribution",
+        "distribution",
+        "sampling",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f01",
+      "order": 41,
+      "name_ko": "유한모집단에서의 표본평균 — 정의",
+      "definition": "이 개념은 유한모집단에서의 표본평균에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.finite_population_sample_mean.f01.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "S_N^2=\\frac{1}{N-1}\\sum_{i=1}^{N}(Y_i-\\bar Y)^2"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f01.condition_01",
+          "description": "$N\\in\\mathbb Z_{\\ge2}$이어야 한다.",
+          "rule": {
+            "property": "population_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f01.condition_02",
+          "description": "`population_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "population_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.finite_population_sample_mean.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.finite_population_sample_mean",
+        "ps.sampling_distributions.pooled_se_order_density",
+        "ps.sampling_distributions.exact_asymptotic_sampling"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f01.objective_01",
+          "verb": "identify",
+          "description": "유한모집단에서의 표본평균 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f01.objective_02",
+          "verb": "apply",
+          "description": "유한모집단에서의 표본평균 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f01.objective_03",
+          "verb": "verify",
+          "description": "유한모집단에서의 표본평균 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "finite_population_sample_mean",
+        "sampling",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "order": 42,
+      "name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "definition": "이 개념은 유한모집단에서의 표본평균에서 사용하는 적률 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.finite_population_sample_mean.f02.formula_01",
+          "name_ko": "적률 관계",
+          "role": "moment_relation",
+          "latex": "E[\\bar y]=\\bar Y"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_01",
+          "description": "유한모집단 크기는 정수 $N\\ge1$이어야 한다.",
+          "rule": {
+            "property": "population_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_02",
+          "description": "표본크기는 정수 $n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_03",
+          "description": "복원하지 않는 표본에서는 $n\\le N$이어야 한다.",
+          "rule": {
+            "property": "sample_size_not_exceed_population",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_04",
+          "description": "단순임의비복원추출이어야 한다.",
+          "rule": {
+            "property": "sampling_design",
+            "operator": "equals",
+            "value": "SRSWOR"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_05",
+          "description": "유한모집단의 값들이 유한해야 모집단 평균이 정의된다.",
+          "rule": {
+            "property": "finite_population_values_finite",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_06",
+          "description": "$N$은 정수여야 한다.",
+          "rule": {
+            "property": "population_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_07",
+          "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_08",
+          "description": "$N\\ge2$인 정수여야 한다.",
+          "rule": {
+            "property": "population_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f02.condition_09",
+          "description": "$1\\le n\\le N$인 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_within_population",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.finite_population_sample_mean.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.finite_population_sample_mean",
+        "ps.sampling_distributions.pooled_se_order_density",
+        "ps.sampling_distributions.exact_asymptotic_sampling"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f02.objective_01",
+          "verb": "identify",
+          "description": "유한모집단에서의 표본평균 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f02.objective_02",
+          "verb": "apply",
+          "description": "유한모집단에서의 표본평균 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f02.objective_03",
+          "verb": "verify",
+          "description": "유한모집단에서의 표본평균 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "finite_population_sample_mean",
+        "sampling",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f03",
+      "order": 43,
+      "name_ko": "유한모집단에서의 표본평균 — 분산",
+      "definition": "이 개념은 유한모집단에서의 표본평균에서 사용하는 분산 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.sampling_distributions.finite_population_sample_mean.f03.formula_01",
+          "name_ko": "분산",
+          "role": "variance",
+          "latex": "\\operatorname{Var}(\\bar y)\n=\\left(1-\\frac{n}{N}\\right)\\frac{S_N^2}{n}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f03.condition_01",
+          "description": "표본은 단순무작위 비복원추출이어야 한다.",
+          "rule": {
+            "property": "sampling_design",
+            "operator": "equals",
+            "value": "simple_random_without_replacement"
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f03.condition_02",
+          "description": "$N\\ge2$이어야 한다.",
+          "rule": {
+            "property": "population_size",
+            "operator": "greater_or_equal",
+            "value": 2
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f03.condition_03",
+          "description": "$N$은 정수여야 한다.",
+          "rule": {
+            "property": "population_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f03.condition_04",
+          "description": "$n\\ge1$이어야 한다.",
+          "rule": {
+            "property": "sample_size",
+            "operator": "greater_or_equal",
+            "value": 1
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f03.condition_05",
+          "description": "$n$은 정수여야 한다.",
+          "rule": {
+            "property": "sample_size_is_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.sampling_distributions.finite_population_sample_mean.f03.condition_06",
+          "description": "$n\\le N$이어야 한다.",
+          "rule": {
+            "property": "sample_size_not_exceed_population",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.sampling_distributions.finite_population_sample_mean.f03.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.random_variables.random_variable_distribution",
+          "name_ko": "확률변수와 분포",
+          "importance": "required"
+        },
+        {
+          "concept_id": "ps.inequalities_limit_theory.central_limit_theorem",
+          "name_ko": "중심극한정리",
+          "importance": "recommended"
+        }
+      ],
+      "related_concepts": [
+        "ps.sampling_distributions.finite_population_sample_mean",
+        "ps.sampling_distributions.pooled_se_order_density",
+        "ps.sampling_distributions.exact_asymptotic_sampling"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f03.objective_01",
+          "verb": "identify",
+          "description": "유한모집단에서의 표본평균 수식 3의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f03.objective_02",
+          "verb": "apply",
+          "description": "유한모집단에서의 표본평균 수식 3을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.sampling_distributions.finite_population_sample_mean.f03.objective_03",
+          "verb": "verify",
+          "description": "유한모집단에서의 표본평균 수식 3의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification",
+          "moment_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "sampling_distributions",
+        "finite_population_sample_mean",
+        "sampling",
+        "formula_atomic",
+        "definition"
+      ]
+    }
+  ]
+}

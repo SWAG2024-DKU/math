@@ -1,0 +1,12 @@
+name: math-kb
+
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - psycopg[binary]
+      - python-dotenv
+      - pydantic
+      - sentence-transformers
+      - pgvector
+      - pytest

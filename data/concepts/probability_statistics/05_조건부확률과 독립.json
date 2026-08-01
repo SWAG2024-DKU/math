@@ -1,0 +1,2387 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "concept_catalog",
+  "language": "ko-KR",
+  "subject": {
+    "subject_id": "probability_statistics",
+    "name_ko": "확률과 통계"
+  },
+  "unit": {
+    "unit_id": "ps_05_conditional_independence",
+    "name_ko": "조건부확률과 독립",
+    "order": 5,
+    "description": "조건부확률과 독립에서 필요한 핵심 개념과 공식을 정리한다. 계산식뿐 아니라 적용 조건과 해석상의 주의점을 함께 확인하는 것이 중요하다."
+  },
+  "source": {
+    "source_type": "markdown",
+    "source_file": "05_conditional_probability_and_independence.md",
+    "converted_fields": [
+      "개념명",
+      "개념 정의",
+      "핵심 공식",
+      "공식의 적용 조건",
+      "주요 성질",
+      "선수 개념",
+      "자주 혼동하는 포인트"
+    ]
+  },
+  "conventions": {
+    "random_variable": "X",
+    "sample_notation": [
+      "X1",
+      "X2",
+      "...",
+      "Xn"
+    ],
+    "population_parameters": [
+      "mu",
+      "sigma^2",
+      "p",
+      "theta"
+    ],
+    "formula_display": "latex",
+    "formula_computation": "hybrid_symbolic_numeric_and_rule_verified",
+    "result_classification": [
+      "definition",
+      "exact",
+      "asymptotic",
+      "approximation",
+      "bound",
+      "empirical_criterion"
+    ],
+    "difficulty_scale": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "concepts": [
+    {
+      "concept_id": "ps.conditional_independence.conditional_independence_density",
+      "order": 1,
+      "name_ko": "조건부 밀도에 의한 조건부 독립",
+      "definition": "조건부밀도가 존재할 때 거의 모든 점에서 조건부 결합밀도가 주변 조건부밀도의 곱으로 분해된다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.conditional_independence_density.formula_01",
+          "name_ko": "확률밀도함수",
+          "role": "definition",
+          "latex": "f_{X,Y\\mid Z}(x,y\\mid z)\n=f_{X\\mid Z}(x\\mid z)f_{Y\\mid Z}(y\\mid z)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.conditional_independence_density.condition_01",
+          "description": "관련 조건부밀도들이 존재해야 한다.",
+          "rule": {
+            "property": "conditional_densities_exist",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.conditional_independence_density.condition_02",
+          "description": "인수분해는 관련 기준측도에 대해 거의 모든 $(x,y,z)$에서 성립해야 한다.",
+          "rule": {
+            "property": "factorization_holds_almost_everywhere",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.conditional_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.conditional_independence_density.objective_01",
+          "verb": "apply",
+          "description": "조건부 밀도에 의한 조건부 독립의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "independence",
+        "conditional_independence_density"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.conditional_independence_measure",
+      "order": 2,
+      "name_ko": "조건부 독립의 일반 정의",
+      "definition": "모든 가측집합에 대해 조건부확률이 거의 확실하게 곱으로 분해되는 조건부 독립의 일반 정의다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.conditional_independence_measure.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "P(X\\in A,Y\\in B\\mid Z)\n=\nP(X\\in A\\mid Z)P(Y\\in B\\mid Z)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.conditional_independence_measure.condition_01",
+          "description": "$A,B$는 가측집합이어야 한다.",
+          "rule": {
+            "property": "events_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.conditional_independence_measure.condition_02",
+          "description": "등식은 $Z$에 관해 거의 확실하게 성립해야 한다.",
+          "rule": {
+            "property": "equality_holds_almost_surely_given_Z",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.conditional_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.conditional_independence_measure.objective_01",
+          "verb": "apply",
+          "description": "조건부 독립의 일반 정의의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "independence",
+        "conditional_independence_measure"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.density_chain_rule",
+      "order": 3,
+      "name_ko": "결합밀도의 연쇄법칙",
+      "definition": "결합밀도를 순차 조건부밀도의 곱으로 분해한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.density_chain_rule.formula_01",
+          "name_ko": "확률밀도함수",
+          "role": "density",
+          "latex": "f(x_1,\\ldots,x_n)\n=f(x_1)f(x_2\\mid x_1)\\cdots f(x_n\\mid x_1,\\ldots,x_{n-1})"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.density_chain_rule.condition_01",
+          "description": "표시된 결합밀도가 존재해야 한다.",
+          "rule": {
+            "property": "joint_density_exists",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.density_chain_rule.condition_02",
+          "description": "표시된 조건부밀도들이 존재해야 한다.",
+          "rule": {
+            "property": "conditional_densities_exist",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.density_chain_rule.condition_03",
+          "description": "조건부밀도의 분모가 되는 주변밀도는 평가점에서 양수여야 한다.",
+          "rule": {
+            "property": "conditioning_marginal_densities_positive",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.chain_rule"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.density_chain_rule.objective_01",
+          "verb": "apply",
+          "description": "결합밀도의 연쇄법칙의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "chain_rule",
+        "density_chain_rule"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.event_chain_rule",
+      "order": 4,
+      "name_ko": "사건 확률의 연쇄법칙",
+      "definition": "교집합 확률을 순차 조건부확률의 곱으로 분해한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.event_chain_rule.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n=P(A_1)\\prod_{i=2}^{n}\nP\\left(A_i\\mid \\bigcap_{j=1}^{i-1}A_j\\right)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.event_chain_rule.condition_01",
+          "description": "$i=2,\\ldots,n$에서 선행 교집합의 확률이 양수여야 해당 조건부확률이 정의된다.",
+          "rule": {
+            "property": "all_prefix_intersection_probabilities_positive",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.event_chain_rule.condition_02",
+          "description": "$n\\ge1$인 유한 사건열이어야 한다.",
+          "rule": {
+            "property": "event_count_positive_integer",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.event_chain_rule.condition_03",
+          "description": "식에 등장하는 모든 사건은 같은 확률공간의 시그마 대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.event_chain_rule.condition_04",
+          "description": "모든 사건은 동일한 확률공간의 시그마대수에 속해야 한다.",
+          "rule": {
+            "property": "events_measurable_in_common_sigma_algebra",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.chain_rule"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.event_chain_rule.objective_01",
+          "verb": "apply",
+          "description": "사건 확률의 연쇄법칙의 공식과 적용 조건을 구분하여 적용한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "chain_rule",
+        "event_chain_rule"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.conditional_probability",
+      "order": 5,
+      "name_ko": "조건부확률",
+      "definition": "사건 B가 발생했다는 정보 아래에서 사건 A의 확률을 갱신한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.conditional_probability.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "확률, 집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.conditional_probability.f01",
+        "ps.conditional_independence.conditional_probability.f02",
+        "ps.conditional_independence.total_probability"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.objective_01",
+          "verb": "identify",
+          "description": "조건부확률의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.objective_02",
+          "verb": "apply",
+          "description": "조건부확률의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 조건부확률의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "conditional_probability",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.total_probability",
+      "order": 6,
+      "name_ko": "전확률의 법칙",
+      "definition": "표본공간을 분할하는 사건들을 통해 전체 확률을 계산한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.total_probability.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.conditional_independence.conditional_probability",
+          "name_ko": "조건부확률",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.total_probability.f01",
+        "ps.conditional_independence.conditional_probability",
+        "ps.conditional_independence.bayes_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.total_probability.objective_01",
+          "verb": "identify",
+          "description": "전확률의 법칙의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.total_probability.objective_02",
+          "verb": "apply",
+          "description": "전확률의 법칙의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.total_probability.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 전확률의 법칙의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "total_probability",
+        "probability"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.bayes_theorem",
+      "order": 7,
+      "name_ko": "베이즈 정리",
+      "definition": "결과가 관측된 뒤 원인 사건의 확률을 갱신한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.bayes_theorem.formula_01",
+          "name_ko": "정리",
+          "role": "theorem",
+          "latex": "P(B_j\\mid A)=\\frac{P(A\\mid B_j)P(B_j)}{\\sum_i P(A\\mid B_i)P(B_i)}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.bayes_theorem.condition_01",
+          "description": "$B_i$들은 표본공간의 쌍별 배반인 분할이어야 한다.",
+          "rule": {
+            "property": "events_form_partition",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.bayes_theorem.condition_02",
+          "description": "분모 $P(A)=\\sum_iP(A\\mid B_i)P(B_i)$는 양수여야 한다.",
+          "rule": {
+            "property": "evidence_probability",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.bayes_theorem.condition_03",
+          "description": "비율형 조건부확률을 사용하는 각 $B_i$는 $P(B_i)>0$이어야 한다.",
+          "rule": {
+            "property": "partition_events_with_used_conditionals_positive",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.bayes_theorem.property_01",
+          "description": "사전확률·가능도·사후확률을 연결한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.total_probability",
+        "ps.conditional_independence.independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.bayes_theorem.objective_01",
+          "verb": "identify",
+          "description": "베이즈 정리의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.bayes_theorem.objective_02",
+          "verb": "apply",
+          "description": "베이즈 정리의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.bayes_theorem.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 베이즈 정리의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.conditional_independence.bayes_theorem.misconception_01",
+          "title": "민감도와 양성예측도 구분 오류",
+          "description": "민감도와 양성예측도를 같은 개념으로 취급한다.",
+          "diagnosis_tag": "ps_conditional_independence_bayes_theorem_misconception_01",
+          "feedback": "민감도와 양성예측도를 구분한다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "bayes_theorem"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.independence",
+      "order": 8,
+      "name_ko": "독립",
+      "definition": "한 사건의 발생이 다른 사건의 확률에 영향을 주지 않는 관계다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.independence.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.conditional_independence.conditional_probability",
+          "name_ko": "조건부확률",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.independence.f01",
+        "ps.conditional_independence.independence.f02",
+        "ps.conditional_independence.bayes_theorem",
+        "ps.conditional_independence.pairwise_mutual_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.independence.objective_01",
+          "verb": "identify",
+          "description": "독립의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.independence.objective_02",
+          "verb": "apply",
+          "description": "독립의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.independence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 독립의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "independence"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.mutual_independence_three_events",
+      "order": 9,
+      "name_ko": "세 사건의 상호독립",
+      "definition": "세 사건의 모든 크기 2 이상 부분집합에 대해 교집합 확률이 주변확률의 곱으로 분해되는 경우다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.mutual_independence_three_events.formula_01",
+          "name_ko": "독립성 특성화",
+          "role": "independence_characterization",
+          "latex": "P\\!\\left(\\bigcap_{j\\in J}A_j\\right)=\\prod_{j\\in J}P(A_j)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.mutual_independence_three_events.condition_01",
+          "description": "$A_1,A_2,A_3$는 같은 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "events_share_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.mutual_independence_three_events.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.pairwise_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.mutual_independence_three_events.objective_01",
+          "verb": "identify",
+          "description": "세 사건의 상호독립의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.mutual_independence_three_events.objective_02",
+          "verb": "apply",
+          "description": "세 사건의 상호독립의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.mutual_independence_three_events.objective_03",
+          "verb": "interpret",
+          "description": "세 사건의 상호독립의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "pairwise_mutual_independence",
+        "independence",
+        "mutual_independence_three_events"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.pairwise_independence",
+      "order": 10,
+      "name_ko": "쌍별독립",
+      "definition": "세 사건의 모든 서로 다른 두 사건 쌍이 독립인 경우다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.pairwise_independence.formula_01",
+          "name_ko": "독립성 특성화",
+          "role": "independence_characterization",
+          "latex": "P(A_i\\cap A_j)=P(A_i)P(A_j)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.pairwise_independence.condition_01",
+          "description": "$A_1,A_2,A_3$는 같은 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "events_share_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.pairwise_independence.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.mutual_independence_three_events"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.pairwise_independence.objective_01",
+          "verb": "identify",
+          "description": "쌍별독립의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.pairwise_independence.objective_02",
+          "verb": "apply",
+          "description": "쌍별독립의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.pairwise_independence.objective_03",
+          "verb": "interpret",
+          "description": "쌍별독립의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "pairwise_mutual_independence",
+        "independence",
+        "pairwise_independence"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.pairwise_mutual_independence",
+      "order": 11,
+      "name_ko": "쌍별독립과 상호독립",
+      "definition": "세 사건 $A,B,C$가 쌍별독립이라는 것은 다음 세 식을 만족한다는 뜻이다. $P(A\\cap B)=P(A)P(B)$ $P(A\\cap C)=P(A)P(C)$ $P(B\\cap C)=P(B)P(C)$ 상호독립이려면 위 조건에 더해 다음 식도 만족해야 한다. $P(A\\cap B\\cap C)=P(A)P(B)P(C)$ 일반적으로 상호독립은 모든 부분집합에 대해 교집합 확률이 주변확률의 곱으로 분해되어야 한다. 세부 공식은 적용 조건별 관련 개념으로 분리한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.pairwise_mutual_independence.property_01",
+          "description": "서로 다른 적용 조건을 갖는 공식을 한 조건 목록에 결합하지 않고 세부 개념으로 분리한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.pairwise_independence",
+        "ps.conditional_independence.mutual_independence_three_events"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.pairwise_mutual_independence.objective_01",
+          "verb": "identify",
+          "description": "쌍별독립과 상호독립의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.pairwise_mutual_independence.objective_02",
+          "verb": "apply",
+          "description": "쌍별독립과 상호독립의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.pairwise_mutual_independence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 쌍별독립과 상호독립의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [
+        {
+          "misconception_id": "ps.conditional_independence.pairwise_mutual_independence.misconception_01",
+          "title": "쌍별독립과 상호독립 관련 오해 1",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_conditional_independence_pairwise_mutual_independence_misconception_01",
+          "feedback": "$P(A\\mid B)=P(A)$는 $P(B)>0$일 때만 사용할 수 있다."
+        },
+        {
+          "misconception_id": "ps.conditional_independence.pairwise_mutual_independence.misconception_02",
+          "title": "쌍별독립과 상호독립 관련 오해 2",
+          "description": "정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.",
+          "diagnosis_tag": "ps_conditional_independence_pairwise_mutual_independence_misconception_02",
+          "feedback": "독립의 기본 정의 $P(A\\cap B)=P(A)P(B)$는 영확률 사건에도 적용할 수 있다."
+        }
+      ],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 문제 생성에는 related_concepts의 세부 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "pairwise_mutual_independence",
+        "independence"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.conditional_independence",
+      "order": 12,
+      "name_ko": "조건부 독립",
+      "definition": "확률변수 $X$와 $Y$가 $Z$가 주어졌을 때 조건부 독립이라는 것은 모든 가측집합 $A,B$에 대해 $P(X\\in A,Y\\in B\\mid Z) = P(X\\in A\\mid Z)P(Y\\in B\\mid Z) \\qquad \\text{a.s.}$ 가 성립하는 것을 뜻한다. 조건부밀도가 존재하는 경우에는 거의 모든 $z$에서 $f_{X,Y\\mid Z}(x,y\\mid z) =f_{X\\mid Z}(x\\mid z)f_{Y\\mid Z}(y\\mid z)$ 가 성립하는 것과 동치다. 따라서 밀도 분해식은 일반 정의가 아니라 밀도가 존재할 때의 표현이다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.conditional_independence.property_01",
+          "description": "따라서 밀도 분해식은 일반 정의가 아니라 밀도가 존재할 때의 표현이다."
+        },
+        {
+          "property_id": "ps.conditional_independence.conditional_independence.property_02",
+          "description": "또한 $A$와 $B$가 독립이면 $A^c$와 $B$, $A$와 $B^c$, $A^c$와 $B^c$도 각각 독립이다."
+        },
+        {
+          "property_id": "ps.conditional_independence.conditional_independence.property_03",
+          "description": "조건부밀도가 존재하는 경우에는 거의 모든 $z$에서 $f_{X,Y\\mid Z}(x,y\\mid z) =f_{X\\mid Z}(x\\mid z)f_{Y\\mid Z}(y\\mid z)$ 가 성립하는 것과 동치다."
+        },
+        {
+          "property_id": "ps.conditional_independence.conditional_independence.property_04",
+          "description": "일반 독립과 조건부 독립은 서로 다른 개념이다."
+        },
+        {
+          "property_id": "ps.conditional_independence.conditional_independence.property_05",
+          "description": "두 변수가 주변적으로 독립이더라도 어떤 변수로 조건화하면 종속이 될 수 있고, 반대로 주변적으로 종속이더라도 공통 원인에 조건화하면 독립이 될 수 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.pairwise_mutual_independence",
+        "ps.conditional_independence.chain_rule",
+        "ps.conditional_independence.conditional_independence_measure",
+        "ps.conditional_independence.conditional_independence_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.conditional_independence.objective_01",
+          "verb": "identify",
+          "description": "조건부 독립의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_independence.objective_02",
+          "verb": "apply",
+          "description": "조건부 독립의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_independence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 조건부 독립의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "independence"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.chain_rule",
+      "order": 13,
+      "name_ko": "연쇄법칙",
+      "definition": "사건 $A_1,\\ldots,A_n$의 연속 교집합 확률은 적절한 조건부확률이 정의될 때 $P\\left(\\bigcap_{i=1}^{n}A_i\\right) =P(A_1)\\prod_{i=2}^{n} P\\left(A_i\\mid \\bigcap_{j=1}^{i-1}A_j\\right)$ 로 분해된다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.chain_rule.property_01",
+          "description": "확률변수의 결합밀도도 $f(x_1,\\ldots,x_n) =f(x_1)f(x_2\\mid x_1)\\cdots f(x_n\\mid x_1,\\ldots,x_{n-1})$ 로 분해할 수 있다."
+        },
+        {
+          "property_id": "ps.conditional_independence.chain_rule.property_02",
+          "description": "이 분해는 베이지안 네트워크와 순차적 확률모형의 기초다."
+        },
+        {
+          "property_id": "ps.conditional_independence.chain_rule.property_03",
+          "description": "사건 $A_1,\\ldots,A_n$의 연속 교집합 확률은 적절한 조건부확률이 정의될 때 $P\\left(\\bigcap_{i=1}^{n}A_i\\right) =P(A_1)\\prod_{i=2}^{n} P\\left(A_i\\mid \\bigcap_{j=1}^{i-1}A_j\\right)$ 로 분해된다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.conditional_independence",
+        "ps.conditional_independence.random_variable_independence",
+        "ps.conditional_independence.event_chain_rule",
+        "ps.conditional_independence.density_chain_rule"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.chain_rule.objective_01",
+          "verb": "identify",
+          "description": "연쇄법칙의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.chain_rule.objective_02",
+          "verb": "apply",
+          "description": "연쇄법칙의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.chain_rule.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 연쇄법칙의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "chain_rule"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.random_variable_independence",
+      "order": 14,
+      "name_ko": "확률변수의 독립",
+      "definition": "확률변수 $X,Y$가 독립이라는 것은 모든 실수 $x,y$에 대해 $F_{X,Y}(x,y)=F_X(x)F_Y(y)$ 가 성립하는 것이다. 결합밀도가 존재하면 거의 모든 $(x,y)$에서 $f_{X,Y}(x,y)=f_X(x)f_Y(y)$ 가 성립하는 것과 동치다. 세부 공식은 적용 조건별 관련 개념으로 분리한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.random_variable_independence.property_01",
+          "description": "서로 다른 적용 조건을 갖는 공식을 한 조건 목록에 결합하지 않고 세부 개념으로 분리한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.random_variable_independence_cdf",
+        "ps.conditional_independence.random_variable_independence_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence.objective_01",
+          "verb": "identify",
+          "description": "확률변수의 독립의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence.objective_02",
+          "verb": "apply",
+          "description": "확률변수의 독립의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 확률변수의 독립의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 문제 생성에는 related_concepts의 세부 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "random_variable_independence",
+        "probability",
+        "independence"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.random_variable_independence_cdf",
+      "order": 15,
+      "name_ko": "결합 CDF에 의한 확률변수의 독립",
+      "definition": "모든 실수 x,y에서 결합 CDF가 주변 CDF의 곱으로 분해되면 두 확률변수는 독립이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.random_variable_independence_cdf.formula_01",
+          "name_ko": "정의",
+          "role": "definition",
+          "latex": "F_{X,Y}(x,y)=F_X(x)F_Y(y)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.random_variable_independence_cdf.condition_01",
+          "description": "등식은 모든 $x,y\\in\\mathbb R$에서 성립해야 한다.",
+          "rule": {
+            "property": "cdf_factorization_holds_for_all_real_pairs",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.random_variable_independence_cdf.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.random_variable_independence_density"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence_cdf.objective_01",
+          "verb": "identify",
+          "description": "결합 CDF에 의한 확률변수의 독립의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence_cdf.objective_02",
+          "verb": "apply",
+          "description": "결합 CDF에 의한 확률변수의 독립의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence_cdf.objective_03",
+          "verb": "interpret",
+          "description": "결합 CDF에 의한 확률변수의 독립의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "random_variable_independence",
+        "probability",
+        "independence",
+        "random_variable_independence_cdf"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.random_variable_independence_density",
+      "order": 16,
+      "name_ko": "밀도 또는 질량함수에 의한 확률변수의 독립",
+      "definition": "결합 밀도 또는 질량함수가 주변 밀도 또는 질량함수의 곱으로 분해되는 독립성 판정이다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.random_variable_independence_density.formula_01",
+          "name_ko": "확률밀도함수",
+          "role": "density",
+          "latex": "f_{X,Y}(x,y)=f_X(x)f_Y(y)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.random_variable_independence_density.condition_01",
+          "description": "결합 및 주변 밀도 또는 질량함수가 존재해야 한다.",
+          "rule": {
+            "property": "joint_and_marginal_density_or_pmf_exist",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.random_variable_independence_density.condition_02",
+          "description": "인수분해는 기준측도에 대해 거의 모든 $(x,y)$ 또는 모든 지지점에서 성립해야 한다.",
+          "rule": {
+            "property": "factorization_holds_on_support",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.random_variable_independence_density.property_01",
+          "description": "이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.random_variable_independence_cdf"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence_density.objective_01",
+          "verb": "identify",
+          "description": "밀도 또는 질량함수에 의한 확률변수의 독립의 정의, 공식과 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence_density.objective_02",
+          "verb": "apply",
+          "description": "밀도 또는 질량함수에 의한 확률변수의 독립의 정의, 공식과 적용 조건을 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.random_variable_independence_density.objective_03",
+          "verb": "interpret",
+          "description": "밀도 또는 질량함수에 의한 확률변수의 독립의 정의, 공식과 적용 조건을 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "random_variable_independence",
+        "probability",
+        "independence",
+        "random_variable_independence_density"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.continuous_bayes",
+      "order": 17,
+      "name_ko": "연속형 베이즈 공식",
+      "definition": "결합밀도와 주변밀도가 존재하고 $f_Y(y)>0$이면 $f_{X\\mid Y}(x\\mid y) =\\frac{f_{Y\\mid X}(y\\mid x)f_X(x)}{f_Y(y)}$ 이며 $f_Y(y)=\\int f_{Y\\mid X}(y\\mid x)f_X(x)\\,dx$ 이다. 밀도값은 점의 확률이 아니라 단위길이당 상대적 질량이라는 점에 주의한다.",
+      "formulas": [],
+      "application_conditions": [],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.continuous_bayes.property_01",
+          "description": "서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.continuous_bayes.f01",
+        "ps.conditional_independence.continuous_bayes.f02",
+        "ps.conditional_independence.random_variable_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.objective_01",
+          "verb": "identify",
+          "description": "연속형 베이즈 공식의 정의와 적용 조건을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.objective_02",
+          "verb": "apply",
+          "description": "연속형 베이즈 공식의 핵심 공식을 적절한 상황에 적용한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.objective_03",
+          "verb": "interpret",
+          "description": "계산 결과를 연속형 베이즈 공식의 의미와 조건에 맞게 해석한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": false,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ],
+        "generation_notes": "탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다."
+      },
+      "tags": [
+        "conditional_independence",
+        "continuous_bayes"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.conditional_probability.f01",
+      "order": 18,
+      "name_ko": "조건부확률 — 핵심 관계식",
+      "definition": "이 개념은 조건부확률에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.conditional_probability.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.conditional_probability.f01.condition_01",
+          "description": "P(B)>0이어야 한다.",
+          "rule": {
+            "property": "conditioning_event_probability",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.conditional_probability.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "확률, 집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.conditional_probability",
+        "ps.conditional_independence.total_probability"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.f01.objective_01",
+          "verb": "identify",
+          "description": "조건부확률 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.f01.objective_02",
+          "verb": "apply",
+          "description": "조건부확률 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.f01.objective_03",
+          "verb": "verify",
+          "description": "조건부확률 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "conditional_probability",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.conditional_probability.f02",
+      "order": 19,
+      "name_ko": "조건부확률 — 핵심 관계식",
+      "definition": "이 개념은 조건부확률에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.conditional_probability.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A\\cap B)=P(A\\mid B)P(B)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.conditional_probability.f02.condition_01",
+          "description": "P(B)>0이어야 한다.",
+          "rule": {
+            "property": "conditioning_event_probability",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.conditional_probability.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "math.sets",
+          "name_ko": "확률, 집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.conditional_probability",
+        "ps.conditional_independence.total_probability"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.f02.objective_01",
+          "verb": "identify",
+          "description": "조건부확률 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.f02.objective_02",
+          "verb": "apply",
+          "description": "조건부확률 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.conditional_probability.f02.objective_03",
+          "verb": "verify",
+          "description": "조건부확률 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 2,
+          "max": 4
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "conditional_probability",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.total_probability.f01",
+      "order": 20,
+      "name_ko": "전확률의 법칙 — 핵심 관계식",
+      "definition": "이 개념은 전확률의 법칙에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.total_probability.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A)=\\sum_{i:\\,P(B_i)>0}P(A\\mid B_i)P(B_i)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.total_probability.f01.condition_01",
+          "description": "$B_i$들은 서로 배반이어야 한다.",
+          "rule": {
+            "property": "partition_events_pairwise_disjoint",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.total_probability.f01.condition_02",
+          "description": "$\\bigcup_iB_i=\\Omega$여야 한다.",
+          "rule": {
+            "property": "partition_covers_sample_space",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.total_probability.f01.condition_03",
+          "description": "모든 $B_i$와 사건 $A$는 가측이어야 한다.",
+          "rule": {
+            "property": "partition_events_measurable",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.total_probability.f01.condition_04",
+          "description": "조건부확률 $P(A\\mid B_i)$는 $P(B_i)>0$인 항에 대해서만 사용한다.",
+          "rule": {
+            "property": "positive_probability_terms_only",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.total_probability.f01.condition_05",
+          "description": "가산분할이면 합이 확률의 가산가법성에 따라 정의되어야 한다.",
+          "rule": {
+            "property": "series_well_defined",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.total_probability.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.conditional_independence.conditional_probability",
+          "name_ko": "조건부확률",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.total_probability",
+        "ps.conditional_independence.conditional_probability",
+        "ps.conditional_independence.bayes_theorem"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.total_probability.f01.objective_01",
+          "verb": "identify",
+          "description": "전확률의 법칙 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.total_probability.f01.objective_02",
+          "verb": "apply",
+          "description": "전확률의 법칙 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.total_probability.f01.objective_03",
+          "verb": "verify",
+          "description": "전확률의 법칙 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "total_probability",
+        "probability",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "order": 21,
+      "name_ko": "독립 — 핵심 관계식",
+      "definition": "이 개념은 독립에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.independence.f01.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A\\cap B)=P(A)P(B)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.independence.f01.condition_01",
+          "description": "$A,B$가 같은 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "same_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.independence.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.conditional_independence.conditional_probability",
+          "name_ko": "조건부확률",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.independence",
+        "ps.conditional_independence.bayes_theorem",
+        "ps.conditional_independence.pairwise_mutual_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.independence.f01.objective_01",
+          "verb": "identify",
+          "description": "독립 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.independence.f01.objective_02",
+          "verb": "apply",
+          "description": "독립 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.independence.f01.objective_03",
+          "verb": "verify",
+          "description": "독립 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "independence",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.independence.f02",
+      "order": 22,
+      "name_ko": "독립 — 핵심 관계식",
+      "definition": "이 개념은 독립에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.independence.f02.formula_01",
+          "name_ko": "핵심 관계식",
+          "role": "core_formula",
+          "latex": "P(A|B)=P(A)"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.independence.f02.condition_01",
+          "description": "$A,B$가 같은 확률공간의 사건이어야 한다.",
+          "rule": {
+            "property": "same_probability_space",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.independence.f02.condition_02",
+          "description": "조건부확률 $P(A\\mid B)$를 사용하려면 $P(B)>0$이어야 한다.",
+          "rule": {
+            "property": "conditioning_event_probability",
+            "operator": "greater_than",
+            "value": 0
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.independence.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.conditional_independence.conditional_probability",
+          "name_ko": "조건부확률",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.independence",
+        "ps.conditional_independence.bayes_theorem",
+        "ps.conditional_independence.pairwise_mutual_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.independence.f02.objective_01",
+          "verb": "identify",
+          "description": "독립 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.independence.f02.objective_02",
+          "verb": "apply",
+          "description": "독립 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.independence.f02.objective_03",
+          "verb": "verify",
+          "description": "독립 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "independence",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.continuous_bayes.f01",
+      "order": 23,
+      "name_ko": "연속형 베이즈 공식 — 확률밀도함수",
+      "definition": "이 개념은 연속형 베이즈 공식에서 사용하는 확률밀도함수 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.continuous_bayes.f01.formula_01",
+          "name_ko": "확률밀도함수",
+          "role": "density",
+          "latex": "f_{X\\mid Y}(x\\mid y)\n=\\frac{f_{Y\\mid X}(y\\mid x)f_X(x)}{f_Y(y)}"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.continuous_bayes.f01.condition_01",
+          "description": "관측값 $y$에서 $f_Y(y)>0$이어야 한다.",
+          "rule": {
+            "property": "marginal_density_at_observed_y",
+            "operator": "greater_than",
+            "value": 0
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.continuous_bayes.f01.condition_02",
+          "description": "관련 결합밀도가 존재해야 한다.",
+          "rule": {
+            "property": "joint_density_exists",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.continuous_bayes.f01.condition_03",
+          "description": "조건화 변수의 주변밀도가 존재해야 한다.",
+          "rule": {
+            "property": "conditioning_marginal_density_exists",
+            "operator": "equals",
+            "value": true
+          }
+        },
+        {
+          "condition_id": "ps.conditional_independence.continuous_bayes.f01.condition_04",
+          "description": "관련 조건부밀도가 존재해야 한다.",
+          "rule": {
+            "property": "conditional_density_exists",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.continuous_bayes.f01.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.continuous_bayes",
+        "ps.conditional_independence.random_variable_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.f01.objective_01",
+          "verb": "identify",
+          "description": "연속형 베이즈 공식 수식 1의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.f01.objective_02",
+          "verb": "apply",
+          "description": "연속형 베이즈 공식 수식 1을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.f01.objective_03",
+          "verb": "verify",
+          "description": "연속형 베이즈 공식 수식 1의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "continuous_bayes",
+        "formula_atomic",
+        "definition"
+      ]
+    },
+    {
+      "concept_id": "ps.conditional_independence.continuous_bayes.f02",
+      "order": 24,
+      "name_ko": "연속형 베이즈 공식 — 확률밀도함수",
+      "definition": "이 개념은 연속형 베이즈 공식에서 사용하는 확률밀도함수 공식을 제시하며, 명시된 적용 조건에서만 사용한다.",
+      "formulas": [
+        {
+          "formula_id": "ps.conditional_independence.continuous_bayes.f02.formula_01",
+          "name_ko": "확률밀도함수",
+          "role": "density",
+          "latex": "f_Y(y)=\\int f_{Y\\mid X}(y\\mid x)f_X(x)\\,dx"
+        }
+      ],
+      "application_conditions": [
+        {
+          "condition_id": "ps.conditional_independence.continuous_bayes.f02.condition_01",
+          "description": "$f_{Y\\mid X}(y\\mid x)f_X(x)$가 $x$에 관해 적분 가능해야 한다.",
+          "rule": {
+            "property": "marginalization_integral_exists",
+            "operator": "equals",
+            "value": true
+          }
+        }
+      ],
+      "properties": [
+        {
+          "property_id": "ps.conditional_independence.continuous_bayes.f02.property_01",
+          "description": "이 수식은 application_conditions에 명시된 조건에서만 사용한다."
+        }
+      ],
+      "prerequisites": [
+        {
+          "concept_id": "ps.probability_basics.probability_axioms",
+          "name_ko": "확률 공리",
+          "importance": "required"
+        },
+        {
+          "concept_id": "math.sets",
+          "name_ko": "집합",
+          "importance": "required"
+        }
+      ],
+      "related_concepts": [
+        "ps.conditional_independence.continuous_bayes",
+        "ps.conditional_independence.random_variable_independence"
+      ],
+      "learning_objectives": [
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.f02.objective_01",
+          "verb": "identify",
+          "description": "연속형 베이즈 공식 수식 2의 수식과 정의역을 식별한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.f02.objective_02",
+          "verb": "apply",
+          "description": "연속형 베이즈 공식 수식 2을 해당 적용 조건 아래에서 계산한다."
+        },
+        {
+          "objective_id": "ps.conditional_independence.continuous_bayes.f02.objective_03",
+          "verb": "verify",
+          "description": "연속형 베이즈 공식 수식 2의 조건 충족 여부를 검증한다."
+        }
+      ],
+      "misconceptions": [],
+      "generation_profile": {
+        "enabled": true,
+        "supported_problem_types": [
+          "concept_identification",
+          "assumption_check",
+          "formula_application",
+          "probability_calculation",
+          "distribution_identification"
+        ],
+        "supported_answer_types": [
+          "single_choice",
+          "boolean",
+          "expression",
+          "scalar",
+          "distribution"
+        ],
+        "difficulty_range": {
+          "min": 1,
+          "max": 3
+        },
+        "recommended_validators": [
+          "assumption_check",
+          "symbolic_equivalence",
+          "numerical_tolerance",
+          "probability_constraint_check",
+          "condition_rule_check",
+          "domain_check"
+        ]
+      },
+      "tags": [
+        "conditional_independence",
+        "continuous_bayes",
+        "formula_atomic",
+        "definition"
+      ]
+    }
+  ]
+}
