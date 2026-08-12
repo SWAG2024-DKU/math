@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.optimization_problems",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch04_applications_of_differentiation",
+  "concept_name_ko": "최적화 문제",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 제약조건 아래에서 목적함수의 최댓값·최솟값을 구하는 문제다. 변수를 도입하고 목적함수를 세운 뒤, 제약조건으로 변수를 하나로 줄이고, 폐구간법(또는 열린구간에서는 도함수 부호·극한 비교)으로 최적값을 구한다.\n검색 태그: optimization, closed_interval_method, economics_application",
+      "token_count": 134,
+      "content_hash": "e9dc037c1a9e26f2e036718ece078d892ac061c23300756e16e6eede0b2ca87a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 최적화 문제 풀이 절차\n공식 ID: optimization_procedure\n역할: algorithm\nLaTeX: \\text{목적함수 }Q=f(x)\\text{ 설정}\\to\\text{제약조건 }G(x,y,\\ldots)=0\\text{으로 변수 소거}\\to\\text{임계수·끝점 비교}\nCAS 표현: solve(Eq(G(x,y), 0), y)\n\n공식명: 열린구간에서의 최댓값·최솟값 일계도함수 판정\n공식 ID: open_interval_first_derivative_test\n역할: theorem\nLaTeX: x<c\\text{에서 }f'(x)>0,\\ x>c\\text{에서 }f'(x)<0\\implies f(c)\\text{는 최댓값}\nCAS 표현: sign(fprime(x))\n\n공식명: 경영·경제학 응용 함수\n공식 ID: economic_functions\n역할: application\nLaTeX: \\text{한계비용: }C'(x),\\quad \\text{소득: }R(x)=xp(x),\\quad \\text{이윤: }P(x)=R(x)-C(x)\nCAS 표현: diff(R(x)-C(x), x)",
+      "token_count": 341,
+      "content_hash": "5544132d747770ab29c66792e170ab99f00db61c961b4f1949c41fcd8cbd02e0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: closed_domain_use_closed_interval_method\n설명: 정의역이 폐구간이면 폐구간법을 바로 사용한다.\n검증 규칙: domain_is_closed_interval equals 참\n\n조건 ID: open_domain_needs_sign_or_limit_argument\n설명: 정의역이 폐구간이 아닌 경우(한쪽만 제한되거나 열린 경우)는 폐구간법을 바로 쓸 수 없으므로, 임계수 좌우 도함수 부호 조사나 구간 끝에서의 극한 비교로 대신한다.\n검증 규칙: domain_open_or_unbounded equals 참",
+      "token_count": 186,
+      "content_hash": "f988bad1b7947fb659a9b6c64a5a4294cfa06c0fcf70d771ed3738968cccebc4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: distance_squared_shortcut\n설명: 거리를 최소화하는 문제에서는 거리 d 대신 d^2을 최소화해도 최솟값이 일어나는 지점은 같다(제곱근이 증가함수이므로), 계산이 더 간단해지는 경우가 많다.\n\n성질 ID: implicit_diff_alternative\n설명: 변수를 소거하지 않고 제약조건과 목적함수를 동시에 음함수 미분한 뒤 임계 조건을 대입해 풀 수도 있다.\n\n성질 ID: marginal_zero_often_optimal\n설명: 한계비용·한계소득·한계이윤이 0이 되는 지점에서 이윤·소득이 최대가 되는 경우가 많다.",
+      "token_count": 189,
+      "content_hash": "b5dc8d8e88d4fd8002be1944180ead3e10c3b7616800826fbb1d3aae5531c955",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 폐구간법 (calculus.closed_interval_method, 중요도: required)\n- 증가·감소 판정법과 일계도함수 판정법 (calculus.increasing_decreasing_and_first_derivative_test, 중요도: required)\n\n관련 개념:\n- calculus.related_rates\n\n학습 목표 ID: formulate_objective_and_constraint\n행동 동사: construct\n목표: 문제 상황에서 목적함수와 제약조건을 세운다.\n\n학습 목표 ID: reduce_to_single_variable\n행동 동사: transform\n목표: 제약조건을 이용해 목적함수를 단일변수함수로 정리한다.\n\n학습 목표 ID: determine_optimum\n행동 동사: calculate\n목표: 폐구간법 또는 도함수 부호 분석으로 최적값을 구한다.",
+      "token_count": 239,
+      "content_hash": "44369a140d2ca7ca4fa031f09ad0aca2222b67fde95692b83a30cff880755dee",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 정의역·끝점 확인 없이 임계수만으로 결론\n오개념 ID: calculus.optimization.ignore_domain_endpoints\n설명: 내부 임계수에서의 값만 구하고 정의역의 경계나 열린구간에서의 극한 거동을 확인하지 않는다.\n진단 태그: skip_domain_and_endpoint_check_in_optimization\n피드백: 최적화에서는 내부 임계수뿐 아니라 정의역과 끝점(또는 무한대에서의 극한 거동)까지 확인해야 진짜 최댓값·최솟값을 확정할 수 있다.\n\n오개념: 제약조건으로 변수 소거를 생략\n오개념 ID: calculus.optimization.forget_constraint_substitution\n설명: 두 개 이상의 변수를 포함한 목적함수를 그대로 미분하려고 시도한다.\n진단 태그: differentiate_multivariable_objective_without_reduction\n피드백: 제약조건을 이용해 변수를 하나로 줄인 뒤에 단일변수 함수로 미분해야 한다.",
+      "token_count": 285,
+      "content_hash": "803793ac5735e5f609603c1e5b646c57bc9ef1f9d6d1bf5ff09afe46a24b037b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.optimization_problems",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch04_applications_of_differentiation",
+      "concept_name_ko": "최적화 문제",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분의 응용\n개념: 최적화 문제\n개념 ID: calculus.optimization_problems\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: optimization_formulation, optimization_solving, economic_optimization\n지원 정답 유형: scalar, expression\n난이도 범위: 2 ~ 5\n권장 검증기: symbolic_equivalence, numeric_sampling",
+      "token_count": 106,
+      "content_hash": "bf74ee98a0636dc507569a4c6c3bb2c0e7dc019f74fe84937ea0340bd9f8c8ee",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

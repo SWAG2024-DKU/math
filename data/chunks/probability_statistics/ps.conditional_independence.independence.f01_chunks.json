@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.conditional_independence.independence.f01",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_05_conditional_independence",
+  "concept_name_ko": "독립 — 핵심 관계식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "독립 — 핵심 관계식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 독립 — 핵심 관계식\n개념 ID: ps.conditional_independence.independence.f01\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 독립에서 사용하는 핵심 관계식 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: conditional_independence, independence, formula_atomic, core_formula",
+      "token_count": 98,
+      "content_hash": "f466940ed905ede2f66289917125586dfda6312a2272a567b89ca8d86580bc48",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "독립 — 핵심 관계식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 독립 — 핵심 관계식\n개념 ID: ps.conditional_independence.independence.f01\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 핵심 관계식\n공식 ID: ps.conditional_independence.independence.f01.formula_01\n역할: core_formula\nLaTeX: P(A\\cap B)=P(A)P(B)",
+      "token_count": 102,
+      "content_hash": "436d22e8203fc04a71adc9f60dc30030281b5d302373a433660bc7faa864783e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "독립 — 핵심 관계식",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 독립 — 핵심 관계식\n개념 ID: ps.conditional_independence.independence.f01\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.conditional_independence.independence.f01.condition_01\n설명: $A,B$가 같은 확률공간의 사건이어야 한다.\n검증 규칙: same_probability_space equals 참",
+      "token_count": 105,
+      "content_hash": "aef3b7db7b58c3449fca1f6a0fc7a1580a313c13681dbba7b86c99548932b66f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "독립 — 핵심 관계식",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 독립 — 핵심 관계식\n개념 ID: ps.conditional_independence.independence.f01\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.conditional_independence.independence.f01.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 94,
+      "content_hash": "7ddd1012823156d5785cebf1ff5d0b41ee87554e61c438d0f21dd2a4ad0a1bb8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "독립 — 핵심 관계식",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 독립 — 핵심 관계식\n개념 ID: ps.conditional_independence.independence.f01\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 조건부확률 (ps.conditional_independence.conditional_probability, 중요도: required)\n\n관련 개념:\n- ps.conditional_independence.independence\n- ps.conditional_independence.bayes_theorem\n- ps.conditional_independence.pairwise_mutual_independence\n\n학습 목표 ID: ps.conditional_independence.independence.f01.objective_01\n행동 동사: identify\n목표: 독립 수식 1의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.conditional_independence.independence.f01.objective_02\n행동 동사: apply\n목표: 독립 수식 1을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.conditional_independence.independence.f01.objective_03\n행동 동사: verify\n목표: 독립 수식 1의 조건 충족 여부를 검증한다.",
+      "token_count": 259,
+      "content_hash": "0234bbd9680c895376f41aa64a3a45c5345ba99ac6c9c6d0c9d90a01f304588a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.independence.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "독립 — 핵심 관계식",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 독립 — 핵심 관계식\n개념 ID: ps.conditional_independence.independence.f01\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 148,
+      "content_hash": "83a83fdf38a1de232c50eeef538541cdc52b105015005108d970768ffc1e9118",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

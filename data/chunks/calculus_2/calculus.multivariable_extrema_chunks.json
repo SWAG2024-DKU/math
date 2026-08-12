@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.multivariable_extrema",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+  "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: (a,b) 근방에서 f(a,b)≥f(x,y)이면 국소최대, f(a,b)≤f(x,y)이면 국소최소를 갖는다. 임계점은 f_x=f_y=0이거나 편도함수가 존재하지 않는 점이다. 이차미분판정법은 D=f_xx f_yy-(f_xy)²로 D>0,f_xx>0이면 국소최소, D>0,f_xx<0이면 국소최대, D<0이면 안장점, D=0이면 판정 불가로 분류한다. 닫히고 유계인 영역에서 연속함수는 절대최댓값·최솟값을 갖는다(극값정리).\n검색 태그: multivariable_extrema, second_derivative_test, saddle_point",
+      "token_count": 257,
+      "content_hash": "7aa03efb4b5788d058d0ea1c5a23c0416e952285beefff7f524977e2c61e4fec",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 임계점의 정의\n공식 ID: critical_point_def\n역할: definition\nLaTeX: f_x(a,b)=0,\\ f_y(a,b)=0\\ \\text{또는 편도함수 중 하나 이상이 존재하지 않음}\nCAS 표현: solve([Eq(fx(a,b),0), Eq(fy(a,b),0)], [a,b])\n\n공식명: 이차미분판정법\n공식 ID: second_derivative_test\n역할: theorem\nLaTeX: D=f_{xx}f_{yy}-(f_{xy})^2:\\ D>0,f_{xx}>0\\Rightarrow\\text{국소최소};\\ D>0,f_{xx}<0\\Rightarrow\\text{국소최대};\\ D<0\\Rightarrow\\text{안장점};\\ D=0\\Rightarrow\\text{판정 불가}\nCAS 표현: fxx(a,b)*fyy(a,b) - fxy(a,b)**2\n\n공식명: 극값정리(다변수)\n공식 ID: extreme_value_theorem_multivariable\n역할: theorem\nLaTeX: D\\text{가 닫히고 유계, }f\\text{ 연속}\\implies f\\text{는 }D\\text{에서 절대최댓값·최솟값을 가짐}\nCAS 표현: Max(f, D)",
+      "token_count": 403,
+      "content_hash": "f9993e20415ae291e33bd9263afa244d2f89da92cbc14ef474063abea7a1ee5f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: d_zero_inconclusive\n설명: 이차미분판정법에서 D=0이면 다른 방법이 필요하다(판정 불가).\n검증 규칙: D not_equals 0\n\n조건 ID: closed_bounded_and_continuous_required\n설명: 극값정리를 적용하려면 영역이 닫히고 유계이며 함수가 연속이어야 한다.\n검증 규칙: domain_closed_bounded_and_f_continuous equals 참",
+      "token_count": 165,
+      "content_hash": "0fbcf910681cce8d07783ee70e6975718c50034d8875c78df6190c480ba01240",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: saddle_point_definition\n설명: 안장점은 어떤 방향에서는 증가하고 다른 방향에서는 감소하는 임계점이며, 최대점도 최소점도 아니다.\n\n성질 ID: absolute_extrema_procedure\n설명: 절대최댓값·최솟값을 구할 때는 (1) 영역 내부의 임계점, (2) 경계 위의 임계점, (3) 경계의 끝점·꼭짓점을 모두 확인해 함수값을 비교한다.",
+      "token_count": 159,
+      "content_hash": "f9c175bd943dea45b3d3fc51c8ce4a07fd5c1b2478f3e862dc0fa4272f6dba10",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 편도함수와 고계편도함수 (calculus.partial_derivative, 중요도: required)\n\n관련 개념:\n- calculus.lagrange_multipliers\n\n학습 목표 ID: find_critical_points_multivariable\n행동 동사: calculate\n목표: 다변수함수의 임계점을 구한다.\n\n학습 목표 ID: apply_second_derivative_test\n행동 동사: apply\n목표: 이차미분판정법으로 임계점을 국소최대·최소·안장점으로 분류한다.\n\n학습 목표 ID: find_absolute_extrema_on_closed_region\n행동 동사: calculate\n목표: 닫힌 유계 영역에서 절대최댓값·최솟값을 구한다.",
+      "token_count": 234,
+      "content_hash": "9ca0faa142b8bf8b3b6a34b47b7af15eaba64c4a79be3d99330076758955ab3a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 임계점을 항상 극값으로 오판\n오개념 ID: calculus.multivariable_extrema.critical_point_always_extremum\n설명: f_x=f_y=0인 점을 확인 없이 극값(최대 또는 최소)이라고 단정한다.\n진단 태그: assume_critical_point_is_always_extremum\n피드백: 임계점은 극값의 후보일 뿐이며, 안장점일 수도 있다. 이차미분판정법으로 확인해야 한다.\n\n오개념: 절대극값에서 경계 확인 누락\n오개념 ID: calculus.multivariable_extrema.ignore_boundary\n설명: 영역 내부의 임계점만 비교하고 경계 위의 값은 확인하지 않는다.\n진단 태그: skip_boundary_check_for_absolute_extrema\n피드백: 절대극값은 내부뿐 아니라 경계에서도 발생할 수 있으므로 경계 위의 임계점과 꼭짓점도 반드시 확인해야 한다.",
+      "token_count": 295,
+      "content_hash": "23d79fd5fcef465db3ad95222e4cad2c8ac962cb80a4c9627d52c644ca102c8f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_extrema",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극값과 이차미분판정법",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극값과 이차미분판정법\n개념 ID: calculus.multivariable_extrema\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: critical_point_calculation, second_derivative_test_classification, absolute_extrema_on_closed_region\n지원 정답 유형: classification, scalar, set\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence, numeric_sampling",
+      "token_count": 140,
+      "content_hash": "b3457023cd6c41d76a793113f0f99f386877cc396b4e26488ec6979024c99356",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

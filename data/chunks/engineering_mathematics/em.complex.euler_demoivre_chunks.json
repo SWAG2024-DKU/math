@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.complex.euler_demoivre",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_08_complex_analysis",
+  "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 복소지수와 삼각함수를 연결하고 복소수의 거듭제곱과 근을 계산하는 공식이다.\n검색 태그: euler_formula, demoivre_theorem, complex_powers",
+      "token_count": 99,
+      "content_hash": "f88ed36381897267f8577da24a085eb91f203996a25f33cf5067f40f52071f0e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: Euler 공식\n공식 ID: euler_formula\n역할: definition\nLaTeX: e^{i\\theta}=\\cos\\theta+i\\sin\\theta\nCAS 표현: Eq(exp(I * theta), cos(theta) + I * sin(theta))\n\n공식명: 드 무아브르 정리\n공식 ID: demoivre_theorem\n역할: formula\nLaTeX: (\\cos\\theta+i\\sin\\theta)^n=\\cos n\\theta+i\\sin n\\theta\nCAS 표현: Eq((cos(theta) + I * sin(theta))**n, cos(n * theta) + I * sin(n * theta))",
+      "token_count": 216,
+      "content_hash": "851185b5d7cc782deadf7cf3ea4405db94f3c7882e35444915d1cf340b59403b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: demoivre_integer_n\n설명: de Moivre 공식은 정수 n에 직접 적용한다.\n검증 규칙: n_is_integer equals 참",
+      "token_count": 92,
+      "content_hash": "9844fec1f37c82eb08d9ffa103cebc5caeed3767da88343d9b8f890178e3b7dd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: roots_of_unity_distribution\n설명: z^n = w의 근은 복소평면의 원 위에 등간격으로 배치된다.",
+      "token_count": 90,
+      "content_hash": "763f5c37adab036b6f1538cdd96ed44c83daf676f3fb71680de82789b2e00746",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 복소수 극형식 (em.complex.cartesian_polar_form, 중요도: required)\n- 삼각함수 (calculus.trigonometry, 중요도: required)\n\n관련 개념:\n- em.complex.elementary_functions\n\n학습 목표 ID: apply_euler_demoivre\n행동 동사: calculate\n목표: Euler 공식과 de Moivre 정리를 이용해 거듭제곱과 복소근을 구한다.",
+      "token_count": 162,
+      "content_hash": "46ff4de309558ec6ac03553fc2af451698eb4e42c50f9043245b280c089550bb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 복소근 계산 시 편각 누락\n오개념 ID: em.complex.euler_demoivre.missing_branches_for_roots\n설명: 복소수의 거듭제곱근을 구할 때 2pi k 주기를 고려하지 않고 하나의 근만 구한다.\n진단 태그: missing_root_branches\n피드백: 복소수의 n제곱근을 구할 때는 모든 2pi k 편각을 포함하여 n개의 서로 다른 근을 모두 찾아야 합니다.",
+      "token_count": 174,
+      "content_hash": "966bb5e686d6b84239b26f913972a757e644d9441bd055e9b866a4ade190f600",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.euler_demoivre",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.2 Euler 공식과 de Moivre 정리",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.2 Euler 공식과 de Moivre 정리\n개념 ID: em.complex.euler_demoivre\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: demoivre_power_calculation\n지원 정답 유형: expression\n난이도 범위: 2 ~ 3\n권장 검증기: expression_equivalence",
+      "token_count": 97,
+      "content_hash": "577a79ce42b2b562704a7a9a29e47651693dd7b5b499d220b775ca9ea38dbee1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

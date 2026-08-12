@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.forced_oscillation_and_resonance",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+  "concept_name_ko": "강제진동과 공명",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 외력이 있으면 mx''+cx'+kx=F(t)이며, 해는 시간이 지나면 사라지는 과도응답(x_transient=여함수 부분)과 장기적으로 남는 정상응답(x_steady=특수해)의 합이다. 주기적 외력 F0 cosωt에서 감쇠가 없거나 매우 작고 ω가 자연각진동수 ω0에 가까우면(이상적으로 ω=ω0) 진폭이 크게 증가하는 공명이 발생한다.\n검색 태그: forced_oscillation, resonance",
+      "token_count": 190,
+      "content_hash": "de237927a8204df15cf350f564e45ce9b07cce339e8306ebae49847027ed8615",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 강제진동 방정식\n공식 ID: forced_oscillation_ode\n역할: definition\nLaTeX: mx''+cx'+kx=F(t)\nCAS 표현: Eq(m*diff(x(t),t,2)+c*diff(x(t),t)+k*x(t), F(t))\n\n공식명: 과도응답과 정상응답\n공식 ID: transient_steady_decomposition\n역할: theorem\nLaTeX: x=x_{\\text{transient}}+x_{\\text{steady}}\nCAS 표현: x_transient + x_steady\n\n공식명: 주기적 외력\n공식 ID: periodic_forcing\n역할: special_case\nLaTeX: mx''+cx'+kx=F_0\\cos\\omega t\nCAS 표현: Eq(m*diff(x(t),t,2)+c*diff(x(t),t)+k*x(t), F0*cos(omega*t))\n\n공식명: 공명 조건\n공식 ID: resonance_condition\n역할: condition\nLaTeX: \\omega=\\omega_0\\ (\\text{감쇠 없는 이상적 경우})\nCAS 표현: Eq(omega, omega0)",
+      "token_count": 347,
+      "content_hash": "fc6071684081fdca078e16e17747a4ed063dbe360556f62313e762fb58a05bb8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: resonance_needs_low_damping_and_matched_frequency\n설명: 공명이 크게 나타나려면 감쇠가 없거나 매우 작고 외력의 각진동수가 자연각진동수에 가까워야 한다.\n검증 규칙: low_damping_and_omega_near_omega0 equals 참",
+      "token_count": 140,
+      "content_hash": "f5778ff31e5252a96f8f016f0fc28063bc2cf90fb8abe9fa72e373e787195407",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: transient_vanishes\n설명: 과도응답(transient solution)은 시간이 지나면 사라지고, 정상응답(steady-state solution)만 장기적으로 남는다.",
+      "token_count": 101,
+      "content_hash": "2ebbdcd6c5618974fd3a1eb471a2b17f4e776f9204ff10e4467fadd1a91ba267",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 감쇠조화운동 (calculus.damped_harmonic_motion, 중요도: required)\n- 미정계수법 (calculus.undetermined_coefficients, 중요도: required)\n\n관련 개념:\n- calculus.rlc_circuit\n\n학습 목표 ID: decompose_transient_and_steady_state\n행동 동사: construct\n목표: 강제진동 해를 과도응답과 정상응답으로 분해한다.\n\n학습 목표 ID: identify_resonance_condition\n행동 동사: verify\n목표: 외력의 각진동수와 자연각진동수 관계로 공명 발생 여부를 판단한다.",
+      "token_count": 210,
+      "content_hash": "31e95282242c1963aa25529fcef37dd1a4ec50c41e0752976dc9d744051bdfa0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 자연진동수와 외력진동수 혼동\n오개념 ID: calculus.forced_oscillation.confuse_natural_and_forcing_frequency\n설명: 공명 조건을 판단하면서 시스템의 자연각진동수 ω0와 외력의 각진동수 ω를 구분하지 않는다.\n진단 태그: confuse_natural_and_forcing_angular_frequency\n피드백: 공명은 외력의 각진동수 ω가 시스템 고유의 자연각진동수 ω0에 가까워질 때 발생하며, 두 값을 구분해서 비교해야 한다.",
+      "token_count": 213,
+      "content_hash": "f67e50fa80bccccc7bff1138984f7bd7af077fe5f2c13e2f7ce487c6bbf9c196",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "강제진동과 공명",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 강제진동과 공명\n개념 ID: calculus.forced_oscillation_and_resonance\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: forced_oscillation_solving, resonance_condition_check\n지원 정답 유형: expression, boolean\n난이도 범위: 3 ~ 5\n권장 검증기: ode_residual, symbolic_equivalence",
+      "token_count": 121,
+      "content_hash": "00a297ec5cde832bca36e63de8758a15928d21237144920ff1a43f55ccd9e8cc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -65,7 +65,8 @@
           "formula_id": "ps.sampling_distributions.normal_sample_mean_exact.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\bar X\\sim N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)"
+          "latex": "\\bar X\\sim N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)",
+          "cas": "parse_latex('\\\\bar X\\\\sim N\\\\left(\\\\mu,\\\\frac{\\\\sigma^2}{n}\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -178,7 +179,8 @@
           "formula_id": "ps.sampling_distributions.order_statistic_density.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{X_{(k)}}(x)=\n\\frac{n!}{(k-1)!(n-k)!}\n[F(x)]^{k-1}[1-F(x)]^{n-k}f(x)"
+          "latex": "f_{X_{(k)}}(x)=\n\\frac{n!}{(k-1)!(n-k)!}\n[F(x)]^{k-1}[1-F(x)]^{n-k}f(x)",
+          "cas": "parse_latex('f_{X_{(k)}}(x)=\\n\\\\frac{n!}{(k-1)!(n-k)!}\\n[F(x)]^{k-1}[1-F(x)]^{n-k}f(x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -382,7 +384,8 @@
           "formula_id": "ps.sampling_distributions.sample_variance_unbiasedness.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[S^2]=\\sigma^2"
+          "latex": "E[S^2]=\\sigma^2",
+          "cas": "parse_latex('E[S^2]=\\\\sigma^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -495,7 +498,8 @@
           "formula_id": "ps.sampling_distributions.sample_variance_variance_normal.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(S^2)=\\frac{2\\sigma^4}{n-1}"
+          "latex": "\\operatorname{Var}(S^2)=\\frac{2\\sigma^4}{n-1}",
+          "cas": "parse_latex('\\\\operatorname{Var}(S^2)=\\\\frac{2\\\\sigma^4}{n-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -608,7 +612,8 @@
           "formula_id": "ps.sampling_distributions.student_t_exact.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "T=\\frac{\\bar X-\\mu}{S/\\sqrt n}"
+          "latex": "T=\\frac{\\bar X-\\mu}{S/\\sqrt n}",
+          "cas": "parse_latex('T=\\\\frac{\\\\bar X-\\\\mu}{S/\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -722,7 +727,8 @@
           "formula_id": "ps.sampling_distributions.student_t_exact.reference_distribution.formula_01",
           "name_ko": "정확 기준분포",
           "role": "exact_distribution",
-          "latex": "T\\sim t_{n-1}"
+          "latex": "T\\sim t_{n-1}",
+          "cas": "parse_latex('T\\\\sim t_{n-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -846,7 +852,8 @@
           "formula_id": "ps.sampling_distributions.variance_ratio_f_exact.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\frac{S_1^2/\\sigma_1^2}{S_2^2/\\sigma_2^2}\n\\sim F_{n_1-1,n_2-1}"
+          "latex": "\\frac{S_1^2/\\sigma_1^2}{S_2^2/\\sigma_2^2}\n\\sim F_{n_1-1,n_2-1}",
+          "cas": "parse_latex('\\\\frac{S_1^2/\\\\sigma_1^2}{S_2^2/\\\\sigma_2^2}\\n\\\\sim F_{n_1-1,n_2-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1123,7 +1130,8 @@
           "formula_id": "ps.sampling_distributions.sample_variance_distribution.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\frac{(n-1)S^2}{\\sigma^2}\\sim\\chi^2_{n-1}"
+          "latex": "\\frac{(n-1)S^2}{\\sigma^2}\\sim\\chi^2_{n-1}",
+          "cas": "parse_latex('\\\\frac{(n-1)S^2}{\\\\sigma^2}\\\\sim\\\\chi^2_{n-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2056,7 +2064,8 @@
           "formula_id": "ps.sampling_distributions.order_statistics_beta.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "F(X_{(k)})\\sim\\operatorname{Beta}(k,n-k+1)"
+          "latex": "F(X_{(k)})\\sim\\operatorname{Beta}(k,n-k+1)",
+          "cas": "parse_latex('F(X_{(k)})\\\\sim\\\\operatorname{Beta}(k,n-k+1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2280,7 +2289,8 @@
           "formula_id": "ps.sampling_distributions.sample_proportion_asymptotic_normality.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "\\frac{\\hat p-p}{\\sqrt{p(1-p)/n}}\n\\xrightarrow{d}N(0,1)"
+          "latex": "\\frac{\\hat p-p}{\\sqrt{p(1-p)/n}}\n\\xrightarrow{d}N(0,1)",
+          "cas": "parse_latex('\\\\frac{\\\\hat p-p}{\\\\sqrt{p(1-p)/n}}\\n\\\\xrightarrow{d}N(0,1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2381,7 +2391,8 @@
           "formula_id": "ps.sampling_distributions.pooled_two_proportion_se.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat p=\\frac{X_1+X_2}{n_1+n_2}"
+          "latex": "\\hat p=\\frac{X_1+X_2}{n_1+n_2}",
+          "cas": "parse_latex('\\\\hat p=\\\\frac{X_1+X_2}{n_1+n_2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2564,7 +2575,8 @@
           "formula_id": "ps.sampling_distributions.pooled_two_proportion_se.f02.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE_0=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}"
+          "latex": "SE_0=\\sqrt{\\hat p(1-\\hat p)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}",
+          "cas": "parse_latex('SE_0=\\\\sqrt{\\\\hat p(1-\\\\hat p)\\\\left(\\\\frac1{n_1}+\\\\frac1{n_2}\\\\right)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2702,7 +2714,8 @@
           "formula_id": "ps.sampling_distributions.random_sample_statistic.f01.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "X_1,\\ldots,X_n\\overset{iid}{\\sim}F"
+          "latex": "X_1,\\ldots,X_n\\overset{iid}{\\sim}F",
+          "cas": "parse_latex('X_1,\\\\ldots,X_n\\\\overset{iid}{\\\\sim}F', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2800,7 +2813,8 @@
           "formula_id": "ps.sampling_distributions.random_sample_statistic.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "T=T(X_1,\\ldots,X_n)"
+          "latex": "T=T(X_1,\\ldots,X_n)",
+          "cas": "parse_latex('T=T(X_1,\\\\ldots,X_n)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2925,7 +2939,8 @@
           "formula_id": "ps.sampling_distributions.sample_mean_distribution.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[\\bar X]=\\mu"
+          "latex": "E[\\bar X]=\\mu",
+          "cas": "parse_latex('E[\\\\bar X]=\\\\mu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3042,7 +3057,8 @@
           "formula_id": "ps.sampling_distributions.sample_mean_distribution.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\bar X)=\\sigma^2/n"
+          "latex": "\\operatorname{Var}(\\bar X)=\\sigma^2/n",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\bar X)=\\\\sigma^2/n', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3168,7 +3184,8 @@
           "formula_id": "ps.sampling_distributions.sample_mean_distribution.f03.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE(\\bar X)=\\frac{\\sigma}{\\sqrt n}"
+          "latex": "SE(\\bar X)=\\frac{\\sigma}{\\sqrt n}",
+          "cas": "parse_latex('SE(\\\\bar X)=\\\\frac{\\\\sigma}{\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3303,7 +3320,8 @@
           "formula_id": "ps.sampling_distributions.two_sample_statistics.f01.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\bar X_1-\\bar X_2)=\\sigma_1^2/n_1+\\sigma_2^2/n_2"
+          "latex": "\\operatorname{Var}(\\bar X_1-\\bar X_2)=\\sigma_1^2/n_1+\\sigma_2^2/n_2",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\bar X_1-\\\\bar X_2)=\\\\sigma_1^2/n_1+\\\\sigma_2^2/n_2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3460,7 +3478,8 @@
           "formula_id": "ps.sampling_distributions.two_sample_statistics.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "SD(\\hat p_1-\\hat p_2)=\\sqrt{p_1(1-p_1)/n_1+p_2(1-p_2)/n_2}"
+          "latex": "SD(\\hat p_1-\\hat p_2)=\\sqrt{p_1(1-p_1)/n_1+p_2(1-p_2)/n_2}",
+          "cas": "parse_latex('SD(\\\\hat p_1-\\\\hat p_2)=\\\\sqrt{p_1(1-p_1)/n_1+p_2(1-p_2)/n_2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3626,7 +3645,8 @@
           "formula_id": "ps.sampling_distributions.order_statistics.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "X_{(1)}\\le\\cdots\\le X_{(n)}"
+          "latex": "X_{(1)}\\le\\cdots\\le X_{(n)}",
+          "cas": "parse_latex('X_{(1)}\\\\le\\\\cdots\\\\le X_{(n)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3741,7 +3761,8 @@
           "formula_id": "ps.sampling_distributions.order_statistics.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "F_{X_{(n)}}(x)=F(x)^n"
+          "latex": "F_{X_{(n)}}(x)=F(x)^n",
+          "cas": "parse_latex('F_{X_{(n)}}(x)=F(x)^n', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3856,7 +3877,8 @@
           "formula_id": "ps.sampling_distributions.sd_estimated_se.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "SD(\\hat p_1-\\hat p_2)\n=\\sqrt{\\frac{p_1(1-p_1)}{n_1}\n+\\frac{p_2(1-p_2)}{n_2}}"
+          "latex": "SD(\\hat p_1-\\hat p_2)\n=\\sqrt{\\frac{p_1(1-p_1)}{n_1}\n+\\frac{p_2(1-p_2)}{n_2}}",
+          "cas": "parse_latex('SD(\\\\hat p_1-\\\\hat p_2)\\n=\\\\sqrt{\\\\frac{p_1(1-p_1)}{n_1}\\n+\\\\frac{p_2(1-p_2)}{n_2}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4004,7 +4026,8 @@
           "formula_id": "ps.sampling_distributions.sd_estimated_se.f02.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "\\widehat{SE}(\\hat p_1-\\hat p_2)\n=\\sqrt{\\frac{\\hat p_1(1-\\hat p_1)}{n_1}\n+\\frac{\\hat p_2(1-\\hat p_2)}{n_2}}"
+          "latex": "\\widehat{SE}(\\hat p_1-\\hat p_2)\n=\\sqrt{\\frac{\\hat p_1(1-\\hat p_1)}{n_1}\n+\\frac{\\hat p_2(1-\\hat p_2)}{n_2}}",
+          "cas": "parse_latex('\\\\widehat{SE}(\\\\hat p_1-\\\\hat p_2)\\n=\\\\sqrt{\\\\frac{\\\\hat p_1(1-\\\\hat p_1)}{n_1}\\n+\\\\frac{\\\\hat p_2(1-\\\\hat p_2)}{n_2}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4179,7 +4202,8 @@
           "formula_id": "ps.sampling_distributions.sample_proportion_distribution.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\hat p=\\frac{X}{n}"
+          "latex": "\\hat p=\\frac{X}{n}",
+          "cas": "parse_latex('\\\\hat p=\\\\frac{X}{n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4312,7 +4336,8 @@
           "formula_id": "ps.sampling_distributions.sample_proportion_binomial_model.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "X\\sim\\operatorname{Bin}(n,p)"
+          "latex": "X\\sim\\operatorname{Bin}(n,p)",
+          "cas": "parse_latex('X\\\\sim\\\\operatorname{Bin}(n,p)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4440,7 +4465,8 @@
           "formula_id": "ps.sampling_distributions.sample_proportion_distribution.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[\\hat p]=p"
+          "latex": "E[\\hat p]=p",
+          "cas": "parse_latex('E[\\\\hat p]=p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4573,7 +4599,8 @@
           "formula_id": "ps.sampling_distributions.sample_proportion_distribution.f02_variance.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\hat p)=\\frac{p(1-p)}{n}"
+          "latex": "\\operatorname{Var}(\\hat p)=\\frac{p(1-p)}{n}",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\hat p)=\\\\frac{p(1-p)}{n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4706,7 +4733,8 @@
           "formula_id": "ps.sampling_distributions.finite_population_sample_mean.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "S_N^2=\\frac{1}{N-1}\\sum_{i=1}^{N}(Y_i-\\bar Y)^2"
+          "latex": "S_N^2=\\frac{1}{N-1}\\sum_{i=1}^{N}(Y_i-\\bar Y)^2",
+          "cas": "parse_latex('S_N^2=\\\\frac{1}{N-1}\\\\sum_{i=1}^{N}(Y_i-\\\\bar Y)^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4818,7 +4846,8 @@
           "formula_id": "ps.sampling_distributions.finite_population_sample_mean.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[\\bar y]=\\bar Y"
+          "latex": "E[\\bar y]=\\bar Y",
+          "cas": "parse_latex('E[\\\\bar y]=\\\\bar Y', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4993,7 +5022,8 @@
           "formula_id": "ps.sampling_distributions.finite_population_sample_mean.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\bar y)\n=\\left(1-\\frac{n}{N}\\right)\\frac{S_N^2}{n}"
+          "latex": "\\operatorname{Var}(\\bar y)\n=\\left(1-\\frac{n}{N}\\right)\\frac{S_N^2}{n}",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\bar y)\\n=\\\\left(1-\\\\frac{n}{N}\\\\right)\\\\frac{S_N^2}{n}', backend='antlr')"
         }
       ],
       "application_conditions": [

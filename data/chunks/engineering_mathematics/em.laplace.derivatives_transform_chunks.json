@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.laplace.derivatives_transform",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_03_laplace_transform",
+  "concept_name_ko": "도함수의 Laplace 변환",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 시간미분을 s의 거듭제곱과 초기값 항으로 바꾸는 성질이다.\n검색 태그: derivatives, laplace_transform, initial_conditions",
+      "token_count": 85,
+      "content_hash": "d1515b09b8bb31908e76142778607712127ba0927763cf64b088a6b56bc637ba",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 1계 도함수 변환\n공식 ID: first_derivative_laplace\n역할: formula\nLaTeX: \\mathcal{L}\\{y'\\}=sY-y(0)\nCAS 표현: Eq(laplace(Derivative(y, t)), s * Y - y(0))\n\n공식명: 2계 도함수 변환\n공식 ID: second_derivative_laplace\n역할: formula\nLaTeX: \\mathcal{L}\\{y''\\}=s^2Y-sy(0)-y'(0)\nCAS 표현: Eq(laplace(Derivative(y, (t, 2))), s**2 * Y - s * y(0) - Derivative(y, t).subs(t, 0))\n\n공식명: n계 도함수 변환\n공식 ID: nth_derivative_laplace\n역할: definition\nLaTeX: \\mathcal{L}\\{y^{(n)}\\}=s^nY-\\sum_{k=0}^{n-1}s^{n-1-k}y^{(k)}(0)\nCAS 표현: Eq(laplace(Derivative(y, (t, n))), s**n * Y - sum(s**(n-1-k) * Derivative(y, (t, k)).subs(t, 0) for k in range(n)))",
+      "token_count": 363,
+      "content_hash": "31c46cd3fe546a8a921f97e9a16e2872ebac13566d9a2bbbe70dbd375b185e68",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: y_and_derivatives_exponential_order\n설명: y와 필요한 도함수들이 조각별 연속이고 지수차수 조건을 만족해야 한다.\n검증 규칙: y_and_derivatives_satisfy_conditions equals 참",
+      "token_count": 110,
+      "content_hash": "81b9ab5a182bb91711bea0a7c24041dc2ff6936ea6c1ac1770d397443da59fcd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: includes_initial_conditions\n설명: 초기조건이 변환식에 직접 포함되므로 초기값 문제에 적합하다.",
+      "token_count": 79,
+      "content_hash": "57f5daa4c53a40147b6278d00b6c6987633bdabb0275b1ef30ae6a6cbd798927",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 고계 도함수 (calculus.derivative, 중요도: required)\n- 초기값 문제 (em.ode.higher_order_ivp, 중요도: required)\n\n관련 개념:\n- em.laplace.ivp_solving\n\n학습 목표 ID: transform_derivatives\n행동 동사: calculate\n목표: 도함수의 Laplace 변환 공식을 유도하고 초기값을 포함한 변환식을 작성한다.",
+      "token_count": 151,
+      "content_hash": "89d79b074eabb1e8a2ebc7b96b116df87858eacfcbc6d1c7df465531071e739c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 초기값 항 부호 오류\n오개념 ID: em.laplace.derivatives_transform.sign_error\n설명: 변환식에서 초기값 항들의 부호를 플러스로 잘못 쓴다.\n진단 태그: derivative_transform_sign_error\n피드백: 도함수의 Laplace 변환에서 초기값 항들은 모두 마이너스 부호를 가집니다.",
+      "token_count": 145,
+      "content_hash": "e02e5e53def6f937b5e757b905513d76f2db02d563be36529b0b294fd95af3e2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.laplace.derivatives_transform",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_03_laplace_transform",
+      "concept_name_ko": "도함수의 Laplace 변환",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: Laplace 변환\n개념: 도함수의 Laplace 변환\n개념 ID: em.laplace.derivatives_transform\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: derivative_laplace_transformation\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: expression_equivalence",
+      "token_count": 92,
+      "content_hash": "eacde80922916988401f1867ca0a2952c7d0a719de4dab91dc2f870267c2010c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.anova.identifiability_contrasts",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_18_anova",
+  "concept_name_ko": "모형 식별 제약과 대비",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.identifiability_contrasts",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "모형 식별 제약과 대비",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 모형 식별 제약과 대비\n개념 ID: ps.anova.identifiability_contrasts\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: ANOVA 효과모형은 식별 제약이 필요하며, 대비는 계수 합이 0인 집단평균의 선형결합으로 관심 가설을 표현한다.\n검색 태그: anova, identifiability_contrasts",
+      "token_count": 105,
+      "content_hash": "396e07738e76ad15785482f4dd936de66a1ab525fa295b234048ca5ebb9b0065",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.identifiability_contrasts",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "모형 식별 제약과 대비",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 모형 식별 제약과 대비\n개념 ID: ps.anova.identifiability_contrasts\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.anova.identifiability_contrasts.property_01\n설명: 일원 효과모형 $Y_{ij}=\\mu+\\tau_i+\\varepsilon_{ij}$ 은 제약이 없으면 $\\mu$와 $\\tau_i$가 유일하지 않다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_02\n설명: 다음과 같은 식별 방법을 사용한다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_03\n설명: $\\sum_{i=1}^{a}\\tau_i=0$ 또는 하나의 기준집단을 정해 $\\tau_1=0$으로 둔다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_04\n설명: 이원 ANOVA와 교호작용 모형도 선택한 대비 코딩과 제약을 명시해야 한다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_05\n설명: 사전에 계획한 대비는 $L=\\sum_{i=1}^{a}c_i\\mu_i, \\qquad \\sum_{i=1}^{a}c_i=0$ 로 정의한다.",
+      "token_count": 343,
+      "content_hash": "7da8f7144d61b1e7af3654c899830ea47f5ca831a64f199c0faf93aa523fd678",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.identifiability_contrasts",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "모형 식별 제약과 대비",
+      "chunk_index": 2,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 모형 식별 제약과 대비\n개념 ID: ps.anova.identifiability_contrasts\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.anova.identifiability_contrasts.property_06\n설명: 추정량과 표준오차는 $\\hat L=\\sum_{i=1}^{a}c_i\\bar Y_i$ $SE(\\hat L)= \\sqrt{MSE\\sum_{i=1}^{a}\\frac{c_i^2}{n_i}}$ 이다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_07\n설명: 반복측정·혼합설계나 이분산 상황에서는 설계에 맞는 공분산과 오차항을 사용해야 한다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_08\n설명: 자료를 보기 전에 정한 소수의 계획 대비와 탐색적 사후비교를 구분한다.\n\n성질 ID: ps.anova.identifiability_contrasts.property_09\n설명: 계획 대비라도 여러 개를 하나의 검정군으로 해석하면 Bonferroni, Holm, Scheffé 등 목적에 맞는 다중성 통제를 고려한다.",
+      "token_count": 304,
+      "content_hash": "fc02c0d6c3fa6e42baa4d3bad011bf092341bba90e9a4fff00a6f1ef84bdd06d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.identifiability_contrasts",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "모형 식별 제약과 대비",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 모형 식별 제약과 대비\n개념 ID: ps.anova.identifiability_contrasts\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- F분포 (ps.continuous_distributions.f_distribution, 중요도: required)\n- 가설검정의 구조 (ps.hypothesis_testing.test_structure, 중요도: required)\n- 다중회귀모형 (ps.multiple_linear_regression.multiple_regression_model, 중요도: recommended)\n\n관련 개념:\n- ps.anova.mixed_effects_model\n- ps.anova.fixed_random_effects\n- ps.anova.effects_model_identifiability\n- ps.anova.contrast_definition_estimate\n- ps.anova.contrast_estimate_standard_error\n\n학습 목표 ID: ps.anova.identifiability_contrasts.objective_01\n행동 동사: identify\n목표: 모형 식별 제약과 대비의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.anova.identifiability_contrasts.objective_02\n행동 동사: apply\n목표: 모형 식별 제약과 대비의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.anova.identifiability_contrasts.objective_03\n행동 동사: interpret\n목표: 계산 결과를 모형 식별 제약과 대비의 의미와 조건에 맞게 해석한다.",
+      "token_count": 350,
+      "content_hash": "71c9f1268dd102edfa4453b0216807036eb677458edab26572c0614a280a4fdc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.identifiability_contrasts",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "모형 식별 제약과 대비",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 모형 식별 제약과 대비\n개념 ID: ps.anova.identifiability_contrasts\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, anova_table_completion, f_test, post_hoc_selection\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, degrees_of_freedom_check, condition_rule_check, domain_check\n생성 참고사항: 적용 조건이 다른 하위 개념을 안내하는 개요다. 문제 생성에는 related_concepts의 방법별 개념을 사용한다.",
+      "token_count": 196,
+      "content_hash": "902b71e954d4fa5d7f63fee59fa3defdc06a2bed300157675f99ebba14b92c0a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.determinant.ero",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_03_linear_transformations_determinants",
+  "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 가우스 소거법으로 상삼각행렬로 변환하는 과정에서 ERO가 행렬식 값에 미치는 변화량을 역산하여 O(n^3) 복잡도로 행렬식을 구하는 기법이다.\n검색 태그: determinant, ero, gaussian_elimination",
+      "token_count": 120,
+      "content_hash": "a6da6f446f40c726604a021cc7063d932428a0e0d4ec9c855166723932602d2c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 상수행렬 스칼라배 분리\n공식 ID: scalar_multiple_det\n역할: property\nLaTeX: \\det(kA) = k^n \\det(A)\nCAS 표현: det(k*A) == k**n * det(A)",
+      "token_count": 120,
+      "content_hash": "f0fb455cb332ce3acd5baf89521bd63d12acfe4c070bd7ec46e40618475a2ab7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: track_ero_changes\n설명: 행연산을 수행할 때마다 행렬식의 스케일 변화를 누적 곱셈 변수로 추적해야 한다.\n검증 규칙: track_ero_scaling equals 참",
+      "token_count": 112,
+      "content_hash": "a86f66251d4dbcd2a4d6166b960263e6bee9a940b8facd555abda8244cb80424",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: shear_preserves_det\n설명: 행 가산 연산은 행렬식(부피)을 전혀 변화시키지 않는다.",
+      "token_count": 91,
+      "content_hash": "818a8af8bff22cd528f02cd772d8d6e358e95cf8d6c5b4fd81064eea2bcf00fc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 기본행연산(ERO) (la.matrix.ero_ref, 중요도: required)\n- 행렬식 (la.determinant.cofactor, 중요도: required)\n\n관련 개념:\n- la.determinant.triangular_block\n\n학습 목표 ID: compute_det_by_ero\n행동 동사: calculate\n목표: 기본행연산을 이용해 행렬식을 효율적으로 계산한다.",
+      "token_count": 156,
+      "content_hash": "df25aca82128846801b7fcf512bfd778ceb67b60073316bcb2f13e608c820d64",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 전체 스칼라배의 차원 무시\n오개념 ID: la.determinant.ero.scalar_dimension_omission\n설명: det(kA)를 k*det(A)로 잘못 치환한다.\n진단 태그: scalar_multiple_dimension_error\n피드백: 스칼라 k가 밖으로 나올 때는 행렬의 차원인 n승(k^n)이 되어야 합니다.",
+      "token_count": 165,
+      "content_hash": "2a4d3bffe17ff2547b53be1f7b02cb531e3ec9aca2383ebba881040e1a494f7d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.ero",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "행연산(ERO)을 활용한 행렬식 효율적 계산",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 행연산(ERO)을 활용한 행렬식 효율적 계산\n개념 ID: la.determinant.ero\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: determinant_by_ero\n지원 정답 유형: scalar\n난이도 범위: 2 ~ 4\n권장 검증기: determinant_check",
+      "token_count": 99,
+      "content_hash": "229596a1f3ba1cb837a5d1145059bb2afd2f506753f99c1fb65491d444ccb327",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

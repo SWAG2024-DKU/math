@@ -65,7 +65,8 @@
           "formula_id": "ps.conditional_independence.conditional_independence_density.formula_01",
           "name_ko": "확률밀도함수",
           "role": "definition",
-          "latex": "f_{X,Y\\mid Z}(x,y\\mid z)\n=f_{X\\mid Z}(x\\mid z)f_{Y\\mid Z}(y\\mid z)"
+          "latex": "f_{X,Y\\mid Z}(x,y\\mid z)\n=f_{X\\mid Z}(x\\mid z)f_{Y\\mid Z}(y\\mid z)",
+          "cas": "parse_latex('f_{X,Y\\\\mid Z}(x,y\\\\mid z)\\n=f_{X\\\\mid Z}(x\\\\mid z)f_{Y\\\\mid Z}(y\\\\mid z)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -155,7 +156,8 @@
           "formula_id": "ps.conditional_independence.conditional_independence_measure.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "P(X\\in A,Y\\in B\\mid Z)\n=\nP(X\\in A\\mid Z)P(Y\\in B\\mid Z)"
+          "latex": "P(X\\in A,Y\\in B\\mid Z)\n=\nP(X\\in A\\mid Z)P(Y\\in B\\mid Z)",
+          "cas": "parse_latex('P(X\\\\in A,Y\\\\in B\\\\mid Z)\\n=\\nP(X\\\\in A\\\\mid Z)P(Y\\\\in B\\\\mid Z)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -245,7 +247,8 @@
           "formula_id": "ps.conditional_independence.density_chain_rule.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x_1,\\ldots,x_n)\n=f(x_1)f(x_2\\mid x_1)\\cdots f(x_n\\mid x_1,\\ldots,x_{n-1})"
+          "latex": "f(x_1,\\ldots,x_n)\n=f(x_1)f(x_2\\mid x_1)\\cdots f(x_n\\mid x_1,\\ldots,x_{n-1})",
+          "cas": "parse_latex('f(x_1,\\\\ldots,x_n)\\n=f(x_1)f(x_2\\\\mid x_1)\\\\cdots f(x_n\\\\mid x_1,\\\\ldots,x_{n-1})', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -346,7 +349,8 @@
           "formula_id": "ps.conditional_independence.event_chain_rule.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n=P(A_1)\\prod_{i=2}^{n}\nP\\left(A_i\\mid \\bigcap_{j=1}^{i-1}A_j\\right)"
+          "latex": "P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n=P(A_1)\\prod_{i=2}^{n}\nP\\left(A_i\\mid \\bigcap_{j=1}^{i-1}A_j\\right)",
+          "cas": "parse_latex('P\\\\left(\\\\bigcap_{i=1}^{n}A_i\\\\right)\\n=P(A_1)\\\\prod_{i=2}^{n}\\nP\\\\left(A_i\\\\mid \\\\bigcap_{j=1}^{i-1}A_j\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -608,7 +612,8 @@
           "formula_id": "ps.conditional_independence.bayes_theorem.formula_01",
           "name_ko": "정리",
           "role": "theorem",
-          "latex": "P(B_j\\mid A)=\\frac{P(A\\mid B_j)P(B_j)}{\\sum_i P(A\\mid B_i)P(B_i)}"
+          "latex": "P(B_j\\mid A)=\\frac{P(A\\mid B_j)P(B_j)}{\\sum_i P(A\\mid B_i)P(B_i)}",
+          "cas": "parse_latex('P(B_j\\\\mid A)=\\\\frac{P(A\\\\mid B_j)P(B_j)}{\\\\sum_i P(A\\\\mid B_i)P(B_i)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -802,7 +807,8 @@
           "formula_id": "ps.conditional_independence.mutual_independence_three_events.formula_01",
           "name_ko": "독립성 특성화",
           "role": "independence_characterization",
-          "latex": "P\\!\\left(\\bigcap_{j\\in J}A_j\\right)=\\prod_{j\\in J}P(A_j)"
+          "latex": "P\\!\\left(\\bigcap_{j\\in J}A_j\\right)=\\prod_{j\\in J}P(A_j)",
+          "cas": "parse_latex('P\\\\!\\\\left(\\\\bigcap_{j\\\\in J}A_j\\\\right)=\\\\prod_{j\\\\in J}P(A_j)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -899,7 +905,8 @@
           "formula_id": "ps.conditional_independence.pairwise_independence.formula_01",
           "name_ko": "독립성 특성화",
           "role": "independence_characterization",
-          "latex": "P(A_i\\cap A_j)=P(A_i)P(A_j)"
+          "latex": "P(A_i\\cap A_j)=P(A_i)P(A_j)",
+          "cas": "parse_latex('P(A_i\\\\cap A_j)=P(A_i)P(A_j)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1362,7 +1369,8 @@
           "formula_id": "ps.conditional_independence.random_variable_independence_cdf.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "F_{X,Y}(x,y)=F_X(x)F_Y(y)"
+          "latex": "F_{X,Y}(x,y)=F_X(x)F_Y(y)",
+          "cas": "parse_latex('F_{X,Y}(x,y)=F_X(x)F_Y(y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1460,7 +1468,8 @@
           "formula_id": "ps.conditional_independence.random_variable_independence_density.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{X,Y}(x,y)=f_X(x)f_Y(y)"
+          "latex": "f_{X,Y}(x,y)=f_X(x)f_Y(y)",
+          "cas": "parse_latex('f_{X,Y}(x,y)=f_X(x)f_Y(y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1650,7 +1659,8 @@
           "formula_id": "ps.conditional_independence.conditional_probability.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}"
+          "latex": "P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}",
+          "cas": "parse_latex('P(A\\\\mid B)=\\\\frac{P(A\\\\cap B)}{P(B)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1744,7 +1754,8 @@
           "formula_id": "ps.conditional_independence.conditional_probability.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A\\cap B)=P(A\\mid B)P(B)"
+          "latex": "P(A\\cap B)=P(A\\mid B)P(B)",
+          "cas": "parse_latex('P(A\\\\cap B)=P(A\\\\mid B)P(B)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1838,7 +1849,8 @@
           "formula_id": "ps.conditional_independence.total_probability.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A)=\\sum_{i:\\,P(B_i)>0}P(A\\mid B_i)P(B_i)"
+          "latex": "P(A)=\\sum_{i:\\,P(B_i)>0}P(A\\mid B_i)P(B_i)",
+          "cas": "parse_latex('P(A)=\\\\sum_{i:\\\\,P(B_i)>0}P(A\\\\mid B_i)P(B_i)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1969,7 +1981,8 @@
           "formula_id": "ps.conditional_independence.independence.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A\\cap B)=P(A)P(B)"
+          "latex": "P(A\\cap B)=P(A)P(B)",
+          "cas": "parse_latex('P(A\\\\cap B)=P(A)P(B)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2063,7 +2076,8 @@
           "formula_id": "ps.conditional_independence.independence.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A|B)=P(A)"
+          "latex": "P(A|B)=P(A)",
+          "cas": "parse_latex('P(A|B)=P(A)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2166,7 +2180,8 @@
           "formula_id": "ps.conditional_independence.continuous_bayes.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{X\\mid Y}(x\\mid y)\n=\\frac{f_{Y\\mid X}(y\\mid x)f_X(x)}{f_Y(y)}"
+          "latex": "f_{X\\mid Y}(x\\mid y)\n=\\frac{f_{Y\\mid X}(y\\mid x)f_X(x)}{f_Y(y)}",
+          "cas": "parse_latex('f_{X\\\\mid Y}(x\\\\mid y)\\n=\\\\frac{f_{Y\\\\mid X}(y\\\\mid x)f_X(x)}{f_Y(y)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2293,7 +2308,8 @@
           "formula_id": "ps.conditional_independence.continuous_bayes.f02.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_Y(y)=\\int f_{Y\\mid X}(y\\mid x)f_X(x)\\,dx"
+          "latex": "f_Y(y)=\\int f_{Y\\mid X}(y\\mid x)f_X(x)\\,dx",
+          "cas": "parse_latex('f_Y(y)=\\\\int f_{Y\\\\mid X}(y\\\\mid x)f_X(x)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [

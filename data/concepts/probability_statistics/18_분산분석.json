@@ -65,7 +65,8 @@
           "formula_id": "ps.anova.ancova_model.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y=\\mu+\\tau_i+\\beta X+\\varepsilon"
+          "latex": "Y=\\mu+\\tau_i+\\beta X+\\varepsilon",
+          "cas": "parse_latex('Y=\\\\mu+\\\\tau_i+\\\\beta X+\\\\varepsilon', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -162,7 +163,8 @@
           "formula_id": "ps.anova.bonferroni_adjustment.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\alpha^*\n=\n\\frac{\\alpha}{m}"
+          "latex": "\\alpha^*\n=\n\\frac{\\alpha}{m}",
+          "cas": "parse_latex('\\\\alpha^*\\n=\\n\\\\frac{\\\\alpha}{m}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -642,7 +644,8 @@
           "formula_id": "ps.anova.sphericity_df_correction.formula_01",
           "name_ko": "자유도 보정",
           "role": "degrees_of_freedom_correction",
-          "latex": "df^*=\\epsilon\\,df"
+          "latex": "df^*=\\epsilon\\,df",
+          "cas": "parse_latex('df^*=\\\\epsilon\\\\,df', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -739,7 +742,8 @@
           "formula_id": "ps.anova.tukey_hsd_balanced.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "HSD\n=\nq_{1-\\alpha;a,N-a}\n\\sqrt{\\frac{MSE}{n_0}}"
+          "latex": "HSD\n=\nq_{1-\\alpha;a,N-a}\n\\sqrt{\\frac{MSE}{n_0}}",
+          "cas": "parse_latex('HSD\\n=\\nq_{1-\\\\alpha;a,N-a}\\n\\\\sqrt{\\\\frac{MSE}{n_0}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -854,7 +858,8 @@
           "formula_id": "ps.anova.two_group_f_t_equivalence.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "F=t^2"
+          "latex": "F=t^2",
+          "cas": "parse_latex('F=t^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1219,7 +1224,8 @@
           "formula_id": "ps.anova.two_way_anova.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y_{ijk}=\\mu+\\alpha_i+\\beta_j+(\\alpha\\beta)_{ij}+\\varepsilon_{ijk}"
+          "latex": "Y_{ijk}=\\mu+\\alpha_i+\\beta_j+(\\alpha\\beta)_{ij}+\\varepsilon_{ijk}",
+          "cas": "parse_latex('Y_{ijk}=\\\\mu+\\\\alpha_i+\\\\beta_j+(\\\\alpha\\\\beta)_{ij}+\\\\varepsilon_{ijk}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2081,7 +2087,8 @@
           "formula_id": "ps.anova.partial_effect_size.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\eta_p^2\n=\n\\frac{SS_{\\mathrm{effect}}}\n{SS_{\\mathrm{effect}}+SS_E}"
+          "latex": "\\eta_p^2\n=\n\\frac{SS_{\\mathrm{effect}}}\n{SS_{\\mathrm{effect}}+SS_E}",
+          "cas": "parse_latex('\\\\eta_p^2\\n=\\n\\\\frac{SS_{\\\\mathrm{effect}}}\\n{SS_{\\\\mathrm{effect}}+SS_E}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2201,7 +2208,8 @@
           "formula_id": "ps.anova.mixed_effects_model.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y_{ij}=X_{ij}\\beta+Z_{ij}b_i+\\varepsilon_{ij}"
+          "latex": "Y_{ij}=X_{ij}\\beta+Z_{ij}b_i+\\varepsilon_{ij}",
+          "cas": "parse_latex('Y_{ij}=X_{ij}\\\\beta+Z_{ij}b_i+\\\\varepsilon_{ij}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2660,7 +2668,8 @@
           "formula_id": "ps.anova.oneway_exact_f_reference.formula_01",
           "name_ko": "정확 기준분포",
           "role": "exact_distribution",
-          "latex": "F\\sim F_{a-1,N-a}"
+          "latex": "F\\sim F_{a-1,N-a}",
+          "cas": "parse_latex('F\\\\sim F_{a-1,N-a}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3204,7 +3213,8 @@
           "formula_id": "ps.anova.contrast_definition_estimate.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "L=\\sum_{i=1}^{a}c_i\\mu_i"
+          "latex": "L=\\sum_{i=1}^{a}c_i\\mu_i",
+          "cas": "parse_latex('L=\\\\sum_{i=1}^{a}c_i\\\\mu_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3406,7 +3416,8 @@
           "formula_id": "ps.anova.contrast_definition_estimate.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\hat L=\\sum_{i=1}^{a}c_i\\bar Y_i"
+          "latex": "\\hat L=\\sum_{i=1}^{a}c_i\\bar Y_i",
+          "cas": "parse_latex('\\\\hat L=\\\\sum_{i=1}^{a}c_i\\\\bar Y_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3603,7 +3614,8 @@
           "formula_id": "ps.anova.contrast_estimate_standard_error.f02.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE(\\hat L)\n=\n\\sqrt{\nMSE\\sum_{i=1}^{a}\\frac{c_i^2}{n_i}\n}"
+          "latex": "SE(\\hat L)\n=\n\\sqrt{\nMSE\\sum_{i=1}^{a}\\frac{c_i^2}{n_i}\n}",
+          "cas": "parse_latex('SE(\\\\hat L)\\n=\\n\\\\sqrt{\\nMSE\\\\sum_{i=1}^{a}\\\\frac{c_i^2}{n_i}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3727,7 +3739,8 @@
           "formula_id": "ps.anova.effects_model_identifiability.f01.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y_{ij}=\\mu+\\tau_i+\\varepsilon_{ij}"
+          "latex": "Y_{ij}=\\mu+\\tau_i+\\varepsilon_{ij}",
+          "cas": "parse_latex('Y_{ij}=\\\\mu+\\\\tau_i+\\\\varepsilon_{ij}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3833,7 +3846,8 @@
           "formula_id": "ps.anova.effects_model_identifiability.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\sum_{i=1}^{a}\\tau_i=0"
+          "latex": "\\sum_{i=1}^{a}\\tau_i=0",
+          "cas": "parse_latex('\\\\sum_{i=1}^{a}\\\\tau_i=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3948,7 +3962,8 @@
           "formula_id": "ps.anova.eta_omega_squared.f01.formula_01",
           "name_ko": "효과크기",
           "role": "effect_size",
-          "latex": "\\eta^2=\\frac{SS_A}{SS_T}"
+          "latex": "\\eta^2=\\frac{SS_A}{SS_T}",
+          "cas": "parse_latex('\\\\eta^2=\\\\frac{SS_A}{SS_T}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4063,7 +4078,8 @@
           "formula_id": "ps.anova.eta_omega_squared.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\omega^2=\n\\frac{SS_A-(a-1)MS_E}{SS_T+MS_E}"
+          "latex": "\\omega^2=\n\\frac{SS_A-(a-1)MS_E}{SS_T+MS_E}",
+          "cas": "parse_latex('\\\\omega^2=\\n\\\\frac{SS_A-(a-1)MS_E}{SS_T+MS_E}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4169,7 +4185,8 @@
           "formula_id": "ps.anova.one_way_anova.f02.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "F=\\frac{MS_A}{MS_E}"
+          "latex": "F=\\frac{MS_A}{MS_E}",
+          "cas": "parse_latex('F=\\\\frac{MS_A}{MS_E}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4292,7 +4309,8 @@
           "formula_id": "ps.anova.sums_squares_anova_table.f01.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SST=SSA+SSE"
+          "latex": "SST=SSA+SSE",
+          "cas": "parse_latex('SST=SSA+SSE', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4402,7 +4420,8 @@
           "formula_id": "ps.anova.sums_squares_anova_table.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "MSA=SSA/(a-1)"
+          "latex": "MSA=SSA/(a-1)",
+          "cas": "parse_latex('MSA=SSA/(a-1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4512,7 +4531,8 @@
           "formula_id": "ps.anova.sums_squares_anova_table.f03.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "MSE=SSE/(N-a)"
+          "latex": "MSE=SSE/(N-a)",
+          "cas": "parse_latex('MSE=SSE/(N-a)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4613,7 +4633,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f01.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SS_A=\\sum_{i=1}^{a}n_i\n(\\bar Y_{i\\cdot}-\\bar Y_{\\cdot\\cdot})^2"
+          "latex": "SS_A=\\sum_{i=1}^{a}n_i\n(\\bar Y_{i\\cdot}-\\bar Y_{\\cdot\\cdot})^2",
+          "cas": "parse_latex('SS_A=\\\\sum_{i=1}^{a}n_i\\n(\\\\bar Y_{i\\\\cdot}-\\\\bar Y_{\\\\cdot\\\\cdot})^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4746,7 +4767,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f02.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SS_E=\\sum_{i=1}^{a}\\sum_{j=1}^{n_i}\n(Y_{ij}-\\bar Y_{i\\cdot})^2"
+          "latex": "SS_E=\\sum_{i=1}^{a}\\sum_{j=1}^{n_i}\n(Y_{ij}-\\bar Y_{i\\cdot})^2",
+          "cas": "parse_latex('SS_E=\\\\sum_{i=1}^{a}\\\\sum_{j=1}^{n_i}\\n(Y_{ij}-\\\\bar Y_{i\\\\cdot})^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4879,7 +4901,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f03.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SS_T=\\sum_{i=1}^{a}\\sum_{j=1}^{n_i}\n(Y_{ij}-\\bar Y_{\\cdot\\cdot})^2"
+          "latex": "SS_T=\\sum_{i=1}^{a}\\sum_{j=1}^{n_i}\n(Y_{ij}-\\bar Y_{\\cdot\\cdot})^2",
+          "cas": "parse_latex('SS_T=\\\\sum_{i=1}^{a}\\\\sum_{j=1}^{n_i}\\n(Y_{ij}-\\\\bar Y_{\\\\cdot\\\\cdot})^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5012,7 +5035,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f04.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SS_T=SS_A+SS_E"
+          "latex": "SS_T=SS_A+SS_E",
+          "cas": "parse_latex('SS_T=SS_A+SS_E', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5145,7 +5169,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f05.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df_A=a-1"
+          "latex": "df_A=a-1",
+          "cas": "parse_latex('df_A=a-1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5280,7 +5305,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f05_total.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df_T=N-1"
+          "latex": "df_T=N-1",
+          "cas": "parse_latex('df_T=N-1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5415,7 +5441,8 @@
           "formula_id": "ps.anova.oneway_sums_of_squares_and_df.f05_error.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df_E=N-a"
+          "latex": "df_E=N-a",
+          "cas": "parse_latex('df_E=N-a', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5549,7 +5576,8 @@
           "formula_id": "ps.anova.welch_anova_statistic.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "w_i=\\frac{n_i}{s_i^2}"
+          "latex": "w_i=\\frac{n_i}{s_i^2}",
+          "cas": "parse_latex('w_i=\\\\frac{n_i}{s_i^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5692,7 +5720,8 @@
           "formula_id": "ps.anova.welch_anova_statistic.f01_sum.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "W=\\sum_{i=1}^{a}w_i"
+          "latex": "W=\\sum_{i=1}^{a}w_i",
+          "cas": "parse_latex('W=\\\\sum_{i=1}^{a}w_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5836,7 +5865,8 @@
           "formula_id": "ps.anova.welch_anova_statistic.f01_weighted_mean.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\bar Y_w=\\frac{\\sum_{i=1}^{a}w_i\\bar Y_i}{W}"
+          "latex": "\\bar Y_w=\\frac{\\sum_{i=1}^{a}w_i\\bar Y_i}{W}",
+          "cas": "parse_latex('\\\\bar Y_w=\\\\frac{\\\\sum_{i=1}^{a}w_i\\\\bar Y_i}{W}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5980,7 +6010,8 @@
           "formula_id": "ps.anova.welch_anova_statistic.f02.formula_01",
           "name_ko": "근사 검정통계량",
           "role": "approximate_test_statistic",
-          "latex": "F_W=\n\\frac{\n\\displaystyle\n\\frac{1}{a-1}\n\\sum_{i=1}^{a}w_i(\\bar Y_i-\\bar Y_w)^2\n}{\n\\displaystyle\n1+\n\\frac{2(a-2)}{a^2-1}\n\\sum_{i=1}^{a}\n\\frac{1}{n_i-1}\n\\left(1-\\frac{w_i}{W}\\right)^2\n}"
+          "latex": "F_W=\n\\frac{\n\\displaystyle\n\\frac{1}{a-1}\n\\sum_{i=1}^{a}w_i(\\bar Y_i-\\bar Y_w)^2\n}{\n\\displaystyle\n1+\n\\frac{2(a-2)}{a^2-1}\n\\sum_{i=1}^{a}\n\\frac{1}{n_i-1}\n\\left(1-\\frac{w_i}{W}\\right)^2\n}",
+          "cas": "parse_latex('F_W=\\n\\\\frac{\\n\\\\displaystyle\\n\\\\frac{1}{a-1}\\n\\\\sum_{i=1}^{a}w_i(\\\\bar Y_i-\\\\bar Y_w)^2\\n}{\\n\\\\displaystyle\\n1+\\n\\\\frac{2(a-2)}{a^2-1}\\n\\\\sum_{i=1}^{a}\\n\\\\frac{1}{n_i-1}\\n\\\\left(1-\\\\frac{w_i}{W}\\\\right)^2\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6140,7 +6171,8 @@
           "formula_id": "ps.anova.welch_anova_statistic.f03.formula_01",
           "name_ko": "Welch–Satterthwaite 근사 자유도",
           "role": "approximate_degrees_of_freedom",
-          "latex": "\\nu_W=\n\\frac{a^2-1}{\n3\\displaystyle\\sum_{i=1}^{a}\n\\frac{1}{n_i-1}\n\\left(1-\\frac{w_i}{W}\\right)^2\n}"
+          "latex": "\\nu_W=\n\\frac{a^2-1}{\n3\\displaystyle\\sum_{i=1}^{a}\n\\frac{1}{n_i-1}\n\\left(1-\\frac{w_i}{W}\\right)^2\n}",
+          "cas": "parse_latex('\\\\nu_W=\\n\\\\frac{a^2-1}{\\n3\\\\displaystyle\\\\sum_{i=1}^{a}\\n\\\\frac{1}{n_i-1}\\n\\\\left(1-\\\\frac{w_i}{W}\\\\right)^2\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [

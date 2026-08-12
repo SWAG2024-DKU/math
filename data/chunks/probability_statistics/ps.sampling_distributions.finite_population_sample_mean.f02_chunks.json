@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_11_sampling_distributions",
+  "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 유한모집단에서의 표본평균에서 사용하는 적률 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: sampling_distributions, finite_population_sample_mean, sampling, formula_atomic, definition",
+      "token_count": 137,
+      "content_hash": "f8c7d86cd15c3c2915ead1e3d0b3fd76f5eff2299dec52cccdc6efe86f1b6566",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 적률 관계\n공식 ID: ps.sampling_distributions.finite_population_sample_mean.f02.formula_01\n역할: moment_relation\nLaTeX: E[\\bar y]=\\bar Y",
+      "token_count": 124,
+      "content_hash": "2843af857465d0704f1b650dbd40961f19402f37ad90a6e526b802716085d5db",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_01\n설명: 유한모집단 크기는 정수 $N\\ge1$이어야 한다.\n검증 규칙: population_size greater_or_equal 1\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_02\n설명: 표본크기는 정수 $n\\ge1$이어야 한다.\n검증 규칙: sample_size greater_or_equal 1\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_03\n설명: 복원하지 않는 표본에서는 $n\\le N$이어야 한다.\n검증 규칙: sample_size_not_exceed_population equals 참\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_04\n설명: 단순임의비복원추출이어야 한다.\n검증 규칙: sampling_design equals SRSWOR\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_05\n설명: 유한모집단의 값들이 유한해야 모집단 평균이 정의된다.\n검증 규칙: finite_population_values_finite equals 참",
+      "token_count": 393,
+      "content_hash": "5ca465e3785572000a1136f49c60463b20fc6782d63462d791c48725b6c43532",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_06\n설명: $N$은 정수여야 한다.\n검증 규칙: population_size_is_integer equals 참\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_07\n설명: `sample_size`에 대응하는 값은 정수여야 한다.\n검증 규칙: sample_size_is_integer equals 참\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_08\n설명: $N\\ge2$인 정수여야 한다.\n검증 규칙: population_size greater_or_equal 2\n\n조건 ID: ps.sampling_distributions.finite_population_sample_mean.f02.condition_09\n설명: $1\\le n\\le N$인 정수여야 한다.\n검증 규칙: sample_size_within_population equals 참",
+      "token_count": 315,
+      "content_hash": "d5bb355d13107de0593f5bf238b06e161b4009d08ffe4ff38cfe63ee33b94272",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.sampling_distributions.finite_population_sample_mean.f02.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 122,
+      "content_hash": "11879c7760d5faaaa42a93a69249a74f91ca3c662d95bf6dc701b433c150a574",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률변수와 분포 (ps.random_variables.random_variable_distribution, 중요도: required)\n- 중심극한정리 (ps.inequalities_limit_theory.central_limit_theorem, 중요도: recommended)\n\n관련 개념:\n- ps.sampling_distributions.finite_population_sample_mean\n- ps.sampling_distributions.pooled_se_order_density\n- ps.sampling_distributions.exact_asymptotic_sampling\n\n학습 목표 ID: ps.sampling_distributions.finite_population_sample_mean.f02.objective_01\n행동 동사: identify\n목표: 유한모집단에서의 표본평균 수식 2의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.sampling_distributions.finite_population_sample_mean.f02.objective_02\n행동 동사: apply\n목표: 유한모집단에서의 표본평균 수식 2을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.sampling_distributions.finite_population_sample_mean.f02.objective_03\n행동 동사: verify\n목표: 유한모집단에서의 표본평균 수식 2의 조건 충족 여부를 검증한다.",
+      "token_count": 393,
+      "content_hash": "dea9f0adcfdc9f79d824aabd84cd330e268ef584939308d23356c2a4904681db",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.sampling_distributions.finite_population_sample_mean.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_11_sampling_distributions",
+      "concept_name_ko": "유한모집단에서의 표본평균 — 적률 관계",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 표본분포\n개념: 유한모집단에서의 표본평균 — 적률 관계\n개념 ID: ps.sampling_distributions.finite_population_sample_mean.f02\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 178,
+      "content_hash": "03ed833d015312fc88f1294f6e413da437e7d2730bcf43d6e5a84a9f2ffb0135",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

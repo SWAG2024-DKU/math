@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.partial_fractions",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch07_techniques_of_integration",
+  "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 유리함수를 이미 적분법을 아는 더 간단한 분수들의 합(부분분수)으로 분해해 적분하는 방법이다. 분모 Q(x)는 항상 일차인자와 기약 이차인자의 곱으로 인수분해되며, 각 인자의 반복 여부(경우 I~IV)에 따라 분해 형태가 달라진다.\n검색 태그: partial_fractions, rational_function_integration",
+      "token_count": 144,
+      "content_hash": "09dbf88c38d1f73cc20f4326f53a1150fdc9a4f72a37c26354af77ef3b62e447",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 가분수의 다항식 나눗셈\n공식 ID: improper_fraction_division\n역할: preprocessing\nLaTeX: f(x)=\\frac{P(x)}{Q(x)}=S(x)+\\frac{R(x)}{Q(x)},\\qquad\\deg R<\\deg Q\nCAS 표현: div(P(x), Q(x))\n\n공식명: 경우 I: 서로 다른 일차인수\n공식 ID: partial_fraction_case1\n역할: decomposition\nLaTeX: \\frac{R(x)}{Q(x)}=\\frac{A_1}{a_1x+b_1}+\\cdots+\\frac{A_k}{a_kx+b_k}\nCAS 표현: apart(R(x)/Q(x), x)\n\n공식명: 경우 II: 중복된 일차인수\n공식 ID: partial_fraction_case2\n역할: decomposition\nLaTeX: \\frac{A_1}{a_1x+b_1}+\\frac{A_2}{(a_1x+b_1)^2}+\\cdots+\\frac{A_r}{(a_1x+b_1)^r}\nCAS 표현: apart(R(x)/Q(x), x)",
+      "token_count": 350,
+      "content_hash": "4339dc4929cdaac51b8e17b5ab2d333243054d6bd581eb3c465cf4c3a064456c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 경우 III·IV: 기약 이차인수(비중복/중복)\n공식 ID: partial_fraction_case3_4\n역할: decomposition\nLaTeX: \\frac{Ax+B}{ax^2+bx+c}\\ (\\text{비중복}),\\qquad\\sum_{i=1}^r\\frac{A_ix+B_i}{(ax^2+bx+c)^i}\\ (\\text{중복})\nCAS 표현: apart(R(x)/Q(x), x)\n\n공식명: 일차인수의 특수 적분 공식\n공식 ID: linear_factor_special_integral\n역할: corollary\nLaTeX: \\int\\frac{dx}{x^2-a^2}=\\frac{1}{2a}\\ln\\left|\\frac{x-a}{x+a}\\right|+C\nCAS 표현: 1/(2*a)*log(Abs((x-a)/(x+a)))",
+      "token_count": 289,
+      "content_hash": "63c0b0bed2b22e98f0138f5448e091848c9d9c1c79b2a2cf4e65e3190f766688",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: proper_fraction_required\n설명: 진분수(deg R<deg Q)여야 부분분수 분해가 바로 적용되며, 가분수는 먼저 다항식 나눗셈을 해야 한다.\n검증 규칙: deg_R less_than deg_Q\n\n조건 ID: irreducible_quadratic_discriminant\n설명: 경우 III·IV의 이차인수 ax²+bx+c는 기약(판별식 b²-4ac<0)이어야 한다.\n검증 규칙: discriminant less_than 0",
+      "token_count": 171,
+      "content_hash": "4d9791029a370593d6e6a7dd0024bf6470aef675e2369a925da964db60faf20a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: coefficient_determination_methods\n설명: 계수 A,B,C,...를 구하는 두 방법: (1) 양변의 다항식 계수를 비교해 연립방정식을 세우는 방법, (2) 분모를 0으로 만드는 x값을 대입해 일부 항을 소거하는 방법.\n\n성질 ID: quadratic_case_splits_log_and_arctan\n설명: 경우 III·IV의 이차인수 항은 분모를 완전제곱식으로 고친 뒤 치환하면 로그함수 항과 tan⁻¹ 항으로 나뉘어 적분된다.\n\n성질 ID: sometimes_direct_substitution_simpler\n설명: 부분분수로 분해하지 않고 직접 치환하는 것이 더 쉬운 경우도 있다(예: ∫(x²+1)/(x(x²+3))dx는 u=x³+3x가 더 간단).",
+      "token_count": 253,
+      "content_hash": "12fe24fa8e4fb1474cca53ea4e40c0b041a5434a1d1bef6bf74af2eff2a81a3a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 로그함수의 도함수와 로그 미분법 (calculus.logarithmic_derivative, 중요도: recommended)\n- 역함수의 미분법과 역삼각함수의 도함수 (calculus.inverse_trig_derivatives, 중요도: recommended)\n\n학습 목표 ID: decompose_rational_function\n행동 동사: transform\n목표: 유리함수를 경우에 맞는 부분분수 형태로 분해한다.\n\n학습 목표 ID: solve_for_coefficients\n행동 동사: calculate\n목표: 계수비교법 또는 대입법으로 부분분수의 미정계수를 구한다.\n\n학습 목표 ID: integrate_partial_fractions\n행동 동사: calculate\n목표: 분해된 부분분수를 각각 적분해 원래 유리함수의 원시함수를 구한다.",
+      "token_count": 240,
+      "content_hash": "a3afaee3026cec41227a0befa5fb4eb4c9fc1d75fffe0e7de9d5d0b919b462d6",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 가분수 확인 없이 바로 분해 시도\n오개념 ID: calculus.partial_fractions.skip_improper_check\n설명: 분자 차수가 분모 차수 이상인데도 다항식 나눗셈 없이 바로 부분분수 분해를 적용한다.\n진단 태그: skip_polynomial_division_before_partial_fractions\n피드백: 부분분수 분해는 진분수에서만 바로 적용된다. 가분수는 먼저 다항식 나눗셈으로 몫과 나머지를 분리해야 한다.\n\n오개념: 중복 인수에 비중복 형태 적용\n오개념 ID: calculus.partial_fractions.wrong_case_for_repeated_factor\n설명: (x-1)² 같은 중복된 일차인수에 A/(x-1) 하나의 항만 배정하고 A/(x-1)²을 빠뜨린다.\n진단 태그: missing_repeated_factor_terms\n피드백: r번 중복된 일차인수는 A_1/(ax+b)부터 A_r/(ax+b)^r까지 r개의 항을 모두 포함해야 한다.",
+      "token_count": 316,
+      "content_hash": "beb41f923300624cf01ac537e192db9ac8db91aa0985ddfcbca413a3b1d7a92c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.partial_fractions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분분수에 의한 유리함수의 적분",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분분수에 의한 유리함수의 적분\n개념 ID: calculus.partial_fractions\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: partial_fraction_decomposition, partial_fraction_integration\n지원 정답 유형: expression\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence",
+      "token_count": 103,
+      "content_hash": "04e13cbc9b9ff2d3aeff4ba05ce39b0a39eb652fd2b5e9665b99f46f814a37fd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

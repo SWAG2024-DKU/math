@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.multivariate_distributions.continuous_convolution",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_09_multivariate_distributions",
+  "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.continuous_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 독립 연속확률변수 합의 합성곱\n개념 ID: ps.multivariate_distributions.continuous_convolution\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 독립 연속확률변수 X,Y의 합의 밀도를 적분 합성곱으로 구한다.\n검색 태그: multivariate_distributions, sum_convolution, probability, continuous_convolution",
+      "token_count": 108,
+      "content_hash": "d1f973c5a4804b161494c91322131305ab223d5360759da0f7ea252d6d7039fe",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.continuous_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 독립 연속확률변수 합의 합성곱\n개념 ID: ps.multivariate_distributions.continuous_convolution\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 확률밀도함수\n공식 ID: ps.multivariate_distributions.continuous_convolution.formula_01\n역할: density\nLaTeX: f_{X+Y}(z)=\\int_{-\\infty}^{\\infty}f_X(x)f_Y(z-x)\\,dx",
+      "token_count": 144,
+      "content_hash": "9f0ad4d9f6a0a8d137872682adee912a5ce369830de3bc2a7ed539897ae19b3c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.continuous_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 독립 연속확률변수 합의 합성곱\n개념 ID: ps.multivariate_distributions.continuous_convolution\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.multivariate_distributions.continuous_convolution.condition_01\n설명: $X$와 $Y$는 독립이어야 한다.\n검증 규칙: random_variables_independent equals 참\n\n조건 ID: ps.multivariate_distributions.continuous_convolution.condition_02\n설명: $X$와 $Y$의 밀도가 존재하고 적분이 정의되어야 한다.\n검증 규칙: continuous_convolution_integral_well_defined equals 참",
+      "token_count": 176,
+      "content_hash": "3a8d53da5ee62dedeae87b2e1daf98230abb1f3b6f0a55d95c5c554ae35a5a7c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.continuous_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 독립 연속확률변수 합의 합성곱\n개념 ID: ps.multivariate_distributions.continuous_convolution\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.multivariate_distributions.continuous_convolution.property_01\n설명: 이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다.",
+      "token_count": 114,
+      "content_hash": "e365a9a0bd290f7973398607a640aa8cdad924a5d22c5988c39a092c7621c780",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.continuous_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 독립 연속확률변수 합의 합성곱\n개념 ID: ps.multivariate_distributions.continuous_convolution\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 적분, 독립 (calculus.integral, 중요도: required)\n\n관련 개념:\n- ps.multivariate_distributions.discrete_convolution\n\n학습 목표 ID: ps.multivariate_distributions.continuous_convolution.objective_01\n행동 동사: identify\n목표: 독립 연속확률변수 합의 합성곱의 정의, 공식과 적용 조건을 식별한다.\n\n학습 목표 ID: ps.multivariate_distributions.continuous_convolution.objective_02\n행동 동사: apply\n목표: 독립 연속확률변수 합의 합성곱의 정의, 공식과 적용 조건을 적용한다.\n\n학습 목표 ID: ps.multivariate_distributions.continuous_convolution.objective_03\n행동 동사: interpret\n목표: 독립 연속확률변수 합의 합성곱의 정의, 공식과 적용 조건을 해석한다.",
+      "token_count": 263,
+      "content_hash": "962b240a113831b5912215f38a1f3eb062d5ac8baf28946c29814a8a216af50f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.continuous_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "독립 연속확률변수 합의 합성곱",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 독립 연속확률변수 합의 합성곱\n개념 ID: ps.multivariate_distributions.continuous_convolution\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 169,
+      "content_hash": "e2823f87330d4da06301171316be90602ebb85bc0dad0fee59665cd8679bab61",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

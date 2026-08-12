@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.matrix.rref",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_01_matrix_algebra",
+  "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: REF 행렬을 추가 소거하여 모든 피봇을 1로, 피봇 열의 나머지 원소를 0으로 만든 RREF를 통해 해의 존재성을 최종 판정한다.\n검색 태그: rref, consistency, gauss_jordan",
+      "token_count": 116,
+      "content_hash": "98f0299b9f8fefbb211274a5d4b666ea700bf425990d2b54af9d4671d03a6a8b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 해가 없음 판정 조건\n공식 ID: inconsistent_condition\n역할: condition\nLaTeX: [0 \\ 0 \\ \\cdots \\ 0 \\mid d] \\quad (d \\neq 0)\nCAS 표현: Eq(0, d) # where d != 0 implies False",
+      "token_count": 133,
+      "content_hash": "c71e3f75ea20caab34ae8b7f16084f820ea6595ad0f34b9cb53167512425fc37",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: scan_augmented_column\n설명: 해의 존재 유무 판정 시 반드시 첨가행렬의 마지막 열까지 피봇 존재 여부를 스캔해야 한다.\n검증 규칙: check_last_column_pivot equals 참",
+      "token_count": 121,
+      "content_hash": "4ae79d172007c6b84f5bfd17bc52d534834dbf83156e2e9015d69b4b5fd1f587",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: rref_uniqueness\n설명: 임의의 행렬에 대해 RREF 결과물은 단 하나로 유일(Unique)하다.",
+      "token_count": 95,
+      "content_hash": "d4c9ba00057bd8e198944e9d449be49fff4d4e88618b3e7fe24bc2e90ee927a5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 행사다리꼴(REF) (la.matrix.ero_ref, 중요도: required)\n\n관련 개념:\n- la.matrix.parametric_solution\n\n학습 목표 ID: compute_rref\n행동 동사: calculate\n목표: 주어진 행렬을 RREF로 변환한다.\n\n학습 목표 ID: determine_consistency\n행동 동사: evaluate\n목표: RREF를 통해 선형방정식계의 해 존재 여부를 판정한다.",
+      "token_count": 172,
+      "content_hash": "5421d9a5553260d5bc406113780386cf947660efeb723264a31f12b50d205088",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: REF와 RREF의 유일성 혼동\n오개념 ID: la.matrix.rref.ref_rref_uniqueness\n설명: REF는 여러 개 존재할 수 있으나 RREF는 유일하다는 성질을 구분하지 못한다.\n진단 태그: rref_uniqueness_confusion\n피드백: 어떤 연산 순서를 거치든 동일 행렬의 RREF는 유일하게 결정됩니다.\n\n오개념: 영행(Zero row)과 해의 부존재 오판\n오개념 ID: la.matrix.rref.zero_row_inconsistency\n설명: 계수행렬의 영행 발생과 첨가행렬 마지막 열의 불능 조건을 혼동하여 해를 잘못 판정한다.\n진단 태그: zero_row_consistency_misjudgment\n피드백: 계수행렬에 영행이 생겼더라도 마지막 열이 0이면 불능이 아니며, 마지막 열이 0이 아니어야 해가 없습니다.",
+      "token_count": 302,
+      "content_hash": "c3aa0f81a7ba926ba747e24ddc5a6246f1cfa278a22b6fa8ee3c8d2a70ef6b66",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.rref",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "기약행사다리꼴(RREF)과 해의 형태 판정",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 기약행사다리꼴(RREF)과 해의 형태 판정\n개념 ID: la.matrix.rref\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: rref_calculation, consistency_check\n지원 정답 유형: matrix, single_choice\n난이도 범위: 2 ~ 4\n권장 검증기: rref_form_check, consistency_theorem_check",
+      "token_count": 121,
+      "content_hash": "e5e4905eb225d2bf97709fa4d4142f67fd367c3579a0f6fecb63edac4c4e3622",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

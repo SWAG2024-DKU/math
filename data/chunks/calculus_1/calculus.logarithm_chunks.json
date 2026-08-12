@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.logarithm",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch01_functions_and_models",
+  "concept_name_ko": "로그함수와 로그법칙",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: b>0, b≠1일 때 지수함수 f(x)=b^x의 역함수가 로그함수 log_b x이며, 정의역은 (0,∞), 치역은 실수 전체다. 밑이 e인 로그를 자연로그라 하고 ln x로 쓴다.\n검색 태그: logarithmic_function, log_laws, natural_log",
+      "token_count": 137,
+      "content_hash": "08d72c88f4801a190a3ab1cb8c7e77265f462b02c64e9f9b903b01f6096cac57",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 로그의 정의\n공식 ID: log_definition\n역할: definition\nLaTeX: \\log_bx=y\\iff b^y=x\nCAS 표현: Eq(log(x, b), y)\n\n공식명: 로그 소거식\n공식 ID: log_cancellation\n역할: property\nLaTeX: \\log_b(b^x)=x\\ (x\\in\\mathbb{R}),\\qquad b^{\\log_bx}=x\\ (x>0)\nCAS 표현: log(b**x, b) - x\n\n공식명: 로그법칙\n공식 ID: log_laws\n역할: property\nLaTeX: \\log_b(xy)=\\log_bx+\\log_by,\\quad\\log_b\\left(\\frac{x}{y}\\right)=\\log_bx-\\log_by,\\quad\\log_b(x^r)=r\\log_bx\nCAS 표현: log(x*y, b) - (log(x,b)+log(y,b))\n\n공식명: 자연로그\n공식 ID: natural_log\n역할: definition\nLaTeX: \\ln x=y\\iff e^y=x,\\qquad\\ln(e^x)=x,\\qquad e^{\\ln x}=x,\\qquad\\ln e=1\nCAS 표현: log(x)",
+      "token_count": 369,
+      "content_hash": "2000f670511d9ce50e1d374bc98ab8b5514cfd53e0d9222d1ce2a9ffe804b547",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 밑변환 공식\n공식 ID: change_of_base\n역할: transformation\nLaTeX: \\log_bx=\\frac{\\ln x}{\\ln b}\nCAS 표현: log(x)/log(b)",
+      "token_count": 101,
+      "content_hash": "cc112ed98483b6898469eb59345f441a7ea3dcae35994cd115ac286bebe00039",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: domain_positive\n설명: log_b x는 x>0에서만 정의된다.\n검증 규칙: x greater_than 0\n\n조건 ID: laws_require_positive_args\n설명: 로그법칙은 x, y가 모두 양수일 때 성립한다.\n검증 규칙: arguments_positive equals 참",
+      "token_count": 126,
+      "content_hash": "f9a028166c7af3c3355f010503914dc5ebbea146f963d73e7a86b434147983ab",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: growth_rate\n설명: ln x는 (0,∞)에서 증가하지만 x>1일 때 매우 천천히 증가하며, x의 어떤 양의 제곱근함수보다도 느리게 증가한다.",
+      "token_count": 97,
+      "content_hash": "04727f78ccd0b11a24eb65222382a870cc575c29546b657c69ea09872d1877b3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 지수함수 (calculus.exponential, 중요도: required)\n- 일대일함수와 역함수 (calculus.one_to_one_and_inverse_function, 중요도: required)\n\n학습 목표 ID: apply_log_laws\n행동 동사: apply\n목표: 로그법칙을 이용해 로그식을 전개하거나 정리한다.\n\n학습 목표 ID: convert_base\n행동 동사: transform\n목표: 밑변환 공식으로 다른 밑의 로그를 자연로그로 바꾼다.\n\n학습 목표 ID: distinguish_natural_common_log\n행동 동사: distinguish\n목표: 자연로그(ln, 밑 e)와 상용로그(log, 밑 10)를 구분한다.",
+      "token_count": 218,
+      "content_hash": "bbd78e9a16cd0c5f90ef0a9d1b98e77bdb18d8da75399dcfc582b604c633690e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 자연로그와 상용로그 혼동\n오개념 ID: calculus.log.natural_vs_common\n설명: ln x(밑 e)와 log x(밑 10, 상용로그)를 같은 것으로 혼동한다.\n진단 태그: confuse_natural_and_common_log\n피드백: ln x=log_e x이고, log x는 보통 상용로그(밑 10)를 가리키는 별도의 표기다.\n\n오개념: 합의 로그를 로그의 합으로 오전개\n오개념 ID: calculus.log.sum_argument_error\n설명: log_b(x+y)를 log_b x+log_b y로 잘못 전개한다.\n진단 태그: expand_log_of_sum_as_sum_of_logs\n피드백: 로그법칙은 곱·몫·거듭제곱에 대해서만 성립하며, 합에는 적용되지 않는다.",
+      "token_count": 271,
+      "content_hash": "3c94d0a82d32e3f820cc8644c3cf85ad3a15142c9cfb8f31b4badf96e95074ec",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithm",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "로그함수와 로그법칙",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 로그함수와 로그법칙\n개념 ID: calculus.logarithm\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: log_law_application, change_of_base, natural_vs_common_log\n지원 정답 유형: expression, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence, domain_check",
+      "token_count": 112,
+      "content_hash": "4bc15b35e40061ec2df4404102de1236847a000e4b3906122cac93fb03d695ca",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

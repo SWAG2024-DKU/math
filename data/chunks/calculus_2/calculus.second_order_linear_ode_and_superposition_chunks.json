@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.second_order_linear_ode_and_superposition",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+  "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: a(x)y''+b(x)y'+c(x)y=g(x)(a(x)≠0) 형태를 이계 선형 미분방정식이라 하며, g=0이면 동차, g≠0이면 비동차다. 동차방정식의 두 해 y1,y2의 임의의 선형결합도 해이며(중첩원리), Wronskian W=y1y2'-y2y1'이 어떤 점에서 0이 아니면 두 해는 선형독립이고 일반해는 y=c1y1+c2y2이다.\n검색 태그: second_order_ode, superposition_principle, wronskian",
+      "token_count": 226,
+      "content_hash": "9ec96ec18e57a798cb98bbe67a1d8466f071814747bc8f5f2c47762db8730582",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 이계 선형 미분방정식\n공식 ID: second_order_linear_ode\n역할: definition\nLaTeX: a(x)y''+b(x)y'+c(x)y=g(x)\\quad(a(x)\\neq0)\nCAS 표현: Eq(a(x)*diff(y,x,2)+b(x)*diff(y,x)+c(x)*y, g(x))\n\n공식명: 중첩원리\n공식 ID: superposition_principle\n역할: theorem\nLaTeX: y_1,y_2\\text{가 동차방정식의 해}\\implies y=c_1y_1+c_2y_2\\text{도 해}\nCAS 표현: c1*y1+c2*y2\n\n공식명: Wronskian과 선형독립\n공식 ID: wronskian\n역할: test\nLaTeX: W(y_1,y_2)=y_1y_2'-y_2y_1'\\neq0\\implies y_1,y_2\\text{ 선형독립}\nCAS 표현: y1*diff(y2,x)-y2*diff(y1,x)",
+      "token_count": 343,
+      "content_hash": "a24c6f32cfa48f64e93bfee1992ed13e4b0781e6daad51b4cedd2bbbc79ed219",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 동차방정식의 일반해\n공식 ID: homogeneous_general_solution\n역할: theorem\nLaTeX: y=c_1y_1+c_2y_2\\quad(y_1,y_2\\text{ 선형독립})\nCAS 표현: c1*y1(x)+c2*y2(x)",
+      "token_count": 144,
+      "content_hash": "3bb9fb862ef14ec36230268ad1c80cfdfb04520007808d846ae576988a065e61",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: linear_independence_def\n설명: y1, y2가 구간에서 선형독립이라는 것은 c1y1+c2y2=0이 모든 x에서 성립할 때 c1=c2=0만 가능하다는 뜻이다.\n검증 규칙: c1y1_plus_c2y2_zero_implies_c1_c2_zero equals 참",
+      "token_count": 156,
+      "content_hash": "1dac7342abb022ee455221a13f1c22277e7bf96111e8446b94765514f3455fac",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: coefficients_may_be_functions\n설명: a(x), b(x), c(x), g(x)는 모두 x의 함수일 수 있으며, 이들이 전부 상수이면 상수계수 방정식이 된다.",
+      "token_count": 125,
+      "content_hash": "c64f83128c4388822629f3bc9e8c794cf666e14778578cf5cd2f0445a18bfef3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 고계도함수 (calculus.higher_order_derivatives, 중요도: required)\n\n관련 개념:\n- calculus.constant_coefficient_homogeneous_ode\n\n학습 목표 ID: classify_homogeneous_nonhomogeneous\n행동 동사: classify\n목표: 이계 선형방정식을 동차·비동차로 분류한다.\n\n학습 목표 ID: verify_linear_independence_via_wronskian\n행동 동사: verify\n목표: Wronskian으로 두 해의 선형독립 여부를 판정한다.",
+      "token_count": 208,
+      "content_hash": "afc625f8317ec48deaa36d073357e620c3de8562224df30e04a487be0ad90888",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 비동차방정식에도 중첩원리를 그대로 적용\n오개념 ID: calculus.second_order_linear.superposition_for_nonhomogeneous\n설명: 비동차방정식의 두 해의 선형결합도 항상 해라고 착각한다.\n진단 태그: apply_superposition_to_nonhomogeneous_equation\n피드백: 중첩원리는 동차방정식의 해에만 성립한다. 비동차방정식은 일반해가 y=yc+yp 구조를 가지며 단순 선형결합으로 닫혀있지 않다.",
+      "token_count": 214,
+      "content_hash": "2e4d7e8d3d1c635dae46896fe53f36387955f18f2e4cb2f9cde893651f6225ab",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "이계 선형 미분방정식과 중첩원리",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 이계 선형 미분방정식과 중첩원리\n개념 ID: calculus.second_order_linear_ode_and_superposition\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: homogeneous_classification, wronskian_linear_independence_check\n지원 정답 유형: classification, boolean\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence",
+      "token_count": 128,
+      "content_hash": "c6e035dfb04e4904c09526e7319b36ca55ac70d4e73d079befd3f83f98d81c3e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.method_of_undetermined_coefficients",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_02_higher_order_linear_odes",
+  "concept_name_ko": "미정계수법과 공진",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 우변의 함수형에 맞는 특수해 형태를 가정하고 계수를 구하는 방법이다.\n검색 태그: undetermined_coefficients, resonance, particular_solution",
+      "token_count": 104,
+      "content_hash": "6c471b1ca785e5c0a0026fb23bbc1c475e7e771a63ec422164e75ce9a76c1684",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 공진 시 특수해 보정\n공식 ID: resonance_adjustment\n역할: formula\nLaTeX: y_p=x^sY(x)\nCAS 표현: Eq(y_p, x**s * Y(x))",
+      "token_count": 117,
+      "content_hash": "b072cf2a7efd214dc832e4764883576d04787ceb210898b52f8c4724b553a0de",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: constant_coefficient_special_rhs\n설명: 상수계수 선형 비동차방정식이며 우변이 다항식, 지수함수, 사인·코사인의 유한 조합일 때 적합하다.\n검증 규칙: constant_coefficient_and_closed_rhs equals 참",
+      "token_count": 142,
+      "content_hash": "6b967e5da7c9af658ca8c2d61343ac325ca817d85a5bd95a7a8e82492272f743",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: resonance_multiplicity\n설명: 가정형이 동차해와 겹치면 대응 특성근의 중복도만큼 x를 곱한다.",
+      "token_count": 100,
+      "content_hash": "85d5748789a2e39978933fa63750b2b8f1f834f1f99248ffb80f97ea5f4e6550",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 특성방정식 (em.ode.constant_coefficient_homogeneous, 중요도: required)\n- 다항식·지수·삼각함수 미분 (calculus.derivative, 중요도: required)\n\n관련 개념:\n- em.ode.variation_of_parameters\n\n학습 목표 ID: apply_undetermined_coefficients\n행동 동사: solve\n목표: 미정계수법을 이용하여 비동차방정식의 특수해를 구한다.",
+      "token_count": 184,
+      "content_hash": "36d947d8a0eea7efec71b16da60cec0c759f2812ee71dc8974ffe94744c5844c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 공진(중복) 시 x 곱하기 누락\n오개념 ID: em.ode.method_of_undetermined_coefficients.resonance_omission\n설명: 가정한 특수해가 동차해와 겹치는데도 x^s를 곱하지 않고 그대로 대입한다.\n진단 태그: missing_resonance_factor\n피드백: 특수해 가정이 동차해와 중복되면 특성근의 중복도만큼 x^s를 곱해주어야 합니다.",
+      "token_count": 192,
+      "content_hash": "84ea2dacf3de29e3993af71d8e21a451cf9dc402e90655b317f71908e113f022",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.method_of_undetermined_coefficients",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "미정계수법과 공진",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 미정계수법과 공진\n개념 ID: em.ode.method_of_undetermined_coefficients\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: undetermined_coefficients_solving\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: ode_solution_check",
+      "token_count": 109,
+      "content_hash": "deba02acb06b617434fe7ffce8a330e396ae7f9c6e38a86d91d8bc7051f5a25e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

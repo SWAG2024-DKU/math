@@ -1,0 +1,91 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.random_variables.pgf_derivatives",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_06_random_variables",
+  "concept_name_ko": "확률생성함수의 도함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.pgf_derivatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수의 도함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수의 도함수\n개념 ID: ps.random_variables.pgf_derivatives\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 비음수 정수값 확률변수의 PGF가 $s=1$ 근방에서 미분 가능하면 $G_X'(1)=E[X]$ $G_X''(1)=E[X(X-1)]$ 따라서 $\\operatorname{Var}(X) =G_X''(1)+G_X'(1)-[G_X'(1)]^2$ 이다.\n검색 태그: random_variables, pgf_derivatives, probability",
+      "token_count": 166,
+      "content_hash": "8cc240dd96d7c5b984aa72c730a522289d96d40a842690ccd1f5e387a50c3e44",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.pgf_derivatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수의 도함수",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수의 도함수\n개념 ID: ps.random_variables.pgf_derivatives\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.random_variables.pgf_derivatives.property_01\n설명: 서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다.",
+      "token_count": 106,
+      "content_hash": "a7276d014797a0426a34b351723df70b08be67daaa56cb8bba2613fea8cfc7c6",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.pgf_derivatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수의 도함수",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수의 도함수\n개념 ID: ps.random_variables.pgf_derivatives\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률 공리 (ps.probability_basics.probability_axioms, 중요도: required)\n- 함수 (math.functions, 중요도: required)\n- 합과 적분 (calculus.sum_integral, 중요도: recommended)\n\n관련 개념:\n- ps.random_variables.pgf_derivatives.f01\n- ps.random_variables.pgf_derivatives.f02\n- ps.random_variables.pgf_derivatives.f03\n- ps.random_variables.cdf_interval_probability\n- ps.random_variables.mixed_distribution\n\n학습 목표 ID: ps.random_variables.pgf_derivatives.objective_01\n행동 동사: identify\n목표: 확률생성함수의 도함수의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.random_variables.pgf_derivatives.objective_02\n행동 동사: apply\n목표: 확률생성함수의 도함수의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.random_variables.pgf_derivatives.objective_03\n행동 동사: interpret\n목표: 계산 결과를 확률생성함수의 도함수의 의미와 조건에 맞게 해석한다.",
+      "token_count": 368,
+      "content_hash": "0bcd23db03a39957ca2e5bb3966aa207110f5f4f595e2b71c64f43955f2e15c0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.pgf_derivatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수의 도함수",
+      "chunk_index": 3,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수의 도함수\n개념 ID: ps.random_variables.pgf_derivatives\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check\n생성 참고사항: 탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다.",
+      "token_count": 186,
+      "content_hash": "1a30994e7d0f2dad7b21eb53537b1d4b9d23362790b3c67148fac16f5819d71b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

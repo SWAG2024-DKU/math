@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.trigonometric_functions",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch01_functions_and_models",
+  "concept_name_ko": "삼각함수의 정의역·치역·주기",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: tan x=sin x/cos x이며, sin x와 cos x의 정의역은 실수 전체, 치역은 [-1,1], 주기는 2π다. tan x는 cos x=0인 점에서 정의되지 않고 치역은 실수 전체, 주기는 π다. 코시컨트·시컨트·코탄젠트는 각각 사인·코사인·탄젠트의 역수다.\n검색 태그: trigonometric_function, period, reciprocal_trig_function",
+      "token_count": 163,
+      "content_hash": "566ccd05b9631f7cf8955de9625da662551709139ebcf56dd75aaf2fbb798e11",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 탄젠트의 정의\n공식 ID: tan_definition\n역할: definition\nLaTeX: \\tan x=\\frac{\\sin x}{\\cos x}\nCAS 표현: sin(x)/cos(x)\n\n공식명: 사인·코사인의 주기성\n공식 ID: sin_cos_periodicity\n역할: property\nLaTeX: \\sin(x+2\\pi)=\\sin x,\\qquad\\cos(x+2\\pi)=\\cos x\nCAS 표현: Eq(sin(x+2*pi), sin(x))\n\n공식명: 코시컨트·시컨트·코탄젠트\n공식 ID: reciprocal_trig_functions\n역할: definition\nLaTeX: \\csc x=\\frac{1}{\\sin x},\\qquad\\sec x=\\frac{1}{\\cos x},\\qquad\\cot x=\\frac{1}{\\tan x}\nCAS 표현: 1/sin(x)",
+      "token_count": 272,
+      "content_hash": "88a2a8e069588d7392b8a0e1b2ad5cbed4769d9c15e463db4cb2992d4a1ece8a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: tan_undefined_at_cos_zero\n설명: tan x는 cos x=0인 점(±π/2, ±3π/2, ...)에서 정의되지 않는다.\n검증 규칙: cos_x not_equals 0",
+      "token_count": 109,
+      "content_hash": "36713836a35f87096d91c3f9a1b42312273419f3387bdf6bd2be494ecdcb07b5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: sin_cos_domain_range\n설명: sin x, cos x의 정의역은 (-∞,∞), 치역은 [-1,1]이다.\n\n성질 ID: tan_domain_range_period\n설명: tan x의 치역은 (-∞,∞)이고 주기는 π로, sin·cos의 주기 2π의 절반이다.",
+      "token_count": 135,
+      "content_hash": "4e01eb1e0f37e1bb5239863328616d3e6ab72ffc0f792ea5cdb0af690710a0fe",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 삼각함수 (algebra.trigonometric_functions, 중요도: required)\n\n관련 개념:\n- calculus.inverse_trig_function\n\n학습 목표 ID: determine_trig_domain_range_period\n행동 동사: identify\n목표: sin, cos, tan의 정의역·치역·주기를 파악한다.\n\n학습 목표 ID: evaluate_reciprocal_trig_functions\n행동 동사: calculate\n목표: csc, sec, cot 값을 sin, cos, tan의 역수로 계산한다.",
+      "token_count": 183,
+      "content_hash": "84d95c4ef5d263da4ad6589e29c0fbdc5d95a33ad62c953da8a920c48cd16325",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: tan의 정의역 제한 누락\n오개념 ID: calculus.trig_functions.tan_domain_oversight\n설명: tan x가 cos x=0인 점에서도 정의된다고 착각한다.\n진단 태그: ignore_tan_undefined_points\n피드백: tan x=sin x/cos x이므로 cos x=0인 점(±π/2, ±3π/2, ...)에서는 정의되지 않는다.\n\n오개념: tan의 주기를 sin·cos와 같은 2π로 착각\n오개념 ID: calculus.trig_functions.tan_period_confusion\n설명: tan x의 주기를 sin x, cos x와 같은 2π로 잘못 기억한다.\n진단 태그: confuse_tan_period_with_sin_cos_period\n피드백: tan x의 주기는 π이며, sin x·cos x의 주기 2π와 다르다.",
+      "token_count": 266,
+      "content_hash": "9cf0b1bddc3ed54c0691abf97063afaa6bbf5f59cd569732840783c1be0d20e6",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_functions",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch01_functions_and_models",
+      "concept_name_ko": "삼각함수의 정의역·치역·주기",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 함수와 모델\n개념: 삼각함수의 정의역·치역·주기\n개념 ID: calculus.trigonometric_functions\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: trig_domain_range_period_identification, reciprocal_trig_evaluation\n지원 정답 유형: interval, expression, scalar\n난이도 범위: 1 ~ 2\n권장 검증기: domain_check, symbolic_equivalence",
+      "token_count": 119,
+      "content_hash": "403cf460b5062c05fdf03352077531b231c1b861c9ecb2516cfbca3cdba5c7b5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

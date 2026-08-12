@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.arc_length",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch08_further_applications_of_integration",
+  "concept_name_ko": "호의 길이",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 곡선을 다각형 경로로 근사시킨 뒤 선분의 수를 늘려가는 극한으로 호의 길이를 정의한다. f'이 [a,b]에서 연속(매끄러움)이면 y=f(x)의 길이는 L=∫[a,b]√(1+[f'(x)]²)dx이다.\n검색 태그: arc_length",
+      "token_count": 134,
+      "content_hash": "630b499009bfdf00390d26a7fc2516e392a8cf4d160a8f5154beac2de6c9ca12",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 호의 길이의 정의\n공식 ID: arc_length_definition\n역할: definition\nLaTeX: L=\\lim_{n\\to\\infty}\\sum_{i=1}^n|P_{i-1}P_i|\nCAS 표현: limit(Sum(dist(P[i-1],P[i]), (i,1,n)), n, oo)\n\n공식명: 호의 길이 공식\n공식 ID: arc_length_formula\n역할: theorem\nLaTeX: L=\\int_a^b\\sqrt{1+[f'(x)]^2}\\,dx=\\int_a^b\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^2}\\,dx\nCAS 표현: Integral(sqrt(1+diff(f(x),x)**2), (x,a,b))\n\n공식명: 호의 길이 함수\n공식 ID: arc_length_function\n역할: definition\nLaTeX: s(x)=\\int_a^x\\sqrt{1+[f'(t)]^2}\\,dt,\\qquad\\frac{ds}{dx}=\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^2}\nCAS 표현: Integral(sqrt(1+diff(f(t),t)**2), (t,a,x))",
+      "token_count": 377,
+      "content_hash": "ca4bae2461800f36f38046fa04d4086550e4d374515fd76fe7ef9ea22a8f32b9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 미분 형태(대칭적 표현)\n공식 ID: differential_arc_length\n역할: notation\nLaTeX: ds=\\sqrt{1+\\left(\\frac{dy}{dx}\\right)^2}\\,dx,\\qquad(ds)^2=(dx)^2+(dy)^2\nCAS 표현: sqrt(1+(dy/dx)**2)*dx",
+      "token_count": 147,
+      "content_hash": "0a793a1dc11a0759f5643e2813b230e4a44951fe43fb868cfdfd77848bace96c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: f_prime_continuous_smooth\n설명: f(또는 f')이 [a,b]에서 연속이어야 한다. 이런 함수를 '매끄럽다'고 한다.\n검증 규칙: f_prime_continuous_on_a_b equals 참",
+      "token_count": 110,
+      "content_hash": "32de563b2299ca8f572c2b5204c5998f3f0e2966f9e70adfd85cfb6859018244",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: mvt_in_derivation\n설명: 공식 유도에는 평균값 정리를 각 부분구간 [x_{i-1},x_i]에 적용해 Δy_i=f'(x_i*)Δx로 근사하는 과정이 필요하다.\n\n성질 ID: rate_at_least_one\n설명: 호의 길이 함수 s(x)의 변화율 ds/dx는 항상 1 이상이며, 곡선의 기울기가 0일 때만 1이 된다(√(1+기울기²)≥1이므로).\n\n성질 ID: generalizes_circle_circumference\n설명: 원의 둘레는 내접 다각형 둘레의 극한으로 정의되며, 호의 길이 정의는 이 아이디어를 일반적인 곡선으로 확장한 것이다.",
+      "token_count": 224,
+      "content_hash": "c033abc69df3211af36fb5ac7b10634ea2a2e8a29ade97827e09770b6be8d343",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 롤의 정리와 평균값 정리 (calculus.rolles_theorem_and_mvt, 중요도: required)\n- 삼각치환 (calculus.trigonometric_substitution, 중요도: recommended)\n\n관련 개념:\n- calculus.surface_area_of_revolution\n\n학습 목표 ID: set_up_arc_length_integral\n행동 동사: construct\n목표: y=f(x) 또는 x=g(y)로 주어진 곡선의 호의 길이 적분을 세운다.\n\n학습 목표 ID: compute_arc_length\n행동 동사: calculate\n목표: 치환법·삼각치환을 이용해 호의 길이 적분을 계산한다.",
+      "token_count": 212,
+      "content_hash": "96857866d9526aed65732489f69d58cbfe98ba5cad1e691dd69fe18315e9306a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 도함수 자체를 적분한다고 착각\n오개념 ID: calculus.arc_length.integrate_derivative_directly\n설명: 호의 길이 공식의 피적분함수를 f'(x)로 착각해 기울기 자체를 적분한다.\n진단 태그: integrate_derivative_instead_of_arc_length_integrand\n피드백: 호의 길이 공식의 피적분함수는 f'(x)가 아니라 √(1+[f'(x)]²)이다.",
+      "token_count": 180,
+      "content_hash": "5668d162b86884cf80dda4d8039ff8702cb6659ddccbe3db7399233ba78f1875",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.arc_length",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch08_further_applications_of_integration",
+      "concept_name_ko": "호의 길이",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 추가 응용\n개념: 호의 길이\n개념 ID: calculus.arc_length\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: arc_length_setup, arc_length_calculation\n지원 정답 유형: scalar, expression\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence, numeric_tolerance",
+      "token_count": 106,
+      "content_hash": "0c66cbbf4047bb74fc1878efd11f4a3af2c18d76d9e6599c8b0eb29bdce275af",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

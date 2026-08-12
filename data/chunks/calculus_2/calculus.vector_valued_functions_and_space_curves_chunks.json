@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.vector_valued_functions_and_space_curves",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+  "concept_name_ko": "벡터값 함수와 공간곡선",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 실수 t에 벡터를 대응시키는 함수 r(t)=<f(t),g(t),h(t)>를 벡터값 함수라 하며, t가 증가할 때 점 (x(t),y(t),z(t))가 그리는 자취가 공간곡선이다. 정의역은 성분함수 정의역의 교집합이며, 극한·연속은 성분별로 정의된다.\n검색 태그: vector_valued_function, space_curve, helix",
+      "token_count": 182,
+      "content_hash": "451c9553d9943dc1be163c4c3bf541379706640ee1ad38d61d118ccbb6e8796e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 벡터값 함수의 정의\n공식 ID: vector_valued_function_def\n역할: definition\nLaTeX: \\mathbf{r}(t)=\\langle f(t),g(t),h(t)\\rangle=f(t)\\mathbf{i}+g(t)\\mathbf{j}+h(t)\\mathbf{k}\nCAS 표현: Matrix([f(t), g(t), h(t)])\n\n공식명: 벡터값 함수의 정의역\n공식 ID: vector_function_domain\n역할: definition\nLaTeX: \\operatorname{Dom}(\\mathbf{r})=\\operatorname{Dom}(f)\\cap\\operatorname{Dom}(g)\\cap\\operatorname{Dom}(h)\nCAS 표현: Dom(f).intersect(Dom(g)).intersect(Dom(h))\n\n공식명: 원형 나선\n공식 ID: helix_example\n역할: example\nLaTeX: \\mathbf{r}(t)=\\langle a\\cos t,a\\sin t,bt\\rangle\nCAS 표현: Matrix([a*cos(t), a*sin(t), b*t])",
+      "token_count": 346,
+      "content_hash": "7182640b0a1e5345a19490b02addf2a463445acd398aa98bc04b1ade21d6a1cd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 벡터값 함수의 극한\n공식 ID: vector_function_limit\n역할: definition\nLaTeX: \\lim_{t\\to a}\\mathbf{r}(t)=\\left\\langle\\lim_{t\\to a}f(t),\\lim_{t\\to a}g(t),\\lim_{t\\to a}h(t)\\right\\rangle\nCAS 표현: Matrix([limit(f(t),t,a), limit(g(t),t,a), limit(h(t),t,a)])",
+      "token_count": 195,
+      "content_hash": "32188d3bae201e4cb9e8683ebbd60083356379b585dfcae44e63877cb441f61c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: all_component_limits_must_exist\n설명: 각 성분의 극한이 모두 존재해야 벡터값 함수 전체의 극한이 존재한다.\n검증 규칙: all_component_limits_exist equals 참\n\n조건 ID: continuity_iff_component_continuity\n설명: r(t)가 t=a에서 연속이라는 것은 lim r(t)=r(a)라는 뜻이며, 이는 각 성분함수가 a에서 연속인 것과 동치다.\n검증 규칙: vector_continuity_equiv_component_continuity equals 참",
+      "token_count": 199,
+      "content_hash": "477004ba5866b9c6ec08a96f30ac672b7ecff48d53c684b6cb13ec74a0be58a1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: different_parametrization_effects\n설명: 같은 기하학적 곡선도 매개화가 달라지면 진행 방향, 이동 속도, 추적 횟수, 매개변수 범위가 달라질 수 있다.\n\n성질 ID: curve_intersection_needs_different_parameters\n설명: 두 곡선 r1(t), r2(s)의 교점은 r1(t)=r2(s)를 만족하는 t, s를 찾아 결정하며, 같은 공간점을 지나더라도 같은 시간·방향으로 통과하지 않을 수 있다.",
+      "token_count": 194,
+      "content_hash": "76dd6791576d38a06a35b354ee14e418cbc26b321e3c83cb5749b19fe0a88d10",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 3차원 공간의 좌표와 벡터 (calculus.vectors_in_3d_space, 중요도: required)\n\n관련 개념:\n- calculus.vector_derivative_and_tangent\n\n학습 목표 ID: determine_vector_function_domain\n행동 동사: calculate\n목표: 성분함수의 정의역 교집합으로 벡터값 함수의 정의역을 구한다.\n\n학습 목표 ID: sketch_space_curve\n행동 동사: represent\n목표: 벡터값 함수로부터 공간곡선(나선 등)의 개형을 파악한다.\n\n학습 목표 ID: find_curve_intersection\n행동 동사: calculate\n목표: 서로 다른 매개변수를 사용해 두 공간곡선의 교점을 찾는다.",
+      "token_count": 241,
+      "content_hash": "cded88e4c8528faebbc8bbbde2a3f9f2873c74e11e24518b9f0676c4519db1a1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 교점을 같은 매개변수로만 탐색\n오개념 ID: calculus.vector_function.same_parameter_for_intersection\n설명: 두 곡선의 교점을 구할 때 r1(t)=r2(t)처럼 같은 매개변수 t를 공유한다고 가정한다.\n진단 태그: assume_shared_parameter_for_curve_intersection\n피드백: 두 곡선이 같은 점을 지나더라도 서로 다른 시각(매개변수)에 지날 수 있으므로 r1(t)=r2(s)로 놓고 t, s를 각각 구해야 한다.",
+      "token_count": 218,
+      "content_hash": "42760396b4040f46900ad2e345fa35e78efa2b7b70df416af04c34c46eb804ea",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "벡터값 함수와 공간곡선",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: 벡터값 함수와 공간곡선\n개념 ID: calculus.vector_valued_functions_and_space_curves\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: vector_function_domain_calculation, space_curve_identification, curve_intersection_calculation\n지원 정답 유형: expression, vector, set\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence, domain_check",
+      "token_count": 138,
+      "content_hash": "785e56ade1b0be40c63035e7ee046dbf66f716d28a35e856f14807f3901a9172",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,1087 @@
+Chunk JSON 종합 검사 보고서
+======================================================================
+검사 파일 수: 1117
+검사 Chunk 수: 6617
+ERROR: 85
+WARNING: 50
+
+[1] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.infinite_limit_and_vertical_asymptote_chunks.json
+concept_id: calculus.infinite_limit_and_vertical_asymptote
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \lim_{x\to a}f(x)=\infty,\qquad\lim_{x\to a}f(x)=-\infty
+----------------------------------------------------------------------
+[2] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.infinite_limit_and_vertical_asymptote_chunks.json
+concept_id: calculus.infinite_limit_and_vertical_asymptote
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \lim_{x\to a^-}f(x)=\pm\infty,\qquad\lim_{x\to a^+}f(x)=\pm\infty
+----------------------------------------------------------------------
+[3] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.limit_at_infinity_and_horizontal_asymptote_chunks.json
+concept_id: calculus.limit_at_infinity_and_horizontal_asymptote
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \lim_{x\to\infty}f(x)=\pm\infty,\qquad\lim_{x\to-\infty}f(x)=\pm\infty
+----------------------------------------------------------------------
+[4] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.parametric_curves_chunks.json
+concept_id: calculus.parametric_curves
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: x=h+r\cos t,\qquad y=k+r\sin t,\qquad0\le t\le2\pi
+----------------------------------------------------------------------
+[5] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_arc_length_and_tangent_chunks.json
+concept_id: calculus.polar_arc_length_and_tangent
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: x=r\cos\theta=f(\theta)\cos\theta,\qquad y=r\sin\theta=f(\theta)\sin\theta
+----------------------------------------------------------------------
+[6] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_arc_length_and_tangent_chunks.json
+concept_id: calculus.polar_arc_length_and_tangent
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: L=\int_a^b\sqrt{r^2+\left(\frac{dr}{d\theta}\right)^2}\,d\theta
+----------------------------------------------------------------------
+[7] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_arc_length_and_tangent_chunks.json
+concept_id: calculus.polar_arc_length_and_tangent
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \frac{dy}{dx}=\tan\theta
+----------------------------------------------------------------------
+[8] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_area_chunks.json
+concept_id: calculus.polar_area
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: A=\tfrac12r^2\theta
+----------------------------------------------------------------------
+[9] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_area_chunks.json
+concept_id: calculus.polar_area
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: A=\int_a^b\tfrac12[f(\theta)]^2\,d\theta=\int_a^b\tfrac12r^2\,d\theta
+----------------------------------------------------------------------
+[10] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_area_chunks.json
+concept_id: calculus.polar_area
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 20
+문제 구간: LaTeX: A=\int_a^b\tfrac12\{[f(\theta)]^2-[g(\theta)]^2\}\,d\theta
+----------------------------------------------------------------------
+[11] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.polar_coordinates_chunks.json
+concept_id: calculus.polar_coordinates
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: x=r\cos\theta,\qquad y=r\sin\theta
+----------------------------------------------------------------------
+[12] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_1\calculus.trigonometric_substitution_chunks.json
+concept_id: calculus.trigonometric_substitution
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \sqrt{a^2-x^2}:x=a\sin\theta;\quad\sqrt{a^2+x^2}:x=a\tan\theta;\quad\sqrt{x^2-a^2}:x=a\sec\theta
+----------------------------------------------------------------------
+[13] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.common_maclaurin_series_chunks.json
+concept_id: calculus.common_maclaurin_series
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: e^x=\sum_{n=0}^\infty\frac{x^n}{n!},\qquad-\infty<x<\infty
+----------------------------------------------------------------------
+[14] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.common_maclaurin_series_chunks.json
+concept_id: calculus.common_maclaurin_series
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \sin x=\sum_{n=0}^\infty(-1)^n\frac{x^{2n+1}}{(2n+1)!},\qquad-\infty<x<\infty
+----------------------------------------------------------------------
+[15] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.common_maclaurin_series_chunks.json
+concept_id: calculus.common_maclaurin_series
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 20
+문제 구간: LaTeX: \cos x=\sum_{n=0}^\infty(-1)^n\frac{x^{2n}}{(2n)!},\qquad-\infty<x<\infty
+----------------------------------------------------------------------
+[16] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.cross_product_chunks.json
+concept_id: calculus.cross_product
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{u}\times\mathbf{v}=\langle u_2v_3-u_3v_2,\ u_3v_1-u_1v_3,\ u_1v_2-u_2v_1\rangle
+----------------------------------------------------------------------
+[17] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.cross_product_chunks.json
+concept_id: calculus.cross_product
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \|\mathbf{u}\times\mathbf{v}\|=\|\mathbf{u}\|\|\mathbf{v}\|\sin\theta
+----------------------------------------------------------------------
+[18] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.directional_derivative_and_gradient_chunks.json
+concept_id: calculus.directional_derivative_and_gradient
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \nabla f(x,y)=\langle f_x,f_y\rangle,\qquad\nabla f(x,y,z)=\langle f_x,f_y,f_z\rangle
+----------------------------------------------------------------------
+[19] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.directional_derivative_and_gradient_chunks.json
+concept_id: calculus.directional_derivative_and_gradient
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 20
+문제 구간: LaTeX: D_{\mathbf{u}}f=\nabla f\cdot\mathbf{u}=\|\nabla f\|\cos\theta
+----------------------------------------------------------------------
+[20] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.divergence_and_curl_chunks.json
+concept_id: calculus.divergence_and_curl
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \nabla\times\mathbf{F}=\langle R_y-Q_z,\ P_z-R_x,\ Q_x-P_y\rangle
+----------------------------------------------------------------------
+[21] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.dot_product_chunks.json
+concept_id: calculus.dot_product
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: W=\mathbf{F}\cdot\mathbf{D}=\|\mathbf{F}\|\|\mathbf{D}\|\cos\theta
+----------------------------------------------------------------------
+[22] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.double_integral_polar_chunks.json
+concept_id: calculus.double_integral_polar
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: dA=r\,dr\,d\theta
+----------------------------------------------------------------------
+[23] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.double_integral_polar_chunks.json
+concept_id: calculus.double_integral_polar
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \iint_Df(x,y)\,dA=\int_\alpha^\beta\int_{g_1(\theta)}^{g_2(\theta)}f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta
+----------------------------------------------------------------------
+[24] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.named_polar_curves_and_symmetry_chunks.json
+concept_id: calculus.named_polar_curves_and_symmetry
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 25
+문제 구간: LaTeX: r=a+b\theta
+----------------------------------------------------------------------
+[25] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.named_polar_curves_and_symmetry_chunks.json
+concept_id: calculus.named_polar_curves_and_symmetry
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \text{극축}:\theta\to-\theta;\quad\theta=\tfrac\pi2:\theta\to\pi-\theta;\quad\text{극}:r\to-r\text{ 또는 }\theta\to\theta+\pi
+----------------------------------------------------------------------
+[26] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.planes_in_space_chunks.json
+concept_id: calculus.planes_in_space
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: ax+by+cz=d,\qquad\mathbf{n}=\langle a,b,c\rangle
+----------------------------------------------------------------------
+[27] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.power_series_definition_and_convergence_chunks.json
+concept_id: calculus.power_series_definition_and_convergence
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \sum_{n=0}^\infty c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+\cdots
+----------------------------------------------------------------------
+[28] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.triple_integral_spherical_chunks.json
+concept_id: calculus.triple_integral_spherical
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+----------------------------------------------------------------------
+[29] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vector_derivative_and_tangent_chunks.json
+concept_id: calculus.vector_derivative_and_tangent
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{r}'(t)=\lim_{h\to0}\frac{\mathbf{r}(t+h)-\mathbf{r}(t)}{h}=\langle f'(t),g'(t),h'(t)\rangle
+----------------------------------------------------------------------
+[30] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vector_derivative_and_tangent_chunks.json
+concept_id: calculus.vector_derivative_and_tangent
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{r}^{(n)}(t)=\langle f^{(n)}(t),g^{(n)}(t),h^{(n)}(t)\rangle
+----------------------------------------------------------------------
+[31] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vector_fields_chunks.json
+concept_id: calculus.vector_fields
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{F}(x,y)=\langle P(x,y),Q(x,y)\rangle,\qquad\mathbf{F}(x,y,z)=\langle P,Q,R\rangle
+----------------------------------------------------------------------
+[32] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vector_integral_chunks.json
+concept_id: calculus.vector_integral
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \int_a^b\mathbf{r}(t)\,dt=\left\langle\int_a^bf\,dt,\int_a^bg\,dt,\int_a^bh\,dt\right\rangle
+----------------------------------------------------------------------
+[33] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vector_valued_functions_and_space_curves_chunks.json
+concept_id: calculus.vector_valued_functions_and_space_curves
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 20
+문제 구간: LaTeX: \mathbf{r}(t)=\langle a\cos t,a\sin t,bt\rangle
+----------------------------------------------------------------------
+[34] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vector_valued_functions_and_space_curves_chunks.json
+concept_id: calculus.vector_valued_functions_and_space_curves
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \lim_{t\to a}\mathbf{r}(t)=\left\langle\lim_{t\to a}f(t),\lim_{t\to a}g(t),\lim_{t\to a}h(t)\right\rangle
+----------------------------------------------------------------------
+[35] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vectors_in_3d_space_chunks.json
+concept_id: calculus.vectors_in_3d_space
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{i}=\langle1,0,0\rangle,\ \mathbf{j}=\langle0,1,0\rangle,\ \mathbf{k}=\langle0,0,1\rangle
+----------------------------------------------------------------------
+[36] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vectors_in_plane_chunks.json
+concept_id: calculus.vectors_in_plane
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \overrightarrow{PQ}=\langle x_2-x_1,\ y_2-y_1\rangle
+----------------------------------------------------------------------
+[37] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vectors_in_plane_chunks.json
+concept_id: calculus.vectors_in_plane
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{u}\pm\mathbf{v}=\langle u_1\pm v_1,u_2\pm v_2\rangle,\qquad c\mathbf{v}=\langle cv_1,cv_2\rangle
+----------------------------------------------------------------------
+[38] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\calculus_2\calculus.vectors_in_plane_chunks.json
+concept_id: calculus.vectors_in_plane
+chunk_index: 2
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \mathbf{v}=\|\mathbf{v}\|\langle\cos\theta,\sin\theta\rangle
+----------------------------------------------------------------------
+[39] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.complex.euler_demoivre_chunks.json
+concept_id: em.complex.euler_demoivre
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: e^{i\theta}=\cos\theta+i\sin\theta
+----------------------------------------------------------------------
+[40] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.complex.euler_demoivre_chunks.json
+concept_id: em.complex.euler_demoivre
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: (\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta
+----------------------------------------------------------------------
+[41] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.fourier.transform_and_inverse_chunks.json
+concept_id: em.fourier.transform_and_inverse
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \hat{f}(\omega)e^{i\omega t}\,d\omega
+----------------------------------------------------------------------
+[42] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.laplace.convolution_chunks.json
+concept_id: em.laplace.convolution
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: (f*g)(t)=\int_0^t f(\tau)g(t-\tau)\,d\tau
+----------------------------------------------------------------------
+[43] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.ode.complex_eigenvalues_chunks.json
+concept_id: em.ode.complex_eigenvalues
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \lambda=\alpha\pm i\beta
+----------------------------------------------------------------------
+[44] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.ode.matrix_exponential_chunks.json
+concept_id: em.ode.matrix_exponential
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: e^{At} = I + At + \frac{A^2t^2}{2!} + \cdots
+----------------------------------------------------------------------
+[45] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.ode.nonhomogeneous_systems_chunks.json
+concept_id: em.ode.nonhomogeneous_systems
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \mathbf{x}(t)=e^{At}\mathbf{x}_0+\int_0^t e^{A(t-\tau)}\mathbf{g}(\tau)\,d\tau
+----------------------------------------------------------------------
+[46] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.pde.separation_of_variables_chunks.json
+concept_id: em.pde.separation_of_variables
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: \frac{T'}{\alpha^2T} = \frac{X''}{X} = -\lambda
+----------------------------------------------------------------------
+[47] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.vector.conservative_fields_potentials_chunks.json
+concept_id: em.vector.conservative_fields_potentials
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \mathbf{F}=\nabla\phi
+----------------------------------------------------------------------
+[48] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\engineering_mathematics\em.vector.cylindrical_spherical_coordinates_chunks.json
+concept_id: em.vector.cylindrical_spherical_coordinates
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: x=\rho\sin\phi\cos\theta,\quad y=\rho\sin\phi\sin\theta,\quad z=\rho\cos\phi,\quad dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+----------------------------------------------------------------------
+[49] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\linear_algebra\la.ortho.complement_chunks.json
+concept_id: la.ortho.complement
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 15
+문제 구간: LaTeX: N(A) = C(A^T)^\perp, \quad N(A^T) = C(A)^\perp
+----------------------------------------------------------------------
+[50] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.anova.ancova_model_chunks.json
+concept_id: ps.anova.ancova_model
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: Y=\mu+\tau_i+\beta X+\varepsilon
+----------------------------------------------------------------------
+[51] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.contrast_definition_estimate.f01_constraint_chunks.json
+concept_id: ps.anova.contrast_definition_estimate.f01_constraint
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $\sum_{i=1}^{a}c_i=0$
+----------------------------------------------------------------------
+[52] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.exact_reference_robust_alternatives_chunks.json
+concept_id: ps.anova.exact_reference_robust_alternatives
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 18
+문제 구간: 설명: 관련 canonical 수식: $F=\frac{MS_A}{MS_E}$
+----------------------------------------------------------------------
+[53] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.mixed_effects_model_chunks.json
+concept_id: ps.anova.mixed_effects_model
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $Y_{ij}=X_{ij}\beta+Z_{ij}b_i+\varepsilon_{ij}$
+----------------------------------------------------------------------
+[54] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.oneway_f_test_chunks.json
+concept_id: ps.anova.oneway_f_test
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 비활성 개요에 보존한 수학적 관계: $F=\frac{MS_A}{MS_E}$
+----------------------------------------------------------------------
+[55] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.partial_effect_size_chunks.json
+concept_id: ps.anova.partial_effect_size
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $\eta_p^2 = \frac{SS_{\mathrm{effect}}} {SS_{\mathrm{effect}}+SS_E}$
+----------------------------------------------------------------------
+[56] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.post_hoc_selection_chunks.json
+concept_id: ps.anova.post_hoc_selection
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: Tukey HSD: 모든 쌍별 비교, 등분산 가정 Tukey--Kramer: 집단별 표본크기가 다른 쌍별 비교 Games--Howell: 등분산 가정이 어려운 쌍별 비교 Dunnett: 여러 처리집단을 하나의 대조군과 비교 Scheffé: 임의의 대비를 폭넓게 보호하는 보수적 방법
+----------------------------------------------------------------------
+[57] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.anova.welch_anova_statistic_chunks.json
+concept_id: ps.anova.welch_anova_statistic
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 집단 수를 $a$, 집단 $i$의 표본평균과 표본분산을 $\bar Y_i,s_i^2$라 하자. 각 집단에서 $n_i>1$이고 $s_i^2>0$이어야 아래 가중치가 정의된다. 집단 내 표본분산이 0이면 일반적인 Welch 통계량을 그대로 계산할 수 없으므로 자료와 모형을 별도로 점검한다. 이제
+----------------------------------------------------------------------
+[58] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.categorical_analysis.cohen_kappa_chunks.json
+concept_id: ps.categorical_analysis.cohen_kappa
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $\kappa=\frac{p_o-p_e}{1-p_e}$
+----------------------------------------------------------------------
+[59] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.categorical_analysis.mantel_haenszel_or_chunks.json
+concept_id: ps.categorical_analysis.mantel_haenszel_or
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 여러 층의 $2\times2$ 표에서
+----------------------------------------------------------------------
+[60] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.categorical_analysis.pearson_residual_chunks.json
+concept_id: ps.categorical_analysis.pearson_residual
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $r_{ij}=\frac{O_{ij}-E_{ij}}{\sqrt{E_{ij}}}$
+----------------------------------------------------------------------
+[61] ERROR / LATEX_ENVIRONMENT_MISMATCH
+파일: data\chunks\probability_statistics\ps.categorical_analysis.phi_coefficient.f01_chunks.json
+concept_id: ps.categorical_analysis.phi_coefficient.f01
+chunk_index: 1
+chunk_type: formula
+내용: begin=['pmatrix'], end=[] content_text 줄: 10
+문제 구간: LaTeX: \begin{pmatrix}
+----------------------------------------------------------------------
+[62] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.chi_square.f02_chunks.json
+concept_id: ps.continuous_distributions.chi_square.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: E[X]=\nu
+----------------------------------------------------------------------
+[63] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.chi_square.f03_chunks.json
+concept_id: ps.continuous_distributions.chi_square.f03
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \operatorname{Var}(X)=2\nu
+----------------------------------------------------------------------
+[64] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.distribution_generation_relations.f02_chunks.json
+concept_id: ps.continuous_distributions.distribution_generation_relations.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: T=\frac{Z}{\sqrt{U/\nu}}\sim t_\nu
+----------------------------------------------------------------------
+[65] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.continuous_distributions.distribution_generation_relations_chunks.json
+concept_id: ps.continuous_distributions.distribution_generation_relations
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $\chi^2_\nu\sim\operatorname{Gamma}\left(\frac{\nu}{2},2\right)$ 독립인 $Z\sim N(0,1)$과 $U\sim\chi^2_\nu$에 대해
+----------------------------------------------------------------------
+[66] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.exponential.f02_chunks.json
+concept_id: ps.continuous_distributions.exponential.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: E[X]=1/\lambda
+----------------------------------------------------------------------
+[67] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.gamma.f02_chunks.json
+concept_id: ps.continuous_distributions.gamma.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: E[X]=\alpha\theta
+----------------------------------------------------------------------
+[68] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.lognormal_distribution.f04_chunks.json
+concept_id: ps.continuous_distributions.lognormal_distribution.f04
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \operatorname{Median}(X)=e^\mu
+----------------------------------------------------------------------
+[69] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.continuous_distributions.normal_density_standardization.f02_chunks.json
+concept_id: ps.continuous_distributions.normal_density_standardization.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: Z=(X-\mu)/\sigma
+----------------------------------------------------------------------
+[70] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.continuous_distributions.parameterization_check_chunks.json
+concept_id: ps.continuous_distributions.parameterization_check
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 감마분포 scale 모수화: $E[X]=\alpha\theta$ 감마분포 rate 모수화: $E[X]=\alpha/\beta$ 지수분포는 감마분포에서 $\alpha=1$ 카이제곱분포는 $\operatorname{Gamma}(\nu/2,2)$
+----------------------------------------------------------------------
+[71] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.continuous_distributions.student_t.f01_chunks.json
+concept_id: ps.continuous_distributions.student_t.f01
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 관련 canonical 수식: $T=\frac{\bar X-\mu}{S/\sqrt n}$
+----------------------------------------------------------------------
+[72] ERROR / LATEX_ENVIRONMENT_MISMATCH
+파일: data\chunks\probability_statistics\ps.continuous_distributions.weibull_distribution.f01_chunks.json
+concept_id: ps.continuous_distributions.weibull_distribution.f01
+chunk_index: 1
+chunk_type: formula
+내용: begin=['cases'], end=[] content_text 줄: 10
+문제 구간: LaTeX: F(x)=\begin{cases}
+----------------------------------------------------------------------
+[73] ERROR / LATEX_ENVIRONMENT_MISMATCH
+파일: data\chunks\probability_statistics\ps.continuous_distributions.weibull_distribution.f02_chunks.json
+concept_id: ps.continuous_distributions.weibull_distribution.f02
+chunk_index: 1
+chunk_type: formula
+내용: begin=['cases'], end=[] content_text 줄: 10
+문제 구간: LaTeX: f(x)=\begin{cases}
+----------------------------------------------------------------------
+[74] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.correlation.correlation_defined_conditions_chunks.json
+concept_id: ps.correlation.correlation_defined_conditions
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 14
+문제 구간: 설명: 수학적 전제/제약: $0<\operatorname{Var}(X)<\infty, \qquad 0<\operatorname{Var}(Y)<\infty$
+----------------------------------------------------------------------
+[75] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.counting.derangements.f02_chunks.json
+concept_id: ps.counting.derangements.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: D_n=\left\lfloor\frac{n!}{e}+\frac12\right\rfloor
+----------------------------------------------------------------------
+[76] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.descriptive_statistics.covariance_cv_outliers_chunks.json
+concept_id: ps.descriptive_statistics.covariance_cv_outliers
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 표본공분산은 짝지어진 관측쌍 $(x_i,y_i)$가 $n\ge2$개 있을 때 다음과 같이 정의한다. $s_{xy}=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})$ 변동계수는 단위가 다른 양의 비율척도 자료의 상대적 산포를 비교할 때 사용한다. $CV=\frac{s}{\bar{x}},\qquad \bar{x}>0$ 상자그림에서 흔히 사용하는 잠재적 이상치 경계는 다음과 같다. $Q_1-1.5IQR,\qquad Q_3+1.5IQR$ 분산 계산식은 다음과 같이 변형할 수 있다. $\sum_{i=1}^{n}(x_i-\bar{x})^2 =\sum_{i=1}^{n}x_i^2-n\bar{x}^2$
+----------------------------------------------------------------------
+[77] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.descriptive_statistics.position_shape_chunks.json
+concept_id: ps.descriptive_statistics.position_shape
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: z=(x-\mu)/\sigma
+----------------------------------------------------------------------
+[78] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.discrete_distributions.multinomial.f02_chunks.json
+concept_id: ps.discrete_distributions.multinomial.f02
+chunk_index: 3
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $\sum_{i=1}^{k}x_i=n$
+----------------------------------------------------------------------
+[79] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.discrete_distributions.multinomial.f02_probability_sum_chunks.json
+concept_id: ps.discrete_distributions.multinomial.f02_probability_sum
+chunk_index: 3
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $\sum_{i=1}^{k}p_i=1$
+----------------------------------------------------------------------
+[80] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.discrete_distributions.poisson.f02_chunks.json
+concept_id: ps.discrete_distributions.poisson.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: E[X]=\lambda
+----------------------------------------------------------------------
+[81] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.discrete_distributions.poisson.f03_chunks.json
+concept_id: ps.discrete_distributions.poisson.f03
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \operatorname{Var}(X)=\lambda
+----------------------------------------------------------------------
+[82] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.confidence_interval.f02_chunks.json
+concept_id: ps.estimation.confidence_interval.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: P_\theta\{\theta\in C(X)\}\ge 1-\alpha
+----------------------------------------------------------------------
+[83] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.confidence_interval_types.f01_chunks.json
+concept_id: ps.estimation.confidence_interval_types.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: P_\theta(\theta\in C(X))=1-\alpha
+----------------------------------------------------------------------
+[84] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.confidence_interval_types.f02_chunks.json
+concept_id: ps.estimation.confidence_interval_types.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: P_\theta(\theta\in C(X))\ge1-\alpha
+----------------------------------------------------------------------
+[85] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.confidence_interval_types.f03_chunks.json
+concept_id: ps.estimation.confidence_interval_types.f03
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: P_\theta(\theta\in C_n(X))\to1-\alpha
+----------------------------------------------------------------------
+[86] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.estimation.confidence_interval_types_chunks.json
+concept_id: ps.estimation.confidence_interval_types
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 명시된 모형 아래에서 모든 모수값에 대해 유한표본 포함확률이 정확히 $1-\alpha$인 구간이다. $P_\theta(\theta\in C(X))=1-\alpha$
+----------------------------------------------------------------------
+[87] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.consistency_asymptotic_normality_delta.f01_chunks.json
+concept_id: ps.estimation.consistency_asymptotic_normality_delta.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \hat\theta_n\xrightarrow{P}\theta
+----------------------------------------------------------------------
+[88] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.finite_population_sample_size_correction_chunks.json
+concept_id: ps.estimation.finite_population_sample_size_correction
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: n=\left\lceil\frac{n_0}{1+(n_0-1)/N}\right\rceil
+----------------------------------------------------------------------
+[89] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.pivot_ci_construction.f02_chunks.json
+concept_id: ps.estimation.pivot_ci_construction.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: P(a\le Q(X,\theta)\le b)=1-\alpha
+----------------------------------------------------------------------
+[90] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.point_estimation_properties.f01_chunks.json
+concept_id: ps.estimation.point_estimation_properties.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \operatorname{Bias}(T)=E[T]-\theta
+----------------------------------------------------------------------
+[91] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.sample_size_mean_known_sigma_chunks.json
+concept_id: ps.estimation.sample_size_mean_known_sigma
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: n=\left\lceil\left(\frac{z_{1-\alpha/2}\sigma}{E}\right)^2\right\rceil
+----------------------------------------------------------------------
+[92] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.estimation.sample_size_proportion_chunks.json
+concept_id: ps.estimation.sample_size_proportion
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: n=\left\lceil\frac{z_{1-\alpha/2}^2p(1-p)}{E^2}\right\rceil
+----------------------------------------------------------------------
+[93] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.estimation.standard_confidence_intervals_chunks.json
+concept_id: ps.estimation.standard_confidence_intervals
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 정규모집단 분산의 신뢰구간: $\left( \frac{(n-1)S^2}{\chi^2_{n-1,1-\alpha/2}}, \frac{(n-1)S^2}{\chi^2_{n-1,\alpha/2}} \right)$
+----------------------------------------------------------------------
+[94] ERROR / LATEX_DELIMITER_MISMATCH
+파일: data\chunks\probability_statistics\ps.estimation.variance_chisquare_ci_chunks.json
+concept_id: ps.estimation.variance_chisquare_ci
+chunk_index: 1
+chunk_type: formula
+내용: 여는 괄호 '('가 닫히지 않음. 위치: 5 content_text 줄: 10
+문제 구간: LaTeX: \left(
+----------------------------------------------------------------------
+[95] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.data_generation_bias_chunks.json
+concept_id: ps.foundations.data_generation_bias
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 8
+문제 구간: 설명: 표본오차: 표본을 사용함으로써 발생하는 우연 변동
+----------------------------------------------------------------------
+[96] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.data_generation_bias_chunks.json
+concept_id: ps.foundations.data_generation_bias
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 선택편향: 표본에 포함되는 과정이 연구대상과 체계적으로 관련된 경우
+----------------------------------------------------------------------
+[97] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.data_generation_bias_chunks.json
+concept_id: ps.foundations.data_generation_bias
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 12
+문제 구간: 설명: 비응답편향: 응답자와 비응답자의 특성이 다른 경우
+----------------------------------------------------------------------
+[98] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.data_generation_bias_chunks.json
+concept_id: ps.foundations.data_generation_bias
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 14
+문제 구간: 설명: 측정오차: 측정도구나 응답 과정에서 관측값이 실제값과 달라지는 경우
+----------------------------------------------------------------------
+[99] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.data_generation_bias_chunks.json
+concept_id: ps.foundations.data_generation_bias
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 16
+문제 구간: 설명: 생존자편향: 관측 가능한 생존 사례만 분석하여 실패 사례를 누락하는 경우
+----------------------------------------------------------------------
+[100] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.missing_data_mechanisms_chunks.json
+concept_id: ps.foundations.missing_data_mechanisms
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 8
+문제 구간: 설명: MCAR: 결측 여부가 관측값과 미관측값 모두와 독립인 경우
+----------------------------------------------------------------------
+[101] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.missing_data_mechanisms_chunks.json
+concept_id: ps.foundations.missing_data_mechanisms
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: MAR: 관측된 변수들을 조건으로 하면 결측 여부가 미관측값과 독립인 경우
+----------------------------------------------------------------------
+[102] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.foundations.missing_data_mechanisms_chunks.json
+concept_id: ps.foundations.missing_data_mechanisms
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 12
+문제 구간: 설명: MNAR: 관측된 변수로 보정한 뒤에도 결측 여부가 미관측값과 관련되는 경우
+----------------------------------------------------------------------
+[103] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.equivalence_testing.f01_chunks.json
+concept_id: ps.hypothesis_testing.equivalence_testing.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: H_0:\theta\le-\Delta\ \text{또는}\ \theta\ge\Delta
+----------------------------------------------------------------------
+[104] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.equivalence_testing.f02_chunks.json
+concept_id: ps.hypothesis_testing.equivalence_testing.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: H_1:-\Delta<\theta<\Delta
+----------------------------------------------------------------------
+[105] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.equivalence_testing_chunks.json
+concept_id: ps.hypothesis_testing.equivalence_testing
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 큰 $p$값은 두 모수가 같다는 증거가 아니다. 동등성 한계를 $\Delta>0$으로 정하고
+----------------------------------------------------------------------
+[106] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.independent_two_sample_mean_chunks.json
+concept_id: ps.hypothesis_testing.independent_two_sample_mean
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: $D_i=X_i-Y_i$ $t=\frac{\bar D-\mu_{D,0}}{S_D/\sqrt n}, \qquad df=n-1$
+----------------------------------------------------------------------
+[107] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.neyman_pearson.size_condition_chunks.json
+concept_id: ps.hypothesis_testing.neyman_pearson.size_condition
+chunk_index: 3
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $E_{\theta_0}[\phi^*(X)]=\alpha$
+----------------------------------------------------------------------
+[108] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.noninferiority_testing_chunks.json
+concept_id: ps.hypothesis_testing.noninferiority_testing
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 14
+문제 구간: 설명: 가설·조건: $H_0:\theta\le-\Delta, \qquad H_1:\theta>-\Delta$
+----------------------------------------------------------------------
+[109] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.power_sample_size_chunks.json
+concept_id: ps.hypothesis_testing.power_sample_size
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: n=\left\lceil\left(\frac{(z_{1-\alpha/2}+z_{1-\beta})\sigma}{\delta}\right)^2\right\rceil
+----------------------------------------------------------------------
+[110] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.hypothesis_testing.test_structure_chunks.json
+concept_id: ps.hypothesis_testing.test_structure
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 12
+문제 구간: 설명: 가설·조건: $H_0:\theta\in\Theta_0,\qquad H_1:\theta\in\Theta_1$
+----------------------------------------------------------------------
+[111] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.inequalities_limit_theory.law_large_numbers.f01_chunks.json
+concept_id: ps.inequalities_limit_theory.law_large_numbers.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \bar X_n\xrightarrow{P}\mu
+----------------------------------------------------------------------
+[112] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.inequalities_limit_theory.law_large_numbers.f02_chunks.json
+concept_id: ps.inequalities_limit_theory.law_large_numbers.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \bar X_n\xrightarrow{a.s.}\mu
+----------------------------------------------------------------------
+[113] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.inequalities_limit_theory.slutsky_sum_product.f01_chunks.json
+concept_id: ps.inequalities_limit_theory.slutsky_sum_product.f01
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $X_n\xrightarrow{d}X,\qquad Y_n\xrightarrow{P}c$
+----------------------------------------------------------------------
+[114] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.multiple_linear_regression.adjusted_r2_chunks.json
+concept_id: ps.multiple_linear_regression.adjusted_r2
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $\bar R^2 =1-\frac{SSE/(n-p)}{SST/(n-1)}$
+----------------------------------------------------------------------
+[115] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.multiple_linear_regression.categorical_interaction_chunks.json
+concept_id: ps.multiple_linear_regression.categorical_interaction
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: Y=\beta_0+\beta_1X+\beta_2D+\beta_3XD+\varepsilon
+----------------------------------------------------------------------
+[116] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.multiple_linear_regression.exact_coefficient_t_test.f01_chunks.json
+concept_id: ps.multiple_linear_regression.exact_coefficient_t_test.f01
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $\varepsilon\sim N(0,\sigma^2I)$
+----------------------------------------------------------------------
+[117] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.multiple_linear_regression.mean_individual_prediction.f01_chunks.json
+concept_id: ps.multiple_linear_regression.mean_individual_prediction.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: \hat y_0=x_0^T\hat\beta
+----------------------------------------------------------------------
+[118] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.multiple_linear_regression.multiple_regression_definition_chunks.json
+concept_id: ps.multiple_linear_regression.multiple_regression_definition
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: Y=X\beta+\varepsilon
+----------------------------------------------------------------------
+[119] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.multiple_linear_regression.overall_f_test_chunks.json
+concept_id: ps.multiple_linear_regression.overall_f_test
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $H_0:\beta_1=\cdots=\beta_{p-1}=0$
+----------------------------------------------------------------------
+[120] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.probability_basics.demorgan_probability_continuity_chunks.json
+concept_id: ps.probability_basics.demorgan_probability_continuity
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: 사건열이 $A_n\uparrow A$이면 $P(A_n)\to P(A)$
+----------------------------------------------------------------------
+[121] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.probability_basics.probability_axioms.f01_chunks.json
+concept_id: ps.probability_basics.probability_axioms.f01
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $P(A)\ge 0$
+----------------------------------------------------------------------
+[122] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.probability_basics.probability_axioms.f02_chunks.json
+concept_id: ps.probability_basics.probability_axioms.f02
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $P(\Omega)=1$
+----------------------------------------------------------------------
+[123] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.probability_basics.probability_axioms.f03_chunks.json
+concept_id: ps.probability_basics.probability_axioms.f03
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $P\left(\bigcup_{i=1}^{\infty}A_i\right) = \sum_{i=1}^{\infty}P(A_i)$
+----------------------------------------------------------------------
+[124] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.probability_basics.probability_space_sample_space_events.f02_chunks.json
+concept_id: ps.probability_basics.probability_space_sample_space_events.f02
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: A\text{는 사건}\quad\Longleftrightarrow\quad A\in\mathcal F\subseteq2^\Omega
+----------------------------------------------------------------------
+[125] ERROR / INCOMPLETE_LATEX_COMMAND
+파일: data\chunks\probability_statistics\ps.sampling_distributions.sample_mean_distribution.f01_chunks.json
+concept_id: ps.sampling_distributions.sample_mean_distribution.f01
+chunk_index: 1
+chunk_type: formula
+내용: LaTeX가 명령어 이름으로 끝나 중간 절단 가능성이 있음. content_text 줄: 10
+문제 구간: LaTeX: E[\bar X]=\mu
+----------------------------------------------------------------------
+[126] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.error_variance_inference_conditions.f02_chunks.json
+concept_id: ps.simple_linear_regression.error_variance_inference_conditions.f02
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 비활성 개요에 보존한 수학적 관계: $E[\varepsilon_i\mid X]=0$
+----------------------------------------------------------------------
+[127] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.error_variance_inference_conditions.f03_chunks.json
+concept_id: ps.simple_linear_regression.error_variance_inference_conditions.f03
+chunk_index: 1
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 비활성 개요에 보존한 수학적 관계: $\operatorname{Var}(\varepsilon_i\mid X)=\sigma^2$
+----------------------------------------------------------------------
+[128] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.error_variance_inference_conditions.f04_chunks.json
+concept_id: ps.simple_linear_regression.error_variance_inference_conditions.f04
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 비활성 개요에 보존한 수학적 관계: $\operatorname{Cov}(\varepsilon_i,\varepsilon_j\mid X)=0 \qquad(i\ne j)$
+----------------------------------------------------------------------
+[129] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.gauss_markov.f01_chunks.json
+concept_id: ps.simple_linear_regression.gauss_markov.f01
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 수학적 전제/제약: $\operatorname{rank}(X)=p$
+----------------------------------------------------------------------
+[130] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.gauss_markov.f02_chunks.json
+concept_id: ps.simple_linear_regression.gauss_markov.f02
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 비활성 개요에 보존한 수학적 관계: $E(\varepsilon\mid X)=0$
+----------------------------------------------------------------------
+[131] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.gauss_markov.f03_chunks.json
+concept_id: ps.simple_linear_regression.gauss_markov.f03
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 비활성 개요에 보존한 수학적 관계: $\operatorname{Var}(\varepsilon\mid X)=\sigma^2I$
+----------------------------------------------------------------------
+[132] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.intercept_se_leverage_chunks.json
+concept_id: ps.simple_linear_regression.intercept_se_leverage
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $SE(\hat\beta_0) = s\sqrt{\frac1n+\frac{\bar x^2}{S_{xx}}}$
+----------------------------------------------------------------------
+[133] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.least_squares_notation_chunks.json
+concept_id: ps.simple_linear_regression.least_squares_notation
+chunk_index: 0
+chunk_type: definition
+내용: 정의: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 7
+문제 구간: 정의: $S_{xx}=\sum_{i=1}^{n}(x_i-\bar x)^2$
+----------------------------------------------------------------------
+[134] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.regression_anova_table.f04_chunks.json
+concept_id: ps.simple_linear_regression.regression_anova_table.f04
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 10
+문제 구간: 설명: 관련 canonical 수식: $MSE=\frac{SSE}{n-2}$
+----------------------------------------------------------------------
+[135] WARNING / SUSPICIOUS_SENTENCE_END
+파일: data\chunks\probability_statistics\ps.simple_linear_regression.slope_t_regression_f_chunks.json
+concept_id: ps.simple_linear_regression.slope_t_regression_f
+chunk_index: 2
+chunk_type: property
+내용: 설명: 문장이 종결 문장부호로 끝나지 않음. content_text 줄: 12
+문제 구간: 설명: 관련 canonical 수식: $F=t^2$
+----------------------------------------------------------------------

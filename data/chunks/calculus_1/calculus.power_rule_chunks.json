@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.power_rule",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch03_differentiation_rules",
+  "concept_name_ko": "상수함수와 거듭제곱 법칙",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 상수함수의 도함수는 0이며, x^n의 도함수는 지수를 계수로 내리고 지수를 1만큼 감소시킨 nx^{n-1}이다. n이 양의 정수인 경우에서 시작해 음의 정수, 분수 지수, 임의의 실수로 확장된다.\n검색 태그: power_rule, constant_rule, tangent_line, normal_line",
+      "token_count": 141,
+      "content_hash": "7ff60ca6cf535ef51d306faf88c4ee8d44464b93fa8b841736749d15ece72d75",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 상수함수의 미분\n공식 ID: constant_rule\n역할: theorem\nLaTeX: \\frac{d}{dx}(c)=0\nCAS 표현: diff(c, x)\n\n공식명: 거듭제곱 법칙\n공식 ID: power_rule\n역할: theorem\nLaTeX: \\frac{d}{dx}(x^n)=nx^{n-1}\nCAS 표현: diff(x**n, x)",
+      "token_count": 152,
+      "content_hash": "77f28ec4fdf771aacb59e30be1a86f23ff4c64e61c0b15ca8e3fd80760ded465",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: integer_n_any_point\n설명: n이 정수이면 함수가 정의되는 모든 점에서 거듭제곱 법칙을 적용할 수 있다.\n검증 규칙: n in integers\n\n조건 ID: negative_exponent_nonzero_x\n설명: 음의 지수(n=-1 등)에서는 x≠0이어야 한다.\n검증 규칙: x not_equals 0\n\n조건 ID: real_exponent_domain\n설명: n이 임의의 실수인 일반형은 x^n이 실수함수로 정의되고 미분가능한 구간에서만 성립하며, 그 일반 증명은 로그 미분법에서 다룬다.\n검증 규칙: x_n_real_and_differentiable equals 참",
+      "token_count": 218,
+      "content_hash": "70b923619e5f768bd668229ff1ca432ffba3afdbe585b9573194e6452958ebad",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: constant_graph_horizontal\n설명: 상수함수의 그래프는 수평선이며 모든 점에서 접선의 기울기가 0이다.\n\n성질 ID: power_rule_for_tangent_and_normal\n설명: 거듭제곱 법칙으로 구한 접선의 기울기의 음의 역수를 이용하면 법선(접선에 수직인 직선)의 방정식도 구할 수 있다.",
+      "token_count": 145,
+      "content_hash": "0b5e4ba24b6da1bba246e7d8ddad548730be5ac6d753b81366b1b5fb4afbd320",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수로서의 도함수와 미분가능성 (calculus.derivative, 중요도: required)\n\n관련 개념:\n- calculus.sum_difference_constant_multiple_rule\n\n학습 목표 ID: apply_power_rule\n행동 동사: apply\n목표: 정수·분수 지수를 갖는 거듭제곱함수의 도함수를 구한다.\n\n학습 목표 ID: find_tangent_and_normal_line\n행동 동사: calculate\n목표: 거듭제곱 법칙으로 구한 미분계수를 이용해 접선과 법선의 방정식을 구한다.",
+      "token_count": 192,
+      "content_hash": "3760ece21cab7d5605bad18c8baeb2c60ab7a90c688d4232e39cb0ba2d45b48b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 음의·분수 지수의 정의역 제한 무시\n오개념 ID: calculus.power_rule.forget_domain_restriction\n설명: x^{-2}이나 x^{2/3} 같은 함수에 거듭제곱 법칙을 적용하면서 x=0 등 정의되지 않는 점을 확인하지 않는다.\n진단 태그: ignore_power_rule_domain_restriction\n피드백: 음의 지수는 x≠0, 짝수 분모의 분수 지수는 정의역과 미분가능 구간을 별도로 확인해야 한다.\n\n오개념: 법선의 기울기를 접선 기울기와 동일하게 계산\n오개념 ID: calculus.power_rule.normal_slope_error\n설명: 법선의 기울기를 접선 기울기의 음의 역수가 아니라 접선 기울기 자체로 잘못 계산한다.\n진단 태그: wrong_normal_line_slope\n피드백: 법선의 기울기는 접선 기울기 m의 음의 역수 -1/m이다.",
+      "token_count": 288,
+      "content_hash": "e7b0c74d517b57c3b990b7cce13d2d9cdc2e71a459cf3d081a7fa62c13c5b28a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.power_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "상수함수와 거듭제곱 법칙",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 상수함수와 거듭제곱 법칙\n개념 ID: calculus.power_rule\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: power_rule_application, tangent_normal_line_derivation\n지원 정답 유형: expression, equation\n난이도 범위: 1 ~ 2\n권장 검증기: symbolic_equivalence",
+      "token_count": 108,
+      "content_hash": "cf265fdcf575f63e68c692481f071a7140cf485575337e14a7656d0ab407bfc1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

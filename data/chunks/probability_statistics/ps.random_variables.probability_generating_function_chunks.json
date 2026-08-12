@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.random_variables.probability_generating_function",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_06_random_variables",
+  "concept_name_ko": "확률생성함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.probability_generating_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수\n개념 ID: ps.random_variables.probability_generating_function\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 비음수 정수값 확률변수의 확률질량을 생성한다.\n검색 태그: random_variables, quantile_pgf_cgf, probability, probability_generating_function",
+      "token_count": 104,
+      "content_hash": "7fb67858541a6f9bc99974286521f514b766427f496ef9ad66554255fc02cfa7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.probability_generating_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수\n개념 ID: ps.random_variables.probability_generating_function\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 확률생성함수\n공식 ID: ps.random_variables.probability_generating_function.formula_01\n역할: probability_generating_function\nLaTeX: G_X(s)=E[s^X]",
+      "token_count": 111,
+      "content_hash": "8eff649fbffa87127ac772bfcbce5c0d323d07f57b538279eb93ffbb5360c70d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.probability_generating_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수\n개념 ID: ps.random_variables.probability_generating_function\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.random_variables.probability_generating_function.condition_01\n설명: $X$는 비음수 정수값 확률변수여야 한다.\n검증 규칙: random_variable_support equals nonnegative_integers\n\n조건 ID: ps.random_variables.probability_generating_function.condition_02\n설명: $E[s^X]$가 해당 $s$에서 유한하게 존재해야 한다.\n검증 규칙: pgf_finite_at_argument equals 참",
+      "token_count": 179,
+      "content_hash": "cc99450c95ab407f653546c6c5c4a96c903c541d8a0c33e105ccedeeb2487592",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.probability_generating_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수\n개념 ID: ps.random_variables.probability_generating_function\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률 공리 (ps.probability_basics.probability_axioms, 중요도: required)\n- 함수 (math.functions, 중요도: required)\n- 합과 적분 (calculus.sum_integral, 중요도: recommended)\n\n관련 개념:\n- ps.random_variables.quantile_pgf_cgf\n\n학습 목표 ID: ps.random_variables.probability_generating_function.objective_01\n행동 동사: apply\n목표: 확률생성함수의 공식과 적용 조건을 구분하여 적용한다.",
+      "token_count": 192,
+      "content_hash": "bd5d6d5da278c158955978d44578a804191a35c78f28c49df1cffdc90eeede5b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.probability_generating_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "확률생성함수",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 확률생성함수\n개념 ID: ps.random_variables.probability_generating_function\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 151,
+      "content_hash": "5b3d170ee40a3bb5eebc99fc3e0a512bd8f6927f7aff86cfa7cc3e7597ae6292",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

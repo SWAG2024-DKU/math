@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.area_between_curves",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch06_applications_of_integration",
+  "concept_name_ko": "곡선 사이의 넓이",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 구간 [a,b]에서 f(x)≥g(x)이면 두 곡선 y=f(x), y=g(x)와 직선 x=a,x=b로 둘러싸인 영역의 넓이는 ∫[a,b][f(x)-g(x)]dx이다. 위·아래 관계가 구간 안에서 바뀌면 절댓값을 취하거나 교점 기준으로 구간을 나눈다. 영역의 모양에 따라 y에 대해 적분(오른쪽 경계-왼쪽 경계)하는 것이 더 간단할 수도 있다.\n검색 태그: area_between_curves",
+      "token_count": 196,
+      "content_hash": "210b3bd63614854496dc2935c5a8de0862b012ff98891e913f89b9ddd0ed4f3a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: x에 대한 넓이\n공식 ID: area_between_curves_x\n역할: definition\nLaTeX: A=\\int_a^b[f(x)-g(x)]\\,dx\\quad(f(x)\\ge g(x)\\text{ on }[a,b])\nCAS 표현: Integral(f(x)-g(x), (x,a,b))\n\n공식명: 부호가 바뀌는 경우\n공식 ID: area_between_curves_abs\n역할: generalization\nLaTeX: A=\\int_a^b|f(x)-g(x)|\\,dx\nCAS 표현: Integral(Abs(f(x)-g(x)), (x,a,b))\n\n공식명: y에 대한 넓이\n공식 ID: area_between_curves_y\n역할: alternative_form\nLaTeX: A=\\int_c^d[x_R(y)-x_L(y)]\\,dy\nCAS 표현: Integral(xR(y)-xL(y), (y,c,d))",
+      "token_count": 309,
+      "content_hash": "8fd0dbfd82b58362d9f9ed46ef1094031e627ef64a0028f9576f83e0a92e7f67",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: f_g_continuous_order_fixed\n설명: f, g는 연속함수여야 하며, x에 대해 적분할 때는 구간 전체에서 위·아래 경계가 바뀌지 않아야 한다(바뀌면 절댓값을 취하거나 구간을 나눈다).\n검증 규칙: upper_lower_order_constant_on_interval equals 참\n\n조건 ID: intersections_determine_bounds\n설명: 교점을 먼저 구해 적분구간(경계값)을 정해야 한다.\n검증 규칙: integration_bounds_from_intersections equals 참",
+      "token_count": 197,
+      "content_hash": "39083ef0663ec64037f5206276134a59d3c8424a58bb66919b33282139e6b76e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: riemann_sum_origin\n설명: 넓이 공식은 대표 근사 직사각형(폭 Δx, 높이 f(x)-g(x))의 리만합의 극한으로 유도되며, g(x)=0인 특수한 경우 곡선 아래 넓이의 정의와 일치한다.\n\n성질 ID: choose_x_or_y_by_shape\n설명: 위(또는 오른쪽) 경계나 아래(또는 왼쪽) 경계가 하나의 곡선으로 표현되는 변수를 택하면 계산이 간단해진다.\n\n성질 ID: symmetry_shortcut_for_area\n설명: 영역이 대칭이면 절반만 적분하고 2배 하는 방식으로 계산을 간단히 할 수 있다.",
+      "token_count": 225,
+      "content_hash": "0353f932535c1b473d79791d878de7344229b154a0bf85871cebe6835cfe208b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 정적분의 정의와 적분가능성 (calculus.integral, 중요도: required)\n- 미적분학의 기본 정리 2부(정적분의 계산) (calculus.fundamental_theorem_of_calculus_part2, 중요도: required)\n\n관련 개념:\n- calculus.volume_by_cross_section\n\n학습 목표 ID: find_intersection_points\n행동 동사: calculate\n목표: 두 곡선의 교점을 구해 적분구간을 결정한다.\n\n학습 목표 ID: compute_area_between_curves\n행동 동사: calculate\n목표: 두 곡선 사이의 넓이를 x 또는 y에 대한 적분으로 계산한다.\n\n학습 목표 ID: handle_sign_change_area\n행동 동사: apply\n목표: 위·아래 관계가 바뀌는 영역의 넓이를 절댓값이나 구간 분할로 계산한다.",
+      "token_count": 265,
+      "content_hash": "69a26b4065abbd28dd8baa42b12cb256f86e40daf0e873db5a52dbaa5bab3b8f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 경계가 바뀌는데도 하나의 식으로 적분\n오개념 ID: calculus.area_between_curves.single_formula_despite_swap\n설명: 구간 중간에 위·아래 관계가 바뀌는데도 f(x)-g(x)를 그대로 적분해 넓이를 계산한다.\n진단 태그: integrate_without_accounting_for_boundary_swap\n피드백: 위/아래 경계가 구간 전체에서 하나의 곡선으로 유지되지 않으면 절댓값을 쓰거나 교점을 기준으로 구간을 나누어 각각 적분해야 한다.\n\n오개념: 위쪽·아래쪽(또는 오른쪽·왼쪽) 함수 순서 반대로 계산\n오개념 ID: calculus.area_between_curves.reverse_subtraction\n설명: 아래쪽 함수에서 위쪽 함수를 빼서 음의 넓이를 얻는다.\n진단 태그: subtract_functions_in_wrong_order\n피드백: 넓이는 항상 위쪽(또는 오른쪽) 함수에서 아래쪽(또는 왼쪽) 함수를 빼야 한다.",
+      "token_count": 328,
+      "content_hash": "8b2831c3a717262927a52e6518fc512ab2425d8d86bd31b677384d306b6fc9a5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.area_between_curves",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "곡선 사이의 넓이",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 곡선 사이의 넓이\n개념 ID: calculus.area_between_curves\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: area_between_curves_calculation, intersection_point_calculation, variable_choice_for_area\n지원 정답 유형: scalar, expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence, numeric_sampling",
+      "token_count": 130,
+      "content_hash": "6db7dd8a16100896ce7ec2615d04e19ee0e59c8f08609058164df75d3db4e826",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

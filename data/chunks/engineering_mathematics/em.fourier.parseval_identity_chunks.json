@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.fourier.parseval_identity",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_06_fourier_analysis",
+  "concept_name_ko": "Parseval 항등식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 함수의 평균제곱 또는 에너지를 Fourier 계수의 제곱합과 연결한다.\n검색 태그: parseval_identity, signal_energy, mean_square",
+      "token_count": 85,
+      "content_hash": "4713562610329b6a39dcf8c262729c2679f80c94365167950859e05e2a4d7e71",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: Parseval 항등식\n공식 ID: parseval_formula\n역할: definition\nLaTeX: \\frac{1}{L}\\int_{-L}^{L}|f(x)|^2\\,dx = \\frac{a_0^2}{2} + \\sum_{n=1}^{\\infty}(a_n^2+b_n^2)\nCAS 표현: Eq((1/L)*Integral(abs(f(x))**2, (x, -L, L)), a_0**2/2 + Sum(a_n**2 + b_n**2, (n, 1, oo)))",
+      "token_count": 206,
+      "content_hash": "dbb3d2b305da13d9a571e8f1c69ad50fffa565b2b67931359de20b52a07f72b4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: square_integrable_function\n설명: f가 제곱적분 가능해야 한다.\n검증 규칙: f_square_integrable equals 참",
+      "token_count": 83,
+      "content_hash": "8acfe836d84955e36b5c5bc001789b561bbbb12b3e4382fdebdb5b8698a4af58",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: signal_energy_distribution\n설명: 신호 에너지 분포와 특정 무한급수의 합을 계산하는 데 활용된다.",
+      "token_count": 78,
+      "content_hash": "4842deba3bf6b870e4f67f4154a78a1ca69674dd869a731fc2f42ee5a0af41d8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- Fourier 계수 (em.fourier.series_and_coefficients, 중요도: required)\n- 제곱적분 (calculus.square_integrable, 중요도: required)\n- 무한급수 (calculus.infinite_series, 중요도: required)\n\n관련 개념:\n- em.fourier.series_and_coefficients\n\n학습 목표 ID: apply_parseval_identity\n행동 동사: solve\n목표: Parseval 항등식을 이용해 함수의 에너지와 Fourier 계수 급수의 합을 계산한다.",
+      "token_count": 180,
+      "content_hash": "bba38a93700211431ab8a8bd12153e4c5b8abccbd7841438ef1741a9008d2449",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 함수값과 계수 제곱합의 혼동\n오개념 ID: em.fourier.parseval.confuse_function_sum_with_coefficients\n설명: Parseval 등식이 단순히 함수값들의 합을 구하는 공식이라고 오인한다.\n진단 태그: confuse_parseval_with_pointwise_sum\n피드백: Parseval 항등식은 함수 제곱의 적분값(에너지)을 Fourier 계수들의 제곱합과 연결합니다.",
+      "token_count": 176,
+      "content_hash": "a21e22bd250c61856a7b55c4cb70a04455f5502138074adf3cfa170903450f1d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.fourier.parseval_identity",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_06_fourier_analysis",
+      "concept_name_ko": "Parseval 항등식",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: Fourier 해석\n개념: Parseval 항등식\n개념 ID: em.fourier.parseval_identity\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: parseval_identity_calculation\n지원 정답 유형: scalar, expression\n난이도 범위: 2 ~ 4\n권장 검증기: expression_equivalence",
+      "token_count": 96,
+      "content_hash": "28ed21b00a7aca0203864b84baf0546d4248c27137c96ec8842ea46b081d18df",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

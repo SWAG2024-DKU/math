@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.linear_approximation_and_differentials",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch03_differentiation_rules",
+  "concept_name_ko": "선형 근사와 미분",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 미분가능한 함수의 그래프는 접점 근방에서 접선(1차함수)과 매우 가까우며, 이를 이용해 a 근방의 함숫값을 L(x)=f(a)+f'(a)(x-a)로 근사할 수 있다. dx를 독립변수의 미분, dy=f'(x)dx를 종속변수의 미분이라 한다.\n검색 태그: linear_approximation, differential, error_estimation",
+      "token_count": 165,
+      "content_hash": "386745df8e9bba2a6ef28f09caf87b637c1594f900f78ae886ec300f4e69fc7a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 선형화\n공식 ID: linearization\n역할: definition\nLaTeX: L(x)=f(a)+f'(a)(x-a)\nCAS 표현: f(a)+fprime(a)*(x-a)\n\n공식명: 선형 근사식\n공식 ID: linear_approximation\n역할: approximation\nLaTeX: f(x)\\approx f(a)+f'(a)(x-a)\nCAS 표현: f(a)+fprime(a)*(x-a)\n\n공식명: 미분(differential)\n공식 ID: differential\n역할: definition\nLaTeX: dy=f'(x)\\,dx\nCAS 표현: fprime(x)*dx\n\n공식명: 상대오차·백분율오차\n공식 ID: relative_error\n역할: application\nLaTeX: \\text{상대오차}=\\frac{dQ}{Q},\\qquad\\text{백분율오차}=100\\left|\\frac{dQ}{Q}\\right|\\%\nCAS 표현: dQ/Q",
+      "token_count": 300,
+      "content_hash": "ae3a7ef22096e5915cb966bbfb2124e456e6fbfcb72844cc759657c995790fdf",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: differentiable_at_a\n설명: 선형화·선형근사는 f가 a에서 미분가능해야 정의된다.\n검증 규칙: f_differentiable_at_a equals 참\n\n조건 ID: x_near_a\n설명: 선형 근사는 x가 a에 충분히 가까울 때 좋은 근사를 제공하며, 멀어질수록 오차가 커진다.\n검증 규칙: x_close_to_a equals 참",
+      "token_count": 155,
+      "content_hash": "dd2ed68349703bbcf6036514da5ba70c10489f8a39fd07a97a7303d69df5694e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: delta_y_vs_dy\n설명: 실제 변화량 Δy=f(x+Δx)-f(x)와 접선을 따른 변화량 dy=f'(x)dx는 다른 값이며, Δx가 작을수록 Δy≈dy의 근사 오차가 작아진다.\n\n성질 ID: physics_small_angle_approximations\n설명: 물리학·광학에서 자주 쓰이는 선형 근사: sinθ≈θ, cosθ≈1 (θ가 0에 가까울 때, a=0에서의 선형화).\n\n성질 ID: error_propagation_via_differential\n설명: 측정값의 오차 dr이 있을 때 이로부터 계산되는 양의 오차는 미분 dV=f'(r)dr로 근사한다(예: 구의 반지름 상대오차가 dr/r이면 부피의 상대오차는 그 3배).",
+      "token_count": 260,
+      "content_hash": "7ab4744b5cf1256852475d6442f8d0639743466abe38f51192b2875c16af0992",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수로서의 도함수와 미분가능성 (calculus.derivative, 중요도: required)\n\n학습 목표 ID: construct_linearization\n행동 동사: construct\n목표: 주어진 점에서 함수의 선형화 L(x)를 구한다.\n\n학습 목표 ID: estimate_via_linear_approximation\n행동 동사: estimate\n목표: 선형 근사로 함숫값을 추정한다.\n\n학습 목표 ID: estimate_error_via_differential\n행동 동사: estimate\n목표: 미분을 이용해 측정오차로부터 계산값의 오차를 추정한다.",
+      "token_count": 197,
+      "content_hash": "c50f2113a7e48640f8ad81906b9a8ee2b63efee772754a40ef009344a0a2ef08",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 실제 변화량과 미분을 동일시\n오개념 ID: calculus.linear_approx.confuse_delta_y_and_dy\n설명: Δy(실제 함수값의 변화량)와 dy(접선을 따라 계산한 미분)를 같은 값으로 취급한다.\n진단 태그: confuse_actual_change_with_differential\n피드백: dy는 접선을 따른 근삿값이고 Δy는 실제 변화량이며, 둘은 일반적으로 다르다. Δx가 작을수록 차이가 작아질 뿐이다.\n\n오개념: 선형 근사가 항상 정확하다고 오해\n오개념 ID: calculus.linear_approx.always_accurate\n설명: x가 a에서 멀리 떨어진 경우에도 선형 근사가 정확한 값을 준다고 가정한다.\n진단 태그: assume_linear_approximation_always_accurate\n피드백: 선형 근사의 오차는 x가 a에서 멀어질수록 커지므로 유효한 근사 범위를 확인해야 한다.",
+      "token_count": 303,
+      "content_hash": "6da169a031827cbec6bacd339a95894a69d332d341ac255ed1dd24737ea1691f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.linear_approximation_and_differentials",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "선형 근사와 미분",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 선형 근사와 미분\n개념 ID: calculus.linear_approximation_and_differentials\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: linearization_construction, linear_approximation_estimation, error_propagation_estimation\n지원 정답 유형: expression, numerical_approximation\n난이도 범위: 1 ~ 3\n권장 검증기: numeric_tolerance, symbolic_equivalence",
+      "token_count": 127,
+      "content_hash": "c79a6ae6952599ff416f094a080f0ad21ea63e460528b950f7ad910dca7a518f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

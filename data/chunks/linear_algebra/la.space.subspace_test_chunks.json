@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.space.subspace_test",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_02_vector_spaces",
+  "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 임의의 집합 H가 벡터 공간 공리를 만족하는지 판정하는 대수적 알고리즘이다. R^n의 부분집합 H가 부분공간이 되기 위한 3대 필요충분조건을 검사한다.\n검색 태그: subspace, vector_space, closure",
+      "token_count": 119,
+      "content_hash": "035c5e1c7fcf0560a9030a8017c268a781dbd8cb28fd49b7b1e078cd5fd916cc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 부분공간 판정 조건\n공식 ID: subspace_conditions\n역할: definition\nLaTeX: \\mathbf{0} \\in H, \\; \\mathbf{u}+\\mathbf{v} \\in H, \\; c\\mathbf{u} \\in H\nCAS 표현: subspace_test(H)",
+      "token_count": 131,
+      "content_hash": "1a3d7cf4e3917521a73395474054bc2fb9e645b9a7e0fbd495193b95dbf3b405",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: non_empty_and_linear\n설명: 집합 H는 공집합이 아니어야 하며, 0이 아닌 상수항이나 비선형 항이 포함되어 있지 않아야 한다.\n검증 규칙: is_homogeneous_linear_set equals 참",
+      "token_count": 117,
+      "content_hash": "40f2b1e3498a9de025fb221e2d90b620d55b1d31877e52b841f834d45ec2b3d0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: homogeneous_solution_is_subspace\n설명: 동차 선형방정식계 Ax=0의 해집합은 항상 부분공간을 이루나, 비동차 시스템의 해집합은 아핀 공간이다.",
+      "token_count": 104,
+      "content_hash": "a674b00a0caa24b37b89aaf13e9d2d5970c6fad09c0a4585c33c3b588124c7b0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 벡터 공간 (la.space.vector_space_axiom, 중요도: required)\n- 선형방정식계 (la.matrix.system_form, 중요도: required)\n- 집합의 닫힘 성질 (algebra.set_closure, 중요도: required)\n\n관련 개념:\n- la.space.span\n\n학습 목표 ID: test_subspace\n행동 동사: evaluate\n목표: 주어진 집합이 부분공간의 3대 조건을 만족하는지 판정한다.",
+      "token_count": 173,
+      "content_hash": "5d173dfdb9d3ad2be12e4d927f4662878edff814d7e724c45c2444be3f832215",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 영벡터 포함과 닫힘 성질의 독립성 무시\n오개념 ID: la.space.subspace_test.zero_vector_only\n설명: 영벡터가 포함된다는 사실만으로 닫힘 검증을 생략하고 부분공간으로 단정한다.\n진단 태그: ignore_closure_conditions\n피드백: 영벡터 포함 여부뿐만 아니라 덧셈과 스칼라곱에 대해 닫혀 있는지 모두 확인해야 합니다.\n\n오개념: 아핀 공간과 부분공간의 기하학적 혼동\n오개념 ID: la.space.subspace_test.affine_confusion\n설명: 원점을 지나지 않는 평면이나 직선을 부분공간으로 오인한다.\n진단 태그: affine_space_confused_with_subspace\n피드백: 부분공간은 반드시 원점(영벡터)을 지나야 합니다.",
+      "token_count": 257,
+      "content_hash": "3a07e8275bdc417cc325a68146d7fed4cf3db4ce9a04c875efc2b679c2f0a6c4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.subspace_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "벡터 공간과 부분공간 조건 검증",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 벡터 공간과 부분공간 조건 검증\n개념 ID: la.space.subspace_test\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: subspace_verification\n지원 정답 유형: boolean\n난이도 범위: 1 ~ 3\n권장 검증기: subspace_axiom_check",
+      "token_count": 97,
+      "content_hash": "ab1d5fa82dd9c1758f9a6a8d792e78099c1d8986906ba6ab7b764062fcb660e6",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

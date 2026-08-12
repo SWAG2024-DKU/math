@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.center_of_mass_2d",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch05_multiple_integration",
+  "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 밀도함수 ρ(x,y)를 갖는 평면 영역 D의 질량은 m=∬D ρ dA, x축에 대한 모멘트 Mx=∬D yρ dA, y축에 대한 모멘트 My=∬D xρ dA이며, 질량중심은 x̄=My/m, ȳ=Mx/m이다. 밀도가 상수이면 질량중심은 영역의 도심과 일치한다.\n검색 태그: center_of_mass, moment, centroid",
+      "token_count": 183,
+      "content_hash": "9fc9b8b565d91295e5078ade93d9f1eb76fea72dc8e401a87d62e49084027261",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 얇은 판의 질량\n공식 ID: mass_2d\n역할: definition\nLaTeX: m=\\iint_D\\rho(x,y)\\,dA\nCAS 표현: Integral(rho(x,y), (x,y), D)\n\n공식명: 얇은 판의 모멘트\n공식 ID: moments_2d\n역할: definition\nLaTeX: M_x=\\iint_Dy\\rho(x,y)\\,dA,\\qquad M_y=\\iint_Dx\\rho(x,y)\\,dA\nCAS 표현: Integral(y*rho(x,y), (x,y), D)\n\n공식명: 질량중심\n공식 ID: center_of_mass_2d\n역할: theorem\nLaTeX: \\bar x=\\frac{M_y}m=\\frac1m\\iint_Dx\\rho\\,dA,\\qquad\\bar y=\\frac{M_x}m=\\frac1m\\iint_Dy\\rho\\,dA\nCAS 표현: My/m\n\n공식명: 균일밀도(도심)\n공식 ID: centroid_uniform_density\n역할: special_case\nLaTeX: \\bar x=\\frac1A\\iint_Dx\\,dA,\\qquad\\bar y=\\frac1A\\iint_Dy\\,dA\nCAS 표현: Integral(x, (x,y), D)/A",
+      "token_count": 401,
+      "content_hash": "72fe4746a3cc0843cf71eaa0ae6f860ce8252f737947b72faedc96e4cf5d6193",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: density_nonnegative\n설명: 밀도는 일반적으로 음수가 아니어야 한다.\n검증 규칙: rho greater_or_equal 0",
+      "token_count": 96,
+      "content_hash": "1c859af04883d3b402788a70752202b79a66d6d962765df14734ee6c8f6f0ac4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: mx_has_y_my_has_x\n설명: Mx에는 y, My에는 x가 들어간다(모멘트 이름과 반대되는 좌표를 곱함에 주의).\n\n성질 ID: symmetry_shortcut_centroid\n설명: 영역과 밀도가 대칭이면 질량중심의 일부 좌표를 적분 없이 결정할 수 있다(예: y축 대칭이면 x̄=0).",
+      "token_count": 156,
+      "content_hash": "07005cafa8ac24338174d7e0b14f8c5915b242fd2a037704806a698a770e27b0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 일반 영역에서의 이중적분 (calculus.double_integral_general_region, 중요도: required)\n\n관련 개념:\n- calculus.moment_of_inertia_and_3d_mass\n\n학습 목표 ID: compute_mass_and_moments_2d\n행동 동사: calculate\n목표: 밀도함수로부터 질량과 모멘트를 계산한다.\n\n학습 목표 ID: compute_center_of_mass_2d\n행동 동사: calculate\n목표: 평면 영역의 질량중심을 구한다.\n\n학습 목표 ID: use_symmetry_for_centroid\n행동 동사: apply\n목표: 대칭성을 이용해 질량중심의 일부 좌표를 적분 없이 구한다.",
+      "token_count": 231,
+      "content_hash": "ceb606484049ee8c6d453ee8ce40adfb4e66bdde5a0120e858c1cd9cb73f8c62",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: Mx와 My에 곱하는 변수를 반대로 사용\n오개념 ID: calculus.center_of_mass_2d.swap_moment_variable\n설명: Mx를 ∬x ρ dA로, My를 ∬y ρ dA로 반대로 계산한다.\n진단 태그: swap_x_and_y_in_moment_formulas\n피드백: x축에 대한 모멘트 Mx에는 y가, y축에 대한 모멘트 My에는 x가 곱해진다.",
+      "token_count": 194,
+      "content_hash": "ab02b12f489405326aeae29e20a23b3a2469988e38a47f272dc0f411130bf79f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.center_of_mass_2d",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch05_multiple_integration",
+      "concept_name_ko": "얇은 판의 질량, 모멘트, 질량중심",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 다중적분\n개념: 얇은 판의 질량, 모멘트, 질량중심\n개념 ID: calculus.center_of_mass_2d\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: mass_and_moment_calculation, center_of_mass_calculation\n지원 정답 유형: scalar\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 119,
+      "content_hash": "016565bbe94b06737e0a82b62e849da2a6c1e0080eca253b7368fc9202f5d185",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

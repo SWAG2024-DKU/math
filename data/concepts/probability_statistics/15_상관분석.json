@@ -65,7 +65,8 @@
           "formula_id": "ps.correlation.kendall_tau_a.formula_01",
           "name_ko": "상관계수",
           "role": "correlation_coefficient",
-          "latex": "\\tau=\\frac{C-D}{\\binom n2}"
+          "latex": "\\tau=\\frac{C-D}{\\binom n2}",
+          "cas": "parse_latex('\\\\tau=\\\\frac{C-D}{\\\\binom n2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -175,7 +176,8 @@
           "formula_id": "ps.correlation.kendall_tau_b.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\tau_b=\\frac{C-D}{\\sqrt{(C+D+T_x)(C+D+T_y)}}"
+          "latex": "\\tau_b=\\frac{C-D}{\\sqrt{(C+D+T_x)(C+D+T_y)}}",
+          "cas": "parse_latex('\\\\tau_b=\\\\frac{C-D}{\\\\sqrt{(C+D+T_x)(C+D+T_y)}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -302,7 +304,8 @@
           "formula_id": "ps.correlation.spearman_no_tie_difference_formula.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "r_s\n=\n1-\n\\frac{6\\sum_{i=1}^{n}d_i^2}{n(n^2-1)}"
+          "latex": "r_s\n=\n1-\n\\frac{6\\sum_{i=1}^{n}d_i^2}{n(n^2-1)}",
+          "cas": "parse_latex('r_s\\n=\\n1-\\n\\\\frac{6\\\\sum_{i=1}^{n}d_i^2}{n(n^2-1)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -407,7 +410,8 @@
           "formula_id": "ps.correlation.spearman_rank_correlation.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "r_s\n=\n\\frac{\n\\sum_{i=1}^{n}(R_i-\\bar R)(S_i-\\bar S)\n}{\n\\sqrt{\n\\sum_{i=1}^{n}(R_i-\\bar R)^2\n\\sum_{i=1}^{n}(S_i-\\bar S)^2\n}\n}"
+          "latex": "r_s\n=\n\\frac{\n\\sum_{i=1}^{n}(R_i-\\bar R)(S_i-\\bar S)\n}{\n\\sqrt{\n\\sum_{i=1}^{n}(R_i-\\bar R)^2\n\\sum_{i=1}^{n}(S_i-\\bar S)^2\n}\n}",
+          "cas": "parse_latex('r_s\\n=\\n\\\\frac{\\n\\\\sum_{i=1}^{n}(R_i-\\\\bar R)(S_i-\\\\bar S)\\n}{\\n\\\\sqrt{\\n\\\\sum_{i=1}^{n}(R_i-\\\\bar R)^2\\n\\\\sum_{i=1}^{n}(S_i-\\\\bar S)^2\\n}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -521,7 +525,8 @@
           "formula_id": "ps.correlation.pearson_affine_transformation.formula_01",
           "name_ko": "상관 변환",
           "role": "correlation_transformation",
-          "latex": "r(a+bX,c+dY)=\\operatorname{sign}(bd)\\,r(X,Y)"
+          "latex": "r(a+bX,c+dY)=\\operatorname{sign}(bd)\\,r(X,Y)",
+          "cas": "parse_latex('r(a+bX,c+dY)=\\\\operatorname{sign}(bd)\\\\,r(X,Y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -715,7 +720,8 @@
           "formula_id": "ps.correlation.sample_pearson_correlation.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "r=\n\\frac{\n\\sum_{i=1}^{n}(x_i-\\bar x)(y_i-\\bar y)\n}{\n\\sqrt{\n\\left\\{\\sum_{i=1}^{n}(x_i-\\bar x)^2\\right\\}\n\\left\\{\\sum_{i=1}^{n}(y_i-\\bar y)^2\\right\\}\n}\n}"
+          "latex": "r=\n\\frac{\n\\sum_{i=1}^{n}(x_i-\\bar x)(y_i-\\bar y)\n}{\n\\sqrt{\n\\left\\{\\sum_{i=1}^{n}(x_i-\\bar x)^2\\right\\}\n\\left\\{\\sum_{i=1}^{n}(y_i-\\bar y)^2\\right\\}\n}\n}",
+          "cas": "parse_latex('r=\\n\\\\frac{\\n\\\\sum_{i=1}^{n}(x_i-\\\\bar x)(y_i-\\\\bar y)\\n}{\\n\\\\sqrt{\\n\\\\left\\\\{\\\\sum_{i=1}^{n}(x_i-\\\\bar x)^2\\\\right\\\\}\\n\\\\left\\\\{\\\\sum_{i=1}^{n}(y_i-\\\\bar y)^2\\\\right\\\\}\\n}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -941,7 +947,8 @@
           "formula_id": "ps.correlation.correlation_test.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "t=r\\sqrt{\\frac{n-2}{1-r^2}}"
+          "latex": "t=r\\sqrt{\\frac{n-2}{1-r^2}}",
+          "cas": "parse_latex('t=r\\\\sqrt{\\\\frac{n-2}{1-r^2}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1079,7 +1086,8 @@
           "formula_id": "ps.correlation.correlation_test.df.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=n-2"
+          "latex": "df=n-2",
+          "cas": "parse_latex('df=n-2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1210,7 +1218,8 @@
           "formula_id": "ps.correlation.partial_correlation_causality.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "r_{xy\\cdot z}\n=\n\\frac{r_{xy}-r_{xz}r_{yz}}\n{\\sqrt{(1-r_{xz}^2)(1-r_{yz}^2)}}"
+          "latex": "r_{xy\\cdot z}\n=\n\\frac{r_{xy}-r_{xz}r_{yz}}\n{\\sqrt{(1-r_{xz}^2)(1-r_{yz}^2)}}",
+          "cas": "parse_latex('r_{xy\\\\cdot z}\\n=\\n\\\\frac{r_{xy}-r_{xz}r_{yz}}\\n{\\\\sqrt{(1-r_{xz}^2)(1-r_{yz}^2)}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1727,7 +1736,8 @@
           "formula_id": "ps.correlation.correlation_matrix.formula_01",
           "name_ko": "행렬 성질",
           "role": "matrix_property",
-          "latex": "R=R^T"
+          "latex": "R=R^T",
+          "cas": "parse_latex('R=R^T', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1885,7 +1895,8 @@
           "formula_id": "ps.correlation.correlation_matrix.positive_semidefinite.formula_01",
           "name_ko": "행렬 성질",
           "role": "matrix_property",
-          "latex": "a^TRa\\ge0\\quad\\text{for all }a\\in\\mathbb R^p"
+          "latex": "a^TRa\\ge0\\quad\\text{for all }a\\in\\mathbb R^p",
+          "cas": "parse_latex('a^TRa\\\\ge0\\\\quad\\\\text{for all }a\\\\in\\\\mathbb R^p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2036,7 +2047,8 @@
           "formula_id": "ps.correlation.correlation_matrix.unit_diagonal.formula_01",
           "name_ko": "행렬 성질",
           "role": "matrix_property",
-          "latex": "\\operatorname{diag}(R)=\\mathbf 1"
+          "latex": "\\operatorname{diag}(R)=\\mathbf 1",
+          "cas": "parse_latex('\\\\operatorname{diag}(R)=\\\\mathbf 1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2186,7 +2198,8 @@
           "formula_id": "ps.correlation.precision_matrix_partial_correlation.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\rho_{ij\\cdot -ij}\n=\n-\\frac{\\Omega_{ij}}\n{\\sqrt{\\Omega_{ii}\\Omega_{jj}}}"
+          "latex": "\\rho_{ij\\cdot -ij}\n=\n-\\frac{\\Omega_{ij}}\n{\\sqrt{\\Omega_{ii}\\Omega_{jj}}}",
+          "cas": "parse_latex('\\\\rho_{ij\\\\cdot -ij}\\n=\\n-\\\\frac{\\\\Omega_{ij}}\\n{\\\\sqrt{\\\\Omega_{ii}\\\\Omega_{jj}}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2378,7 +2391,8 @@
           "formula_id": "ps.correlation.partial_correlation_test.f01.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "t=\nr_{xy\\cdot Z}\n\\sqrt{\\frac{n-q-2}{1-r_{xy\\cdot Z}^2}}"
+          "latex": "t=\nr_{xy\\cdot Z}\n\\sqrt{\\frac{n-q-2}{1-r_{xy\\cdot Z}^2}}",
+          "cas": "parse_latex('t=\\nr_{xy\\\\cdot Z}\\n\\\\sqrt{\\\\frac{n-q-2}{1-r_{xy\\\\cdot Z}^2}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2511,7 +2525,8 @@
           "formula_id": "ps.correlation.partial_correlation_test.f02.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=n-q-2"
+          "latex": "df=n-q-2",
+          "cas": "parse_latex('df=n-q-2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2626,7 +2641,8 @@
           "formula_id": "ps.correlation.pearson_fisher_transform.f01.formula_01",
           "name_ko": "변환식",
           "role": "transformation",
-          "latex": "z_r=\\frac12\\log\\left(\\frac{1+r}{1-r}\\right)"
+          "latex": "z_r=\\frac12\\log\\left(\\frac{1+r}{1-r}\\right)",
+          "cas": "parse_latex('z_r=\\\\frac12\\\\log\\\\left(\\\\frac{1+r}{1-r}\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2730,7 +2746,8 @@
           "formula_id": "ps.correlation.pearson_fisher_transform.f02.formula_01",
           "name_ko": "근사 표준오차",
           "role": "approximate_standard_error",
-          "latex": "\\operatorname{SE}(z_r)\\approx\\frac{1}{\\sqrt{n-3}}"
+          "latex": "\\operatorname{SE}(z_r)\\approx\\frac{1}{\\sqrt{n-3}}",
+          "cas": "parse_latex('\\\\operatorname{SE}(z_r)\\\\approx\\\\frac{1}{\\\\sqrt{n-3}}', backend='antlr')"
         }
       ],
       "application_conditions": [

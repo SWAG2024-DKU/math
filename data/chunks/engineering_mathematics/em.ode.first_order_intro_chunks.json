@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.first_order_intro",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_01_first_order_odes",
+  "concept_name_ko": "1계 상미분방정식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 하나의 독립변수에 대한 미지함수와 그 1계 도함수 사이의 관계식이다. 일반해에는 보통 하나의 임의상수가 포함되며, 초기조건을 적용하면 특수해가 결정된다.\n검색 태그: ode, first_order, differential_equation",
+      "token_count": 116,
+      "content_hash": "423a49ee8c4a3c659e11bbf4f2b1a8e1f5c60a47096f1d4739e73f351580a6ee",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 일반형\n공식 ID: general_form_ode\n역할: definition\nLaTeX: F(x,y,y')=0\nCAS 표현: Eq(F(x, y, Derivative(y, x)), 0)\n\n공식명: 정규형\n공식 ID: normal_form_ode\n역할: definition\nLaTeX: y'=f(x,y)\nCAS 표현: Eq(Derivative(y, x), f(x, y))",
+      "token_count": 157,
+      "content_hash": "fa575c7f94ca6710a465458687e8c979377f20b8bc939b6a08a4d8f40c83e4ae",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: solve_for_y_prime\n설명: 정규형을 사용하려면 주어진 구간에서 방정식을 y'에 관해 풀 수 있어야 한다.\n검증 규칙: can_solve_for_derivative equals 참",
+      "token_count": 108,
+      "content_hash": "b3f097323baebcbc5f147f601c335f36655eed49fd8f34dd2cbd03065eb6fbd9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: solution_forms\n설명: 해는 명시적 형태 y=phi(x) 또는 음함수 형태 G(x,y)=0로 주어질 수 있다.",
+      "token_count": 94,
+      "content_hash": "2f70d20909d5dd1dd9895139e374facb5d90894122bf38f38bc5cce6c2a4fc0e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수 (calculus.function, 중요도: required)\n- 미분 (calculus.derivative, 중요도: required)\n- 적분 (calculus.integral, 중요도: required)\n- 음함수 미분 (calculus.implicit_differentiation, 중요도: required)\n\n관련 개념:\n- em.ode.ivp_existence_uniqueness\n\n학습 목표 ID: identify_first_order_ode\n행동 동사: identify\n목표: 1계 상미분방정식의 개념과 일반형 및 정규형을 이해한다.",
+      "token_count": 187,
+      "content_hash": "8ccb356d7a5876f0f5bde61c892c442920eaee1ea4998553419fbdbafee70080",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 계수와 차차수 혼동\n오개념 ID: em.ode.first_order_intro.order_vs_degree\n설명: 방정식의 계수는 최고차 도함수의 차수이고, 도함수의 거듭제곱을 뜻하는 차수와 다르다.\n진단 태그: confuse_order_with_degree\n피드백: 계수(order)와 거듭제곱 차수(degree)는 서로 다른 개념입니다.",
+      "token_count": 174,
+      "content_hash": "e7e14a59d55805453005623d1858bff92fe981403653c20fedb8a9ed5a3bb643",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.first_order_intro",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 상미분방정식",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 상미분방정식\n개념 ID: em.ode.first_order_intro\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: ode_classification\n지원 정답 유형: boolean\n난이도 범위: 1 ~ 2\n권장 검증기: ode_form_check",
+      "token_count": 95,
+      "content_hash": "febaa9d5a72cc63d5e2f5764ae690524e95836858d44d33f895dae1af292cacb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

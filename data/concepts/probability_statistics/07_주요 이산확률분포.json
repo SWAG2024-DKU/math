@@ -65,7 +65,8 @@
           "formula_id": "ps.discrete_distributions.hypergeometric_variance.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)\n=n\\frac{K}{N}\\left(1-\\frac{K}{N}\\right)\n\\frac{N-n}{N-1}"
+          "latex": "\\operatorname{Var}(X)\n=n\\frac{K}{N}\\left(1-\\frac{K}{N}\\right)\n\\frac{N-n}{N-1}",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)\\n=n\\\\frac{K}{N}\\\\left(1-\\\\frac{K}{N}\\\\right)\\n\\\\frac{N-n}{N-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -213,7 +214,8 @@
           "formula_id": "ps.discrete_distributions.multinomial_cross_covariance.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\operatorname{Cov}(X_i,X_j)=-np_ip_j"
+          "latex": "\\operatorname{Cov}(X_i,X_j)=-np_ip_j",
+          "cas": "parse_latex('\\\\operatorname{Cov}(X_i,X_j)=-np_ip_j', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1179,7 +1181,8 @@
           "formula_id": "ps.discrete_distributions.binomial_normal_approximation.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "\\operatorname{Bin}(n,p)\\approx N(np,np(1-p))"
+          "latex": "\\operatorname{Bin}(n,p)\\approx N(np,np(1-p))",
+          "cas": "parse_latex('\\\\operatorname{Bin}(n,p)\\\\approx N(np,np(1-p))', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1333,7 +1336,8 @@
           "formula_id": "ps.discrete_distributions.binomial_poisson_approximation.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "\\operatorname{Bin}(n,p)\\approx\\operatorname{Pois}(np)"
+          "latex": "\\operatorname{Bin}(n,p)\\approx\\operatorname{Pois}(np)",
+          "cas": "parse_latex('\\\\operatorname{Bin}(n,p)\\\\approx\\\\operatorname{Pois}(np)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1591,7 +1595,8 @@
           "formula_id": "ps.discrete_distributions.binomial_mgf.formula_01",
           "name_ko": "적률생성함수",
           "role": "moment_generating_function",
-          "latex": "X\\sim\\operatorname{Bin}(n,p)\n\\quad\\Rightarrow\\quad\nM_X(t)=(1-p+pe^t)^n"
+          "latex": "X\\sim\\operatorname{Bin}(n,p)\n\\quad\\Rightarrow\\quad\nM_X(t)=(1-p+pe^t)^n",
+          "cas": "parse_latex('X\\\\sim\\\\operatorname{Bin}(n,p)\\n\\\\quad\\\\Rightarrow\\\\quad\\nM_X(t)=(1-p+pe^t)^n', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1726,7 +1731,8 @@
           "formula_id": "ps.discrete_distributions.indicator_expectation.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[I_A]=P(A)"
+          "latex": "E[I_A]=P(A)",
+          "cas": "parse_latex('E[I_A]=P(A)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1909,7 +1915,8 @@
           "formula_id": "ps.discrete_distributions.poisson_mgf.formula_01",
           "name_ko": "적률생성함수",
           "role": "moment_generating_function",
-          "latex": "X\\sim\\operatorname{Pois}(\\lambda)\n\\quad\\Rightarrow\\quad\nM_X(t)=\\exp\\{\\lambda(e^t-1)\\}"
+          "latex": "X\\sim\\operatorname{Pois}(\\lambda)\n\\quad\\Rightarrow\\quad\nM_X(t)=\\exp\\{\\lambda(e^t-1)\\}",
+          "cas": "parse_latex('X\\\\sim\\\\operatorname{Pois}(\\\\lambda)\\n\\\\quad\\\\Rightarrow\\\\quad\\nM_X(t)=\\\\exp\\\\{\\\\lambda(e^t-1)\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2104,7 +2111,8 @@
           "formula_id": "ps.discrete_distributions.approximation_conditions_error.formula_01",
           "name_ko": "연속성 수정 근사",
           "role": "approximation",
-          "latex": "P(X\\le k)\\approx P(Y\\le k+0.5)"
+          "latex": "P(X\\le k)\\approx P(Y\\le k+0.5)",
+          "cas": "parse_latex('P(X\\\\le k)\\\\approx P(Y\\\\le k+0.5)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2276,7 +2284,8 @@
           "formula_id": "ps.discrete_distributions.discrete_support_parameters.formula_01",
           "name_ko": "지지집합",
           "role": "support",
-          "latex": "\\max(0,n-N+K)\\le k\\le\\min(n,K)"
+          "latex": "\\max(0,n-N+K)\\le k\\le\\min(n,K)",
+          "cas": "parse_latex('\\\\max(0,n-N+K)\\\\le k\\\\le\\\\min(n,K)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2448,7 +2457,8 @@
           "formula_id": "ps.discrete_distributions.poisson_reproductive_property.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\sum_{i=1}^m X_i\n\\sim\n\\operatorname{Pois}\\left(\\sum_{i=1}^m\\lambda_i\\right)"
+          "latex": "\\sum_{i=1}^m X_i\n\\sim\n\\operatorname{Pois}\\left(\\sum_{i=1}^m\\lambda_i\\right)",
+          "cas": "parse_latex('\\\\sum_{i=1}^m X_i\\n\\\\sim\\n\\\\operatorname{Pois}\\\\left(\\\\sum_{i=1}^m\\\\lambda_i\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2596,7 +2606,8 @@
           "formula_id": "ps.discrete_distributions.multinomial_mean_variance.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X_i]=np_i"
+          "latex": "E[X_i]=np_i",
+          "cas": "parse_latex('E[X_i]=np_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2727,7 +2738,8 @@
           "formula_id": "ps.discrete_distributions.multinomial_mean_variance.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X_i)=np_i(1-p_i)"
+          "latex": "\\operatorname{Var}(X_i)=np_i(1-p_i)",
+          "cas": "parse_latex('\\\\operatorname{Var}(X_i)=np_i(1-p_i)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2858,7 +2870,8 @@
           "formula_id": "ps.discrete_distributions.bernoulli.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=x)=p^x(1-p)^{1-x}"
+          "latex": "P(X=x)=p^x(1-p)^{1-x}",
+          "cas": "parse_latex('P(X=x)=p^x(1-p)^{1-x}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2985,7 +2998,8 @@
           "formula_id": "ps.discrete_distributions.bernoulli.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=p"
+          "latex": "E[X]=p",
+          "cas": "parse_latex('E[X]=p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3100,7 +3114,8 @@
           "formula_id": "ps.discrete_distributions.bernoulli.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=p(1-p)"
+          "latex": "\\operatorname{Var}(X)=p(1-p)",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=p(1-p)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3215,7 +3230,8 @@
           "formula_id": "ps.discrete_distributions.binomial.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}"
+          "latex": "P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}",
+          "cas": "parse_latex('P(X=k)=\\\\binom{n}{k}p^k(1-p)^{n-k}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3354,7 +3370,8 @@
           "formula_id": "ps.discrete_distributions.binomial.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=np"
+          "latex": "E[X]=np",
+          "cas": "parse_latex('E[X]=np', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3493,7 +3510,8 @@
           "formula_id": "ps.discrete_distributions.binomial.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=np(1-p)"
+          "latex": "\\operatorname{Var}(X)=np(1-p)",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=np(1-p)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3632,7 +3650,8 @@
           "formula_id": "ps.discrete_distributions.geometric_negative_binomial.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=k)=(1-p)^{k-1}p"
+          "latex": "P(X=k)=(1-p)^{k-1}p",
+          "cas": "parse_latex('P(X=k)=(1-p)^{k-1}p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3766,7 +3785,8 @@
           "formula_id": "ps.discrete_distributions.geometric_negative_binomial.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=1/p"
+          "latex": "E[X]=1/p",
+          "cas": "parse_latex('E[X]=1/p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3891,7 +3911,8 @@
           "formula_id": "ps.discrete_distributions.geometric_negative_binomial.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=(1-p)/p^2"
+          "latex": "\\operatorname{Var}(X)=(1-p)/p^2",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=(1-p)/p^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4016,7 +4037,8 @@
           "formula_id": "ps.discrete_distributions.hypergeometric.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=k)\n=\n\\frac{\\binom{K}{k}\\binom{N-K}{n-k}}{\\binom{N}{n}}"
+          "latex": "P(X=k)\n=\n\\frac{\\binom{K}{k}\\binom{N-K}{n-k}}{\\binom{N}{n}}",
+          "cas": "parse_latex('P(X=k)\\n=\\n\\\\frac{\\\\binom{K}{k}\\\\binom{N-K}{n-k}}{\\\\binom{N}{n}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4177,7 +4199,8 @@
           "formula_id": "ps.discrete_distributions.hypergeometric.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=nK/N"
+          "latex": "E[X]=nK/N",
+          "cas": "parse_latex('E[X]=nK/N', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4356,7 +4379,8 @@
           "formula_id": "ps.discrete_distributions.poisson.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=k)=e^{-\\lambda}\\lambda^k/k!"
+          "latex": "P(X=k)=e^{-\\lambda}\\lambda^k/k!",
+          "cas": "parse_latex('P(X=k)=e^{-\\\\lambda}\\\\lambda^k/k!', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4472,7 +4496,8 @@
           "formula_id": "ps.discrete_distributions.poisson.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\lambda"
+          "latex": "E[X]=\\lambda",
+          "cas": "parse_latex('E[X]=\\\\lambda', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4580,7 +4605,8 @@
           "formula_id": "ps.discrete_distributions.poisson.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\\lambda"
+          "latex": "\\operatorname{Var}(X)=\\lambda",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\\\lambda', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4688,7 +4714,8 @@
           "formula_id": "ps.discrete_distributions.multinomial.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(X_1=x_1,\\ldots,X_k=x_k)=\\frac{n!}{\\prod_{i=1}^{k}x_i!}\\prod_{i=1}^{k}p_i^{x_i}"
+          "latex": "P(X_1=x_1,\\ldots,X_k=x_k)=\\frac{n!}{\\prod_{i=1}^{k}x_i!}\\prod_{i=1}^{k}p_i^{x_i}",
+          "cas": "parse_latex('P(X_1=x_1,\\\\ldots,X_k=x_k)=\\\\frac{n!}{\\\\prod_{i=1}^{k}x_i!}\\\\prod_{i=1}^{k}p_i^{x_i}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5129,7 +5156,8 @@
           "formula_id": "ps.discrete_distributions.negative_binomial_parameterizations.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=k)=\\binom{k-1}{r-1}p^r(1-p)^{k-r}"
+          "latex": "P(X=k)=\\binom{k-1}{r-1}p^r(1-p)^{k-r}",
+          "cas": "parse_latex('P(X=k)=\\\\binom{k-1}{r-1}p^r(1-p)^{k-r}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5277,7 +5305,8 @@
           "formula_id": "ps.discrete_distributions.negative_binomial_parameterizations.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\frac{r}{p}"
+          "latex": "E[X]=\\frac{r}{p}",
+          "cas": "parse_latex('E[X]=\\\\frac{r}{p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5426,7 +5455,8 @@
           "formula_id": "ps.discrete_distributions.negative_binomial_parameterizations.f02_variance.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\\frac{r(1-p)}{p^2}"
+          "latex": "\\operatorname{Var}(X)=\\frac{r(1-p)}{p^2}",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\\\frac{r(1-p)}{p^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5575,7 +5605,8 @@
           "formula_id": "ps.discrete_distributions.negative_binomial_parameterizations.f03.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "P(Y=k)=\\binom{k+r-1}{r-1}p^r(1-p)^k"
+          "latex": "P(Y=k)=\\binom{k+r-1}{r-1}p^r(1-p)^k",
+          "cas": "parse_latex('P(Y=k)=\\\\binom{k+r-1}{r-1}p^r(1-p)^k', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5732,7 +5763,8 @@
           "formula_id": "ps.discrete_distributions.negative_binomial_parameterizations.f04.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[Y]=\\frac{r(1-p)}{p}"
+          "latex": "E[Y]=\\frac{r(1-p)}{p}",
+          "cas": "parse_latex('E[Y]=\\\\frac{r(1-p)}{p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5881,7 +5913,8 @@
           "formula_id": "ps.discrete_distributions.negative_binomial_parameterizations.f04_variance.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(Y)=\\frac{r(1-p)}{p^2}"
+          "latex": "\\operatorname{Var}(Y)=\\frac{r(1-p)}{p^2}",
+          "cas": "parse_latex('\\\\operatorname{Var}(Y)=\\\\frac{r(1-p)}{p^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6030,7 +6063,8 @@
           "formula_id": "ps.discrete_distributions.discrete_uniform.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=x)=\\frac{1}{b-a+1}"
+          "latex": "P(X=x)=\\frac{1}{b-a+1}",
+          "cas": "parse_latex('P(X=x)=\\\\frac{1}{b-a+1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6169,7 +6203,8 @@
           "formula_id": "ps.discrete_distributions.discrete_uniform.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\frac{a+b}{2}"
+          "latex": "E[X]=\\frac{a+b}{2}",
+          "cas": "parse_latex('E[X]=\\\\frac{a+b}{2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6308,7 +6343,8 @@
           "formula_id": "ps.discrete_distributions.discrete_uniform.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\\frac{(b-a+1)^2-1}{12}"
+          "latex": "\\operatorname{Var}(X)=\\frac{(b-a+1)^2-1}{12}",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\\\frac{(b-a+1)^2-1}{12}', backend='antlr')"
         }
       ],
       "application_conditions": [

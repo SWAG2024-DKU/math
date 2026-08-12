@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.binomial_series_and_series_applications",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v2_ch06_power_series",
+  "concept_name_ko": "이항급수와 멱급수의 응용",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이항급수는 (1+x)^r=Σ(r choose n)x^n(|x|<1)이며, 일반화된 이항계수는 (r choose n)=r(r-1)...(r-n+1)/n!이다. 알려진 멱급수에 변수 치환·상수배·합차·곱·항별 미분·적분을 적용해 새 급수를 만들 수 있고, 초등함수로 원시함수를 표현하기 어려운 적분이나 0/0 극한도 멱급수로 계산할 수 있다.\n검색 태그: binomial_series, power_series_application",
+      "token_count": 200,
+      "content_hash": "4aa44361a14ef4876479498a176770c886a41c5750033ba1a475a4beefed7894",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 일반화된 이항계수\n공식 ID: generalized_binomial_coefficient\n역할: definition\nLaTeX: \\binom{r}{n}=\\frac{r(r-1)(r-2)\\cdots(r-n+1)}{n!},\\qquad\\binom{r}{0}=1\nCAS 표현: binomial(r, n)\n\n공식명: 이항급수\n공식 ID: binomial_series\n역할: theorem\nLaTeX: (1+x)^r=\\sum_{n=0}^\\infty\\binom{r}{n}x^n,\\qquad|x|<1\nCAS 표현: Sum(binomial(r,n)*x**n, (n,0,oo))\n\n공식명: 멱급수를 이용한 적분 예시\n공식 ID: series_integration_example\n역할: example\nLaTeX: e^{-x^2}=\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n}}{n!}\\implies\\int e^{-x^2}dx=C+\\sum_{n=0}^\\infty(-1)^n\\frac{x^{2n+1}}{(2n+1)n!}\nCAS 표현: Integral(exp(-x**2), x)",
+      "token_count": 370,
+      "content_hash": "41f86c09b4b65e6c27af96904295e74159940e00e9aa2331b64fd5c4d587eb4f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: binomial_series_general_radius\n설명: 이항급수의 일반적인 수렴반지름은 |x|<1이며, 끝점의 수렴 여부는 r의 값에 따라 따로 판단해야 한다.\n검증 규칙: abs_x less_than 1",
+      "token_count": 126,
+      "content_hash": "ec56d65ddaf5fc9720c9f69898a325f6a67a858772606214b95bf15c737e7366",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: binomial_reduces_to_polynomial_for_nonneg_integer_r\n설명: r이 음이 아닌 정수이면 이항계수가 어느 n을 넘으면 0이 되어 이항급수가 유한한 이항정리로 축소된다.\n\n성질 ID: series_limits_via_leading_term\n설명: 함수의 Taylor 급수에서 가장 낮은 차수의 비영항을 이용하면 0/0 형태 극한의 주된 거동을 확인할 수 있다(예: x→0에서 e^x-1-x의 주된 항은 x²/2).",
+      "token_count": 195,
+      "content_hash": "a969f831b708b77b75665814b8e8ee14a2d56331b276d9bd9c769f07da8ffd5e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 멱급수의 항별 미분·적분과 변수 치환 (calculus.power_series_term_by_term_calculus, 중요도: required)\n- 대표적인 Maclaurin 급수 (calculus.common_maclaurin_series, 중요도: required)\n\n학습 목표 ID: expand_binomial_series\n행동 동사: construct\n목표: 주어진 r에 대해 이항급수를 전개한다.\n\n학습 목표 ID: integrate_via_power_series\n행동 동사: calculate\n목표: 초등함수로 원시함수를 구하기 어려운 함수를 멱급수의 항별 적분으로 근사·표현한다.\n\n학습 목표 ID: evaluate_limit_via_series\n행동 동사: calculate\n목표: Taylor 급수의 최저차 비영항으로 부정형 극한을 계산한다.",
+      "token_count": 257,
+      "content_hash": "a8f81874883300412dcd4cfec79c10c607a58cbf2209873b2877cee0aa36a82b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 이항급수 끝점 수렴을 r과 무관하게 판단\n오개념 ID: calculus.binomial_series.endpoint_assumed_uniform\n설명: 이항급수의 끝점(x=±1) 수렴 여부가 r 값과 무관하게 항상 같다고 가정한다.\n진단 태그: assume_binomial_series_endpoint_convergence_independent_of_r\n피드백: 이항급수의 끝점 수렴 여부는 지수 r의 값에 따라 달라지므로 매번 따로 판단해야 한다.",
+      "token_count": 200,
+      "content_hash": "540193edffe590d3bceaabfc4b6e1a4e78ddf11530fc3ac82b45429413ec35c8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "이항급수와 멱급수의 응용",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: 이항급수와 멱급수의 응용\n개념 ID: calculus.binomial_series_and_series_applications\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: binomial_series_expansion, series_based_integration, series_based_limit_evaluation\n지원 정답 유형: expression, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence, numeric_tolerance",
+      "token_count": 131,
+      "content_hash": "35b208b1b3c2750827fbc93a0fb40194749df3f6f7609c87f3321ca0863511ac",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

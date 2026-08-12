@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.trigonometric_substitution",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch07_techniques_of_integration",
+  "concept_name_ko": "삼각치환",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: √(a²-x²), √(a²+x²), √(x²-a²) 형태의 근호가 있는 적분에서, x를 삼각함수의 식(x=a sinθ, a tanθ, a secθ)으로 역치환하여 근호를 삼각함수의 완전제곱 항등식으로 없애는 방법이다.\n검색 태그: trigonometric_substitution",
+      "token_count": 136,
+      "content_hash": "34c570bcb7f2eb4054f87777fa5a40f9269d473356c2a5057ab22e79424bf162",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 삼각치환표\n공식 ID: trig_sub_table\n역할: table\nLaTeX: \\sqrt{a^2-x^2}:x=a\\sin\\theta;\\quad\\sqrt{a^2+x^2}:x=a\\tan\\theta;\\quad\\sqrt{x^2-a^2}:x=a\\sec\\theta\nCAS 표현: a*sin(theta)\n\n공식명: 타원의 넓이\n공식 ID: ellipse_area\n역할: application\nLaTeX: A=\\pi ab\\quad(a=b=r\\text{이면 원의 넓이 }\\pi r^2)\nCAS 표현: pi*a*b",
+      "token_count": 206,
+      "content_hash": "f6459b4a200c344d9641d552fd4e8137d6b9adb4be76345864550b6e3d99bb27",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: theta_range_for_one_to_one\n설명: 역치환이 가능하려면 θ↦x가 일대일함수여야 하므로, θ를 각 경우에 지정된 범위(√(a²-x²)는 -π/2≤θ≤π/2, √(a²+x²)는 -π/2<θ<π/2, √(x²-a²)는 0≤θ<π/2 또는 π≤θ<3π/2)로 제한해야 한다.\n검증 규칙: theta_restricted_to_specified_range equals 참\n\n조건 ID: complete_square_first\n설명: 근호 속이 완전제곱식이 아닌 경우(예: √(3-2x-x²))는 먼저 완전제곱식으로 고친 뒤 삼각치환을 적용한다.\n검증 규칙: radicand_is_perfect_square_form equals 참",
+      "token_count": 244,
+      "content_hash": "1683c0b660f4fe08bf5654d7333fc459ebe705d8044ff538c4df88cb57f47f5e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: right_triangle_back_substitution\n설명: 치환 후 얻은 θ에 대한 식을 다시 x로 되돌리려면, θ를 한 각으로 갖는 직각삼각형을 그려 다른 삼각함수 값을 x로 표현하는 것이 표준적인 방법이다.\n\n성질 ID: not_always_best_method\n설명: 삼각치환이 가능하더라도 항상 최선은 아니다: u=x²+4 같은 단순 치환으로 더 쉽게 풀리는 경우도 있으므로 먼저 더 간단한 방법이 있는지 확인해야 한다.\n\n성질 ID: hyperbolic_substitution_alternative\n설명: 쌍곡선치환(x=a cosh t 또는 a sinh t)으로도 √(x²-a²), √(a²+x²) 형태를 대안적으로 처리할 수 있다.",
+      "token_count": 228,
+      "content_hash": "72d9bd4d34c3c4f2c467fe1bb433e20c42211b4b22af272a84664c2786ce7f82",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 쌍곡선함수 (calculus.hyperbolic_functions, 중요도: recommended)\n- 치환법 (calculus.substitution, 중요도: required)\n\n관련 개념:\n- calculus.trigonometric_integrals\n\n학습 목표 ID: select_trig_substitution\n행동 동사: select\n목표: 근호의 형태에 맞는 삼각치환(sin, tan, sec)을 선택한다.\n\n학습 목표 ID: convert_back_via_right_triangle\n행동 동사: transform\n목표: 직각삼각형을 그려 θ에 대한 결과를 x에 대한 식으로 되돌린다.",
+      "token_count": 187,
+      "content_hash": "6092fdd973c53e70ed4b34c07ccab9c1d2d2beca47c78c790bb933026f6c5082",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 삼각치환표의 세 경우 혼동\n오개념 ID: calculus.trig_sub.wrong_case_selection\n설명: √(a²+x²)에 x=a sinθ를, 또는 √(a²-x²)에 x=a tanθ를 적용하는 등 근호 속 부호에 맞지 않는 치환을 선택한다.\n진단 태그: wrong_trig_substitution_case\n피드백: 근호 속 부호와 항의 순서(a²-x², a²+x², x²-a²)에 따라 sin, tan, sec 중 정해진 치환을 써야 한다.\n\n오개념: 완전제곱 정리 없이 삼각치환 시도\n오개념 ID: calculus.trig_sub.skip_complete_square\n설명: √(3-2x-x²)처럼 완전제곱 형태가 아닌 근호에 곧바로 삼각치환표를 적용하려 한다.\n진단 태그: apply_trig_substitution_without_completing_square\n피드백: 근호 속이 a²±x² 또는 x²-a² 형태가 아니면 먼저 완전제곱식으로 정리한 뒤 삼각치환을 적용해야 한다.",
+      "token_count": 325,
+      "content_hash": "338f510a69d54ba06b3c3637691a64f8a369f589d5e43cf18c78a054c1cfb7b4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trigonometric_substitution",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "삼각치환",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 삼각치환\n개념 ID: calculus.trigonometric_substitution\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: trig_substitution_selection, trig_substitution_integral_calculation\n지원 정답 유형: expression, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence",
+      "token_count": 106,
+      "content_hash": "47c84d763867bb9f765ca7670eab7132f2dcfdb9e43c0768004bd0dc2cf11603",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

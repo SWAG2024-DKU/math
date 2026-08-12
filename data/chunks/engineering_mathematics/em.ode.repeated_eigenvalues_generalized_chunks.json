@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.repeated_eigenvalues_generalized",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_04_systems_of_odes",
+  "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 독립 고유벡터가 부족한 결함행렬의 시스템을 Jordan 사슬로 푸는 방법이다.\n검색 태그: repeated_eigenvalues, generalized_eigenvectors, jordan_chain",
+      "token_count": 109,
+      "content_hash": "56947681cd3bc643683863a3e80340bafff8a4e1daf9e08396ee6a4117c9a44e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 일반화 고유벡터 방정식\n공식 ID: generalized_eigenvector_eq\n역할: definition\nLaTeX: (A-\\lambda I)\\mathbf{w}=\\mathbf{v}\nCAS 표현: Eq((A - lambda_val * Eye(n)) * w, v)\n\n공식명: 결함행렬 해 형태\n공식 ID: repeated_eigenvalue_solution_form\n역할: formula\nLaTeX: \\mathbf{x}_1=e^{\\lambda t}\\mathbf{v},\\qquad \\mathbf{x}_2=e^{\\lambda t}(t\\mathbf{v}+\\mathbf{w})\nCAS 표현: [exp(lambda * t) * v, exp(lambda * t) * (t * v + w)]",
+      "token_count": 261,
+      "content_hash": "e1b7b2d98fbb9ba2c51e8b15d15dd172701bf8ae0f0bd3ab3bb363e4eb957719",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: geometric_multiplicity_less_than_algebraic\n설명: 대수적 중복도보다 고유공간 차원이 작은 경우 적용한다.\n검증 규칙: has_defective_matrix equals 참",
+      "token_count": 115,
+      "content_hash": "b56839328174b7e59bb4ee74be6724960537495b0a61f59d5f9d031212c89187",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: jordan_block_polynomials\n설명: Jordan 블록 크기에 따라 t의 다항식이 지수함수에 곱해진다.",
+      "token_count": 97,
+      "content_hash": "e92202f0306ac7418fc53575187991afd0b63ddfb2117284c0be67d8bba43055",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 일반화 고유벡터 및 Jordan 형식 (la.advanced.jordan_form, 중요도: required)\n- 선형독립 (em.ode.eigenvalue_method, 중요도: required)\n\n관련 개념:\n- em.ode.matrix_exponential\n\n학습 목표 ID: solve_defective_system\n행동 동사: solve\n목표: 중복 고유값과 일반화 고유벡터를 이용해 연립 ODE를 푼다.",
+      "token_count": 176,
+      "content_hash": "13acf45609a877d50cdea0c1e748ef9c0ebb41e01ca72b658a03eb6f250d488c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 중복도 개념 혼동\n오개념 ID: em.ode.repeated_eigenvalues_generalized.confuse_geometric_algebraic\n설명: 대수적 중복도와 기하적 중복도가 항상 같다고 가정하여 일반화 고유벡터를 찾지 않는다.\n진단 태그: confuse_multiplicities\n피드백: 대수적 중복도와 기하적 중복도가 다를 수 있으며, 독립 고유벡터가 부족할 때만 일반화 고유벡터가 필요합니다.",
+      "token_count": 198,
+      "content_hash": "87f3256bc49997599391e61f25db4cc22d04556294902076f1f52b40ddea89bf",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.repeated_eigenvalues_generalized",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "중복 고유값과 일반화 고유벡터",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 중복 고유값과 일반화 고유벡터\n개념 ID: em.ode.repeated_eigenvalues_generalized\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: generalized_eigenvector_solving\n지원 정답 유형: expression\n난이도 범위: 3 ~ 5\n권장 검증기: system_solution_check",
+      "token_count": 106,
+      "content_hash": "532310403fa20da174c0e5b2735ee380adad9b30c47ad0263d106bfa64801e90",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.anova.exact_reference_robust_alternatives",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_18_anova",
+  "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.exact_reference_robust_alternatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA의 정확 F 기준분포\n개념 ID: ps.anova.exact_reference_robust_alternatives\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 평균 동일성 귀무가설과 정규·등분산 독립오차 아래 일원 ANOVA F통계량의 정확한 기준분포를 나타낸다.\n검색 태그: anova, exact_reference_robust_alternatives, distribution",
+      "token_count": 111,
+      "content_hash": "76f54231987159b76e14adc2df0d88597f31eb799f15b21bbec4c319798685eb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.exact_reference_robust_alternatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+      "chunk_index": 1,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA의 정확 F 기준분포\n개념 ID: ps.anova.exact_reference_robust_alternatives\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.anova.exact_reference_robust_alternatives.condition_01\n설명: $a\\ge2$, $N>a$, $MS_E>0$이어야 한다.\n검증 규칙: anova_dimensions_and_error_variance_valid equals 참\n\n조건 ID: ps.anova.exact_reference_robust_alternatives.condition_02\n설명: 귀무가설 $H_0:\\mu_1=\\cdots=\\mu_a$가 기준분포 계산에서 가정된다.\n검증 규칙: reference_distribution_under_null equals 참\n\n조건 ID: ps.anova.exact_reference_robust_alternatives.condition_03\n설명: 오차는 독립·정규·등분산이어야 한다.\n검증 규칙: exact_oneway_anova_error_conditions equals 참",
+      "token_count": 256,
+      "content_hash": "3b10d471d64e3820a86e755edf03adaafb88a0a69d35c0d31e13a0e31eb4187c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.exact_reference_robust_alternatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+      "chunk_index": 2,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA의 정확 F 기준분포\n개념 ID: ps.anova.exact_reference_robust_alternatives\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.anova.exact_reference_robust_alternatives.property_01\n설명: 정규·등분산 오차모형과 귀무가설 아래 $F=\\frac{MS_A}{MS_E}\\sim F_{a-1,N-a}$ 이다.\n\n성질 ID: ps.anova.exact_reference_robust_alternatives.property_02\n설명: 집단 평균을 비교할 때 등분산성이 적절하지 않으면 Welch 일원분산분석을 고려한다.\n\n성질 ID: ps.anova.exact_reference_robust_alternatives.property_03\n설명: 집단별 분산의 동일성을 점검하려면 중앙값으로부터의 절대편차를 이용하는 Brown--Forsythe 검정이나 Levene 검정을 사용할 수 있다.\n\n성질 ID: ps.anova.exact_reference_robust_alternatives.property_04\n설명: 문헌에서 Brown--Forsythe라는 이름이 강건한 평균 비교 절차에도 쓰일 수 있으므로, 사용한 통계량과 검정 대상을 명시한다.\n\n성질 ID: ps.anova.exact_reference_robust_alternatives.property_05\n설명: 큰 표본이라는 이유만으로 군집·반복측정 의존성이 자동으로 해결되지는 않는다.\n\n성질 ID: ps.anova.exact_reference_robust_alternatives.property_06\n설명: 관련 canonical 수식: $F=\\frac{MS_A}{MS_E}$",
+      "token_count": 409,
+      "content_hash": "c2fc2d2e2136c3e006d3cf8e4de504fa3997e25ccfa26d650f5451019a114883",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 6,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.exact_reference_robust_alternatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA의 정확 F 기준분포\n개념 ID: ps.anova.exact_reference_robust_alternatives\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- F분포 (ps.continuous_distributions.f_distribution, 중요도: required)\n- 가설검정의 구조 (ps.hypothesis_testing.test_structure, 중요도: required)\n- 다중회귀모형 (ps.multiple_linear_regression.multiple_regression_model, 중요도: recommended)\n\n관련 개념:\n- ps.anova.fixed_random_effects\n- ps.anova.two_way_unbalanced_cautions\n- ps.anova.oneway_exact_f_reference\n- ps.anova.one_way_anova.f02\n\n학습 목표 ID: ps.anova.exact_reference_robust_alternatives.objective_01\n행동 동사: identify\n목표: 정확한 기준분포와 강건 대안의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.anova.exact_reference_robust_alternatives.objective_02\n행동 동사: apply\n목표: 정확한 기준분포와 강건 대안의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.anova.exact_reference_robust_alternatives.objective_03\n행동 동사: interpret\n목표: 계산 결과를 정확한 기준분포와 강건 대안의 의미와 조건에 맞게 해석한다.",
+      "token_count": 363,
+      "content_hash": "6a40be12a4859f7902b777e2ebb306517e53c1d05c33a62021fd81e0fed14e6f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.exact_reference_robust_alternatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+      "chunk_index": 4,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA의 정확 F 기준분포\n개념 ID: ps.anova.exact_reference_robust_alternatives\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 정확한 기준분포와 강건 대안 관련 오해 1\n오개념 ID: ps.anova.exact_reference_robust_alternatives.misconception_01\n설명: 정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.\n진단 태그: ps_anova_exact_reference_robust_alternatives_misconception_01\n피드백: 큰 표본이라는 이유만으로 군집·반복측정 의존성이 자동으로 해결되지는 않는다.",
+      "token_count": 178,
+      "content_hash": "0b61d4c709c124b6e0cdeb1eb69bf7fe3a50833e85f64408f80ac1d8c3615f75",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.exact_reference_robust_alternatives",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA의 정확 F 기준분포",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA의 정확 F 기준분포\n개념 ID: ps.anova.exact_reference_robust_alternatives\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check\n지원 정답 유형: single_choice, boolean\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, condition_rule_check, domain_check",
+      "token_count": 115,
+      "content_hash": "e662684dea6ea371eef2144abfcbae03c1841247df3926f6844f28e63e7a9c8b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_13_hypothesis_testing",
+  "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 모분산 검정통계량의 정확 귀무분포\n개념 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정규모집단에서 $H_0:\\sigma^2=\\sigma_0^2$가 성립하면 모분산 카이제곱 검정통계량은 자유도 $n-1$의 카이제곱분포를 정확히 따른다.\n검색 태그: hypothesis_testing, variance_tests, exact_distribution, chi_square",
+      "token_count": 159,
+      "content_hash": "a44d34c84837f3dd71089b00af8efd851ebdf119232eb9244ddf5766855504b3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 모분산 검정통계량의 정확 귀무분포\n개념 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 정확 귀무분포\n공식 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.formula_01\n역할: exact_distribution\nLaTeX: Q\\sim\\chi^2_{n-1}",
+      "token_count": 134,
+      "content_hash": "02c520cf3b34816ce0971d41ef92641d029d4fdc1f0132148b1c39198db363b1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 모분산 검정통계량의 정확 귀무분포\n개념 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.condition_01\n설명: 표본은 i.i.d. 정규표본이어야 한다.\n검증 규칙: sampling_model equals iid_normal\n\n조건 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.condition_02\n설명: $n\\ge2$여야 한다.\n검증 규칙: sample_size greater_or_equal 2\n\n조건 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.condition_03\n설명: `sample_size`에 대응하는 값은 정수여야 한다.\n검증 규칙: sample_size_is_integer equals 참\n\n조건 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.condition_04\n설명: 귀무가설 $H_0:\\sigma^2=\\sigma_0^2$가 성립하는 기준분포를 사용한다.\n검증 규칙: null_hypothesis equals population_variance_equals_null_value",
+      "token_count": 359,
+      "content_hash": "a429a691a4960876b373cfcb20558ea13889c1c69014ee219106fa99a22a4c7b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 모분산 검정통계량의 정확 귀무분포\n개념 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.property_01\n설명: 여기서 $Q=(n-1)S^2/\\sigma_0^2$는 관련 검정통계량 개념에서 정의한다.",
+      "token_count": 140,
+      "content_hash": "f9dafa0fbd165c9ffc4c6ded95d9c17a4c8ff7fdd893b58947a91fe15d3e7872",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 모분산 검정통계량의 정확 귀무분포\n개념 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 카이제곱분포 (ps.continuous_distributions.chi_square, 중요도: required)\n\n관련 개념:\n- ps.hypothesis_testing.one_sample_variance_chisquare\n- ps.hypothesis_testing.variance_tests\n\n학습 목표 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.objective_01\n행동 동사: identify\n목표: 한 표본 모분산 검정통계량의 정확 귀무분포와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.objective_02\n행동 동사: apply\n목표: 정규모집단의 모분산 검정에서 정확 카이제곱 기준분포를 적용한다.",
+      "token_count": 279,
+      "content_hash": "ae8321ce70a0b2cc50ba436e6b9cce812957cbd771a6b16ee2cebb9bbc747d3b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 모분산 검정통계량의 정확 귀무분포",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 모분산 검정통계량의 정확 귀무분포\n개념 ID: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, distribution_identification, hypothesis_decision, formula_application\n지원 정답 유형: single_choice, boolean, distribution, classification, expression\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, degrees_of_freedom_check, condition_rule_check, domain_check",
+      "token_count": 164,
+      "content_hash": "0afb23037a337b9661e52c5839080342f049246dbe9fb2490f469c618fa8b250",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -291,7 +291,8 @@
           "formula_id": "ps.continuous_distributions.normal_mgf.formula_01",
           "name_ko": "적률생성함수",
           "role": "moment_generating_function",
-          "latex": "M_X(t)=\\exp\\left(\\mu t+\\frac12\\sigma^2t^2\\right)"
+          "latex": "M_X(t)=\\exp\\left(\\mu t+\\frac12\\sigma^2t^2\\right)",
+          "cas": "parse_latex('M_X(t)=\\\\exp\\\\left(\\\\mu t+\\\\frac12\\\\sigma^2t^2\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -985,7 +986,8 @@
           "formula_id": "ps.continuous_distributions.f_distribution.formula_01",
           "name_ko": "F분포의 생성 정의",
           "role": "distribution_relation",
-          "latex": "F=\\frac{U/\\nu_1}{V/\\nu_2}\\sim F_{\\nu_1,\\nu_2}"
+          "latex": "F=\\frac{U/\\nu_1}{V/\\nu_2}\\sim F_{\\nu_1,\\nu_2}",
+          "cas": "parse_latex('F=\\\\frac{U/\\\\nu_1}{V/\\\\nu_2}\\\\sim F_{\\\\nu_1,\\\\nu_2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1607,7 +1609,8 @@
           "formula_id": "ps.continuous_distributions.cauchy.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\frac{1}{\\pi\\gamma\\left[1+\\left(\\frac{x-x_0}{\\gamma}\\right)^2\\right]}"
+          "latex": "f(x)=\\frac{1}{\\pi\\gamma\\left[1+\\left(\\frac{x-x_0}{\\gamma}\\right)^2\\right]}",
+          "cas": "parse_latex('f(x)=\\\\frac{1}{\\\\pi\\\\gamma\\\\left[1+\\\\left(\\\\frac{x-x_0}{\\\\gamma}\\\\right)^2\\\\right]}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2133,7 +2136,8 @@
           "formula_id": "ps.continuous_distributions.beta_distribution.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\frac{x^{\\alpha-1}(1-x)^{\\beta-1}}{B(\\alpha,\\beta)}"
+          "latex": "f(x)=\\frac{x^{\\alpha-1}(1-x)^{\\beta-1}}{B(\\alpha,\\beta)}",
+          "cas": "parse_latex('f(x)=\\\\frac{x^{\\\\alpha-1}(1-x)^{\\\\beta-1}}{B(\\\\alpha,\\\\beta)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2281,7 +2285,8 @@
           "formula_id": "ps.continuous_distributions.beta_distribution.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\frac{\\alpha}{\\alpha+\\beta}"
+          "latex": "E[X]=\\frac{\\alpha}{\\alpha+\\beta}",
+          "cas": "parse_latex('E[X]=\\\\frac{\\\\alpha}{\\\\alpha+\\\\beta}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2402,7 +2407,8 @@
           "formula_id": "ps.continuous_distributions.beta_distribution.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\n\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta+1)}"
+          "latex": "\\operatorname{Var}(X)=\n\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta+1)}",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\n\\\\frac{\\\\alpha\\\\beta}{(\\\\alpha+\\\\beta)^2(\\\\alpha+\\\\beta+1)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2523,7 +2529,8 @@
           "formula_id": "ps.continuous_distributions.lognormal_distribution.f01.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\log X\\sim N(\\mu,\\sigma^2)"
+          "latex": "\\log X\\sim N(\\mu,\\sigma^2)",
+          "cas": "parse_latex('\\\\log X\\\\sim N(\\\\mu,\\\\sigma^2)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2662,7 +2669,8 @@
           "formula_id": "ps.continuous_distributions.lognormal_distribution.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=e^{\\mu+\\sigma^2/2}"
+          "latex": "E[X]=e^{\\mu+\\sigma^2/2}",
+          "cas": "parse_latex('E[X]=e^{\\\\mu+\\\\sigma^2/2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2792,7 +2800,8 @@
           "formula_id": "ps.continuous_distributions.lognormal_distribution.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\n(e^{\\sigma^2}-1)e^{2\\mu+\\sigma^2}"
+          "latex": "\\operatorname{Var}(X)=\n(e^{\\sigma^2}-1)e^{2\\mu+\\sigma^2}",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\n(e^{\\\\sigma^2}-1)e^{2\\\\mu+\\\\sigma^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2922,7 +2931,8 @@
           "formula_id": "ps.continuous_distributions.lognormal_distribution.f04.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\operatorname{Median}(X)=e^\\mu"
+          "latex": "\\operatorname{Median}(X)=e^\\mu",
+          "cas": "parse_latex('\\\\operatorname{Median}(X)=e^\\\\mu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3052,7 +3062,8 @@
           "formula_id": "ps.continuous_distributions.normal_density_standardization.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left[-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right]"
+          "latex": "f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left[-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right]",
+          "cas": "parse_latex('f(x)=\\\\frac{1}{\\\\sigma\\\\sqrt{2\\\\pi}}\\\\exp\\\\left[-\\\\frac{(x-\\\\mu)^2}{2\\\\sigma^2}\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3168,7 +3179,8 @@
           "formula_id": "ps.continuous_distributions.normal_density_standardization.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "Z=(X-\\mu)/\\sigma"
+          "latex": "Z=(X-\\mu)/\\sigma",
+          "cas": "parse_latex('Z=(X-\\\\mu)/\\\\sigma', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3284,7 +3296,8 @@
           "formula_id": "ps.continuous_distributions.weibull_distribution.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "F(x)=\\begin{cases}\n1-e^{-(x/\\lambda)^k}, & x\\ge0,\\\\\n0, & x<0,\n\\end{cases}"
+          "latex": "F(x)=\\begin{cases}\n1-e^{-(x/\\lambda)^k}, & x\\ge0,\\\\\n0, & x<0,\n\\end{cases}",
+          "cas": "parse_latex('F(x)=\\\\begin{cases}\\n1-e^{-(x/\\\\lambda)^k}, & x\\\\ge0,\\\\\\\\\\n0, & x<0,\\n\\\\end{cases}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3414,7 +3427,8 @@
           "formula_id": "ps.continuous_distributions.weibull_distribution.f02.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\begin{cases}\n\\dfrac{k}{\\lambda}\\left(\\dfrac{x}{\\lambda}\\right)^{k-1}\ne^{-(x/\\lambda)^k}, & x>0,\\\\\n0, & x\\le0.\n\\end{cases}"
+          "latex": "f(x)=\\begin{cases}\n\\dfrac{k}{\\lambda}\\left(\\dfrac{x}{\\lambda}\\right)^{k-1}\ne^{-(x/\\lambda)^k}, & x>0,\\\\\n0, & x\\le0.\n\\end{cases}",
+          "cas": "parse_latex('f(x)=\\\\begin{cases}\\n\\\\dfrac{k}{\\\\lambda}\\\\left(\\\\dfrac{x}{\\\\lambda}\\\\right)^{k-1}\\ne^{-(x/\\\\lambda)^k}, & x>0,\\\\\\\\\\n0, & x\\\\le0.\\n\\\\end{cases}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3544,7 +3558,8 @@
           "formula_id": "ps.continuous_distributions.weibull_distribution.f03.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\lambda\\Gamma\\left(1+\\frac1k\\right)"
+          "latex": "E[X]=\\lambda\\Gamma\\left(1+\\frac1k\\right)",
+          "cas": "parse_latex('E[X]=\\\\lambda\\\\Gamma\\\\left(1+\\\\frac1k\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3665,7 +3680,8 @@
           "formula_id": "ps.continuous_distributions.uniform.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_X(x)=\n\\begin{cases}\n\\dfrac{1}{b-a}, & a\\le x\\le b,\\\\\n0, & \\text{otherwise},\n\\end{cases}"
+          "latex": "f_X(x)=\n\\begin{cases}\n\\dfrac{1}{b-a}, & a\\le x\\le b,\\\\\n0, & \\text{otherwise},\n\\end{cases}",
+          "cas": "parse_latex('f_X(x)=\\n\\\\begin{cases}\\n\\\\dfrac{1}{b-a}, & a\\\\le x\\\\le b,\\\\\\\\\\n0, & \\\\text{otherwise},\\n\\\\end{cases}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3798,7 +3814,8 @@
           "formula_id": "ps.continuous_distributions.uniform.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=(a+b)/2"
+          "latex": "E[X]=(a+b)/2",
+          "cas": "parse_latex('E[X]=(a+b)/2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3922,7 +3939,8 @@
           "formula_id": "ps.continuous_distributions.uniform.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=(b-a)^2/12"
+          "latex": "\\operatorname{Var}(X)=(b-a)^2/12",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=(b-a)^2/12', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4046,7 +4064,8 @@
           "formula_id": "ps.continuous_distributions.exponential.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\lambda e^{-\\lambda x}"
+          "latex": "f(x)=\\lambda e^{-\\lambda x}",
+          "cas": "parse_latex('f(x)=\\\\lambda e^{-\\\\lambda x}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4162,7 +4181,8 @@
           "formula_id": "ps.continuous_distributions.exponential.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=1/\\lambda"
+          "latex": "E[X]=1/\\lambda",
+          "cas": "parse_latex('E[X]=1/\\\\lambda', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4269,7 +4289,8 @@
           "formula_id": "ps.continuous_distributions.exponential.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=1/\\lambda^2"
+          "latex": "\\operatorname{Var}(X)=1/\\lambda^2",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=1/\\\\lambda^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4376,7 +4397,8 @@
           "formula_id": "ps.continuous_distributions.gamma.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_X(x)=\n\\begin{cases}\n\\dfrac{x^{\\alpha-1}e^{-x/\\theta}}{\\Gamma(\\alpha)\\theta^\\alpha}, & x>0,\\\\\n0, & \\text{otherwise},\n\\end{cases}"
+          "latex": "f_X(x)=\n\\begin{cases}\n\\dfrac{x^{\\alpha-1}e^{-x/\\theta}}{\\Gamma(\\alpha)\\theta^\\alpha}, & x>0,\\\\\n0, & \\text{otherwise},\n\\end{cases}",
+          "cas": "parse_latex('f_X(x)=\\n\\\\begin{cases}\\n\\\\dfrac{x^{\\\\alpha-1}e^{-x/\\\\theta}}{\\\\Gamma(\\\\alpha)\\\\theta^\\\\alpha}, & x>0,\\\\\\\\\\n0, & \\\\text{otherwise},\\n\\\\end{cases}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4501,7 +4523,8 @@
           "formula_id": "ps.continuous_distributions.gamma.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\alpha\\theta"
+          "latex": "E[X]=\\alpha\\theta",
+          "cas": "parse_latex('E[X]=\\\\alpha\\\\theta', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4617,7 +4640,8 @@
           "formula_id": "ps.continuous_distributions.gamma.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\\alpha\\theta^2"
+          "latex": "\\operatorname{Var}(X)=\\alpha\\theta^2",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\\\alpha\\\\theta^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4733,7 +4757,8 @@
           "formula_id": "ps.continuous_distributions.chi_square.f01.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\chi^2_\\nu=\\sum_{i=1}^{\\nu}Z_i^2"
+          "latex": "\\chi^2_\\nu=\\sum_{i=1}^{\\nu}Z_i^2",
+          "cas": "parse_latex('\\\\chi^2_\\\\nu=\\\\sum_{i=1}^{\\\\nu}Z_i^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4849,7 +4874,8 @@
           "formula_id": "ps.continuous_distributions.chi_square.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\nu"
+          "latex": "E[X]=\\nu",
+          "cas": "parse_latex('E[X]=\\\\nu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4956,7 +4982,8 @@
           "formula_id": "ps.continuous_distributions.chi_square.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=2\\nu"
+          "latex": "\\operatorname{Var}(X)=2\\nu",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=2\\\\nu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5181,7 +5208,8 @@
           "formula_id": "ps.continuous_distributions.student_t.f02.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "\\nu=n-1"
+          "latex": "\\nu=n-1",
+          "cas": "parse_latex('\\\\nu=n-1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5302,7 +5330,8 @@
           "formula_id": "ps.continuous_distributions.distribution_generation_relations.f01.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\chi^2_\\nu\\sim\\operatorname{Gamma}\\left(\\frac{\\nu}{2},2\\right)"
+          "latex": "\\chi^2_\\nu\\sim\\operatorname{Gamma}\\left(\\frac{\\nu}{2},2\\right)",
+          "cas": "parse_latex('\\\\chi^2_\\\\nu\\\\sim\\\\operatorname{Gamma}\\\\left(\\\\frac{\\\\nu}{2},2\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5405,7 +5434,8 @@
           "formula_id": "ps.continuous_distributions.distribution_generation_relations.f02.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "T=\\frac{Z}{\\sqrt{U/\\nu}}\\sim t_\\nu"
+          "latex": "T=\\frac{Z}{\\sqrt{U/\\nu}}\\sim t_\\nu",
+          "cas": "parse_latex('T=\\\\frac{Z}{\\\\sqrt{U/\\\\nu}}\\\\sim t_\\\\nu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5612,7 +5642,8 @@
           "formula_id": "ps.continuous_distributions.gamma_rate_weibull_hazard.f01.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}"
+          "latex": "f(x)=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}",
+          "cas": "parse_latex('f(x)=\\\\frac{\\\\beta^\\\\alpha}{\\\\Gamma(\\\\alpha)}x^{\\\\alpha-1}e^{-\\\\beta x}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5733,7 +5764,8 @@
           "formula_id": "ps.continuous_distributions.gamma_rate_weibull_hazard.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\frac{\\alpha}{\\beta}"
+          "latex": "E[X]=\\frac{\\alpha}{\\beta}",
+          "cas": "parse_latex('E[X]=\\\\frac{\\\\alpha}{\\\\beta}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5855,7 +5887,8 @@
           "formula_id": "ps.continuous_distributions.gamma_rate_weibull_hazard.f02_variance.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=\\frac{\\alpha}{\\beta^2}"
+          "latex": "\\operatorname{Var}(X)=\\frac{\\alpha}{\\beta^2}",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=\\\\frac{\\\\alpha}{\\\\beta^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5977,7 +6010,8 @@
           "formula_id": "ps.continuous_distributions.gamma_rate_weibull_hazard.f03.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "h(x)=\\frac{k}{\\lambda}\\left(\\frac{x}{\\lambda}\\right)^{k-1}"
+          "latex": "h(x)=\\frac{k}{\\lambda}\\left(\\frac{x}{\\lambda}\\right)^{k-1}",
+          "cas": "parse_latex('h(x)=\\\\frac{k}{\\\\lambda}\\\\left(\\\\frac{x}{\\\\lambda}\\\\right)^{k-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6098,7 +6132,8 @@
           "formula_id": "ps.continuous_distributions.exponential_cdf_survival_memoryless.f01.formula_01",
           "name_ko": "누적분포함수",
           "role": "cdf",
-          "latex": "F_X(x)=1-e^{-\\lambda x}"
+          "latex": "F_X(x)=1-e^{-\\lambda x}",
+          "cas": "parse_latex('F_X(x)=1-e^{-\\\\lambda x}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6210,7 +6245,8 @@
           "formula_id": "ps.continuous_distributions.exponential_cdf_survival_memoryless.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "S_X(x)=e^{-\\lambda x}"
+          "latex": "S_X(x)=e^{-\\lambda x}",
+          "cas": "parse_latex('S_X(x)=e^{-\\\\lambda x}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6331,7 +6367,8 @@
           "formula_id": "ps.continuous_distributions.exponential_cdf_survival_memoryless.f03.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(X>s+t\\mid X>s)=P(X>t)"
+          "latex": "P(X>s+t\\mid X>s)=P(X>t)",
+          "cas": "parse_latex('P(X>s+t\\\\mid X>s)=P(X>t)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6443,7 +6480,8 @@
           "formula_id": "ps.continuous_distributions.normal_cdf_notation.f01.formula_01",
           "name_ko": "표준정규 누적분포함수",
           "role": "cdf",
-          "latex": "\\Phi(z)=P(Z\\le z)"
+          "latex": "\\Phi(z)=P(Z\\le z)",
+          "cas": "parse_latex('\\\\Phi(z)=P(Z\\\\le z)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6554,7 +6592,8 @@
           "formula_id": "ps.continuous_distributions.normal_cdf_notation.f02.formula_01",
           "name_ko": "정규분포 CDF 표준화",
           "role": "cdf",
-          "latex": "P(X\\le x)=\\Phi\\left(\\frac{x-\\mu}{\\sigma}\\right)"
+          "latex": "P(X\\le x)=\\Phi\\left(\\frac{x-\\mu}{\\sigma}\\right)",
+          "cas": "parse_latex('P(X\\\\le x)=\\\\Phi\\\\left(\\\\frac{x-\\\\mu}{\\\\sigma}\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6665,7 +6704,8 @@
           "formula_id": "ps.continuous_distributions.student_t_moments.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[T]=0"
+          "latex": "E[T]=0",
+          "cas": "parse_latex('E[T]=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6775,7 +6815,8 @@
           "formula_id": "ps.continuous_distributions.student_t_moments.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(T)=\\frac{\\nu}{\\nu-2}"
+          "latex": "\\operatorname{Var}(T)=\\frac{\\nu}{\\nu-2}",
+          "cas": "parse_latex('\\\\operatorname{Var}(T)=\\\\frac{\\\\nu}{\\\\nu-2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6885,7 +6926,8 @@
           "formula_id": "ps.continuous_distributions.f_distribution_moments.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[F]=\\frac{d_2}{d_2-2}"
+          "latex": "E[F]=\\frac{d_2}{d_2-2}",
+          "cas": "parse_latex('E[F]=\\\\frac{d_2}{d_2-2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6995,7 +7037,8 @@
           "formula_id": "ps.continuous_distributions.f_distribution_moments.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(F)=\\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}"
+          "latex": "\\operatorname{Var}(F)=\\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}",
+          "cas": "parse_latex('\\\\operatorname{Var}(F)=\\\\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}', backend='antlr')"
         }
       ],
       "application_conditions": [

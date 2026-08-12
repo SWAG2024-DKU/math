@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.linear_integrating_factor",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_01_first_order_odes",
+  "concept_name_ko": "1계 선형방정식과 적분인자",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 미지함수와 그 도함수가 모두 1차로 나타나는 방정식이다. 적분인자를 곱해 좌변을 하나의 곱미분으로 만든다.\n검색 태그: linear_ode, integrating_factor, exponential",
+      "token_count": 114,
+      "content_hash": "14ef1a1a554cbc3b8dcb1a409824c2d5021b3bffa1b1740ffd4e5915743cfe45",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 선형방정식 표준형\n공식 ID: linear_standard_form\n역할: definition\nLaTeX: y'+P(x)y=Q(x)\nCAS 표현: Eq(Derivative(y, x) + P(x) * y, Q(x))\n\n공식명: 적분인자\n공식 ID: integrating_factor_formula\n역할: formula\nLaTeX: \\mu(x)=e^{\\int P(x)\\,dx}\nCAS 표현: exp(Integral(P(x), x))\n\n공식명: 일반해 공식\n공식 ID: linear_general_solution\n역할: formula\nLaTeX: y=\\frac{1}{\\mu(x)} \\left(\\int\\mu(x)Q(x)\\,dx+C\\right)\nCAS 표현: (1 / mu) * (Integral(mu * Q(x), x) + C)",
+      "token_count": 268,
+      "content_hash": "b5728e9a46e998677e377a26d40f3b74c55a9d520dd3170ab957f06440922ddb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: standard_form_and_continuity\n설명: 방정식을 표준형으로 정리해야 하며 P, Q가 다루는 구간에서 연속이어야 한다.\n검증 규칙: is_standard_form equals 참",
+      "token_count": 109,
+      "content_hash": "96a61b1d539a31347625931c6aafdae9bd145376ee5010770e8981cc857f9602",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: homogeneous_plus_particular\n설명: 동차해는 Ce^{-int Pdx}이며 전체해는 동차해와 특수해의 합이다.",
+      "token_count": 99,
+      "content_hash": "93476752f5e953ae776c2e17bc29b54b54e5357ece71d1989787412fed6f50a3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 곱의 미분 (calculus.product_rule, 중요도: required)\n- 지수함수 (calculus.exponential, 중요도: required)\n- 부정적분 (calculus.integral, 중요도: required)\n\n관련 개념:\n- em.ode.bernoulli\n\n학습 목표 ID: solve_linear_ode\n행동 동사: solve\n목표: 적분인자법을 이용하여 1계 선형방정식을 푼다.",
+      "token_count": 168,
+      "content_hash": "20355af175cf54baa3eb931042f8b177a859071d39e9b30ef898ba126fcb42f0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 지수 부호 오류\n오개념 ID: em.ode.linear_integrating_factor.sign_error_in_exponent\n설명: 적분인자 지수부에 마이너스를 붙이는 등 부호 실수를 한다.\n진단 태그: integrating_factor_sign_error\n피드백: 적분인자는 mu = e^{int P(x) dx}로 지수에 마이너스가 붙지 않습니다.",
+      "token_count": 169,
+      "content_hash": "c53a418abd137f669cb89cb833614350a4a63d7e91ec81b2f4b928c0356e204c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.linear_integrating_factor",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "1계 선형방정식과 적분인자",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 1계 선형방정식과 적분인자\n개념 ID: em.ode.linear_integrating_factor\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: linear_ode_solving\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: ode_solution_check",
+      "token_count": 101,
+      "content_hash": "78e5c58bfe3b11b723d000ea75cbbdf36e386262148becd7c294e8347c3ddd56",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

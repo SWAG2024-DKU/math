@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.continuous_function_algebra_and_composition",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch02_limits_and_derivatives",
+  "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: f와 g가 a에서 연속이고 c가 상수이면 f±g, cf, fg, f/g(g(a)≠0)도 a에서 연속이다. g가 a에서 연속이고 f가 g(a)에서 연속이면 합성함수 f∘g도 a에서 연속이다. 다항식·유리함수·제곱근함수·삼각함수·역삼각함수·지수함수·로그함수는 정의역의 모든 점에서 연속이다.\n검색 태그: continuity, composition, elementary_functions",
+      "token_count": 189,
+      "content_hash": "61448fa8a51ab551bd9b296b49c8f95970bcf2bd2eb4e8b2b3ea60f6b705e682",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 연속함수의 사칙연산\n공식 ID: continuous_algebra\n역할: theorem\nLaTeX: f+g,\\ f-g,\\ cf,\\ fg,\\ \\frac{f}{g}\\ (g(a)\\neq0)\\text{는 }a\\text{에서 연속}\nCAS 표현: f(x)+g(x)\n\n공식명: 합성함수의 연속\n공식 ID: composition_continuity\n역할: theorem\nLaTeX: g\\text{가 }a\\text{에서, }f\\text{가 }g(a)\\text{에서 연속}\\implies f\\circ g\\text{는 }a\\text{에서 연속}\nCAS 표현: f(g(x))\n\n공식명: 극한과 연속함수의 순서교환\n공식 ID: limit_composition_swap\n역할: theorem\nLaTeX: \\lim_{x\\to a}f(g(x))=f\\left(\\lim_{x\\to a}g(x)\\right)\nCAS 표현: limit(f(g(x)), x, a)",
+      "token_count": 318,
+      "content_hash": "c5fff3124a95dc889d18261ff42984c04ec5a85dc32db418568239fcdb569d6f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: both_continuous_at_a\n설명: 사칙연산 정리는 f, g가 모두 a에서 연속이어야 성립한다.\n검증 규칙: f_and_g_continuous_at_a equals 참\n\n조건 ID: quotient_denominator_nonzero_at_a\n설명: 몫의 연속성은 g(a)≠0일 때만 성립한다.\n검증 규칙: g_at_a not_equals 0\n\n조건 ID: inner_then_outer_continuous\n설명: 합성함수 연속 정리는 내부함수 g가 a에서, 외부함수 f가 g(a)에서 각각 연속이어야 한다.\n검증 규칙: g_continuous_at_a_and_f_continuous_at_g_a equals 참",
+      "token_count": 244,
+      "content_hash": "f2742976b490f0121770862029300152ca22a25a317cc76821a1a1193021fe2f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: elementary_functions_continuous\n설명: 다항식, 유리함수, 제곱근함수, 삼각함수, 역삼각함수, 지수함수, 로그함수는 각자의 정의역의 모든 점에서 연속이다.\n\n성질 ID: inverse_of_continuous_one_to_one_is_continuous\n설명: 연속인 일대일함수의 역함수도 연속이다(그래프가 y=x에 대칭이므로). 이로부터 역삼각함수와 로그함수의 연속성이 따라 나온다.",
+      "token_count": 191,
+      "content_hash": "e7c43f195b84d2a4d28ef2eec32b712c23e1c2666410779a0fcdeefbd6fb4d91",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 연속의 정의와 불연속의 유형 (calculus.continuity, 중요도: required)\n- 함수의 사칙연산과 합성함수 (calculus.function_arithmetic_and_composition, 중요도: required)\n\n관련 개념:\n- calculus.limit_laws\n\n학습 목표 ID: apply_continuity_algebra\n행동 동사: apply\n목표: 연속함수의 사칙연산 정리로 결합된 함수의 연속성을 판정한다.\n\n학습 목표 ID: verify_composition_continuity\n행동 동사: verify\n목표: 합성함수의 연속 조건을 확인한다.",
+      "token_count": 207,
+      "content_hash": "aaf01871d12ca25af8469a44f00ea98d6ff55e6783295748a6cc5fccb47dc107",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 몫 함수 연속성에서 분모 0 조건 무시\n오개념 ID: calculus.continuous_algebra.quotient_ignore_zero\n설명: f/g의 연속성을 판정할 때 g(a)≠0 조건을 확인하지 않는다.\n진단 태그: ignore_quotient_continuity_denominator_condition\n피드백: f/g는 f, g가 a에서 연속이고 g(a)≠0일 때만 a에서 연속이다.\n\n오개념: 합성함수 연속 조건의 순서 착각\n오개념 ID: calculus.composition_continuity.wrong_order\n설명: f가 a에서, g가 f(a)에서 연속이어야 한다고 순서를 뒤바꿔 기억한다.\n진단 태그: swap_inner_outer_continuity_condition\n피드백: 내부함수 g가 a에서 연속이고, 외부함수 f가 g(a)에서 연속이어야 f∘g가 a에서 연속이다.",
+      "token_count": 295,
+      "content_hash": "c42f8e05bbde06748814662cc6d7a3e07da050bee11aa6aae2c58daa64690951",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.continuous_function_algebra_and_composition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "연속함수의 대수적 성질과 합성함수의 연속",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 연속함수의 대수적 성질과 합성함수의 연속\n개념 ID: calculus.continuous_function_algebra_and_composition\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: continuity_algebra_application, composition_continuity_check\n지원 정답 유형: boolean, single_choice\n난이도 범위: 2 ~ 3\n권장 검증기: symbolic_equivalence",
+      "token_count": 124,
+      "content_hash": "26eb74a58527864ea6f72a4275c623d9cbab8d6ac9fdbc20d51757bf0509dc92",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.counting.pigeonhole_principle",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_03_counting",
+  "concept_name_ko": "비둘기집 원리",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.pigeonhole_principle",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "비둘기집 원리",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 비둘기집 원리\n개념 ID: ps.counting.pigeonhole_principle\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: m개의 대상을 n개의 상자에 넣고 $m>n$이면 적어도 한 상자에는 두 개 이상의 대상이 들어간다.\n검색 태그: counting, multinomial_pigeonhole, pigeonhole_principle",
+      "token_count": 103,
+      "content_hash": "831ec401ee3ab4edb1a9339b8ae492cad4da754dd39c4f95c2ef42ea5a70d1ef",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.pigeonhole_principle",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "비둘기집 원리",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 비둘기집 원리\n개념 ID: ps.counting.pigeonhole_principle\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 경우의 수 공식\n공식 ID: ps.counting.pigeonhole_principle.formula_01\n역할: counting_rule\nLaTeX: m>n\\ge1\\quad\\Longrightarrow\\quad \\max_{1\\le j\\le n}N_j\\ge2",
+      "token_count": 118,
+      "content_hash": "0158024ab14e0ea5892fb07c8a5fc6d5d3313e7c5e5ed630ccb4dc2365b42134",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.pigeonhole_principle",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "비둘기집 원리",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 비둘기집 원리\n개념 ID: ps.counting.pigeonhole_principle\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.counting.pigeonhole_principle.condition_01\n설명: $m$은 정수여야 한다.\n검증 규칙: object_count_is_integer equals 참\n\n조건 ID: ps.counting.pigeonhole_principle.condition_02\n설명: $n$은 정수여야 한다.\n검증 규칙: box_count_is_integer equals 참\n\n조건 ID: ps.counting.pigeonhole_principle.condition_03\n설명: $n\\ge1$이어야 한다.\n검증 규칙: box_count greater_or_equal 1\n\n조건 ID: ps.counting.pigeonhole_principle.condition_04\n설명: $m>n$이어야 한다.\n검증 규칙: object_count_exceeds_box_count equals 참\n\n조건 ID: ps.counting.pigeonhole_principle.condition_05\n설명: $\\sum_{j=1}^{n}N_j=m$이어야 한다.\n검증 규칙: box_occupancy_sum_equals_object_count equals 참",
+      "token_count": 300,
+      "content_hash": "33d59ac15177dac00bb78d92fedf8561ee8d24ba97a8388518a266beb86e9686",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.pigeonhole_principle",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "비둘기집 원리",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 비둘기집 원리\n개념 ID: ps.counting.pigeonhole_principle\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.counting.pigeonhole_principle.property_01\n설명: 이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다.",
+      "token_count": 99,
+      "content_hash": "7a2ba891c8c995e34c911df3d371c393843ce87ea4d955fe106bce3e039f3ed5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.pigeonhole_principle",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "비둘기집 원리",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 비둘기집 원리\n개념 ID: ps.counting.pigeonhole_principle\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 집합 (math.sets, 중요도: required)\n- 팩토리얼 (math.factorial, 중요도: required)\n\n관련 개념:\n- ps.counting.multinomial_theorem\n\n학습 목표 ID: ps.counting.pigeonhole_principle.objective_01\n행동 동사: identify\n목표: 비둘기집 원리의 정의, 공식과 적용 조건을 식별한다.\n\n학습 목표 ID: ps.counting.pigeonhole_principle.objective_02\n행동 동사: apply\n목표: 비둘기집 원리의 정의, 공식과 적용 조건을 적용한다.\n\n학습 목표 ID: ps.counting.pigeonhole_principle.objective_03\n행동 동사: interpret\n목표: 비둘기집 원리의 정의, 공식과 적용 조건을 해석한다.",
+      "token_count": 238,
+      "content_hash": "8d24b6371438e3426b53fd759ced750af0efba01db5718ecdc0af75218180eda",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.pigeonhole_principle",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "비둘기집 원리",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 비둘기집 원리\n개념 ID: ps.counting.pigeonhole_principle\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, counting_calculation, method_selection\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, integer_nonnegative_check, condition_rule_check, domain_check",
+      "token_count": 150,
+      "content_hash": "cd6bae2bfe80b2d8aa622f8bdc6efdd147f1f4fe6f650c07ee6a68e898cbcd78",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

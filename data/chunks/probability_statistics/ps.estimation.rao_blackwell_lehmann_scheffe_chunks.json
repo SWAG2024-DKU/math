@@ -1,0 +1,91 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.rao_blackwell_lehmann_scheffe",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "Rao--Blackwell 및 Lehmann--Scheffé 정리",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.rao_blackwell_lehmann_scheffe",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Rao--Blackwell 및 Lehmann--Scheffé 정리",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Rao--Blackwell 및 Lehmann--Scheffé 정리\n개념 ID: ps.estimation.rao_blackwell_lehmann_scheffe\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 제2적률이 유한한 불편추정량 $U$, 즉 $E_\\theta[U^2]<\\infty$이고 충분통계량 $T$가 있을 때 $\\widetilde U=E[U\\mid T]$ 이면 $\\operatorname{Var}(\\widetilde U)\\le\\operatorname{Var}(U)$ 이다. 세부 공식은 적용 조건별 관련 개념으로 분리한다.\n검색 태그: estimation, rao_blackwell_lehmann_scheffe",
+      "token_count": 181,
+      "content_hash": "386f5538911ac67b3d100f6f0a0667f047895c709c63917e578d42fd67a2083a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.rao_blackwell_lehmann_scheffe",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Rao--Blackwell 및 Lehmann--Scheffé 정리",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Rao--Blackwell 및 Lehmann--Scheffé 정리\n개념 ID: ps.estimation.rao_blackwell_lehmann_scheffe\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.estimation.rao_blackwell_lehmann_scheffe.property_01\n설명: 서로 다른 적용 조건을 갖는 공식을 한 조건 목록에 결합하지 않고 세부 개념으로 분리한다.",
+      "token_count": 110,
+      "content_hash": "40fe3ca820d8d2b84b4378d4b7e065d4640f25d2e6ba35402b2973d4a7e12297",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.rao_blackwell_lehmann_scheffe",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Rao--Blackwell 및 Lehmann--Scheffé 정리",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Rao--Blackwell 및 Lehmann--Scheffé 정리\n개념 ID: ps.estimation.rao_blackwell_lehmann_scheffe\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률표본과 통계량 (ps.sampling_distributions.random_sample_statistic, 중요도: required)\n- 최대가능도추정 (ps.estimation.maximum_likelihood, 중요도: required)\n- 미적분 (calculus.core, 중요도: recommended)\n\n관련 개념:\n- ps.estimation.rao_blackwell_theorem\n- ps.estimation.lehmann_scheffe_theorem\n\n학습 목표 ID: ps.estimation.rao_blackwell_lehmann_scheffe.objective_01\n행동 동사: identify\n목표: Rao--Blackwell 및 Lehmann--Scheffé 정리의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.estimation.rao_blackwell_lehmann_scheffe.objective_02\n행동 동사: apply\n목표: Rao--Blackwell 및 Lehmann--Scheffé 정리의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.estimation.rao_blackwell_lehmann_scheffe.objective_03\n행동 동사: interpret\n목표: 계산 결과를 Rao--Blackwell 및 Lehmann--Scheffé 정리의 의미와 조건에 맞게 해석한다.",
+      "token_count": 340,
+      "content_hash": "957a4567b7aa1f0c66e22ec91ac5c29470f17dd7e9219c76c1b2c2d237ab0533",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.rao_blackwell_lehmann_scheffe",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Rao--Blackwell 및 Lehmann--Scheffé 정리",
+      "chunk_index": 3,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Rao--Blackwell 및 Lehmann--Scheffé 정리\n개념 ID: ps.estimation.rao_blackwell_lehmann_scheffe\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, interval\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check\n생성 참고사항: 탐색용 개요다. 문제 생성에는 related_concepts의 세부 개념을 사용한다.",
+      "token_count": 182,
+      "content_hash": "4d672bffab11cdeab2a1a5065711836a067e0cf248ead0cb6ae3668cf0b88cf8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

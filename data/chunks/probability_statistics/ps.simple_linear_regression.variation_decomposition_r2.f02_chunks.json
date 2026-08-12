@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_16_simple_linear_regression",
+  "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 변동분해와 결정계수 — 적합도 지표\n개념 ID: ps.simple_linear_regression.variation_decomposition_r2.f02\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 변동분해와 결정계수에서 사용하는 적합도 지표 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: simple_linear_regression, variation_decomposition_r2, formula_atomic, core_formula",
+      "token_count": 130,
+      "content_hash": "a7e2f85564dd0598b7b6c9ca16dbda9de3af0a535aa4e64a12b9956418906147",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 변동분해와 결정계수 — 적합도 지표\n개념 ID: ps.simple_linear_regression.variation_decomposition_r2.f02\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 적합도 지표\n공식 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01\n역할: fit_measure\nLaTeX: R^2=\\frac{SSR}{SST}",
+      "token_count": 123,
+      "content_hash": "be898189aab82c98d2f120a43112f8e59197c37991fc24d4aaa3efb23c0ff107",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 변동분해와 결정계수 — 적합도 지표\n개념 ID: ps.simple_linear_regression.variation_decomposition_r2.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.condition_01\n설명: 절편이 포함된 동일한 최소제곱 적합에서 계산해야 한다.\n검증 규칙: model_includes_intercept equals 참\n\n조건 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.condition_02\n설명: $SST>0$이어야 한다.\n검증 규칙: total_sum_of_squares greater_than 0",
+      "token_count": 184,
+      "content_hash": "61ce7cf04ab9684d0c50f26ff75361a8b3d5bfe1426cb9b836c652a014073f72",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 변동분해와 결정계수 — 적합도 지표\n개념 ID: ps.simple_linear_regression.variation_decomposition_r2.f02\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 117,
+      "content_hash": "48048fe1fb23fec2c3f3a9fa63cba23796057fa09e6534c6eb6d2fb3fc4d9f39",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 변동분해와 결정계수 — 적합도 지표\n개념 ID: ps.simple_linear_regression.variation_decomposition_r2.f02\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 분산 (statistics.variance, 중요도: required)\n- 제곱합 (statistics.sum_of_squares, 중요도: required)\n\n관련 개념:\n- ps.simple_linear_regression.variation_decomposition_r2\n- ps.simple_linear_regression.least_squares\n- ps.simple_linear_regression.coefficient_inference\n- ps.simple_linear_regression.variation_decomposition_r2.f02_residual\n\n학습 목표 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.objective_01\n행동 동사: identify\n목표: 변동분해와 결정계수 수식 2의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.objective_02\n행동 동사: apply\n목표: 변동분해와 결정계수 수식 2을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.simple_linear_regression.variation_decomposition_r2.f02.objective_03\n행동 동사: verify\n목표: 변동분해와 결정계수 수식 2의 조건 충족 여부를 검증한다.",
+      "token_count": 368,
+      "content_hash": "cd691166289f28bacb01659f48264d793bce7d701452cfbefabf3da7106eeb1f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.variation_decomposition_r2.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "변동분해와 결정계수 — 적합도 지표",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 변동분해와 결정계수 — 적합도 지표\n개념 ID: ps.simple_linear_regression.variation_decomposition_r2.f02\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, coefficient_estimation, model_interpretation, diagnostic_check\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, matrix_dimension_check, condition_rule_check, domain_check",
+      "token_count": 172,
+      "content_hash": "3bccb7f0b253e3d6df232986c52a416dc632e99e7e8792a6a6538f17164e80fb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

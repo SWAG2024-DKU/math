@@ -991,7 +991,8 @@
           "formula_id": "ps.foundations.observational_experimental_studies.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\tau_i=Y_i(1)-Y_i(0)"
+          "latex": "\\tau_i=Y_i(1)-Y_i(0)",
+          "cas": "parse_latex('\\\\tau_i=Y_i(1)-Y_i(0)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1083,7 +1084,8 @@
           "formula_id": "ps.foundations.observational_experimental_studies.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "ATE=E[Y(1)-Y(0)]"
+          "latex": "ATE=E[Y(1)-Y(0)]",
+          "cas": "parse_latex('ATE=E[Y(1)-Y(0)]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1175,7 +1177,8 @@
           "formula_id": "ps.foundations.observational_experimental_studies.f03.formula_01",
           "name_ko": "추정량",
           "role": "estimator",
-          "latex": "\\widehat{\\Delta}_{\\mathrm{obs}}=\\bar{Y}_{\\mathrm{treat}}-\\bar{Y}_{\\mathrm{control}}"
+          "latex": "\\widehat{\\Delta}_{\\mathrm{obs}}=\\bar{Y}_{\\mathrm{treat}}-\\bar{Y}_{\\mathrm{control}}",
+          "cas": "parse_latex('\\\\widehat{\\\\Delta}_{\\\\mathrm{obs}}=\\\\bar{Y}_{\\\\mathrm{treat}}-\\\\bar{Y}_{\\\\mathrm{control}}', backend='antlr')"
         }
       ],
       "application_conditions": [

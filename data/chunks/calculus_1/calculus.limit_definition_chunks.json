@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.limit_definition",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch02_limits_and_derivatives",
+  "concept_name_ko": "함수의 극한",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: x가 a에 가까워질 때(단 x≠a) f(x)가 어느 방향에서 접근하든 L에 가까워지면, x가 a에 접근할 때 f(x)의 극한은 L이라 한다. f(a)가 정의될 필요는 없으며, a 근방에서 f가 어떻게 정의되어 있느냐만 문제가 된다.\n검색 태그: limit, punctured_neighborhood",
+      "token_count": 140,
+      "content_hash": "444ec561a0385d343d372481f5a3153b5dc1c24510cb11e65b743e9a96ec31ac",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 극한 표기\n공식 ID: limit_notation\n역할: definition\nLaTeX: \\lim_{x\\to a}f(x)=L\nCAS 표현: limit(f(x), x, a)",
+      "token_count": 93,
+      "content_hash": "c4bad49717c02f01734906059e630c95a99c8a0b740448d3632c8090ad6cb372",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: punctured_neighborhood_defined\n설명: a의 뚫린 근방(a 자신은 제외 가능)에서 f가 정의되어 있어야 한다.\n검증 규칙: f_defined_near_a_except_possibly_a equals 참\n\n조건 ID: all_directions_agree\n설명: x≠a이면서 a에 충분히 가까운 모든 x에 대해 f(x)를 원하는 만큼 L에 가깝게 만들 수 있어야 한다(접근 방향과 무관하게 같은 값).\n검증 규칙: limit_value_direction_independent equals 참",
+      "token_count": 183,
+      "content_hash": "ad1a3f403a1fff0d71022203a4f5f4518d3eecd4fe5a8f66c54157f3849a53b5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: value_at_a_irrelevant\n설명: f(a)가 정의되지 않아도, 또는 f(a)가 L과 달라도 극한 L은 존재할 수 있다.\n\n성질 ID: oscillation_no_limit\n설명: 함숫값이 한없이 진동하며 특정 값에 접근하지 않으면(예: sin(π/x), x→0) 극한은 존재하지 않는다.\n\n성질 ID: numeric_estimation_caution\n설명: 표나 계산기로 극한을 추정할 때 반올림 오차 때문에 잘못된 값을 얻을 수 있으므로 대수적 계산으로 확인해야 한다.",
+      "token_count": 184,
+      "content_hash": "4fd216f3dd42748fc7532bd03b9c7cc28b3acebedc00db4e4f57c9350bd1fb99",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 접선 문제와 속도 문제 (calculus.tangent_and_velocity_problem, 중요도: recommended)\n\n관련 개념:\n- calculus.one_sided_limit\n- calculus.limit_laws\n\n학습 목표 ID: estimate_limit_numerically\n행동 동사: estimate\n목표: 표나 그래프로 극한값을 추정한다.\n\n학습 목표 ID: distinguish_limit_and_value\n행동 동사: distinguish\n목표: 극한값과 함숫값이 다를 수 있음을 설명한다.",
+      "token_count": 171,
+      "content_hash": "8b5494e795bd581b2515d060033ad0dec61ffc810968b75ec46cd0525210044d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 극한값과 함숫값의 혼동\n오개념 ID: calculus.limit_definition.limit_equals_value\n설명: lim f(x)=L과 f(a)=L을 같은 개념으로 취급한다.\n진단 태그: confuse_limit_and_function_value\n피드백: 극한은 x=a에서의 함숫값과 무관하게 정의되며, f(a)가 정의되지 않아도 극한은 존재할 수 있다.\n\n오개념: 계산기 수치만으로 극한 확정\n오개념 ID: calculus.limit_definition.rounding_trust\n설명: 계산기나 표의 근삿값만으로 극한이 존재하거나 특정 값이라고 단정한다.\n진단 태그: trust_numeric_estimate_without_algebra\n피드백: 계산기의 반올림 오차로 잘못된 값을 얻을 수 있으므로 대수적 계산(인수분해, 유리화)으로 검증해야 한다.",
+      "token_count": 275,
+      "content_hash": "b3b7c714982d8268a8050087642cdbb7aa9f0a860e65c5434e2639ff09071d28",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.limit_definition",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "함수의 극한",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 함수의 극한\n개념 ID: calculus.limit_definition\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: limit_numeric_estimation, limit_existence_reasoning\n지원 정답 유형: scalar, boolean\n난이도 범위: 1 ~ 2\n권장 검증기: numeric_sampling",
+      "token_count": 103,
+      "content_hash": "9ee1e373972aaeedda0c30f72559c30dfa97dc7192332f95d63a00ed517c84fe",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "Bernoulli 분산계수의 상계",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Bernoulli 분산계수의 상계",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Bernoulli 분산계수의 상계\n개념 ID: ps.estimation.bernoulli_variance_upper_bound\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 확률 $p\\in[0,1]$에 대해 $p(1-p)$는 1/4 이하이며 p=1/2에서 최대다.\n검색 태그: estimation, sample_size_fpc, sampling, bernoulli_variance_upper_bound",
+      "token_count": 118,
+      "content_hash": "4443bde8d22a815c43fed7b3f09e3ce574d4c2ee2a8728d0e842d3ce4dad6ada",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Bernoulli 분산계수의 상계",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Bernoulli 분산계수의 상계\n개념 ID: ps.estimation.bernoulli_variance_upper_bound\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 상계·하계\n공식 ID: ps.estimation.bernoulli_variance_upper_bound.formula_01\n역할: bound\nLaTeX: p(1-p)\\le\\frac14",
+      "token_count": 104,
+      "content_hash": "baff0200b5e8f2213cc7b5c56ab068f67a5eec8b069ca4efbc3fa5febe4a0ab4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Bernoulli 분산계수의 상계",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Bernoulli 분산계수의 상계\n개념 ID: ps.estimation.bernoulli_variance_upper_bound\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.estimation.bernoulli_variance_upper_bound.condition_01\n설명: $0\\le p\\le1$이어야 한다.\n검증 규칙: probability_in_closed_unit_interval equals 참",
+      "token_count": 116,
+      "content_hash": "f15cca181cb7707e45238171fb7d7332cc03468c343a69d771894e548f3d9a0c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Bernoulli 분산계수의 상계",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Bernoulli 분산계수의 상계\n개념 ID: ps.estimation.bernoulli_variance_upper_bound\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.estimation.bernoulli_variance_upper_bound.property_01\n설명: 이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다.",
+      "token_count": 111,
+      "content_hash": "79a2404c172a7f97792ebd82ebc2e22b976a86f3285905499ff693e0890c792d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Bernoulli 분산계수의 상계",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Bernoulli 분산계수의 상계\n개념 ID: ps.estimation.bernoulli_variance_upper_bound\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률표본과 통계량 (ps.sampling_distributions.random_sample_statistic, 중요도: required)\n- 최대가능도추정 (ps.estimation.maximum_likelihood, 중요도: required)\n- 미적분 (calculus.core, 중요도: recommended)\n\n관련 개념:\n- ps.estimation.finite_population_sample_size_correction\n\n학습 목표 ID: ps.estimation.bernoulli_variance_upper_bound.objective_01\n행동 동사: identify\n목표: Bernoulli 분산계수의 상계의 정의, 공식과 적용 조건을 식별한다.\n\n학습 목표 ID: ps.estimation.bernoulli_variance_upper_bound.objective_02\n행동 동사: apply\n목표: Bernoulli 분산계수의 상계의 정의, 공식과 적용 조건을 적용한다.\n\n학습 목표 ID: ps.estimation.bernoulli_variance_upper_bound.objective_03\n행동 동사: interpret\n목표: Bernoulli 분산계수의 상계의 정의, 공식과 적용 조건을 해석한다.",
+      "token_count": 318,
+      "content_hash": "7461083aef3752e691f33b42f75bbae87782997f06984b30a322ff1f5f5f1006",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.bernoulli_variance_upper_bound",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "Bernoulli 분산계수의 상계",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: Bernoulli 분산계수의 상계\n개념 ID: ps.estimation.bernoulli_variance_upper_bound\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, interval\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 151,
+      "content_hash": "ba1b9e2ac5b0a23f9da669350d220637559b58c70cf720a7e1615c44e73e4a60",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

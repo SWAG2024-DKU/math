@@ -65,7 +65,8 @@
           "formula_id": "ps.estimation.cramer_rao_lower_bound.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "\\operatorname{Var}_\\theta(T)\n\\ge\n\\frac{[g'(\\theta)]^2}{I_n(\\theta)}"
+          "latex": "\\operatorname{Var}_\\theta(T)\n\\ge\n\\frac{[g'(\\theta)]^2}{I_n(\\theta)}",
+          "cas": "parse_latex(\"\\\\operatorname{Var}_\\\\theta(T)\\n\\\\ge\\n\\\\frac{[g'(\\\\theta)]^2}{I_n(\\\\theta)}\", backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -237,7 +238,8 @@
           "formula_id": "ps.estimation.fisher_information_hessian_identity.formula_01",
           "name_ko": "Fisher 정보 항등식",
           "role": "information_identity",
-          "latex": "I(\\theta)=-E_\\theta[\\nabla_\\theta^2\\log f(X;\\theta)]"
+          "latex": "I(\\theta)=-E_\\theta[\\nabla_\\theta^2\\log f(X;\\theta)]",
+          "cas": "parse_latex('I(\\\\theta)=-E_\\\\theta[\\\\nabla_\\\\theta^2\\\\log f(X;\\\\theta)]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -568,7 +570,8 @@
           "formula_id": "ps.estimation.sample_size_mean_known_sigma.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "n=\\left\\lceil\\left(\\frac{z_{1-\\alpha/2}\\sigma}{E}\\right)^2\\right\\rceil"
+          "latex": "n=\\left\\lceil\\left(\\frac{z_{1-\\alpha/2}\\sigma}{E}\\right)^2\\right\\rceil",
+          "cas": "parse_latex('n=\\\\left\\\\lceil\\\\left(\\\\frac{z_{1-\\\\alpha/2}\\\\sigma}{E}\\\\right)^2\\\\right\\\\rceil', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -682,7 +685,8 @@
           "formula_id": "ps.estimation.sample_size_proportion.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "n=\\left\\lceil\\frac{z_{1-\\alpha/2}^2p(1-p)}{E^2}\\right\\rceil"
+          "latex": "n=\\left\\lceil\\frac{z_{1-\\alpha/2}^2p(1-p)}{E^2}\\right\\rceil",
+          "cas": "parse_latex('n=\\\\left\\\\lceil\\\\frac{z_{1-\\\\alpha/2}^2p(1-p)}{E^2}\\\\right\\\\rceil', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -970,7 +974,8 @@
           "formula_id": "ps.estimation.method_of_moments.formula_01",
           "name_ko": "추정방정식",
           "role": "estimating_equation",
-          "latex": "\\frac1n\\sum_{i=1}^{n}X_i^k=E_\\theta[X^k]"
+          "latex": "\\frac1n\\sum_{i=1}^{n}X_i^k=E_\\theta[X^k]",
+          "cas": "parse_latex('\\\\frac1n\\\\sum_{i=1}^{n}X_i^k=E_\\\\theta[X^k]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1943,7 +1948,8 @@
           "formula_id": "ps.estimation.factorization_theorem.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_\\theta(x_1,\\ldots,x_n)\n=g_\\theta(T(x_1,\\ldots,x_n))h(x_1,\\ldots,x_n)"
+          "latex": "f_\\theta(x_1,\\ldots,x_n)\n=g_\\theta(T(x_1,\\ldots,x_n))h(x_1,\\ldots,x_n)",
+          "cas": "parse_latex('f_\\\\theta(x_1,\\\\ldots,x_n)\\n=g_\\\\theta(T(x_1,\\\\ldots,x_n))h(x_1,\\\\ldots,x_n)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2065,7 +2071,8 @@
           "formula_id": "ps.estimation.lehmann_scheffe_theorem.formula_01",
           "name_ko": "정확 결과",
           "role": "exact_result",
-          "latex": "T\\text{가 완비충분이고 }E_\\theta[g(T)]=\\tau(\\theta)\\quad\\Longrightarrow\\quad g(T)\\text{는 }\\tau(\\theta)\\text{의 유일한 UMVU 추정량}"
+          "latex": "T\\text{가 완비충분이고 }E_\\theta[g(T)]=\\tau(\\theta)\\quad\\Longrightarrow\\quad g(T)\\text{는 }\\tau(\\theta)\\text{의 유일한 UMVU 추정량}",
+          "cas": "parse_latex('T\\\\text{가 완비충분이고 }E_\\\\theta[g(T)]=\\\\tau(\\\\theta)\\\\quad\\\\Longrightarrow\\\\quad g(T)\\\\text{는 }\\\\tau(\\\\theta)\\\\text{의 유일한 UMVU 추정량}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2634,7 +2641,8 @@
           "formula_id": "ps.estimation.bernoulli_variance_upper_bound.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "p(1-p)\\le\\frac14"
+          "latex": "p(1-p)\\le\\frac14",
+          "cas": "parse_latex('p(1-p)\\\\le\\\\frac14', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2737,7 +2745,8 @@
           "formula_id": "ps.estimation.finite_population_sample_size_correction.formula_01",
           "name_ko": "표본크기 공식",
           "role": "sample_size_formula",
-          "latex": "n=\\left\\lceil\\frac{n_0}{1+(n_0-1)/N}\\right\\rceil"
+          "latex": "n=\\left\\lceil\\frac{n_0}{1+(n_0-1)/N}\\right\\rceil",
+          "cas": "parse_latex('n=\\\\left\\\\lceil\\\\frac{n_0}{1+(n_0-1)/N}\\\\right\\\\rceil', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3061,7 +3070,8 @@
           "formula_id": "ps.estimation.mle_asymptotic_distribution.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "\\sqrt n(\\hat\\theta_{MLE}-\\theta_0)\n\\xrightarrow{d}\nN\\left(0,I_1(\\theta_0)^{-1}\\right)"
+          "latex": "\\sqrt n(\\hat\\theta_{MLE}-\\theta_0)\n\\xrightarrow{d}\nN\\left(0,I_1(\\theta_0)^{-1}\\right)",
+          "cas": "parse_latex('\\\\sqrt n(\\\\hat\\\\theta_{MLE}-\\\\theta_0)\\n\\\\xrightarrow{d}\\nN\\\\left(0,I_1(\\\\theta_0)^{-1}\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3309,7 +3319,8 @@
           "formula_id": "ps.estimation.identifiability.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "P_{\\theta_1}=P_{\\theta_2}\n\\Longrightarrow\n\\theta_1=\\theta_2"
+          "latex": "P_{\\theta_1}=P_{\\theta_2}\n\\Longrightarrow\n\\theta_1=\\theta_2",
+          "cas": "parse_latex('P_{\\\\theta_1}=P_{\\\\theta_2}\\n\\\\Longrightarrow\\n\\\\theta_1=\\\\theta_2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3596,7 +3607,8 @@
           "formula_id": "ps.estimation.mean_ci_known_sigma.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\bar X\\pm z_{1-\\alpha/2}\\frac{\\sigma}{\\sqrt n}"
+          "latex": "\\bar X\\pm z_{1-\\alpha/2}\\frac{\\sigma}{\\sqrt n}",
+          "cas": "parse_latex('\\\\bar X\\\\pm z_{1-\\\\alpha/2}\\\\frac{\\\\sigma}{\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3735,7 +3747,8 @@
           "formula_id": "ps.estimation.mean_ci_unknown_sigma.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\bar X\\pm t_{n-1,1-\\alpha/2}\\frac{S}{\\sqrt n}"
+          "latex": "\\bar X\\pm t_{n-1,1-\\alpha/2}\\frac{S}{\\sqrt n}",
+          "cas": "parse_latex('\\\\bar X\\\\pm t_{n-1,1-\\\\alpha/2}\\\\frac{S}{\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3865,7 +3878,8 @@
           "formula_id": "ps.estimation.proportion_wald_ci.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\hat p\\pm z_{1-\\alpha/2}\n\\sqrt{\\frac{\\hat p(1-\\hat p)}{n}}"
+          "latex": "\\hat p\\pm z_{1-\\alpha/2}\n\\sqrt{\\frac{\\hat p(1-\\hat p)}{n}}",
+          "cas": "parse_latex('\\\\hat p\\\\pm z_{1-\\\\alpha/2}\\n\\\\sqrt{\\\\frac{\\\\hat p(1-\\\\hat p)}{n}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3986,7 +4000,8 @@
           "formula_id": "ps.estimation.variance_chisquare_ci.formula_01",
           "name_ko": "정확 신뢰구간",
           "role": "exact_confidence_interval",
-          "latex": "\\left(\n\\frac{(n-1)S^2}{\\chi^2_{n-1,1-\\alpha/2}},\n\\frac{(n-1)S^2}{\\chi^2_{n-1,\\alpha/2}}\n\\right)"
+          "latex": "\\left(\n\\frac{(n-1)S^2}{\\chi^2_{n-1,1-\\alpha/2}},\n\\frac{(n-1)S^2}{\\chi^2_{n-1,\\alpha/2}}\n\\right)",
+          "cas": "parse_latex('\\\\left(\\n\\\\frac{(n-1)S^2}{\\\\chi^2_{n-1,1-\\\\alpha/2}},\\n\\\\frac{(n-1)S^2}{\\\\chi^2_{n-1,\\\\alpha/2}}\\n\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4107,7 +4122,8 @@
           "formula_id": "ps.estimation.fisher_information_additivity.f01.formula_01",
           "name_ko": "Fisher 정보의 정의",
           "role": "information_definition",
-          "latex": "I_1(\\theta)\n=\nE_\\theta\\left[\n\\left\\{\n\\frac{\\partial}{\\partial\\theta}\n\\log f(X;\\theta)\n\\right\\}^2\n\\right]"
+          "latex": "I_1(\\theta)\n=\nE_\\theta\\left[\n\\left\\{\n\\frac{\\partial}{\\partial\\theta}\n\\log f(X;\\theta)\n\\right\\}^2\n\\right]",
+          "cas": "parse_latex('I_1(\\\\theta)\\n=\\nE_\\\\theta\\\\left[\\n\\\\left\\\\{\\n\\\\frac{\\\\partial}{\\\\partial\\\\theta}\\n\\\\log f(X;\\\\theta)\\n\\\\right\\\\}^2\\n\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4220,7 +4236,8 @@
           "formula_id": "ps.estimation.fisher_information_additivity.f02.formula_01",
           "name_ko": "Fisher 정보의 가법성",
           "role": "information_additivity",
-          "latex": "I_n(\\theta)=nI_1(\\theta)"
+          "latex": "I_n(\\theta)=nI_1(\\theta)",
+          "cas": "parse_latex('I_n(\\\\theta)=nI_1(\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4324,7 +4341,8 @@
           "formula_id": "ps.estimation.iid_likelihood.f01.formula_01",
           "name_ko": "가능도",
           "role": "likelihood",
-          "latex": "L(\\theta)=\\prod_{i=1}^{n}f(x_i;\\theta)"
+          "latex": "L(\\theta)=\\prod_{i=1}^{n}f(x_i;\\theta)",
+          "cas": "parse_latex('L(\\\\theta)=\\\\prod_{i=1}^{n}f(x_i;\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4433,7 +4451,8 @@
           "formula_id": "ps.estimation.iid_likelihood.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\ell(\\theta)=\\sum_{i=1}^{n}\\log f(x_i;\\theta)"
+          "latex": "\\ell(\\theta)=\\sum_{i=1}^{n}\\log f(x_i;\\theta)",
+          "cas": "parse_latex('\\\\ell(\\\\theta)=\\\\sum_{i=1}^{n}\\\\log f(x_i;\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4542,7 +4561,8 @@
           "formula_id": "ps.estimation.joint_likelihood.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "L(\\theta;x_1,\\ldots,x_n)\n=\nf_\\theta(x_1,\\ldots,x_n)"
+          "latex": "L(\\theta;x_1,\\ldots,x_n)\n=\nf_\\theta(x_1,\\ldots,x_n)",
+          "cas": "parse_latex('L(\\\\theta;x_1,\\\\ldots,x_n)\\n=\\nf_\\\\theta(x_1,\\\\ldots,x_n)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4651,7 +4671,8 @@
           "formula_id": "ps.estimation.joint_likelihood.f02.formula_01",
           "name_ko": "추정량",
           "role": "estimator",
-          "latex": "\\hat\\theta_{MLE}=\\operatorname*{arg\\,max}_{\\theta\\in\\Theta}L(\\theta)"
+          "latex": "\\hat\\theta_{MLE}=\\operatorname*{arg\\,max}_{\\theta\\in\\Theta}L(\\theta)",
+          "cas": "parse_latex('\\\\hat\\\\theta_{MLE}=\\\\operatorname*{arg\\\\,max}_{\\\\theta\\\\in\\\\Theta}L(\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4778,7 +4799,8 @@
           "formula_id": "ps.estimation.observed_information_se.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "J_n(\\theta)=-\\nabla_\\theta^2\\ell_n(\\theta)"
+          "latex": "J_n(\\theta)=-\\nabla_\\theta^2\\ell_n(\\theta)",
+          "cas": "parse_latex('J_n(\\\\theta)=-\\\\nabla_\\\\theta^2\\\\ell_n(\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4884,7 +4906,8 @@
           "formula_id": "ps.estimation.observed_information_se.f02.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "\\widehat{SE}(\\hat\\theta)=\\frac1{\\sqrt{J_n(\\hat\\theta)}}"
+          "latex": "\\widehat{SE}(\\hat\\theta)=\\frac1{\\sqrt{J_n(\\hat\\theta)}}",
+          "cas": "parse_latex('\\\\widehat{SE}(\\\\hat\\\\theta)=\\\\frac1{\\\\sqrt{J_n(\\\\hat\\\\theta)}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5008,7 +5031,8 @@
           "formula_id": "ps.estimation.score_information_definitions.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "s_\\theta(X)=\\nabla_\\theta\\log f(X;\\theta)"
+          "latex": "s_\\theta(X)=\\nabla_\\theta\\log f(X;\\theta)",
+          "cas": "parse_latex('s_\\\\theta(X)=\\\\nabla_\\\\theta\\\\log f(X;\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5114,7 +5138,8 @@
           "formula_id": "ps.estimation.score_information_definitions.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "I(\\theta)=E_\\theta[s_\\theta(X)s_\\theta(X)^T]"
+          "latex": "I(\\theta)=E_\\theta[s_\\theta(X)s_\\theta(X)^T]",
+          "cas": "parse_latex('I(\\\\theta)=E_\\\\theta[s_\\\\theta(X)s_\\\\theta(X)^T]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5229,7 +5254,8 @@
           "formula_id": "ps.estimation.point_estimation_properties.f01.formula_01",
           "name_ko": "편향의 정의",
           "role": "bias_definition",
-          "latex": "\\operatorname{Bias}(T)=E[T]-\\theta"
+          "latex": "\\operatorname{Bias}(T)=E[T]-\\theta",
+          "cas": "parse_latex('\\\\operatorname{Bias}(T)=E[T]-\\\\theta', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5323,7 +5349,8 @@
           "formula_id": "ps.estimation.point_estimation_properties.f02.formula_01",
           "name_ko": "편향–분산 분해",
           "role": "bias_variance_decomposition",
-          "latex": "MSE(T)=\\operatorname{Var}(T)+\\operatorname{Bias}(T)^2"
+          "latex": "MSE(T)=\\operatorname{Var}(T)+\\operatorname{Bias}(T)^2",
+          "cas": "parse_latex('MSE(T)=\\\\operatorname{Var}(T)+\\\\operatorname{Bias}(T)^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5417,7 +5444,8 @@
           "formula_id": "ps.estimation.confidence_interval.f01.formula_01",
           "name_ko": "신뢰집합의 포함확률 함수",
           "role": "coverage_probability",
-          "latex": "\\operatorname{Cov}_{C}(\\theta)=P_\\theta\\{\\theta\\in C(X)\\}"
+          "latex": "\\operatorname{Cov}_{C}(\\theta)=P_\\theta\\{\\theta\\in C(X)\\}",
+          "cas": "parse_latex('\\\\operatorname{Cov}_{C}(\\\\theta)=P_\\\\theta\\\\{\\\\theta\\\\in C(X)\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5529,7 +5557,8 @@
           "formula_id": "ps.estimation.confidence_interval.f02.formula_01",
           "name_ko": "보수적 포함확률",
           "role": "conservative_coverage",
-          "latex": "P_\\theta\\{\\theta\\in C(X)\\}\\ge 1-\\alpha"
+          "latex": "P_\\theta\\{\\theta\\in C(X)\\}\\ge 1-\\alpha",
+          "cas": "parse_latex('P_\\\\theta\\\\{\\\\theta\\\\in C(X)\\\\}\\\\ge 1-\\\\alpha', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5651,7 +5680,8 @@
           "formula_id": "ps.estimation.confidence_interval.f03.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "C(X)=[L(X),U(X)]"
+          "latex": "C(X)=[L(X),U(X)]",
+          "cas": "parse_latex('C(X)=[L(X),U(X)]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5755,7 +5785,8 @@
           "formula_id": "ps.estimation.consistency_asymptotic_normality_delta.f01.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "\\hat\\theta_n\\xrightarrow{P}\\theta"
+          "latex": "\\hat\\theta_n\\xrightarrow{P}\\theta",
+          "cas": "parse_latex('\\\\hat\\\\theta_n\\\\xrightarrow{P}\\\\theta', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5860,7 +5891,8 @@
           "formula_id": "ps.estimation.consistency_asymptotic_normality_delta.f02.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "\\sqrt n(\\hat\\theta_n-\\theta)\n\\xrightarrow{d}N(0,V)"
+          "latex": "\\sqrt n(\\hat\\theta_n-\\theta)\n\\xrightarrow{d}N(0,V)",
+          "cas": "parse_latex('\\\\sqrt n(\\\\hat\\\\theta_n-\\\\theta)\\n\\\\xrightarrow{d}N(0,V)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6003,7 +6035,8 @@
           "formula_id": "ps.estimation.consistency_asymptotic_normality_delta.f03.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "\\sqrt n\\{g(\\hat\\theta_n)-g(\\theta)\\}\n\\xrightarrow{d}\nN\\left(0,[g'(\\theta)]^2V\\right)"
+          "latex": "\\sqrt n\\{g(\\hat\\theta_n)-g(\\theta)\\}\n\\xrightarrow{d}\nN\\left(0,[g'(\\theta)]^2V\\right)",
+          "cas": "parse_latex(\"\\\\sqrt n\\\\{g(\\\\hat\\\\theta_n)-g(\\\\theta)\\\\}\\n\\\\xrightarrow{d}\\nN\\\\left(0,[g'(\\\\theta)]^2V\\\\right)\", backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6119,7 +6152,8 @@
           "formula_id": "ps.estimation.rao_blackwell_theorem.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\widetilde U=E[U\\mid T]"
+          "latex": "\\widetilde U=E[U\\mid T]",
+          "cas": "parse_latex('\\\\widetilde U=E[U\\\\mid T]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6233,7 +6267,8 @@
           "formula_id": "ps.estimation.rao_blackwell_theorem.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\widetilde U)\\le\\operatorname{Var}(U)"
+          "latex": "\\operatorname{Var}(\\widetilde U)\\le\\operatorname{Var}(U)",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\widetilde U)\\\\le\\\\operatorname{Var}(U)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6347,7 +6382,8 @@
           "formula_id": "ps.estimation.likelihood_ratio_profile.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\Lambda(x)=\n\\frac{\\sup_{\\theta\\in\\Theta_0}L(\\theta;x)}\n{\\sup_{\\theta\\in\\Theta}L(\\theta;x)}"
+          "latex": "\\Lambda(x)=\n\\frac{\\sup_{\\theta\\in\\Theta_0}L(\\theta;x)}\n{\\sup_{\\theta\\in\\Theta}L(\\theta;x)}",
+          "cas": "parse_latex('\\\\Lambda(x)=\\n\\\\frac{\\\\sup_{\\\\theta\\\\in\\\\Theta_0}L(\\\\theta;x)}\\n{\\\\sup_{\\\\theta\\\\in\\\\Theta}L(\\\\theta;x)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6461,7 +6497,8 @@
           "formula_id": "ps.estimation.likelihood_ratio_profile.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "L_p(\\psi)=L(\\psi,\\hat\\lambda_\\psi)"
+          "latex": "L_p(\\psi)=L(\\psi,\\hat\\lambda_\\psi)",
+          "cas": "parse_latex('L_p(\\\\psi)=L(\\\\psi,\\\\hat\\\\lambda_\\\\psi)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6566,7 +6603,8 @@
           "formula_id": "ps.estimation.confidence_interval_types.f01.formula_01",
           "name_ko": "정확 결과",
           "role": "exact_result",
-          "latex": "P_\\theta(\\theta\\in C(X))=1-\\alpha"
+          "latex": "P_\\theta(\\theta\\in C(X))=1-\\alpha",
+          "cas": "parse_latex('P_\\\\theta(\\\\theta\\\\in C(X))=1-\\\\alpha', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6699,7 +6737,8 @@
           "formula_id": "ps.estimation.confidence_interval_types.f02.formula_01",
           "name_ko": "보수적 포함확률",
           "role": "conservative_coverage",
-          "latex": "P_\\theta(\\theta\\in C(X))\\ge1-\\alpha"
+          "latex": "P_\\theta(\\theta\\in C(X))\\ge1-\\alpha",
+          "cas": "parse_latex('P_\\\\theta(\\\\theta\\\\in C(X))\\\\ge1-\\\\alpha', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6832,7 +6871,8 @@
           "formula_id": "ps.estimation.confidence_interval_types.f03.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "P_\\theta(\\theta\\in C_n(X))\\to1-\\alpha"
+          "latex": "P_\\theta(\\theta\\in C_n(X))\\to1-\\alpha",
+          "cas": "parse_latex('P_\\\\theta(\\\\theta\\\\in C_n(X))\\\\to1-\\\\alpha', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6983,7 +7023,8 @@
           "formula_id": "ps.estimation.pivot_ci_construction.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "Q(X,\\theta)"
+          "latex": "Q(X,\\theta)",
+          "cas": "parse_latex('Q(X,\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7089,7 +7130,8 @@
           "formula_id": "ps.estimation.pivot_ci_construction.f02.formula_01",
           "name_ko": "피벗 포함확률",
           "role": "coverage_probability",
-          "latex": "P(a\\le Q(X,\\theta)\\le b)=1-\\alpha"
+          "latex": "P(a\\le Q(X,\\theta)\\le b)=1-\\alpha",
+          "cas": "parse_latex('P(a\\\\le Q(X,\\\\theta)\\\\le b)=1-\\\\alpha', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7213,7 +7255,8 @@
           "formula_id": "ps.estimation.likelihood_ratio_ci.f01.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "2\\{\\ell(\\hat\\theta)-\\ell(\\theta)\\}\n\\overset{\\mathrm{approx}}{\\sim}\\chi^2_1"
+          "latex": "2\\{\\ell(\\hat\\theta)-\\ell(\\theta)\\}\n\\overset{\\mathrm{approx}}{\\sim}\\chi^2_1",
+          "cas": "parse_latex('2\\\\{\\\\ell(\\\\hat\\\\theta)-\\\\ell(\\\\theta)\\\\}\\n\\\\overset{\\\\mathrm{approx}}{\\\\sim}\\\\chi^2_1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7382,7 +7425,8 @@
           "formula_id": "ps.estimation.likelihood_ratio_ci.f02.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "2\\{\\ell(\\hat\\theta)-\\ell(\\theta)\\}\n\\le \\chi^2_{1,1-\\alpha}"
+          "latex": "2\\{\\ell(\\hat\\theta)-\\ell(\\theta)\\}\n\\le \\chi^2_{1,1-\\alpha}",
+          "cas": "parse_latex('2\\\\{\\\\ell(\\\\hat\\\\theta)-\\\\ell(\\\\theta)\\\\}\\n\\\\le \\\\chi^2_{1,1-\\\\alpha}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7550,7 +7594,8 @@
           "formula_id": "ps.estimation.bootstrap.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\hat\\theta^{*(1)},\\ldots,\\hat\\theta^{*(B)}"
+          "latex": "\\hat\\theta^{*(1)},\\ldots,\\hat\\theta^{*(B)}",
+          "cas": "parse_latex('\\\\hat\\\\theta^{*(1)},\\\\ldots,\\\\hat\\\\theta^{*(B)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7673,7 +7718,8 @@
           "formula_id": "ps.estimation.bootstrap.f02.formula_01",
           "name_ko": "부트스트랩 평균",
           "role": "bootstrap_mean",
-          "latex": "\\bar{\\hat\\theta}^{*}\n=\n\\frac1B\\sum_{b=1}^{B}\\hat\\theta^{*(b)}"
+          "latex": "\\bar{\\hat\\theta}^{*}\n=\n\\frac1B\\sum_{b=1}^{B}\\hat\\theta^{*(b)}",
+          "cas": "parse_latex('\\\\bar{\\\\hat\\\\theta}^{*}\\n=\\n\\\\frac1B\\\\sum_{b=1}^{B}\\\\hat\\\\theta^{*(b)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7796,7 +7842,8 @@
           "formula_id": "ps.estimation.bootstrap.f03.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "\\widehat{SE}_{\\mathrm{boot}}(\\hat\\theta)\n=\n\\sqrt{\n\\frac{1}{B-1}\n\\sum_{b=1}^{B}\n\\left(\n\\hat\\theta^{*(b)}-\\bar{\\hat\\theta}^{*}\n\\right)^2\n}"
+          "latex": "\\widehat{SE}_{\\mathrm{boot}}(\\hat\\theta)\n=\n\\sqrt{\n\\frac{1}{B-1}\n\\sum_{b=1}^{B}\n\\left(\n\\hat\\theta^{*(b)}-\\bar{\\hat\\theta}^{*}\n\\right)^2\n}",
+          "cas": "parse_latex('\\\\widehat{SE}_{\\\\mathrm{boot}}(\\\\hat\\\\theta)\\n=\\n\\\\sqrt{\\n\\\\frac{1}{B-1}\\n\\\\sum_{b=1}^{B}\\n\\\\left(\\n\\\\hat\\\\theta^{*(b)}-\\\\bar{\\\\hat\\\\theta}^{*}\\n\\\\right)^2\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [

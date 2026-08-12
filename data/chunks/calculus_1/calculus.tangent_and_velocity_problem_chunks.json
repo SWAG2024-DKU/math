@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.tangent_and_velocity_problem",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch02_limits_and_derivatives",
+  "concept_name_ko": "접선 문제와 속도 문제",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 곡선 위의 두 점을 지나는 할선의 기울기를 구하고, 한 점을 다른 점에 한없이 가까워지게 하여 할선 기울기의 극한으로 접선의 기울기를 정의한다. 위치함수의 평균속도를 같은 방식으로 극한을 취하면 순간속도가 된다 — 두 문제는 수학적으로 동일한 극한 계산 구조를 갖는다.\n검색 태그: secant_line, tangent_line, velocity, difference_quotient",
+      "token_count": 157,
+      "content_hash": "3f8ed9ab05358bae37a2d6c5388c26827d430df72ea921ff313215e644e0c4ec",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 할선의 기울기\n공식 ID: secant_slope\n역할: definition\nLaTeX: m_{PQ}=\\frac{f(x)-f(a)}{x-a}=\\frac{f(a+h)-f(a)}{h}\nCAS 표현: (f(x)-f(a))/(x-a)\n\n공식명: 접선의 기울기\n공식 ID: tangent_slope\n역할: definition\nLaTeX: m=\\lim_{x\\to a}\\frac{f(x)-f(a)}{x-a}=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}\nCAS 표현: limit((f(x)-f(a))/(x-a), x, a)\n\n공식명: 접선의 방정식\n공식 ID: tangent_line_equation\n역할: derived_formula\nLaTeX: y-f(a)=m(x-a)\nCAS 표현: Eq(y-f(a), m*(x-a))\n\n공식명: 평균속도\n공식 ID: average_velocity\n역할: definition\nLaTeX: v_{\\text{avg}}=\\frac{s(a+h)-s(a)}{h}\nCAS 표현: (s(a+h)-s(a))/h",
+      "token_count": 373,
+      "content_hash": "c05ff3d10ec0154d93ebb15a2c366cf02fa7e80023511933c6dc80fa83392f6b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 순간속도\n공식 ID: instantaneous_velocity\n역할: definition\nLaTeX: v(a)=\\lim_{h\\to0}\\frac{s(a+h)-s(a)}{h}\nCAS 표현: limit((s(a+h)-s(a))/h, h, 0)",
+      "token_count": 129,
+      "content_hash": "67b6395e3bf03ce8b917a8ee179198f49ea522de55b473916e25a89fbe3692e9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: q_not_equal_p\n설명: 할선은 곡선 위의 서로 다른 두 점을 지나야 하므로 x≠a(또는 h≠0)여야 한다.\n검증 규칙: x not_equals a\n\n조건 ID: secant_limit_exists\n설명: 할선 기울기의 극한값이 유한하게 존재해야 접선의 기울기와 순간속도가 정의된다.\n검증 규칙: secant_slope_limit_exists equals 참",
+      "token_count": 162,
+      "content_hash": "70dba2a11559e8cafc1a653720d00a1ac2d78ba2701ffa44c040ecc72eebeb43",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: secant_is_average_rate\n설명: 할선의 기울기는 구간에서의 평균변화율(평균속도)과 같은 구조다.\n\n성질 ID: same_limit_structure\n설명: 접선 문제와 속도 문제는 수학적으로 동일한 극한 계산 구조를 가지며, h→0일 때 할선은 접선에, 평균속도는 순간속도에 접근한다.\n\n성질 ID: speed_is_absolute_velocity\n설명: 속력(speed)은 순간속도의 절댓값 |v(a)|이다.",
+      "token_count": 180,
+      "content_hash": "ff5ecc2a315fe8ae4bc20920184a19d8fee5867f80b61c1326f2b967f8cd2432",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수, 정의역과 치역 (calculus.function, 중요도: required)\n- 점-기울기 형태 (algebra.point_slope_form, 중요도: required)\n\n관련 개념:\n- calculus.limit_definition\n- calculus.derivative_definition_and_rates_of_change\n\n학습 목표 ID: compute_secant_slope\n행동 동사: calculate\n목표: 곡선 위 두 점으로 할선의 기울기를 구한다.\n\n학습 목표 ID: derive_tangent_from_secant_limit\n행동 동사: calculate\n목표: 할선 기울기의 극한으로 접선의 기울기를 구하고 접선의 방정식을 세운다.\n\n학습 목표 ID: derive_instantaneous_velocity\n행동 동사: calculate\n목표: 평균속도의 극한으로 순간속도를 구한다.",
+      "token_count": 251,
+      "content_hash": "bd7840985268cf3d2dc8a53d3aca3289d571c19a3d00f64b6485241a9631f7b9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 평균속도와 순간속도 혼동\n오개념 ID: calculus.tangent_velocity.confuse_average_instant\n설명: 특정 구간의 평균속도를 그 구간 한 점에서의 순간속도와 같은 것으로 착각한다.\n진단 태그: confuse_average_and_instantaneous_velocity\n피드백: 평균속도는 구간 [a,a+h]에서의 변화율이고, 순간속도는 h→0일 때 평균속도의 극한이다.\n\n오개념: 속력이 음수가 될 수 있다고 착각\n오개념 ID: calculus.tangent_velocity.speed_negative\n설명: 속도가 음수일 때 속력도 음수라고 판단한다.\n진단 태그: speed_can_be_negative\n피드백: 속력은 순간속도의 절댓값이므로 항상 0 이상이다.",
+      "token_count": 254,
+      "content_hash": "eef519efbbda026a271305bbe7c656342dbd6ecf56d37dd5d8d6cc05b6678496",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.tangent_and_velocity_problem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "접선 문제와 속도 문제",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 접선 문제와 속도 문제\n개념 ID: calculus.tangent_and_velocity_problem\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: secant_slope_calculation, tangent_line_derivation, instantaneous_velocity_calculation\n지원 정답 유형: expression, equation, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence",
+      "token_count": 126,
+      "content_hash": "e58a9105eec0972404c9af3912461f5b311089672ad96201c205828084016f70",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

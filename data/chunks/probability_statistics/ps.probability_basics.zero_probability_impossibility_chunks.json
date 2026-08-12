@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.probability_basics.zero_probability_impossibility",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_04_probability_basics",
+  "concept_name_ko": "확률 0과 불가능성",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.probability_basics.zero_probability_impossibility",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_04_probability_basics",
+      "concept_name_ko": "확률 0과 불가능성",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 확률의 기본 개념\n개념: 확률 0과 불가능성\n개념 ID: ps.probability_basics.zero_probability_impossibility\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: $P(A)=0$이라고 해서 사건 $A$가 논리적으로 불가능하다는 뜻은 아니다. 예를 들어 연속균등분포에서 특정 한 점을 정확히 관측할 확률은 0이지만 그 점은 표본공간에 포함될 수 있다. 마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분해야 한다.\n검색 태그: probability_basics, zero_probability_impossibility, probability",
+      "token_count": 158,
+      "content_hash": "b21359bb6d17b327f093f51a6f8a04788ca6c0c5271017440b108b8af99a271d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.probability_basics.zero_probability_impossibility",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_04_probability_basics",
+      "concept_name_ko": "확률 0과 불가능성",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 확률의 기본 개념\n개념: 확률 0과 불가능성\n개념 ID: ps.probability_basics.zero_probability_impossibility\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.probability_basics.zero_probability_impossibility.property_01\n설명: $P(A)=0$이라고 해서 사건 $A$가 논리적으로 불가능하다는 뜻은 아니다.\n\n성질 ID: ps.probability_basics.zero_probability_impossibility.property_02\n설명: 예를 들어 연속균등분포에서 특정 한 점을 정확히 관측할 확률은 0이지만 그 점은 표본공간에 포함될 수 있다.\n\n성질 ID: ps.probability_basics.zero_probability_impossibility.property_03\n설명: 마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분해야 한다.\n\n성질 ID: ps.probability_basics.zero_probability_impossibility.property_04\n설명: 확률 0과 불가능성 개념의 정의와 수식을 적용할 수 있는 자료형·정의역 조건을 만족해야 한다.",
+      "token_count": 277,
+      "content_hash": "c343c829917edef39018c403e1b80665ddddc906527f603d33f41adc8e23f98c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.probability_basics.zero_probability_impossibility",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_04_probability_basics",
+      "concept_name_ko": "확률 0과 불가능성",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 확률의 기본 개념\n개념: 확률 0과 불가능성\n개념 ID: ps.probability_basics.zero_probability_impossibility\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 집합 (math.sets, 중요도: required)\n- 합의 법칙과 곱의 법칙 (ps.counting.addition_multiplication_rules, 중요도: required)\n\n관련 개념:\n- ps.probability_basics.sigma_algebra_conditions\n\n학습 목표 ID: ps.probability_basics.zero_probability_impossibility.objective_01\n행동 동사: identify\n목표: 확률 0과 불가능성의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.probability_basics.zero_probability_impossibility.objective_02\n행동 동사: apply\n목표: 확률 0과 불가능성의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.probability_basics.zero_probability_impossibility.objective_03\n행동 동사: interpret\n목표: 계산 결과를 확률 0과 불가능성의 의미와 조건에 맞게 해석한다.",
+      "token_count": 277,
+      "content_hash": "fb811660289a8a2a26d1be36af289c22828637e38db9e1a826d184f85f6c2fd8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.probability_basics.zero_probability_impossibility",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_04_probability_basics",
+      "concept_name_ko": "확률 0과 불가능성",
+      "chunk_index": 3,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 확률과 통계\n단원: 확률의 기본 개념\n개념: 확률 0과 불가능성\n개념 ID: ps.probability_basics.zero_probability_impossibility\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분 오류\n오개념 ID: ps.probability_basics.zero_probability_impossibility.misconception_01\n설명: 마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분하지 않는다.\n진단 태그: ps_probability_basics_zero_probability_impossibility_misconception_01\n피드백: 마찬가지로 확률 1인 사건도 모든 결과에서 반드시 성립하는 사건과 구분해야 한다.",
+      "token_count": 193,
+      "content_hash": "fa7249e83dad1972badc5a17fbaf81eaa323609f0bb14cc2039ce33374fccf58",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.probability_basics.zero_probability_impossibility",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_04_probability_basics",
+      "concept_name_ko": "확률 0과 불가능성",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 확률의 기본 개념\n개념: 확률 0과 불가능성\n개념 ID: ps.probability_basics.zero_probability_impossibility\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, probability_calculation\n지원 정답 유형: single_choice, boolean\n난이도 범위: 1 ~ 3\n권장 검증기: assumption_check, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 132,
+      "content_hash": "60aafc10fd8b382b23861ac2f25ee0a160be3eba66094dcce63a8b0b8fff65c2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

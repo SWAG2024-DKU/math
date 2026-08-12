@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.series_convergence",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch10_sequences_and_series",
+  "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 무한수열 {a_n}의 모든 항의 합 Σa_n을 무한급수라 하며, 부분합 수열 s_n=Σ[i=1,n]a_i의 극한이 존재할 때 그 값을 급수의 합이라 한다. 기하급수 Σar^{n-1}은 |r|<1이면 a/(1-r)로 수렴하고 |r|≥1이면 발산한다. lim a_n이 0이 아니거나 존재하지 않으면 급수는 발산한다(발산판정법) — 단 lim a_n=0은 수렴의 필요조건일 뿐 충분조건이 아니다.\n검색 태그: series, geometric_series, divergence_test, telescoping_series",
+      "token_count": 229,
+      "content_hash": "2f307c70e90ccc3247273b975d93737970f7c5373d714291b4c576242ef03cdf",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 급수의 합\n공식 ID: series_sum_def\n역할: definition\nLaTeX: \\sum_{n=1}^\\infty a_n=\\lim_{n\\to\\infty}s_n,\\qquad s_n=\\sum_{i=1}^na_i\nCAS 표현: Sum(a_n, (n,1,oo))\n\n공식명: 기하급수의 합\n공식 ID: geometric_series_sum\n역할: theorem\nLaTeX: \\sum_{n=1}^\\infty ar^{n-1}=\\frac{a}{1-r}\\quad(|r|<1)\nCAS 표현: a/(1-r)\n\n공식명: 발산판정법\n공식 ID: divergence_test\n역할: theorem\nLaTeX: \\lim_{n\\to\\infty}a_n\\neq0\\ (\\text{또는 부존재})\\implies\\sum a_n\\text{ 발산}\nCAS 표현: limit(a_n, n, oo)\n\n공식명: 급수의 선형성\n공식 ID: series_linearity\n역할: theorem\nLaTeX: \\sum ca_n=c\\sum a_n,\\qquad\\sum(a_n\\pm b_n)=\\sum a_n\\pm\\sum b_n\nCAS 표현: c*Sum(a_n,(n,1,oo))",
+      "token_count": 382,
+      "content_hash": "08f410c246b7eea577b416aa6f8c1e11c97c45491336568741ea486dddc1635d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: divergence_test_only_shows_divergence\n설명: 발산판정법은 발산만 보일 수 있다. lim a_n=0이라고 해서 급수가 수렴한다고 결론지을 수 없다(조화급수가 대표적 반례).\n검증 규칙: divergence_test_conclusion_direction equals divergence_only\n\n조건 ID: geometric_series_exact_form\n설명: 기하급수 합 공식은 급수가 정확히 ar^{n-1} 꼴(첫 항 a, 공비 r)이고 |r|<1일 때만 바로 적용한다.\n검증 규칙: series_matches_geometric_form_and_r less_than 1",
+      "token_count": 223,
+      "content_hash": "82e34f1652880c7ae9c711616978be7eb4a0d3c04cb898946c5d5a83d5e54c82",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: finite_terms_dont_affect_convergence\n설명: 급수의 유한개 항을 바꾸거나 제거해도 수렴·발산 여부는 바뀌지 않는다(합의 값만 바뀔 수 있다).\n\n성질 ID: telescoping_series\n설명: 망원급수는 a_n=b_n-b_{n+1} 형태로 분해되면 부분합이 b_1-b_{N+1}로 상쇄되어 닫힌 형태로 계산된다(예: Σ1/(n(n+1))=1).\n\n성질 ID: harmonic_series_counterexample\n설명: 조화급수 Σ1/n은 lim a_n=0이지만 발산한다 — 발산판정법의 역이 성립하지 않음을 보여주는 대표 예.",
+      "token_count": 234,
+      "content_hash": "5458ced943e5a0e2f6a789e16a74bb72292f9a2df60b38eef47fd9411bcf67a3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 수열의 극한 (calculus.sequence_limit, 중요도: required)\n\n관련 개념:\n- calculus.integral_test\n\n학습 목표 ID: compute_geometric_series_sum\n행동 동사: calculate\n목표: 기하급수의 합을 구한다.\n\n학습 목표 ID: apply_divergence_test\n행동 동사: apply\n목표: 발산판정법으로 급수의 발산을 판정한다.\n\n학습 목표 ID: compute_telescoping_sum\n행동 동사: calculate\n목표: 망원급수의 부분합을 구해 급수의 합을 계산한다.",
+      "token_count": 199,
+      "content_hash": "f898a7742d3644f9d7129540a0677ca64f862888e7af689567880d7b59a76190",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 발산판정법의 역을 참으로 오해\n오개념 ID: calculus.series_convergence.divergence_test_converse\n설명: lim a_n=0이므로 급수가 수렴한다고 결론짓는다.\n진단 태그: assume_divergence_test_implies_convergence\n피드백: lim a_n=0은 급수 수렴의 필요조건일 뿐 충분조건이 아니다. 조화급수처럼 lim a_n=0이어도 발산하는 급수가 존재한다.\n\n오개념: 수열의 수렴과 급수의 수렴 혼동\n오개념 ID: calculus.series_convergence.sequence_vs_series_confusion\n설명: 항 a_n 자체가 0으로 수렴한다는 사실을 급수 Σa_n이 수렴한다는 뜻으로 착각한다.\n진단 태그: confuse_sequence_convergence_with_series_convergence\n피드백: 수열의 수렴(항 자체가 L로 접근)과 급수의 수렴(부분합 s_n이 유한값으로 접근)은 서로 다른 개념이다.",
+      "token_count": 325,
+      "content_hash": "5e57089eb41dac0e45245b5f688e74346bc56940d5fb20301a57a8fd756f53b4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.series_convergence",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch10_sequences_and_series",
+      "concept_name_ko": "급수의 수렴, 기하급수, 발산판정법",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 수열과 급수\n개념: 급수의 수렴, 기하급수, 발산판정법\n개념 ID: calculus.series_convergence\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: geometric_series_sum_calculation, divergence_test_application, telescoping_series_calculation\n지원 정답 유형: scalar, boolean\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence",
+      "token_count": 130,
+      "content_hash": "a615d26d7c8d0363c126a257391ae27299bb7f398ebbeac6c4657fdc7f6669b1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

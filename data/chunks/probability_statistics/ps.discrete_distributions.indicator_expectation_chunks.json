@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.discrete_distributions.indicator_expectation",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_07_discrete_distributions",
+  "concept_name_ko": "지시변수의 기댓값",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.indicator_expectation",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "지시변수의 기댓값",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 지시변수의 기댓값\n개념 ID: ps.discrete_distributions.indicator_expectation\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 사건의 지시변수 기댓값은 사건 확률과 같다.\n검색 태그: discrete_distributions, indicator_mgfs, indicator_expectation",
+      "token_count": 96,
+      "content_hash": "775b443d7a26aaf6bdefbf910b18d2052a1870f98a34e545bd72c635c6636495",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.indicator_expectation",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "지시변수의 기댓값",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 지시변수의 기댓값\n개념 ID: ps.discrete_distributions.indicator_expectation\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 적률 관계\n공식 ID: ps.discrete_distributions.indicator_expectation.formula_01\n역할: moment_relation\nLaTeX: E[I_A]=P(A)",
+      "token_count": 106,
+      "content_hash": "941cd83262315796f95166a560ef98a9dea0f6e02d80106ea16b950097bf3974",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.indicator_expectation",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "지시변수의 기댓값",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 지시변수의 기댓값\n개념 ID: ps.discrete_distributions.indicator_expectation\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.discrete_distributions.indicator_expectation.condition_01\n설명: $I_A=1$은 $A$가 발생할 때, 0은 그렇지 않을 때로 정의한 지시변수여야 한다.\n검증 규칙: variable_is_event_indicator equals 참",
+      "token_count": 130,
+      "content_hash": "193119d9c425dc69005d9080663e47ca5e0ee8149a9b96fe3d4c55e8c8ed5121",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.indicator_expectation",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "지시변수의 기댓값",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 지시변수의 기댓값\n개념 ID: ps.discrete_distributions.indicator_expectation\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.discrete_distributions.indicator_expectation.property_01\n설명: 이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다.",
+      "token_count": 112,
+      "content_hash": "9b77d0fead8c1589069db9694e5cbe3cbe0f5239b9aa427db8c825205a1d3b57",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.indicator_expectation",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "지시변수의 기댓값",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 지시변수의 기댓값\n개념 ID: ps.discrete_distributions.indicator_expectation\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률변수와 분포 (ps.random_variables.random_variable_distribution, 중요도: required)\n- 합의 법칙과 곱의 법칙 (ps.counting.addition_multiplication_rules, 중요도: required)\n\n관련 개념:\n- ps.discrete_distributions.binomial_mgf\n\n학습 목표 ID: ps.discrete_distributions.indicator_expectation.objective_01\n행동 동사: identify\n목표: 지시변수의 기댓값의 정의, 공식과 적용 조건을 식별한다.\n\n학습 목표 ID: ps.discrete_distributions.indicator_expectation.objective_02\n행동 동사: apply\n목표: 지시변수의 기댓값의 정의, 공식과 적용 조건을 적용한다.\n\n학습 목표 ID: ps.discrete_distributions.indicator_expectation.objective_03\n행동 동사: interpret\n목표: 지시변수의 기댓값의 정의, 공식과 적용 조건을 해석한다.",
+      "token_count": 300,
+      "content_hash": "879b068c1fd198f96fa0c5bf127b0333741bd88170ec8d7c70e2315f51b721d6",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.indicator_expectation",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "지시변수의 기댓값",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 지시변수의 기댓값\n개념 ID: ps.discrete_distributions.indicator_expectation\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 166,
+      "content_hash": "b739c467899601a7eacd5ba28777c5b514188d19370103183615c2e6645e01ef",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

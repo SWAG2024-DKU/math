@@ -1,0 +1,91 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.continuous_distributions.normal_density_standardization",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_08_continuous_distributions",
+  "concept_name_ko": "정규분포 밀도와 표준화",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.normal_density_standardization",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "정규분포 밀도와 표준화",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 정규분포 밀도와 표준화\n개념 ID: ps.continuous_distributions.normal_density_standardization\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정규분포의 밀도와 표준정규화 변환을 나타낸다.\n검색 태그: continuous_distributions, normal, distribution, normal_density_standardization",
+      "token_count": 100,
+      "content_hash": "02a03ff876a13312f20552f27f7dfce2053becbfe97162cbcfc293d7e1cf0026",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.normal_density_standardization",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "정규분포 밀도와 표준화",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 정규분포 밀도와 표준화\n개념 ID: ps.continuous_distributions.normal_density_standardization\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.continuous_distributions.normal_density_standardization.property_01\n설명: 서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다.",
+      "token_count": 108,
+      "content_hash": "b0df2b62cf58c9bc6ef08bf2a71a4fc4ad02ed31e0d46ef9deb6ccc5a531572f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.normal_density_standardization",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "정규분포 밀도와 표준화",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 정규분포 밀도와 표준화\n개념 ID: ps.continuous_distributions.normal_density_standardization\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 지수함수, 적분 (math.functions, 중요도: required)\n\n관련 개념:\n- ps.continuous_distributions.normal_density_standardization.f01\n- ps.continuous_distributions.normal_density_standardization.f02\n- ps.continuous_distributions.normal\n\n학습 목표 ID: ps.continuous_distributions.normal_density_standardization.objective_01\n행동 동사: apply\n목표: 정규분포 밀도와 표준화의 공식과 적용 조건을 구분하여 적용한다.",
+      "token_count": 192,
+      "content_hash": "d873cd13ab347a7853b4d4f15dae60eaf0aff1aecf6caed1424ec2fdf43ac5dc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.normal_density_standardization",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "정규분포 밀도와 표준화",
+      "chunk_index": 3,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 정규분포 밀도와 표준화\n개념 ID: ps.continuous_distributions.normal_density_standardization\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check\n생성 참고사항: 탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다.",
+      "token_count": 199,
+      "content_hash": "07d468d6759bdbb9123ed1bc97c6473bba08f28887c4a5cd96692a6ec44c4b97",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

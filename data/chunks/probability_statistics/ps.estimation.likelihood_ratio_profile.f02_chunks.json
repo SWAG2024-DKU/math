@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 가능도비와 Profile likelihood — 정의\n개념 ID: ps.estimation.likelihood_ratio_profile.f02\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 가능도비와 Profile likelihood에서 사용하는 정의 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: estimation, likelihood_ratio_profile, formula_atomic, core_formula",
+      "token_count": 114,
+      "content_hash": "c944746cb440e3e84e591dde70d1bd4460e2eea628f2ef406fe0c597ece860b4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 가능도비와 Profile likelihood — 정의\n개념 ID: ps.estimation.likelihood_ratio_profile.f02\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 정의\n공식 ID: ps.estimation.likelihood_ratio_profile.f02.formula_01\n역할: definition\nLaTeX: L_p(\\psi)=L(\\psi,\\hat\\lambda_\\psi)",
+      "token_count": 114,
+      "content_hash": "2cb2bc9508203bb52a6d3e1939b549046d570385dbaa88b82a0bd83964f57fbb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 가능도비와 Profile likelihood — 정의\n개념 ID: ps.estimation.likelihood_ratio_profile.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.estimation.likelihood_ratio_profile.f02.condition_01\n설명: 각 관심모수 값에서 방해모수 공간이 정의되고 조건부 최대값이 존재해야 한다.\n검증 규칙: nuisance_profile_maximum_exists equals 참",
+      "token_count": 129,
+      "content_hash": "828edd08330890f99ec93c64e18d729b4138a2968c8b222631a05af74c71a274",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 가능도비와 Profile likelihood — 정의\n개념 ID: ps.estimation.likelihood_ratio_profile.f02\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.estimation.likelihood_ratio_profile.f02.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 104,
+      "content_hash": "c2f8b1a020c99f1952c7c89e19bf30524b875277babdb7c276bef39d0ba355da",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 가능도비와 Profile likelihood — 정의\n개념 ID: ps.estimation.likelihood_ratio_profile.f02\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률표본과 통계량 (ps.sampling_distributions.random_sample_statistic, 중요도: required)\n- 최대가능도추정 (ps.estimation.maximum_likelihood, 중요도: required)\n- 미적분 (calculus.core, 중요도: recommended)\n\n관련 개념:\n- ps.estimation.likelihood_ratio_profile\n- ps.estimation.score_fisher_information\n- ps.estimation.confidence_interval_types\n\n학습 목표 ID: ps.estimation.likelihood_ratio_profile.f02.objective_01\n행동 동사: identify\n목표: 가능도비와 Profile likelihood 수식 2의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.estimation.likelihood_ratio_profile.f02.objective_02\n행동 동사: apply\n목표: 가능도비와 Profile likelihood 수식 2을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.estimation.likelihood_ratio_profile.f02.objective_03\n행동 동사: verify\n목표: 가능도비와 Profile likelihood 수식 2의 조건 충족 여부를 검증한다.",
+      "token_count": 346,
+      "content_hash": "1c94e130ab1bbc132a631d52c2e8f7c7ef64f6a830c63c1ef6a0dd8900fa816d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.likelihood_ratio_profile.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "가능도비와 Profile likelihood — 정의",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 가능도비와 Profile likelihood — 정의\n개념 ID: ps.estimation.likelihood_ratio_profile.f02\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, interval\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 153,
+      "content_hash": "c395b5cc402504ddc10f0098f2773fd16e3d79033133a5a775fbc5c271408423",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

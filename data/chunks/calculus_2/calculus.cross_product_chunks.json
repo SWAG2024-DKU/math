@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.cross_product",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch02_vectors_in_space",
+  "concept_name_ko": "외적",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: u×v는 3차원 벡터에서 정의되며, u와 v 모두에 수직인 벡터로 방향은 오른손법칙으로 정하고 크기는 ‖u×v‖=‖u‖‖v‖sinθ이다. 결과는 벡터이며 반교환적(u×v=-(v×u))이고, 두 벡터가 만드는 평행사변형의 넓이가 ‖u×v‖와 같다.\n검색 태그: cross_product, parallelogram_area",
+      "token_count": 157,
+      "content_hash": "dc650bf49ff611f8cc4a654815cbcc833a950435019695f977bb0a21739a612c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 외적의 정의\n공식 ID: cross_product_definition\n역할: definition\nLaTeX: \\mathbf{u}\\times\\mathbf{v}=\\langle u_2v_3-u_3v_2,\\ u_3v_1-u_1v_3,\\ u_1v_2-u_2v_1\\rangle\nCAS 표현: u.cross(v)\n\n공식명: 외적의 크기\n공식 ID: cross_product_magnitude\n역할: theorem\nLaTeX: \\|\\mathbf{u}\\times\\mathbf{v}\\|=\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\sin\\theta\nCAS 표현: u.norm()*v.norm()*sin(theta)\n\n공식명: 반교환성\n공식 ID: cross_product_anticommutative\n역할: property\nLaTeX: \\mathbf{u}\\times\\mathbf{v}=-(\\mathbf{v}\\times\\mathbf{u})\nCAS 표현: u.cross(v) + v.cross(u)\n\n공식명: 평행사변형·삼각형의 넓이\n공식 ID: parallelogram_triangle_area\n역할: application\nLaTeX: A_{\\text{평행사변형}}=\\|\\mathbf{u}\\times\\mathbf{v}\\|,\\qquad A_{\\triangle}=\\tfrac12\\|\\mathbf{u}\\times\\mathbf{v}\\|\nCAS 표현: u.cross(v).norm()",
+      "token_count": 402,
+      "content_hash": "5246fd76a54a29720b984580d535b404c12305737f7ace8c858e7be8c87a5606",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: cross_product_3d_only\n설명: 외적은 3차원 벡터에서 정의된다.\n검증 규칙: vectors_are_3_dimensional equals 참\n\n조건 ID: parallel_condition\n설명: 두 영이 아닌 벡터가 평행하면 u×v=0이다.\n검증 규칙: u_and_v_parallel equals 참",
+      "token_count": 126,
+      "content_hash": "47be4e7a815cc192b6eb4a6da7d5776bc123af2a56c664f393dc86a7d2cbed1e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: cross_product_perpendicular\n설명: u×v는 u, v 모두에 수직이며 방향은 오른손법칙으로 결정한다.\n\n성질 ID: cross_product_not_commutative\n설명: 외적은 교환법칙이 성립하지 않으며 순서를 바꾸면 부호가 바뀐다.\n\n성질 ID: zero_cross_means_parallel_or_zero\n설명: 외적이 영벡터이면 두 벡터가 평행하거나 둘 중 하나가 영벡터다.",
+      "token_count": 157,
+      "content_hash": "1a0775aed8ca250267aa81b905a4dcecb7ce551dc6527637242dbdf47791e1eb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 내적 (calculus.dot_product, 중요도: required)\n\n관련 개념:\n- calculus.scalar_triple_product\n\n학습 목표 ID: compute_cross_product\n행동 동사: calculate\n목표: 행렬식 또는 성분 공식으로 두 벡터의 외적을 구한다.\n\n학습 목표 ID: determine_parallelism\n행동 동사: verify\n목표: 외적으로 두 벡터의 평행 여부를 판정한다.\n\n학습 목표 ID: compute_area_via_cross_product\n행동 동사: calculate\n목표: 외적으로 평행사변형·삼각형의 넓이를 구한다.",
+      "token_count": 190,
+      "content_hash": "45352f27324d26683ceb14cffa6228a43476dc20832a0619c540c8597f40e452",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 외적의 결과를 스칼라로 착각\n오개념 ID: calculus.cross_product.result_is_scalar\n설명: u×v의 결과를 하나의 수로 제시한다.\n진단 태그: treat_cross_product_result_as_scalar\n피드백: 외적의 결과는 벡터이며, 스칼라인 내적과 다르다.\n\n오개념: 외적이 교환법칙을 만족한다고 착각\n오개념 ID: calculus.cross_product.assume_commutative\n설명: u×v와 v×u가 같다고 계산한다.\n진단 태그: assume_cross_product_commutative\n피드백: 외적은 반교환적이다: u×v=-(v×u).",
+      "token_count": 220,
+      "content_hash": "4d5006dc116eeaf16bc79b70c67fe8ec0f562bb54ce53c7c9855ed9d09150c74",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.cross_product",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "외적",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 외적\n개념 ID: calculus.cross_product\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: cross_product_calculation, parallelism_check, area_via_cross_product\n지원 정답 유형: vector, boolean, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 107,
+      "content_hash": "4b6ccb69e2d868755039f55c6c0803bf952af928a1565803fc88e6270d9f41af",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

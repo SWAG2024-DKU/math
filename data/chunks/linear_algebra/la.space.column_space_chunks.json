@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.space.column_space",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_02_vector_spaces",
+  "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 행렬 A의 열벡터들이 생성하는 부분공간의 기저를 찾기 위해 RREF의 피봇 열 위치를 추적한 뒤 원본 행렬의 해당 열을 추출한다.\n검색 태그: column_space, col_a, rank",
+      "token_count": 117,
+      "content_hash": "a0305f632657fd6f29d98f612a29be51939ab25177d22ef068c6742076aee1ac",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 열공간 정의\n공식 ID: column_space_definition\n역할: definition\nLaTeX: C(A) = \\{A\\mathbf{x} \\mid \\mathbf{x} \\in \\mathbb{R}^n\\}\nCAS 표현: column_space(A)",
+      "token_count": 130,
+      "content_hash": "48258e2cc5a54cb9148f814c4f50a008a1971f1fb079e8b428d87d7e3675ec6e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: use_original_matrix_columns\n설명: 반드시 RREF 연산 전의 원본 행렬에서 열벡터를 추출해야 한다.\n검증 규칙: extract_from_original_matrix equals 참",
+      "token_count": 112,
+      "content_hash": "1f14b37f3290d793c77c7676242bd3d4c6852a9ac8349a3bd69cb0d386dd4684",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: column_space_dimension\n설명: 열공간의 차원은 행렬의 랭크와 같다.",
+      "token_count": 85,
+      "content_hash": "89defcd1977d7869d5cd971cbc13f93058ec7145c8f243c7d6c7afeffcd280aa",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 기약행사다리꼴(RREF) (la.matrix.rref, 중요도: required)\n- 기저 (la.space.basis, 중요도: required)\n- 랭크(Rank) (la.matrix.rank, 중요도: required)\n\n관련 개념:\n- la.space.row_space\n\n학습 목표 ID: extract_column_basis\n행동 동사: calculate\n목표: 열공간의 기저와 차원을 구한다.",
+      "token_count": 168,
+      "content_hash": "f8b461e73ae30dc5a7bf25847886b56e82a748edfe15badae98bef714d68e2bb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: RREF 벡터 직접 채택 오류\n오개념 ID: la.space.column_space.rref_vectors_used\n설명: 원본 행렬로 돌아가지 않고 RREF 상태의 피봇 열벡터를 그대로 기저로 제출한다.\n진단 태그: use_rref_columns_directly\n피드백: 기저는 반드시 연산 전의 원본 행렬 A에서 추출해야 합니다.",
+      "token_count": 170,
+      "content_hash": "f54687d15ae7f31af69b00d348b13c2fb7c2998963a68cc3f325b4e81a537a94",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.space.column_space",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_02_vector_spaces",
+      "concept_name_ko": "열공간 C(A)의 기저 추출 및 차원",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 벡터 공간과 선형구조\n개념: 열공간 C(A)의 기저 추출 및 차원\n개념 ID: la.space.column_space\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: column_space_basis\n지원 정답 유형: vector_list\n난이도 범위: 2 ~ 4\n권장 검증기: span_equivalence_check",
+      "token_count": 107,
+      "content_hash": "a475efc85bc4ca4c22ed8ccde6946dc54ddc5343cc112f980f019c135ea637d1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

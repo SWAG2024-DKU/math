@@ -1,0 +1,91 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.random_variables.survival_tail_integral",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_06_random_variables",
+  "concept_name_ko": "생존함수와 꼬리적분 공식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.survival_tail_integral",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "생존함수와 꼬리적분 공식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 생존함수와 꼬리적분 공식\n개념 ID: ps.random_variables.survival_tail_integral\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 생존함수는 $S_X(x)=P(X>x)=1-F_X(x)$ 이다. $X\\ge0$이고 기댓값이 존재하면 $E[X]=\\int_0^\\infty P(X>t)\\,dt$ 가 성립한다. 이 식은 대기시간과 수명자료의 평균을 계산할 때 유용하다.\n검색 태그: random_variables, survival_tail_integral",
+      "token_count": 167,
+      "content_hash": "73c40d84df585d6cd4a7476bfb985dfdc9f8b39dfa3218f00ce45126291f1d24",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.survival_tail_integral",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "생존함수와 꼬리적분 공식",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 생존함수와 꼬리적분 공식\n개념 ID: ps.random_variables.survival_tail_integral\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.random_variables.survival_tail_integral.property_01\n설명: 서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다.",
+      "token_count": 109,
+      "content_hash": "ea06c40646a94665c46e5a46b97cf978a8ad866780208ec0e3735763091a6f66",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.survival_tail_integral",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "생존함수와 꼬리적분 공식",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 생존함수와 꼬리적분 공식\n개념 ID: ps.random_variables.survival_tail_integral\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률 공리 (ps.probability_basics.probability_axioms, 중요도: required)\n- 함수 (math.functions, 중요도: required)\n- 합과 적분 (calculus.sum_integral, 중요도: recommended)\n\n관련 개념:\n- ps.random_variables.survival_tail_integral.f01\n- ps.random_variables.survival_tail_integral.f02\n- ps.random_variables.expectation_existence\n- ps.random_variables.mgf_uniqueness_domain\n\n학습 목표 ID: ps.random_variables.survival_tail_integral.objective_01\n행동 동사: identify\n목표: 생존함수와 꼬리적분 공식의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.random_variables.survival_tail_integral.objective_02\n행동 동사: apply\n목표: 생존함수와 꼬리적분 공식의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.random_variables.survival_tail_integral.objective_03\n행동 동사: interpret\n목표: 계산 결과를 생존함수와 꼬리적분 공식의 의미와 조건에 맞게 해석한다.",
+      "token_count": 363,
+      "content_hash": "aea27917b87e681067ff9ff7ffc2f962dbd2292f1d72736b6a21583fe0077211",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.survival_tail_integral",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "생존함수와 꼬리적분 공식",
+      "chunk_index": 3,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 생존함수와 꼬리적분 공식\n개념 ID: ps.random_variables.survival_tail_integral\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check\n생성 참고사항: 탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다.",
+      "token_count": 188,
+      "content_hash": "add78a0a31ea595051f765070d0b72d7535a6cc1000162169da9d23b548a6350",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

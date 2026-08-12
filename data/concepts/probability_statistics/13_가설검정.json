@@ -65,7 +65,8 @@
           "formula_id": "ps.hypothesis_testing.one_sample_variance_chisquare.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "\\chi^2=\n\\frac{(n-1)S^2}{\\sigma_0^2}"
+          "latex": "\\chi^2=\n\\frac{(n-1)S^2}{\\sigma_0^2}",
+          "cas": "parse_latex('\\\\chi^2=\\n\\\\frac{(n-1)S^2}{\\\\sigma_0^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -171,7 +172,8 @@
           "formula_id": "ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.formula_01",
           "name_ko": "정확 귀무분포",
           "role": "exact_distribution",
-          "latex": "Q\\sim\\chi^2_{n-1}"
+          "latex": "Q\\sim\\chi^2_{n-1}",
+          "cas": "parse_latex('Q\\\\sim\\\\chi^2_{n-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -286,7 +288,8 @@
           "formula_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "Z\\xrightarrow{d}N(0,1)"
+          "latex": "Z\\xrightarrow{d}N(0,1)",
+          "cas": "parse_latex('Z\\\\xrightarrow{d}N(0,1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -394,7 +397,8 @@
           "formula_id": "ps.hypothesis_testing.one_sample_z_mean_exact.formula_01",
           "name_ko": "정확 기준분포",
           "role": "exact_distribution",
-          "latex": "Z\\sim N(0,1)"
+          "latex": "Z\\sim N(0,1)",
+          "cas": "parse_latex('Z\\\\sim N(0,1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -511,7 +515,8 @@
           "formula_id": "ps.hypothesis_testing.one_sample_z_mean_statistic.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "z=\\frac{\\bar X-\\mu_0}{\\sigma/\\sqrt n}"
+          "latex": "z=\\frac{\\bar X-\\mu_0}{\\sigma/\\sqrt n}",
+          "cas": "parse_latex('z=\\\\frac{\\\\bar X-\\\\mu_0}{\\\\sigma/\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -618,7 +623,8 @@
           "formula_id": "ps.hypothesis_testing.two_sample_variance_f.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "F=\\frac{S_1^2}{S_2^2}"
+          "latex": "F=\\frac{S_1^2}{S_2^2}",
+          "cas": "parse_latex('F=\\\\frac{S_1^2}{S_2^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -996,7 +1002,8 @@
           "formula_id": "ps.hypothesis_testing.proportion_tests.formula_01",
           "name_ko": "점근 검정통계량",
           "role": "asymptotic_test_statistic",
-          "latex": "z=\n\\frac{\\hat p-p_0}\n{\\sqrt{p_0(1-p_0)/n}}"
+          "latex": "z=\n\\frac{\\hat p-p_0}\n{\\sqrt{p_0(1-p_0)/n}}",
+          "cas": "parse_latex('z=\\n\\\\frac{\\\\hat p-p_0}\\n{\\\\sqrt{p_0(1-p_0)/n}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1267,7 +1274,8 @@
           "formula_id": "ps.hypothesis_testing.multiple_testing.formula_01",
           "name_ko": "개별 유의수준",
           "role": "bonferroni_per_test_level",
-          "latex": "\\alpha/m"
+          "latex": "\\alpha/m",
+          "cas": "parse_latex('\\\\alpha/m', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2167,7 +2175,8 @@
           "formula_id": "ps.hypothesis_testing.neyman_pearson.formula_01",
           "name_ko": "정리",
           "role": "theorem",
-          "latex": "\\phi^*(x)=\\mathbf 1\\!\\{L(\\theta_1;x)>kL(\\theta_0;x)\\}+\\gamma\\,\\mathbf 1\\!\\{L(\\theta_1;x)=kL(\\theta_0;x)\\}"
+          "latex": "\\phi^*(x)=\\mathbf 1\\!\\{L(\\theta_1;x)>kL(\\theta_0;x)\\}+\\gamma\\,\\mathbf 1\\!\\{L(\\theta_1;x)=kL(\\theta_0;x)\\}",
+          "cas": "parse_latex('\\\\phi^*(x)=\\\\mathbf 1\\\\!\\\\{L(\\\\theta_1;x)>kL(\\\\theta_0;x)\\\\}+\\\\gamma\\\\,\\\\mathbf 1\\\\!\\\\{L(\\\\theta_1;x)=kL(\\\\theta_0;x)\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2494,7 +2503,8 @@
           "formula_id": "ps.hypothesis_testing.likelihood_ratio_test.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "LR=2\\{\\ell(\\hat\\theta)-\\ell(\\tilde\\theta)\\}"
+          "latex": "LR=2\\{\\ell(\\hat\\theta)-\\ell(\\tilde\\theta)\\}",
+          "cas": "parse_latex('LR=2\\\\{\\\\ell(\\\\hat\\\\theta)-\\\\ell(\\\\tilde\\\\theta)\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2609,7 +2619,8 @@
           "formula_id": "ps.hypothesis_testing.likelihood_ratio_test.asymptotic_null_distribution.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "LR\\xrightarrow{d}\\chi_q^2"
+          "latex": "LR\\xrightarrow{d}\\chi_q^2",
+          "cas": "parse_latex('LR\\\\xrightarrow{d}\\\\chi_q^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2871,7 +2882,8 @@
           "formula_id": "ps.hypothesis_testing.score_test.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "S=U_R(\\tilde\\theta)^T I_R(\\tilde\\theta)^{-1}U_R(\\tilde\\theta)"
+          "latex": "S=U_R(\\tilde\\theta)^T I_R(\\tilde\\theta)^{-1}U_R(\\tilde\\theta)",
+          "cas": "parse_latex('S=U_R(\\\\tilde\\\\theta)^T I_R(\\\\tilde\\\\theta)^{-1}U_R(\\\\tilde\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2986,7 +2998,8 @@
           "formula_id": "ps.hypothesis_testing.score_test.asymptotic_null_distribution.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "S\\xrightarrow{d}\\chi_q^2"
+          "latex": "S\\xrightarrow{d}\\chi_q^2",
+          "cas": "parse_latex('S\\\\xrightarrow{d}\\\\chi_q^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3132,7 +3145,8 @@
           "formula_id": "ps.hypothesis_testing.wald_test.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "W_{\\theta}=(R\\hat\\theta-r)^T\\{R\\widehat{\\operatorname{Var}}(\\hat\\theta)R^T\\}^{-1}(R\\hat\\theta-r)"
+          "latex": "W_{\\theta}=(R\\hat\\theta-r)^T\\{R\\widehat{\\operatorname{Var}}(\\hat\\theta)R^T\\}^{-1}(R\\hat\\theta-r)",
+          "cas": "parse_latex('W_{\\\\theta}=(R\\\\hat\\\\theta-r)^T\\\\{R\\\\widehat{\\\\operatorname{Var}}(\\\\hat\\\\theta)R^T\\\\}^{-1}(R\\\\hat\\\\theta-r)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3247,7 +3261,8 @@
           "formula_id": "ps.hypothesis_testing.wald_test.asymptotic_null_distribution.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "W_{\\theta}\\xrightarrow{d}\\chi_q^2"
+          "latex": "W_{\\theta}\\xrightarrow{d}\\chi_q^2",
+          "cas": "parse_latex('W_{\\\\theta}\\\\xrightarrow{d}\\\\chi_q^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3520,7 +3535,8 @@
           "formula_id": "ps.hypothesis_testing.holm_procedure.formula_01",
           "name_ko": "다중검정 규칙",
           "role": "multiple_testing_rule",
-          "latex": "p_{(i)}\\le\\frac{\\alpha}{m-i+1}"
+          "latex": "p_{(i)}\\le\\frac{\\alpha}{m-i+1}",
+          "cas": "parse_latex('p_{(i)}\\\\le\\\\frac{\\\\alpha}{m-i+1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3658,7 +3674,8 @@
           "formula_id": "ps.hypothesis_testing.power_sample_size.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "n=\\left\\lceil\\left(\\frac{(z_{1-\\alpha/2}+z_{1-\\beta})\\sigma}{\\delta}\\right)^2\\right\\rceil"
+          "latex": "n=\\left\\lceil\\left(\\frac{(z_{1-\\alpha/2}+z_{1-\\beta})\\sigma}{\\delta}\\right)^2\\right\\rceil",
+          "cas": "parse_latex('n=\\\\left\\\\lceil\\\\left(\\\\frac{(z_{1-\\\\alpha/2}+z_{1-\\\\beta})\\\\sigma}{\\\\delta}\\\\right)^2\\\\right\\\\rceil', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3952,7 +3969,8 @@
           "formula_id": "ps.hypothesis_testing.permutation_test.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat p_{\\mathrm{perm}}=\\frac{b+1}{B+1}"
+          "latex": "\\hat p_{\\mathrm{perm}}=\\frac{b+1}{B+1}",
+          "cas": "parse_latex('\\\\hat p_{\\\\mathrm{perm}}=\\\\frac{b+1}{B+1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4409,7 +4427,8 @@
           "formula_id": "ps.hypothesis_testing.one_sample_t_mean.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "t=\n\\frac{\\bar X-\\mu_0}{S/\\sqrt n}"
+          "latex": "t=\n\\frac{\\bar X-\\mu_0}{S/\\sqrt n}",
+          "cas": "parse_latex('t=\\n\\\\frac{\\\\bar X-\\\\mu_0}{S/\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4513,7 +4532,8 @@
           "formula_id": "ps.hypothesis_testing.errors_power.f01.formula_01",
           "name_ko": "제1종 오류확률 함수",
           "role": "type_i_error_probability",
-          "latex": "\\alpha(\\theta)=P_\\theta(H_0\\text{ 기각})"
+          "latex": "\\alpha(\\theta)=P_\\theta(H_0\\text{ 기각})",
+          "cas": "parse_latex('\\\\alpha(\\\\theta)=P_\\\\theta(H_0\\\\text{ 기각})', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4628,7 +4648,8 @@
           "formula_id": "ps.hypothesis_testing.errors_power.f02.formula_01",
           "name_ko": "제2종 오류확률 함수",
           "role": "type_ii_error_probability",
-          "latex": "\\beta(\\theta)=P_\\theta(H_0\\text{를 기각하지 않음})"
+          "latex": "\\beta(\\theta)=P_\\theta(H_0\\text{를 기각하지 않음})",
+          "cas": "parse_latex('\\\\beta(\\\\theta)=P_\\\\theta(H_0\\\\text{를 기각하지 않음})', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4743,7 +4764,8 @@
           "formula_id": "ps.hypothesis_testing.errors_power.f03.formula_01",
           "name_ko": "검정력 함수",
           "role": "power_function",
-          "latex": "\\pi(\\theta)=P_\\theta(H_0\\text{ 기각})"
+          "latex": "\\pi(\\theta)=P_\\theta(H_0\\text{ 기각})",
+          "cas": "parse_latex('\\\\pi(\\\\theta)=P_\\\\theta(H_0\\\\text{ 기각})', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4858,7 +4880,8 @@
           "formula_id": "ps.hypothesis_testing.two_proportion_difference.f01.formula_01",
           "name_ko": "추정량",
           "role": "estimator",
-          "latex": "\\hat p=\\frac{x_1+x_2}{n_1+n_2}"
+          "latex": "\\hat p=\\frac{x_1+x_2}{n_1+n_2}",
+          "cas": "parse_latex('\\\\hat p=\\\\frac{x_1+x_2}{n_1+n_2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4974,7 +4997,8 @@
           "formula_id": "ps.hypothesis_testing.two_proportion_difference.f02.formula_01",
           "name_ko": "점근 검정통계량",
           "role": "asymptotic_test_statistic",
-          "latex": "z=\n\\frac{\\hat p_1-\\hat p_2}\n{\\sqrt{\\hat p(1-\\hat p)(1/n_1+1/n_2)}}"
+          "latex": "z=\n\\frac{\\hat p_1-\\hat p_2}\n{\\sqrt{\\hat p(1-\\hat p)(1/n_1+1/n_2)}}",
+          "cas": "parse_latex('z=\\n\\\\frac{\\\\hat p_1-\\\\hat p_2}\\n{\\\\sqrt{\\\\hat p(1-\\\\hat p)(1/n_1+1/n_2)}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5135,7 +5159,8 @@
           "formula_id": "ps.hypothesis_testing.power_ci_duality.f01.formula_01",
           "name_ko": "검정–신뢰집합 쌍대성",
           "role": "duality_relation",
-          "latex": "\\theta_0\\in C_{1-\\alpha}(X)\\quad\\Longleftrightarrow\\quad H_0:\\theta=\\theta_0\\text{를 수준 }\\alpha\\text{에서 기각하지 않음}"
+          "latex": "\\theta_0\\in C_{1-\\alpha}(X)\\quad\\Longleftrightarrow\\quad H_0:\\theta=\\theta_0\\text{를 수준 }\\alpha\\text{에서 기각하지 않음}",
+          "cas": "parse_latex('\\\\theta_0\\\\in C_{1-\\\\alpha}(X)\\\\quad\\\\Longleftrightarrow\\\\quad H_0:\\\\theta=\\\\theta_0\\\\text{를 수준 }\\\\alpha\\\\text{에서 기각하지 않음}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5270,7 +5295,8 @@
           "formula_id": "ps.hypothesis_testing.variance_ratio_test.f02.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "F=\\frac{S_1^2/S_2^2}{r_0}"
+          "latex": "F=\\frac{S_1^2/S_2^2}{r_0}",
+          "cas": "parse_latex('F=\\\\frac{S_1^2/S_2^2}{r_0}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5424,7 +5450,8 @@
           "formula_id": "ps.hypothesis_testing.variance_ratio_test.reference_distribution.formula_01",
           "name_ko": "정확 기준분포",
           "role": "exact_distribution",
-          "latex": "F\\sim F_{n_1-1,n_2-1}"
+          "latex": "F\\sim F_{n_1-1,n_2-1}",
+          "cas": "parse_latex('F\\\\sim F_{n_1-1,n_2-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5584,7 +5611,8 @@
           "formula_id": "ps.hypothesis_testing.effect_size.f01.formula_01",
           "name_ko": "효과크기",
           "role": "effect_size",
-          "latex": "d=\\frac{\\bar X_1-\\bar X_2}{S_p}"
+          "latex": "d=\\frac{\\bar X_1-\\bar X_2}{S_p}",
+          "cas": "parse_latex('d=\\\\frac{\\\\bar X_1-\\\\bar X_2}{S_p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5690,7 +5718,8 @@
           "formula_id": "ps.hypothesis_testing.effect_size.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "g=J(\\nu)d"
+          "latex": "g=J(\\nu)d",
+          "cas": "parse_latex('g=J(\\\\nu)d', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5814,7 +5843,8 @@
           "formula_id": "ps.hypothesis_testing.effect_size.f03.formula_01",
           "name_ko": "편향 보정",
           "role": "bias_correction",
-          "latex": "J(\\nu)\n=\n\\frac{\\Gamma(\\nu/2)}\n{\\sqrt{\\nu/2}\\,\\Gamma((\\nu-1)/2)}\n\\approx\n1-\\frac{3}{4\\nu-1}"
+          "latex": "J(\\nu)\n=\n\\frac{\\Gamma(\\nu/2)}\n{\\sqrt{\\nu/2}\\,\\Gamma((\\nu-1)/2)}\n\\approx\n1-\\frac{3}{4\\nu-1}",
+          "cas": "parse_latex('J(\\\\nu)\\n=\\n\\\\frac{\\\\Gamma(\\\\nu/2)}\\n{\\\\sqrt{\\\\nu/2}\\\\,\\\\Gamma((\\\\nu-1)/2)}\\n\\\\approx\\n1-\\\\frac{3}{4\\\\nu-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5929,7 +5959,8 @@
           "formula_id": "ps.hypothesis_testing.benjamini_hochberg.f01.formula_01",
           "name_ko": "정렬 정의",
           "role": "ordering_definition",
-          "latex": "p_{(1)}\\le\\cdots\\le p_{(m)}"
+          "latex": "p_{(1)}\\le\\cdots\\le p_{(m)}",
+          "cas": "parse_latex('p_{(1)}\\\\le\\\\cdots\\\\le p_{(m)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6062,7 +6093,8 @@
           "formula_id": "ps.hypothesis_testing.benjamini_hochberg.f02.formula_01",
           "name_ko": "다중검정 규칙",
           "role": "multiple_testing_rule",
-          "latex": "p_{(k)}\\le\\frac{k}{m}q"
+          "latex": "p_{(k)}\\le\\frac{k}{m}q",
+          "cas": "parse_latex('p_{(k)}\\\\le\\\\frac{k}{m}q', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6213,7 +6245,8 @@
           "formula_id": "ps.hypothesis_testing.equivalence_testing.f01.formula_01",
           "name_ko": "가설의 정의",
           "role": "hypothesis_definition",
-          "latex": "H_0:\\theta\\le-\\Delta\\ \\text{또는}\\ \\theta\\ge\\Delta"
+          "latex": "H_0:\\theta\\le-\\Delta\\ \\text{또는}\\ \\theta\\ge\\Delta",
+          "cas": "parse_latex('H_0:\\\\theta\\\\le-\\\\Delta\\\\ \\\\text{또는}\\\\ \\\\theta\\\\ge\\\\Delta', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6329,7 +6362,8 @@
           "formula_id": "ps.hypothesis_testing.equivalence_testing.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "H_1:-\\Delta<\\theta<\\Delta"
+          "latex": "H_1:-\\Delta<\\theta<\\Delta",
+          "cas": "parse_latex('H_1:-\\\\Delta<\\\\theta<\\\\Delta', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6445,7 +6479,8 @@
           "formula_id": "ps.hypothesis_testing.two_sample_pooled_t.f01.formula_01",
           "name_ko": "분산 추정량",
           "role": "variance_estimator",
-          "latex": "S_p^2=\n\\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}"
+          "latex": "S_p^2=\n\\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}",
+          "cas": "parse_latex('S_p^2=\\n\\\\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6577,7 +6612,8 @@
           "formula_id": "ps.hypothesis_testing.two_sample_pooled_t.f02.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "t=\\frac{(\\bar X_1-\\bar X_2)-\\Delta_0}{S_p\\sqrt{1/n_1+1/n_2}}"
+          "latex": "t=\\frac{(\\bar X_1-\\bar X_2)-\\Delta_0}{S_p\\sqrt{1/n_1+1/n_2}}",
+          "cas": "parse_latex('t=\\\\frac{(\\\\bar X_1-\\\\bar X_2)-\\\\Delta_0}{S_p\\\\sqrt{1/n_1+1/n_2}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6710,7 +6746,8 @@
           "formula_id": "ps.hypothesis_testing.two_sample_pooled_t.df.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=n_1+n_2-2"
+          "latex": "df=n_1+n_2-2",
+          "cas": "parse_latex('df=n_1+n_2-2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6843,7 +6880,8 @@
           "formula_id": "ps.hypothesis_testing.two_sample_welch_t.f01.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "t=\n\\frac{(\\bar X_1-\\bar X_2)-\\Delta_0}\n{\\sqrt{S_1^2/n_1+S_2^2/n_2}}"
+          "latex": "t=\n\\frac{(\\bar X_1-\\bar X_2)-\\Delta_0}\n{\\sqrt{S_1^2/n_1+S_2^2/n_2}}",
+          "cas": "parse_latex('t=\\n\\\\frac{(\\\\bar X_1-\\\\bar X_2)-\\\\Delta_0}\\n{\\\\sqrt{S_1^2/n_1+S_2^2/n_2}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6984,7 +7022,8 @@
           "formula_id": "ps.hypothesis_testing.two_sample_welch_t.f02.formula_01",
           "name_ko": "근사 자유도",
           "role": "approximate_degrees_of_freedom",
-          "latex": "\\nu=\n\\frac{(S_1^2/n_1+S_2^2/n_2)^2}\n{\\frac{(S_1^2/n_1)^2}{n_1-1}\n+\\frac{(S_2^2/n_2)^2}{n_2-1}}"
+          "latex": "\\nu=\n\\frac{(S_1^2/n_1+S_2^2/n_2)^2}\n{\\frac{(S_1^2/n_1)^2}{n_1-1}\n+\\frac{(S_2^2/n_2)^2}{n_2-1}}",
+          "cas": "parse_latex('\\\\nu=\\n\\\\frac{(S_1^2/n_1+S_2^2/n_2)^2}\\n{\\\\frac{(S_1^2/n_1)^2}{n_1-1}\\n+\\\\frac{(S_2^2/n_2)^2}{n_2-1}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7116,7 +7155,8 @@
           "formula_id": "ps.hypothesis_testing.paired_t_test.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "D_i=X_i-Y_i"
+          "latex": "D_i=X_i-Y_i",
+          "cas": "parse_latex('D_i=X_i-Y_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7229,7 +7269,8 @@
           "formula_id": "ps.hypothesis_testing.paired_t_test.f02.formula_01",
           "name_ko": "정확 검정통계량",
           "role": "exact_test_statistic",
-          "latex": "t=\\frac{\\bar D-\\mu_{D,0}}{S_D/\\sqrt n}"
+          "latex": "t=\\frac{\\bar D-\\mu_{D,0}}{S_D/\\sqrt n}",
+          "cas": "parse_latex('t=\\\\frac{\\\\bar D-\\\\mu_{D,0}}{S_D/\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -7397,7 +7438,8 @@
           "formula_id": "ps.hypothesis_testing.paired_t_test.df.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=n-1"
+          "latex": "df=n-1",
+          "cas": "parse_latex('df=n-1', backend='antlr')"
         }
       ],
       "application_conditions": [

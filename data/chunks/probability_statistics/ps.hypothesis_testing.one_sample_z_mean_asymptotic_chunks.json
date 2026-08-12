@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_13_hypothesis_testing",
+  "concept_name_ko": "한 표본 평균 z검정의 점근 기준분포",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 평균 z검정의 점근 기준분포",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 평균 z검정의 점근 기준분포\n개념 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 유한분산 i.i.d. 표본에서 CLT 조건 아래 한 표본 z통계량은 점근적으로 표준정규분포를 따른다.\n검색 태그: one_sample, z_test, one_sample_z_mean_asymptotic",
+      "token_count": 133,
+      "content_hash": "b2d3c9c24f67a926ecd0ef2cae0f641285c923b08cbd3f252a1da9d9ebb61f5d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 평균 z검정의 점근 기준분포",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 평균 z검정의 점근 기준분포\n개념 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 점근 기준분포\n공식 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic.formula_01\n역할: asymptotic_distribution\nLaTeX: Z\\xrightarrow{d}N(0,1)",
+      "token_count": 132,
+      "content_hash": "3068ceabeb48ba5d283fc41a96409ee48654a886c0a775c4e329808c3684f467",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 평균 z검정의 점근 기준분포",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 평균 z검정의 점근 기준분포\n개념 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic.condition_01\n설명: $\\sigma>0$이고 알려져 있어야 한다.\n검증 규칙: population_standard_deviation_known_positive equals 참\n\n조건 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic.condition_02\n설명: 표본은 독립동일분포이고 분산이 유한해야 한다.\n검증 규칙: sampling_model equals iid_finite_variance\n\n조건 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic.condition_03\n설명: 표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다.\n검증 규칙: inference_regime equals asymptotic_clt\n\n조건 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic.condition_04\n설명: 귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다.\n검증 규칙: null_hypothesis equals population_mean_equals_null_value",
+      "token_count": 358,
+      "content_hash": "b50c89e40f117db530d6e045335ec201f15051777a20f0df32b9636644cfe960",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 평균 z검정의 점근 기준분포",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 평균 z검정의 점근 기준분포\n개념 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 정규분포 (ps.continuous_distributions.normal, 중요도: required)\n\n관련 개념:\n- ps.hypothesis_testing.one_sample_z_mean\n- ps.hypothesis_testing.one_sample_z_mean_statistic\n\n학습 목표 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic.objective_01\n행동 동사: apply\n목표: 한 표본 평균 z검정—큰 표본 근사의 공식과 적용 조건을 구분하여 적용한다.",
+      "token_count": 208,
+      "content_hash": "2f46fc24ff14004b11b042bb6757cc201077f509aa3005cd6ad1c5c4d4387c15",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.hypothesis_testing.one_sample_z_mean_asymptotic",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_13_hypothesis_testing",
+      "concept_name_ko": "한 표본 평균 z검정의 점근 기준분포",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 가설검정\n개념: 한 표본 평균 z검정의 점근 기준분포\n개념 ID: ps.hypothesis_testing.one_sample_z_mean_asymptotic\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, test_statistic_calculation, hypothesis_decision, power_analysis, distribution_identification\n지원 정답 유형: single_choice, boolean, expression, scalar, classification, distribution\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 179,
+      "content_hash": "85c864acb21ac83b82aec725b5cb6a00d4d111cd93be5263ec72c37959d11448",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.riemann_sum_and_area",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch05_integrals",
+  "concept_name_ko": "리만합과 넓이·거리의 근사",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 구간 [a,b]를 n개의 같은 길이(Δx=(b-a)/n)의 부분구간으로 나누고, 각 부분구간의 표본점 x_i*에서의 함숫값을 이용한 직사각형 넓이의 합 Σf(x_i*)Δx을 리만합이라 한다. n→∞일 때 이 합의 극한이 곡선 아래 넓이(또는 속도 그래프로부터의 이동 거리)를 정의한다.\n검색 태그: riemann_sum, area_approximation",
+      "token_count": 176,
+      "content_hash": "9a4f65d8ff448c92f4621ad2e059e2103cd28c07d1205f74eb32e00423eae2bb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 직사각형 근사합\n공식 ID: rectangle_approximation\n역할: definition\nLaTeX: \\sum_{i=1}^n f(x_i^*)\\,\\Delta x,\\qquad\\Delta x=\\frac{b-a}{n}\nCAS 표현: Sum(f(x_i)*Dx, (i, 1, n))\n\n공식명: 넓이의 정의\n공식 ID: area_as_limit\n역할: definition\nLaTeX: A=\\lim_{n\\to\\infty}\\sum_{i=1}^n f(x_i^*)\\,\\Delta x\nCAS 표현: limit(Sum(f(x_i)*Dx, (i,1,n)), n, oo)\n\n공식명: 제곱의 합 공식\n공식 ID: sum_of_squares\n역할: lemma\nLaTeX: \\sum_{i=1}^n i^2=\\frac{n(n+1)(2n+1)}{6}\nCAS 표현: summation(i**2, (i,1,n))\n\n공식명: 속도로부터 거리\n공식 ID: distance_as_area\n역할: application\nLaTeX: d=\\lim_{n\\to\\infty}\\sum_{i=1}^n f(t_i)\\,\\Delta t\nCAS 표현: limit(Sum(v(t_i)*Dt, (i,1,n)), n, oo)",
+      "token_count": 390,
+      "content_hash": "1165748f51633c91e9d67bd32455f62202c6fcf34f75424f2eb7e136e9bf8b34",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: continuity_ensures_limit_exists\n설명: 넓이의 정의는 f가 연속이라는(따라서 극한이 항상 존재한다는) 가정 위에 세워진다.\n검증 규칙: f_continuous_on_a_b equals 참\n\n조건 ID: sample_point_choice_independent\n설명: 표본점 x_i*를 왼쪽 끝점·오른쪽 끝점·중점 등 어디로 잡아도 n→∞일 때 같은 극한값에 수렴한다.\n검증 규칙: limit_independent_of_sample_point_choice equals 참",
+      "token_count": 189,
+      "content_hash": "a493b2735f814a2da7fc61f35368b3326f9f8b83f1e72013972b48b087b4dd16",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: upper_lower_sum\n설명: 증가함수 구간에서 왼쪽 끝점을 쓰면 하합(실제보다 작은 근사), 오른쪽 끝점을 쓰면 상합(실제보다 큰 근사)이 되며, n이 커질수록 상합과 하합의 차이가 줄어든다.\n\n성질 ID: distance_is_inverse_of_velocity_problem\n설명: 거리 문제는 속도 문제의 역문제로, 속도를 알 때 이동 거리를 구하는 것은 속도 그래프 아래 넓이를 구하는 것과 같다.",
+      "token_count": 178,
+      "content_hash": "383149c5aeec726fbad568f10a8d6919cb0fc9e14214fc348bbd0987c3952767",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 원시함수(부정적분) (calculus.indefinite_integral, 중요도: recommended)\n\n관련 개념:\n- calculus.integral\n\n학습 목표 ID: compute_riemann_sum\n행동 동사: calculate\n목표: 왼쪽·오른쪽 끝점 리만합을 계산한다.\n\n학습 목표 ID: estimate_area_via_limit\n행동 동사: estimate\n목표: 리만합의 극한으로 곡선 아래 넓이를 근사·정의한다.",
+      "token_count": 173,
+      "content_hash": "7c0d7b622676335bd8459ed12afdd3821f3f6cd0dc09afd10558156bc2eb5350",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 표본점 선택이 극한값을 바꾼다고 오해\n오개념 ID: calculus.riemann_sum.sample_point_changes_limit\n설명: 왼쪽 끝점과 오른쪽 끝점의 리만합이 n→∞에서도 다른 값에 수렴한다고 생각한다.\n진단 태그: assume_sample_point_changes_limit_value\n피드백: 연속함수에서는 표본점을 어디로 선택하든 n→∞일 때 같은 극한값에 수렴하며, 유한한 n에서만 근삿값의 정확도가 다르다.",
+      "token_count": 196,
+      "content_hash": "480859c932bc66e31a71456fdf1f2ed37afeaef8099ca1410415e3922660bddd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.riemann_sum_and_area",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "리만합과 넓이·거리의 근사",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 리만합과 넓이·거리의 근사\n개념 ID: calculus.riemann_sum_and_area\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: riemann_sum_calculation, area_limit_estimation\n지원 정답 유형: numerical_approximation, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: numeric_tolerance",
+      "token_count": 112,
+      "content_hash": "f67aff15dac10147ca6f7779fadd2842803210ac94053f42a36de6f2d17d9bda",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

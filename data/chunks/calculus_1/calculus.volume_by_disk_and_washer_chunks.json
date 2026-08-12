@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.volume_by_disk_and_washer",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch06_applications_of_integration",
+  "concept_name_ko": "원판법과 고리법",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 회전체의 절단면이 회전축에 맞닿아 있으면(내부가 비어있지 않으면) 원판(A=π·반지름²), 회전축에서 떨어져 있으면(내부가 비어있으면) 고리(A=π·외부반지름²-π·내부반지름²)가 된다. 반지름은 항상 좌표값이 아니라 회전축까지의 거리로 계산해야 한다.\n검색 태그: disk_method, washer_method, volume_of_revolution",
+      "token_count": 170,
+      "content_hash": "83220a4ade70857c8ca7274716c3e0fb08e31a4e1107d218cd7938e832fb54d9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 원판법\n공식 ID: disk_method\n역할: special_case\nLaTeX: A(x)=\\pi[R(x)]^2,\\qquad V=\\pi\\int_a^b[R(x)]^2\\,dx\nCAS 표현: pi*Integral(R(x)**2, (x,a,b))\n\n공식명: 고리법\n공식 ID: washer_method\n역할: special_case\nLaTeX: A(x)=\\pi[R(x)]^2-\\pi[r(x)]^2,\\qquad V=\\pi\\int_a^b\\left([R(x)]^2-[r(x)]^2\\right)dx\nCAS 표현: pi*Integral(R(x)**2-r(x)**2, (x,a,b))\n\n공식명: 회전축까지의 거리\n공식 ID: axis_distance\n역할: auxiliary_formula\nLaTeX: \\text{축 }y=k:\\ |f(x)-k|,\\qquad\\text{축 }x=h:\\ |g(y)-h|\nCAS 표현: Abs(f(x)-k)",
+      "token_count": 340,
+      "content_hash": "78a3c54489e7a75dcd93231b0cde8de59b32017a9b347ee483ff2a66f74cbd3d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: washer_r_geq_r\n설명: 고리법에서는 R≥r≥0이어야 하며, 외부반지름과 내부반지름 모두 회전축으로부터의 거리로 정의해야 한다.\n검증 규칙: R greater_or_equal r\n\n조건 ID: cross_section_perpendicular_to_axis\n설명: 절단면은 회전축에 수직이어야 한다.\n검증 규칙: cross_section_perpendicular_to_rotation_axis equals 참",
+      "token_count": 171,
+      "content_hash": "01d0d498e27d31a270c2084524a10e609adec1ddc8618468a37c9247947f721b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: disk_is_special_washer\n설명: 원판법은 고리법에서 내부반지름이 0인 특수한 경우다.\n\n성질 ID: region_touches_axis_or_not\n설명: 영역이 회전축에 붙어 있으면 원판, 회전축에서 떨어져 있으면(가운데가 비면) 고리이다.",
+      "token_count": 134,
+      "content_hash": "38806f5323af9b8e179f794e028cd85f5334c050e33c06feee614cc1c8a18b25",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 절단면법에 의한 부피 (calculus.volume_by_cross_section, 중요도: required)\n- 곡선 사이의 넓이 (calculus.area_between_curves, 중요도: recommended)\n\n관련 개념:\n- calculus.volume_by_cylindrical_shells\n\n학습 목표 ID: distinguish_disk_and_washer\n행동 동사: distinguish\n목표: 영역과 회전축의 위치 관계로 원판법과 고리법을 구분한다.\n\n학습 목표 ID: compute_radius_as_distance_to_axis\n행동 동사: calculate\n목표: 회전축이 좌표축이 아닐 때 반지름을 축까지의 거리로 계산한다.\n\n학습 목표 ID: compute_volume_by_disk_or_washer\n행동 동사: calculate\n목표: 원판법 또는 고리법으로 회전체의 부피를 계산한다.",
+      "token_count": 270,
+      "content_hash": "4a87de6ebfbfb13dc04ca5b718dca5063087014903942833a27f131a0d60c6af",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 반지름을 좌표값으로 착각\n오개념 ID: calculus.disk_washer.radius_as_coordinate\n설명: 회전축이 좌표축이 아닌데도(예: y=2, x=-1) 반지름을 그냥 f(x)나 x값으로 사용한다.\n진단 태그: use_coordinate_instead_of_distance_to_axis\n피드백: 반지름은 곡선 위의 점에서 회전축까지의 거리이며, 회전축이 좌표축이 아니면 |f(x)-k| 같은 거리 공식으로 다시 계산해야 한다.\n\n오개념: 외부반지름과 내부반지름을 바꿔 계산\n오개념 ID: calculus.disk_washer.swap_radii\n설명: 고리법에서 R과 r의 순서를 바꿔 A(x)=π[r(x)]²-π[R(x)]²로 계산한다.\n진단 태그: swap_outer_and_inner_radius\n피드백: 고리법의 넓이는 외부반지름의 제곱에서 내부반지름의 제곱을 빼야 하며(R≥r), 순서를 바꾸면 안 된다.",
+      "token_count": 342,
+      "content_hash": "aa8087966127534513a34b4e6a1dd1f019306b0b5c82bbdb603fd7468ba6c3da",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_disk_and_washer",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원판법과 고리법",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원판법과 고리법\n개념 ID: calculus.volume_by_disk_and_washer\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: disk_method_volume, washer_method_volume, axis_distance_calculation\n지원 정답 유형: scalar, expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence, numeric_sampling",
+      "token_count": 127,
+      "content_hash": "9b571487cdd7360d01cdee7263f685c0a5119699afe0db423fcf67906e33f060",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

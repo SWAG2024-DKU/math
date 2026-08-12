@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.determinant.cramer",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_03_linear_transformations_determinants",
+  "concept_name_ko": "크라메르 공식과 여인수 행렬",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정사각행렬 시스템 Ax=b에서 행렬식의 비율을 통해 미지수를 구하고 수반행렬을 통해 역행렬의 공식을 정의한다.\n검색 태그: cramers_rule, adjugate_matrix, inverse_matrix",
+      "token_count": 114,
+      "content_hash": "0618ad5e1fd0e9d3f76a597d5bbe855934154a9d3d3b8a865e2f5b44fd088156",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 크라메르 공식\n공식 ID: cramer_rule\n역할: formula\nLaTeX: x_i = \\frac{\\det(A_i(\\mathbf{b}))}{\\det(A)}\nCAS 표현: det(A_i_b) / det(A)\n\n공식명: 수반행렬을 이용한 역행렬\n공식 ID: adjugate_inverse\n역할: formula\nLaTeX: A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A)\nCAS 표현: (1 / det(A)) * adjugate(A)",
+      "token_count": 196,
+      "content_hash": "310b3300934e79a93df87aaae9a45a6e75f6ee6d5b5c260243a6506676b17d2b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: nonzero_determinant_cramer\n설명: 분모가 0이 되는 것을 방지하기 위해 반드시 det(A) != 0 이어야 한다.\n검증 규칙: determinant_non_zero equals 참",
+      "token_count": 104,
+      "content_hash": "2fe1c7c75e65431be915651340aa6f6fa987b7f55b74045c71f22afc0866209b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: adjugate_multiplication\n설명: A에 수반행렬을 곱하면 대각 성분이 모두 det(A)인 대각행렬이 된다.",
+      "token_count": 92,
+      "content_hash": "dc2781a9db395cd5445c1356813ec3d9cf804d6b8e5fc16bb9fbdd017ee8f4fd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 여인수 전개 및 행렬식 (la.determinant.cofactor, 중요도: required)\n- 역행렬 (la.matrix.inverse_gauss_jordan, 중요도: required)\n\n관련 개념:\n- la.determinant.geometric\n\n학습 목표 ID: apply_cramer_rule\n행동 동사: solve\n목표: 크라메르 공식을 이용해 연립방정식의 해를 구한다.",
+      "token_count": 159,
+      "content_hash": "76c750ae51e2be0b24cf52a5871beccbe855b0bc457ab1602d303cafad7af250",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 수반행렬 전치 누락\n오개념 ID: la.determinant.cramer.adjugate_transpose_omission\n설명: 수반행렬을 구성할 때 여인수 행렬을 전치시키지 않고 그대로 배치한다.\n진단 태그: missing_adjugate_transpose\n피드백: 수반행렬 adj(A)는 여인수 행렬의 전치행렬(C^T)이어야 합니다.",
+      "token_count": 167,
+      "content_hash": "45fe543e313f1dde70fe5884a84807efa711a91a818eca5ee0a507f1456d7634",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cramer",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "크라메르 공식과 여인수 행렬",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 크라메르 공식과 여인수 행렬\n개념 ID: la.determinant.cramer\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: cramer_rule_solution\n지원 정답 유형: vector\n난이도 범위: 2 ~ 4\n권장 검증기: cramer_solution_check",
+      "token_count": 100,
+      "content_hash": "55a4ccdb64bc6f74fb4fd7fef589d808af8a50aded3db41a5a4efd644dfb1eb3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

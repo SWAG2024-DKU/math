@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.taylor_maclaurin_series",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v2_ch06_power_series",
+  "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: f가 x=a에서 충분히 여러 번 미분가능할 때 n차 Taylor 다항식 P_n(x)=Σ[k=0,n]f^{(k)}(a)/k!·(x-a)^k를 무한히 확장한 것이 Taylor 급수다. 중심이 a=0인 Taylor 급수를 Maclaurin 급수라 한다. 멱급수 f(x)=Σc_n(x-a)^n이 f의 Taylor 급수라면 c_n=f^{(n)}(a)/n!이다.\n검색 태그: taylor_series, maclaurin_series, taylor_polynomial",
+      "token_count": 206,
+      "content_hash": "0f9aea1638cdc168fa0c861d3c76c3c0991a181ceb0421155b02fe27d01cd236",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: Taylor 다항식\n공식 ID: taylor_polynomial\n역할: definition\nLaTeX: P_n(x)=\\sum_{k=0}^n\\frac{f^{(k)}(a)}{k!}(x-a)^k\nCAS 표현: Sum(diff(f(x),x,k).subs(x,a)/factorial(k)*(x-a)**k, (k,0,n))\n\n공식명: Taylor 급수\n공식 ID: taylor_series\n역할: definition\nLaTeX: f(x)=\\sum_{n=0}^\\infty\\frac{f^{(n)}(a)}{n!}(x-a)^n\nCAS 표현: Sum(diff(f(x),x,n).subs(x,a)/factorial(n)*(x-a)**n, (n,0,oo))\n\n공식명: Maclaurin 급수\n공식 ID: maclaurin_series\n역할: special_case\nLaTeX: f(x)=\\sum_{n=0}^\\infty\\frac{f^{(n)}(0)}{n!}x^n\nCAS 표현: Sum(diff(f(x),x,n).subs(x,0)/factorial(n)*x**n, (n,0,oo))",
+      "token_count": 368,
+      "content_hash": "6a8c8d4b06b9349f583289e61833628f3d1fb06c071ffeceeafa7bb4820a03d9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: Taylor 계수\n공식 ID: taylor_coefficient\n역할: theorem\nLaTeX: c_n=\\frac{f^{(n)}(a)}{n!}\nCAS 표현: diff(f(x),x,n).subs(x,a)/factorial(n)",
+      "token_count": 123,
+      "content_hash": "5e36787e624bc4586f9f1d1e12fa53bca7e69b3977e83c0bc4dd1f6b908bccc3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: requires_infinite_differentiability\n설명: Taylor 급수를 정의하려면 f가 x=a에서 무한번 미분가능해야 한다.\n검증 규칙: f_infinitely_differentiable_at_a equals 참\n\n조건 ID: series_may_not_equal_function\n설명: 함수가 무한번 미분가능하더라도 Taylor 급수의 합이 반드시 원래 함수와 같지는 않다. 나머지 R_n(x)=f(x)-P_n(x)에 대해 lim R_n(x)=0이어야 Taylor 급수가 f(x)에 수렴한다.\n검증 규칙: limit_of_remainder_is_zero equals 참",
+      "token_count": 208,
+      "content_hash": "48145f2bf0e219130892ab33aa44f980bbb61e82b56d8af4841ad6d02acfcbe5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: polynomial_finite_series_infinite\n설명: Taylor 다항식은 유한합이고 Taylor 급수는 무한합이다.\n\n성질 ID: even_odd_function_terms\n설명: 짝함수는 일반적으로 짝수차 항만, 홀함수는 홀수차 항만 Taylor(Maclaurin) 급수에 나타난다.",
+      "token_count": 137,
+      "content_hash": "59cae683a81dfe4ee8aad6d9042ed1cee066a9591811b1527d8fb3453d727f7a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 고계도함수 (calculus.higher_order_derivatives, 중요도: required)\n- 멱급수의 정의, 수렴반지름과 수렴구간 (calculus.power_series_definition_and_convergence, 중요도: required)\n\n관련 개념:\n- calculus.common_maclaurin_series\n- calculus.taylor_remainder_and_error_bound\n\n학습 목표 ID: construct_taylor_polynomial\n행동 동사: construct\n목표: 주어진 함수와 중심으로 n차 Taylor 다항식을 구한다.\n\n학습 목표 ID: derive_taylor_series\n행동 동사: construct\n목표: 고계도함수로부터 함수의 Taylor(Maclaurin) 급수를 구한다.\n\n학습 목표 ID: extract_taylor_coefficients\n행동 동사: calculate\n목표: 주어진 멱급수 표현에서 Taylor 계수를 이용해 도함수 값을 역산한다.",
+      "token_count": 275,
+      "content_hash": "99222f408a9a821fe066910fa7a52159cf25c422d5160c55eddedc4429b9ed69",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 무한번 미분가능하면 항상 함수와 일치한다고 오해\n오개념 ID: calculus.taylor_series.infinitely_differentiable_implies_equal\n설명: f가 무한번 미분가능하기만 하면 Taylor 급수가 항상 f(x)와 같다고 가정한다.\n진단 태그: assume_infinite_differentiability_implies_taylor_equals_function\n피드백: 무한번 미분가능해도 Taylor 급수가 원래 함수와 다를 수 있다(나머지 R_n(x)이 0으로 수렴하는지 별도로 확인해야 한다).\n\n오개념: Taylor 다항식과 Taylor 급수를 혼동\n오개념 ID: calculus.taylor_series.polynomial_vs_series_confusion\n설명: 유한 차수의 Taylor 다항식을 무한급수인 Taylor 급수와 같은 것으로 취급한다.\n진단 태그: confuse_taylor_polynomial_with_taylor_series\n피드백: Taylor 다항식은 유한합이고 Taylor 급수는 무한합이며, 둘은 다른 대상이다.",
+      "token_count": 318,
+      "content_hash": "0b29daaf090c104ad1b8d1b6bd078ba108de0d0394a0ac85b72ab8558db93c40",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 급수와 Maclaurin 급수",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 급수와 Maclaurin 급수\n개념 ID: calculus.taylor_maclaurin_series\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: taylor_polynomial_construction, taylor_series_derivation, taylor_coefficient_extraction\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 120,
+      "content_hash": "17bdddf500b03987741b7ac4c28498e20deddd5098a735d2feaacf6568bdcdb5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

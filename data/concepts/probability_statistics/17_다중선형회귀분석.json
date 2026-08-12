@@ -298,7 +298,8 @@
           "formula_id": "ps.multiple_linear_regression.residual_vector_definition.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "e=Y-\\hat Y"
+          "latex": "e=Y-\\hat Y",
+          "cas": "parse_latex('e=Y-\\\\hat Y', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -393,7 +394,8 @@
           "formula_id": "ps.multiple_linear_regression.multiple_regression_definition.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y=X\\beta+\\varepsilon"
+          "latex": "Y=X\\beta+\\varepsilon",
+          "cas": "parse_latex('Y=X\\\\beta+\\\\varepsilon', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -472,7 +474,8 @@
           "formula_id": "ps.multiple_linear_regression.ols_estimator_full_rank.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat\\beta=(X^TX)^{-1}X^TY"
+          "latex": "\\hat\\beta=(X^TX)^{-1}X^TY",
+          "cas": "parse_latex('\\\\hat\\\\beta=(X^TX)^{-1}X^TY', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -624,7 +627,8 @@
           "formula_id": "ps.multiple_linear_regression.standard_kfold_cv.formula_01",
           "name_ko": "평가지표",
           "role": "evaluation_metric",
-          "latex": "CV_K=\\frac1n\\sum_{k=1}^{K}\\sum_{i\\in V_k}L\\!\\left(y_i,\\hat f^{(-k)}(x_i)\\right)"
+          "latex": "CV_K=\\frac1n\\sum_{k=1}^{K}\\sum_{i\\in V_k}L\\!\\left(y_i,\\hat f^{(-k)}(x_i)\\right)",
+          "cas": "parse_latex('CV_K=\\\\frac1n\\\\sum_{k=1}^{K}\\\\sum_{i\\\\in V_k}L\\\\!\\\\left(y_i,\\\\hat f^{(-k)}(x_i)\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -925,7 +929,8 @@
           "formula_id": "ps.multiple_linear_regression.categorical_interaction.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y=\\beta_0+\\beta_1X+\\beta_2D+\\beta_3XD+\\varepsilon"
+          "latex": "Y=\\beta_0+\\beta_1X+\\beta_2D+\\beta_3XD+\\varepsilon",
+          "cas": "parse_latex('Y=\\\\beta_0+\\\\beta_1X+\\\\beta_2D+\\\\beta_3XD+\\\\varepsilon', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1026,7 +1031,8 @@
           "formula_id": "ps.multiple_linear_regression.multicollinearity.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "VIF_j=\\frac{1}{1-R_j^2}"
+          "latex": "VIF_j=\\frac{1}{1-R_j^2}",
+          "cas": "parse_latex('VIF_j=\\\\frac{1}{1-R_j^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1711,7 +1717,8 @@
           "formula_id": "ps.multiple_linear_regression.partial_f_test.formula_01",
           "name_ko": "부분 F검정통계량",
           "role": "exact_test_statistic",
-          "latex": "F=\n\\frac{(SSE_R-SSE_F)/(p_F-p_R)}\n{SSE_F/(n-p_F)}"
+          "latex": "F=\n\\frac{(SSE_R-SSE_F)/(p_F-p_R)}\n{SSE_F/(n-p_F)}",
+          "cas": "parse_latex('F=\\n\\\\frac{(SSE_R-SSE_F)/(p_F-p_R)}\\n{SSE_F/(n-p_F)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2168,7 +2175,8 @@
           "formula_id": "ps.multiple_linear_regression.centering_interaction.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "X_c=X-\\bar X"
+          "latex": "X_c=X-\\bar X",
+          "cas": "parse_latex('X_c=X-\\\\bar X', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2271,7 +2279,8 @@
           "formula_id": "ps.multiple_linear_regression.normality_role.formula_01",
           "name_ko": "회귀계수 표준화량의 정확 t분포",
           "role": "exact_distribution",
-          "latex": "\\frac{\\hat\\beta_j-\\beta_j}{SE(\\hat\\beta_j)}\\,\\Big|\\,X\\sim t_{n-p}"
+          "latex": "\\frac{\\hat\\beta_j-\\beta_j}{SE(\\hat\\beta_j)}\\,\\Big|\\,X\\sim t_{n-p}",
+          "cas": "parse_latex('\\\\frac{\\\\hat\\\\beta_j-\\\\beta_j}{SE(\\\\hat\\\\beta_j)}\\\\,\\\\Big|\\\\,X\\\\sim t_{n-p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2481,7 +2490,8 @@
           "formula_id": "ps.multiple_linear_regression.general_linear_hypothesis_exact_null_distribution.formula_01",
           "name_ko": "정확 결과",
           "role": "exact_result",
-          "latex": "F\\mid H_0\\sim F_{q,n-p}"
+          "latex": "F\\mid H_0\\sim F_{q,n-p}",
+          "cas": "parse_latex('F\\\\mid H_0\\\\sim F_{q,n-p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2968,7 +2978,8 @@
           "formula_id": "ps.multiple_linear_regression.coefficient_confidence_interval.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\hat\\beta_j\n\\pm\n t_{n-p,1-\\alpha/2}\nSE(\\hat\\beta_j)"
+          "latex": "\\hat\\beta_j\n\\pm\n t_{n-p,1-\\alpha/2}\nSE(\\hat\\beta_j)",
+          "cas": "parse_latex('\\\\hat\\\\beta_j\\n\\\\pm\\n t_{n-p,1-\\\\alpha/2}\\nSE(\\\\hat\\\\beta_j)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3102,7 +3113,8 @@
           "formula_id": "ps.multiple_linear_regression.partial_r2.formula_01",
           "name_ko": "부분 결정계수",
           "role": "effect_size",
-          "latex": "R^2_{\\mathrm{partial}}\n=\n\\frac{SSE_R-SSE_F}{SSE_R}"
+          "latex": "R^2_{\\mathrm{partial}}\n=\n\\frac{SSE_R-SSE_F}{SSE_R}",
+          "cas": "parse_latex('R^2_{\\\\mathrm{partial}}\\n=\\n\\\\frac{SSE_R-SSE_F}{SSE_R}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3218,7 +3230,8 @@
           "formula_id": "ps.multiple_linear_regression.condition_number_collinearity.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\kappa=\\frac{s_{\\max}}{s_{\\min}}"
+          "latex": "\\kappa=\\frac{s_{\\max}}{s_{\\min}}",
+          "cas": "parse_latex('\\\\kappa=\\\\frac{s_{\\\\max}}{s_{\\\\min}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3434,7 +3447,8 @@
           "formula_id": "ps.multiple_linear_regression.robust_covariance_form.formula_01",
           "name_ko": "HC0 공분산 추정량",
           "role": "hc0_covariance_estimator",
-          "latex": "(X^TX)^{-1}\n\\left(\\sum_{i=1}^n e_i^2x_ix_i^T\\right)\n(X^TX)^{-1}"
+          "latex": "(X^TX)^{-1}\n\\left(\\sum_{i=1}^n e_i^2x_ix_i^T\\right)\n(X^TX)^{-1}",
+          "cas": "parse_latex('(X^TX)^{-1}\\n\\\\left(\\\\sum_{i=1}^n e_i^2x_ix_i^T\\\\right)\\n(X^TX)^{-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3674,7 +3688,8 @@
           "formula_id": "ps.multiple_linear_regression.general_linear_wald.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "W_{\\beta}=(R\\hat\\beta-r)^T\\left[R\\widehat{\\operatorname{Var}}(\\hat\\beta)R^T\\right]^{-1}(R\\hat\\beta-r)"
+          "latex": "W_{\\beta}=(R\\hat\\beta-r)^T\\left[R\\widehat{\\operatorname{Var}}(\\hat\\beta)R^T\\right]^{-1}(R\\hat\\beta-r)",
+          "cas": "parse_latex('W_{\\\\beta}=(R\\\\hat\\\\beta-r)^T\\\\left[R\\\\widehat{\\\\operatorname{Var}}(\\\\hat\\\\beta)R^T\\\\right]^{-1}(R\\\\hat\\\\beta-r)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3777,7 +3792,8 @@
           "formula_id": "ps.multiple_linear_regression.general_linear_wald.asymptotic_null_distribution.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "W_{\\beta}\\xrightarrow{d}\\chi_q^2"
+          "latex": "W_{\\beta}\\xrightarrow{d}\\chi_q^2",
+          "cas": "parse_latex('W_{\\\\beta}\\\\xrightarrow{d}\\\\chi_q^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3923,7 +3939,8 @@
           "formula_id": "ps.multiple_linear_regression.exact_multicollinearity.formula_01",
           "name_ko": "진단 조건",
           "role": "diagnostic_condition",
-          "latex": "R_j^2=1\\quad\\Longrightarrow\\quad \\operatorname{rank}(X)<p"
+          "latex": "R_j^2=1\\quad\\Longrightarrow\\quad \\operatorname{rank}(X)<p",
+          "cas": "parse_latex('R_j^2=1\\\\quad\\\\Longrightarrow\\\\quad \\\\operatorname{rank}(X)<p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4032,7 +4049,8 @@
           "formula_id": "ps.multiple_linear_regression.robust_coefficient_confidence_interval.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\hat\\beta_j\\pm z_{1-\\alpha/2}\\widehat{SE}_{\\mathrm{robust}}(\\hat\\beta_j)"
+          "latex": "\\hat\\beta_j\\pm z_{1-\\alpha/2}\\widehat{SE}_{\\mathrm{robust}}(\\hat\\beta_j)",
+          "cas": "parse_latex('\\\\hat\\\\beta_j\\\\pm z_{1-\\\\alpha/2}\\\\widehat{SE}_{\\\\mathrm{robust}}(\\\\hat\\\\beta_j)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4156,7 +4174,8 @@
           "formula_id": "ps.multiple_linear_regression.aic_bic.f01.formula_01",
           "name_ko": "정보기준",
           "role": "information_criterion",
-          "latex": "AIC\n=\n2k-2\\ell(\\hat\\theta)"
+          "latex": "AIC\n=\n2k-2\\ell(\\hat\\theta)",
+          "cas": "parse_latex('AIC\\n=\\n2k-2\\\\ell(\\\\hat\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4288,7 +4307,8 @@
           "formula_id": "ps.multiple_linear_regression.aic_bic.f02.formula_01",
           "name_ko": "정보기준",
           "role": "information_criterion",
-          "latex": "BIC\n=\nk\\log n-2\\ell(\\hat\\theta)"
+          "latex": "BIC\n=\nk\\log n-2\\ell(\\hat\\theta)",
+          "cas": "parse_latex('BIC\\n=\\nk\\\\log n-2\\\\ell(\\\\hat\\\\theta)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4429,7 +4449,8 @@
           "formula_id": "ps.multiple_linear_regression.rmse_mae.f01.formula_01",
           "name_ko": "평가지표",
           "role": "evaluation_metric",
-          "latex": "RMSE\n=\n\\sqrt{\n\\frac1m\\sum_{i=1}^{m}(y_i-\\hat y_i)^2\n}"
+          "latex": "RMSE\n=\n\\sqrt{\n\\frac1m\\sum_{i=1}^{m}(y_i-\\hat y_i)^2\n}",
+          "cas": "parse_latex('RMSE\\n=\\n\\\\sqrt{\\n\\\\frac1m\\\\sum_{i=1}^{m}(y_i-\\\\hat y_i)^2\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4543,7 +4564,8 @@
           "formula_id": "ps.multiple_linear_regression.rmse_mae.f02.formula_01",
           "name_ko": "평가지표",
           "role": "evaluation_metric",
-          "latex": "MAE\n=\n\\frac1m\\sum_{i=1}^{m}|y_i-\\hat y_i|"
+          "latex": "MAE\n=\n\\frac1m\\sum_{i=1}^{m}|y_i-\\hat y_i|",
+          "cas": "parse_latex('MAE\\n=\\n\\\\frac1m\\\\sum_{i=1}^{m}|y_i-\\\\hat y_i|', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4657,7 +4679,8 @@
           "formula_id": "ps.multiple_linear_regression.regularized_regression.f01.formula_01",
           "name_ko": "추정량",
           "role": "estimator",
-          "latex": "\\operatorname*{arg\\,min}_{\\beta_0,\\beta}\n\\left\\{\nRSS+\\lambda\\sum_{j=1}^{p-1}\\beta_j^2\n\\right\\}"
+          "latex": "\\operatorname*{arg\\,min}_{\\beta_0,\\beta}\n\\left\\{\nRSS+\\lambda\\sum_{j=1}^{p-1}\\beta_j^2\n\\right\\}",
+          "cas": "parse_latex('\\\\operatorname*{arg\\\\,min}_{\\\\beta_0,\\\\beta}\\n\\\\left\\\\{\\nRSS+\\\\lambda\\\\sum_{j=1}^{p-1}\\\\beta_j^2\\n\\\\right\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4754,7 +4777,8 @@
           "formula_id": "ps.multiple_linear_regression.regularized_regression.f02.formula_01",
           "name_ko": "추정량",
           "role": "estimator",
-          "latex": "\\operatorname*{arg\\,min}_{\\beta_0,\\beta}\n\\left\\{\nRSS+\\lambda\\sum_{j=1}^{p-1}|\\beta_j|\n\\right\\}"
+          "latex": "\\operatorname*{arg\\,min}_{\\beta_0,\\beta}\n\\left\\{\nRSS+\\lambda\\sum_{j=1}^{p-1}|\\beta_j|\n\\right\\}",
+          "cas": "parse_latex('\\\\operatorname*{arg\\\\,min}_{\\\\beta_0,\\\\beta}\\n\\\\left\\\\{\\nRSS+\\\\lambda\\\\sum_{j=1}^{p-1}|\\\\beta_j|\\n\\\\right\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4957,7 +4981,8 @@
           "formula_id": "ps.multiple_linear_regression.exact_coefficient_t_test.f02.formula_01",
           "name_ko": "개별 회귀계수 t검정통계량",
           "role": "exact_test_statistic",
-          "latex": "t_j=\\frac{\\hat\\beta_j-\\beta_{j,0}}{SE(\\hat\\beta_j)}"
+          "latex": "t_j=\\frac{\\hat\\beta_j-\\beta_{j,0}}{SE(\\hat\\beta_j)}",
+          "cas": "parse_latex('t_j=\\\\frac{\\\\hat\\\\beta_j-\\\\beta_{j,0}}{SE(\\\\hat\\\\beta_j)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5084,7 +5109,8 @@
           "formula_id": "ps.multiple_linear_regression.exact_coefficient_t_test.df.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=n-p"
+          "latex": "df=n-p",
+          "cas": "parse_latex('df=n-p', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5211,7 +5237,8 @@
           "formula_id": "ps.multiple_linear_regression.ols_coefficient_conditional_variance.f01.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\hat\\beta\\mid X)\n=\\sigma^2(X^TX)^{-1}"
+          "latex": "\\operatorname{Var}(\\hat\\beta\\mid X)\n=\\sigma^2(X^TX)^{-1}",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\hat\\\\beta\\\\mid X)\\n=\\\\sigma^2(X^TX)^{-1}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5328,7 +5355,8 @@
           "formula_id": "ps.multiple_linear_regression.ols_coefficient_conditional_variance.f02.formula_01",
           "name_ko": "분산 추정량",
           "role": "variance_estimator",
-          "latex": "\\hat\\sigma^2=\\frac{SSE}{n-p}"
+          "latex": "\\hat\\sigma^2=\\frac{SSE}{n-p}",
+          "cas": "parse_latex('\\\\hat\\\\sigma^2=\\\\frac{SSE}{n-p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5463,7 +5491,8 @@
           "formula_id": "ps.multiple_linear_regression.adjusted_r2.f01.formula_01",
           "name_ko": "적합도 지표",
           "role": "fit_measure",
-          "latex": "\\bar R^2\n=1-\\frac{SSE/(n-p)}{SST/(n-1)}"
+          "latex": "\\bar R^2\n=1-\\frac{SSE/(n-p)}{SST/(n-1)}",
+          "cas": "parse_latex('\\\\bar R^2\\n=1-\\\\frac{SSE/(n-p)}{SST/(n-1)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5614,7 +5643,8 @@
           "formula_id": "ps.multiple_linear_regression.adjusted_r2.f02.formula_01",
           "name_ko": "적합도 지표",
           "role": "fit_measure",
-          "latex": "\\bar R^2\n=1-(1-R^2)\\frac{n-1}{n-p}"
+          "latex": "\\bar R^2\n=1-(1-R^2)\\frac{n-1}{n-p}",
+          "cas": "parse_latex('\\\\bar R^2\\n=1-(1-R^2)\\\\frac{n-1}{n-p}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5756,7 +5786,8 @@
           "formula_id": "ps.multiple_linear_regression.overall_f_test.f02.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "F=\n\\frac{SSR/(p-1)}\n{SSE/(n-p)}"
+          "latex": "F=\n\\frac{SSR/(p-1)}\n{SSE/(n-p)}",
+          "cas": "parse_latex('F=\\n\\\\frac{SSR/(p-1)}\\n{SSE/(n-p)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5909,7 +5940,8 @@
           "formula_id": "ps.multiple_linear_regression.hat_matrix_leverage.f01.formula_01",
           "name_ko": "적합값 관계",
           "role": "fitted_value_relation",
-          "latex": "\\hat Y=HY"
+          "latex": "\\hat Y=HY",
+          "cas": "parse_latex('\\\\hat Y=HY', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6025,7 +6057,8 @@
           "formula_id": "ps.multiple_linear_regression.hat_matrix_leverage.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "H=X(X^TX)^{-1}X^T"
+          "latex": "H=X(X^TX)^{-1}X^T",
+          "cas": "parse_latex('H=X(X^TX)^{-1}X^T', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6132,7 +6165,8 @@
           "formula_id": "ps.multiple_linear_regression.general_linear_hypothesis_statistic.f02.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "F=\\frac{(R\\hat\\beta-r)^T[R(X^TX)^{-1}R^T]^{-1}(R\\hat\\beta-r)/q}{MSE}"
+          "latex": "F=\\frac{(R\\hat\\beta-r)^T[R(X^TX)^{-1}R^T]^{-1}(R\\hat\\beta-r)/q}{MSE}",
+          "cas": "parse_latex('F=\\\\frac{(R\\\\hat\\\\beta-r)^T[R(X^TX)^{-1}R^T]^{-1}(R\\\\hat\\\\beta-r)/q}{MSE}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6265,7 +6299,8 @@
           "formula_id": "ps.multiple_linear_regression.mean_individual_prediction.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat y_0=x_0^T\\hat\\beta"
+          "latex": "\\hat y_0=x_0^T\\hat\\beta",
+          "cas": "parse_latex('\\\\hat y_0=x_0^T\\\\hat\\\\beta', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6398,7 +6433,8 @@
           "formula_id": "ps.multiple_linear_regression.mean_individual_prediction.f02.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\hat y_0\n\\pm t_{n-p,1-\\alpha/2}\n\\,s\\sqrt{x_0^T(X^TX)^{-1}x_0}"
+          "latex": "\\hat y_0\n\\pm t_{n-p,1-\\alpha/2}\n\\,s\\sqrt{x_0^T(X^TX)^{-1}x_0}",
+          "cas": "parse_latex('\\\\hat y_0\\n\\\\pm t_{n-p,1-\\\\alpha/2}\\n\\\\,s\\\\sqrt{x_0^T(X^TX)^{-1}x_0}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6577,7 +6613,8 @@
           "formula_id": "ps.multiple_linear_regression.mean_individual_prediction.f03.formula_01",
           "name_ko": "예측구간",
           "role": "prediction_interval",
-          "latex": "\\hat y_0\n\\pm t_{n-p,1-\\alpha/2}\n\\,s\\sqrt{1+x_0^T(X^TX)^{-1}x_0}"
+          "latex": "\\hat y_0\n\\pm t_{n-p,1-\\alpha/2}\n\\,s\\sqrt{1+x_0^T(X^TX)^{-1}x_0}",
+          "cas": "parse_latex('\\\\hat y_0\\n\\\\pm t_{n-p,1-\\\\alpha/2}\\n\\\\,s\\\\sqrt{1+x_0^T(X^TX)^{-1}x_0}', backend='antlr')"
         }
       ],
       "application_conditions": [

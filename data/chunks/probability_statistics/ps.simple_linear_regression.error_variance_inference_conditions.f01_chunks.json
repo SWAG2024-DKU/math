@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_16_simple_linear_regression",
+  "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 오차분산과 회귀 추론의 조건에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: simple_linear_regression, error_variance_inference_conditions, regression, variance, formula_atomic, model_assumption",
+      "token_count": 150,
+      "content_hash": "4c4c1e6ae836db6fb7a1ca1ed764bb9dc6e4ad33efc395092b82fbb0c08a65b5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 분산 추정량\n공식 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.formula_01\n역할: variance_estimator\nLaTeX: MSE=\\frac{SSE}{n-2}",
+      "token_count": 135,
+      "content_hash": "649a57c767fd3d4b105dd6e92368298632c2ce2e1ce92382db8b2d6a12a9902a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.condition_01\n설명: 절편과 기울기를 추정한 단순회귀에서 잔차 자유도는 $n-2>0$이어야 한다.\n검증 규칙: sample_size greater_than 2\n\n조건 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.condition_02\n설명: 설명변수의 변동은 $S_{xx}>0$이어야 한다.\n검증 규칙: design_variation greater_than 0\n\n조건 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.condition_03\n설명: $E(\\varepsilon_i\\mid X)=0$이어야 한다.\n검증 규칙: conditional_mean_zero equals 참\n\n조건 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.condition_04\n설명: $\\operatorname{Var}(\\varepsilon_i\\mid X)=\\sigma^2$가 모든 관측에서 같아야 한다.\n검증 규칙: homoskedasticity equals 참\n\n조건 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.condition_05\n설명: 서로 다른 오차는 조건부로 무상관이어야 한다.\n검증 규칙: errors_uncorrelated_conditionally equals 참",
+      "token_count": 419,
+      "content_hash": "2d2deefbd42bbc5892ef692417ba3126a554ed690497e37d9e9eb6c1851f819e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.condition_06\n설명: `sample_size`에 대응하는 값은 정수여야 한다.\n검증 규칙: sample_size_is_integer equals 참",
+      "token_count": 142,
+      "content_hash": "5d054e63f4cf1802be92079169ce1dc143517fa633a0ec31f8495da2cb8ef2ca",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 128,
+      "content_hash": "c8fc92ff33b1b2598fabbc5a6aa8cedd88b02d07ce44b1de8eae6a1a0ed1545a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- Pearson 상관계수 (ps.correlation.pearson_correlation, 중요도: required)\n- 최소제곱추정 (ps.simple_linear_regression.least_squares, 중요도: required)\n- t분포 (ps.continuous_distributions.student_t, 중요도: recommended)\n\n관련 개념:\n- ps.simple_linear_regression.error_variance_inference_conditions\n- ps.simple_linear_regression.regression_diagnostics\n- ps.simple_linear_regression.mean_response_prediction\n\n학습 목표 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.objective_01\n행동 동사: identify\n목표: 모형 가정의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.objective_02\n행동 동사: apply\n목표: 모형 가정을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01.objective_03\n행동 동사: verify\n목표: 모형 가정의 조건 충족 여부를 검증한다.",
+      "token_count": 379,
+      "content_hash": "f2b2ffb6934c9b639e0bf58ddad404fde6aea2770fbbfc93996e456610b9fda1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_16_simple_linear_regression",
+      "concept_name_ko": "오차분산과 회귀 추론의 조건 — 분산 추정량",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 단순선형회귀분석\n개념: 오차분산과 회귀 추론의 조건 — 분산 추정량\n개념 ID: ps.simple_linear_regression.error_variance_inference_conditions.f01\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, coefficient_estimation, model_interpretation, diagnostic_check\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, matrix_dimension_check, condition_rule_check, domain_check",
+      "token_count": 179,
+      "content_hash": "b4b9a569df73c4f39fe99f526790f7813a2622e62719acfa5904d6930c7d0990",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

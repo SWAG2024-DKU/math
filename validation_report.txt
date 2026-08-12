@@ -1,59 +1,4203 @@
 검증 대상 JSON 파일: 51개
 ======================================================================
-[통과] data\concepts\calculus_1\c1_01_functions_and_models_concepts.json (11개 Concept)
-[통과] data\concepts\calculus_1\c1_02_limits_and_derivatives_concepts.json (14개 Concept)
-[통과] data\concepts\calculus_1\c1_03_differentiation_rules_concepts.json (13개 Concept)
-[통과] data\concepts\calculus_1\c1_04_applications_of_differentiation_concepts.json (8개 Concept)
-[통과] data\concepts\calculus_1\c1_05_integrals_concepts.json (7개 Concept)
-[통과] data\concepts\calculus_1\c1_06_applications_of_integration_concepts.json (4개 Concept)
-[통과] data\concepts\calculus_1\c1_07_techniques_of_integration_concepts.json (5개 Concept)
-[통과] data\concepts\calculus_1\c1_08_further_applications_of_integration_concepts.json (6개 Concept)
-[통과] data\concepts\calculus_1\c1_09_parametric_equations_and_polar_coordinates_concepts.json (7개 Concept)
-[통과] data\concepts\calculus_1\c1_10_sequences_and_series_concepts.json (7개 Concept)
-[통과] data\concepts\calculus_2\c2_01_power_series_concepts.json (8개 Concept)
-[통과] data\concepts\calculus_2\c2_02_parametric_equations_and_polar_coordinates_concepts.json (6개 Concept)
-[통과] data\concepts\calculus_2\c2_03_vectors_in_space_concepts.json (9개 Concept)
-[통과] data\concepts\calculus_2\c2_04_vector_valued_functions_concepts.json (9개 Concept)
-[통과] data\concepts\calculus_2\c2_05_differentiation_of_functions_of_several_variables_concepts.json (9개 Concept)
-[통과] data\concepts\calculus_2\c2_06_multiple_integration_concepts.json (9개 Concept)
-[통과] data\concepts\calculus_2\c2_07_vector_calculus_concepts.json (10개 Concept)
-[통과] data\concepts\calculus_2\c2_08_second_order_differential_equations_concepts.json (11개 Concept)
-[통과] data\concepts\engineering_mathematics\em_01_first_order_odes.json (10개 Concept)
-[통과] data\concepts\engineering_mathematics\em_02_higher_order_linear_odes.json (11개 Concept)
-[통과] data\concepts\engineering_mathematics\em_03_laplace_transform.json (10개 Concept)
-[통과] data\concepts\engineering_mathematics\em_04_systems_of_odes.json (10개 Concept)
-[통과] data\concepts\engineering_mathematics\em_05_vector_calculus.json (12개 Concept)
-[통과] data\concepts\engineering_mathematics\em_06_fourier_analysis.json (10개 Concept)
-[통과] data\concepts\engineering_mathematics\em_07_partial_differential_equations.json (9개 Concept)
-[통과] data\concepts\engineering_mathematics\em_08_complex_analysis.json (13개 Concept)
-[통과] data\concepts\engineering_mathematics\em_09_numerical_analysis.json (19개 Concept)
-[통과] data\concepts\linear_algebra\la_01_matrix_algebra.json (11개 Concept)
-[통과] data\concepts\linear_algebra\la_02_vector_spaces.json (9개 Concept)
-[통과] data\concepts\linear_algebra\la_03_linear_transformations_determinants.json (8개 Concept)
-[통과] data\concepts\linear_algebra\la_04_orthogonality_optimization.json (8개 Concept)
-[통과] data\concepts\linear_algebra\la_05_eigenvalues_diagonalization.json (8개 Concept)
-[통과] data\concepts\linear_algebra\la_06_advanced_applications.json (6개 Concept)
-[통과] data\concepts\probability_statistics\01_확률과 통계의 기초.json (13개 Concept)
-[통과] data\concepts\probability_statistics\02_자료의 정리와 기술통계.json (31개 Concept)
-[통과] data\concepts\probability_statistics\03_경우의 수.json (28개 Concept)
-[통과] data\concepts\probability_statistics\04_확률의 기본 개념.json (29개 Concept)
-[통과] data\concepts\probability_statistics\05_조건부확률과 독립.json (24개 Concept)
-[통과] data\concepts\probability_statistics\06_확률변수.json (47개 Concept)
-[통과] data\concepts\probability_statistics\07_주요 이산확률분포.json (51개 Concept)
-[통과] data\concepts\probability_statistics\08_주요 연속확률분포.json (65개 Concept)
-[통과] data\concepts\probability_statistics\09_다변량 확률분포.json (50개 Concept)
-[통과] data\concepts\probability_statistics\10_확률부등식과 극한이론.json (47개 Concept)
-[통과] data\concepts\probability_statistics\11_표본분포.json (43개 Concept)
-[통과] data\concepts\probability_statistics\12_추정이론.json (72개 Concept)
-[통과] data\concepts\probability_statistics\13_가설검정.json (62개 Concept)
-[통과] data\concepts\probability_statistics\14_범주형 자료분석.json (50개 Concept)
-[통과] data\concepts\probability_statistics\15_상관분석.json (24개 Concept)
-[통과] data\concepts\probability_statistics\16_단순선형회귀분석.json (58개 Concept)
-[통과] data\concepts\probability_statistics\17_다중선형회귀분석.json (59개 Concept)
-[통과] data\concepts\probability_statistics\18_분산분석.json (57개 Concept)
+[통과] data\concepts\calculus_1\c1_01_functions_and_models_concepts.json (11개 Concept, 43개 Formula)
+[통과] data\concepts\calculus_1\c1_02_limits_and_derivatives_concepts.json (14개 Concept, 39개 Formula)
+[통과] data\concepts\calculus_1\c1_03_differentiation_rules_concepts.json (13개 Concept, 40개 Formula)
+[통과] data\concepts\calculus_1\c1_04_applications_of_differentiation_concepts.json (8개 Concept, 26개 Formula)
+[통과] data\concepts\calculus_1\c1_05_integrals_concepts.json (7개 Concept, 21개 Formula)
+[통과] data\concepts\calculus_1\c1_06_applications_of_integration_concepts.json (4개 Concept, 15개 Formula)
+[통과] data\concepts\calculus_1\c1_07_techniques_of_integration_concepts.json (5개 Concept, 19개 Formula)
+[통과] data\concepts\calculus_1\c1_08_further_applications_of_integration_concepts.json (6개 Concept, 14개 Formula)
+[통과] data\concepts\calculus_1\c1_09_parametric_equations_and_polar_coordinates_concepts.json (7개 Concept, 25개 Formula)
+[통과] data\concepts\calculus_1\c1_10_sequences_and_series_concepts.json (7개 Concept, 23개 Formula)
+[통과] data\concepts\calculus_2\c2_01_power_series_concepts.json (8개 Concept, 29개 Formula)
+[통과] data\concepts\calculus_2\c2_02_parametric_equations_and_polar_coordinates_concepts.json (6개 Concept, 18개 Formula)
+[통과] data\concepts\calculus_2\c2_03_vectors_in_space_concepts.json (9개 Concept, 43개 Formula)
+[통과] data\concepts\calculus_2\c2_04_vector_valued_functions_concepts.json (9개 Concept, 34개 Formula)
+[통과] data\concepts\calculus_2\c2_05_differentiation_of_functions_of_several_variables_concepts.json (9개 Concept, 33개 Formula)
+[통과] data\concepts\calculus_2\c2_06_multiple_integration_concepts.json (9개 Concept, 32개 Formula)
+[통과] data\concepts\calculus_2\c2_07_vector_calculus_concepts.json (10개 Concept, 37개 Formula)
+[통과] data\concepts\calculus_2\c2_08_second_order_differential_equations_concepts.json (11개 Concept, 38개 Formula)
+[통과] data\concepts\engineering_mathematics\em_01_first_order_odes.json (10개 Concept, 23개 Formula)
+[통과] data\concepts\engineering_mathematics\em_02_higher_order_linear_odes.json (11개 Concept, 20개 Formula)
+[통과] data\concepts\engineering_mathematics\em_03_laplace_transform.json (10개 Concept, 19개 Formula)
+
+[실패] data\concepts\engineering_mathematics\em_04_systems_of_odes.json
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 16열
+  내용: invalid syntax
+  CAS: [exp(lambda * t) * v, exp(lambda * t) * (t * v + w)]
+  위치: concepts → 4 → formulas → 1 → cas
+  concept_id: em.ode.repeated_eigenvalues_generalized
+  formula_id: repeated_eigenvalue_solution_form
+  공식명: 결함행렬 해 형태
+  LaTeX: \mathbf{x}_1=e^{\lambda t}\mathbf{v},\qquad \mathbf{x}_2=e^{\lambda t}(t\mathbf{v}+\mathbf{w})
+
+[실패] data\concepts\engineering_mathematics\em_05_vector_calculus.json
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 9열
+  내용: invalid syntax
+  CAS: f: R**n -> R
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: em.vector.scalar_vector_fields
+  formula_id: scalar_field_def
+  공식명: 스칼라장 함수표현
+  LaTeX: f:\mathbb{R}^n\to\mathbb{R}
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 9열
+  내용: invalid syntax
+  CAS: F: R**n -> R**m
+  위치: concepts → 0 → formulas → 1 → cas
+  concept_id: em.vector.scalar_vector_fields
+  formula_id: vector_field_def
+  공식명: 벡터장 함수표현
+  LaTeX: \mathbf{F}:\mathbb{R}^n\to\mathbb{R}^m
+
+[실패] data\concepts\engineering_mathematics\em_06_fourier_analysis.json
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 36열
+  내용: invalid syntax
+  CAS: Eq(Limit(S_N(x_0), N, oo), (f(x_0 -) + f(x_0 +))/2)
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: em.fourier.convergence_gibbs_phenomenon
+  formula_id: jump_discontinuity_convergence
+  공식명: 불연속점 수렴 공식
+  LaTeX: S_N(x_0) \to \frac{f(x_0^-)+f(x_0^+)}{2}
+[통과] data\concepts\engineering_mathematics\em_07_partial_differential_equations.json (9개 Concept, 18개 Formula)
+[통과] data\concepts\engineering_mathematics\em_08_complex_analysis.json (13개 Concept, 23개 Formula)
+
+[실패] data\concepts\engineering_mathematics\em_09_numerical_analysis.json
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(x_{n+1}, g(x_n))
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: em.numerical.fixed_point_iteration
+  formula_id: fixed_point_recurrence
+  공식명: 고정점 반복 점화식
+  LaTeX: x_{n+1}=g(x_n)
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(x_{n+1}, x_n - f(x_n)/diff(f(x_n), x_n))
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: em.numerical.newton_method
+  formula_id: newton_raphson_formula
+  공식명: 뉴턴 랩슨 점화식
+  LaTeX: x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(x_{n+1}, x_n - f(x_n) * (x_n - x_{n-1}) / (f(x_n) - f(x_{n-1})))
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: em.numerical.secant_method
+  formula_id: secant_formula
+  공식명: 할선법 점화식
+  LaTeX: x_{n+1} = x_n - f(x_n)\frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 10열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(m_ik, a_{ik}/a_{kk})
+  위치: concepts → 13 → formulas → 1 → cas
+  concept_id: em.numerical.gaussian_elimination_pivoting
+  formula_id: gaussian_multiplier
+  공식명: 소거 승수 및 행 연산
+  LaTeX: m_{ik}=\frac{a_{ik}}{a_{kk}}, \qquad R_i \leftarrow R_i - m_{ik}R_k
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(x_{k+1}, Inverse(D) * (b - (L + U) * x_k))
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: em.numerical.jacobi_gauss_seidel
+  formula_id: jacobi_iteration
+  공식명: 야코비 반복법
+  LaTeX: \mathbf{x}^{(k+1)} = D^{-1}[\mathbf{b}-(L+U)\mathbf{x}^{(k)}]
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq((D + L) * x_{k+1}, b - U * x_k)
+  위치: concepts → 15 → formulas → 1 → cas
+  concept_id: em.numerical.jacobi_gauss_seidel
+  formula_id: gauss_seidel_iteration
+  공식명: 가우스-사이델 반복법
+  LaTeX: (D+L)\mathbf{x}^{(k+1)} = \mathbf{b}-U\mathbf{x}^{(k)}
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(y_{n+1}, y_n + h * f(t_n, y_n))
+  위치: concepts → 16 → formulas → 0 → cas
+  concept_id: em.numerical.euler_improved_euler
+  formula_id: euler_method_formula
+  공식명: 오일러 공식
+  LaTeX: y_{n+1}=y_n+h f(t_n,y_n)
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(y_{n+1}, y_n + (h/2)*(f(t_n, y_n) + f(t_{n+1}, y_n + h*f(t_n, y_n))))
+  위치: concepts → 16 → formulas → 1 → cas
+  concept_id: em.numerical.euler_improved_euler
+  formula_id: improved_euler_heun
+  공식명: 개선 오일러(Heun) 공식
+  LaTeX: \tilde y_{n+1}=y_n+hf(t_n,y_n), \quad y_{n+1}=y_n+\frac{h}{2}[f(t_n,y_n)+f(t_{n+1},\tilde y_{n+1})]
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 4열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(y_{n+1}, y_n + (h/6)*(k_1 + 2*k_2 + 2*k_3 + k_4))
+  위치: concepts → 17 → formulas → 1 → cas
+  concept_id: em.numerical.runge_kutta_4th
+  formula_id: rk4_update
+  공식명: 4차 룽게-쿠타 업데이트 공식
+  LaTeX: y_{n+1} = y_n + \frac{h}{6}(k_1+2k_2+2k_3+k_4)
+CAS 구문 오류
+  Python/SymPy 스타일 문법으로 해석할 수 없습니다.
+  위치: 1행 22열
+  내용: invalid syntax. Perhaps you forgot a comma?
+  CAS: Eq(diff(u, (x, 2)), (u_{i+1} - 2*u_i + u_{i-1})/h**2)
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: em.numerical.finite_difference_method
+  formula_id: second_order_central_difference_ode
+  공식명: 2계 중심차분 근사식
+  LaTeX: u''(x_i) \approx \frac{u_{i+1}-2u_i+u_{i-1}}{h^2}
+[통과] data\concepts\linear_algebra\la_01_matrix_algebra.json (11개 Concept, 22개 Formula)
+[통과] data\concepts\linear_algebra\la_02_vector_spaces.json (9개 Concept, 11개 Formula)
+[통과] data\concepts\linear_algebra\la_03_linear_transformations_determinants.json (8개 Concept, 14개 Formula)
+[통과] data\concepts\linear_algebra\la_04_orthogonality_optimization.json (8개 Concept, 15개 Formula)
+[통과] data\concepts\linear_algebra\la_05_eigenvalues_diagonalization.json (8개 Concept, 12개 Formula)
+[통과] data\concepts\linear_algebra\la_06_advanced_applications.json (6개 Concept, 13개 Formula)
+
+[실패] data\concepts\probability_statistics\01_확률과 통계의 기초.json
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.foundations.observational_experimental_studies.f01
+  formula_id: ps.foundations.observational_experimental_studies.f01.formula_01
+  공식명: 정의
+  LaTeX: \tau_i=Y_i(1)-Y_i(0)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.foundations.observational_experimental_studies.f02
+  formula_id: ps.foundations.observational_experimental_studies.f02.formula_01
+  공식명: 정의
+  LaTeX: ATE=E[Y(1)-Y(0)]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.foundations.observational_experimental_studies.f03
+  formula_id: ps.foundations.observational_experimental_studies.f03.formula_01
+  공식명: 추정량
+  LaTeX: \widehat{\Delta}_{\mathrm{obs}}=\bar{Y}_{\mathrm{treat}}-\bar{Y}_{\mathrm{control}}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\02_자료의 정리와 기술통계.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.geometric_mean
+  formula_id: ps.descriptive_statistics.geometric_mean.formula_01
+  공식명: 핵심 관계식
+  LaTeX: G=\left(\prod_{i=1}^{n}x_i\right)^{1/n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.harmonic_mean
+  formula_id: ps.descriptive_statistics.harmonic_mean.formula_01
+  공식명: 핵심 관계식
+  LaTeX: H=\frac{n}{\sum_{i=1}^{n}1/x_i}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.position_shape
+  formula_id: ps.descriptive_statistics.position_shape.formula_01
+  공식명: standard score
+  LaTeX: z=(x-\mu)/\sigma
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 14 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.range_iqr.f01
+  formula_id: ps.descriptive_statistics.range_iqr.f01.formula_01
+  공식명: 정의
+  LaTeX: \operatorname{Range}=x_{\max}-x_{\min}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.range_iqr.f02
+  formula_id: ps.descriptive_statistics.range_iqr.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: IQR=Q_3-Q_1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 16 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.sample_variance_standard_deviation.f01
+  formula_id: ps.descriptive_statistics.sample_variance_standard_deviation.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar x)^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 17 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.sample_variance_standard_deviation.f02
+  formula_id: ps.descriptive_statistics.sample_variance_standard_deviation.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: s=\sqrt{s^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.frequency_distribution_graphs.f01
+  formula_id: ps.descriptive_statistics.frequency_distribution_graphs.f01.formula_01
+  공식명: 정의
+  LaTeX: \text{상대도수}=\frac{\text{도수}}{\text{전체 관측수}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 19 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.frequency_distribution_graphs.f02
+  formula_id: ps.descriptive_statistics.frequency_distribution_graphs.f02.formula_01
+  공식명: 정의
+  LaTeX: \text{누적도수}=\text{현재 계급까지의 도수 합}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.central_tendency.f01
+  formula_id: ps.descriptive_statistics.central_tendency.f01.formula_01
+  공식명: 정의
+  LaTeX: \bar x=\frac1n\sum_{i=1}^{n}x_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.central_tendency.f02
+  formula_id: ps.descriptive_statistics.central_tendency.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \bar x_w=\frac{\sum_i w_i x_i}{\sum_i w_i}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.covariance_cv_outliers.f01
+  formula_id: ps.descriptive_statistics.covariance_cv_outliers.f01.formula_01
+  공식명: 정의
+  LaTeX: s_{xy}=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.covariance_cv_outliers.f02
+  formula_id: ps.descriptive_statistics.covariance_cv_outliers.f02.formula_01
+  공식명: 정의
+  LaTeX: CV=\frac{s}{\bar{x}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.covariance_cv_outliers.f03
+  formula_id: ps.descriptive_statistics.covariance_cv_outliers.f03.formula_01
+  공식명: 경험적 기준
+  LaTeX: LF=Q_1-1.5IQR
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.covariance_cv_outliers.upper_fence
+  formula_id: ps.descriptive_statistics.covariance_cv_outliers.upper_fence.formula_01
+  공식명: 경험적 기준
+  LaTeX: UF=Q_3+1.5IQR
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.covariance_cv_outliers.f04
+  formula_id: ps.descriptive_statistics.covariance_cv_outliers.f04.formula_01
+  공식명: 정의
+  LaTeX: \sum_{i=1}^{n}(x_i-\bar{x})^2
+=\sum_{i=1}^{n}x_i^2-n\bar{x}^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.ecdf_robust_dispersion.f01
+  formula_id: ps.descriptive_statistics.ecdf_robust_dispersion.f01.formula_01
+  공식명: 정의
+  LaTeX: F_n(x)=\frac{1}{n}\sum_{i=1}^{n}I(X_i\le x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.ecdf_robust_dispersion.f02
+  formula_id: ps.descriptive_statistics.ecdf_robust_dispersion.f02.formula_01
+  공식명: 강건 산포도
+  LaTeX: MAD=\operatorname{median}\left(|X_i-\operatorname{median}(X)|\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.skewness_kurtosis_moments.f01
+  formula_id: ps.descriptive_statistics.skewness_kurtosis_moments.f01.formula_01
+  공식명: 정의
+  LaTeX: \gamma_1=E\left[\left(\frac{X-\mu}{\sigma}\right)^3\right]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.descriptive_statistics.skewness_kurtosis_moments.f02
+  formula_id: ps.descriptive_statistics.skewness_kurtosis_moments.f02.formula_01
+  공식명: 정의
+  LaTeX: \beta_2=E\left[\left(\frac{X-\mu}{\sigma}\right)^4\right]
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\03_경우의 수.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.counting.addition_rule
+  formula_id: ps.counting.addition_rule.formula_01
+  공식명: 경우의 수 공식
+  LaTeX: m+n
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.counting.binomial_theorem
+  formula_id: ps.counting.binomial_theorem.formula_01
+  공식명: 핵심 관계식
+  LaTeX: (a+b)^n=\sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^k
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.counting.multiplication_rule
+  formula_id: ps.counting.multiplication_rule.formula_01
+  공식명: 경우의 수 공식
+  LaTeX: mn
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.counting.multiset_permutation
+  formula_id: ps.counting.multiset_permutation.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \frac{n!}{n_1!\cdots n_k!}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: ps.counting.permutation_with_repetition
+  formula_id: ps.counting.permutation_with_repetition.formula_01
+  공식명: 핵심 관계식
+  LaTeX: N(n,r)=\begin{cases}1,&n=0,\ r=0,\\n^r,&\text{otherwise.}\end{cases}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.counting.permutation_without_repetition
+  formula_id: ps.counting.permutation_without_repetition.formula_01
+  공식명: 핵심 관계식
+  LaTeX: {}_nP_r=\frac{n!}{(n-r)!}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 6 → formulas → 0 → cas
+  concept_id: ps.counting.two_set_inclusion_exclusion
+  formula_id: ps.counting.two_set_inclusion_exclusion.formula_01
+  공식명: 핵심 관계식
+  LaTeX: |A\cup B|=|A|+|B|-|A\cap B|
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.counting.multiset_combination
+  formula_id: ps.counting.multiset_combination.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \binom{n+r-1}{r}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 13 → formulas → 0 → cas
+  concept_id: ps.counting.circular_permutation
+  formula_id: ps.counting.circular_permutation.formula_01
+  공식명: 경우의 수 공식
+  LaTeX: (n-1)!
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: ps.counting.general_inclusion_exclusion
+  formula_id: ps.counting.general_inclusion_exclusion.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \left|\bigcup_{i=1}^{n}A_i\right|
+=
+\sum_{\varnothing\ne J\subseteq\{1,\ldots,n\}}
+(-1)^{|J|+1}
+\left|\bigcap_{j\in J}A_j\right|.
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 17 → formulas → 0 → cas
+  concept_id: ps.counting.multinomial_theorem
+  formula_id: ps.counting.multinomial_theorem.formula_01
+  공식명: 핵심 관계식
+  LaTeX: (x_1+\cdots+x_k)^n
+=\sum_{\substack{n_1+\cdots+n_k=n\\ n_1,\ldots,n_k\in\mathbb Z_{\ge0}}}
+\frac{n!}{n_1!\cdots n_k!}
+\prod_{j=1}^{k}x_j^{n_j}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.counting.pigeonhole_principle
+  formula_id: ps.counting.pigeonhole_principle.formula_01
+  공식명: 경우의 수 공식
+  LaTeX: m>n\ge1\quad\Longrightarrow\quad \max_{1\le j\le n}N_j\ge2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.counting.generalized_pigeonhole
+  formula_id: ps.counting.generalized_pigeonhole.formula_01
+  공식명: 정리
+  LaTeX: \max_{1\le j\le n}N_j\ge\left\lceil\frac{m}{n}\right\rceil,\qquad \sum_{j=1}^{n}N_j=m
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.counting.ordinary_combination.f01
+  formula_id: ps.counting.ordinary_combination.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \binom{n}{r}=\frac{n!}{r!(n-r)!}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.counting.ordinary_combination.f02
+  formula_id: ps.counting.ordinary_combination.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \binom{n}{r}=\binom{n}{n-r}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.counting.derangements.f01
+  formula_id: ps.counting.derangements.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: D_n=n!\sum_{k=0}^{n}\frac{(-1)^k}{k!}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.counting.derangements.f02
+  formula_id: ps.counting.derangements.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: D_n=\left\lfloor\frac{n!}{e}+\frac12\right\rfloor
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\04_확률의 기본 개념.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.probability_basics.continuity_from_above
+  formula_id: ps.probability_basics.continuity_from_above.formula_01
+  공식명: limit relation
+  LaTeX: A_n\downarrow A\quad\Longrightarrow\quad P(A_n)\to P(A)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.probability_basics.continuity_from_below
+  formula_id: ps.probability_basics.continuity_from_below.formula_01
+  공식명: limit relation
+  LaTeX: A_n\uparrow A\quad\Longrightarrow\quad P(A_n)\to P(A)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.probability_basics.de_morgan_laws.f01
+  formula_id: ps.probability_basics.de_morgan_laws.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: (A\cup B)^c=A^c\cap B^c
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.probability_basics.de_morgan_laws.f02
+  formula_id: ps.probability_basics.de_morgan_laws.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: (A\cap B)^c=A^c\cup B^c
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 13 → formulas → 0 → cas
+  concept_id: ps.probability_basics.probability_space_sample_space_events.f01
+  formula_id: ps.probability_basics.probability_space_sample_space_events.f01.formula_01
+  공식명: 정의
+  LaTeX: (\Omega,\mathcal F,P)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 14 → formulas → 0 → cas
+  concept_id: ps.probability_basics.probability_space_sample_space_events.f02
+  formula_id: ps.probability_basics.probability_space_sample_space_events.f02.formula_01
+  공식명: 정의
+  LaTeX: A\text{는 사건}\quad\Longleftrightarrow\quad A\in\mathcal F\subseteq2^\Omega
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: ps.probability_basics.probability_space_sample_space_events.f03
+  formula_id: ps.probability_basics.probability_space_sample_space_events.f03.formula_01
+  공식명: 성질
+  LaTeX: A,B\in\mathcal F\quad\Longrightarrow\quad A^c,\ A\cup B,\ A\cap B\in\mathcal F
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 19 → formulas → 0 → cas
+  concept_id: ps.probability_basics.probability_properties.f01
+  formula_id: ps.probability_basics.probability_properties.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A^c)=1-P(A)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.probability_basics.probability_properties.f02
+  formula_id: ps.probability_basics.probability_properties.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A\cup B)=P(A)+P(B)-P(A\cap B)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.probability_basics.probability_properties.f03
+  formula_id: ps.probability_basics.probability_properties.f03.formula_01
+  공식명: 확률의 단조성
+  LaTeX: A\subseteq B\quad\Longrightarrow\quad P(A)\le P(B)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.probability_basics.bonferroni_inequality.f01
+  formula_id: ps.probability_basics.bonferroni_inequality.f01.formula_01
+  공식명: 상계·하계
+  LaTeX: P(A\cap B)\ge P(A)+P(B)-1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.probability_basics.bonferroni_inequality.f02
+  formula_id: ps.probability_basics.bonferroni_inequality.f02.formula_01
+  공식명: 상계·하계
+  LaTeX: P\left(\bigcap_{i=1}^{n}A_i\right)
+\ge 1-\sum_{i=1}^{n}P(A_i^c)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.probability_basics.monotonicity_set_difference.f01
+  formula_id: ps.probability_basics.monotonicity_set_difference.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(B\setminus A)=P(B)-P(A)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.probability_basics.monotonicity_set_difference.f02
+  formula_id: ps.probability_basics.monotonicity_set_difference.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A\setminus B)=P(A)-P(A\cap B)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.probability_basics.sigma_algebra_conditions.f01
+  formula_id: ps.probability_basics.sigma_algebra_conditions.f01.formula_01
+  공식명: 정의
+  LaTeX: \Omega\in\mathcal F
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.probability_basics.sigma_algebra_conditions.f02
+  formula_id: ps.probability_basics.sigma_algebra_conditions.f02.formula_01
+  공식명: 정의
+  LaTeX: A\in\mathcal F\Longrightarrow A^c\in\mathcal F
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.probability_basics.sigma_algebra_conditions.f03
+  formula_id: ps.probability_basics.sigma_algebra_conditions.f03.formula_01
+  공식명: 정의
+  LaTeX: A_1,A_2,\ldots\in\mathcal F\Longrightarrow\bigcup_{n=1}^{\infty}A_n\in\mathcal F
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\05_조건부확률과 독립.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.conditional_independence_density
+  formula_id: ps.conditional_independence.conditional_independence_density.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X,Y\mid Z}(x,y\mid z)
+=f_{X\mid Z}(x\mid z)f_{Y\mid Z}(y\mid z)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.conditional_independence_measure
+  formula_id: ps.conditional_independence.conditional_independence_measure.formula_01
+  공식명: 정의
+  LaTeX: P(X\in A,Y\in B\mid Z)
+=
+P(X\in A\mid Z)P(Y\in B\mid Z)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.density_chain_rule
+  formula_id: ps.conditional_independence.density_chain_rule.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x_1,\ldots,x_n)
+=f(x_1)f(x_2\mid x_1)\cdots f(x_n\mid x_1,\ldots,x_{n-1})
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.event_chain_rule
+  formula_id: ps.conditional_independence.event_chain_rule.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P\left(\bigcap_{i=1}^{n}A_i\right)
+=P(A_1)\prod_{i=2}^{n}
+P\left(A_i\mid \bigcap_{j=1}^{i-1}A_j\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 6 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.bayes_theorem
+  formula_id: ps.conditional_independence.bayes_theorem.formula_01
+  공식명: 정리
+  LaTeX: P(B_j\mid A)=\frac{P(A\mid B_j)P(B_j)}{\sum_i P(A\mid B_i)P(B_i)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 8 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.mutual_independence_three_events
+  formula_id: ps.conditional_independence.mutual_independence_three_events.formula_01
+  공식명: 독립성 특성화
+  LaTeX: P\!\left(\bigcap_{j\in J}A_j\right)=\prod_{j\in J}P(A_j)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.pairwise_independence
+  formula_id: ps.conditional_independence.pairwise_independence.formula_01
+  공식명: 독립성 특성화
+  LaTeX: P(A_i\cap A_j)=P(A_i)P(A_j)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 14 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.random_variable_independence_cdf
+  formula_id: ps.conditional_independence.random_variable_independence_cdf.formula_01
+  공식명: 정의
+  LaTeX: F_{X,Y}(x,y)=F_X(x)F_Y(y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.random_variable_independence_density
+  formula_id: ps.conditional_independence.random_variable_independence_density.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X,Y}(x,y)=f_X(x)f_Y(y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 17 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.conditional_probability.f01
+  formula_id: ps.conditional_independence.conditional_probability.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.conditional_probability.f02
+  formula_id: ps.conditional_independence.conditional_probability.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A\cap B)=P(A\mid B)P(B)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 19 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.total_probability.f01
+  formula_id: ps.conditional_independence.total_probability.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A)=\sum_{i:\,P(B_i)>0}P(A\mid B_i)P(B_i)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.independence.f01
+  formula_id: ps.conditional_independence.independence.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A\cap B)=P(A)P(B)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.independence.f02
+  formula_id: ps.conditional_independence.independence.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A|B)=P(A)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.continuous_bayes.f01
+  formula_id: ps.conditional_independence.continuous_bayes.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X\mid Y}(x\mid y)
+=\frac{f_{Y\mid X}(y\mid x)f_X(x)}{f_Y(y)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.conditional_independence.continuous_bayes.f02
+  formula_id: ps.conditional_independence.continuous_bayes.f02.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_Y(y)=\int f_{Y\mid X}(y\mid x)f_X(x)\,dx
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\06_확률변수.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.random_variables.cumulant_generating_function
+  formula_id: ps.random_variables.cumulant_generating_function.formula_01
+  공식명: 누적생성함수
+  LaTeX: K_X(t)=\log M_X(t)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.random_variables.jensen_inequality
+  formula_id: ps.random_variables.jensen_inequality.formula_01
+  공식명: 상계·하계
+  LaTeX: \phi(E[X])\le E[\phi(X)]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.random_variables.probability_generating_function
+  formula_id: ps.random_variables.probability_generating_function.formula_01
+  공식명: 확률생성함수
+  LaTeX: G_X(s)=E[s^X]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.random_variables.quantile_function
+  formula_id: ps.random_variables.quantile_function.formula_01
+  공식명: 핵심 관계식
+  LaTeX: Q(p)=\inf\{x:F(x)\ge p\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.random_variables.variance_identity
+  formula_id: ps.random_variables.variance_identity.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=E[(X-E[X])^2]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.random_variables.variance_computational_identity
+  formula_id: ps.random_variables.variance_computational_identity.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=E[X^2]-E[X]^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.random_variables.characteristic_function
+  formula_id: ps.random_variables.characteristic_function.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \varphi_X(t)=E[e^{itX}]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 13 → formulas → 0 → cas
+  concept_id: ps.random_variables.characteristic_function_independent_sum
+  formula_id: ps.random_variables.characteristic_function_independent_sum.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \varphi_{X+Y}(t)=\varphi_X(t)\varphi_Y(t)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.random_variables.random_variable_distribution.f01
+  formula_id: ps.random_variables.random_variable_distribution.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: X:\Omega\to\mathbb R
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.random_variables.random_variable_distribution.f02
+  formula_id: ps.random_variables.random_variable_distribution.f02.formula_01
+  공식명: 누적분포함수
+  LaTeX: F_X(x)=P(X\le x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.random_variables.discrete_random_variable.f01
+  formula_id: ps.random_variables.discrete_random_variable.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: p_X(x)=P(X=x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.random_variables.discrete_random_variable.f02
+  formula_id: ps.random_variables.discrete_random_variable.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \sum_x p_X(x)=1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.random_variables.absolutely_continuous_random_variable.f01
+  formula_id: ps.random_variables.absolutely_continuous_random_variable.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: f_X(x)\ge 0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.random_variables.absolutely_continuous_random_variable.f02
+  formula_id: ps.random_variables.absolutely_continuous_random_variable.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \int_{-\infty}^{\infty} f_X(x)\,dx=1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.random_variables.absolutely_continuous_random_variable.f03
+  formula_id: ps.random_variables.absolutely_continuous_random_variable.f03.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(a<X\le b)=\int_a^b f_X(x)\,dx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.random_variables.expectation_and_linearity.f01
+  formula_id: ps.random_variables.expectation_and_linearity.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\sum_{x\in\operatorname{supp}(X)}x\,p_X(x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.random_variables.expectation_and_linearity.continuous_expectation
+  formula_id: ps.random_variables.expectation_and_linearity.continuous_expectation.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\int_{-\infty}^{\infty}x f_X(x)\,dx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.random_variables.expectation_and_linearity.f02
+  formula_id: ps.random_variables.expectation_and_linearity.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[aX+b]=aE[X]+b
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.random_variables.moment_generating_function.f01
+  formula_id: ps.random_variables.moment_generating_function.f01.formula_01
+  공식명: 적률생성함수
+  LaTeX: M_X(t)=E[e^{tX}]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.random_variables.moment_generating_function.f02
+  formula_id: ps.random_variables.moment_generating_function.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: M_X^{(n)}(0)=E[X^n]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.random_variables.lotus.f01
+  formula_id: ps.random_variables.lotus.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[g(X)]=\sum_x g(x)p_X(x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.random_variables.lotus.f02
+  formula_id: ps.random_variables.lotus.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)\,dx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.random_variables.cdf_interval_probability.f01
+  formula_id: ps.random_variables.cdf_interval_probability.f01.formula_01
+  공식명: 반개구간 확률
+  LaTeX: P(a<X\le b)=F_X(b)-F_X(a)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.random_variables.cdf_interval_probability.f02
+  formula_id: ps.random_variables.cdf_interval_probability.f02.formula_01
+  공식명: 폐구간 확률
+  LaTeX: P(a\le X\le b)=F_X(b)-F_X(a^-)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.random_variables.cdf_interval_probability.f03
+  formula_id: ps.random_variables.cdf_interval_probability.f03.formula_01
+  공식명: 정의
+  LaTeX: F_X(a^-)=\lim_{x\uparrow a}F_X(x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.random_variables.cdf_interval_probability.f04
+  formula_id: ps.random_variables.cdf_interval_probability.f04.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=a)=F_X(a)-F_X(a^-)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.random_variables.pgf_derivatives.f01
+  formula_id: ps.random_variables.pgf_derivatives.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: G_X'(1)=E[X]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.random_variables.pgf_derivatives.f02
+  formula_id: ps.random_variables.pgf_derivatives.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: G_X''(1)=E[X(X-1)]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.random_variables.pgf_derivatives.f03
+  formula_id: ps.random_variables.pgf_derivatives.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)
+=G_X''(1)+G_X'(1)-[G_X'(1)]^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.random_variables.expectation_existence.f01
+  formula_id: ps.random_variables.expectation_existence.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=E[X^+]-E[X^-]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.random_variables.survival_tail_integral.f01
+  formula_id: ps.random_variables.survival_tail_integral.f01.formula_01
+  공식명: 정의
+  LaTeX: S_X(x)=1-F_X(x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.random_variables.survival_tail_integral.f02
+  formula_id: ps.random_variables.survival_tail_integral.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\int_0^\infty P(X>t)\,dt
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\07_주요 이산확률분포.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.hypergeometric_variance
+  formula_id: ps.discrete_distributions.hypergeometric_variance.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)
+=n\frac{K}{N}\left(1-\frac{K}{N}\right)
+\frac{N-n}{N-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.multinomial_cross_covariance
+  formula_id: ps.discrete_distributions.multinomial_cross_covariance.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \operatorname{Cov}(X_i,X_j)=-np_ip_j
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.binomial_normal_approximation
+  formula_id: ps.discrete_distributions.binomial_normal_approximation.formula_01
+  공식명: 근사식
+  LaTeX: \operatorname{Bin}(n,p)\approx N(np,np(1-p))
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 13 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.binomial_poisson_approximation
+  formula_id: ps.discrete_distributions.binomial_poisson_approximation.formula_01
+  공식명: 근사식
+  LaTeX: \operatorname{Bin}(n,p)\approx\operatorname{Pois}(np)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.binomial_mgf
+  formula_id: ps.discrete_distributions.binomial_mgf.formula_01
+  공식명: 적률생성함수
+  LaTeX: X\sim\operatorname{Bin}(n,p)
+\quad\Rightarrow\quad
+M_X(t)=(1-p+pe^t)^n
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 16 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.indicator_expectation
+  formula_id: ps.discrete_distributions.indicator_expectation.formula_01
+  공식명: 적률 관계
+  LaTeX: E[I_A]=P(A)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.poisson_mgf
+  formula_id: ps.discrete_distributions.poisson_mgf.formula_01
+  공식명: 적률생성함수
+  LaTeX: X\sim\operatorname{Pois}(\lambda)
+\quad\Rightarrow\quad
+M_X(t)=\exp\{\lambda(e^t-1)\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.approximation_conditions_error
+  formula_id: ps.discrete_distributions.approximation_conditions_error.formula_01
+  공식명: 연속성 수정 근사
+  LaTeX: P(X\le k)\approx P(Y\le k+0.5)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.discrete_support_parameters
+  formula_id: ps.discrete_distributions.discrete_support_parameters.formula_01
+  공식명: 지지집합
+  LaTeX: \max(0,n-N+K)\le k\le\min(n,K)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.poisson_reproductive_property
+  formula_id: ps.discrete_distributions.poisson_reproductive_property.formula_01
+  공식명: 분포 관계
+  LaTeX: \sum_{i=1}^m X_i
+\sim
+\operatorname{Pois}\left(\sum_{i=1}^m\lambda_i\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.multinomial_mean_variance.f01
+  formula_id: ps.discrete_distributions.multinomial_mean_variance.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X_i]=np_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.multinomial_mean_variance.f02
+  formula_id: ps.discrete_distributions.multinomial_mean_variance.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X_i)=np_i(1-p_i)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.bernoulli.f01
+  formula_id: ps.discrete_distributions.bernoulli.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=x)=p^x(1-p)^{1-x}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.bernoulli.f02
+  formula_id: ps.discrete_distributions.bernoulli.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.bernoulli.f03
+  formula_id: ps.discrete_distributions.bernoulli.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=p(1-p)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.binomial.f01
+  formula_id: ps.discrete_distributions.binomial.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.binomial.f02
+  formula_id: ps.discrete_distributions.binomial.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=np
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.binomial.f03
+  formula_id: ps.discrete_distributions.binomial.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=np(1-p)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.geometric_negative_binomial.f01
+  formula_id: ps.discrete_distributions.geometric_negative_binomial.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=k)=(1-p)^{k-1}p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.geometric_negative_binomial.f02
+  formula_id: ps.discrete_distributions.geometric_negative_binomial.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=1/p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.geometric_negative_binomial.f03
+  formula_id: ps.discrete_distributions.geometric_negative_binomial.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=(1-p)/p^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.hypergeometric.f01
+  formula_id: ps.discrete_distributions.hypergeometric.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=k)
+=
+\frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.hypergeometric.f02
+  formula_id: ps.discrete_distributions.hypergeometric.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=nK/N
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.poisson.f01
+  formula_id: ps.discrete_distributions.poisson.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=k)=e^{-\lambda}\lambda^k/k!
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.poisson.f02
+  formula_id: ps.discrete_distributions.poisson.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\lambda
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.poisson.f03
+  formula_id: ps.discrete_distributions.poisson.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=\lambda
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.multinomial.f01
+  formula_id: ps.discrete_distributions.multinomial.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(X_1=x_1,\ldots,X_k=x_k)=\frac{n!}{\prod_{i=1}^{k}x_i!}\prod_{i=1}^{k}p_i^{x_i}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.negative_binomial_parameterizations.f01
+  formula_id: ps.discrete_distributions.negative_binomial_parameterizations.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=k)=\binom{k-1}{r-1}p^r(1-p)^{k-r}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.negative_binomial_parameterizations.f02
+  formula_id: ps.discrete_distributions.negative_binomial_parameterizations.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\frac{r}{p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.negative_binomial_parameterizations.f02_variance
+  formula_id: ps.discrete_distributions.negative_binomial_parameterizations.f02_variance.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=\frac{r(1-p)}{p^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.negative_binomial_parameterizations.f03
+  formula_id: ps.discrete_distributions.negative_binomial_parameterizations.f03.formula_01
+  공식명: 정의
+  LaTeX: P(Y=k)=\binom{k+r-1}{r-1}p^r(1-p)^k
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.negative_binomial_parameterizations.f04
+  formula_id: ps.discrete_distributions.negative_binomial_parameterizations.f04.formula_01
+  공식명: 적률 관계
+  LaTeX: E[Y]=\frac{r(1-p)}{p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.negative_binomial_parameterizations.f04_variance
+  formula_id: ps.discrete_distributions.negative_binomial_parameterizations.f04_variance.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(Y)=\frac{r(1-p)}{p^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.discrete_uniform.f01
+  formula_id: ps.discrete_distributions.discrete_uniform.f01.formula_01
+  공식명: 확률질량함수
+  LaTeX: P(X=x)=\frac{1}{b-a+1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.discrete_uniform.f02
+  formula_id: ps.discrete_distributions.discrete_uniform.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\frac{a+b}{2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.discrete_distributions.discrete_uniform.f03
+  formula_id: ps.discrete_distributions.discrete_uniform.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=\frac{(b-a+1)^2-1}{12}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\08_주요 연속확률분포.json
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.normal_mgf
+  formula_id: ps.continuous_distributions.normal_mgf.formula_01
+  공식명: 적률생성함수
+  LaTeX: M_X(t)=\exp\left(\mu t+\frac12\sigma^2t^2\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.f_distribution
+  formula_id: ps.continuous_distributions.f_distribution.formula_01
+  공식명: F분포의 생성 정의
+  LaTeX: F=\frac{U/\nu_1}{V/\nu_2}\sim F_{\nu_1,\nu_2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 17 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.cauchy
+  formula_id: ps.continuous_distributions.cauchy.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\frac{1}{\pi\gamma\left[1+\left(\frac{x-x_0}{\gamma}\right)^2\right]}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.beta_distribution.f01
+  formula_id: ps.continuous_distributions.beta_distribution.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.beta_distribution.f02
+  formula_id: ps.continuous_distributions.beta_distribution.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\frac{\alpha}{\alpha+\beta}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.beta_distribution.f03
+  formula_id: ps.continuous_distributions.beta_distribution.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=
+\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.lognormal_distribution.f01
+  formula_id: ps.continuous_distributions.lognormal_distribution.f01.formula_01
+  공식명: 분포 관계
+  LaTeX: \log X\sim N(\mu,\sigma^2)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.lognormal_distribution.f02
+  formula_id: ps.continuous_distributions.lognormal_distribution.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=e^{\mu+\sigma^2/2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.lognormal_distribution.f03
+  formula_id: ps.continuous_distributions.lognormal_distribution.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=
+(e^{\sigma^2}-1)e^{2\mu+\sigma^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.lognormal_distribution.f04
+  formula_id: ps.continuous_distributions.lognormal_distribution.f04.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \operatorname{Median}(X)=e^\mu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.normal_density_standardization.f01
+  formula_id: ps.continuous_distributions.normal_density_standardization.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.normal_density_standardization.f02
+  formula_id: ps.continuous_distributions.normal_density_standardization.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: Z=(X-\mu)/\sigma
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.weibull_distribution.f01
+  formula_id: ps.continuous_distributions.weibull_distribution.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: F(x)=\begin{cases}
+1-e^{-(x/\lambda)^k}, & x\ge0,\\
+0, & x<0,
+\end{cases}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.weibull_distribution.f02
+  formula_id: ps.continuous_distributions.weibull_distribution.f02.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\begin{cases}
+\dfrac{k}{\lambda}\left(\dfrac{x}{\lambda}\right)^{k-1}
+e^{-(x/\lambda)^k}, & x>0,\\
+0, & x\le0.
+\end{cases}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.weibull_distribution.f03
+  formula_id: ps.continuous_distributions.weibull_distribution.f03.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\lambda\Gamma\left(1+\frac1k\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.uniform.f01
+  formula_id: ps.continuous_distributions.uniform.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_X(x)=
+\begin{cases}
+\dfrac{1}{b-a}, & a\le x\le b,\\
+0, & \text{otherwise},
+\end{cases}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.uniform.f02
+  formula_id: ps.continuous_distributions.uniform.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=(a+b)/2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.uniform.f03
+  formula_id: ps.continuous_distributions.uniform.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=(b-a)^2/12
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.exponential.f01
+  formula_id: ps.continuous_distributions.exponential.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\lambda e^{-\lambda x}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.exponential.f02
+  formula_id: ps.continuous_distributions.exponential.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=1/\lambda
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.exponential.f03
+  formula_id: ps.continuous_distributions.exponential.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=1/\lambda^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma.f01
+  formula_id: ps.continuous_distributions.gamma.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_X(x)=
+\begin{cases}
+\dfrac{x^{\alpha-1}e^{-x/\theta}}{\Gamma(\alpha)\theta^\alpha}, & x>0,\\
+0, & \text{otherwise},
+\end{cases}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma.f02
+  formula_id: ps.continuous_distributions.gamma.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\alpha\theta
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma.f03
+  formula_id: ps.continuous_distributions.gamma.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=\alpha\theta^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.chi_square.f01
+  formula_id: ps.continuous_distributions.chi_square.f01.formula_01
+  공식명: 분포 관계
+  LaTeX: \chi^2_\nu=\sum_{i=1}^{\nu}Z_i^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.chi_square.f02
+  formula_id: ps.continuous_distributions.chi_square.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\nu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.chi_square.f03
+  formula_id: ps.continuous_distributions.chi_square.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=2\nu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.student_t.f02
+  formula_id: ps.continuous_distributions.student_t.f02.formula_01
+  공식명: 자유도
+  LaTeX: \nu=n-1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.distribution_generation_relations.f01
+  formula_id: ps.continuous_distributions.distribution_generation_relations.f01.formula_01
+  공식명: 분포 관계
+  LaTeX: \chi^2_\nu\sim\operatorname{Gamma}\left(\frac{\nu}{2},2\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.distribution_generation_relations.f02
+  formula_id: ps.continuous_distributions.distribution_generation_relations.f02.formula_01
+  공식명: 분포 관계
+  LaTeX: T=\frac{Z}{\sqrt{U/\nu}}\sim t_\nu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 52 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f01
+  formula_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f01.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 53 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f02
+  formula_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X]=\frac{\alpha}{\beta}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 54 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f02_variance
+  formula_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f02_variance.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X)=\frac{\alpha}{\beta^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 55 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f03
+  formula_id: ps.continuous_distributions.gamma_rate_weibull_hazard.f03.formula_01
+  공식명: 핵심 관계식
+  LaTeX: h(x)=\frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 56 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.exponential_cdf_survival_memoryless.f01
+  formula_id: ps.continuous_distributions.exponential_cdf_survival_memoryless.f01.formula_01
+  공식명: 누적분포함수
+  LaTeX: F_X(x)=1-e^{-\lambda x}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 57 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.exponential_cdf_survival_memoryless.f02
+  formula_id: ps.continuous_distributions.exponential_cdf_survival_memoryless.f02.formula_01
+  공식명: 정의
+  LaTeX: S_X(x)=e^{-\lambda x}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 58 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.exponential_cdf_survival_memoryless.f03
+  formula_id: ps.continuous_distributions.exponential_cdf_survival_memoryless.f03.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(X>s+t\mid X>s)=P(X>t)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 59 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.normal_cdf_notation.f01
+  formula_id: ps.continuous_distributions.normal_cdf_notation.f01.formula_01
+  공식명: 표준정규 누적분포함수
+  LaTeX: \Phi(z)=P(Z\le z)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 60 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.normal_cdf_notation.f02
+  formula_id: ps.continuous_distributions.normal_cdf_notation.f02.formula_01
+  공식명: 정규분포 CDF 표준화
+  LaTeX: P(X\le x)=\Phi\left(\frac{x-\mu}{\sigma}\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 61 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.student_t_moments.f01
+  formula_id: ps.continuous_distributions.student_t_moments.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[T]=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 62 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.student_t_moments.f02
+  formula_id: ps.continuous_distributions.student_t_moments.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(T)=\frac{\nu}{\nu-2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 63 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.f_distribution_moments.f01
+  formula_id: ps.continuous_distributions.f_distribution_moments.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[F]=\frac{d_2}{d_2-2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 64 → formulas → 0 → cas
+  concept_id: ps.continuous_distributions.f_distribution_moments.f02
+  formula_id: ps.continuous_distributions.f_distribution_moments.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(F)=\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\09_다변량 확률분포.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.conditional_expectation_density
+  formula_id: ps.multivariate_distributions.conditional_expectation_density.formula_01
+  공식명: 조건부기댓값
+  LaTeX: E[X\mid Y=y]=\int_{-\infty}^{\infty}x f_{X\mid Y}(x\mid y)\,dx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.multivariate_normal_distribution
+  formula_id: ps.multivariate_distributions.multivariate_normal_distribution.formula_01
+  공식명: 정의
+  LaTeX: \forall a\in\mathbb R^p,\quad a^TX\sim N\!\left(a^T\mu,\,a^T\Sigma a\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.total_variance
+  formula_id: ps.multivariate_distributions.total_variance.formula_01
+  공식명: 분산분해
+  LaTeX: \operatorname{Var}(X)
+=E[\operatorname{Var}(X\mid Y)]
++\operatorname{Var}(E[X\mid Y])
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.tower_property
+  formula_id: ps.multivariate_distributions.tower_property.formula_01
+  공식명: 적률 관계
+  LaTeX: E[E[X\mid Y]]=E[X]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.conditional_density
+  formula_id: ps.multivariate_distributions.conditional_density.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X|Y}(x|y)=f_{X,Y}(x,y)/f_Y(y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.marginal_density
+  formula_id: ps.multivariate_distributions.marginal_density.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_X(x)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)\,dy
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.continuous_convolution
+  formula_id: ps.multivariate_distributions.continuous_convolution.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X+Y}(z)=\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)\,dx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.discrete_convolution
+  formula_id: ps.multivariate_distributions.discrete_convolution.formula_01
+  공식명: 정의
+  LaTeX: p_{X+Y}(z)=\sum_x p_X(x)p_Y(z-x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.many_to_one_change_of_variables
+  formula_id: ps.multivariate_distributions.many_to_one_change_of_variables.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_Y(y)=\sum_{x\in g^{-1}(\{y\})}f_X(x)\left|\frac{dx}{dy}\right|
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 14 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.one_dimensional_change_of_variables
+  formula_id: ps.multivariate_distributions.one_dimensional_change_of_variables.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_Y(y)
+=
+f_X\!\left(g^{-1}(y)\right)
+\left|
+\frac{d}{dy}g^{-1}(y)
+\right|
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.multivariate_normal_density
+  formula_id: ps.multivariate_distributions.multivariate_normal_density.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f(x)=\frac{1}{(2\pi)^{p/2}|\Sigma|^{1/2}}
+\exp\left[-\frac12(x-\mu)^T\Sigma^{-1}(x-\mu)\right]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.total_covariance
+  formula_id: ps.multivariate_distributions.total_covariance.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \operatorname{Cov}(X,Z)
+=E[\operatorname{Cov}(X,Z\mid Y)]
++\operatorname{Cov}(E[X\mid Y],E[Z\mid Y])
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.independence_density_factorization
+  formula_id: ps.multivariate_distributions.independence_density_factorization.formula_01
+  공식명: 핵심 관계식
+  LaTeX: X\perp Y
+\quad\Longleftrightarrow\quad
+f_{X,Y}(x,y)=f_X(x)f_Y(y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.joint_cdf
+  formula_id: ps.multivariate_distributions.joint_cdf.formula_01
+  공식명: 결합누적분포함수
+  LaTeX: F_{X,Y}(x,y)=P(X\le x,\ Y\le y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.conditional_expectation_orthogonality
+  formula_id: ps.multivariate_distributions.conditional_expectation_orthogonality.formula_01
+  공식명: 핵심 관계식
+  LaTeX: E\left[(X-E[X\mid Y])g(Y)\right]=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.joint_distribution.f01
+  formula_id: ps.multivariate_distributions.joint_distribution.f01.formula_01
+  공식명: 정의
+  LaTeX: p_{X,Y}(x,y)=P(X=x,Y=y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.joint_distribution.f02
+  formula_id: ps.multivariate_distributions.joint_distribution.f02.formula_01
+  공식명: density property
+  LaTeX: f_{X,Y}(x,y)\ge0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.joint_distribution.f02_normalization
+  formula_id: ps.multivariate_distributions.joint_distribution.f02_normalization.formula_01
+  공식명: density property
+  LaTeX: \int_{-\infty}^{\infty}\!\int_{-\infty}^{\infty}f_{X,Y}(x,y)\,dx\,dy=1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.covariance_correlation.f01
+  formula_id: ps.multivariate_distributions.covariance_correlation.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.covariance_correlation.f02
+  formula_id: ps.multivariate_distributions.covariance_correlation.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \rho=\operatorname{Cov}(X,Y)/(\sigma_X\sigma_Y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f01
+  formula_id: ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: (U,V)=g(X,Y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f02
+  formula_id: ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: (X,Y)=g^{-1}(U,V)=h(U,V)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f03
+  formula_id: ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f03.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{U,V}(u,v)
+=
+f_{X,Y}\!\left(h_1(u,v),h_2(u,v)\right)
+\left|
+\det\frac{\partial(x,y)}{\partial(u,v)}
+\right|
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.variance_of_sum.f01
+  formula_id: ps.multivariate_distributions.variance_of_sum.f01.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.variance_of_sum.f02
+  formula_id: ps.multivariate_distributions.variance_of_sum.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}\left(\sum_{i=1}^{n}X_i\right)
+=\sum_{i=1}^{n}\operatorname{Var}(X_i)
++2\sum_{i<j}\operatorname{Cov}(X_i,X_j)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.variance_of_sum.f03
+  formula_id: ps.multivariate_distributions.variance_of_sum.f03.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X+Y}(z)=\int_{-\infty}^{\infty}f_{X,Y}(x,z-x)\,dx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.covariance_linearity_cauchy_schwarz.f01
+  formula_id: ps.multivariate_distributions.covariance_linearity_cauchy_schwarz.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \operatorname{Cov}(aX+b,cY+d)=ac\operatorname{Cov}(X,Y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.covariance_linearity_cauchy_schwarz.f02
+  formula_id: ps.multivariate_distributions.covariance_linearity_cauchy_schwarz.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: |E[XY]|^2\le E[X^2]E[Y^2]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.mvn_linear_conditional.f01
+  formula_id: ps.multivariate_distributions.mvn_linear_conditional.f01.formula_01
+  공식명: 분포 관계
+  LaTeX: AX+b\sim N_q(A\mu+b,A\Sigma A^T)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.mvn_linear_conditional.f02
+  formula_id: ps.multivariate_distributions.mvn_linear_conditional.f02.formula_01
+  공식명: 분포 관계
+  LaTeX: \begin{pmatrix}X_1\\X_2\end{pmatrix}
+\sim N\left(
+\begin{pmatrix}\mu_1\\ \mu_2\end{pmatrix},
+\begin{pmatrix}\Sigma_{11}&\Sigma_{12}\\Sigma_{21}&\Sigma_{22}\end{pmatrix}
+\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.mvn_linear_conditional.f03
+  formula_id: ps.multivariate_distributions.mvn_linear_conditional.f03.formula_01
+  공식명: 분포 관계
+  LaTeX: X_1\mid X_2=x_2
+\sim N\left(
+\mu_1+\Sigma_{12}\Sigma_{22}^{-1}(x_2-\mu_2),
+\Sigma_{11}-\Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21}
+\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.conditional_expectation_mse_projection.f01
+  formula_id: ps.multivariate_distributions.conditional_expectation_mse_projection.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[(X-E[X\mid Y])^2]\le E[(X-g(Y))^2].
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.conditional_expectation_mse_projection.f02
+  formula_id: ps.multivariate_distributions.conditional_expectation_mse_projection.f02.formula_01
+  공식명: 최소제곱 투영 부등식
+  LaTeX: E\!\left[\left\|X-E[X\mid Y]\right\|^2\right]
+\le
+E\!\left[\left\|X-g(Y)\right\|^2\right]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.covariance_matrix.f01
+  formula_id: ps.multivariate_distributions.covariance_matrix.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \Sigma=E[(X-\mu)(X-\mu)^T]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.multivariate_distributions.covariance_matrix.f02
+  formula_id: ps.multivariate_distributions.covariance_matrix.f02.formula_01
+  공식명: 행렬 성질
+  LaTeX: a^T\Sigma a=\operatorname{Var}(a^TX)\ge0
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\10_확률부등식과 극한이론.json
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.continuous_mapping_theorem
+  formula_id: ps.inequalities_limit_theory.continuous_mapping_theorem.formula_01
+  공식명: 점근 기준분포
+  LaTeX: X_n\xrightarrow{d}X\quad\Longrightarrow\quad g(X_n)\xrightarrow{d}g(X)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.dominated_convergence
+  formula_id: ps.inequalities_limit_theory.dominated_convergence.formula_01
+  공식명: 적률 관계
+  LaTeX: E[X_n]\to E[X]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.fatou_lemma
+  formula_id: ps.inequalities_limit_theory.fatou_lemma.formula_01
+  공식명: 적률 관계
+  LaTeX: E[\liminf_{n\to\infty}X_n]
+\le
+\liminf_{n\to\infty}E[X_n]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.slutsky_ratio
+  formula_id: ps.inequalities_limit_theory.slutsky_ratio.formula_01
+  공식명: 점근 기준분포
+  LaTeX: \frac{X_n}{Y_n}\xrightarrow{d}\frac{X}{c}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.markov_inequality
+  formula_id: ps.inequalities_limit_theory.markov_inequality.formula_01
+  공식명: 상계·하계
+  LaTeX: P(X\ge a)\le\frac{E[X]}{a}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.almost_sure_convergence
+  formula_id: ps.inequalities_limit_theory.almost_sure_convergence.formula_01
+  공식명: 점근 결과
+  LaTeX: X_n\xrightarrow{a.s.}X
+\iff
+P\left(\lim_{n\to\infty}X_n=X\right)=1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 13 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.convergence_in_distribution
+  formula_id: ps.inequalities_limit_theory.convergence_in_distribution.formula_01
+  공식명: 점근 기준분포
+  LaTeX: X_n\xrightarrow{d}X
+\iff
+F_{X_n}(x)\to F_X(x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 14 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.convergence_in_probability
+  formula_id: ps.inequalities_limit_theory.convergence_in_probability.formula_01
+  공식명: 점근 결과
+  LaTeX: X_n\xrightarrow{P}X
+\iff
+P(|X_n-X|>\varepsilon)\to0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 16 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.l1_convergence
+  formula_id: ps.inequalities_limit_theory.l1_convergence.formula_01
+  공식명: 점근 결과
+  LaTeX: X_n\xrightarrow{L^1}X
+\iff
+E|X_n-X|\to0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 17 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.l2_convergence
+  formula_id: ps.inequalities_limit_theory.l2_convergence.formula_01
+  공식명: 적률 관계
+  LaTeX: X_n\xrightarrow{L^2}X
+\iff
+E[(X_n-X)^2]\to0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.hoeffding_inequality
+  formula_id: ps.inequalities_limit_theory.hoeffding_inequality.formula_01
+  공식명: 상계·하계
+  LaTeX: P(S_n-E[S_n]\ge t)
+\le
+\exp\left(
+-\frac{2t^2}{\sum_{i=1}^{n}(b_i-a_i)^2}
+\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.cantelli_inequality
+  formula_id: ps.inequalities_limit_theory.cantelli_inequality.formula_01
+  공식명: 상계·하계
+  LaTeX: P(X-\mu\ge a)
+\le
+\frac{\sigma^2}{\sigma^2+a^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.borel_cantelli_first.f02
+  formula_id: ps.inequalities_limit_theory.borel_cantelli_first.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A_n\ \text{i.o.})=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.borel_cantelli_second.f02
+  formula_id: ps.inequalities_limit_theory.borel_cantelli_second.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: P(A_n\ \text{i.o.})=1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.chernoff_bound.f01
+  formula_id: ps.inequalities_limit_theory.chernoff_bound.f01.formula_01
+  공식명: 고정 $t$에 대한 Chernoff 상계
+  LaTeX: P(X\ge a)\le e^{-ta}M_X(t)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.chernoff_bound.f02
+  formula_id: ps.inequalities_limit_theory.chernoff_bound.f02.formula_01
+  공식명: 최적화된 Chernoff 상계
+  LaTeX: P(X\ge a)\le\inf_{\substack{t>0\\M_X(t)<\infty}}e^{-ta}M_X(t)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.slutsky_sum_product.f02
+  formula_id: ps.inequalities_limit_theory.slutsky_sum_product.f02.formula_01
+  공식명: 점근 기준분포
+  LaTeX: X_n+Y_n\xrightarrow{d}X+c
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.slutsky_sum_product.f02_product
+  formula_id: ps.inequalities_limit_theory.slutsky_sum_product.f02_product.formula_01
+  공식명: 점근 기준분포
+  LaTeX: X_nY_n\xrightarrow{d}cX
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.chebyshev_inequality.f01
+  formula_id: ps.inequalities_limit_theory.chebyshev_inequality.f01.formula_01
+  공식명: 상계·하계
+  LaTeX: P(|X-\mu|\ge\varepsilon)\le\frac{\sigma^2}{\varepsilon^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.chebyshev_inequality.f02
+  formula_id: ps.inequalities_limit_theory.chebyshev_inequality.f02.formula_01
+  공식명: 상계·하계
+  LaTeX: P(|X-\mu|\ge k\sigma)\le\frac1{k^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.convergence_mode_implications.f01
+  formula_id: ps.inequalities_limit_theory.convergence_mode_implications.f01.formula_01
+  공식명: 점근 기준분포
+  LaTeX: X_n\xrightarrow{L^2}X
+\Longrightarrow X_n\xrightarrow{L^1}X
+\Longrightarrow X_n\xrightarrow{P}X
+\Longrightarrow X_n\xrightarrow{d}X
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.convergence_mode_implications.f02
+  formula_id: ps.inequalities_limit_theory.convergence_mode_implications.f02.formula_01
+  공식명: 점근 결과
+  LaTeX: X_n\xrightarrow{a.s.}X
+\Longrightarrow X_n\xrightarrow{P}X
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.law_large_numbers.f01
+  formula_id: ps.inequalities_limit_theory.law_large_numbers.f01.formula_01
+  공식명: 점근 결과
+  LaTeX: \bar X_n\xrightarrow{P}\mu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.law_large_numbers.f02
+  formula_id: ps.inequalities_limit_theory.law_large_numbers.f02.formula_01
+  공식명: 점근 결과
+  LaTeX: \bar X_n\xrightarrow{a.s.}\mu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.central_limit_theorem.f02
+  formula_id: ps.inequalities_limit_theory.central_limit_theorem.f02.formula_01
+  공식명: 점근 결과
+  LaTeX: \frac{\sum_{i=1}^{n}X_i-n\mu}{\sigma\sqrt n}
+\xrightarrow{d}N(0,1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.central_limit_theorem.f03
+  formula_id: ps.inequalities_limit_theory.central_limit_theorem.f03.formula_01
+  공식명: 점근 기준분포
+  LaTeX: \frac{\bar X_n-\mu}{\sigma/\sqrt n}
+\xrightarrow{d}N(0,1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.central_limit_theorem.f04
+  formula_id: ps.inequalities_limit_theory.central_limit_theorem.f04.formula_01
+  공식명: 근사식
+  LaTeX: \bar X_n\approx N\left(\mu,\frac{\sigma^2}{n}\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.berry_esseen.f02
+  formula_id: ps.inequalities_limit_theory.berry_esseen.f02.formula_01
+  공식명: 상계·하계
+  LaTeX: \sup_x\left|P\!\left(\frac{\sqrt n(\bar X-\mu)}{\sigma}\le x\right)-\Phi(x)\right|\le \frac{C\rho}{\sigma^3\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.inequalities_limit_theory.berry_esseen.third_absolute_moment
+  formula_id: ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.formula_01
+  공식명: 정의
+  LaTeX: \rho=E|X_i-\mu|^3
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\11_표본분포.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.normal_sample_mean_exact
+  formula_id: ps.sampling_distributions.normal_sample_mean_exact.formula_01
+  공식명: 분포 관계
+  LaTeX: \bar X\sim N\left(\mu,\frac{\sigma^2}{n}\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.order_statistic_density
+  formula_id: ps.sampling_distributions.order_statistic_density.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_{X_{(k)}}(x)=
+\frac{n!}{(k-1)!(n-k)!}
+[F(x)]^{k-1}[1-F(x)]^{n-k}f(x)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_variance_unbiasedness
+  formula_id: ps.sampling_distributions.sample_variance_unbiasedness.formula_01
+  공식명: 적률 관계
+  LaTeX: E[S^2]=\sigma^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_variance_variance_normal
+  formula_id: ps.sampling_distributions.sample_variance_variance_normal.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(S^2)=\frac{2\sigma^4}{n-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.student_t_exact
+  formula_id: ps.sampling_distributions.student_t_exact.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: T=\frac{\bar X-\mu}{S/\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 6 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.student_t_exact.reference_distribution
+  formula_id: ps.sampling_distributions.student_t_exact.reference_distribution.formula_01
+  공식명: 정확 기준분포
+  LaTeX: T\sim t_{n-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.variance_ratio_f_exact
+  formula_id: ps.sampling_distributions.variance_ratio_f_exact.formula_01
+  공식명: 분포 관계
+  LaTeX: \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}
+\sim F_{n_1-1,n_2-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_variance_distribution
+  formula_id: ps.sampling_distributions.sample_variance_distribution.formula_01
+  공식명: 분포 관계
+  LaTeX: \frac{(n-1)S^2}{\sigma^2}\sim\chi^2_{n-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.order_statistics_beta
+  formula_id: ps.sampling_distributions.order_statistics_beta.formula_01
+  공식명: 분포 관계
+  LaTeX: F(X_{(k)})\sim\operatorname{Beta}(k,n-k+1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_proportion_asymptotic_normality
+  formula_id: ps.sampling_distributions.sample_proportion_asymptotic_normality.formula_01
+  공식명: 점근 기준분포
+  LaTeX: \frac{\hat p-p}{\sqrt{p(1-p)/n}}
+\xrightarrow{d}N(0,1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.pooled_two_proportion_se.f01
+  formula_id: ps.sampling_distributions.pooled_two_proportion_se.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat p=\frac{X_1+X_2}{n_1+n_2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.pooled_two_proportion_se.f02
+  formula_id: ps.sampling_distributions.pooled_two_proportion_se.f02.formula_01
+  공식명: 표준오차
+  LaTeX: SE_0=\sqrt{\hat p(1-\hat p)\left(\frac1{n_1}+\frac1{n_2}\right)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.random_sample_statistic.f01
+  formula_id: ps.sampling_distributions.random_sample_statistic.f01.formula_01
+  공식명: 분포 관계
+  LaTeX: X_1,\ldots,X_n\overset{iid}{\sim}F
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.random_sample_statistic.f02
+  formula_id: ps.sampling_distributions.random_sample_statistic.f02.formula_01
+  공식명: 정의
+  LaTeX: T=T(X_1,\ldots,X_n)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_mean_distribution.f01
+  formula_id: ps.sampling_distributions.sample_mean_distribution.f01.formula_01
+  공식명: 적률 관계
+  LaTeX: E[\bar X]=\mu
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_mean_distribution.f02
+  formula_id: ps.sampling_distributions.sample_mean_distribution.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\bar X)=\sigma^2/n
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_mean_distribution.f03
+  formula_id: ps.sampling_distributions.sample_mean_distribution.f03.formula_01
+  공식명: 표준오차
+  LaTeX: SE(\bar X)=\frac{\sigma}{\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.two_sample_statistics.f01
+  formula_id: ps.sampling_distributions.two_sample_statistics.f01.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\bar X_1-\bar X_2)=\sigma_1^2/n_1+\sigma_2^2/n_2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.two_sample_statistics.f02
+  formula_id: ps.sampling_distributions.two_sample_statistics.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: SD(\hat p_1-\hat p_2)=\sqrt{p_1(1-p_1)/n_1+p_2(1-p_2)/n_2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.order_statistics.f01
+  formula_id: ps.sampling_distributions.order_statistics.f01.formula_01
+  공식명: 정의
+  LaTeX: X_{(1)}\le\cdots\le X_{(n)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.order_statistics.f02
+  formula_id: ps.sampling_distributions.order_statistics.f02.formula_01
+  공식명: 정의
+  LaTeX: F_{X_{(n)}}(x)=F(x)^n
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sd_estimated_se.f01
+  formula_id: ps.sampling_distributions.sd_estimated_se.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: SD(\hat p_1-\hat p_2)
+=\sqrt{\frac{p_1(1-p_1)}{n_1}
++\frac{p_2(1-p_2)}{n_2}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sd_estimated_se.f02
+  formula_id: ps.sampling_distributions.sd_estimated_se.f02.formula_01
+  공식명: 표준오차
+  LaTeX: \widehat{SE}(\hat p_1-\hat p_2)
+=\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}
++\frac{\hat p_2(1-\hat p_2)}{n_2}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_proportion_distribution.f01
+  formula_id: ps.sampling_distributions.sample_proportion_distribution.f01.formula_01
+  공식명: 정의
+  LaTeX: \hat p=\frac{X}{n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_proportion_binomial_model
+  formula_id: ps.sampling_distributions.sample_proportion_binomial_model.formula_01
+  공식명: 분포 관계
+  LaTeX: X\sim\operatorname{Bin}(n,p)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_proportion_distribution.f02
+  formula_id: ps.sampling_distributions.sample_proportion_distribution.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[\hat p]=p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.sample_proportion_distribution.f02_variance
+  formula_id: ps.sampling_distributions.sample_proportion_distribution.f02_variance.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\hat p)=\frac{p(1-p)}{n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.finite_population_sample_mean.f01
+  formula_id: ps.sampling_distributions.finite_population_sample_mean.f01.formula_01
+  공식명: 정의
+  LaTeX: S_N^2=\frac{1}{N-1}\sum_{i=1}^{N}(Y_i-\bar Y)^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.finite_population_sample_mean.f02
+  formula_id: ps.sampling_distributions.finite_population_sample_mean.f02.formula_01
+  공식명: 적률 관계
+  LaTeX: E[\bar y]=\bar Y
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.sampling_distributions.finite_population_sample_mean.f03
+  formula_id: ps.sampling_distributions.finite_population_sample_mean.f03.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\bar y)
+=\left(1-\frac{n}{N}\right)\frac{S_N^2}{n}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\12_추정이론.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.estimation.cramer_rao_lower_bound
+  formula_id: ps.estimation.cramer_rao_lower_bound.formula_01
+  공식명: 상계·하계
+  LaTeX: \operatorname{Var}_\theta(T)
+\ge
+\frac{[g'(\theta)]^2}{I_n(\theta)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.estimation.fisher_information_hessian_identity
+  formula_id: ps.estimation.fisher_information_hessian_identity.formula_01
+  공식명: Fisher 정보 항등식
+  LaTeX: I(\theta)=-E_\theta[\nabla_\theta^2\log f(X;\theta)]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 6 → formulas → 0 → cas
+  concept_id: ps.estimation.sample_size_mean_known_sigma
+  formula_id: ps.estimation.sample_size_mean_known_sigma.formula_01
+  공식명: 근사식
+  LaTeX: n=\left\lceil\left(\frac{z_{1-\alpha/2}\sigma}{E}\right)^2\right\rceil
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.estimation.sample_size_proportion
+  formula_id: ps.estimation.sample_size_proportion.formula_01
+  공식명: 근사식
+  LaTeX: n=\left\lceil\frac{z_{1-\alpha/2}^2p(1-p)}{E^2}\right\rceil
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.estimation.method_of_moments
+  formula_id: ps.estimation.method_of_moments.formula_01
+  공식명: 추정방정식
+  LaTeX: \frac1n\sum_{i=1}^{n}X_i^k=E_\theta[X^k]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.estimation.factorization_theorem
+  formula_id: ps.estimation.factorization_theorem.formula_01
+  공식명: 확률밀도함수
+  LaTeX: f_\theta(x_1,\ldots,x_n)
+=g_\theta(T(x_1,\ldots,x_n))h(x_1,\ldots,x_n)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.estimation.lehmann_scheffe_theorem
+  formula_id: ps.estimation.lehmann_scheffe_theorem.formula_01
+  공식명: 정확 결과
+  LaTeX: T\text{가 완비충분이고 }E_\theta[g(T)]=\tau(\theta)\quad\Longrightarrow\quad g(T)\text{는 }\tau(\theta)\text{의 유일한 UMVU 추정량}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.estimation.bernoulli_variance_upper_bound
+  formula_id: ps.estimation.bernoulli_variance_upper_bound.formula_01
+  공식명: 상계·하계
+  LaTeX: p(1-p)\le\frac14
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.estimation.finite_population_sample_size_correction
+  formula_id: ps.estimation.finite_population_sample_size_correction.formula_01
+  공식명: 표본크기 공식
+  LaTeX: n=\left\lceil\frac{n_0}{1+(n_0-1)/N}\right\rceil
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.estimation.mle_asymptotic_distribution
+  formula_id: ps.estimation.mle_asymptotic_distribution.formula_01
+  공식명: 점근 기준분포
+  LaTeX: \sqrt n(\hat\theta_{MLE}-\theta_0)
+\xrightarrow{d}
+N\left(0,I_1(\theta_0)^{-1}\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.estimation.identifiability
+  formula_id: ps.estimation.identifiability.formula_01
+  공식명: 정의
+  LaTeX: P_{\theta_1}=P_{\theta_2}
+\Longrightarrow
+\theta_1=\theta_2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.estimation.mean_ci_known_sigma
+  formula_id: ps.estimation.mean_ci_known_sigma.formula_01
+  공식명: 신뢰구간
+  LaTeX: \bar X\pm z_{1-\alpha/2}\frac{\sigma}{\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.estimation.mean_ci_unknown_sigma
+  formula_id: ps.estimation.mean_ci_unknown_sigma.formula_01
+  공식명: 신뢰구간
+  LaTeX: \bar X\pm t_{n-1,1-\alpha/2}\frac{S}{\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.estimation.proportion_wald_ci
+  formula_id: ps.estimation.proportion_wald_ci.formula_01
+  공식명: 신뢰구간
+  LaTeX: \hat p\pm z_{1-\alpha/2}
+\sqrt{\frac{\hat p(1-\hat p)}{n}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.estimation.variance_chisquare_ci
+  formula_id: ps.estimation.variance_chisquare_ci.formula_01
+  공식명: 정확 신뢰구간
+  LaTeX: \left(
+\frac{(n-1)S^2}{\chi^2_{n-1,1-\alpha/2}},
+\frac{(n-1)S^2}{\chi^2_{n-1,\alpha/2}}
+\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.estimation.fisher_information_additivity.f01
+  formula_id: ps.estimation.fisher_information_additivity.f01.formula_01
+  공식명: Fisher 정보의 정의
+  LaTeX: I_1(\theta)
+=
+E_\theta\left[
+\left\{
+\frac{\partial}{\partial\theta}
+\log f(X;\theta)
+\right\}^2
+\right]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.estimation.fisher_information_additivity.f02
+  formula_id: ps.estimation.fisher_information_additivity.f02.formula_01
+  공식명: Fisher 정보의 가법성
+  LaTeX: I_n(\theta)=nI_1(\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.estimation.iid_likelihood.f01
+  formula_id: ps.estimation.iid_likelihood.f01.formula_01
+  공식명: 가능도
+  LaTeX: L(\theta)=\prod_{i=1}^{n}f(x_i;\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.estimation.iid_likelihood.f02
+  formula_id: ps.estimation.iid_likelihood.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \ell(\theta)=\sum_{i=1}^{n}\log f(x_i;\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.estimation.joint_likelihood.f01
+  formula_id: ps.estimation.joint_likelihood.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: L(\theta;x_1,\ldots,x_n)
+=
+f_\theta(x_1,\ldots,x_n)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.estimation.joint_likelihood.f02
+  formula_id: ps.estimation.joint_likelihood.f02.formula_01
+  공식명: 추정량
+  LaTeX: \hat\theta_{MLE}=\operatorname*{arg\,max}_{\theta\in\Theta}L(\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.estimation.observed_information_se.f01
+  formula_id: ps.estimation.observed_information_se.f01.formula_01
+  공식명: 정의
+  LaTeX: J_n(\theta)=-\nabla_\theta^2\ell_n(\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.estimation.observed_information_se.f02
+  formula_id: ps.estimation.observed_information_se.f02.formula_01
+  공식명: 표준오차
+  LaTeX: \widehat{SE}(\hat\theta)=\frac1{\sqrt{J_n(\hat\theta)}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.estimation.score_information_definitions.f01
+  formula_id: ps.estimation.score_information_definitions.f01.formula_01
+  공식명: 정의
+  LaTeX: s_\theta(X)=\nabla_\theta\log f(X;\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.estimation.score_information_definitions.f02
+  formula_id: ps.estimation.score_information_definitions.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: I(\theta)=E_\theta[s_\theta(X)s_\theta(X)^T]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.estimation.point_estimation_properties.f01
+  formula_id: ps.estimation.point_estimation_properties.f01.formula_01
+  공식명: 편향의 정의
+  LaTeX: \operatorname{Bias}(T)=E[T]-\theta
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 51 → formulas → 0 → cas
+  concept_id: ps.estimation.point_estimation_properties.f02
+  formula_id: ps.estimation.point_estimation_properties.f02.formula_01
+  공식명: 편향–분산 분해
+  LaTeX: MSE(T)=\operatorname{Var}(T)+\operatorname{Bias}(T)^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 52 → formulas → 0 → cas
+  concept_id: ps.estimation.confidence_interval.f01
+  formula_id: ps.estimation.confidence_interval.f01.formula_01
+  공식명: 신뢰집합의 포함확률 함수
+  LaTeX: \operatorname{Cov}_{C}(\theta)=P_\theta\{\theta\in C(X)\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 53 → formulas → 0 → cas
+  concept_id: ps.estimation.confidence_interval.f02
+  formula_id: ps.estimation.confidence_interval.f02.formula_01
+  공식명: 보수적 포함확률
+  LaTeX: P_\theta\{\theta\in C(X)\}\ge 1-\alpha
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 54 → formulas → 0 → cas
+  concept_id: ps.estimation.confidence_interval.f03
+  formula_id: ps.estimation.confidence_interval.f03.formula_01
+  공식명: 핵심 관계식
+  LaTeX: C(X)=[L(X),U(X)]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 55 → formulas → 0 → cas
+  concept_id: ps.estimation.consistency_asymptotic_normality_delta.f01
+  formula_id: ps.estimation.consistency_asymptotic_normality_delta.f01.formula_01
+  공식명: 점근 결과
+  LaTeX: \hat\theta_n\xrightarrow{P}\theta
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 56 → formulas → 0 → cas
+  concept_id: ps.estimation.consistency_asymptotic_normality_delta.f02
+  formula_id: ps.estimation.consistency_asymptotic_normality_delta.f02.formula_01
+  공식명: 점근 기준분포
+  LaTeX: \sqrt n(\hat\theta_n-\theta)
+\xrightarrow{d}N(0,V)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 57 → formulas → 0 → cas
+  concept_id: ps.estimation.consistency_asymptotic_normality_delta.f03
+  formula_id: ps.estimation.consistency_asymptotic_normality_delta.f03.formula_01
+  공식명: 점근 기준분포
+  LaTeX: \sqrt n\{g(\hat\theta_n)-g(\theta)\}
+\xrightarrow{d}
+N\left(0,[g'(\theta)]^2V\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 58 → formulas → 0 → cas
+  concept_id: ps.estimation.rao_blackwell_theorem.f01
+  formula_id: ps.estimation.rao_blackwell_theorem.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \widetilde U=E[U\mid T]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 59 → formulas → 0 → cas
+  concept_id: ps.estimation.rao_blackwell_theorem.f02
+  formula_id: ps.estimation.rao_blackwell_theorem.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\widetilde U)\le\operatorname{Var}(U)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 60 → formulas → 0 → cas
+  concept_id: ps.estimation.likelihood_ratio_profile.f01
+  formula_id: ps.estimation.likelihood_ratio_profile.f01.formula_01
+  공식명: 정의
+  LaTeX: \Lambda(x)=
+\frac{\sup_{\theta\in\Theta_0}L(\theta;x)}
+{\sup_{\theta\in\Theta}L(\theta;x)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 61 → formulas → 0 → cas
+  concept_id: ps.estimation.likelihood_ratio_profile.f02
+  formula_id: ps.estimation.likelihood_ratio_profile.f02.formula_01
+  공식명: 정의
+  LaTeX: L_p(\psi)=L(\psi,\hat\lambda_\psi)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 62 → formulas → 0 → cas
+  concept_id: ps.estimation.confidence_interval_types.f01
+  formula_id: ps.estimation.confidence_interval_types.f01.formula_01
+  공식명: 정확 결과
+  LaTeX: P_\theta(\theta\in C(X))=1-\alpha
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 63 → formulas → 0 → cas
+  concept_id: ps.estimation.confidence_interval_types.f02
+  formula_id: ps.estimation.confidence_interval_types.f02.formula_01
+  공식명: 보수적 포함확률
+  LaTeX: P_\theta(\theta\in C(X))\ge1-\alpha
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 64 → formulas → 0 → cas
+  concept_id: ps.estimation.confidence_interval_types.f03
+  formula_id: ps.estimation.confidence_interval_types.f03.formula_01
+  공식명: 점근 결과
+  LaTeX: P_\theta(\theta\in C_n(X))\to1-\alpha
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 65 → formulas → 0 → cas
+  concept_id: ps.estimation.pivot_ci_construction.f01
+  formula_id: ps.estimation.pivot_ci_construction.f01.formula_01
+  공식명: 정의
+  LaTeX: Q(X,\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 66 → formulas → 0 → cas
+  concept_id: ps.estimation.pivot_ci_construction.f02
+  formula_id: ps.estimation.pivot_ci_construction.f02.formula_01
+  공식명: 피벗 포함확률
+  LaTeX: P(a\le Q(X,\theta)\le b)=1-\alpha
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 67 → formulas → 0 → cas
+  concept_id: ps.estimation.likelihood_ratio_ci.f01
+  formula_id: ps.estimation.likelihood_ratio_ci.f01.formula_01
+  공식명: 근사식
+  LaTeX: 2\{\ell(\hat\theta)-\ell(\theta)\}
+\overset{\mathrm{approx}}{\sim}\chi^2_1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 68 → formulas → 0 → cas
+  concept_id: ps.estimation.likelihood_ratio_ci.f02
+  formula_id: ps.estimation.likelihood_ratio_ci.f02.formula_01
+  공식명: 신뢰구간
+  LaTeX: 2\{\ell(\hat\theta)-\ell(\theta)\}
+\le \chi^2_{1,1-\alpha}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 69 → formulas → 0 → cas
+  concept_id: ps.estimation.bootstrap.f01
+  formula_id: ps.estimation.bootstrap.f01.formula_01
+  공식명: 정의
+  LaTeX: \hat\theta^{*(1)},\ldots,\hat\theta^{*(B)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 70 → formulas → 0 → cas
+  concept_id: ps.estimation.bootstrap.f02
+  formula_id: ps.estimation.bootstrap.f02.formula_01
+  공식명: 부트스트랩 평균
+  LaTeX: \bar{\hat\theta}^{*}
+=
+\frac1B\sum_{b=1}^{B}\hat\theta^{*(b)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 71 → formulas → 0 → cas
+  concept_id: ps.estimation.bootstrap.f03
+  formula_id: ps.estimation.bootstrap.f03.formula_01
+  공식명: 표준오차
+  LaTeX: \widehat{SE}_{\mathrm{boot}}(\hat\theta)
+=
+\sqrt{
+\frac{1}{B-1}
+\sum_{b=1}^{B}
+\left(
+\hat\theta^{*(b)}-\bar{\hat\theta}^{*}
+\right)^2
+}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\13_가설검정.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.one_sample_variance_chisquare
+  formula_id: ps.hypothesis_testing.one_sample_variance_chisquare.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: \chi^2=
+\frac{(n-1)S^2}{\sigma_0^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution
+  formula_id: ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.formula_01
+  공식명: 정확 귀무분포
+  LaTeX: Q\sim\chi^2_{n-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.one_sample_z_mean_asymptotic
+  formula_id: ps.hypothesis_testing.one_sample_z_mean_asymptotic.formula_01
+  공식명: 점근 기준분포
+  LaTeX: Z\xrightarrow{d}N(0,1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.one_sample_z_mean_exact
+  formula_id: ps.hypothesis_testing.one_sample_z_mean_exact.formula_01
+  공식명: 정확 기준분포
+  LaTeX: Z\sim N(0,1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.one_sample_z_mean_statistic
+  formula_id: ps.hypothesis_testing.one_sample_z_mean_statistic.formula_01
+  공식명: 검정통계량
+  LaTeX: z=\frac{\bar X-\mu_0}{\sigma/\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_sample_variance_f
+  formula_id: ps.hypothesis_testing.two_sample_variance_f.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: F=\frac{S_1^2}{S_2^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.proportion_tests
+  formula_id: ps.hypothesis_testing.proportion_tests.formula_01
+  공식명: 점근 검정통계량
+  LaTeX: z=
+\frac{\hat p-p_0}
+{\sqrt{p_0(1-p_0)/n}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.multiple_testing
+  formula_id: ps.hypothesis_testing.multiple_testing.formula_01
+  공식명: 개별 유의수준
+  LaTeX: \alpha/m
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.neyman_pearson
+  formula_id: ps.hypothesis_testing.neyman_pearson.formula_01
+  공식명: 정리
+  LaTeX: \phi^*(x)=\mathbf 1\!\{L(\theta_1;x)>kL(\theta_0;x)\}+\gamma\,\mathbf 1\!\{L(\theta_1;x)=kL(\theta_0;x)\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.likelihood_ratio_test
+  formula_id: ps.hypothesis_testing.likelihood_ratio_test.formula_01
+  공식명: 검정통계량
+  LaTeX: LR=2\{\ell(\hat\theta)-\ell(\tilde\theta)\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.likelihood_ratio_test.asymptotic_null_distribution
+  formula_id: ps.hypothesis_testing.likelihood_ratio_test.asymptotic_null_distribution.formula_01
+  공식명: 점근 기준분포
+  LaTeX: LR\xrightarrow{d}\chi_q^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.score_test
+  formula_id: ps.hypothesis_testing.score_test.formula_01
+  공식명: 검정통계량
+  LaTeX: S=U_R(\tilde\theta)^T I_R(\tilde\theta)^{-1}U_R(\tilde\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.score_test.asymptotic_null_distribution
+  formula_id: ps.hypothesis_testing.score_test.asymptotic_null_distribution.formula_01
+  공식명: 점근 기준분포
+  LaTeX: S\xrightarrow{d}\chi_q^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.wald_test
+  formula_id: ps.hypothesis_testing.wald_test.formula_01
+  공식명: 검정통계량
+  LaTeX: W_{\theta}=(R\hat\theta-r)^T\{R\widehat{\operatorname{Var}}(\hat\theta)R^T\}^{-1}(R\hat\theta-r)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.wald_test.asymptotic_null_distribution
+  formula_id: ps.hypothesis_testing.wald_test.asymptotic_null_distribution.formula_01
+  공식명: 점근 기준분포
+  LaTeX: W_{\theta}\xrightarrow{d}\chi_q^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.holm_procedure
+  formula_id: ps.hypothesis_testing.holm_procedure.formula_01
+  공식명: 다중검정 규칙
+  LaTeX: p_{(i)}\le\frac{\alpha}{m-i+1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.power_sample_size
+  formula_id: ps.hypothesis_testing.power_sample_size.formula_01
+  공식명: 근사식
+  LaTeX: n=\left\lceil\left(\frac{(z_{1-\alpha/2}+z_{1-\beta})\sigma}{\delta}\right)^2\right\rceil
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.permutation_test
+  formula_id: ps.hypothesis_testing.permutation_test.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat p_{\mathrm{perm}}=\frac{b+1}{B+1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.one_sample_t_mean
+  formula_id: ps.hypothesis_testing.one_sample_t_mean.formula_01
+  공식명: 검정통계량
+  LaTeX: t=
+\frac{\bar X-\mu_0}{S/\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.errors_power.f01
+  formula_id: ps.hypothesis_testing.errors_power.f01.formula_01
+  공식명: 제1종 오류확률 함수
+  LaTeX: \alpha(\theta)=P_\theta(H_0\text{ 기각})
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.errors_power.f02
+  formula_id: ps.hypothesis_testing.errors_power.f02.formula_01
+  공식명: 제2종 오류확률 함수
+  LaTeX: \beta(\theta)=P_\theta(H_0\text{를 기각하지 않음})
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.errors_power.f03
+  formula_id: ps.hypothesis_testing.errors_power.f03.formula_01
+  공식명: 검정력 함수
+  LaTeX: \pi(\theta)=P_\theta(H_0\text{ 기각})
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_proportion_difference.f01
+  formula_id: ps.hypothesis_testing.two_proportion_difference.f01.formula_01
+  공식명: 추정량
+  LaTeX: \hat p=\frac{x_1+x_2}{n_1+n_2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_proportion_difference.f02
+  formula_id: ps.hypothesis_testing.two_proportion_difference.f02.formula_01
+  공식명: 점근 검정통계량
+  LaTeX: z=
+\frac{\hat p_1-\hat p_2}
+{\sqrt{\hat p(1-\hat p)(1/n_1+1/n_2)}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.power_ci_duality.f01
+  formula_id: ps.hypothesis_testing.power_ci_duality.f01.formula_01
+  공식명: 검정–신뢰집합 쌍대성
+  LaTeX: \theta_0\in C_{1-\alpha}(X)\quad\Longleftrightarrow\quad H_0:\theta=\theta_0\text{를 수준 }\alpha\text{에서 기각하지 않음}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.variance_ratio_test.f02
+  formula_id: ps.hypothesis_testing.variance_ratio_test.f02.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: F=\frac{S_1^2/S_2^2}{r_0}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.variance_ratio_test.reference_distribution
+  formula_id: ps.hypothesis_testing.variance_ratio_test.reference_distribution.formula_01
+  공식명: 정확 기준분포
+  LaTeX: F\sim F_{n_1-1,n_2-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.effect_size.f01
+  formula_id: ps.hypothesis_testing.effect_size.f01.formula_01
+  공식명: 효과크기
+  LaTeX: d=\frac{\bar X_1-\bar X_2}{S_p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.effect_size.f02
+  formula_id: ps.hypothesis_testing.effect_size.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: g=J(\nu)d
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.effect_size.f03
+  formula_id: ps.hypothesis_testing.effect_size.f03.formula_01
+  공식명: 편향 보정
+  LaTeX: J(\nu)
+=
+\frac{\Gamma(\nu/2)}
+{\sqrt{\nu/2}\,\Gamma((\nu-1)/2)}
+\approx
+1-\frac{3}{4\nu-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.benjamini_hochberg.f01
+  formula_id: ps.hypothesis_testing.benjamini_hochberg.f01.formula_01
+  공식명: 정렬 정의
+  LaTeX: p_{(1)}\le\cdots\le p_{(m)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 51 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.benjamini_hochberg.f02
+  formula_id: ps.hypothesis_testing.benjamini_hochberg.f02.formula_01
+  공식명: 다중검정 규칙
+  LaTeX: p_{(k)}\le\frac{k}{m}q
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 52 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.equivalence_testing.f01
+  formula_id: ps.hypothesis_testing.equivalence_testing.f01.formula_01
+  공식명: 가설의 정의
+  LaTeX: H_0:\theta\le-\Delta\ \text{또는}\ \theta\ge\Delta
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 53 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.equivalence_testing.f02
+  formula_id: ps.hypothesis_testing.equivalence_testing.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: H_1:-\Delta<\theta<\Delta
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 54 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_sample_pooled_t.f01
+  formula_id: ps.hypothesis_testing.two_sample_pooled_t.f01.formula_01
+  공식명: 분산 추정량
+  LaTeX: S_p^2=
+\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 55 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_sample_pooled_t.f02
+  formula_id: ps.hypothesis_testing.two_sample_pooled_t.f02.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: t=\frac{(\bar X_1-\bar X_2)-\Delta_0}{S_p\sqrt{1/n_1+1/n_2}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 56 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_sample_pooled_t.df
+  formula_id: ps.hypothesis_testing.two_sample_pooled_t.df.formula_01
+  공식명: 자유도
+  LaTeX: df=n_1+n_2-2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 57 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_sample_welch_t.f01
+  formula_id: ps.hypothesis_testing.two_sample_welch_t.f01.formula_01
+  공식명: 검정통계량
+  LaTeX: t=
+\frac{(\bar X_1-\bar X_2)-\Delta_0}
+{\sqrt{S_1^2/n_1+S_2^2/n_2}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 58 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.two_sample_welch_t.f02
+  formula_id: ps.hypothesis_testing.two_sample_welch_t.f02.formula_01
+  공식명: 근사 자유도
+  LaTeX: \nu=
+\frac{(S_1^2/n_1+S_2^2/n_2)^2}
+{\frac{(S_1^2/n_1)^2}{n_1-1}
++\frac{(S_2^2/n_2)^2}{n_2-1}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 59 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.paired_t_test.f01
+  formula_id: ps.hypothesis_testing.paired_t_test.f01.formula_01
+  공식명: 정의
+  LaTeX: D_i=X_i-Y_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 60 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.paired_t_test.f02
+  formula_id: ps.hypothesis_testing.paired_t_test.f02.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: t=\frac{\bar D-\mu_{D,0}}{S_D/\sqrt n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 61 → formulas → 0 → cas
+  concept_id: ps.hypothesis_testing.paired_t_test.df
+  formula_id: ps.hypothesis_testing.paired_t_test.df.formula_01
+  공식명: 자유도
+  LaTeX: df=n-1
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\14_범주형 자료분석.json
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.multinomial_logistic_model
+  formula_id: ps.categorical_analysis.multinomial_logistic_model.formula_01
+  공식명: 모형식
+  LaTeX: \log\frac{P(Y=j\mid x)}{P(Y=J\mid x)}
+=\beta_{j0}+\beta_j^Tx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.ordinal_proportional_odds_model
+  formula_id: ps.categorical_analysis.ordinal_proportional_odds_model.formula_01
+  공식명: 모형식
+  LaTeX: \log\frac{P(Y\le j\mid x)}{P(Y>j\mid x)}
+=\alpha_j-\beta^Tx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.pearson_residual
+  formula_id: ps.categorical_analysis.pearson_residual.formula_01
+  공식명: 핵심 관계식
+  LaTeX: r_{ij}=\frac{O_{ij}-E_{ij}}{\sqrt{E_{ij}}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.mantel_haenszel_or
+  formula_id: ps.categorical_analysis.mantel_haenszel_or.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \widehat{OR}_{MH}
+=
+\frac{\sum_k a_kd_k/n_k}
+{\sum_k b_kc_k/n_k}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 12 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.cohen_kappa
+  formula_id: ps.categorical_analysis.cohen_kappa.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \kappa=\frac{p_o-p_e}{1-p_e}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.risk_ratio_log_wald_se
+  formula_id: ps.categorical_analysis.risk_ratio_log_wald_se.formula_01
+  공식명: 표준오차
+  LaTeX: SE(\log\widehat{RR})
+=
+\sqrt{
+\frac1a-\frac1{a+b}
++\frac1c-\frac1{c+d}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 19 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.adjusted_pearson_residual
+  formula_id: ps.categorical_analysis.adjusted_pearson_residual.formula_01
+  공식명: 핵심 관계식
+  LaTeX: r_{ij}^{\mathrm{adj}}
+=
+\frac{O_{ij}-E_{ij}}
+{\sqrt{E_{ij}(1-p_{i+})(1-p_{+j})}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.cramers_v
+  formula_id: ps.categorical_analysis.cramers_v.formula_01
+  공식명: 효과크기
+  LaTeX: V=\sqrt{\frac{\chi^2}{n\min(r-1,c-1)}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.risk_difference_2x2
+  formula_id: ps.categorical_analysis.risk_difference_2x2.formula_01
+  공식명: 효과측도
+  LaTeX: RD=\frac{a}{a+b}-\frac{c}{c+d}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.risk_ratio_2x2
+  formula_id: ps.categorical_analysis.risk_ratio_2x2.formula_01
+  공식명: 효과측도
+  LaTeX: RR=\frac{a/(a+b)}{c/(c+d)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.odds_ratio_2x2
+  formula_id: ps.categorical_analysis.odds_ratio_2x2.formula_01
+  공식명: 효과측도
+  LaTeX: OR=\frac{ad}{bc}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.binary_logistic_model
+  formula_id: ps.categorical_analysis.binary_logistic_model.formula_01
+  공식명: 모형식
+  LaTeX: \log\frac{P(Y=1\mid x)}{1-P(Y=1\mid x)}=\beta_0+\beta^Tx
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.fisher_exact_two_by_two
+  formula_id: ps.categorical_analysis.fisher_exact_two_by_two.formula_01
+  공식명: 정확 확률질량함수
+  LaTeX: P(A=a)
+=
+\frac{
+\binom{a+b}{a}
+\binom{c+d}{c}
+}{
+\binom{a+b+c+d}{a+c}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.diagnostic_likelihood_ratios.f01
+  formula_id: ps.categorical_analysis.diagnostic_likelihood_ratios.f01.formula_01
+  공식명: 정의
+  LaTeX: LR^+
+=
+\frac{\operatorname{Sensitivity}}
+{1-\operatorname{Specificity}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.diagnostic_likelihood_ratios.f02
+  formula_id: ps.categorical_analysis.diagnostic_likelihood_ratios.f02.formula_01
+  공식명: 정의
+  LaTeX: LR^-
+=
+\frac{1-\operatorname{Sensitivity}}
+{\operatorname{Specificity}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f01
+  formula_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f01.formula_01
+  공식명: 정의
+  LaTeX: \operatorname{Sensitivity}=P(+\mid D)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f02
+  formula_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f02.formula_01
+  공식명: 정의
+  LaTeX: \operatorname{Specificity}=P(-\mid D^c)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f03
+  formula_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f03.formula_01
+  공식명: 정의
+  LaTeX: PPV=P(D\mid +)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f04
+  formula_id: ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f04.formula_01
+  공식명: 정의
+  LaTeX: NPV=P(D^c\mid -)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.goodness_of_fit.f01
+  formula_id: ps.categorical_analysis.goodness_of_fit.f01.formula_01
+  공식명: 점근 검정통계량
+  LaTeX: \chi^2=
+\sum_{i=1}^{k}
+\frac{(O_i-E_i)^2}{E_i}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.goodness_of_fit.f02
+  formula_id: ps.categorical_analysis.goodness_of_fit.f02.formula_01
+  공식명: 자유도
+  LaTeX: df=k-1-m
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.independence_homogeneity.f01
+  formula_id: ps.categorical_analysis.independence_homogeneity.f01.formula_01
+  공식명: expected count
+  LaTeX: E_{ij}=\frac{R_iC_j}{n}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.independence_homogeneity.f02
+  formula_id: ps.categorical_analysis.independence_homogeneity.f02.formula_01
+  공식명: 점근 검정통계량
+  LaTeX: \chi^2=
+\sum_{i=1}^{r}\sum_{j=1}^{c}
+\frac{(O_{ij}-E_{ij})^2}{E_{ij}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.independence_homogeneity.f03
+  formula_id: ps.categorical_analysis.independence_homogeneity.f03.formula_01
+  공식명: 자유도
+  LaTeX: df=(r-1)(c-1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.likelihood_ratio_chisq_extended_models.f01
+  formula_id: ps.categorical_analysis.likelihood_ratio_chisq_extended_models.f01.formula_01
+  공식명: 검정통계량
+  LaTeX: G^2=2\sum_{i,j}O_{ij}\log\frac{O_{ij}}{E_{ij}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.likelihood_ratio_chisq_extended_models.f02
+  formula_id: ps.categorical_analysis.likelihood_ratio_chisq_extended_models.f02.formula_01
+  공식명: 표기 규약
+  LaTeX: 0\log\frac{0}{E_{ij}}=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.odds_ratio_log_wald_ci.f01
+  formula_id: ps.categorical_analysis.odds_ratio_log_wald_ci.f01.formula_01
+  공식명: 표준오차
+  LaTeX: SE(\log\widehat{OR})
+=
+\sqrt{\frac1a+\frac1b+\frac1c+\frac1d}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.odds_ratio_log_wald_ci.f02
+  formula_id: ps.categorical_analysis.odds_ratio_log_wald_ci.f02.formula_01
+  공식명: 신뢰구간
+  LaTeX: \widehat{OR}\,
+\exp\left[
+\pm z_{1-\alpha/2}SE(\log\widehat{OR})
+\right]
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.phi_coefficient.f01
+  formula_id: ps.categorical_analysis.phi_coefficient.f01.formula_01
+  공식명: 정의
+  LaTeX: \begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.phi_coefficient.f02
+  formula_id: ps.categorical_analysis.phi_coefficient.f02.formula_01
+  공식명: 효과크기
+  LaTeX: \phi=
+\frac{ad-bc}
+{\sqrt{(a+b)(c+d)(a+c)(b+d)}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.phi_coefficient.f03
+  formula_id: ps.categorical_analysis.phi_coefficient.f03.formula_01
+  공식명: 효과크기 관계
+  LaTeX: |\phi|=\sqrt{\frac{\chi^2}{n}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.mcnemar_test.f01
+  formula_id: ps.categorical_analysis.mcnemar_test.f01.formula_01
+  공식명: 점근 검정통계량
+  LaTeX: \chi^2_{\mathrm{McNemar}}
+=
+\frac{(b-c)^2}{b+c}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.categorical_analysis.mcnemar_test.f02
+  formula_id: ps.categorical_analysis.mcnemar_test.f02.formula_01
+  공식명: 점근 검정통계량
+  LaTeX: \chi^2_{\mathrm{McNemar,cc}}=\frac{\max\{|b-c|-1,0\}^2}{b+c}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\15_상관분석.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.correlation.kendall_tau_a
+  formula_id: ps.correlation.kendall_tau_a.formula_01
+  공식명: 상관계수
+  LaTeX: \tau=\frac{C-D}{\binom n2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.correlation.kendall_tau_b
+  formula_id: ps.correlation.kendall_tau_b.formula_01
+  공식명: 정의
+  LaTeX: \tau_b=\frac{C-D}{\sqrt{(C+D+T_x)(C+D+T_y)}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 2 → formulas → 0 → cas
+  concept_id: ps.correlation.spearman_no_tie_difference_formula
+  formula_id: ps.correlation.spearman_no_tie_difference_formula.formula_01
+  공식명: 핵심 관계식
+  LaTeX: r_s
+=
+1-
+\frac{6\sum_{i=1}^{n}d_i^2}{n(n^2-1)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.correlation.spearman_rank_correlation
+  formula_id: ps.correlation.spearman_rank_correlation.formula_01
+  공식명: 정의
+  LaTeX: r_s
+=
+\frac{
+\sum_{i=1}^{n}(R_i-\bar R)(S_i-\bar S)
+}{
+\sqrt{
+\sum_{i=1}^{n}(R_i-\bar R)^2
+\sum_{i=1}^{n}(S_i-\bar S)^2
+}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: ps.correlation.pearson_affine_transformation
+  formula_id: ps.correlation.pearson_affine_transformation.formula_01
+  공식명: 상관 변환
+  LaTeX: r(a+bX,c+dY)=\operatorname{sign}(bd)\,r(X,Y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 6 → formulas → 0 → cas
+  concept_id: ps.correlation.sample_pearson_correlation
+  formula_id: ps.correlation.sample_pearson_correlation.formula_01
+  공식명: 핵심 관계식
+  LaTeX: r=
+\frac{
+\sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)
+}{
+\sqrt{
+\left\{\sum_{i=1}^{n}(x_i-\bar x)^2\right\}
+\left\{\sum_{i=1}^{n}(y_i-\bar y)^2\right\}
+}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 8 → formulas → 0 → cas
+  concept_id: ps.correlation.correlation_test
+  formula_id: ps.correlation.correlation_test.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: t=r\sqrt{\frac{n-2}{1-r^2}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.correlation.correlation_test.df
+  formula_id: ps.correlation.correlation_test.df.formula_01
+  공식명: 자유도
+  LaTeX: df=n-2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.correlation.partial_correlation_causality
+  formula_id: ps.correlation.partial_correlation_causality.formula_01
+  공식명: 정의
+  LaTeX: r_{xy\cdot z}
+=
+\frac{r_{xy}-r_{xz}r_{yz}}
+{\sqrt{(1-r_{xz}^2)(1-r_{yz}^2)}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 15 → formulas → 0 → cas
+  concept_id: ps.correlation.correlation_matrix
+  formula_id: ps.correlation.correlation_matrix.formula_01
+  공식명: 행렬 성질
+  LaTeX: R=R^T
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 16 → formulas → 0 → cas
+  concept_id: ps.correlation.correlation_matrix.positive_semidefinite
+  formula_id: ps.correlation.correlation_matrix.positive_semidefinite.formula_01
+  공식명: 행렬 성질
+  LaTeX: a^TRa\ge0\quad\text{for all }a\in\mathbb R^p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 17 → formulas → 0 → cas
+  concept_id: ps.correlation.correlation_matrix.unit_diagonal
+  formula_id: ps.correlation.correlation_matrix.unit_diagonal.formula_01
+  공식명: 행렬 성질
+  LaTeX: \operatorname{diag}(R)=\mathbf 1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.correlation.precision_matrix_partial_correlation
+  formula_id: ps.correlation.precision_matrix_partial_correlation.formula_01
+  공식명: 정의
+  LaTeX: \rho_{ij\cdot -ij}
+=
+-\frac{\Omega_{ij}}
+{\sqrt{\Omega_{ii}\Omega_{jj}}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 20 → formulas → 0 → cas
+  concept_id: ps.correlation.partial_correlation_test.f01
+  formula_id: ps.correlation.partial_correlation_test.f01.formula_01
+  공식명: 정확 검정통계량
+  LaTeX: t=
+r_{xy\cdot Z}
+\sqrt{\frac{n-q-2}{1-r_{xy\cdot Z}^2}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.correlation.partial_correlation_test.f02
+  formula_id: ps.correlation.partial_correlation_test.f02.formula_01
+  공식명: 자유도
+  LaTeX: df=n-q-2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.correlation.pearson_fisher_transform.f01
+  formula_id: ps.correlation.pearson_fisher_transform.f01.formula_01
+  공식명: 변환식
+  LaTeX: z_r=\frac12\log\left(\frac{1+r}{1-r}\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.correlation.pearson_fisher_transform.f02
+  formula_id: ps.correlation.pearson_fisher_transform.f02.formula_01
+  공식명: 근사 표준오차
+  LaTeX: \operatorname{SE}(z_r)\approx\frac{1}{\sqrt{n-3}}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\16_단순선형회귀분석.json
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.cooks_distance
+  formula_id: ps.simple_linear_regression.cooks_distance.formula_01
+  공식명: 영향도
+  LaTeX: D_i
+=
+\frac{e_i^2}{p\,MSE}
+\frac{h_{ii}}{(1-h_{ii})^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 6 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.leverage
+  formula_id: ps.simple_linear_regression.leverage.formula_01
+  공식명: 진단통계량
+  LaTeX: h_{ii}
+=
+\frac1n+
+\frac{(x_i-\bar x)^2}{S_{xx}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.raw_residual
+  formula_id: ps.simple_linear_regression.raw_residual.formula_01
+  공식명: 핵심 관계식
+  LaTeX: e_i=y_i-\hat y_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.studentized_residual
+  formula_id: ps.simple_linear_regression.studentized_residual.formula_01
+  공식명: 핵심 관계식
+  LaTeX: r_i
+=
+\frac{e_i}{s\sqrt{1-h_{ii}}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.externally_studentized_residual
+  formula_id: ps.simple_linear_regression.externally_studentized_residual.formula_01
+  공식명: 핵심 관계식
+  LaTeX: t_i=\frac{e_i}{s_{(i)}\sqrt{1-h_{ii}}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 21 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_model.f01
+  formula_id: ps.simple_linear_regression.regression_model.f01.formula_01
+  공식명: 모형식
+  LaTeX: Y_i=\beta_0+\beta_1x_i+\varepsilon_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_model.f02
+  formula_id: ps.simple_linear_regression.regression_model.f02.formula_01
+  공식명: 조건부 평균모형
+  LaTeX: E[Y\mid X=x]=\beta_0+\beta_1x
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.least_squares.f01
+  formula_id: ps.simple_linear_regression.least_squares.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat\beta_1=\frac{S_{xy}}{S_{xx}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 24 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.least_squares.f02
+  formula_id: ps.simple_linear_regression.least_squares.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat\beta_0=\bar y-\hat\beta_1\bar x
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.least_squares.f03
+  formula_id: ps.simple_linear_regression.least_squares.f03.formula_01
+  공식명: 제곱합
+  LaTeX: SSE=\sum_{i=1}^{n}e_i^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 26 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.variation_decomposition_r2.f01
+  formula_id: ps.simple_linear_regression.variation_decomposition_r2.f01.formula_01
+  공식명: 제곱합
+  LaTeX: SST=SSR+SSE
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.variation_decomposition_r2.f02
+  formula_id: ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01
+  공식명: 적합도 지표
+  LaTeX: R^2=\frac{SSR}{SST}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 28 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.variation_decomposition_r2.f02_residual
+  formula_id: ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01
+  공식명: 적합도 지표
+  LaTeX: R^2=1-\frac{SSE}{SST}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.coefficient_inference.f01
+  formula_id: ps.simple_linear_regression.coefficient_inference.f01.formula_01
+  공식명: 기울기 t검정통계량
+  LaTeX: t=
+\frac{\hat\beta_1-\beta_{1,0}}
+{SE(\hat\beta_1)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.coefficient_inference.f02
+  formula_id: ps.simple_linear_regression.coefficient_inference.f02.formula_01
+  공식명: 표준오차
+  LaTeX: SE(\hat\beta_1)=\frac{s}{\sqrt{S_{xx}}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.mean_response_prediction.f01
+  formula_id: ps.simple_linear_regression.mean_response_prediction.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat y_0
+=
+\hat\beta_0+\hat\beta_1x_0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.mean_response_prediction.f02
+  formula_id: ps.simple_linear_regression.mean_response_prediction.f02.formula_01
+  공식명: 표준오차
+  LaTeX: SE_{\mathrm{mean}}
+=
+s\sqrt{
+\frac1n+
+\frac{(x_0-\bar x)^2}{S_{xx}}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.mean_response_prediction.f03
+  formula_id: ps.simple_linear_regression.mean_response_prediction.f03.formula_01
+  공식명: 신뢰구간
+  LaTeX: \hat y_0
+\pm
+t_{n-2,1-\alpha/2}
+SE_{\mathrm{mean}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.mean_response_prediction.f04
+  formula_id: ps.simple_linear_regression.mean_response_prediction.f04.formula_01
+  공식명: 표준오차
+  LaTeX: SE_{\mathrm{pred}}
+=
+s\sqrt{
+1+
+\frac1n+
+\frac{(x_0-\bar x)^2}{S_{xx}}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.mean_response_prediction.f05
+  formula_id: ps.simple_linear_regression.mean_response_prediction.f05.formula_01
+  공식명: 신뢰구간
+  LaTeX: \hat y_0
+\pm
+t_{n-2,1-\alpha/2}
+SE_{\mathrm{pred}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.error_variance_inference_conditions.f01
+  formula_id: ps.simple_linear_regression.error_variance_inference_conditions.f01.formula_01
+  공식명: 분산 추정량
+  LaTeX: MSE=\frac{SSE}{n-2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.least_squares_notation.f01
+  formula_id: ps.simple_linear_regression.least_squares_notation.f01.formula_01
+  공식명: 정의
+  LaTeX: S_{xx}=\sum_{i=1}^{n}(x_i-\bar x)^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.least_squares_notation.f02
+  formula_id: ps.simple_linear_regression.least_squares_notation.f02.formula_01
+  공식명: 정의
+  LaTeX: S_{xy}=\sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.intercept_se_leverage.f01
+  formula_id: ps.simple_linear_regression.intercept_se_leverage.f01.formula_01
+  공식명: 표준오차
+  LaTeX: SE(\hat\beta_0)
+=
+s\sqrt{\frac1n+\frac{\bar x^2}{S_{xx}}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.coefficient_conditional_covariance.f01
+  formula_id: ps.simple_linear_regression.coefficient_conditional_covariance.f01.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\hat\beta_1\mid X)
+=
+\frac{\sigma^2}{S_{xx}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.coefficient_conditional_covariance.f02
+  formula_id: ps.simple_linear_regression.coefficient_conditional_covariance.f02.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\hat\beta_0\mid X)
+=
+\sigma^2\left(\frac1n+\frac{\bar x^2}{S_{xx}}\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.coefficient_conditional_covariance.f03
+  formula_id: ps.simple_linear_regression.coefficient_conditional_covariance.f03.formula_01
+  공식명: 공분산
+  LaTeX: \operatorname{Cov}(\hat\beta_0,\hat\beta_1\mid X)
+=
+-\frac{\bar x\sigma^2}{S_{xx}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.ols_residual_orthogonality.f01
+  formula_id: ps.simple_linear_regression.ols_residual_orthogonality.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \sum_{i=1}^n e_i=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 51 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.ols_residual_orthogonality.f02
+  formula_id: ps.simple_linear_regression.ols_residual_orthogonality.f02.formula_01
+  공식명: 성질
+  LaTeX: \sum_{i=1}^n x_i e_i=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 52 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_anova_table.f02
+  formula_id: ps.simple_linear_regression.regression_anova_table.f02.formula_01
+  공식명: 자유도
+  LaTeX: df_{\mathrm{Total}}=n-1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 53 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_anova_table.f02_error
+  formula_id: ps.simple_linear_regression.regression_anova_table.f02_error.formula_01
+  공식명: 자유도
+  LaTeX: df_{\mathrm{Error}}=n-2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 54 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_anova_table.f02_regression
+  formula_id: ps.simple_linear_regression.regression_anova_table.f02_regression.formula_01
+  공식명: 자유도
+  LaTeX: df_{\mathrm{Regression}}=1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 55 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_anova_table.f03
+  formula_id: ps.simple_linear_regression.regression_anova_table.f03.formula_01
+  공식명: 정의
+  LaTeX: MSR=SSR
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 57 → formulas → 0 → cas
+  concept_id: ps.simple_linear_regression.regression_anova_table.f05
+  formula_id: ps.simple_linear_regression.regression_anova_table.f05.formula_01
+  공식명: 검정통계량
+  LaTeX: F=\frac{MSR}{MSE}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\17_다중선형회귀분석.json
+CAS 누락
+  위치: concepts → 3 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.residual_vector_definition
+  formula_id: ps.multiple_linear_regression.residual_vector_definition.formula_01
+  공식명: 정의
+  LaTeX: e=Y-\hat Y
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 4 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.multiple_regression_definition
+  formula_id: ps.multiple_linear_regression.multiple_regression_definition.formula_01
+  공식명: 모형식
+  LaTeX: Y=X\beta+\varepsilon
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 5 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.ols_estimator_full_rank
+  formula_id: ps.multiple_linear_regression.ols_estimator_full_rank.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat\beta=(X^TX)^{-1}X^TY
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.standard_kfold_cv
+  formula_id: ps.multiple_linear_regression.standard_kfold_cv.formula_01
+  공식명: 평가지표
+  LaTeX: CV_K=\frac1n\sum_{k=1}^{K}\sum_{i\in V_k}L\!\left(y_i,\hat f^{(-k)}(x_i)\right)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 10 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.categorical_interaction
+  formula_id: ps.multiple_linear_regression.categorical_interaction.formula_01
+  공식명: 모형식
+  LaTeX: Y=\beta_0+\beta_1X+\beta_2D+\beta_3XD+\varepsilon
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 11 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.multicollinearity
+  formula_id: ps.multiple_linear_regression.multicollinearity.formula_01
+  공식명: 핵심 관계식
+  LaTeX: VIF_j=\frac{1}{1-R_j^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 18 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.partial_f_test
+  formula_id: ps.multiple_linear_regression.partial_f_test.formula_01
+  공식명: 부분 F검정통계량
+  LaTeX: F=
+\frac{(SSE_R-SSE_F)/(p_F-p_R)}
+{SSE_F/(n-p_F)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.centering_interaction
+  formula_id: ps.multiple_linear_regression.centering_interaction.formula_01
+  공식명: 핵심 관계식
+  LaTeX: X_c=X-\bar X
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.normality_role
+  formula_id: ps.multiple_linear_regression.normality_role.formula_01
+  공식명: 회귀계수 표준화량의 정확 t분포
+  LaTeX: \frac{\hat\beta_j-\beta_j}{SE(\hat\beta_j)}\,\Big|\,X\sim t_{n-p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 25 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.general_linear_hypothesis_exact_null_distribution
+  formula_id: ps.multiple_linear_regression.general_linear_hypothesis_exact_null_distribution.formula_01
+  공식명: 정확 결과
+  LaTeX: F\mid H_0\sim F_{q,n-p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 29 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.coefficient_confidence_interval
+  formula_id: ps.multiple_linear_regression.coefficient_confidence_interval.formula_01
+  공식명: 신뢰구간
+  LaTeX: \hat\beta_j
+\pm
+ t_{n-p,1-\alpha/2}
+SE(\hat\beta_j)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 30 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.partial_r2
+  formula_id: ps.multiple_linear_regression.partial_r2.formula_01
+  공식명: 부분 결정계수
+  LaTeX: R^2_{\mathrm{partial}}
+=
+\frac{SSE_R-SSE_F}{SSE_R}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 31 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.condition_number_collinearity
+  formula_id: ps.multiple_linear_regression.condition_number_collinearity.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \kappa=\frac{s_{\max}}{s_{\min}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 33 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.robust_covariance_form
+  formula_id: ps.multiple_linear_regression.robust_covariance_form.formula_01
+  공식명: HC0 공분산 추정량
+  LaTeX: (X^TX)^{-1}
+\left(\sum_{i=1}^n e_i^2x_ix_i^T\right)
+(X^TX)^{-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 35 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.general_linear_wald
+  formula_id: ps.multiple_linear_regression.general_linear_wald.formula_01
+  공식명: 검정통계량
+  LaTeX: W_{\beta}=(R\hat\beta-r)^T\left[R\widehat{\operatorname{Var}}(\hat\beta)R^T\right]^{-1}(R\hat\beta-r)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.general_linear_wald.asymptotic_null_distribution
+  formula_id: ps.multiple_linear_regression.general_linear_wald.asymptotic_null_distribution.formula_01
+  공식명: 점근 기준분포
+  LaTeX: W_{\beta}\xrightarrow{d}\chi_q^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.exact_multicollinearity
+  formula_id: ps.multiple_linear_regression.exact_multicollinearity.formula_01
+  공식명: 진단 조건
+  LaTeX: R_j^2=1\quad\Longrightarrow\quad \operatorname{rank}(X)<p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.robust_coefficient_confidence_interval
+  formula_id: ps.multiple_linear_regression.robust_coefficient_confidence_interval.formula_01
+  공식명: 신뢰구간
+  LaTeX: \hat\beta_j\pm z_{1-\alpha/2}\widehat{SE}_{\mathrm{robust}}(\hat\beta_j)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.aic_bic.f01
+  formula_id: ps.multiple_linear_regression.aic_bic.f01.formula_01
+  공식명: 정보기준
+  LaTeX: AIC
+=
+2k-2\ell(\hat\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.aic_bic.f02
+  formula_id: ps.multiple_linear_regression.aic_bic.f02.formula_01
+  공식명: 정보기준
+  LaTeX: BIC
+=
+k\log n-2\ell(\hat\theta)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.rmse_mae.f01
+  formula_id: ps.multiple_linear_regression.rmse_mae.f01.formula_01
+  공식명: 평가지표
+  LaTeX: RMSE
+=
+\sqrt{
+\frac1m\sum_{i=1}^{m}(y_i-\hat y_i)^2
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.rmse_mae.f02
+  formula_id: ps.multiple_linear_regression.rmse_mae.f02.formula_01
+  공식명: 평가지표
+  LaTeX: MAE
+=
+\frac1m\sum_{i=1}^{m}|y_i-\hat y_i|
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.regularized_regression.f01
+  formula_id: ps.multiple_linear_regression.regularized_regression.f01.formula_01
+  공식명: 추정량
+  LaTeX: \operatorname*{arg\,min}_{\beta_0,\beta}
+\left\{
+RSS+\lambda\sum_{j=1}^{p-1}\beta_j^2
+\right\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.regularized_regression.f02
+  formula_id: ps.multiple_linear_regression.regularized_regression.f02.formula_01
+  공식명: 추정량
+  LaTeX: \operatorname*{arg\,min}_{\beta_0,\beta}
+\left\{
+RSS+\lambda\sum_{j=1}^{p-1}|\beta_j|
+\right\}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.exact_coefficient_t_test.f02
+  formula_id: ps.multiple_linear_regression.exact_coefficient_t_test.f02.formula_01
+  공식명: 개별 회귀계수 t검정통계량
+  LaTeX: t_j=\frac{\hat\beta_j-\beta_{j,0}}{SE(\hat\beta_j)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.exact_coefficient_t_test.df
+  formula_id: ps.multiple_linear_regression.exact_coefficient_t_test.df.formula_01
+  공식명: 자유도
+  LaTeX: df=n-p
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.ols_coefficient_conditional_variance.f01
+  formula_id: ps.multiple_linear_regression.ols_coefficient_conditional_variance.f01.formula_01
+  공식명: 분산
+  LaTeX: \operatorname{Var}(\hat\beta\mid X)
+=\sigma^2(X^TX)^{-1}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.ols_coefficient_conditional_variance.f02
+  formula_id: ps.multiple_linear_regression.ols_coefficient_conditional_variance.f02.formula_01
+  공식명: 분산 추정량
+  LaTeX: \hat\sigma^2=\frac{SSE}{n-p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.adjusted_r2.f01
+  formula_id: ps.multiple_linear_regression.adjusted_r2.f01.formula_01
+  공식명: 적합도 지표
+  LaTeX: \bar R^2
+=1-\frac{SSE/(n-p)}{SST/(n-1)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 51 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.adjusted_r2.f02
+  formula_id: ps.multiple_linear_regression.adjusted_r2.f02.formula_01
+  공식명: 적합도 지표
+  LaTeX: \bar R^2
+=1-(1-R^2)\frac{n-1}{n-p}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 52 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.overall_f_test.f02
+  formula_id: ps.multiple_linear_regression.overall_f_test.f02.formula_01
+  공식명: 검정통계량
+  LaTeX: F=
+\frac{SSR/(p-1)}
+{SSE/(n-p)}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 53 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.hat_matrix_leverage.f01
+  formula_id: ps.multiple_linear_regression.hat_matrix_leverage.f01.formula_01
+  공식명: 적합값 관계
+  LaTeX: \hat Y=HY
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 54 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.hat_matrix_leverage.f02
+  formula_id: ps.multiple_linear_regression.hat_matrix_leverage.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: H=X(X^TX)^{-1}X^T
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 55 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.general_linear_hypothesis_statistic.f02
+  formula_id: ps.multiple_linear_regression.general_linear_hypothesis_statistic.f02.formula_01
+  공식명: 검정통계량
+  LaTeX: F=\frac{(R\hat\beta-r)^T[R(X^TX)^{-1}R^T]^{-1}(R\hat\beta-r)/q}{MSE}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 56 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.mean_individual_prediction.f01
+  formula_id: ps.multiple_linear_regression.mean_individual_prediction.f01.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \hat y_0=x_0^T\hat\beta
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 57 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.mean_individual_prediction.f02
+  formula_id: ps.multiple_linear_regression.mean_individual_prediction.f02.formula_01
+  공식명: 신뢰구간
+  LaTeX: \hat y_0
+\pm t_{n-p,1-\alpha/2}
+\,s\sqrt{x_0^T(X^TX)^{-1}x_0}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 58 → formulas → 0 → cas
+  concept_id: ps.multiple_linear_regression.mean_individual_prediction.f03
+  formula_id: ps.multiple_linear_regression.mean_individual_prediction.f03.formula_01
+  공식명: 예측구간
+  LaTeX: \hat y_0
+\pm t_{n-p,1-\alpha/2}
+\,s\sqrt{1+x_0^T(X^TX)^{-1}x_0}
+  내용: formula에 cas 값이 없습니다.
+
+[실패] data\concepts\probability_statistics\18_분산분석.json
+CAS 누락
+  위치: concepts → 0 → formulas → 0 → cas
+  concept_id: ps.anova.ancova_model
+  formula_id: ps.anova.ancova_model.formula_01
+  공식명: 모형식
+  LaTeX: Y=\mu+\tau_i+\beta X+\varepsilon
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 1 → formulas → 0 → cas
+  concept_id: ps.anova.bonferroni_adjustment
+  formula_id: ps.anova.bonferroni_adjustment.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \alpha^*
+=
+\frac{\alpha}{m}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 7 → formulas → 0 → cas
+  concept_id: ps.anova.sphericity_df_correction
+  formula_id: ps.anova.sphericity_df_correction.formula_01
+  공식명: 자유도 보정
+  LaTeX: df^*=\epsilon\,df
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 8 → formulas → 0 → cas
+  concept_id: ps.anova.tukey_hsd_balanced
+  formula_id: ps.anova.tukey_hsd_balanced.formula_01
+  공식명: 핵심 관계식
+  LaTeX: HSD
+=
+q_{1-\alpha;a,N-a}
+\sqrt{\frac{MSE}{n_0}}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 9 → formulas → 0 → cas
+  concept_id: ps.anova.two_group_f_t_equivalence
+  formula_id: ps.anova.two_group_f_t_equivalence.formula_01
+  공식명: 핵심 관계식
+  LaTeX: F=t^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 13 → formulas → 0 → cas
+  concept_id: ps.anova.two_way_anova
+  formula_id: ps.anova.two_way_anova.formula_01
+  공식명: 모형식
+  LaTeX: Y_{ijk}=\mu+\alpha_i+\beta_j+(\alpha\beta)_{ij}+\varepsilon_{ijk}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 22 → formulas → 0 → cas
+  concept_id: ps.anova.partial_effect_size
+  formula_id: ps.anova.partial_effect_size.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \eta_p^2
+=
+\frac{SS_{\mathrm{effect}}}
+{SS_{\mathrm{effect}}+SS_E}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 23 → formulas → 0 → cas
+  concept_id: ps.anova.mixed_effects_model
+  formula_id: ps.anova.mixed_effects_model.formula_01
+  공식명: 모형식
+  LaTeX: Y_{ij}=X_{ij}\beta+Z_{ij}b_i+\varepsilon_{ij}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 27 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_exact_f_reference
+  formula_id: ps.anova.oneway_exact_f_reference.formula_01
+  공식명: 정확 기준분포
+  LaTeX: F\sim F_{a-1,N-a}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 32 → formulas → 0 → cas
+  concept_id: ps.anova.contrast_definition_estimate.f01
+  formula_id: ps.anova.contrast_definition_estimate.f01.formula_01
+  공식명: 정의
+  LaTeX: L=\sum_{i=1}^{a}c_i\mu_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 34 → formulas → 0 → cas
+  concept_id: ps.anova.contrast_definition_estimate.f02
+  formula_id: ps.anova.contrast_definition_estimate.f02.formula_01
+  공식명: 정의
+  LaTeX: \hat L=\sum_{i=1}^{a}c_i\bar Y_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 36 → formulas → 0 → cas
+  concept_id: ps.anova.contrast_estimate_standard_error.f02
+  formula_id: ps.anova.contrast_estimate_standard_error.f02.formula_01
+  공식명: 표준오차
+  LaTeX: SE(\hat L)
+=
+\sqrt{
+MSE\sum_{i=1}^{a}\frac{c_i^2}{n_i}
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 37 → formulas → 0 → cas
+  concept_id: ps.anova.effects_model_identifiability.f01
+  formula_id: ps.anova.effects_model_identifiability.f01.formula_01
+  공식명: 모형식
+  LaTeX: Y_{ij}=\mu+\tau_i+\varepsilon_{ij}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 38 → formulas → 0 → cas
+  concept_id: ps.anova.effects_model_identifiability.f02
+  formula_id: ps.anova.effects_model_identifiability.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \sum_{i=1}^{a}\tau_i=0
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 39 → formulas → 0 → cas
+  concept_id: ps.anova.eta_omega_squared.f01
+  formula_id: ps.anova.eta_omega_squared.f01.formula_01
+  공식명: 효과크기
+  LaTeX: \eta^2=\frac{SS_A}{SS_T}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 40 → formulas → 0 → cas
+  concept_id: ps.anova.eta_omega_squared.f02
+  formula_id: ps.anova.eta_omega_squared.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: \omega^2=
+\frac{SS_A-(a-1)MS_E}{SS_T+MS_E}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 41 → formulas → 0 → cas
+  concept_id: ps.anova.one_way_anova.f02
+  formula_id: ps.anova.one_way_anova.f02.formula_01
+  공식명: 검정통계량
+  LaTeX: F=\frac{MS_A}{MS_E}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 42 → formulas → 0 → cas
+  concept_id: ps.anova.sums_squares_anova_table.f01
+  formula_id: ps.anova.sums_squares_anova_table.f01.formula_01
+  공식명: 제곱합
+  LaTeX: SST=SSA+SSE
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 43 → formulas → 0 → cas
+  concept_id: ps.anova.sums_squares_anova_table.f02
+  formula_id: ps.anova.sums_squares_anova_table.f02.formula_01
+  공식명: 핵심 관계식
+  LaTeX: MSA=SSA/(a-1)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 44 → formulas → 0 → cas
+  concept_id: ps.anova.sums_squares_anova_table.f03
+  formula_id: ps.anova.sums_squares_anova_table.f03.formula_01
+  공식명: 핵심 관계식
+  LaTeX: MSE=SSE/(N-a)
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 45 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f01
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f01.formula_01
+  공식명: 제곱합
+  LaTeX: SS_A=\sum_{i=1}^{a}n_i
+(\bar Y_{i\cdot}-\bar Y_{\cdot\cdot})^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 46 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f02
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f02.formula_01
+  공식명: 제곱합
+  LaTeX: SS_E=\sum_{i=1}^{a}\sum_{j=1}^{n_i}
+(Y_{ij}-\bar Y_{i\cdot})^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 47 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f03
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f03.formula_01
+  공식명: 제곱합
+  LaTeX: SS_T=\sum_{i=1}^{a}\sum_{j=1}^{n_i}
+(Y_{ij}-\bar Y_{\cdot\cdot})^2
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 48 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f04
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f04.formula_01
+  공식명: 제곱합
+  LaTeX: SS_T=SS_A+SS_E
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 49 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f05
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f05.formula_01
+  공식명: 자유도
+  LaTeX: df_A=a-1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 50 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f05_total
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f05_total.formula_01
+  공식명: 자유도
+  LaTeX: df_T=N-1
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 51 → formulas → 0 → cas
+  concept_id: ps.anova.oneway_sums_of_squares_and_df.f05_error
+  formula_id: ps.anova.oneway_sums_of_squares_and_df.f05_error.formula_01
+  공식명: 자유도
+  LaTeX: df_E=N-a
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 52 → formulas → 0 → cas
+  concept_id: ps.anova.welch_anova_statistic.f01
+  formula_id: ps.anova.welch_anova_statistic.f01.formula_01
+  공식명: 정의
+  LaTeX: w_i=\frac{n_i}{s_i^2}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 53 → formulas → 0 → cas
+  concept_id: ps.anova.welch_anova_statistic.f01_sum
+  formula_id: ps.anova.welch_anova_statistic.f01_sum.formula_01
+  공식명: 정의
+  LaTeX: W=\sum_{i=1}^{a}w_i
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 54 → formulas → 0 → cas
+  concept_id: ps.anova.welch_anova_statistic.f01_weighted_mean
+  formula_id: ps.anova.welch_anova_statistic.f01_weighted_mean.formula_01
+  공식명: 정의
+  LaTeX: \bar Y_w=\frac{\sum_{i=1}^{a}w_i\bar Y_i}{W}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 55 → formulas → 0 → cas
+  concept_id: ps.anova.welch_anova_statistic.f02
+  formula_id: ps.anova.welch_anova_statistic.f02.formula_01
+  공식명: 근사 검정통계량
+  LaTeX: F_W=
+\frac{
+\displaystyle
+\frac{1}{a-1}
+\sum_{i=1}^{a}w_i(\bar Y_i-\bar Y_w)^2
+}{
+\displaystyle
+1+
+\frac{2(a-2)}{a^2-1}
+\sum_{i=1}^{a}
+\frac{1}{n_i-1}
+\left(1-\frac{w_i}{W}\right)^2
+}
+  내용: formula에 cas 값이 없습니다.
+CAS 누락
+  위치: concepts → 56 → formulas → 0 → cas
+  concept_id: ps.anova.welch_anova_statistic.f03
+  formula_id: ps.anova.welch_anova_statistic.f03.formula_01
+  공식명: Welch–Satterthwaite 근사 자유도
+  LaTeX: \nu_W=
+\frac{a^2-1}{
+3\displaystyle\sum_{i=1}^{a}
+\frac{1}{n_i-1}
+\left(1-\frac{w_i}{W}\right)^2
+}
+  내용: formula에 cas 값이 없습니다.
 
 ======================================================================
 전체 JSON 파일: 51
-검증 통과 파일: 51
-검증 실패 파일: 0
-검증 통과 Concept: 1117
+검증 통과 파일: 29
+검증 실패 파일: 22
+검증 통과 Concept: 256
+
+[CAS 검증 통계]
+전체 Formula: 1329
+CAS 존재 Formula: 809
+CAS 누락/빈값 Formula: 520
+CAS 구문 오류 Formula: 14

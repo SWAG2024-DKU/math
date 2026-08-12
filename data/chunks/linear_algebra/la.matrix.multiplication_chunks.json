@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.matrix.multiplication",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_01_matrix_algebra",
+  "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 행벡터와 열벡터의 내적으로 행렬 곱을 정의하고, 결합/분배법칙은 만족하나 교환법칙은 성립하지 않는 구조를 규명한다.\n검색 태그: matrix_multiplication, non_commutative, zero_divisor",
+      "token_count": 119,
+      "content_hash": "45464e2f248ab101fce4ac409a641e0f0b0c9635c5e42cdad58a8a2487e7e56f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 행렬 곱셈\n공식 ID: matrix_multiplication\n역할: definition\nLaTeX: c_{ij} = \\sum_{k=1}^{n} a_{ik}b_{kj}\nCAS 표현: Matrix(A) * Matrix(B)\n\n공식명: 교환법칙 불성립\n공식 ID: non_commutative\n역할: property\nLaTeX: AB \\neq BA\nCAS 표현: A*B != B*A",
+      "token_count": 159,
+      "content_hash": "6ae5dd50a8760933bf394c91d1ea4ea5032c170c0a9369a158b7abdfc022aed3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: inner_dimension_match\n설명: 앞 행렬의 열 개수와 뒤 행렬의 행 개수가 완벽히 일치해야 한다.\n검증 규칙: matrix_inner_dimensions_equal equals 참",
+      "token_count": 108,
+      "content_hash": "18818a6fa7a10d8a61b87cfac750b911430f43ff295b867f5c7e867eaa9f826e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: algebraic_laws\n설명: 행렬 곱셈은 결합법칙과 분배법칙을 만족한다.",
+      "token_count": 87,
+      "content_hash": "defa3ac9422148184efcb74aca58c2b716ad79a90a1fcd4b06de2422ccbf67b5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 벡터의 내적 (algebra.dot_product, 중요도: required)\n\n관련 개념:\n- la.matrix.transpose_symmetric\n\n학습 목표 ID: calculate_matrix_product\n행동 동사: calculate\n목표: 두 행렬의 내적합을 통해 곱셈을 수행한다.\n\n학습 목표 ID: understand_non_commutative\n행동 동사: evaluate\n목표: 행렬 곱셈의 비교환성을 대수식 전개에 적용한다.",
+      "token_count": 172,
+      "content_hash": "0419140b1872dc52775808562c629947682ebc18f924f7fac7126fc98cd342e4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 다항식 전개 공식의 무분별한 적용\n오개념 ID: la.matrix.multiplication.polynomial_expansion\n설명: 실수 대수학의 (A+B)^2 공식을 교환법칙이 성립하지 않는 행렬 연산에 강제 적용한다.\n진단 태그: commutative_expansion_error\n피드백: 행렬은 교환법칙이 성립하지 않으므로 (A+B)^2 = A^2 + AB + BA + B^2 로 전개해야 합니다.\n\n오개념: 영인자(Zero Divisor)의 존재 무시\n오개념 ID: la.matrix.multiplication.zero_divisor\n설명: AB=0일 때 A나 B 중 하나가 반드시 영행렬일 것이라고 단정한다.\n진단 태그: zero_divisor_ignorance\n피드백: 두 영행렬이 아닌 행렬을 곱해도 영행렬이 될 수 있습니다(영인자).",
+      "token_count": 286,
+      "content_hash": "dc822bcf5730067f72de33b5b73b706e39c6c5c4d958d7a58630021fa4ef9390",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.multiplication",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "행렬 곱셈 연산과 대수적 구조",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 행렬 곱셈 연산과 대수적 구조\n개념 ID: la.matrix.multiplication\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: matrix_multiplication, algebraic_expansion_verification\n지원 정답 유형: matrix, expression\n난이도 범위: 1 ~ 3\n권장 검증기: matrix_equivalence, symbolic_noncommutative_expansion",
+      "token_count": 126,
+      "content_hash": "f2b3e0e9d98e64b808621904e8992bd51485f1128c7d2b4913d9462f15ff5913",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

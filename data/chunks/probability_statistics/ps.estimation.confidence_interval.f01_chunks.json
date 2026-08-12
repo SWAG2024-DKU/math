@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.confidence_interval.f01",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "신뢰구간의 포함확률 함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.confidence_interval.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "신뢰구간의 포함확률 함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 신뢰구간의 포함확률 함수\n개념 ID: ps.estimation.confidence_interval.f01\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 주어진 신뢰집합 절차 C(X)가 모수 θ를 포함할 확률을 θ의 함수로 정의한다. 정확·보수적·점근 신뢰수준은 별도 개념에서 구분한다.\n검색 태그: estimation, confidence_interval, formula_atomic",
+      "token_count": 119,
+      "content_hash": "9f8a68e691484cf985bd75173e4b680df1cafde0ec776b766e735bdc35076064",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.confidence_interval.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "신뢰구간의 포함확률 함수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 신뢰구간의 포함확률 함수\n개념 ID: ps.estimation.confidence_interval.f01\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 신뢰집합의 포함확률 함수\n공식 ID: ps.estimation.confidence_interval.f01.formula_01\n역할: coverage_probability\nLaTeX: \\operatorname{Cov}_{C}(\\theta)=P_\\theta\\{\\theta\\in C(X)\\}",
+      "token_count": 131,
+      "content_hash": "b52a5a4b9be894d9e506518328f936c5544c4a1225a2a6479300ed67201dbe43",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.confidence_interval.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "신뢰구간의 포함확률 함수",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 신뢰구간의 포함확률 함수\n개념 ID: ps.estimation.confidence_interval.f01\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.estimation.confidence_interval.f01.condition_01\n설명: $L(X),U(X)$는 표본으로부터 정의된 통계량이어야 한다.\n검증 규칙: interval_endpoints_are_statistics equals 참\n\n조건 ID: ps.estimation.confidence_interval.f01.condition_02\n설명: $C(X)$는 표본으로부터 정의된 가측 확률집합이어야 한다.\n검증 규칙: confidence_set_is_measurable_statistic equals 참\n\n조건 ID: ps.estimation.confidence_interval.f01.condition_03\n설명: 모수공간 $\\Theta$와 각 $\\theta\\in\\Theta$에서의 표본분포가 정의되어야 한다.\n검증 규칙: parameter_space_and_sampling_model_defined equals 참",
+      "token_count": 257,
+      "content_hash": "b637fa7ff1ee23b7d4ad6b31f2123bbe17f8e8727c1028f91a11d9985085a863",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.confidence_interval.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "신뢰구간의 포함확률 함수",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 신뢰구간의 포함확률 함수\n개념 ID: ps.estimation.confidence_interval.f01\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.estimation.confidence_interval.f01.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 97,
+      "content_hash": "1d3540d29603e79c8b2f21e2745f2682d48b9c982a0ead07fff5a228a3862460",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.confidence_interval.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "신뢰구간의 포함확률 함수",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 신뢰구간의 포함확률 함수\n개념 ID: ps.estimation.confidence_interval.f01\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률표본과 통계량 (ps.sampling_distributions.random_sample_statistic, 중요도: required)\n\n관련 개념:\n- ps.estimation.confidence_interval\n- ps.estimation.sufficiency_information\n- ps.estimation.sample_size_determination\n\n학습 목표 ID: ps.estimation.confidence_interval.f01.objective_01\n행동 동사: identify\n목표: 신뢰구간 수식 1의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.estimation.confidence_interval.f01.objective_02\n행동 동사: apply\n목표: 신뢰구간 수식 1을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.estimation.confidence_interval.f01.objective_03\n행동 동사: verify\n목표: 신뢰구간 수식 1의 조건 충족 여부를 검증한다.",
+      "token_count": 274,
+      "content_hash": "6d6c2f7cfa5b27cf6c048232c5c56b8a078adc386018b33bf999b9ffcc172fee",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.confidence_interval.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "신뢰구간의 포함확률 함수",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 신뢰구간의 포함확률 함수\n개념 ID: ps.estimation.confidence_interval.f01\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, interval\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 148,
+      "content_hash": "30c8235941a91e735a276648c1b7f8d19cb318266dee124b40b4fc748397e1d8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.multivariable_limit_and_continuity",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+  "concept_name_ko": "다변수함수의 극한과 연속",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: (x,y)→(a,b)일 때 f(x,y)가 L에 가까워지면 극한이 L이라 한다. 극한이 존재하려면 모든 접근 경로에서 같은 값에 수렴해야 하며, 서로 다른 경로에서 다른 값이 나오면 극한은 존재하지 않는다(단, 여러 경로가 일치한다고 극한 존재가 증명되지는 않음). 연속은 극한값=함숫값 조건을 요구한다.\n검색 태그: multivariable_limit, path_test, continuity",
+      "token_count": 180,
+      "content_hash": "303468d2918ef7432d4978567652078e26b81efc792cccf0663fda38d31a821a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 다변수함수의 극한\n공식 ID: multivariable_limit_def\n역할: definition\nLaTeX: \\lim_{(x,y)\\to(a,b)}f(x,y)=L\nCAS 표현: limit(f(x,y), (x,y), (a,b))\n\n공식명: 경로 예시\n공식 ID: path_test_examples\n역할: technique\nLaTeX: y=b,\\quad x=a,\\quad y-b=m(x-a),\\quad y-b=(x-a)^2\nCAS 표현: f(x, b)\n\n공식명: 극좌표 치환\n공식 ID: polar_substitution_for_limit\n역할: technique\nLaTeX: x=r\\cos\\theta,\\ y=r\\sin\\theta,\\qquad(x,y)\\to(0,0)\\iff r\\to0\nCAS 표현: f(r*cos(theta), r*sin(theta))\n\n공식명: 연속의 정의\n공식 ID: multivariable_continuity\n역할: definition\nLaTeX: \\lim_{(x,y)\\to(a,b)}f(x,y)=f(a,b)\nCAS 표현: Eq(limit(f(x,y),(x,y),(a,b)), f(a,b))",
+      "token_count": 369,
+      "content_hash": "1cf93f5e7599d28f2f5615bdf5dba0f1e8e8276641c577f76ed0dfbcc4794842",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: path_disagreement_proves_nonexistence\n설명: 서로 다른 두 경로에서 다른 극한값이 나오면 전체 극한은 존재하지 않는다.\n검증 규칙: two_paths_give_different_limits equals 참\n\n조건 ID: path_agreement_not_sufficient\n설명: 여러 경로에서 같은 값이 나온다는 사실만으로 전체 극한이 존재한다고 결론 내릴 수 없다.\n검증 규칙: path_agreement_proves_existence equals 거짓\n\n조건 ID: polar_limit_must_be_theta_independent\n설명: 극좌표로 바꾼 식이 θ와 무관하게 같은 값으로 수렴해야 원점에서의 극한 존재를 보이는 데 유용하다.\n검증 규칙: polar_form_limit_independent_of_theta equals 참",
+      "token_count": 245,
+      "content_hash": "476469e037a4108ea40778a599a6fe9a94633566a4d2262e0337aa0be43a1561",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: continuous_function_combinations\n설명: 다항함수는 모든 점에서 연속이고, 유리함수는 분모가 0이 아닌 곳에서 연속이며, 연속함수의 합·차·곱·합성은 정의되는 곳에서 연속이다.",
+      "token_count": 112,
+      "content_hash": "f43c9131badcfbc4ea898c6a3708aa58045a1729f9c58cd9fc9b9ed73726700a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수의 극한 (calculus.limit_definition, 중요도: required)\n\n관련 개념:\n- calculus.partial_derivative\n\n학습 목표 ID: test_limit_via_paths\n행동 동사: verify\n목표: 여러 경로를 대입해 다변수 극한의 존재 여부를 조사한다.\n\n학습 목표 ID: use_polar_substitution_for_limit\n행동 동사: apply\n목표: 극좌표 치환으로 원점에서의 극한을 계산한다.\n\n학습 목표 ID: verify_continuity_at_point\n행동 동사: verify\n목표: 다변수함수가 특정 점에서 연속인지 판정한다.",
+      "token_count": 209,
+      "content_hash": "0361d990e063b968a5fbf568102cd2a0d64e1d293ea2f5f8a1d2cfa0607411a9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 몇 개 경로 일치로 극한 존재 단정\n오개념 ID: calculus.multivariable_limit.few_paths_prove_existence\n설명: 직선 경로 몇 개에서 같은 값이 나온 것만으로 극한이 존재한다고 결론짓는다.\n진단 태그: assume_limit_exists_from_few_matching_paths\n피드백: 유한한 개수의 경로가 일치한다고 해서 모든 경로에서 극한이 같다는 것이 증명되지는 않는다(예: y=x^2 경로에서만 다른 값이 나오는 경우가 있음).",
+      "token_count": 203,
+      "content_hash": "9f212ce852f3b5638c0ea65de7d7a3e23762418cd9b592fcc78c5336fc9648d1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수함수의 극한과 연속",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수함수의 극한과 연속\n개념 ID: calculus.multivariable_limit_and_continuity\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: path_test_limit_nonexistence, polar_substitution_limit_calculation, continuity_verification\n지원 정답 유형: boolean, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence, numeric_sampling",
+      "token_count": 133,
+      "content_hash": "3a3b2b962fe6576edec1b57c786a5e2cb418bb802fb1f5d0dbce85a81fd511e7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

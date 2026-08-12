@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch02_limits_and_derivatives",
+  "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: f가 다항식이거나 유리함수이고 a가 정의역 안에 있으면 lim f(x)=f(a)로 직접대입해 극한을 구할 수 있다(직접대입성질을 갖는 함수를 그 점에서 연속이라 한다). 직접대입이 안 되는 경우(0/0 부정형 등)에는 인수분해·약분·유리화로 국소적으로 같은 더 간단한 함수로 바꾸어 계산한다.\n검색 태그: direct_substitution, factoring, rationalization, indeterminate_form",
+      "token_count": 188,
+      "content_hash": "9f0534dee96957e3646746abd86c0bcb369d10a42375c961761c8bf73cc7a1ca",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 직접대입성질\n공식 ID: direct_substitution\n역할: theorem\nLaTeX: \\lim_{x\\to a}f(x)=f(a)\nCAS 표현: Eq(limit(f(x), x, a), f(a))\n\n공식명: 국소적 함수 일치\n공식 ID: local_agreement\n역할: theorem\nLaTeX: x\\neq a\\text{에서 }f(x)=g(x)\\implies\\lim_{x\\to a}f(x)=\\lim_{x\\to a}g(x)\nCAS 표현: Eq(limit(f(x),x,a), limit(g(x),x,a))",
+      "token_count": 230,
+      "content_hash": "f6513c817d5fd29436b159c667b12bc585cbf3ee354a8a2af449a812586c838d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: polynomial_or_rational\n설명: 직접대입성질은 f가 다항식이거나 유리함수일 때 성립한다.\n검증 규칙: function_type in polynomial, rational\n\n조건 ID: a_in_domain\n설명: a가 f의 정의역 안에 있어야 한다(유리함수는 분모가 0이 되지 않는 점).\n검증 규칙: a_in_domain_of_f equals 참",
+      "token_count": 168,
+      "content_hash": "ce3dde9a8b6f31768bff4356b0629d1847ff622ff689fbafa353878fd7742c73",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: not_all_limits_by_substitution\n설명: 모든 극한을 직접대입으로 구할 수 있는 것은 아니다. (x^2-1)/(x-1) 같은 0/0 부정형은 인수분해 후 약분해서 계산해야 한다.\n\n성질 ID: rationalization_technique\n설명: 분모(또는 분자)를 유리화하는 방법으로도 직접대입이 불가능한 극한을 계산할 수 있다.",
+      "token_count": 166,
+      "content_hash": "07fb34e50db51af7ca66329b7bec4652328c1045b3b4936314422ca83a88a082",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 극한법칙 (calculus.limit_laws, 중요도: required)\n- 인수분해 (algebra.factoring, 중요도: required)\n\n관련 개념:\n- calculus.squeeze_theorem\n- calculus.continuity\n\n학습 목표 ID: apply_direct_substitution\n행동 동사: apply\n목표: 다항식·유리함수의 극한을 직접대입으로 계산한다.\n\n학습 목표 ID: resolve_indeterminate_form\n행동 동사: transform\n목표: 0/0 부정형을 인수분해나 유리화로 변형해 극한을 계산한다.",
+      "token_count": 206,
+      "content_hash": "ee50ac678ef03d3d5dc4855bd38b3e67883d15a2b44b00983126b3c15a230a4f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 부정형에 직접대입 강행\n오개념 ID: calculus.direct_substitution.force_on_indeterminate\n설명: 0/0 형태가 나왔는데도 그 값을 극한으로 잘못 취급하거나 극한이 존재하지 않는다고 단정한다.\n진단 태그: misinterpret_indeterminate_form\n피드백: 0/0 부정형은 극한이 없다는 뜻이 아니라 직접대입으로는 판단할 수 없다는 뜻이며, 식을 변형해 다시 계산해야 한다.",
+      "token_count": 189,
+      "content_hash": "e9a38c934e4383782c22767b198a2853bfcf4bfb47b69e80ce6040ede07c1155",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.direct_substitution_and_algebraic_limit_techniques",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "직접대입성질과 대수적 극한 계산법",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 직접대입성질과 대수적 극한 계산법\n개념 ID: calculus.direct_substitution_and_algebraic_limit_techniques\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: direct_substitution_limit, indeterminate_form_resolution\n지원 정답 유형: scalar, expression\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence, domain_check",
+      "token_count": 127,
+      "content_hash": "3125d28871b021bad5308a8f81dacc8934056c353d739e33458b8cfed5efb86e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

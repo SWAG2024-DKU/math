@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_07_discrete_distributions",
+  "concept_name_ko": "초기하분포 — 적률 관계",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 초기하분포에서 사용하는 적률 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: discrete_distributions, hypergeometric, distribution, formula_atomic, core_formula",
+      "token_count": 115,
+      "content_hash": "5be31bc0453033d17dcb844ea908497e5fe3aef86d669310d19f69f2a939cd84",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 적률 관계\n공식 ID: ps.discrete_distributions.hypergeometric.f02.formula_01\n역할: moment_relation\nLaTeX: E[X]=nK/N",
+      "token_count": 108,
+      "content_hash": "3d21d646bc40b7d172bac198c437f2a57ce206c3c22a12d64aa5cebea25f11a7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_01\n설명: $N\\ge1$이어야 한다.\n검증 규칙: population_size greater_or_equal 1\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_02\n설명: 크기 $N$의 유한모집단에서 비복원 단순무작위추출 모형이어야 한다.\n검증 규칙: sampling_scheme equals simple_random_sampling_without_replacement\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_03\n설명: $N$은 정수여야 한다.\n검증 규칙: population_size_is_integer equals 참\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_04\n설명: $K\\ge0$이어야 한다.\n검증 규칙: success_states greater_or_equal 0\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_05\n설명: $K$는 정수여야 한다.\n검증 규칙: success_states_is_integer equals 참\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_06\n설명: $K\\le N$이어야 한다.\n검증 규칙: success_states_not_exceed_population equals 참",
+      "token_count": 401,
+      "content_hash": "9cca75fd685a8651131422a14826a2526ff1f838b832ae2e13f571180fee0ea3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 6,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_07\n설명: $n\\ge0$이어야 한다.\n검증 규칙: sample_size greater_or_equal 0\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_08\n설명: $n$은 정수여야 한다.\n검증 규칙: sample_size_is_integer equals 참\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_09\n설명: $n\\le N$이어야 한다.\n검증 규칙: sample_size_not_exceed_population equals 참\n\n조건 ID: ps.discrete_distributions.hypergeometric.f02.condition_10\n설명: 확률변수는 hypergeometric 분포를 따라야 한다.\n검증 규칙: random_variable_distribution equals hypergeometric",
+      "token_count": 277,
+      "content_hash": "a3973fe39b7e0fd03b399726641d2eb380c57ab5fd299292e1439fb032476d31",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.discrete_distributions.hypergeometric.f02.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 107,
+      "content_hash": "d8767146ea96320b434a5e2d62661cd13ae56b3d6c62994b3b3144910ab736de",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 조합 (ps.counting.combination, 중요도: required)\n\n관련 개념:\n- ps.discrete_distributions.hypergeometric\n- ps.discrete_distributions.geometric_negative_binomial\n- ps.discrete_distributions.poisson\n\n학습 목표 ID: ps.discrete_distributions.hypergeometric.f02.objective_01\n행동 동사: identify\n목표: 초기하분포 수식 2의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.discrete_distributions.hypergeometric.f02.objective_02\n행동 동사: apply\n목표: 초기하분포 수식 2을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.discrete_distributions.hypergeometric.f02.objective_03\n행동 동사: verify\n목표: 초기하분포 수식 2의 조건 충족 여부를 검증한다.",
+      "token_count": 289,
+      "content_hash": "296c8e7e0dba383c2c0a3955eaab8db7b4483d9d02cc2f9dfd23140408c846e6",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.discrete_distributions.hypergeometric.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_07_discrete_distributions",
+      "concept_name_ko": "초기하분포 — 적률 관계",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 주요 이산확률분포\n개념: 초기하분포 — 적률 관계\n개념 ID: ps.discrete_distributions.hypergeometric.f02\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 169,
+      "content_hash": "152f7a26ab5d06fbc379377debec07e629015d3cc4cec5716a0719da0f4569a4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

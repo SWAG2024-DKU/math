@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.multivariable_chain_rule",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+  "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: z=f(x,y)이고 x,y가 t의 함수이면 dz/dt=f_x·dx/dt+f_y·dy/dt이다. x,y가 두 매개변수 s,t의 함수이면 ∂z/∂s, ∂z/∂t를 각각 유사하게 구하며, 트리 다이어그램으로 의존관계를 정리한다. F(x,y)=0이 y를 x의 함수로 정의하면 암시적 미분으로 dy/dx=-F_x/F_y(F_y≠0)를 얻는다.\n검색 태그: multivariable_chain_rule, implicit_differentiation",
+      "token_count": 215,
+      "content_hash": "b523b97e1a71f29b93deb83aa00497e93914d97834ec7f5f88ca2c3459da2e0f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 한 매개변수에 대한 연쇄법칙\n공식 ID: chain_rule_one_parameter\n역할: theorem\nLaTeX: \\frac{dz}{dt}=\\frac{\\partial f}{\\partial x}\\frac{dx}{dt}+\\frac{\\partial f}{\\partial y}\\frac{dy}{dt}\nCAS 표현: diff(f(x(t),y(t)), t)\n\n공식명: 두 매개변수에 대한 연쇄법칙\n공식 ID: chain_rule_two_parameters\n역할: theorem\nLaTeX: \\frac{\\partial z}{\\partial s}=f_x\\frac{\\partial x}{\\partial s}+f_y\\frac{\\partial y}{\\partial s},\\qquad\\frac{\\partial z}{\\partial t}=f_x\\frac{\\partial x}{\\partial t}+f_y\\frac{\\partial y}{\\partial t}\nCAS 표현: diff(f(x(s,t),y(s,t)), s)",
+      "token_count": 327,
+      "content_hash": "7aabd03fc07b6ebc11645fe01d577514b81035fa41addcf2e4ef7095117cd00d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 세 변수 함수의 연쇄법칙\n공식 ID: chain_rule_three_variable\n역할: theorem\nLaTeX: \\frac{dw}{dt}=f_x\\frac{dx}{dt}+f_y\\frac{dy}{dt}+f_z\\frac{dz}{dt}\nCAS 표현: diff(f(x(t),y(t),z(t)), t)\n\n공식명: 암시적 미분\n공식 ID: multivariable_implicit_diff\n역할: theorem\nLaTeX: F(x,y)=0\\implies\\frac{dy}{dx}=-\\frac{F_x}{F_y}\\quad(F_y\\neq0)\nCAS 표현: -diff(F(x,y),x)/diff(F(x,y),y)",
+      "token_count": 254,
+      "content_hash": "9a8cb9ae1166f4f23fddff24c87daaaaf53cb74b2d13d9114d3689b25706fe4a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: sum_over_all_paths\n설명: 트리 다이어그램에서 각 경로의 편도함수를 곱하고 가능한 모든 경로를 더해야 한다.\n검증 규칙: all_dependency_paths_summed equals 참\n\n조건 ID: implicit_diff_denominator_nonzero\n설명: 암시적 미분공식은 F_y≠0인 점에서 사용한다.\n검증 규칙: F_y not_equals 0",
+      "token_count": 165,
+      "content_hash": "cd69a7f9284e4e4a6c580d5b80a4d9420dafe23cab8902b7bd089475e1853917",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: partials_evaluated_at_intermediate_values\n설명: 편도함수는 적절한 중간변수 값에서 평가해야 한다.",
+      "token_count": 94,
+      "content_hash": "69dea8afdb57ac04cb047a795750398b7e6dbae389c8542142a48975e4805cce",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 편도함수와 고계편도함수 (calculus.partial_derivative, 중요도: required)\n- 연쇄법칙 (calculus.chain_rule, 중요도: required)\n\n관련 개념:\n- calculus.directional_derivative_and_gradient\n\n학습 목표 ID: apply_multivariable_chain_rule\n행동 동사: apply\n목표: 트리 다이어그램으로 의존관계를 정리해 다변수 연쇄법칙을 적용한다.\n\n학습 목표 ID: apply_multivariable_implicit_differentiation\n행동 동사: apply\n목표: F(x,y)=0 형태의 방정식에서 암시적 미분으로 dy/dx를 구한다.",
+      "token_count": 227,
+      "content_hash": "6d1bb67e640adf11137d37c72696aeef60843b7f5bc04cc1d49e3e5754f3b4da",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 중간변수 경로 일부 누락\n오개념 ID: calculus.multivariable_chain_rule.miss_a_path\n설명: z가 x, y 모두를 거쳐 t에 의존하는데 하나의 경로(예: x를 통한 항)만 더하고 다른 경로를 빠뜨린다.\n진단 태그: omit_dependency_path_in_multivariable_chain_rule\n피드백: z가 t에 도달하는 모든 경로(x를 통한 경로, y를 통한 경로 등)의 곱을 빠짐없이 더해야 한다.",
+      "token_count": 202,
+      "content_hash": "fe3d447d5df5581a3f6a436f01c2f40eca6300f3a1bb576f8a7b3180255d65f2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+      "concept_name_ko": "다변수 연쇄법칙과 암시적 미분",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 다변수함수의 미분\n개념: 다변수 연쇄법칙과 암시적 미분\n개념 ID: calculus.multivariable_chain_rule\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: multivariable_chain_rule_application, multivariable_implicit_differentiation\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 118,
+      "content_hash": "c2020984022bbdfa488346b6a92103d4cced20c95f793dc245b746e7d9e2a52c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

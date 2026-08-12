@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_08_continuous_distributions",
+  "concept_name_ko": "F분포의 평균과 분산 — 분산",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "F분포의 평균과 분산 — 분산",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: F분포의 평균과 분산 — 분산\n개념 ID: ps.continuous_distributions.f_distribution_moments.f02\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 F분포의 평균과 분산에서 사용하는 분산 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: f_distribution, moments, formula_atomic, moment",
+      "token_count": 111,
+      "content_hash": "3a950559a7bd0dec1734a999a5d2703207fedd4733f9da466958e95757562849",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "F분포의 평균과 분산 — 분산",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: F분포의 평균과 분산 — 분산\n개념 ID: ps.continuous_distributions.f_distribution_moments.f02\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 분산\n공식 ID: ps.continuous_distributions.f_distribution_moments.f02.formula_01\n역할: variance\nLaTeX: \\operatorname{Var}(F)=\\frac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)}",
+      "token_count": 145,
+      "content_hash": "0ed2265de943f759f146b190f2a0ef977caec4f4571573f906a8c5152f282fe2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "F분포의 평균과 분산 — 분산",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: F분포의 평균과 분산 — 분산\n개념 ID: ps.continuous_distributions.f_distribution_moments.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.continuous_distributions.f_distribution_moments.f02.condition_01\n설명: $d_1>0$이어야 한다.\n검증 규칙: numerator_degrees_of_freedom greater_than 0\n\n조건 ID: ps.continuous_distributions.f_distribution_moments.f02.condition_02\n설명: $d_2>4$이어야 분산이 유한하게 존재한다.\n검증 규칙: denominator_degrees_of_freedom greater_than 4",
+      "token_count": 185,
+      "content_hash": "098c6c52256bf3f471bd2899069cb216a66d190381a19af49ad4e41638c3d4af",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "F분포의 평균과 분산 — 분산",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: F분포의 평균과 분산 — 분산\n개념 ID: ps.continuous_distributions.f_distribution_moments.f02\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.continuous_distributions.f_distribution_moments.f02.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 111,
+      "content_hash": "2be730f9ab3d5da2133619cdd9104631848543dd72e02915ae1336534f74090c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "F분포의 평균과 분산 — 분산",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: F분포의 평균과 분산 — 분산\n개념 ID: ps.continuous_distributions.f_distribution_moments.f02\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률변수와 분포 (ps.random_variables.random_variable_distribution, 중요도: required)\n- 적분 (calculus.integral, 중요도: required)\n\n관련 개념:\n- ps.continuous_distributions.f_distribution_moments\n- ps.continuous_distributions.t_f_moment_existence\n\n학습 목표 ID: ps.continuous_distributions.f_distribution_moments.f02.objective_01\n행동 동사: identify\n목표: 적률 (2)의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.continuous_distributions.f_distribution_moments.f02.objective_02\n행동 동사: apply\n목표: 적률 (2)을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.continuous_distributions.f_distribution_moments.f02.objective_03\n행동 동사: verify\n목표: 적률 (2)의 조건 충족 여부를 검증한다.",
+      "token_count": 297,
+      "content_hash": "949874c9c89c37765b3c965f294bd76a8671fe56f1f1ac1e4719ef61596ac119",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.f_distribution_moments.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "F분포의 평균과 분산 — 분산",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: F분포의 평균과 분산 — 분산\n개념 ID: ps.continuous_distributions.f_distribution_moments.f02\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 172,
+      "content_hash": "f33835de36d1992acc3f05af0872b9f9be9e7477b469e3fbe26b10152dd5c166",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.sample_size_proportion",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "모비율 추정 표본크기",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.sample_size_proportion",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "모비율 추정 표본크기",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 모비율 추정 표본크기\n개념 ID: ps.estimation.sample_size_proportion\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: Wald 정규근사에서 비율 신뢰구간의 오차한계로 표본크기를 계산한다.\n검색 태그: estimation, sample_size_determination, sampling, sample_size_proportion",
+      "token_count": 99,
+      "content_hash": "3f897e2cdd87975dcd54fea1af17f15936f99aadfe31b42de0d1d09ae986c1dd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.sample_size_proportion",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "모비율 추정 표본크기",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 모비율 추정 표본크기\n개념 ID: ps.estimation.sample_size_proportion\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 근사식\n공식 ID: ps.estimation.sample_size_proportion.formula_01\n역할: approximation\nLaTeX: n=\\left\\lceil\\frac{z_{1-\\alpha/2}^2p(1-p)}{E^2}\\right\\rceil",
+      "token_count": 123,
+      "content_hash": "1adf2f4166ad390edbcfcdc12cee90e63a4727c36cd73cc55a90456c0c1442db",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.sample_size_proportion",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "모비율 추정 표본크기",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 모비율 추정 표본크기\n개념 ID: ps.estimation.sample_size_proportion\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.estimation.sample_size_proportion.condition_01\n설명: 사전 비율은 $0<p<1$이어야 한다.\n검증 규칙: anticipated_proportion greater_than 0\n\n조건 ID: ps.estimation.sample_size_proportion.condition_02\n설명: 사전 비율은 1보다 작아야 한다.\n검증 규칙: anticipated_proportion less_than 1\n\n조건 ID: ps.estimation.sample_size_proportion.condition_03\n설명: 허용오차 $E>0$이어야 한다.\n검증 규칙: margin_of_error greater_than 0\n\n조건 ID: ps.estimation.sample_size_proportion.condition_04\n설명: $0<\\alpha<1$이어야 한다.\n검증 규칙: significance_level greater_than 0\n\n조건 ID: ps.estimation.sample_size_proportion.condition_05\n설명: $\\alpha<1$이어야 한다.\n검증 규칙: significance_level less_than 1\n\n조건 ID: ps.estimation.sample_size_proportion.condition_06\n설명: 정규근사에 기초한 표본크기 계획이어야 한다.\n검증 규칙: normal_approximation_planned equals 참\n\n조건 ID: ps.estimation.sample_size_proportion.condition_07\n설명: 계산 결과는 올림한다.\n검증 규칙: sample_size_rounding equals ceiling",
+      "token_count": 376,
+      "content_hash": "9f30d4e13e00e769d19a6060af1603672c48350ba855326e3873409d411f8b32",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 7,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.sample_size_proportion",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "모비율 추정 표본크기",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 모비율 추정 표본크기\n개념 ID: ps.estimation.sample_size_proportion\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 신뢰구간 (ps.estimation.confidence_interval, 중요도: required)\n\n관련 개념:\n- ps.estimation.sample_size_determination\n\n학습 목표 ID: ps.estimation.sample_size_proportion.objective_01\n행동 동사: apply\n목표: 모비율 추정 표본크기의 공식과 적용 조건을 구분하여 적용한다.",
+      "token_count": 146,
+      "content_hash": "6ed57de37bc0c31c1c837b180f67a1f7e32f5f9af8831f8a2958366c48616db7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.sample_size_proportion",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "모비율 추정 표본크기",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 모비율 추정 표본크기\n개념 ID: ps.estimation.sample_size_proportion\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, interval\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 147,
+      "content_hash": "68f5cd4ed18fee90217d3c86c7b3c26a80c44dbf025dd68cce00ce7a672eda26",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

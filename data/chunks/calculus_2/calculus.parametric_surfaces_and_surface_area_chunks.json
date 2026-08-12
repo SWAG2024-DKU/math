@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.parametric_surfaces_and_surface_area",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch06_vector_calculus",
+  "concept_name_ko": "매개곡면과 곡면적",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 곡면 S가 두 매개변수 u,v로 r(u,v)=<x,y,z>로 주어지면 매개곡면이라 한다. 두 접선벡터 r_u, r_v의 외적 r_u×r_v(≠0)가 법선벡터이며, 곡면적은 A(S)=∬D‖r_u×r_v‖dA이다. z=g(x,y) 형태의 그래프형 곡면은 A(S)=∬D√(1+g_x²+g_y²)dA로 계산한다.\n검색 태그: parametric_surface, surface_area",
+      "token_count": 215,
+      "content_hash": "5c3e7d3b1cb79777346a73f828722d832b20b366c459368657f083b4bcbbaaf7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 매개곡면과 접선벡터\n공식 ID: parametric_surface_def\n역할: definition\nLaTeX: \\mathbf{r}(u,v)=\\langle x(u,v),y(u,v),z(u,v)\\rangle,\\qquad\\mathbf{r}_u=\\frac{\\partial\\mathbf{r}}{\\partial u},\\ \\mathbf{r}_v=\\frac{\\partial\\mathbf{r}}{\\partial v}\nCAS 표현: (diff(r(u,v),u), diff(r(u,v),v))\n\n공식명: 곡면의 법선벡터\n공식 ID: surface_normal_vector\n역할: theorem\nLaTeX: \\mathbf{r}_u\\times\\mathbf{r}_v\\quad(\\neq\\mathbf{0})\nCAS 표현: ru.cross(rv)\n\n공식명: 매개곡면의 넓이\n공식 ID: surface_area_parametric\n역할: theorem\nLaTeX: A(S)=\\iint_D\\|\\mathbf{r}_u\\times\\mathbf{r}_v\\|\\,dA\nCAS 표현: Integral(ru.cross(rv).norm(), (u,v), D)",
+      "token_count": 364,
+      "content_hash": "26c3ae51576d0ab89352e0c2042c608b48bc22587d6c6f9fb7a4362d6b21dd65",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 그래프형 곡면의 넓이\n공식 ID: surface_area_graph\n역할: special_case\nLaTeX: z=g(x,y)\\implies A(S)=\\iint_D\\sqrt{1+g_x^2+g_y^2}\\,dA\nCAS 표현: Integral(sqrt(1+diff(g(x,y),x)**2+diff(g(x,y),y)**2), (x,y), D)",
+      "token_count": 175,
+      "content_hash": "7a7af8a3fe1552d16cd08d1de445db423d160594114bbb6eed75d329fbfb96c7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: normal_nonzero\n설명: 법선벡터로 쓰려면 r_u×r_v≠0이어야 한다.\n검증 규칙: ru_cross_rv not_equals zero_vector",
+      "token_count": 108,
+      "content_hash": "24bafb5e2869f78fd1819945a7ad1eee9507995d3080e44b55d408dca1c44a0e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: order_swap_flips_normal_direction\n설명: 매개변수 순서를 바꾸면(r_v×r_u) 외적의 방향이 반대가 된다.",
+      "token_count": 104,
+      "content_hash": "edf1ac0d1c2885c910020cb4c4bc693782e000e610ab3b182bc7bece07a1c1dd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 외적 (calculus.cross_product, 중요도: required)\n- 일반 영역에서의 이중적분 (calculus.double_integral_general_region, 중요도: required)\n\n관련 개념:\n- calculus.surface_integral_and_flux\n\n학습 목표 ID: compute_surface_tangent_and_normal\n행동 동사: calculate\n목표: 매개곡면의 접선벡터와 법선벡터를 구한다.\n\n학습 목표 ID: compute_surface_area\n행동 동사: calculate\n목표: 매개곡면(또는 그래프형 곡면)의 넓이를 계산한다.",
+      "token_count": 212,
+      "content_hash": "890045da863814eaf1c978d3fd3436b582e73421dddf412fe53ca5f048219179",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 곡면적 공식에서 외적의 크기 대신 벡터 사용\n오개념 ID: calculus.parametric_surface.forget_cross_product_norm\n설명: 곡면적을 구하면서 ‖r_u×r_v‖ 대신 r_u×r_v(벡터)를 그대로 적분한다.\n진단 태그: use_vector_instead_of_norm_in_surface_area\n피드백: 곡면적은 스칼라이므로 법선벡터 r_u×r_v의 크기(노름)를 적분해야 한다.",
+      "token_count": 206,
+      "content_hash": "f12995291d4576aa73e4ba74c6adad48ee33cfe79a7a686e08ce57e92410375f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "매개곡면과 곡면적",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 매개곡면과 곡면적\n개념 ID: calculus.parametric_surfaces_and_surface_area\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: surface_normal_calculation, surface_area_calculation\n지원 정답 유형: vector, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence",
+      "token_count": 116,
+      "content_hash": "580f5159f0aceb0d174d289b9ce9f925787c8be93833d4b9522c7a016fb09b4c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

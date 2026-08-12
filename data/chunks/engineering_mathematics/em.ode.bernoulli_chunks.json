@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.bernoulli",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_01_first_order_odes",
+  "concept_name_ko": "Bernoulli 방정식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 비선형항 y^n을 포함하지만 치환을 통해 1계 선형방정식으로 바뀌는 방정식이다.\n검색 태그: bernoulli_ode, substitution, nonlinear",
+      "token_count": 96,
+      "content_hash": "dc3420722f045681a1f76c19fcfa637ea5efdb80e8b98a1e3b63297dbb7b4920",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 베르누이 방정식 표준형\n공식 ID: bernoulli_form\n역할: definition\nLaTeX: y'+P(x)y=Q(x)y^n,\\qquad n\\neq0,1\nCAS 표현: Eq(Derivative(y, x) + P(x)*y, Q(x)*y**n)\n\n공식명: 치환식\n공식 ID: bernoulli_substitution\n역할: formula\nLaTeX: v=y^{1-n}\nCAS 표현: Eq(v, y**(1 - n))",
+      "token_count": 176,
+      "content_hash": "289bda7e1083dfa08444a3b8f93c165fcfcc926e39de90364411b60436341331",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: n_not_zero_one\n설명: n != 0, 1이어야 한다.\n검증 규칙: n_not_0_or_1 equals 참",
+      "token_count": 87,
+      "content_hash": "80ed9f693fbb1dd32f2737275b4677def056c171199f0b58b3e5ddac8a571408",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: linearized_via_substitution\n설명: 치환 후 적분인자법을 적용할 수 있는 선형방정식이 된다.",
+      "token_count": 81,
+      "content_hash": "8b7a2e9838b00b896d5643e0d6ce1d21520306c763341acd540ad5290098e437",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 1계 선형방정식 (em.ode.linear_integrating_factor, 중요도: required)\n- 거듭제곱 미분 (calculus.power_rule, 중요도: required)\n\n관련 개념:\n- em.ode.exact\n\n학습 목표 ID: solve_bernoulli_ode\n행동 동사: solve\n목표: 베르누이 방정식을 치환하여 선형방정식으로 변환하고 해를 구한다.",
+      "token_count": 159,
+      "content_hash": "3446e33addce88c2dcea3abe3153a935896ffb07ec3986bf41ccd0d7dcc9a055",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 치환 지수 오류\n오개념 ID: em.ode.bernoulli.wrong_substitution_power\n설명: v = y^{1-n} 대신 v = y^n이나 다른 거듭제곱으로 잘못 치환한다.\n진단 태그: wrong_bernoulli_substitution\n피드백: 베르누이 방정식의 올바른 치환은 v = y^{1-n}입니다.",
+      "token_count": 156,
+      "content_hash": "1c758569e85e5df20d8b3f70bfbc2423bd1473c6c66b50b5b7d97a2a71ccc56c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.bernoulli",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "Bernoulli 방정식",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: Bernoulli 방정식\n개념 ID: em.ode.bernoulli\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: bernoulli_ode_solving\n지원 정답 유형: expression\n난이도 범위: 3 ~ 5\n권장 검증기: ode_solution_check",
+      "token_count": 93,
+      "content_hash": "f4bc50032f66ddfe6d6fd49c1b7f9dfe1fbe4c3449e05ed3f55458375fa16145",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

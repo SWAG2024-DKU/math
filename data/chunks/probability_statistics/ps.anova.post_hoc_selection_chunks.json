@@ -1,0 +1,91 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.anova.post_hoc_selection",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_18_anova",
+  "concept_name_ko": "사후검정 선택",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.post_hoc_selection",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "사후검정 선택",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 사후검정 선택\n개념 ID: ps.anova.post_hoc_selection\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: Tukey HSD: 모든 쌍별 비교, 등분산 가정 Tukey--Kramer: 집단별 표본크기가 다른 쌍별 비교 Games--Howell: 등분산 가정이 어려운 쌍별 비교 Dunnett: 여러 처리집단을 하나의 대조군과 비교 Scheffé: 임의의 대비를 폭넓게 보호하는 보수적 방법\n검색 태그: anova, post_hoc_selection, testing",
+      "token_count": 146,
+      "content_hash": "d76c21e82c02fdcdcb34ed4e20a57cdae6e6a3dd93056198d5f1823370c87f8b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.post_hoc_selection",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "사후검정 선택",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 사후검정 선택\n개념 ID: ps.anova.post_hoc_selection\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.anova.post_hoc_selection.property_01\n설명: 독립 등분산 집단의 모든 쌍별 비교에는 Tukey 또는 Tukey–Kramer를 고려한다.\n\n성질 ID: ps.anova.post_hoc_selection.property_02\n설명: 독립집단에서 등분산을 요구하지 않는 쌍별 비교에는 Games–Howell을 고려한다.\n\n성질 ID: ps.anova.post_hoc_selection.property_03\n설명: 여러 처리집단과 하나의 대조군 비교에는 Dunnett을 고려한다.\n\n성질 ID: ps.anova.post_hoc_selection.property_04\n설명: 모든 대비를 폭넓게 보호하려면 Scheffé를 고려한다.",
+      "token_count": 225,
+      "content_hash": "fd1d31a568a90b041ae09fb135c6ac8d75708feaa2e9be483cbe319b665f8f7b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.post_hoc_selection",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "사후검정 선택",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 사후검정 선택\n개념 ID: ps.anova.post_hoc_selection\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- F분포 (ps.continuous_distributions.f_distribution, 중요도: required)\n- 가설검정의 구조 (ps.hypothesis_testing.test_structure, 중요도: required)\n- 다중회귀모형 (ps.multiple_linear_regression.multiple_regression_model, 중요도: recommended)\n\n관련 개념:\n- ps.anova.ss_df_details\n- ps.anova.repeated_measures_correction_effect_size\n\n학습 목표 ID: ps.anova.post_hoc_selection.objective_01\n행동 동사: identify\n목표: 사후검정 선택의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.anova.post_hoc_selection.objective_02\n행동 동사: apply\n목표: 사후검정 선택의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.anova.post_hoc_selection.objective_03\n행동 동사: interpret\n목표: 계산 결과를 사후검정 선택의 의미와 조건에 맞게 해석한다.",
+      "token_count": 307,
+      "content_hash": "63c4f5bcc6ebd802127fd57ab55587c5ca27ac93ee5cd8f5d496c8ed230c7f4e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.post_hoc_selection",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "사후검정 선택",
+      "chunk_index": 3,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 사후검정 선택\n개념 ID: ps.anova.post_hoc_selection\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, anova_table_completion, f_test, post_hoc_selection\n지원 정답 유형: single_choice, boolean\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, degrees_of_freedom_check, condition_rule_check, domain_check\n생성 참고사항: 서로 배타적인 방법 선택 지침이므로 조건의 논리곱으로 해석하지 않는다. 실제 계산은 방법별 개념을 사용한다.",
+      "token_count": 172,
+      "content_hash": "b9d728c591c180a025a3fadffd4ab15c9b628d91a8d013ab734f0ea6152efbfe",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.variation_of_parameters",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+  "concept_name_ko": "매개변수변환법",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 표준형 y''+p(x)y'+q(x)y=g(x)에서 동차방정식의 선형독립해 y1,y2와 Wronskian W=y1y2'-y2y1'을 이용해 yp=u1y1+u2y2(u1'=-y2g/W, u2'=y1g/W)로 특수해를 구하는, 미정계수법보다 일반적인 방법이다. 비표준형 방정식은 먼저 최고차항 계수로 나누어 표준형으로 만들어야 한다.\n검색 태그: variation_of_parameters, particular_solution, wronskian",
+      "token_count": 209,
+      "content_hash": "d7c40484b720c42baa74e04803b10709bdea6dd94367c88c053745fb5de9c875",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 매개변수변환법의 설정\n공식 ID: variation_of_parameters_setup\n역할: definition\nLaTeX: y_p=u_1(x)y_1(x)+u_2(x)y_2(x)\nCAS 표현: u1(x)*y1(x)+u2(x)*y2(x)\n\n공식명: 매개변수변환법의 공식\n공식 ID: variation_of_parameters_formula\n역할: theorem\nLaTeX: u_1'=-\\frac{y_2g}{W},\\quad u_2'=\\frac{y_1g}{W}\\implies y_p=-y_1\\int\\frac{y_2g}{W}dx+y_2\\int\\frac{y_1g}{W}dx\nCAS 표현: -y1*Integral(y2*g/W, x) + y2*Integral(y1*g/W, x)",
+      "token_count": 285,
+      "content_hash": "b2095cb50c818027fd12d00dd791156c573e30c3af95f9a756eed4c4d385238d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 비표준형 방정식의 정리\n공식 ID: standard_form_conversion\n역할: preprocessing\nLaTeX: a(x)y''+b(x)y'+c(x)y=r(x)\\implies y''+p(x)y'+q(x)y=g(x)\\quad(p=b/a,\\ q=c/a,\\ g=r/a)\nCAS 표현: Eq(diff(y,x,2)+ (b(x)/a(x))*diff(y,x) + (c(x)/a(x))*y, r(x)/a(x))",
+      "token_count": 208,
+      "content_hash": "64d1afef76c53ef1111522ffc38ce1c29cf69d0fcbcd3deb019a020f753ccfe7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: wronskian_nonzero\n설명: Wronskian이 0이 아닌 선형독립해 y1, y2를 사용해야 한다.\n검증 규칙: W not_equals 0\n\n조건 ID: must_be_standard_form_first\n설명: 매개변수변환법 공식을 쓰려면 방정식이 먼저 표준형(y''의 계수가 1)으로 정리되어 있어야 한다.\n검증 규칙: equation_in_standard_form equals 참",
+      "token_count": 163,
+      "content_hash": "30d5443ce22806152b265d075af439474d09ad99e51f64b842084bda2303933d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: works_when_undetermined_coeff_fails\n설명: 미정계수법을 적용하기 어려운(다항식·지수·삼각함수 형태가 아닌) 비동차항에도 사용할 수 있는 일반적인 방법이다.",
+      "token_count": 110,
+      "content_hash": "df1f8c4c658de3c4adec41450e8d4f3df8b5758c7c1dca17fd00982211e95852",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 이계 선형 미분방정식과 중첩원리 (calculus.second_order_linear_ode_and_superposition, 중요도: required)\n- 원시함수(부정적분) (calculus.indefinite_integral, 중요도: required)\n\n관련 개념:\n- calculus.undetermined_coefficients\n\n학습 목표 ID: convert_to_standard_form\n행동 동사: transform\n목표: 비표준형 방정식을 표준형으로 정리한다.\n\n학습 목표 ID: apply_variation_of_parameters\n행동 동사: apply\n목표: Wronskian과 매개변수변환법 공식으로 특수해를 구한다.",
+      "token_count": 215,
+      "content_hash": "4f84bd440750b7b3857b302b260c789b12ed7fe9c843367aeede3bf9267ecd08",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 표준형 정리 없이 공식 바로 적용\n오개념 ID: calculus.variation_of_parameters.skip_standard_form\n설명: a(x)y''+b(x)y'+c(x)y=r(x)(a≠1)인 상태에서 g=r로 놓고 공식을 바로 적용한다.\n진단 태그: apply_variation_of_parameters_without_standardizing\n피드백: 매개변수변환법 공식의 g(x)는 y''의 계수가 1인 표준형에서의 우변이므로, 먼저 방정식 전체를 a(x)로 나누어야 한다.",
+      "token_count": 209,
+      "content_hash": "dd4bbaef5578051ae5c369562c3d42febf056f5b71b270d6bf718d50c10aeb7c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.variation_of_parameters",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch07_second_order_differential_equations",
+      "concept_name_ko": "매개변수변환법",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 이계 미분방정식\n개념: 매개변수변환법\n개념 ID: calculus.variation_of_parameters\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: variation_of_parameters_application\n지원 정답 유형: expression\n난이도 범위: 4 ~ 5\n권장 검증기: ode_residual, symbolic_equivalence",
+      "token_count": 106,
+      "content_hash": "968b36ab9febf25226fe663a772c26863e8e540033f1c76866efae39487eca68",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

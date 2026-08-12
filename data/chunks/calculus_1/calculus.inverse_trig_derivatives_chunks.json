@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.inverse_trig_derivatives",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch03_differentiation_rules",
+  "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 일대일이고 미분가능한 함수의 역함수는(수직접선을 갖는 점을 제외하고) 미분가능하며, f'(f^{-1}(x))≠0일 때 (f^{-1})'(x)=1/f'(f^{-1}(x))이다. 이 원리를 sin, cos, tan 등에 적용하면 역삼각함수의 도함수를 얻는다.\n검색 태그: inverse_trig_derivative, inverse_function_derivative",
+      "token_count": 179,
+      "content_hash": "57ba8957a5c957c7f40efd643625b1caa25c09d22cc025099e0271de104a17a1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 역함수의 미분법\n공식 ID: inverse_function_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}f^{-1}(x)=\\frac{1}{f'(f^{-1}(x))}\\quad(f'(f^{-1}(x))\\neq0)\nCAS 표현: 1/f_prime(f_inv(x))\n\n공식명: 역사인·역코사인의 도함수\n공식 ID: arcsin_arccos_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}(\\sin^{-1}x)=\\frac{1}{\\sqrt{1-x^2}},\\qquad\\frac{d}{dx}(\\cos^{-1}x)=-\\frac{1}{\\sqrt{1-x^2}}\nCAS 표현: diff(asin(x), x)\n\n공식명: 역탄젠트·역코탄젠트의 도함수\n공식 ID: arctan_arccot_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}(\\tan^{-1}x)=\\frac{1}{1+x^2},\\qquad\\frac{d}{dx}(\\cot^{-1}x)=-\\frac{1}{1+x^2}\nCAS 표현: diff(atan(x), x)",
+      "token_count": 396,
+      "content_hash": "3c8f335f7e40b7a0b3264934a54276ea0bf4df4797f83979f4b820315ac16b81",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 역시컨트·역코시컨트의 도함수\n공식 ID: arcsec_arccsc_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}(\\sec^{-1}x)=\\frac{1}{x\\sqrt{x^2-1}},\\qquad\\frac{d}{dx}(\\csc^{-1}x)=-\\frac{1}{x\\sqrt{x^2-1}}\nCAS 표현: diff(asec(x), x)",
+      "token_count": 182,
+      "content_hash": "457b38e1dfbd0ffa1ee50da59aec8c73ea46df0af70ec99e1e5b5854bba80a6b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: one_to_one_differentiable_nonzero_derivative\n설명: 역함수 미분법은 f가 일대일·미분가능하고, f'(f^{-1}(x))≠0인 점에서 성립한다(그 값이 0이면 역함수 그래프가 수직접선을 가진다).\n검증 규칙: f_prime_at_f_inv_x not_equals 0\n\n조건 ID: arcsin_arccos_domain\n설명: 역사인·역코사인의 도함수 공식은 |x|<1에서 성립한다.\n검증 규칙: abs_x less_than 1\n\n조건 ID: arcsec_arccsc_domain\n설명: 역시컨트·역코시컨트의 도함수 공식은 |x|>1에서 성립하며, 가지 선택(치역을 어떻게 잡는지)에 따라 부호가 달라질 수 있다.\n검증 규칙: abs_x greater_than 1",
+      "token_count": 282,
+      "content_hash": "f6b81713d77f68f7cde1012db956636f5c9b427493647407827d8e1c1b6702d5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: arcsin_derivation_sketch\n설명: y=sin^{-1}x에서 sin y=x를 음함수 미분하면 cos y·y'=1이고, -π/2≤y≤π/2에서 cos y≥0이므로 cos y=√(1-x^2)을 얻어 y'=1/√(1-x^2)이 된다.",
+      "token_count": 141,
+      "content_hash": "99465f457d3e2290ca60418faa51d1639720213819c3378d4e983ad1747f4edc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 역삼각함수 (calculus.inverse_trig_function, 중요도: required)\n- 음함수 미분법 (calculus.implicit_differentiation, 중요도: required)\n\n관련 개념:\n- calculus.logarithmic_derivative\n\n학습 목표 ID: derive_inverse_trig_derivative\n행동 동사: calculate\n목표: 음함수 미분법으로 역삼각함수의 도함수를 유도한다.\n\n학습 목표 ID: apply_inverse_trig_derivatives\n행동 동사: apply\n목표: 역삼각함수가 포함된 합성함수를 연쇄법칙과 함께 미분한다.",
+      "token_count": 214,
+      "content_hash": "10c52ae920a2a468d0bc2fa3de0d9e9fe1b16bb4ae73799ca68e8dca5cf92b70",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 역삼각함수와 역수 함수 혼동\n오개념 ID: calculus.inverse_trig_derivative.reciprocal_confusion\n설명: arcsin x와 1/sin x를 같은 함수로 착각해 도함수를 잘못 계산한다.\n진단 태그: confuse_arcsin_with_cosecant_reciprocal\n피드백: arcsin x는 사인함수의 역함수이고 1/sin x(코시컨트)와는 다른 함수이므로 도함수 공식도 다르다.\n\n오개념: 역코사인·역코탄젠트 도함수의 음의 부호 누락\n오개념 ID: calculus.inverse_trig_derivative.missing_negative_sign\n설명: cos^{-1}x, cot^{-1}x의 도함수를 각각 1/√(1-x^2), 1/(1+x^2)로 부호 없이 쓴다.\n진단 태그: forget_negative_sign_in_inverse_cofunction_derivative\n피드백: cos^{-1}x와 cot^{-1}x의 도함수에는 음의 부호가 붙는다.",
+      "token_count": 342,
+      "content_hash": "18482d01420329bdd8ec30e3c3fa2275926ca920c0e4cf80e5c427bfbac585ed",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.inverse_trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "역함수의 미분법과 역삼각함수의 도함수",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 역함수의 미분법과 역삼각함수의 도함수\n개념 ID: calculus.inverse_trig_derivatives\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: inverse_trig_derivative_calculation, inverse_function_derivative_rule_application\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 123,
+      "content_hash": "a365f71c7c1074b4caf59407ce3956e4bd4ddf76109dcf2c2c70b89fa59b4771",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

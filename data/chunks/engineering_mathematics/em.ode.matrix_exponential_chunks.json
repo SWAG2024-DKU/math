@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.matrix_exponential",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_04_systems_of_odes",
+  "concept_name_ko": "행렬지수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 스칼라 지수함수를 행렬에 확장한 것으로 선형 시스템의 기본행렬을 표현한다.\n검색 태그: matrix_exponential, fundamental_matrix, power_series",
+      "token_count": 94,
+      "content_hash": "5ebbdd63d78fe5faae7e414e53200e983d495a22929ae97ece107df31ce68ed8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 행렬지수 멱급수 정의\n공식 ID: matrix_exponential_series\n역할: definition\nLaTeX: e^{At} = I + At + \\frac{A^2t^2}{2!} + \\cdots\nCAS 표현: Sum(A**k * t**k / factorial(k), (k, 0, oo))\n\n공식명: 행렬지수 초기값 해\n공식 ID: matrix_exponential_solution\n역할: formula\nLaTeX: \\mathbf{x}(t) = e^{At}\\mathbf{x}_0\nCAS 표현: Eq(x(t), exp(A * t) * x0)",
+      "token_count": 206,
+      "content_hash": "14e333b5fcee7312766fa6b519aff31080109a98faf82b7d6e2dd872557695bc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: square_matrix_convergent_series\n설명: A는 정사각행렬이어야 하며 유한차원에서는 급수가 항상 수렴한다.\n검증 규칙: is_square_matrix equals 참",
+      "token_count": 104,
+      "content_hash": "0c73d90ecf7cd57055daa2ea19bf43c1bc88b5208d3064666b55bb18899be7da",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: diagonalization_matrix_exp\n설명: A=PDP^{-1}이면 e^{At}=Pe^{Dt}P^{-1}이다.",
+      "token_count": 90,
+      "content_hash": "985ad8f153f5d5645c77f6b9dfd0302122d4782cbae5f24f7f7ce3f1ed4fd5ba",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 행렬 거듭제곱 (la.eigen.powers, 중요도: required)\n- 무한급수 (calculus.infinite_series, 중요도: required)\n- 대각화 (la.eigen.diagonalization, 중요도: required)\n\n관련 개념:\n- em.ode.nonhomogeneous_systems\n\n학습 목표 ID: compute_matrix_exponential\n행동 동사: calculate\n목표: 행렬지수의 정의와 성질을 이해하고 이를 이용해 시스템의 해를 표현한다.",
+      "token_count": 176,
+      "content_hash": "d22d5cd8ab86a6360b849fdfee1cd3e1b38cd75b3fd673299a30bff49af001a9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 원소별 지수함수 적용 오류\n오개념 ID: em.ode.matrix_exponential.elementwise_exp\n설명: e^{At}를 행렬의 각 원소에 단순히 지수함수를 취한 것으로 오인한다.\n진단 태그: elementwise_matrix_exp_error\n피드백: 행렬지수는 원소별 지수함수가 아니라 행렬 멱급수로 정의됩니다.",
+      "token_count": 160,
+      "content_hash": "50fd37fede17286edb2eadd9e5727661768cb4f1f0bbf3c713d345a06fcaf8a9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.matrix_exponential",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_04_systems_of_odes",
+      "concept_name_ko": "행렬지수",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 연립 상미분방정식\n개념: 행렬지수\n개념 ID: em.ode.matrix_exponential\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: matrix_exponential_calculation\n지원 정답 유형: matrix\n난이도 범위: 2 ~ 4\n권장 검증기: matrix_exponential_check",
+      "token_count": 99,
+      "content_hash": "af01659a720f4cc6c62f891db621f4caa6445bbe37a87a1bb900bb0f31a5cb23",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -65,7 +65,8 @@
           "formula_id": "ps.multivariate_distributions.conditional_expectation_density.formula_01",
           "name_ko": "조건부기댓값",
           "role": "conditional_expectation",
-          "latex": "E[X\\mid Y=y]=\\int_{-\\infty}^{\\infty}x f_{X\\mid Y}(x\\mid y)\\,dx"
+          "latex": "E[X\\mid Y=y]=\\int_{-\\infty}^{\\infty}x f_{X\\mid Y}(x\\mid y)\\,dx",
+          "cas": "parse_latex('E[X\\\\mid Y=y]=\\\\int_{-\\\\infty}^{\\\\infty}x f_{X\\\\mid Y}(x\\\\mid y)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -164,7 +165,8 @@
           "formula_id": "ps.multivariate_distributions.multivariate_normal_distribution.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\forall a\\in\\mathbb R^p,\\quad a^TX\\sim N\\!\\left(a^T\\mu,\\,a^T\\Sigma a\\right)"
+          "latex": "\\forall a\\in\\mathbb R^p,\\quad a^TX\\sim N\\!\\left(a^T\\mu,\\,a^T\\Sigma a\\right)",
+          "cas": "parse_latex('\\\\forall a\\\\in\\\\mathbb R^p,\\\\quad a^TX\\\\sim N\\\\!\\\\left(a^T\\\\mu,\\\\,a^T\\\\Sigma a\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -298,7 +300,8 @@
           "formula_id": "ps.multivariate_distributions.total_variance.formula_01",
           "name_ko": "분산분해",
           "role": "variance_decomposition",
-          "latex": "\\operatorname{Var}(X)\n=E[\\operatorname{Var}(X\\mid Y)]\n+\\operatorname{Var}(E[X\\mid Y])"
+          "latex": "\\operatorname{Var}(X)\n=E[\\operatorname{Var}(X\\mid Y)]\n+\\operatorname{Var}(E[X\\mid Y])",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)\\n=E[\\\\operatorname{Var}(X\\\\mid Y)]\\n+\\\\operatorname{Var}(E[X\\\\mid Y])', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -388,7 +391,8 @@
           "formula_id": "ps.multivariate_distributions.tower_property.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[E[X\\mid Y]]=E[X]"
+          "latex": "E[E[X\\mid Y]]=E[X]",
+          "cas": "parse_latex('E[E[X\\\\mid Y]]=E[X]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -558,7 +562,8 @@
           "formula_id": "ps.multivariate_distributions.conditional_density.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{X|Y}(x|y)=f_{X,Y}(x,y)/f_Y(y)"
+          "latex": "f_{X|Y}(x|y)=f_{X,Y}(x,y)/f_Y(y)",
+          "cas": "parse_latex('f_{X|Y}(x|y)=f_{X,Y}(x,y)/f_Y(y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -758,7 +763,8 @@
           "formula_id": "ps.multivariate_distributions.marginal_density.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_X(x)=\\int_{-\\infty}^{\\infty}f_{X,Y}(x,y)\\,dy"
+          "latex": "f_X(x)=\\int_{-\\infty}^{\\infty}f_{X,Y}(x,y)\\,dy",
+          "cas": "parse_latex('f_X(x)=\\\\int_{-\\\\infty}^{\\\\infty}f_{X,Y}(x,y)\\\\,dy', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -944,7 +950,8 @@
           "formula_id": "ps.multivariate_distributions.continuous_convolution.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{X+Y}(z)=\\int_{-\\infty}^{\\infty}f_X(x)f_Y(z-x)\\,dx"
+          "latex": "f_{X+Y}(z)=\\int_{-\\infty}^{\\infty}f_X(x)f_Y(z-x)\\,dx",
+          "cas": "parse_latex('f_{X+Y}(z)=\\\\int_{-\\\\infty}^{\\\\infty}f_X(x)f_Y(z-x)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1048,7 +1055,8 @@
           "formula_id": "ps.multivariate_distributions.discrete_convolution.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "p_{X+Y}(z)=\\sum_x p_X(x)p_Y(z-x)"
+          "latex": "p_{X+Y}(z)=\\sum_x p_X(x)p_Y(z-x)",
+          "cas": "parse_latex('p_{X+Y}(z)=\\\\sum_x p_X(x)p_Y(z-x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1257,7 +1265,8 @@
           "formula_id": "ps.multivariate_distributions.many_to_one_change_of_variables.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_Y(y)=\\sum_{x\\in g^{-1}(\\{y\\})}f_X(x)\\left|\\frac{dx}{dy}\\right|"
+          "latex": "f_Y(y)=\\sum_{x\\in g^{-1}(\\{y\\})}f_X(x)\\left|\\frac{dx}{dy}\\right|",
+          "cas": "parse_latex('f_Y(y)=\\\\sum_{x\\\\in g^{-1}(\\\\{y\\\\})}f_X(x)\\\\left|\\\\frac{dx}{dy}\\\\right|', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1505,7 +1514,8 @@
           "formula_id": "ps.multivariate_distributions.one_dimensional_change_of_variables.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_Y(y)\n=\nf_X\\!\\left(g^{-1}(y)\\right)\n\\left|\n\\frac{d}{dy}g^{-1}(y)\n\\right|"
+          "latex": "f_Y(y)\n=\nf_X\\!\\left(g^{-1}(y)\\right)\n\\left|\n\\frac{d}{dy}g^{-1}(y)\n\\right|",
+          "cas": "parse_latex('f_Y(y)\\n=\\nf_X\\\\!\\\\left(g^{-1}(y)\\\\right)\\n\\\\left|\\n\\\\frac{d}{dy}g^{-1}(y)\\n\\\\right|', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2293,7 +2303,8 @@
           "formula_id": "ps.multivariate_distributions.multivariate_normal_density.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f(x)=\\frac{1}{(2\\pi)^{p/2}|\\Sigma|^{1/2}}\n\\exp\\left[-\\frac12(x-\\mu)^T\\Sigma^{-1}(x-\\mu)\\right]"
+          "latex": "f(x)=\\frac{1}{(2\\pi)^{p/2}|\\Sigma|^{1/2}}\n\\exp\\left[-\\frac12(x-\\mu)^T\\Sigma^{-1}(x-\\mu)\\right]",
+          "cas": "parse_latex('f(x)=\\\\frac{1}{(2\\\\pi)^{p/2}|\\\\Sigma|^{1/2}}\\n\\\\exp\\\\left[-\\\\frac12(x-\\\\mu)^T\\\\Sigma^{-1}(x-\\\\mu)\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2621,7 +2632,8 @@
           "formula_id": "ps.multivariate_distributions.total_covariance.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\operatorname{Cov}(X,Z)\n=E[\\operatorname{Cov}(X,Z\\mid Y)]\n+\\operatorname{Cov}(E[X\\mid Y],E[Z\\mid Y])"
+          "latex": "\\operatorname{Cov}(X,Z)\n=E[\\operatorname{Cov}(X,Z\\mid Y)]\n+\\operatorname{Cov}(E[X\\mid Y],E[Z\\mid Y])",
+          "cas": "parse_latex('\\\\operatorname{Cov}(X,Z)\\n=E[\\\\operatorname{Cov}(X,Z\\\\mid Y)]\\n+\\\\operatorname{Cov}(E[X\\\\mid Y],E[Z\\\\mid Y])', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2739,7 +2751,8 @@
           "formula_id": "ps.multivariate_distributions.independence_density_factorization.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "X\\perp Y\n\\quad\\Longleftrightarrow\\quad\nf_{X,Y}(x,y)=f_X(x)f_Y(y)"
+          "latex": "X\\perp Y\n\\quad\\Longleftrightarrow\\quad\nf_{X,Y}(x,y)=f_X(x)f_Y(y)",
+          "cas": "parse_latex('X\\\\perp Y\\n\\\\quad\\\\Longleftrightarrow\\\\quad\\nf_{X,Y}(x,y)=f_X(x)f_Y(y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2857,7 +2870,8 @@
           "formula_id": "ps.multivariate_distributions.joint_cdf.formula_01",
           "name_ko": "결합누적분포함수",
           "role": "cdf",
-          "latex": "F_{X,Y}(x,y)=P(X\\le x,\\ Y\\le y)"
+          "latex": "F_{X,Y}(x,y)=P(X\\le x,\\ Y\\le y)",
+          "cas": "parse_latex('F_{X,Y}(x,y)=P(X\\\\le x,\\\\ Y\\\\le y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2971,7 +2985,8 @@
           "formula_id": "ps.multivariate_distributions.conditional_expectation_orthogonality.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "E\\left[(X-E[X\\mid Y])g(Y)\\right]=0"
+          "latex": "E\\left[(X-E[X\\mid Y])g(Y)\\right]=0",
+          "cas": "parse_latex('E\\\\left[(X-E[X\\\\mid Y])g(Y)\\\\right]=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3160,7 +3175,8 @@
           "formula_id": "ps.multivariate_distributions.joint_distribution.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "p_{X,Y}(x,y)=P(X=x,Y=y)"
+          "latex": "p_{X,Y}(x,y)=P(X=x,Y=y)",
+          "cas": "parse_latex('p_{X,Y}(x,y)=P(X=x,Y=y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3266,7 +3282,8 @@
           "formula_id": "ps.multivariate_distributions.joint_distribution.f02.formula_01",
           "name_ko": "density property",
           "role": "density_property",
-          "latex": "f_{X,Y}(x,y)\\ge0"
+          "latex": "f_{X,Y}(x,y)\\ge0",
+          "cas": "parse_latex('f_{X,Y}(x,y)\\\\ge0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3373,7 +3390,8 @@
           "formula_id": "ps.multivariate_distributions.joint_distribution.f02_normalization.formula_01",
           "name_ko": "density property",
           "role": "density_property",
-          "latex": "\\int_{-\\infty}^{\\infty}\\!\\int_{-\\infty}^{\\infty}f_{X,Y}(x,y)\\,dx\\,dy=1"
+          "latex": "\\int_{-\\infty}^{\\infty}\\!\\int_{-\\infty}^{\\infty}f_{X,Y}(x,y)\\,dx\\,dy=1",
+          "cas": "parse_latex('\\\\int_{-\\\\infty}^{\\\\infty}\\\\!\\\\int_{-\\\\infty}^{\\\\infty}f_{X,Y}(x,y)\\\\,dx\\\\,dy=1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3480,7 +3498,8 @@
           "formula_id": "ps.multivariate_distributions.covariance_correlation.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]"
+          "latex": "\\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]",
+          "cas": "parse_latex('\\\\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3579,7 +3598,8 @@
           "formula_id": "ps.multivariate_distributions.covariance_correlation.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\rho=\\operatorname{Cov}(X,Y)/(\\sigma_X\\sigma_Y)"
+          "latex": "\\rho=\\operatorname{Cov}(X,Y)/(\\sigma_X\\sigma_Y)",
+          "cas": "parse_latex('\\\\rho=\\\\operatorname{Cov}(X,Y)/(\\\\sigma_X\\\\sigma_Y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3687,7 +3707,8 @@
           "formula_id": "ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "(U,V)=g(X,Y)"
+          "latex": "(U,V)=g(X,Y)",
+          "cas": "parse_latex('(U,V)=g(X,Y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3807,7 +3828,8 @@
           "formula_id": "ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "(X,Y)=g^{-1}(U,V)=h(U,V)"
+          "latex": "(X,Y)=g^{-1}(U,V)=h(U,V)",
+          "cas": "parse_latex('(X,Y)=g^{-1}(U,V)=h(U,V)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3927,7 +3949,8 @@
           "formula_id": "ps.multivariate_distributions.multivariate_jacobian_change_of_variables.f03.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{U,V}(u,v)\n=\nf_{X,Y}\\!\\left(h_1(u,v),h_2(u,v)\\right)\n\\left|\n\\det\\frac{\\partial(x,y)}{\\partial(u,v)}\n\\right|"
+          "latex": "f_{U,V}(u,v)\n=\nf_{X,Y}\\!\\left(h_1(u,v),h_2(u,v)\\right)\n\\left|\n\\det\\frac{\\partial(x,y)}{\\partial(u,v)}\n\\right|",
+          "cas": "parse_latex('f_{U,V}(u,v)\\n=\\nf_{X,Y}\\\\!\\\\left(h_1(u,v),h_2(u,v)\\\\right)\\n\\\\left|\\n\\\\det\\\\frac{\\\\partial(x,y)}{\\\\partial(u,v)}\\n\\\\right|', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4074,7 +4097,8 @@
           "formula_id": "ps.multivariate_distributions.variance_of_sum.f01.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X+Y)\n=\\operatorname{Var}(X)+\\operatorname{Var}(Y)\n+2\\operatorname{Cov}(X,Y)"
+          "latex": "\\operatorname{Var}(X+Y)\n=\\operatorname{Var}(X)+\\operatorname{Var}(Y)\n+2\\operatorname{Cov}(X,Y)",
+          "cas": "parse_latex('\\\\operatorname{Var}(X+Y)\\n=\\\\operatorname{Var}(X)+\\\\operatorname{Var}(Y)\\n+2\\\\operatorname{Cov}(X,Y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4182,7 +4206,8 @@
           "formula_id": "ps.multivariate_distributions.variance_of_sum.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}\\left(\\sum_{i=1}^{n}X_i\\right)\n=\\sum_{i=1}^{n}\\operatorname{Var}(X_i)\n+2\\sum_{i<j}\\operatorname{Cov}(X_i,X_j)"
+          "latex": "\\operatorname{Var}\\left(\\sum_{i=1}^{n}X_i\\right)\n=\\sum_{i=1}^{n}\\operatorname{Var}(X_i)\n+2\\sum_{i<j}\\operatorname{Cov}(X_i,X_j)",
+          "cas": "parse_latex('\\\\operatorname{Var}\\\\left(\\\\sum_{i=1}^{n}X_i\\\\right)\\n=\\\\sum_{i=1}^{n}\\\\operatorname{Var}(X_i)\\n+2\\\\sum_{i<j}\\\\operatorname{Cov}(X_i,X_j)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4290,7 +4315,8 @@
           "formula_id": "ps.multivariate_distributions.variance_of_sum.f03.formula_01",
           "name_ko": "확률밀도함수",
           "role": "density",
-          "latex": "f_{X+Y}(z)=\\int_{-\\infty}^{\\infty}f_{X,Y}(x,z-x)\\,dx"
+          "latex": "f_{X+Y}(z)=\\int_{-\\infty}^{\\infty}f_{X,Y}(x,z-x)\\,dx",
+          "cas": "parse_latex('f_{X+Y}(z)=\\\\int_{-\\\\infty}^{\\\\infty}f_{X,Y}(x,z-x)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4407,7 +4433,8 @@
           "formula_id": "ps.multivariate_distributions.covariance_linearity_cauchy_schwarz.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\operatorname{Cov}(aX+b,cY+d)=ac\\operatorname{Cov}(X,Y)"
+          "latex": "\\operatorname{Cov}(aX+b,cY+d)=ac\\operatorname{Cov}(X,Y)",
+          "cas": "parse_latex('\\\\operatorname{Cov}(aX+b,cY+d)=ac\\\\operatorname{Cov}(X,Y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4525,7 +4552,8 @@
           "formula_id": "ps.multivariate_distributions.covariance_linearity_cauchy_schwarz.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "|E[XY]|^2\\le E[X^2]E[Y^2]"
+          "latex": "|E[XY]|^2\\le E[X^2]E[Y^2]",
+          "cas": "parse_latex('|E[XY]|^2\\\\le E[X^2]E[Y^2]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4643,7 +4671,8 @@
           "formula_id": "ps.multivariate_distributions.mvn_linear_conditional.f01.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "AX+b\\sim N_q(A\\mu+b,A\\Sigma A^T)"
+          "latex": "AX+b\\sim N_q(A\\mu+b,A\\Sigma A^T)",
+          "cas": "parse_latex('AX+b\\\\sim N_q(A\\\\mu+b,A\\\\Sigma A^T)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4778,7 +4807,8 @@
           "formula_id": "ps.multivariate_distributions.mvn_linear_conditional.f02.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "\\begin{pmatrix}X_1\\\\X_2\\end{pmatrix}\n\\sim N\\left(\n\\begin{pmatrix}\\mu_1\\\\ \\mu_2\\end{pmatrix},\n\\begin{pmatrix}\\Sigma_{11}&\\Sigma_{12}\\\\Sigma_{21}&\\Sigma_{22}\\end{pmatrix}\n\\right)"
+          "latex": "\\begin{pmatrix}X_1\\\\X_2\\end{pmatrix}\n\\sim N\\left(\n\\begin{pmatrix}\\mu_1\\\\ \\mu_2\\end{pmatrix},\n\\begin{pmatrix}\\Sigma_{11}&\\Sigma_{12}\\\\Sigma_{21}&\\Sigma_{22}\\end{pmatrix}\n\\right)",
+          "cas": "parse_latex('\\\\begin{pmatrix}X_1\\\\\\\\X_2\\\\end{pmatrix}\\n\\\\sim N\\\\left(\\n\\\\begin{pmatrix}\\\\mu_1\\\\\\\\ \\\\mu_2\\\\end{pmatrix},\\n\\\\begin{pmatrix}\\\\Sigma_{11}&\\\\Sigma_{12}\\\\\\\\Sigma_{21}&\\\\Sigma_{22}\\\\end{pmatrix}\\n\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4913,7 +4943,8 @@
           "formula_id": "ps.multivariate_distributions.mvn_linear_conditional.f03.formula_01",
           "name_ko": "분포 관계",
           "role": "distribution_relation",
-          "latex": "X_1\\mid X_2=x_2\n\\sim N\\left(\n\\mu_1+\\Sigma_{12}\\Sigma_{22}^{-1}(x_2-\\mu_2),\n\\Sigma_{11}-\\Sigma_{12}\\Sigma_{22}^{-1}\\Sigma_{21}\n\\right)"
+          "latex": "X_1\\mid X_2=x_2\n\\sim N\\left(\n\\mu_1+\\Sigma_{12}\\Sigma_{22}^{-1}(x_2-\\mu_2),\n\\Sigma_{11}-\\Sigma_{12}\\Sigma_{22}^{-1}\\Sigma_{21}\n\\right)",
+          "cas": "parse_latex('X_1\\\\mid X_2=x_2\\n\\\\sim N\\\\left(\\n\\\\mu_1+\\\\Sigma_{12}\\\\Sigma_{22}^{-1}(x_2-\\\\mu_2),\\n\\\\Sigma_{11}-\\\\Sigma_{12}\\\\Sigma_{22}^{-1}\\\\Sigma_{21}\\n\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5030,7 +5061,8 @@
           "formula_id": "ps.multivariate_distributions.conditional_expectation_mse_projection.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[(X-E[X\\mid Y])^2]\\le E[(X-g(Y))^2]."
+          "latex": "E[(X-E[X\\mid Y])^2]\\le E[(X-g(Y))^2].",
+          "cas": "parse_latex('E[(X-E[X\\\\mid Y])^2]\\\\le E[(X-g(Y))^2].', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5146,7 +5178,8 @@
           "formula_id": "ps.multivariate_distributions.conditional_expectation_mse_projection.f02.formula_01",
           "name_ko": "최소제곱 투영 부등식",
           "role": "projection_inequality",
-          "latex": "E\\!\\left[\\left\\|X-E[X\\mid Y]\\right\\|^2\\right]\n\\le\nE\\!\\left[\\left\\|X-g(Y)\\right\\|^2\\right]"
+          "latex": "E\\!\\left[\\left\\|X-E[X\\mid Y]\\right\\|^2\\right]\n\\le\nE\\!\\left[\\left\\|X-g(Y)\\right\\|^2\\right]",
+          "cas": "parse_latex('E\\\\!\\\\left[\\\\left\\\\|X-E[X\\\\mid Y]\\\\right\\\\|^2\\\\right]\\n\\\\le\\nE\\\\!\\\\left[\\\\left\\\\|X-g(Y)\\\\right\\\\|^2\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5262,7 +5295,8 @@
           "formula_id": "ps.multivariate_distributions.covariance_matrix.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\Sigma=E[(X-\\mu)(X-\\mu)^T]"
+          "latex": "\\Sigma=E[(X-\\mu)(X-\\mu)^T]",
+          "cas": "parse_latex('\\\\Sigma=E[(X-\\\\mu)(X-\\\\mu)^T]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5371,7 +5405,8 @@
           "formula_id": "ps.multivariate_distributions.covariance_matrix.f02.formula_01",
           "name_ko": "행렬 성질",
           "role": "matrix_property",
-          "latex": "a^T\\Sigma a=\\operatorname{Var}(a^TX)\\ge0"
+          "latex": "a^T\\Sigma a=\\operatorname{Var}(a^TX)\\ge0",
+          "cas": "parse_latex('a^T\\\\Sigma a=\\\\operatorname{Var}(a^TX)\\\\ge0', backend='antlr')"
         }
       ],
       "application_conditions": [

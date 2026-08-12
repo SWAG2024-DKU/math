@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.integral",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch05_integrals",
+  "concept_name_ko": "정적분의 정의와 적분가능성",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정적분 ∫[a,b]f(x)dx는 리만합의 극한 lim(n→∞)Σf(x_i*)Δx으로 정의된다. f가 [a,b]에서 연속이거나 유한개의 도약 불연속점을 가지면 f는 [a,b]에서 적분가능하다.\n검색 태그: definite_integral, integrability",
+      "token_count": 135,
+      "content_hash": "38a01e25ff5cda5bb70aa208af9b661fd8e771b93d96182dfea28eb93e0388b8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 정적분의 정의\n공식 ID: definite_integral_def\n역할: definition\nLaTeX: \\int_a^bf(x)\\,dx=\\lim_{n\\to\\infty}\\sum_{i=1}^nf(x_i^*)\\,\\Delta x\nCAS 표현: Integral(f(x), (x, a, b))\n\n공식명: 적분가능성 정리\n공식 ID: integrability_theorem\n역할: theorem\nLaTeX: f\\text{가 }[a,b]\\text{에서 연속이거나 유한개의 도약 불연속점}\\implies f\\text{는 }[a,b]\\text{에서 적분가능}\nCAS 표현: is_integrable(f, a, b)\n\n공식명: 적분 방향 규약\n공식 ID: orientation_convention\n역할: convention\nLaTeX: \\int_b^af(x)\\,dx=-\\int_a^bf(x)\\,dx,\\qquad\\int_a^af(x)\\,dx=0\nCAS 표현: -Integral(f(x), (x,a,b))",
+      "token_count": 314,
+      "content_hash": "d9106dcdd5db5c44cf127cbd0fabdd3b7b1d03878ace080433a73a92a9c4c7f7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: integrability_required\n설명: 정적분이 존재하려면 적분가능성 정리의 조건(연속 또는 유한개의 도약 불연속)을 만족해야 한다. 무한 불연속점이 있으면 일반적인(부정적분이 아닌 이상적분) 의미로는 적분가능하지 않다.\n검증 규칙: f_integrable_on_a_b equals 참",
+      "token_count": 132,
+      "content_hash": "b5b367871292150ac4326207247374a1c43d5cb789d5aa5fe1c52552c9d84b71",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: net_area_interpretation\n설명: f가 양수값만 가지면 정적분은 곡선 아래 넓이이고, 음수도 가지면 실제(순) 넓이(x축 위 넓이-x축 아래 넓이)로 해석된다.\n\n성질 ID: integration_variable_is_dummy\n설명: 정적분 값은 적분변수 표기와 무관하다: ∫f(x)dx=∫f(t)dt=∫f(r)dr.",
+      "token_count": 164,
+      "content_hash": "c6572f8f47999fd212b1abbd1c75db10489d9ff9aa97365db905ae5bad3859c4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 리만합과 넓이·거리의 근사 (calculus.riemann_sum_and_area, 중요도: required)\n\n관련 개념:\n- calculus.integral_properties\n- calculus.fundamental_theorem_of_calculus_part2\n\n학습 목표 ID: verify_integrability\n행동 동사: verify\n목표: 함수가 주어진 구간에서 적분가능한지 판정한다.\n\n학습 목표 ID: apply_orientation_convention\n행동 동사: apply\n목표: 적분 방향 규약을 이용해 적분 순서가 바뀐 정적분을 계산한다.",
+      "token_count": 188,
+      "content_hash": "2b652660e92ea3427421a6fcacf658c0fd6f012290d10911d618e0f89f892808",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 정적분을 항상 양수인 넓이로 착각\n오개념 ID: calculus.integral.always_nonnegative\n설명: f가 음수인 구간이 있는데도 정적분 값이 항상 0 이상이라고 가정한다.\n진단 태그: assume_definite_integral_always_nonnegative\n피드백: 정적분은 순(실제) 넓이이므로 f가 음수인 구간에서는 음의 기여를 하며, 전체 값이 음수가 될 수 있다.\n\n오개념: 무한 불연속점이 있어도 적분가능하다고 가정\n오개념 ID: calculus.integral.ignore_infinite_discontinuity\n설명: f(x)=1/x^2처럼 구간 안에 무한 불연속점이 있는 함수에 정적분 정의를 그대로 적용한다.\n진단 태그: assume_integrable_despite_infinite_discontinuity\n피드백: 적분가능성 정리는 연속 또는 유한개의 도약 불연속만 보장하며, 무한 불연속점이 있으면 일반적인 리만 적분으로는 적분가능하지 않다.",
+      "token_count": 310,
+      "content_hash": "9b599f1ea0db0baf691b41a024b462df23c162c36ead6f4127086835498cd932",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch05_integrals",
+      "concept_name_ko": "정적분의 정의와 적분가능성",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분\n개념: 정적분의 정의와 적분가능성\n개념 ID: calculus.integral\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: integrability_check, orientation_convention_application\n지원 정답 유형: boolean, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: domain_check",
+      "token_count": 96,
+      "content_hash": "4ee20266ca67fbbe4e5b39b60c64230acd5be167c41edf2e64319b606fc5f4a4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

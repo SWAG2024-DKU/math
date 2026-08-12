@@ -65,7 +65,8 @@
           "formula_id": "ps.probability_basics.continuity_from_above.formula_01",
           "name_ko": "limit relation",
           "role": "limit_relation",
-          "latex": "A_n\\downarrow A\\quad\\Longrightarrow\\quad P(A_n)\\to P(A)"
+          "latex": "A_n\\downarrow A\\quad\\Longrightarrow\\quad P(A_n)\\to P(A)",
+          "cas": "parse_latex('A_n\\\\downarrow A\\\\quad\\\\Longrightarrow\\\\quad P(A_n)\\\\to P(A)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -147,7 +148,8 @@
           "formula_id": "ps.probability_basics.continuity_from_below.formula_01",
           "name_ko": "limit relation",
           "role": "limit_relation",
-          "latex": "A_n\\uparrow A\\quad\\Longrightarrow\\quad P(A_n)\\to P(A)"
+          "latex": "A_n\\uparrow A\\quad\\Longrightarrow\\quad P(A_n)\\to P(A)",
+          "cas": "parse_latex('A_n\\\\uparrow A\\\\quad\\\\Longrightarrow\\\\quad P(A_n)\\\\to P(A)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -973,7 +975,8 @@
           "formula_id": "ps.probability_basics.de_morgan_laws.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "(A\\cup B)^c=A^c\\cap B^c"
+          "latex": "(A\\cup B)^c=A^c\\cap B^c",
+          "cas": "parse_latex('(A\\\\cup B)^c=A^c\\\\cap B^c', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1073,7 +1076,8 @@
           "formula_id": "ps.probability_basics.de_morgan_laws.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "(A\\cap B)^c=A^c\\cup B^c"
+          "latex": "(A\\cap B)^c=A^c\\cup B^c",
+          "cas": "parse_latex('(A\\\\cap B)^c=A^c\\\\cup B^c', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1173,7 +1177,8 @@
           "formula_id": "ps.probability_basics.probability_space_sample_space_events.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "(\\Omega,\\mathcal F,P)"
+          "latex": "(\\Omega,\\mathcal F,P)",
+          "cas": "parse_latex('(\\\\Omega,\\\\mathcal F,P)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1286,7 +1291,8 @@
           "formula_id": "ps.probability_basics.probability_space_sample_space_events.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "A\\text{는 사건}\\quad\\Longleftrightarrow\\quad A\\in\\mathcal F\\subseteq2^\\Omega"
+          "latex": "A\\text{는 사건}\\quad\\Longleftrightarrow\\quad A\\in\\mathcal F\\subseteq2^\\Omega",
+          "cas": "parse_latex('A\\\\text{는 사건}\\\\quad\\\\Longleftrightarrow\\\\quad A\\\\in\\\\mathcal F\\\\subseteq2^\\\\Omega', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1390,7 +1396,8 @@
           "formula_id": "ps.probability_basics.probability_space_sample_space_events.f03.formula_01",
           "name_ko": "성질",
           "role": "property",
-          "latex": "A,B\\in\\mathcal F\\quad\\Longrightarrow\\quad A^c,\\ A\\cup B,\\ A\\cap B\\in\\mathcal F"
+          "latex": "A,B\\in\\mathcal F\\quad\\Longrightarrow\\quad A^c,\\ A\\cup B,\\ A\\cap B\\in\\mathcal F",
+          "cas": "parse_latex('A,B\\\\in\\\\mathcal F\\\\quad\\\\Longrightarrow\\\\quad A^c,\\\\ A\\\\cup B,\\\\ A\\\\cap B\\\\in\\\\mathcal F', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1776,7 +1783,8 @@
           "formula_id": "ps.probability_basics.probability_properties.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A^c)=1-P(A)"
+          "latex": "P(A^c)=1-P(A)",
+          "cas": "parse_latex('P(A^c)=1-P(A)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1871,7 +1879,8 @@
           "formula_id": "ps.probability_basics.probability_properties.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)"
+          "latex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+          "cas": "parse_latex('P(A\\\\cup B)=P(A)+P(B)-P(A\\\\cap B)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1975,7 +1984,8 @@
           "formula_id": "ps.probability_basics.probability_properties.f03.formula_01",
           "name_ko": "확률의 단조성",
           "role": "probability_order_relation",
-          "latex": "A\\subseteq B\\quad\\Longrightarrow\\quad P(A)\\le P(B)"
+          "latex": "A\\subseteq B\\quad\\Longrightarrow\\quad P(A)\\le P(B)",
+          "cas": "parse_latex('A\\\\subseteq B\\\\quad\\\\Longrightarrow\\\\quad P(A)\\\\le P(B)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2088,7 +2098,8 @@
           "formula_id": "ps.probability_basics.bonferroni_inequality.f01.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P(A\\cap B)\\ge P(A)+P(B)-1"
+          "latex": "P(A\\cap B)\\ge P(A)+P(B)-1",
+          "cas": "parse_latex('P(A\\\\cap B)\\\\ge P(A)+P(B)-1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2197,7 +2208,8 @@
           "formula_id": "ps.probability_basics.bonferroni_inequality.f02.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n\\ge 1-\\sum_{i=1}^{n}P(A_i^c)"
+          "latex": "P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n\\ge 1-\\sum_{i=1}^{n}P(A_i^c)",
+          "cas": "parse_latex('P\\\\left(\\\\bigcap_{i=1}^{n}A_i\\\\right)\\n\\\\ge 1-\\\\sum_{i=1}^{n}P(A_i^c)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2333,7 +2345,8 @@
           "formula_id": "ps.probability_basics.monotonicity_set_difference.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(B\\setminus A)=P(B)-P(A)"
+          "latex": "P(B\\setminus A)=P(B)-P(A)",
+          "cas": "parse_latex('P(B\\\\setminus A)=P(B)-P(A)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2451,7 +2464,8 @@
           "formula_id": "ps.probability_basics.monotonicity_set_difference.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A\\setminus B)=P(A)-P(A\\cap B)"
+          "latex": "P(A\\setminus B)=P(A)-P(A\\cap B)",
+          "cas": "parse_latex('P(A\\\\setminus B)=P(A)-P(A\\\\cap B)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2569,7 +2583,8 @@
           "formula_id": "ps.probability_basics.sigma_algebra_conditions.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\Omega\\in\\mathcal F"
+          "latex": "\\Omega\\in\\mathcal F",
+          "cas": "parse_latex('\\\\Omega\\\\in\\\\mathcal F', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2661,7 +2676,8 @@
           "formula_id": "ps.probability_basics.sigma_algebra_conditions.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "A\\in\\mathcal F\\Longrightarrow A^c\\in\\mathcal F"
+          "latex": "A\\in\\mathcal F\\Longrightarrow A^c\\in\\mathcal F",
+          "cas": "parse_latex('A\\\\in\\\\mathcal F\\\\Longrightarrow A^c\\\\in\\\\mathcal F', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2753,7 +2769,8 @@
           "formula_id": "ps.probability_basics.sigma_algebra_conditions.f03.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "A_1,A_2,\\ldots\\in\\mathcal F\\Longrightarrow\\bigcup_{n=1}^{\\infty}A_n\\in\\mathcal F"
+          "latex": "A_1,A_2,\\ldots\\in\\mathcal F\\Longrightarrow\\bigcup_{n=1}^{\\infty}A_n\\in\\mathcal F",
+          "cas": "parse_latex('A_1,A_2,\\\\ldots\\\\in\\\\mathcal F\\\\Longrightarrow\\\\bigcup_{n=1}^{\\\\infty}A_n\\\\in\\\\mathcal F', backend='antlr')"
         }
       ],
       "application_conditions": [

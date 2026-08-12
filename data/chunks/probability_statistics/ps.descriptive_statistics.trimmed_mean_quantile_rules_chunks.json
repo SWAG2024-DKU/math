@@ -1,0 +1,91 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_02_descriptive_statistics",
+  "concept_name_ko": "절사평균과 분위수 계산 규칙",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_02_descriptive_statistics",
+      "concept_name_ko": "절사평균과 분위수 계산 규칙",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 자료의 정리와 기술통계\n개념: 절사평균과 분위수 계산 규칙\n개념 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 양쪽 꼬리에서 같은 비율의 관측값을 제거한 뒤 계산한 평균을 절사평균이라고 한다. 평균보다 극단값에 강건하고 중앙값보다 자료를 더 많이 활용하는 절충적 위치통계량이다.\n검색 태그: descriptive_statistics, trimmed_mean_quantile_rules",
+      "token_count": 145,
+      "content_hash": "009c0c0f4701f366e3d46bbd25f727e5d4513175e7b0a38337f1017eb009d215",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_02_descriptive_statistics",
+      "concept_name_ko": "절사평균과 분위수 계산 규칙",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 자료의 정리와 기술통계\n개념: 절사평균과 분위수 계산 규칙\n개념 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.property_01\n설명: 양쪽 꼬리에서 같은 비율의 관측값을 제거한 뒤 계산한 평균을 절사평균이라고 한다.\n\n성질 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.property_02\n설명: 평균보다 극단값에 강건하고 중앙값보다 자료를 더 많이 활용하는 절충적 위치통계량이다.\n\n성질 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.property_03\n설명: 표본 분위수는 소프트웨어와 교재에 따라 보간 규칙이 다를 수 있다.\n\n성질 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.property_04\n설명: 따라서 재현성이 중요하면 사용한 분위수 정의 또는 소프트웨어의 계산 방식을 함께 기록한다.\n\n성질 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.property_05\n설명: 절사평균과 분위수 계산 규칙 개념의 정의와 수식을 적용할 수 있는 자료형·정의역 조건을 만족해야 한다.",
+      "token_count": 367,
+      "content_hash": "1941d1572b2d875368c5c7cf4daa834764bbdcc9424109335038cae18a5ee46f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_02_descriptive_statistics",
+      "concept_name_ko": "절사평균과 분위수 계산 규칙",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 자료의 정리와 기술통계\n개념: 절사평균과 분위수 계산 규칙\n개념 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 변수와 자료의 유형 (ps.foundations.variable_data_types, 중요도: required)\n- 평균과 비율 (statistics.mean_ratio, 중요도: required)\n\n관련 개념:\n- ps.descriptive_statistics.skewness_kurtosis_moments\n- ps.descriptive_statistics.weighted_mean_interpretation\n\n학습 목표 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.objective_01\n행동 동사: identify\n목표: 절사평균과 분위수 계산 규칙의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.objective_02\n행동 동사: apply\n목표: 절사평균과 분위수 계산 규칙의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules.objective_03\n행동 동사: interpret\n목표: 계산 결과를 절사평균과 분위수 계산 규칙의 의미와 조건에 맞게 해석한다.",
+      "token_count": 344,
+      "content_hash": "8df8846bd31c6ed02ed83b2e1c4698a9e70c1f8dbfb5db56a62d7e2f773e6608",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.descriptive_statistics.trimmed_mean_quantile_rules",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_02_descriptive_statistics",
+      "concept_name_ko": "절사평균과 분위수 계산 규칙",
+      "chunk_index": 3,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 자료의 정리와 기술통계\n개념: 절사평균과 분위수 계산 규칙\n개념 ID: ps.descriptive_statistics.trimmed_mean_quantile_rules\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check\n지원 정답 유형: single_choice, boolean\n난이도 범위: 1 ~ 3\n권장 검증기: assumption_check, condition_rule_check, domain_check",
+      "token_count": 127,
+      "content_hash": "00f6c498b28f2ced7fd91628fb74df57234b539687475fb1b017012751a3c542",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

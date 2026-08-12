@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.higher_order_ivp",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_02_higher_order_linear_odes",
+  "concept_name_ko": "고계 초기값 문제",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: n계 방정식과 한 점에서의 0계부터 (n-1)계까지의 값들을 함께 주는 문제다.\n검색 태그: higher_order_ivp, initial_value_problem, uniqueness",
+      "token_count": 100,
+      "content_hash": "d81d39fa4b9bc715c2c71a4602c8d37e2337121f4039c88d77f19fb204604538",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 고계 초기조건 모음\n공식 ID: higher_order_ivp_conditions\n역할: definition\nLaTeX: y(x_0)=c_0,\\quad y'(x_0)=c_1,\\quad\\dots,\\quad y^{(n-1)}(x_0)=c_{n-1}\nCAS 표현: Eq(Derivative(y, (x, k)).subs(x, x_0), c_k)",
+      "token_count": 158,
+      "content_hash": "c2669e7f035711e83347ea7b8e357e4c86daf774f37aaf193b8658da686e2820",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: continuity_and_non_zero_leading_coefficient\n설명: 계수함수와 우변이 초기점 근방에서 연속이고 최고계수가 0이 아니어야 유일해가 보장된다.\n검증 규칙: ivp_conditions_continuous_leading_non_zero equals 참",
+      "token_count": 128,
+      "content_hash": "e33e99b47eb3f0ae2a15f511918941a1b39e73c07261b316be7b70b24e00f253",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: determines_arbitrary_constants\n설명: 일반해의 n개 임의상수를 n개의 초기조건으로 결정한다.",
+      "token_count": 86,
+      "content_hash": "096792453229dabf6be473978462818bfd6147e52ec181516a59834d0302d5bb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 일반해 (em.ode.nonhomogeneous_structure, 중요도: required)\n- 연립일차방정식 (la.matrix.system_form, 중요도: required)\n- 고계 도함수 (calculus.derivative, 중요도: required)\n\n관련 개념:\n- em.ode.mechanical_vibrations\n\n학습 목표 ID: solve_higher_order_ivp\n행동 동사: solve\n목표: 고계 미분방정식의 초기값 문제를 풀고 임의상수를 결정한다.",
+      "token_count": 182,
+      "content_hash": "75947151321fdf2552f9ea2ab4d79867c01aaedd61c249176fc997f199713760",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 초기조건 개수 부족 오류\n오개념 ID: em.ode.higher_order_ivp.insufficient_conditions\n설명: n계 방정식임에도 n개 미만 조우한 초기조건으로 모든 임의상수를 확정하려 한다.\n진단 태그: insufficient_initial_conditions\n피드백: n계 방정식의 유일한 특수해를 구하려면 y부터 y^{(n-1)}까지 총 n개의 초기조건이 필요합니다.",
+      "token_count": 174,
+      "content_hash": "f261bccf18ac5f4f9befbe42a8126b3e3e7bcd9bc4578c6e5cff3534b96903bc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.higher_order_ivp",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_02_higher_order_linear_odes",
+      "concept_name_ko": "고계 초기값 문제",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 고계 선형 상미분방정식\n개념: 고계 초기값 문제\n개념 ID: em.ode.higher_order_ivp\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: higher_order_ivp_solving\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: ivp_solution_check",
+      "token_count": 100,
+      "content_hash": "8c940cbcab5fc5f40a1f331960431f2e0a2517044b4a7b7d731ae854a3a67607",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.frenet_frame",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+  "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: T(t)(단위접선벡터), N(t)=T'(t)/‖T'(t)‖(단위주법선벡터), B(t)=T(t)×N(t)(단위종법선벡터)는 서로 수직인 단위벡터 삼중항(Frenet frame)을 이룬다. 곡률반지름 ρ=1/κ은 곡선에 가장 잘 맞는 접촉원의 반지름이다.\n검색 태그: frenet_frame, unit_normal_vector, binormal_vector, osculating_circle",
+      "token_count": 205,
+      "content_hash": "b5c1b4aa436aa152e9944dfd37214e12e62056870250bd5375a6b70a5cffd27b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 단위주법선벡터\n공식 ID: unit_normal_vector\n역할: definition\nLaTeX: \\mathbf{N}(t)=\\frac{\\mathbf{T}'(t)}{\\|\\mathbf{T}'(t)\\|}\\quad(\\mathbf{T}'(t)\\neq\\mathbf{0})\nCAS 표현: diff(T(t),t)/diff(T(t),t).norm()\n\n공식명: 단위종법선벡터\n공식 ID: unit_binormal_vector\n역할: definition\nLaTeX: \\mathbf{B}(t)=\\mathbf{T}(t)\\times\\mathbf{N}(t)\nCAS 표현: T(t).cross(N(t))\n\n공식명: 곡률반지름\n공식 ID: radius_of_curvature\n역할: definition\nLaTeX: \\rho=\\frac{1}{\\kappa}\\quad(\\kappa\\neq0)\nCAS 표현: 1/kappa\n\n공식명: 접촉원의 중심\n공식 ID: osculating_circle_center\n역할: definition\nLaTeX: \\mathbf{C}=\\mathbf{r}+\\frac{1}{\\kappa}\\mathbf{N}\nCAS 표현: r + (1/kappa)*N",
+      "token_count": 377,
+      "content_hash": "044b89c5c6f1cab08a5591a7ecdff013705742bdaf95b45d357e3ab8c36b65f8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: normal_needs_nonzero_t_prime\n설명: 단위주법선벡터는 T'(t)≠0일 때 정의된다.\n검증 규칙: T_prime not_equals zero_vector",
+      "token_count": 122,
+      "content_hash": "d671fc5e18f7f8c11bdd7303d5fd605c03f2c5fead42ae818581c1a6aa94ebae",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: tnb_mutually_perpendicular\n설명: T, N, B는 서로 수직인 단위벡터이며, T는 진행 방향, N은 곡선이 휘어지는 방향, B는 두 방향 모두에 수직인 방향을 나타낸다.\n\n성질 ID: curvature_radius_relation\n설명: 곡률이 클수록 곡률반지름은 작고 곡선은 더 급하게 휜다.",
+      "token_count": 172,
+      "content_hash": "85b2ac84ca00042cf405589a2dfd8508ac888b0ef80506239ca46ce54d13b991",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 공간곡선의 호의 길이와 곡률 (calculus.vector_valued_arc_length_and_curvature, 중요도: required)\n\n관련 개념:\n- calculus.tangential_normal_acceleration\n\n학습 목표 ID: compute_frenet_frame\n행동 동사: calculate\n목표: T(t), N(t), B(t)를 구성해 Frenet frame을 구한다.\n\n학습 목표 ID: find_osculating_circle\n행동 동사: construct\n목표: 곡률과 단위주법선벡터로 접촉원의 중심과 반지름을 구한다.",
+      "token_count": 213,
+      "content_hash": "0e0e73b5fbde780d60b0531004f4588627416babf8e646161199f5fc1955dd80",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 종법선벡터 계산 순서 오류\n오개념 ID: calculus.frenet_frame.binormal_order_error\n설명: B(t)=N(t)×T(t)처럼 외적의 순서를 바꿔 계산해 방향이 반대인 벡터를 얻는다.\n진단 태그: swap_binormal_cross_product_order\n피드백: 단위종법선벡터는 B(t)=T(t)×N(t)로 정의되며, 순서를 바꾸면 부호(방향)가 반대가 된다.",
+      "token_count": 206,
+      "content_hash": "5b48ed0a7ecb2e46900ee94f10329be1a72575f8570f618825711d2c9a07bc3d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.frenet_frame",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch03_vector_valued_functions",
+      "concept_name_ko": "Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터값 함수\n개념: Frenet frame(단위접선·주법선·종법선벡터)과 곡률반지름\n개념 ID: calculus.frenet_frame\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: frenet_frame_calculation, osculating_circle_construction\n지원 정답 유형: vector, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence",
+      "token_count": 126,
+      "content_hash": "4abc2cf51f453a1f8a1a1c9ef94087499113011e36c90aa26051919343ed3dd9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_08_continuous_distributions",
+  "concept_name_ko": "베타분포 — 분산",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "베타분포 — 분산",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 베타분포 — 분산\n개념 ID: ps.continuous_distributions.beta_distribution.f03\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 베타분포에서 사용하는 분산 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: continuous_distributions, beta_lognormal_weibull, distribution, beta_distribution, formula_atomic, core_formula",
+      "token_count": 118,
+      "content_hash": "21ddd8d12bcc10f6354b9fade24f29dcded84b961d406ba4d535065029bb8650",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "베타분포 — 분산",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 베타분포 — 분산\n개념 ID: ps.continuous_distributions.beta_distribution.f03\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 분산\n공식 ID: ps.continuous_distributions.beta_distribution.f03.formula_01\n역할: variance\nLaTeX: \\operatorname{Var}(X)=\n\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta+1)}",
+      "token_count": 132,
+      "content_hash": "47e9a4ace20745c082207b5d2ee1e96c89622dfe0e0c75ed1f867a2d547ac511",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "베타분포 — 분산",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 베타분포 — 분산\n개념 ID: ps.continuous_distributions.beta_distribution.f03\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.continuous_distributions.beta_distribution.f03.condition_01\n설명: $\\alpha>0$이어야 한다.\n검증 규칙: beta_shape_alpha greater_than 0\n\n조건 ID: ps.continuous_distributions.beta_distribution.f03.condition_02\n설명: $\\beta>0$이어야 한다.\n검증 규칙: beta_shape_beta greater_than 0\n\n조건 ID: ps.continuous_distributions.beta_distribution.f03.condition_03\n설명: 확률변수는 beta 분포를 따라야 한다.\n검증 규칙: random_variable_distribution equals beta",
+      "token_count": 207,
+      "content_hash": "902a38ae420c37115439d5a0d91567925a6496f32612e83eb3d83ef9e252a0b0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "베타분포 — 분산",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 베타분포 — 분산\n개념 ID: ps.continuous_distributions.beta_distribution.f03\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.continuous_distributions.beta_distribution.f03.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 101,
+      "content_hash": "76765a84afdf57ada84c5b7946e08cc524116f019a0330ae58a091aeecacaa7b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "베타분포 — 분산",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 베타분포 — 분산\n개념 ID: ps.continuous_distributions.beta_distribution.f03\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 정규분포 (ps.continuous_distributions.normal, 중요도: required)\n- 감마분포 (ps.continuous_distributions.gamma, 중요도: required)\n\n관련 개념:\n- ps.continuous_distributions.beta_distribution\n- ps.continuous_distributions.beta_lognormal_weibull\n\n학습 목표 ID: ps.continuous_distributions.beta_distribution.f03.objective_01\n행동 동사: identify\n목표: 베타분포 수식 3의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.continuous_distributions.beta_distribution.f03.objective_02\n행동 동사: apply\n목표: 베타분포 수식 3을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.continuous_distributions.beta_distribution.f03.objective_03\n행동 동사: verify\n목표: 베타분포 수식 3의 조건 충족 여부를 검증한다.",
+      "token_count": 288,
+      "content_hash": "b07c94920f32f9b6c8e7acd56061dcd066636282e2c811d317c0895a1beb881a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.continuous_distributions.beta_distribution.f03",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_08_continuous_distributions",
+      "concept_name_ko": "베타분포 — 분산",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 주요 연속확률분포\n개념: 베타분포 — 분산\n개념 ID: ps.continuous_distributions.beta_distribution.f03\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 165,
+      "content_hash": "7f5e973bb46c638644d9e9ef01cb30a3e5b67cb4fcb8c935217665aad7ad520b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

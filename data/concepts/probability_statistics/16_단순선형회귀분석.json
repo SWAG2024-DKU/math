@@ -481,7 +481,8 @@
           "formula_id": "ps.simple_linear_regression.cooks_distance.formula_01",
           "name_ko": "영향도",
           "role": "influence_measure",
-          "latex": "D_i\n=\n\\frac{e_i^2}{p\\,MSE}\n\\frac{h_{ii}}{(1-h_{ii})^2}"
+          "latex": "D_i\n=\n\\frac{e_i^2}{p\\,MSE}\n\\frac{h_{ii}}{(1-h_{ii})^2}",
+          "cas": "parse_latex('D_i\\n=\\n\\\\frac{e_i^2}{p\\\\,MSE}\\n\\\\frac{h_{ii}}{(1-h_{ii})^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -604,7 +605,8 @@
           "formula_id": "ps.simple_linear_regression.leverage.formula_01",
           "name_ko": "진단통계량",
           "role": "diagnostic",
-          "latex": "h_{ii}\n=\n\\frac1n+\n\\frac{(x_i-\\bar x)^2}{S_{xx}}"
+          "latex": "h_{ii}\n=\n\\frac1n+\n\\frac{(x_i-\\bar x)^2}{S_{xx}}",
+          "cas": "parse_latex('h_{ii}\\n=\\n\\\\frac1n+\\n\\\\frac{(x_i-\\\\bar x)^2}{S_{xx}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -726,7 +728,8 @@
           "formula_id": "ps.simple_linear_regression.raw_residual.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "e_i=y_i-\\hat y_i"
+          "latex": "e_i=y_i-\\hat y_i",
+          "cas": "parse_latex('e_i=y_i-\\\\hat y_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -933,7 +936,8 @@
           "formula_id": "ps.simple_linear_regression.studentized_residual.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "r_i\n=\n\\frac{e_i}{s\\sqrt{1-h_{ii}}}"
+          "latex": "r_i\n=\n\\frac{e_i}{s\\sqrt{1-h_{ii}}}",
+          "cas": "parse_latex('r_i\\n=\\n\\\\frac{e_i}{s\\\\sqrt{1-h_{ii}}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1140,7 +1144,8 @@
           "formula_id": "ps.simple_linear_regression.externally_studentized_residual.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "t_i=\\frac{e_i}{s_{(i)}\\sqrt{1-h_{ii}}}"
+          "latex": "t_i=\\frac{e_i}{s_{(i)}\\sqrt{1-h_{ii}}}",
+          "cas": "parse_latex('t_i=\\\\frac{e_i}{s_{(i)}\\\\sqrt{1-h_{ii}}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2087,7 +2092,8 @@
           "formula_id": "ps.simple_linear_regression.regression_model.f01.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "Y_i=\\beta_0+\\beta_1x_i+\\varepsilon_i"
+          "latex": "Y_i=\\beta_0+\\beta_1x_i+\\varepsilon_i",
+          "cas": "parse_latex('Y_i=\\\\beta_0+\\\\beta_1x_i+\\\\varepsilon_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2192,7 +2198,8 @@
           "formula_id": "ps.simple_linear_regression.regression_model.f02.formula_01",
           "name_ko": "조건부 평균모형",
           "role": "conditional_mean_model",
-          "latex": "E[Y\\mid X=x]=\\beta_0+\\beta_1x"
+          "latex": "E[Y\\mid X=x]=\\beta_0+\\beta_1x",
+          "cas": "parse_latex('E[Y\\\\mid X=x]=\\\\beta_0+\\\\beta_1x', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2297,7 +2304,8 @@
           "formula_id": "ps.simple_linear_regression.least_squares.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat\\beta_1=\\frac{S_{xy}}{S_{xx}}"
+          "latex": "\\hat\\beta_1=\\frac{S_{xy}}{S_{xx}}",
+          "cas": "parse_latex('\\\\hat\\\\beta_1=\\\\frac{S_{xy}}{S_{xx}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2394,7 +2402,8 @@
           "formula_id": "ps.simple_linear_regression.least_squares.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat\\beta_0=\\bar y-\\hat\\beta_1\\bar x"
+          "latex": "\\hat\\beta_0=\\bar y-\\hat\\beta_1\\bar x",
+          "cas": "parse_latex('\\\\hat\\\\beta_0=\\\\bar y-\\\\hat\\\\beta_1\\\\bar x', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2491,7 +2500,8 @@
           "formula_id": "ps.simple_linear_regression.least_squares.f03.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SSE=\\sum_{i=1}^{n}e_i^2"
+          "latex": "SSE=\\sum_{i=1}^{n}e_i^2",
+          "cas": "parse_latex('SSE=\\\\sum_{i=1}^{n}e_i^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2588,7 +2598,8 @@
           "formula_id": "ps.simple_linear_regression.variation_decomposition_r2.f01.formula_01",
           "name_ko": "제곱합",
           "role": "sum_of_squares",
-          "latex": "SST=SSR+SSE"
+          "latex": "SST=SSR+SSE",
+          "cas": "parse_latex('SST=SSR+SSE', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2689,7 +2700,8 @@
           "formula_id": "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
           "name_ko": "적합도 지표",
           "role": "fit_measure",
-          "latex": "R^2=\\frac{SSR}{SST}"
+          "latex": "R^2=\\frac{SSR}{SST}",
+          "cas": "parse_latex('R^2=\\\\frac{SSR}{SST}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2800,7 +2812,8 @@
           "formula_id": "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01",
           "name_ko": "적합도 지표",
           "role": "fit_measure",
-          "latex": "R^2=1-\\frac{SSE}{SST}"
+          "latex": "R^2=1-\\frac{SSE}{SST}",
+          "cas": "parse_latex('R^2=1-\\\\frac{SSE}{SST}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2906,7 +2919,8 @@
           "formula_id": "ps.simple_linear_regression.coefficient_inference.f01.formula_01",
           "name_ko": "기울기 t검정통계량",
           "role": "exact_test_statistic",
-          "latex": "t=\n\\frac{\\hat\\beta_1-\\beta_{1,0}}\n{SE(\\hat\\beta_1)}"
+          "latex": "t=\n\\frac{\\hat\\beta_1-\\beta_{1,0}}\n{SE(\\hat\\beta_1)}",
+          "cas": "parse_latex('t=\\n\\\\frac{\\\\hat\\\\beta_1-\\\\beta_{1,0}}\\n{SE(\\\\hat\\\\beta_1)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3039,7 +3053,8 @@
           "formula_id": "ps.simple_linear_regression.coefficient_inference.f02.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE(\\hat\\beta_1)=\\frac{s}{\\sqrt{S_{xx}}}"
+          "latex": "SE(\\hat\\beta_1)=\\frac{s}{\\sqrt{S_{xx}}}",
+          "cas": "parse_latex('SE(\\\\hat\\\\beta_1)=\\\\frac{s}{\\\\sqrt{S_{xx}}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3163,7 +3178,8 @@
           "formula_id": "ps.simple_linear_regression.mean_response_prediction.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\hat y_0\n=\n\\hat\\beta_0+\\hat\\beta_1x_0"
+          "latex": "\\hat y_0\n=\n\\hat\\beta_0+\\hat\\beta_1x_0",
+          "cas": "parse_latex('\\\\hat y_0\\n=\\n\\\\hat\\\\beta_0+\\\\hat\\\\beta_1x_0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3278,7 +3294,8 @@
           "formula_id": "ps.simple_linear_regression.mean_response_prediction.f02.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE_{\\mathrm{mean}}\n=\ns\\sqrt{\n\\frac1n+\n\\frac{(x_0-\\bar x)^2}{S_{xx}}\n}"
+          "latex": "SE_{\\mathrm{mean}}\n=\ns\\sqrt{\n\\frac1n+\n\\frac{(x_0-\\bar x)^2}{S_{xx}}\n}",
+          "cas": "parse_latex('SE_{\\\\mathrm{mean}}\\n=\\ns\\\\sqrt{\\n\\\\frac1n+\\n\\\\frac{(x_0-\\\\bar x)^2}{S_{xx}}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3429,7 +3446,8 @@
           "formula_id": "ps.simple_linear_regression.mean_response_prediction.f03.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\hat y_0\n\\pm\nt_{n-2,1-\\alpha/2}\nSE_{\\mathrm{mean}}"
+          "latex": "\\hat y_0\n\\pm\nt_{n-2,1-\\alpha/2}\nSE_{\\mathrm{mean}}",
+          "cas": "parse_latex('\\\\hat y_0\\n\\\\pm\\nt_{n-2,1-\\\\alpha/2}\\nSE_{\\\\mathrm{mean}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3608,7 +3626,8 @@
           "formula_id": "ps.simple_linear_regression.mean_response_prediction.f04.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE_{\\mathrm{pred}}\n=\ns\\sqrt{\n1+\n\\frac1n+\n\\frac{(x_0-\\bar x)^2}{S_{xx}}\n}"
+          "latex": "SE_{\\mathrm{pred}}\n=\ns\\sqrt{\n1+\n\\frac1n+\n\\frac{(x_0-\\bar x)^2}{S_{xx}}\n}",
+          "cas": "parse_latex('SE_{\\\\mathrm{pred}}\\n=\\ns\\\\sqrt{\\n1+\\n\\\\frac1n+\\n\\\\frac{(x_0-\\\\bar x)^2}{S_{xx}}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3777,7 +3796,8 @@
           "formula_id": "ps.simple_linear_regression.mean_response_prediction.f05.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\hat y_0\n\\pm\nt_{n-2,1-\\alpha/2}\nSE_{\\mathrm{pred}}"
+          "latex": "\\hat y_0\n\\pm\nt_{n-2,1-\\alpha/2}\nSE_{\\mathrm{pred}}",
+          "cas": "parse_latex('\\\\hat y_0\\n\\\\pm\\nt_{n-2,1-\\\\alpha/2}\\nSE_{\\\\mathrm{pred}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3974,7 +3994,8 @@
           "formula_id": "ps.simple_linear_regression.error_variance_inference_conditions.f01.formula_01",
           "name_ko": "분산 추정량",
           "role": "variance_estimator",
-          "latex": "MSE=\\frac{SSE}{n-2}"
+          "latex": "MSE=\\frac{SSE}{n-2}",
+          "cas": "parse_latex('MSE=\\\\frac{SSE}{n-2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4401,7 +4422,8 @@
           "formula_id": "ps.simple_linear_regression.least_squares_notation.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "S_{xx}=\\sum_{i=1}^{n}(x_i-\\bar x)^2"
+          "latex": "S_{xx}=\\sum_{i=1}^{n}(x_i-\\bar x)^2",
+          "cas": "parse_latex('S_{xx}=\\\\sum_{i=1}^{n}(x_i-\\\\bar x)^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4525,7 +4547,8 @@
           "formula_id": "ps.simple_linear_regression.least_squares_notation.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "S_{xy}=\\sum_{i=1}^{n}(x_i-\\bar x)(y_i-\\bar y)"
+          "latex": "S_{xy}=\\sum_{i=1}^{n}(x_i-\\bar x)(y_i-\\bar y)",
+          "cas": "parse_latex('S_{xy}=\\\\sum_{i=1}^{n}(x_i-\\\\bar x)(y_i-\\\\bar y)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4741,7 +4764,8 @@
           "formula_id": "ps.simple_linear_regression.intercept_se_leverage.f01.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE(\\hat\\beta_0)\n=\ns\\sqrt{\\frac1n+\\frac{\\bar x^2}{S_{xx}}}"
+          "latex": "SE(\\hat\\beta_0)\n=\ns\\sqrt{\\frac1n+\\frac{\\bar x^2}{S_{xx}}}",
+          "cas": "parse_latex('SE(\\\\hat\\\\beta_0)\\n=\\ns\\\\sqrt{\\\\frac1n+\\\\frac{\\\\bar x^2}{S_{xx}}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5197,7 +5221,8 @@
           "formula_id": "ps.simple_linear_regression.coefficient_conditional_covariance.f01.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\hat\\beta_1\\mid X)\n=\n\\frac{\\sigma^2}{S_{xx}}"
+          "latex": "\\operatorname{Var}(\\hat\\beta_1\\mid X)\n=\n\\frac{\\sigma^2}{S_{xx}}",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\hat\\\\beta_1\\\\mid X)\\n=\\n\\\\frac{\\\\sigma^2}{S_{xx}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5332,7 +5357,8 @@
           "formula_id": "ps.simple_linear_regression.coefficient_conditional_covariance.f02.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(\\hat\\beta_0\\mid X)\n=\n\\sigma^2\\left(\\frac1n+\\frac{\\bar x^2}{S_{xx}}\\right)"
+          "latex": "\\operatorname{Var}(\\hat\\beta_0\\mid X)\n=\n\\sigma^2\\left(\\frac1n+\\frac{\\bar x^2}{S_{xx}}\\right)",
+          "cas": "parse_latex('\\\\operatorname{Var}(\\\\hat\\\\beta_0\\\\mid X)\\n=\\n\\\\sigma^2\\\\left(\\\\frac1n+\\\\frac{\\\\bar x^2}{S_{xx}}\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5467,7 +5493,8 @@
           "formula_id": "ps.simple_linear_regression.coefficient_conditional_covariance.f03.formula_01",
           "name_ko": "공분산",
           "role": "covariance",
-          "latex": "\\operatorname{Cov}(\\hat\\beta_0,\\hat\\beta_1\\mid X)\n=\n-\\frac{\\bar x\\sigma^2}{S_{xx}}"
+          "latex": "\\operatorname{Cov}(\\hat\\beta_0,\\hat\\beta_1\\mid X)\n=\n-\\frac{\\bar x\\sigma^2}{S_{xx}}",
+          "cas": "parse_latex('\\\\operatorname{Cov}(\\\\hat\\\\beta_0,\\\\hat\\\\beta_1\\\\mid X)\\n=\\n-\\\\frac{\\\\bar x\\\\sigma^2}{S_{xx}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5584,7 +5611,8 @@
           "formula_id": "ps.simple_linear_regression.ols_residual_orthogonality.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\sum_{i=1}^n e_i=0"
+          "latex": "\\sum_{i=1}^n e_i=0",
+          "cas": "parse_latex('\\\\sum_{i=1}^n e_i=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5699,7 +5727,8 @@
           "formula_id": "ps.simple_linear_regression.ols_residual_orthogonality.f02.formula_01",
           "name_ko": "성질",
           "role": "property",
-          "latex": "\\sum_{i=1}^n x_i e_i=0"
+          "latex": "\\sum_{i=1}^n x_i e_i=0",
+          "cas": "parse_latex('\\\\sum_{i=1}^n x_i e_i=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5814,7 +5843,8 @@
           "formula_id": "ps.simple_linear_regression.regression_anova_table.f02.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df_{\\mathrm{Total}}=n-1"
+          "latex": "df_{\\mathrm{Total}}=n-1",
+          "cas": "parse_latex('df_{\\\\mathrm{Total}}=n-1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5949,7 +5979,8 @@
           "formula_id": "ps.simple_linear_regression.regression_anova_table.f02_error.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df_{\\mathrm{Error}}=n-2"
+          "latex": "df_{\\mathrm{Error}}=n-2",
+          "cas": "parse_latex('df_{\\\\mathrm{Error}}=n-2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6084,7 +6115,8 @@
           "formula_id": "ps.simple_linear_regression.regression_anova_table.f02_regression.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df_{\\mathrm{Regression}}=1"
+          "latex": "df_{\\mathrm{Regression}}=1",
+          "cas": "parse_latex('df_{\\\\mathrm{Regression}}=1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6218,7 +6250,8 @@
           "formula_id": "ps.simple_linear_regression.regression_anova_table.f03.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "MSR=SSR"
+          "latex": "MSR=SSR",
+          "cas": "parse_latex('MSR=SSR', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -6437,7 +6470,8 @@
           "formula_id": "ps.simple_linear_regression.regression_anova_table.f05.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "F=\\frac{MSR}{MSE}"
+          "latex": "F=\\frac{MSR}{MSE}",
+          "cas": "parse_latex('F=\\\\frac{MSR}{MSE}', backend='antlr')"
         }
       ],
       "application_conditions": [

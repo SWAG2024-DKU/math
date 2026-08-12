@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.integration_by_parts",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch07_techniques_of_integration",
+  "concept_name_ko": "부분적분",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 곱의 미분법칙에 대응하는 적분법으로, 치환법이 연쇄법칙에 대응하듯 부분적분은 곱법칙에 대응한다. ∫u dv=uv-∫v du 형태로, 어려운 적분을 더 쉬운 다른 적분으로 바꾼다.\n검색 태그: integration_by_parts, reduction_formula",
+      "token_count": 128,
+      "content_hash": "1177c423f5f280977dad84a83398f58d1268373f9895d41a95672c3a104c67d9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 부분적분 공식\n공식 ID: integration_by_parts\n역할: theorem\nLaTeX: \\int f(x)g'(x)\\,dx=f(x)g(x)-\\int g(x)f'(x)\\,dx,\\qquad\\int u\\,dv=uv-\\int v\\,du\nCAS 표현: f(x)*g(x) - Integral(g(x)*diff(f(x),x), x)\n\n공식명: 정적분에 대한 부분적분\n공식 ID: integration_by_parts_definite\n역할: theorem\nLaTeX: \\int_a^bf(x)g'(x)\\,dx=\\Big[f(x)g(x)\\Big]_a^b-\\int_a^bg(x)f'(x)\\,dx\nCAS 표현: f(b)*g(b)-f(a)*g(a) - Integral(g(x)*diff(f(x),x), (x,a,b))\n\n공식명: 점화공식 예시(sin^n x)\n공식 ID: reduction_formula_sin\n역할: example\nLaTeX: \\int\\sin^nx\\,dx=-\\frac1n\\cos x\\sin^{n-1}x+\\frac{n-1}n\\int\\sin^{n-2}x\\,dx\nCAS 표현: -cos(x)*sin(x)**(n-1)/n + (n-1)/n*Integral(sin(x)**(n-2), x)",
+      "token_count": 415,
+      "content_hash": "0d69eb661e408e11def0776bf2a531670192848727374f99d935f966ca5eb346",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: u_dv_selection_criteria\n설명: u, dv를 선택할 때: u는 미분했을 때 더 간단한(적어도 더 복잡하지 않은) 함수가 되어야 하고, dv는 원시함수 v를 구할 수 있어야 한다.\n검증 규칙: u_simplifies_and_dv_integrable equals 참\n\n조건 ID: definite_needs_continuous_derivatives\n설명: 정적분 형태는 f', g'이 연속이어야 성립한다.\n검증 규칙: f_prime_and_g_prime_continuous equals 참",
+      "token_count": 182,
+      "content_hash": "e3f8eb931da3fbe2a2b70f8ebde762938b2a7c7eed549d6afdfb546308c7213d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: derived_from_product_rule\n설명: 곱법칙 d/dx[f(x)g(x)]=f(x)g'(x)+g(x)f'(x)를 부정적분으로 표현하고 정리하면 부분적분 공식이 유도된다.\n\n성질 ID: log_and_inverse_trig_as_u\n설명: 로그함수·역삼각함수처럼 도함수가 더 간단해지는 함수는 u로 선택하기 좋다(예: ∫ln x dx는 u=ln x, dv=dx).\n\n성질 ID: self_referential_equation_trick\n설명: 부분적분을 반복 적용해 원래 적분으로 되돌아오는 경우(예: ∫e^x sin x dx), 원래 적분을 미지수로 하는 방정식으로 보고 풀 수 있다.\n\n성질 ID: reduction_formula_pattern\n설명: 점화공식은 거듭제곱의 지수를 하나씩 줄여가며 반복 적용해 최종적으로 기본 적분으로 귀결시키며, cos^n x, tan^n x, sec^n x, (ln x)^n, x^n e^x 등에도 유사하게 성립한다.",
+      "token_count": 330,
+      "content_hash": "97a4aedc74190d21db80e16f0f196e5237e0969615f7b094971bc443e2f03c0b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 곱법칙 (calculus.product_rule, 중요도: required)\n- 원시함수(부정적분) (calculus.indefinite_integral, 중요도: required)\n\n관련 개념:\n- calculus.trigonometric_integrals\n\n학습 목표 ID: choose_u_and_dv\n행동 동사: select\n목표: 주어진 적분에서 적절한 u와 dv를 선택한다.\n\n학습 목표 ID: apply_integration_by_parts\n행동 동사: apply\n목표: 부분적분 공식을 적용해 적분을 계산한다.\n\n학습 목표 ID: solve_self_referential_integral\n행동 동사: solve\n목표: 반복된 부분적분에서 원래 적분이 다시 나타나는 경우 방정식으로 풀어낸다.",
+      "token_count": 219,
+      "content_hash": "29ce1ea7cffc8e89888a37e23a289031eb310c0786c217cff6686f7903c2bd9b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: u, dv를 잘못 선택해 더 복잡한 적분 생성\n오개념 ID: calculus.integration_by_parts.wrong_u_choice\n설명: 미분하면 더 복잡해지는 함수를 u로 선택해 원래보다 어려운 적분을 만든다(예: ∫x sin x dx에서 u=sin x, dv=x dx로 선택).\n진단 태그: wrong_u_dv_selection_in_integration_by_parts\n피드백: u는 미분하면 더 간단해지는 함수, dv는 원시함수를 구할 수 있는 함수로 선택해야 한다. 잘못 선택하면 더 어려운 적분이 나온다.\n\n오개념: 부분적분 공식의 부호 누락\n오개념 ID: calculus.integration_by_parts.forget_sign\n설명: ∫u dv=uv+∫v du처럼 부호를 빠뜨린다.\n진단 태그: forget_negative_sign_in_integration_by_parts\n피드백: 부분적분 공식은 ∫u dv=uv-∫v du로, 두 번째 항에 음의 부호가 붙는다.",
+      "token_count": 317,
+      "content_hash": "d5d85a3fd2d1f19348caf4e1e869f30f7f2525a9a3bd459007fa52432e40d93e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.integration_by_parts",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "부분적분",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 부분적분\n개념 ID: calculus.integration_by_parts\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: integration_by_parts_application, reduction_formula_application, self_referential_integral_solving\n지원 정답 유형: expression, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 112,
+      "content_hash": "b3d2076351b48236e0461d42bd3dcceb46297b90321a1195c43d9f95603ed01c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

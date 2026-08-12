@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.matrix.system_form",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_01_matrix_algebra",
+  "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: m개의 일차방정식과 n개의 미지수로 구성된 시스템을 계수행렬과 상수벡터의 첨가행렬 [A | b] 및 벡터의 선형결합 방정식으로 변환하여 대수적으로 다루기 쉬운 형태로 추상화하는 과정이다.\n검색 태그: linear_system, matrix_equation, augmented_matrix",
+      "token_count": 156,
+      "content_hash": "eb92f2097aac56cdbfd4766c880ddee6248fd4845afa3b504159a39d53b1e0f4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 행렬 방정식\n공식 ID: matrix_equation\n역할: general_form\nLaTeX: A\\mathbf{x} = \\mathbf{b}\nCAS 표현: Eq(A * x, b)\n\n공식명: 벡터 방정식\n공식 ID: vector_equation\n역할: general_form\nLaTeX: x_1\\mathbf{a}_1 + x_2\\mathbf{a}_2 + \\cdots + x_n\\mathbf{a}_n = \\mathbf{b}\nCAS 표현: Eq(Sum(x[i]*a[i], (i, 1, n)), b)\n\n공식명: 첨가행렬\n공식 ID: augmented_matrix\n역할: representation\nLaTeX: [A \\mid \\mathbf{b}]\nCAS 표현: BlockMatrix([A, b])",
+      "token_count": 269,
+      "content_hash": "05aad39b4f825e7e80cfab8ef4d2a8d33887e4b3cb5144b4cdbce339ba149792",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: linear_terms_only\n설명: 비선형 항(미지수 간의 곱, 제곱, 삼각함수 등)이 존재하지 않는 완전한 일차식 시스템이어야 행렬 매핑이 가능하다.\n검증 규칙: is_linear_system equals 참",
+      "token_count": 132,
+      "content_hash": "a4620dd8cfc9d0dc4f106289e290cb8ab8b8400e5204532fba390d225902ca98",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: algebraic_equivalence\n설명: 연립일차방정식, 행렬과 벡터의 곱, 열벡터들의 선형결합은 표현 형태만 다를 뿐 대수적, 알고리즘적으로 완전히 동치이다.",
+      "token_count": 125,
+      "content_hash": "f978cee3e04c532d5ff7c152a609467944fef46b765d482a3efd67178eaf7ed1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 일차방정식 (algebra.linear_equation, 중요도: required)\n- 벡터와 스칼라 (algebra.vector_scalar, 중요도: required)\n\n관련 개념:\n- la.matrix.ero_ref\n\n학습 목표 ID: convert_forms\n행동 동사: transform\n목표: 연립일차방정식을 행렬 방정식과 벡터 방정식으로 상호 변환한다.",
+      "token_count": 172,
+      "content_hash": "dbb3b504f3ec0d1afaf755ea1e1ecfe990e16a5aa8241dc7e88ef19b2addadfc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 방정식 관점과 열벡터 관점의 혼동\n오개념 ID: la.matrix.system_form.view_confusion\n설명: 방정식을 초평면들의 교집합으로만 보고, 미지수를 열벡터의 가중치로 해석하는 벡터 방정식 관점으로 전환하지 못한다.\n진단 태그: vector_weight_view_failure\n피드백: 미지수 벡터의 각 성분은 계수행렬의 각 열벡터에 곱해지는 선형결합의 가중치로 해석되어야 합니다.\n\n오개념: 행렬 차원과 제약 조건의 역전\n오개념 ID: la.matrix.system_form.dimension_inversion\n설명: m x n 행렬에서 행과 열의 의미(제약 조건의 수 vs 미지수의 수)를 혼동한다.\n진단 태그: matrix_dimension_confusion\n피드백: 행렬의 행(m)은 방정식(제약 조건)의 개수이며, 열(n)은 미지수(공간의 차원)의 개수입니다.",
+      "token_count": 322,
+      "content_hash": "ef3fd4c58356d8bba8f5850509b24b6bab2b222af04ee459413aae94a4be0aa8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.matrix.system_form",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_01_matrix_algebra",
+      "concept_name_ko": "선형방정식계의 형태와 연립방정식의 대수적 표현",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 연립방정식과 행렬대수\n개념: 선형방정식계의 형태와 연립방정식의 대수적 표현\n개념 ID: la.matrix.system_form\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: equation_to_matrix, matrix_to_vector_equation\n지원 정답 유형: matrix, equation\n난이도 범위: 1 ~ 2\n권장 검증기: symbolic_equivalence",
+      "token_count": 127,
+      "content_hash": "6a8154ef39213ce0bc03c1d23b7efdef3b634245f1920d68b25c52c41e3961a2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

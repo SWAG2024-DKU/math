@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.multivariate_distributions.mvn_linear_conditional",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_09_multivariate_distributions",
+  "concept_name_ko": "다변량 정규분포의 선형변환과 조건부분포",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.mvn_linear_conditional",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "다변량 정규분포의 선형변환과 조건부분포",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 다변량 정규분포의 선형변환과 조건부분포\n개념 ID: ps.multivariate_distributions.mvn_linear_conditional\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: $X\\sim N_p(\\mu,\\Sigma)$이면 $AX+b\\sim N_q(A\\mu+b,A\\Sigma A^T)$ 이다.\n검색 태그: multivariate_distributions, mvn_linear_conditional, distribution",
+      "token_count": 140,
+      "content_hash": "0678b49a4c8867b01182e591db00a825f0dd89d4bbe53708fec66b3251335f50",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.mvn_linear_conditional",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "다변량 정규분포의 선형변환과 조건부분포",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 다변량 정규분포의 선형변환과 조건부분포\n개념 ID: ps.multivariate_distributions.mvn_linear_conditional\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.multivariate_distributions.mvn_linear_conditional.property_01\n설명: 서로 다른 적용 조건을 갖는 수식은 수식별 하위 개념으로 분리되어 있다.",
+      "token_count": 122,
+      "content_hash": "d63219931d5462ba9bb04280cb752c1809e8feb20cc5ebd3b5dcaf7dc6c4ab50",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.mvn_linear_conditional",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "다변량 정규분포의 선형변환과 조건부분포",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 다변량 정규분포의 선형변환과 조건부분포\n개념 ID: ps.multivariate_distributions.mvn_linear_conditional\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률변수와 분포 (ps.random_variables.random_variable_distribution, 중요도: required)\n- 선형대수 (math.linear_algebra, 중요도: required)\n- 이중적분 (calculus.double_integral, 중요도: recommended)\n\n관련 개념:\n- ps.multivariate_distributions.mvn_linear_conditional.f01\n- ps.multivariate_distributions.mvn_linear_conditional.f02\n- ps.multivariate_distributions.mvn_linear_conditional.f03\n- ps.multivariate_distributions.covariance_linearity_cauchy_schwarz\n- ps.multivariate_distributions.mvn_density_conditional_prediction\n\n학습 목표 ID: ps.multivariate_distributions.mvn_linear_conditional.objective_01\n행동 동사: identify\n목표: 다변량 정규분포의 선형변환과 조건부분포의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.multivariate_distributions.mvn_linear_conditional.objective_02\n행동 동사: apply\n목표: 다변량 정규분포의 선형변환과 조건부분포의 핵심 공식을 적절한 상황에 적용한다.",
+      "token_count": 391,
+      "content_hash": "d2054d47757005bf28305d8c4a22533c626df1d805a2672697c78f82f6c1e4ae",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.mvn_linear_conditional",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "다변량 정규분포의 선형변환과 조건부분포",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 다변량 정규분포의 선형변환과 조건부분포\n개념 ID: ps.multivariate_distributions.mvn_linear_conditional\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n학습 목표 ID: ps.multivariate_distributions.mvn_linear_conditional.objective_03\n행동 동사: interpret\n목표: 계산 결과를 다변량 정규분포의 선형변환과 조건부분포의 의미와 조건에 맞게 해석한다.",
+      "token_count": 139,
+      "content_hash": "81b3ad4bde78393ea9e76e0b13c4612f00d67c2ec9a42bc12b65bc3e421d7d44",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.mvn_linear_conditional",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "다변량 정규분포의 선형변환과 조건부분포",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 다변량 정규분포의 선형변환과 조건부분포\n개념 ID: ps.multivariate_distributions.mvn_linear_conditional\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check\n생성 참고사항: 탐색용 개요다. 실제 문제 생성에는 related_concepts의 수식별 원자 개념을 사용한다.",
+      "token_count": 211,
+      "content_hash": "eb29a7f9b60439b96d8377b0a299a1640d567f2db41010c883d7ee3f0dfec3cf",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

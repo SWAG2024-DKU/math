@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.complex.isolated_singularities",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_08_complex_analysis",
+  "concept_name_ko": "8.12 고립특이점의 분류",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 한 점을 제외한 근방에서 해석적인 함수의 특이점을 제거가능 특이점, 극, 본질적 특이점으로 나누는 개념이다.\n검색 태그: isolated_singularities, removable_singularity, pole, essential_singularity",
+      "token_count": 112,
+      "content_hash": "538cca8316fdf6a8ac796661cfecbc64163309df5d47a89fc2c3330b3647e388",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: m차 극 조건\n공식 ID: pole_order_definition\n역할: definition\nLaTeX: a_{-m}\\neq0 \\quad \\text{and no lower negative terms}\nCAS 표현: Eq(a_(-m), nonzero) & all_zero_below(-m)",
+      "token_count": 120,
+      "content_hash": "d8afcd5aa7ec276a6a29278d50590222b9f31ae19beaa4554d7ee6c6c02f5ecd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: isolated_singularity_laurent\n설명: 특이점이 고립되어 있어야 Laurent 급수로 분류할 수 있다.\n검증 규칙: singularity_is_isolated equals 참",
+      "token_count": 96,
+      "content_hash": "7de8db1553183fe0130d021c7cfa6925d7c1c26067df2ea830ce77ec5d91f3b5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: removable_singularity_extension\n설명: 제거가능 특이점은 적절한 함수값을 정의해 해석적으로 연장할 수 있다.",
+      "token_count": 85,
+      "content_hash": "96d37834f777deee0272ff2307d087cdb276c3c824c7141bd8a549ce74fbe036",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- Laurent 급수 (em.complex.taylor_laurent_series, 중요도: required)\n- 극한 (calculus.limit, 중요도: required)\n\n관련 개념:\n- em.complex.residue_theorem\n\n학습 목표 ID: classify_singularities\n행동 동사: identify\n목표: 고립특이점을 제거가능 특이점, 극, 본질적 특이점으로 분류한다.",
+      "token_count": 152,
+      "content_hash": "f7e26b8430a5c2eef1d47ee62751dbde2c1be9dc24293d5fe167f761050c7e62",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 분모가 0인 점을 무조건 극으로 오인\n오개념 ID: em.complex.isolated_singularities.zero_denominator_always_pole\n설명: 분모가 0이 되는 모든 점을 무조건 극(Pole)으로 판단한다.\n진단 태그: confuse_removable_with_pole\n피드백: 분자와 분모가 동시에 0이 되어 약분되는 경우에는 제거가능 특이점이 될 수 있으므로 약분 후 판정해야 합니다.",
+      "token_count": 173,
+      "content_hash": "105ab7ab6a1ad17d2f322f249beb10b24172b3866cbb2a5fb0504e0757486b5c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.isolated_singularities",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.12 고립특이점의 분류",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.12 고립특이점의 분류\n개념 ID: em.complex.isolated_singularities\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: singularity_classification\n지원 정답 유형: string\n난이도 범위: 2 ~ 4\n권장 검증기: singularity_type_check",
+      "token_count": 92,
+      "content_hash": "848f88988b2c46ef87166cc56f0b1e6f44d29525935ec363136f71e095a0c650",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

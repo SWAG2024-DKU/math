@@ -65,7 +65,8 @@
           "formula_id": "ps.counting.addition_rule.formula_01",
           "name_ko": "경우의 수 공식",
           "role": "counting_rule",
-          "latex": "m+n"
+          "latex": "m+n",
+          "cas": "parse_latex('m+n', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -151,7 +152,8 @@
           "formula_id": "ps.counting.binomial_theorem.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "(a+b)^n=\\sum_{k=0}^{n}\\binom{n}{k}a^{n-k}b^k"
+          "latex": "(a+b)^n=\\sum_{k=0}^{n}\\binom{n}{k}a^{n-k}b^k",
+          "cas": "parse_latex('(a+b)^n=\\\\sum_{k=0}^{n}\\\\binom{n}{k}a^{n-k}b^k', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -228,7 +230,8 @@
           "formula_id": "ps.counting.multiplication_rule.formula_01",
           "name_ko": "경우의 수 공식",
           "role": "counting_rule",
-          "latex": "mn"
+          "latex": "mn",
+          "cas": "parse_latex('mn', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -314,7 +317,8 @@
           "formula_id": "ps.counting.multiset_permutation.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\frac{n!}{n_1!\\cdots n_k!}"
+          "latex": "\\frac{n!}{n_1!\\cdots n_k!}",
+          "cas": "parse_latex('\\\\frac{n!}{n_1!\\\\cdots n_k!}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -400,7 +404,8 @@
           "formula_id": "ps.counting.permutation_with_repetition.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "N(n,r)=\\begin{cases}1,&n=0,\\ r=0,\\\\n^r,&\\text{otherwise.}\\end{cases}"
+          "latex": "N(n,r)=\\begin{cases}1,&n=0,\\ r=0,\\\\n^r,&\\text{otherwise.}\\end{cases}",
+          "cas": "parse_latex('N(n,r)=\\\\begin{cases}1,&n=0,\\\\ r=0,\\\\\\\\n^r,&\\\\text{otherwise.}\\\\end{cases}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -522,7 +527,8 @@
           "formula_id": "ps.counting.permutation_without_repetition.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "{}_nP_r=\\frac{n!}{(n-r)!}"
+          "latex": "{}_nP_r=\\frac{n!}{(n-r)!}",
+          "cas": "parse_latex('{}_nP_r=\\\\frac{n!}{(n-r)!}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -662,7 +668,8 @@
           "formula_id": "ps.counting.two_set_inclusion_exclusion.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "|A\\cup B|=|A|+|B|-|A\\cap B|"
+          "latex": "|A\\cup B|=|A|+|B|-|A\\cap B|",
+          "cas": "parse_latex('|A\\\\cup B|=|A|+|B|-|A\\\\cap B|', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1011,7 +1018,8 @@
           "formula_id": "ps.counting.multiset_combination.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\binom{n+r-1}{r}"
+          "latex": "\\binom{n+r-1}{r}",
+          "cas": "parse_latex('\\\\binom{n+r-1}{r}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1313,7 +1321,8 @@
           "formula_id": "ps.counting.circular_permutation.formula_01",
           "name_ko": "경우의 수 공식",
           "role": "counting_formula",
-          "latex": "(n-1)!"
+          "latex": "(n-1)!",
+          "cas": "parse_latex('(n-1)!', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1524,7 +1533,8 @@
           "formula_id": "ps.counting.general_inclusion_exclusion.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\left|\\bigcup_{i=1}^{n}A_i\\right|\n=\n\\sum_{\\varnothing\\ne J\\subseteq\\{1,\\ldots,n\\}}\n(-1)^{|J|+1}\n\\left|\\bigcap_{j\\in J}A_j\\right|."
+          "latex": "\\left|\\bigcup_{i=1}^{n}A_i\\right|\n=\n\\sum_{\\varnothing\\ne J\\subseteq\\{1,\\ldots,n\\}}\n(-1)^{|J|+1}\n\\left|\\bigcap_{j\\in J}A_j\\right|.",
+          "cas": "parse_latex('\\\\left|\\\\bigcup_{i=1}^{n}A_i\\\\right|\\n=\\n\\\\sum_{\\\\varnothing\\\\ne J\\\\subseteq\\\\{1,\\\\ldots,n\\\\}}\\n(-1)^{|J|+1}\\n\\\\left|\\\\bigcap_{j\\\\in J}A_j\\\\right|.', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1712,7 +1722,8 @@
           "formula_id": "ps.counting.multinomial_theorem.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "(x_1+\\cdots+x_k)^n\n=\\sum_{\\substack{n_1+\\cdots+n_k=n\\\\ n_1,\\ldots,n_k\\in\\mathbb Z_{\\ge0}}}\n\\frac{n!}{n_1!\\cdots n_k!}\n\\prod_{j=1}^{k}x_j^{n_j}"
+          "latex": "(x_1+\\cdots+x_k)^n\n=\\sum_{\\substack{n_1+\\cdots+n_k=n\\\\ n_1,\\ldots,n_k\\in\\mathbb Z_{\\ge0}}}\n\\frac{n!}{n_1!\\cdots n_k!}\n\\prod_{j=1}^{k}x_j^{n_j}",
+          "cas": "parse_latex('(x_1+\\\\cdots+x_k)^n\\n=\\\\sum_{\\\\substack{n_1+\\\\cdots+n_k=n\\\\\\\\ n_1,\\\\ldots,n_k\\\\in\\\\mathbb Z_{\\\\ge0}}}\\n\\\\frac{n!}{n_1!\\\\cdots n_k!}\\n\\\\prod_{j=1}^{k}x_j^{n_j}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1836,7 +1847,8 @@
           "formula_id": "ps.counting.pigeonhole_principle.formula_01",
           "name_ko": "경우의 수 공식",
           "role": "counting_rule",
-          "latex": "m>n\\ge1\\quad\\Longrightarrow\\quad \\max_{1\\le j\\le n}N_j\\ge2"
+          "latex": "m>n\\ge1\\quad\\Longrightarrow\\quad \\max_{1\\le j\\le n}N_j\\ge2",
+          "cas": "parse_latex('m>n\\\\ge1\\\\quad\\\\Longrightarrow\\\\quad \\\\max_{1\\\\le j\\\\le n}N_j\\\\ge2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2135,7 +2147,8 @@
           "formula_id": "ps.counting.generalized_pigeonhole.formula_01",
           "name_ko": "정리",
           "role": "theorem",
-          "latex": "\\max_{1\\le j\\le n}N_j\\ge\\left\\lceil\\frac{m}{n}\\right\\rceil,\\qquad \\sum_{j=1}^{n}N_j=m"
+          "latex": "\\max_{1\\le j\\le n}N_j\\ge\\left\\lceil\\frac{m}{n}\\right\\rceil,\\qquad \\sum_{j=1}^{n}N_j=m",
+          "cas": "parse_latex('\\\\max_{1\\\\le j\\\\le n}N_j\\\\ge\\\\left\\\\lceil\\\\frac{m}{n}\\\\right\\\\rceil,\\\\qquad \\\\sum_{j=1}^{n}N_j=m', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2344,7 +2357,8 @@
           "formula_id": "ps.counting.ordinary_combination.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\binom{n}{r}=\\frac{n!}{r!(n-r)!}"
+          "latex": "\\binom{n}{r}=\\frac{n!}{r!(n-r)!}",
+          "cas": "parse_latex('\\\\binom{n}{r}=\\\\frac{n!}{r!(n-r)!}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2485,7 +2499,8 @@
           "formula_id": "ps.counting.ordinary_combination.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\binom{n}{r}=\\binom{n}{n-r}"
+          "latex": "\\binom{n}{r}=\\binom{n}{n-r}",
+          "cas": "parse_latex('\\\\binom{n}{r}=\\\\binom{n}{n-r}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2740,7 +2755,8 @@
           "formula_id": "ps.counting.derangements.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "D_n=n!\\sum_{k=0}^{n}\\frac{(-1)^k}{k!}"
+          "latex": "D_n=n!\\sum_{k=0}^{n}\\frac{(-1)^k}{k!}",
+          "cas": "parse_latex('D_n=n!\\\\sum_{k=0}^{n}\\\\frac{(-1)^k}{k!}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2849,7 +2865,8 @@
           "formula_id": "ps.counting.derangements.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "D_n=\\left\\lfloor\\frac{n!}{e}+\\frac12\\right\\rfloor"
+          "latex": "D_n=\\left\\lfloor\\frac{n!}{e}+\\frac12\\right\\rfloor",
+          "cas": "parse_latex('D_n=\\\\left\\\\lfloor\\\\frac{n!}{e}+\\\\frac12\\\\right\\\\rfloor', backend='antlr')"
         }
       ],
       "application_conditions": [

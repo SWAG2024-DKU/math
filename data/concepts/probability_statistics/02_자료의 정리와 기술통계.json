@@ -65,7 +65,8 @@
           "formula_id": "ps.descriptive_statistics.geometric_mean.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "G=\\left(\\prod_{i=1}^{n}x_i\\right)^{1/n}"
+          "latex": "G=\\left(\\prod_{i=1}^{n}x_i\\right)^{1/n}",
+          "cas": "parse_latex('G=\\\\left(\\\\prod_{i=1}^{n}x_i\\\\right)^{1/n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -167,7 +168,8 @@
           "formula_id": "ps.descriptive_statistics.harmonic_mean.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "H=\\frac{n}{\\sum_{i=1}^{n}1/x_i}"
+          "latex": "H=\\frac{n}{\\sum_{i=1}^{n}1/x_i}",
+          "cas": "parse_latex('H=\\\\frac{n}{\\\\sum_{i=1}^{n}1/x_i}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -659,7 +661,8 @@
           "formula_id": "ps.descriptive_statistics.position_shape.formula_01",
           "name_ko": "standard score",
           "role": "standard_score",
-          "latex": "z=(x-\\mu)/\\sigma"
+          "latex": "z=(x-\\mu)/\\sigma",
+          "cas": "parse_latex('z=(x-\\\\mu)/\\\\sigma', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1288,7 +1291,8 @@
           "formula_id": "ps.descriptive_statistics.range_iqr.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\operatorname{Range}=x_{\\max}-x_{\\min}"
+          "latex": "\\operatorname{Range}=x_{\\max}-x_{\\min}",
+          "cas": "parse_latex('\\\\operatorname{Range}=x_{\\\\max}-x_{\\\\min}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1403,7 +1407,8 @@
           "formula_id": "ps.descriptive_statistics.range_iqr.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "IQR=Q_3-Q_1"
+          "latex": "IQR=Q_3-Q_1",
+          "cas": "parse_latex('IQR=Q_3-Q_1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1518,7 +1523,8 @@
           "formula_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "s^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar x)^2"
+          "latex": "s^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar x)^2",
+          "cas": "parse_latex('s^2=\\\\frac{1}{n-1}\\\\sum_{i=1}^{n}(x_i-\\\\bar x)^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1624,7 +1630,8 @@
           "formula_id": "ps.descriptive_statistics.sample_variance_standard_deviation.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "s=\\sqrt{s^2}"
+          "latex": "s=\\sqrt{s^2}",
+          "cas": "parse_latex('s=\\\\sqrt{s^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1730,7 +1737,8 @@
           "formula_id": "ps.descriptive_statistics.frequency_distribution_graphs.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\text{상대도수}=\\frac{\\text{도수}}{\\text{전체 관측수}}"
+          "latex": "\\text{상대도수}=\\frac{\\text{도수}}{\\text{전체 관측수}}",
+          "cas": "parse_latex('\\\\text{상대도수}=\\\\frac{\\\\text{도수}}{\\\\text{전체 관측수}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1852,7 +1860,8 @@
           "formula_id": "ps.descriptive_statistics.frequency_distribution_graphs.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\text{누적도수}=\\text{현재 계급까지의 도수 합}"
+          "latex": "\\text{누적도수}=\\text{현재 계급까지의 도수 합}",
+          "cas": "parse_latex('\\\\text{누적도수}=\\\\text{현재 계급까지의 도수 합}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1956,7 +1965,8 @@
           "formula_id": "ps.descriptive_statistics.central_tendency.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\bar x=\\frac1n\\sum_{i=1}^{n}x_i"
+          "latex": "\\bar x=\\frac1n\\sum_{i=1}^{n}x_i",
+          "cas": "parse_latex('\\\\bar x=\\\\frac1n\\\\sum_{i=1}^{n}x_i', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2066,7 +2076,8 @@
           "formula_id": "ps.descriptive_statistics.central_tendency.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\bar x_w=\\frac{\\sum_i w_i x_i}{\\sum_i w_i}"
+          "latex": "\\bar x_w=\\frac{\\sum_i w_i x_i}{\\sum_i w_i}",
+          "cas": "parse_latex('\\\\bar x_w=\\\\frac{\\\\sum_i w_i x_i}{\\\\sum_i w_i}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2167,7 +2178,8 @@
           "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "s_{xy}=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})"
+          "latex": "s_{xy}=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})",
+          "cas": "parse_latex('s_{xy}=\\\\frac{1}{n-1}\\\\sum_{i=1}^{n}(x_i-\\\\bar{x})(y_i-\\\\bar{y})', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2292,7 +2304,8 @@
           "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "CV=\\frac{s}{\\bar{x}}"
+          "latex": "CV=\\frac{s}{\\bar{x}}",
+          "cas": "parse_latex('CV=\\\\frac{s}{\\\\bar{x}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2399,7 +2412,8 @@
           "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f03.formula_01",
           "name_ko": "경험적 기준",
           "role": "empirical_criterion",
-          "latex": "LF=Q_1-1.5IQR"
+          "latex": "LF=Q_1-1.5IQR",
+          "cas": "parse_latex('LF=Q_1-1.5IQR', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2498,7 +2512,8 @@
           "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.upper_fence.formula_01",
           "name_ko": "경험적 기준",
           "role": "empirical_criterion",
-          "latex": "UF=Q_3+1.5IQR"
+          "latex": "UF=Q_3+1.5IQR",
+          "cas": "parse_latex('UF=Q_3+1.5IQR', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2592,7 +2607,8 @@
           "formula_id": "ps.descriptive_statistics.covariance_cv_outliers.f04.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\sum_{i=1}^{n}(x_i-\\bar{x})^2\n=\\sum_{i=1}^{n}x_i^2-n\\bar{x}^2"
+          "latex": "\\sum_{i=1}^{n}(x_i-\\bar{x})^2\n=\\sum_{i=1}^{n}x_i^2-n\\bar{x}^2",
+          "cas": "parse_latex('\\\\sum_{i=1}^{n}(x_i-\\\\bar{x})^2\\n=\\\\sum_{i=1}^{n}x_i^2-n\\\\bar{x}^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2699,7 +2715,8 @@
           "formula_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "F_n(x)=\\frac{1}{n}\\sum_{i=1}^{n}I(X_i\\le x)"
+          "latex": "F_n(x)=\\frac{1}{n}\\sum_{i=1}^{n}I(X_i\\le x)",
+          "cas": "parse_latex('F_n(x)=\\\\frac{1}{n}\\\\sum_{i=1}^{n}I(X_i\\\\le x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2809,7 +2826,8 @@
           "formula_id": "ps.descriptive_statistics.ecdf_robust_dispersion.f02.formula_01",
           "name_ko": "강건 산포도",
           "role": "robust_dispersion",
-          "latex": "MAD=\\operatorname{median}\\left(|X_i-\\operatorname{median}(X)|\\right)"
+          "latex": "MAD=\\operatorname{median}\\left(|X_i-\\operatorname{median}(X)|\\right)",
+          "cas": "parse_latex('MAD=\\\\operatorname{median}\\\\left(|X_i-\\\\operatorname{median}(X)|\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2919,7 +2937,8 @@
           "formula_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\gamma_1=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^3\\right]"
+          "latex": "\\gamma_1=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^3\\right]",
+          "cas": "parse_latex('\\\\gamma_1=E\\\\left[\\\\left(\\\\frac{X-\\\\mu}{\\\\sigma}\\\\right)^3\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3025,7 +3044,8 @@
           "formula_id": "ps.descriptive_statistics.skewness_kurtosis_moments.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\beta_2=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^4\\right]"
+          "latex": "\\beta_2=E\\left[\\left(\\frac{X-\\mu}{\\sigma}\\right)^4\\right]",
+          "cas": "parse_latex('\\\\beta_2=E\\\\left[\\\\left(\\\\frac{X-\\\\mu}{\\\\sigma}\\\\right)^4\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [

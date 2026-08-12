@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.volume_by_cylindrical_shells",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch06_applications_of_integration",
+  "concept_name_ko": "원통셸 방법에 의한 부피",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 회전축과 평행한 대표 직사각형을 회전시켜 만든 얇은 원통껍질(반지름 r, 높이 h, 두께 Δr)의 부피 근사 2πrhΔr을 리만합의 극한으로 적분한 것이 원통셸법이다. 곡선을 x=g(y) 형태로 풀기 어려울 때 고리법의 대안으로 유용하다.\n검색 태그: cylindrical_shell_method, volume_of_revolution",
+      "token_count": 172,
+      "content_hash": "2663f1016cdf52b7f9010f6d3e8ce95fc25ad9bfb3653f2d82af58b05acb47d0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 원통셸의 근사 부피\n공식 ID: cylindrical_shell_approx\n역할: approximation\nLaTeX: \\Delta V\\approx2\\pi rh\\,\\Delta r=[\\text{원둘레}]\\times[\\text{높이}]\\times[\\text{두께}]\nCAS 표현: 2*pi*r*h*Dr\n\n공식명: 일반 원통셸 공식\n공식 ID: cylindrical_shell_general\n역할: definition\nLaTeX: V=2\\pi\\int_a^br(x)h(x)\\,dx\nCAS 표현: 2*pi*Integral(r(x)*h(x), (x,a,b))\n\n공식명: y축 둘레 회전(0≤a<b)\n공식 ID: cylindrical_shell_y_axis\n역할: special_case\nLaTeX: V=\\int_a^b2\\pi x\\,f(x)\\,dx\\quad(f(x)\\ge0,\\ 0\\le a<b)\nCAS 표현: 2*pi*Integral(x*f(x), (x,a,b))",
+      "token_count": 328,
+      "content_hash": "099ebc3f12636507332fd1d3e4f8d6987b79738170c70b908187063c6050dc76",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 임의의 직선 x=k 둘레 회전\n공식 ID: cylindrical_shell_arbitrary_axis\n역할: generalization\nLaTeX: r(x)=|x-k|,\\qquad V=2\\pi\\int_a^b|x-k|\\,h(x)\\,dx\nCAS 표현: 2*pi*Integral(Abs(x-k)*h(x), (x,a,b))",
+      "token_count": 163,
+      "content_hash": "98142a3e3468e089ac0f26c672d563bfbf06828a5d5a2fe4345c582fec26b007",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: shell_parallel_to_axis\n설명: 대표 직사각형(셸)이 회전축과 평행해야 하며, 반지름은 회전축까지의 거리, 높이는 영역의 위아래(또는 좌우) 차이여야 한다.\n검증 규칙: representative_rectangle_parallel_to_axis equals 참\n\n조건 ID: y_axis_case_nonnegative_a\n설명: y축 둘레 회전의 기본형 V=∫2πxf(x)dx는 0≤a<b(원점과 겹치지 않는 구간)를 전제로 하며, 음의 x가 포함되면 반지름을 |x|로 해석해야 한다.\n검증 규칙: a greater_or_equal 0",
+      "token_count": 235,
+      "content_hash": "9c6956b2ee7268da7b422e2dd59d92c23f4e2918e6c68cb904d0c28075073cba",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: shell_useful_when_disk_hard\n설명: 원통셸 방법이 유리한 경우: 곡선의 방정식을 x=g(y) 형태로 풀기 어렵거나(3차식 이상), 극값의 좌표를 구해야 하는 등 고리 방법이 번거로운 경우.\n\n성질 ID: shell_works_for_x_axis_too\n설명: 원통셸 방법은 회전축이 x축인 경우에도 쓸 수 있다: 곡선을 x=g(y) 형태로 바꾸고 y에 관해 적분한다(반지름 y, 높이는 x의 함수).\n\n성질 ID: same_volume_different_route\n설명: 원통셸 방법은 리만합 Σ2πx_i*f(x_i*)Δx의 극한으로 유도되며, 원판·고리 방법과 같은 부피를 다른 경로로 계산한다.\n\n성질 ID: method_choice_depends_on_problem\n설명: 같은 회전체라도 원판/고리 방법과 원통셸 방법 중 어느 것이 더 쉬운지는 문제마다 다르다. 방정식을 x에 대해 풀기 쉬우면 원판/고리, y에 대해 풀기 쉬우면 원통셸이 유리한 경우가 많다.",
+      "token_count": 339,
+      "content_hash": "5ea1482ccf249738581f68f5678635da3ae245a2c20b317ddbc471ba3c342b15",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 원판법과 고리법 (calculus.volume_by_disk_and_washer, 중요도: recommended)\n- 리만합과 넓이·거리의 근사 (calculus.riemann_sum_and_area, 중요도: required)\n\n학습 목표 ID: identify_shell_radius_and_height\n행동 동사: identify\n목표: 주어진 회전축에 대해 원통셸의 반지름과 높이를 파악한다.\n\n학습 목표 ID: compute_volume_by_shells\n행동 동사: calculate\n목표: 원통셸법으로 회전체의 부피를 계산한다.\n\n학습 목표 ID: choose_disk_or_shell_method\n행동 동사: evaluate\n목표: 문제 상황에 따라 원판·고리법과 원통셸법 중 더 간단한 방법을 선택한다.",
+      "token_count": 247,
+      "content_hash": "0c6a5249136d4c58bb996424566205676cef8883d512e7078889edae527e12cc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 반지름과 높이를 서로 바꿔 대입\n오개념 ID: calculus.shells.swap_radius_and_height\n설명: 원통셸 공식 V=∫2πx f(x)dx에서 x(반지름)와 f(x)(높이)의 역할을 바꿔 계산한다.\n진단 태그: swap_shell_radius_and_height\n피드백: x는 회전축까지의 거리(반지름), f(x)는 셸의 높이이며 이 둘을 바꾸면 안 된다.\n\n오개념: 원통셸의 대표 직사각형 방향 혼동\n오개념 ID: calculus.shells.perpendicular_confusion\n설명: 원판·고리법처럼 회전축에 수직인 직사각형을 그려 원통셸 공식에 대입한다.\n진단 태그: confuse_shell_rectangle_orientation\n피드백: 원통셸법의 대표 직사각형은 회전축과 평행해야 하며, 회전축에 수직인 직사각형은 원판·고리법에서 쓰인다.",
+      "token_count": 318,
+      "content_hash": "863bda41ba5abb1fe90e9948bf697ea214a74f012fcdf533f91e7c95f1b283e2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.volume_by_cylindrical_shells",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch06_applications_of_integration",
+      "concept_name_ko": "원통셸 방법에 의한 부피",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분의 응용\n개념: 원통셸 방법에 의한 부피\n개념 ID: calculus.volume_by_cylindrical_shells\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: cylindrical_shell_volume_calculation, shell_vs_disk_method_selection\n지원 정답 유형: scalar, expression\n난이도 범위: 2 ~ 5\n권장 검증기: symbolic_equivalence, numeric_sampling",
+      "token_count": 129,
+      "content_hash": "a7ad368e18418dc864981072e894ec72631b2311732ea8c8a8496542817c6b75",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

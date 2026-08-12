@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_10_inequalities_limit_theory",
+  "concept_name_ko": "Hoeffding 부등식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_10_inequalities_limit_theory",
+      "concept_name_ko": "Hoeffding 부등식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 확률부등식과 극한이론\n개념: Hoeffding 부등식\n개념 ID: ps.inequalities_limit_theory.hoeffding_inequality\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 독립 확률변수 $X_i\\in[a_i,b_i]$이고 $S_n=\\sum_iX_i$이면 모든 $t>0$에 대해 $P(S_n-E[S_n]\\ge t) \\le \\exp\\left( -\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2} \\right)$ 이다. 양쪽 꼬리에 대해서는 우변에 2를 곱한 상계를 사용할 수 있다. 이는 유한분산만 사용하는 Chebyshev 부등식보다 강하지만 독립성과 유계성이라는 더 강한 조건이 필요하다.\n검색 태그: inequalities_limit_theory, hoeffding_inequality, inequality",
+      "token_count": 250,
+      "content_hash": "1d67f6223f310ce6f63aa7c082b97415e43663fcbb5350d3bc6eb284a5447146",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_10_inequalities_limit_theory",
+      "concept_name_ko": "Hoeffding 부등식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 확률부등식과 극한이론\n개념: Hoeffding 부등식\n개념 ID: ps.inequalities_limit_theory.hoeffding_inequality\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 상계·하계\n공식 ID: ps.inequalities_limit_theory.hoeffding_inequality.formula_01\n역할: bound\nLaTeX: P(S_n-E[S_n]\\ge t)\n\\le\n\\exp\\left(\n-\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2}\n\\right)",
+      "token_count": 163,
+      "content_hash": "e58d52e0e7bd15684faa952106d303f76db978d6817d53ddee9bcd5c08953f58",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_10_inequalities_limit_theory",
+      "concept_name_ko": "Hoeffding 부등식",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 확률부등식과 극한이론\n개념: Hoeffding 부등식\n개념 ID: ps.inequalities_limit_theory.hoeffding_inequality\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.inequalities_limit_theory.hoeffding_inequality.condition_01\n설명: $\\sum_i(b_i-a_i)^2=0$이면 합이 퇴화하므로 비퇴화 상계식과 별도로 처리한다.\n검증 규칙: sum_squared_ranges greater_than 0\n\n조건 ID: ps.inequalities_limit_theory.hoeffding_inequality.condition_02\n설명: Hoeffding 상계의 편차수준은 $t>0$이어야 한다.\n검증 규칙: deviation_threshold greater_than 0\n\n조건 ID: ps.inequalities_limit_theory.hoeffding_inequality.condition_03\n설명: 확률변수들은 독립이어야 한다.\n검증 규칙: random_variables_independent equals 참\n\n조건 ID: ps.inequalities_limit_theory.hoeffding_inequality.condition_04\n설명: 각 $X_i\\in[a_i,b_i]$가 거의 확실하게 성립해야 한다.\n검증 규칙: each_variable_almost_surely_bounded equals 참",
+      "token_count": 326,
+      "content_hash": "81513a34d94e0968ccacb091b476c5eb483e3e7f9fee1095d5ea4a26ee965722",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_10_inequalities_limit_theory",
+      "concept_name_ko": "Hoeffding 부등식",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 확률부등식과 극한이론\n개념: Hoeffding 부등식\n개념 ID: ps.inequalities_limit_theory.hoeffding_inequality\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.inequalities_limit_theory.hoeffding_inequality.property_01\n설명: 독립 확률변수 $X_i\\in[a_i,b_i]$이고 $S_n=\\sum_iX_i$이면 모든 $t>0$에 대해 $P(S_n-E[S_n]\\ge t) \\le \\exp\\left( -\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2} \\right)$ 이다.\n\n성질 ID: ps.inequalities_limit_theory.hoeffding_inequality.property_02\n설명: 양쪽 꼬리에 대해서는 우변에 2를 곱한 상계를 사용할 수 있다.\n\n성질 ID: ps.inequalities_limit_theory.hoeffding_inequality.property_03\n설명: 이는 유한분산만 사용하는 Chebyshev 부등식보다 강하지만 독립성과 유계성이라는 더 강한 조건이 필요하다.",
+      "token_count": 312,
+      "content_hash": "38c62d3affe0bc79473b73c0065bd1ef5f914b1936e3d612ab7ab1d35460191b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_10_inequalities_limit_theory",
+      "concept_name_ko": "Hoeffding 부등식",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 확률부등식과 극한이론\n개념: Hoeffding 부등식\n개념 ID: ps.inequalities_limit_theory.hoeffding_inequality\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률변수와 분포 (ps.random_variables.random_variable_distribution, 중요도: required)\n- 기댓값과 분산 (ps.random_variables.expectation_variance, 중요도: required)\n- 수열의 극한 (calculus.sequence_limits, 중요도: recommended)\n\n관련 개념:\n- ps.inequalities_limit_theory.fatou_dominated_convergence\n- ps.inequalities_limit_theory.clt_limitations\n\n학습 목표 ID: ps.inequalities_limit_theory.hoeffding_inequality.objective_01\n행동 동사: identify\n목표: Hoeffding 부등식의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.inequalities_limit_theory.hoeffding_inequality.objective_02\n행동 동사: apply\n목표: Hoeffding 부등식의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.inequalities_limit_theory.hoeffding_inequality.objective_03\n행동 동사: interpret\n목표: 계산 결과를 Hoeffding 부등식의 의미와 조건에 맞게 해석한다.",
+      "token_count": 342,
+      "content_hash": "9f4e6baac0a8c4c597468576eff18f7c55324c49101255de032c1e2862dd109a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.inequalities_limit_theory.hoeffding_inequality",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_10_inequalities_limit_theory",
+      "concept_name_ko": "Hoeffding 부등식",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 확률부등식과 극한이론\n개념: Hoeffding 부등식\n개념 ID: ps.inequalities_limit_theory.hoeffding_inequality\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 158,
+      "content_hash": "aebbc11f55ec382ceb3034fd3c5279b3659e9b5f176b876725a6047a6be42fc9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

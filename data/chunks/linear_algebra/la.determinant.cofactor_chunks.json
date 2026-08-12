@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.determinant.cofactor",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_03_linear_transformations_determinants",
+  "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정사각행렬의 행렬식을 구하기 위해 임의의 행이나 열을 선택하고 소행렬식과 부호 패턴을 결합한 여인수의 스칼라 선형결합으로 분해하는 연산법이다.\n검색 태그: determinant, cofactor_expansion, minor",
+      "token_count": 119,
+      "content_hash": "74b4f63d85097470a8212656dee028f0215e134ff6521ea3f48fa2427ccaa55e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 여인수 정의\n공식 ID: cofactor_formula\n역할: definition\nLaTeX: C_{ij} = (-1)^{i+j} M_{ij}\nCAS 표현: (-1)**(i+j) * minor(A, i, j)\n\n공식명: 라플라스 전개\n공식 ID: laplace_expansion\n역할: algorithm\nLaTeX: \\det(A) = \\sum_{j=1}^{n} a_{ij} C_{ij}\nCAS 표현: det(A)",
+      "token_count": 171,
+      "content_hash": "326a221f8e4c4095b059a51cacd6758dfe40aa5f7d669707603f5ec4860d0643",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: must_be_square_matrix_det\n설명: 행렬 A는 반드시 n x n 정사각행렬이어야 한다.\n검증 규칙: is_square_matrix equals 참",
+      "token_count": 99,
+      "content_hash": "8c7c7ef11c9a2e32e1b45205ea4cc377b91ca754272e68abae6236d5ef22611a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: expansion_invariance\n설명: 어느 행이나 열을 기준으로 전개해도 최종 행렬식 값은 항상 동일하다.",
+      "token_count": 86,
+      "content_hash": "bc7611a67e43dd16a00e4225bbb551340bc7509c06a2412d9bdd04bb1de8b7cb",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 정사각행렬 (algebra.matrix_types, 중요도: required)\n\n관련 개념:\n- la.determinant.ero\n- la.determinant.cramer\n\n학습 목표 ID: compute_determinant_cofactor\n행동 동사: calculate\n목표: 여인수 전개를 통해 행렬식을 계산한다.",
+      "token_count": 133,
+      "content_hash": "06350e11dc764e7b4e5c68bf1e817ca1f664f22e9f04668bde43d7ac39a4bcd2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 부호 패턴 누락\n오개념 ID: la.determinant.cofactor.sign_omission\n설명: C_ij 계산 시 (-1)^(i+j) 부호를 누락하여 홀수 번째 항의 부호를 틀린다.\n진단 태그: missing_cofactor_sign\n피드백: 체스판 부호 패턴인 (-1)^(i+j)를 반드시 반영해야 합니다.",
+      "token_count": 157,
+      "content_hash": "e883c242c9032ac5be07ac70b00924c4c464e9d4b5d97b5c98291d2bd91d264a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.determinant.cofactor",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "여인수 전개를 통한 행렬식 계산",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 여인수 전개를 통한 행렬식 계산\n개념 ID: la.determinant.cofactor\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: determinant_cofactor_expansion\n지원 정답 유형: scalar\n난이도 범위: 2 ~ 4\n권장 검증기: determinant_check",
+      "token_count": 97,
+      "content_hash": "a56579eed54ab055bf5341e4fca46dc7c44c725cc1e1b520e035e2378197125c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

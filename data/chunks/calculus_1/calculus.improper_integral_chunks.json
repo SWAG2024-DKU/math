@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.improper_integral",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch07_techniques_of_integration",
+  "concept_name_ko": "이상적분",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정적분의 정의를 확장해, 적분구간이 무한하거나(형태 1) 피적분함수가 구간 안의 어떤 점에서 무한대로 발산하는 경우(형태 2)를 극한으로 다룬다. 극한이 유한하게 존재하면 수렴, 존재하지 않으면 발산한다고 한다.\n검색 태그: improper_integral, comparison_theorem, p_integral",
+      "token_count": 134,
+      "content_hash": "044d93a611dc808480ac44be94ddf6f161f4f5d8824b3d4f49647403cec6fc18",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 형태 1: 무한구간\n공식 ID: improper_type1\n역할: definition\nLaTeX: \\int_a^\\infty f(x)\\,dx=\\lim_{t\\to\\infty}\\int_a^tf(x)\\,dx,\\qquad\\int_{-\\infty}^\\infty f(x)\\,dx=\\int_{-\\infty}^af\\,dx+\\int_a^\\infty f\\,dx\nCAS 표현: limit(Integral(f(x),(x,a,t)), t, oo)\n\n공식명: p-적분 판정\n공식 ID: p_integral_test\n역할: test\nLaTeX: \\int_1^\\infty\\frac{1}{x^p}\\,dx:\\ p>1\\implies\\text{수렴}\\left(=\\frac1{p-1}\\right),\\quad p\\le1\\implies\\text{발산}\nCAS 표현: limit(Integral(1/x**p, (x,1,t)), t, oo)\n\n공식명: 형태 2: 불연속 피적분함수\n공식 ID: improper_type2\n역할: definition\nLaTeX: f\\text{가 }b\\text{에서 불연속}:\\int_a^bf(x)\\,dx=\\lim_{t\\to b^-}\\int_a^tf(x)\\,dx\nCAS 표현: limit(Integral(f(x),(x,a,t)), t, b, '-')",
+      "token_count": 420,
+      "content_hash": "f62c6e41a842db414c44c133b1d48d7678014c77cb4b602198e019ab810937a3",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 비교 정리\n공식 ID: comparison_theorem\n역할: theorem\nLaTeX: f(x)\\ge g(x)\\ge0\\ (x\\ge a):\\ \\int_a^\\infty f\\,dx\\text{ 수렴}\\implies\\int_a^\\infty g\\,dx\\text{ 수렴};\\quad\\int_a^\\infty g\\,dx\\text{ 발산}\\implies\\int_a^\\infty f\\,dx\\text{ 발산}\nCAS 표현: converges(Integral(g(x),(x,a,oo)))",
+      "token_count": 191,
+      "content_hash": "418f29a2e9f8a47037f19da3bf49ad9531e472bf5dcde16fd934bc9d611fe727",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: type2_locate_discontinuity_first\n설명: 형태 2에서는 반드시 피적분함수의 불연속점(수직점근선)을 먼저 파악해야 한다. 구간 내부의 불연속점을 놓치고 평범한 정적분처럼 계산하면 잘못된 값을 얻는다.\n검증 규칙: discontinuity_identified_before_evaluation equals 참\n\n조건 ID: comparison_needs_nonnegative\n설명: 비교 정리는 f, g가 x≥a에서 연속이고 f(x)≥g(x)≥0일 때 적용된다.\n검증 규칙: f_g_nonnegative_and_continuous equals 참",
+      "token_count": 197,
+      "content_hash": "a65c5bb8acbbac1b8f292b5a2f6536d3b6327ab1a8ef29e283ab5c8f8e1897b4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: comparison_only_determines_convergence\n설명: 비교 정리는 수렴·발산만 판정할 뿐 적분의 정확한 값은 알려주지 않으며, 역은 성립하지 않는다(더 작은 함수가 수렴해도 더 큰 함수는 발산할 수 있다).\n\n성질 ID: p_boundary_diverges\n설명: p=1은 경계값으로, p적분은 p=1에서 발산한다(등호가 발산 쪽에 포함됨).\n\n성질 ID: internal_discontinuity_split\n설명: 구간 내부 c에서 불연속이면 c를 기준으로 구간을 나누어 각각 이상적분으로 계산하고, 둘 다 수렴할 때만 전체가 수렴한다.",
+      "token_count": 205,
+      "content_hash": "36512f679eebeaf4747b3e9214c84826f62799f5d6a9a6d3307830262b6e7ca0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 무한대에서의 극한과 수평점근선 (calculus.limit_at_infinity_and_horizontal_asymptote, 중요도: required)\n- 미적분학의 기본 정리 2부(정적분의 계산) (calculus.fundamental_theorem_of_calculus_part2, 중요도: required)\n\n학습 목표 ID: classify_improper_integral_type\n행동 동사: classify\n목표: 주어진 적분이 형태 1(무한구간)인지 형태 2(불연속)인지 판별한다.\n\n학습 목표 ID: evaluate_improper_integral\n행동 동사: calculate\n목표: 극한을 이용해 이상적분의 수렴값을 계산하거나 발산을 판정한다.\n\n학습 목표 ID: apply_comparison_theorem\n행동 동사: apply\n목표: 비교 정리로 정확한 값을 구하기 어려운 이상적분의 수렴·발산을 판정한다.",
+      "token_count": 266,
+      "content_hash": "9d6fcd834006fb90e6776474ce1a34a44656b0e8c941865051ecf33d04203a89",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 구간 내부의 불연속점 누락\n오개념 ID: calculus.improper_integral.miss_interior_discontinuity\n설명: ∫[0,3] dx/(x-1)처럼 구간 내부에 불연속점(x=1)이 있는데도 양 끝점만 확인하고 평범한 정적분으로 계산한다.\n진단 태그: miss_interior_discontinuity_in_improper_integral\n피드백: 피적분함수가 구간 전체에서 연속인지 반드시 먼저 확인해야 하며, 내부에 불연속점이 있으면 그 점을 기준으로 구간을 나누어 각각 이상적분으로 다루어야 한다.\n\n오개념: 비교 정리의 역을 참으로 오해\n오개념 ID: calculus.improper_integral.comparison_converse\n설명: 더 작은 함수가 수렴한다는 사실만으로 더 큰 함수도 수렴한다고 결론짓는다.\n진단 태그: assume_comparison_theorem_converse\n피드백: 비교 정리는 더 큰 함수가 수렴하면 더 작은 함수도 수렴하고, 더 작은 함수가 발산하면 더 큰 함수도 발산한다는 방향으로만 성립하며, 그 역은 일반적으로 성립하지 않는다.",
+      "token_count": 327,
+      "content_hash": "9eb445751bc5fa9c78dc4a90e2495cd4c860f545d16ac0f5eec17a749e64e40d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.improper_integral",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch07_techniques_of_integration",
+      "concept_name_ko": "이상적분",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 적분법\n개념: 이상적분\n개념 ID: calculus.improper_integral\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: improper_integral_type_classification, improper_integral_evaluation, comparison_theorem_application\n지원 정답 유형: scalar, boolean, classification\n난이도 범위: 3 ~ 5\n권장 검증기: symbolic_equivalence, numeric_tolerance",
+      "token_count": 120,
+      "content_hash": "20cbb99738db6f275ab608f7681f85952f6b00e3dfd5220a4b2efe29f5a7767b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

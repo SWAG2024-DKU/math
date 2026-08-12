@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.random_variables.quantile_function",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_06_random_variables",
+  "concept_name_ko": "일반화된 분위수함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.quantile_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "일반화된 분위수함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 일반화된 분위수함수\n개념 ID: ps.random_variables.quantile_function\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 누적분포함수의 일반화된 역함수로 확률수준의 분위수를 정의한다.\n검색 태그: random_variables, quantile_pgf_cgf, probability, quantile_function",
+      "token_count": 103,
+      "content_hash": "7cd4cd0e9cfea81cd0be387f4dcf6c1890e9a29c600d3ad8e0210804cc8dc63d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.quantile_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "일반화된 분위수함수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 일반화된 분위수함수\n개념 ID: ps.random_variables.quantile_function\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 핵심 관계식\n공식 ID: ps.random_variables.quantile_function.formula_01\n역할: core_formula\nLaTeX: Q(p)=\\inf\\{x:F(x)\\ge p\\}",
+      "token_count": 105,
+      "content_hash": "ead7d12373371342bd3ccbb589bb437dff0ea335717d91d4746a74cb4055b14d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.quantile_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "일반화된 분위수함수",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 일반화된 분위수함수\n개념 ID: ps.random_variables.quantile_function\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.random_variables.quantile_function.condition_01\n설명: $0<p<1$이어야 한다.\n검증 규칙: quantile_probability greater_than 0\n\n조건 ID: ps.random_variables.quantile_function.condition_02\n설명: $p<1$이어야 한다.\n검증 규칙: quantile_probability less_than 1\n\n조건 ID: ps.random_variables.quantile_function.condition_03\n설명: $p>0$이어야 한다.\n검증 규칙: probability_level greater_than 0\n\n조건 ID: ps.random_variables.quantile_function.condition_04\n설명: $p<1$이어야 한다.\n검증 규칙: probability_level less_than 1",
+      "token_count": 225,
+      "content_hash": "b8c9b050f95fa776b721c3249fe0f421ab013e632c08b9115edf05fdeec9a5e2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.quantile_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "일반화된 분위수함수",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 일반화된 분위수함수\n개념 ID: ps.random_variables.quantile_function\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률 공리 (ps.probability_basics.probability_axioms, 중요도: required)\n- 함수 (math.functions, 중요도: required)\n- 합과 적분 (calculus.sum_integral, 중요도: recommended)\n\n관련 개념:\n- ps.random_variables.quantile_pgf_cgf\n\n학습 목표 ID: ps.random_variables.quantile_function.objective_01\n행동 동사: apply\n목표: 일반화된 분위수함수의 공식과 적용 조건을 구분하여 적용한다.",
+      "token_count": 186,
+      "content_hash": "9af3a301ae04e101578d7e4ba0ce72833c8bacdf2b87f6224ca9afae2085b817",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.random_variables.quantile_function",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_06_random_variables",
+      "concept_name_ko": "일반화된 분위수함수",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 확률변수\n개념: 일반화된 분위수함수\n개념 ID: ps.random_variables.quantile_function\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 1 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 148,
+      "content_hash": "2dd24374d23c55a91650c6315140b070957cf0cf302d7dd148f7bc23ea978885",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

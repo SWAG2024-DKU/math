@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.transformation.linear_test",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_03_linear_transformations_determinants",
+  "concept_name_ko": "선형변환의 판정과 성질",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 정의역 벡터 공간의 임의의 두 벡터에 대해 덧셈과 스칼라곱 연산 구조를 공역으로 그대로 보존하며 매핑하는 특수한 함수 T를 선형변환이라 한다.\n검색 태그: linear_transformation, superposition, mapping",
+      "token_count": 120,
+      "content_hash": "68d6aefc4b43039bdcadeb9b8b0dc45bce192d268e57ffa9e6e3e8014b76ded7",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 선형성 판정 조건\n공식 ID: superposition_principle\n역할: definition\nLaTeX: T(c\\mathbf{u} + d\\mathbf{v}) = cT(\\mathbf{u}) + dT(\\mathbf{v})\nCAS 표현: Eq(T(c*u + d*v), c*T(u) + d*T(v))",
+      "token_count": 146,
+      "content_hash": "97d9cdae9af32f8c9e77c3d7dab2167e7182155cc5611cc53747873ff4163128",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: maps_zero_to_zero\n설명: 매핑 함수 T의 정의역과 공역은 반드시 유효한 벡터 공간이어야 하며, 임의의 선형변환은 항상 원점을 원점으로 매핑해야 한다 (T(0) = 0).\n검증 규칙: maps_zero_vector equals 참",
+      "token_count": 132,
+      "content_hash": "5f128c01731016f92e6fafea185deacc2741100351b5199911699071be1861bd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: grid_preservation\n설명: 선형변환은 공간의 격자 평행성과 등간격을 유지하며 변환시킨다.",
+      "token_count": 90,
+      "content_hash": "75a2db2682526482103bcbb4fc6ab895a9c88cc72789d5ac74780e309051a386",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수의 매핑(정의역/공역) (calculus.function, 중요도: required)\n- 벡터의 선형결합 (la.vector.linear_combination, 중요도: required)\n- 벡터 공간의 공리 (la.space.vector_space_axiom, 중요도: required)\n\n관련 개념:\n- la.transformation.matrix\n\n학습 목표 ID: test_linear_transformation\n행동 동사: evaluate\n목표: 주어진 함수가 선형성 조건을 만족하는지 판정한다.",
+      "token_count": 187,
+      "content_hash": "9ef42a027459e7b88e8b855c7d09bbf0160d9259087871b6b63ff6c0d220c290",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 아핀 변환과의 혼동\n오개념 ID: la.transformation.linear_test.affine_confusion\n설명: T(x) = Ax + b (b != 0) 형태를 선형변환으로 착각한다.\n진단 태그: confuse_affine_with_linear\n피드백: 평행이동이 포함된 아핀 변환은 T(0) != 0 이므로 선형변환이 아닙니다.",
+      "token_count": 167,
+      "content_hash": "ab2dd15e79b935e0ccec3d0d9ef5505a11121438050e89d9520208a1e9e1543a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.transformation.linear_test",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_03_linear_transformations_determinants",
+      "concept_name_ko": "선형변환의 판정과 성질",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 선형변환과 행렬식\n개념: 선형변환의 판정과 성질\n개념 ID: la.transformation.linear_test\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: linear_transformation_verification\n지원 정답 유형: boolean\n난이도 범위: 1 ~ 3\n권장 검증기: superposition_check",
+      "token_count": 98,
+      "content_hash": "f07eac8ff277d306444a0d787f6592a534ef3232e62eb94662d3f361a635504d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

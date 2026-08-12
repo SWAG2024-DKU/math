@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.taylor_remainder_and_error_bound",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v2_ch06_power_series",
+  "concept_name_ko": "Taylor 정리와 오차 추정",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: Taylor 정리에 의해 f(x)=P_n(x)+R_n(x)이며, 나머지항은 Lagrange 형태로 R_n(x)=f^{(n+1)}(c)/(n+1)!·(x-a)^{n+1}(c는 a와 x 사이의 어떤 값)로 표현된다. 구간에서 |f^{(n+1)}(z)|≤M이면 |R_n(x)|≤M/(n+1)!·|x-a|^{n+1}(Taylor 부등식)로 오차의 상한을 추정할 수 있다.\n검색 태그: taylor_remainder, error_bound",
+      "token_count": 220,
+      "content_hash": "1c0f568ad6ce1deae35810c28830b34d33c413bdf15816d59cd4b40e7b3fa97c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: Taylor 정리\n공식 ID: taylor_theorem\n역할: theorem\nLaTeX: f(x)=P_n(x)+R_n(x)\nCAS 표현: P_n(x) + R_n(x)\n\n공식명: Lagrange 나머지항\n공식 ID: lagrange_remainder\n역할: theorem\nLaTeX: R_n(x)=\\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\\quad(c\\text{는 }a,x\\text{ 사이})\nCAS 표현: diff(f(x),x,n+1).subs(x,c)/factorial(n+1)*(x-a)**(n+1)\n\n공식명: Taylor 부등식\n공식 ID: taylor_inequality\n역할: corollary\nLaTeX: |f^{(n+1)}(z)|\\le M\\implies|R_n(x)|\\le\\frac{M}{(n+1)!}|x-a|^{n+1}\nCAS 표현: M/factorial(n+1)*Abs(x-a)**(n+1)",
+      "token_count": 327,
+      "content_hash": "249f05b8e1434b7b4be7100d0a4e6f0a1fc21128688609fca7adfb0c39ccd932",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: m_bound_on_derivative\n설명: Taylor 부등식을 쓰려면 관심 구간에서 (n+1)차 도함수의 상한 M을 알아야 한다.\n검증 규칙: M_bound_on_n_plus_1_derivative_known equals 참",
+      "token_count": 120,
+      "content_hash": "fb0aca10406f233cefe63e8c1fb6a18d7f4d002cc6f7aa1a9f0619bfeba2a85d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: taylor_inequality_uses\n설명: Taylor 부등식은 (1) Taylor 다항식의 최대오차 추정, (2) 필요한 차수 결정, (3) Taylor 급수가 실제 함수에 수렴함을 확인하는 데 사용된다.",
+      "token_count": 107,
+      "content_hash": "a541f02fc942c262708303f86bebc0792b0e18b68a01d45024d322778287e3c9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- Taylor 급수와 Maclaurin 급수 (calculus.taylor_maclaurin_series, 중요도: required)\n\n학습 목표 ID: estimate_taylor_error\n행동 동사: estimate\n목표: Taylor 부등식으로 근사 오차의 상한을 구한다.\n\n학습 목표 ID: determine_required_degree\n행동 동사: calculate\n목표: 목표 오차 이내가 되도록 필요한 Taylor 다항식의 차수를 결정한다.\n\n학습 목표 ID: verify_series_convergence_via_remainder\n행동 동사: verify\n목표: 나머지항이 0으로 수렴함을 보여 Taylor 급수가 원래 함수와 일치함을 확인한다.",
+      "token_count": 215,
+      "content_hash": "912fa321c0fcbd44a9608a7c53c4a390006c974717e0d1c9bfa7047997481f42",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 나머지항에 n차 도함수 사용\n오개념 ID: calculus.taylor_remainder.wrong_derivative_order\n설명: R_n(x) 공식에 f^{(n)}(c) 대신 f^{(n+1)}(c)를 써야 하는데 n차 도함수를 사용한다.\n진단 태그: use_wrong_derivative_order_in_remainder\n피드백: Lagrange 나머지항은 (n+1)차 도함수 f^{(n+1)}(c)를 사용하며, n차 도함수가 아니다.",
+      "token_count": 203,
+      "content_hash": "fd99e498b5c60fc7d27298839caf5c60c339c60de280d4d61da7c7be95ba1dc2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v2_ch06_power_series",
+      "concept_name_ko": "Taylor 정리와 오차 추정",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 멱급수\n개념: Taylor 정리와 오차 추정\n개념 ID: calculus.taylor_remainder_and_error_bound\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: taylor_error_estimation, required_degree_determination\n지원 정답 유형: scalar, numerical_approximation\n난이도 범위: 3 ~ 5\n권장 검증기: numeric_tolerance, symbolic_equivalence",
+      "token_count": 122,
+      "content_hash": "c2255fa88faacc2cd2569b1b08a29bde9860481b4b3eed148ad61aa572928250",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

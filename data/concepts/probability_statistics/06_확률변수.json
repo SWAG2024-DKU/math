@@ -65,7 +65,8 @@
           "formula_id": "ps.random_variables.cumulant_generating_function.formula_01",
           "name_ko": "누적생성함수",
           "role": "cumulant_generating_function",
-          "latex": "K_X(t)=\\log M_X(t)"
+          "latex": "K_X(t)=\\log M_X(t)",
+          "cas": "parse_latex('K_X(t)=\\\\log M_X(t)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -161,7 +162,8 @@
           "formula_id": "ps.random_variables.jensen_inequality.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "\\phi(E[X])\\le E[\\phi(X)]"
+          "latex": "\\phi(E[X])\\le E[\\phi(X)]",
+          "cas": "parse_latex('\\\\phi(E[X])\\\\le E[\\\\phi(X)]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -266,7 +268,8 @@
           "formula_id": "ps.random_variables.probability_generating_function.formula_01",
           "name_ko": "확률생성함수",
           "role": "probability_generating_function",
-          "latex": "G_X(s)=E[s^X]"
+          "latex": "G_X(s)=E[s^X]",
+          "cas": "parse_latex('G_X(s)=E[s^X]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -362,7 +365,8 @@
           "formula_id": "ps.random_variables.quantile_function.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "Q(p)=\\inf\\{x:F(x)\\ge p\\}"
+          "latex": "Q(p)=\\inf\\{x:F(x)\\ge p\\}",
+          "cas": "parse_latex('Q(p)=\\\\inf\\\\{x:F(x)\\\\ge p\\\\}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -877,7 +881,8 @@
           "formula_id": "ps.random_variables.variance_identity.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=E[(X-E[X])^2]"
+          "latex": "\\operatorname{Var}(X)=E[(X-E[X])^2]",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=E[(X-E[X])^2]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -970,7 +975,8 @@
           "formula_id": "ps.random_variables.variance_computational_identity.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)=E[X^2]-E[X]^2"
+          "latex": "\\operatorname{Var}(X)=E[X^2]-E[X]^2",
+          "cas": "parse_latex('\\\\operatorname{Var}(X)=E[X^2]-E[X]^2', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1141,7 +1147,8 @@
           "formula_id": "ps.random_variables.characteristic_function.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\varphi_X(t)=E[e^{itX}]"
+          "latex": "\\varphi_X(t)=E[e^{itX}]",
+          "cas": "parse_latex('\\\\varphi_X(t)=E[e^{itX}]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1243,7 +1250,8 @@
           "formula_id": "ps.random_variables.characteristic_function_independent_sum.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\varphi_{X+Y}(t)=\\varphi_X(t)\\varphi_Y(t)"
+          "latex": "\\varphi_{X+Y}(t)=\\varphi_X(t)\\varphi_Y(t)",
+          "cas": "parse_latex('\\\\varphi_{X+Y}(t)=\\\\varphi_X(t)\\\\varphi_Y(t)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2155,7 +2163,8 @@
           "formula_id": "ps.random_variables.random_variable_distribution.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "X:\\Omega\\to\\mathbb R"
+          "latex": "X:\\Omega\\to\\mathbb R",
+          "cas": "parse_latex('X:\\\\Omega\\\\to\\\\mathbb R', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2253,7 +2262,8 @@
           "formula_id": "ps.random_variables.random_variable_distribution.f02.formula_01",
           "name_ko": "누적분포함수",
           "role": "cdf",
-          "latex": "F_X(x)=P(X\\le x)"
+          "latex": "F_X(x)=P(X\\le x)",
+          "cas": "parse_latex('F_X(x)=P(X\\\\le x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2351,7 +2361,8 @@
           "formula_id": "ps.random_variables.discrete_random_variable.f01.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "p_X(x)=P(X=x)"
+          "latex": "p_X(x)=P(X=x)",
+          "cas": "parse_latex('p_X(x)=P(X=x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2448,7 +2459,8 @@
           "formula_id": "ps.random_variables.discrete_random_variable.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\sum_x p_X(x)=1"
+          "latex": "\\sum_x p_X(x)=1",
+          "cas": "parse_latex('\\\\sum_x p_X(x)=1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2543,7 +2555,8 @@
           "formula_id": "ps.random_variables.absolutely_continuous_random_variable.f01.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "f_X(x)\\ge 0"
+          "latex": "f_X(x)\\ge 0",
+          "cas": "parse_latex('f_X(x)\\\\ge 0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2647,7 +2660,8 @@
           "formula_id": "ps.random_variables.absolutely_continuous_random_variable.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\int_{-\\infty}^{\\infty} f_X(x)\\,dx=1"
+          "latex": "\\int_{-\\infty}^{\\infty} f_X(x)\\,dx=1",
+          "cas": "parse_latex('\\\\int_{-\\\\infty}^{\\\\infty} f_X(x)\\\\,dx=1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2742,7 +2756,8 @@
           "formula_id": "ps.random_variables.absolutely_continuous_random_variable.f03.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(a<X\\le b)=\\int_a^b f_X(x)\\,dx"
+          "latex": "P(a<X\\le b)=\\int_a^b f_X(x)\\,dx",
+          "cas": "parse_latex('P(a<X\\\\le b)=\\\\int_a^b f_X(x)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2848,7 +2863,8 @@
           "formula_id": "ps.random_variables.expectation_and_linearity.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\sum_{x\\in\\operatorname{supp}(X)}x\\,p_X(x)"
+          "latex": "E[X]=\\sum_{x\\in\\operatorname{supp}(X)}x\\,p_X(x)",
+          "cas": "parse_latex('E[X]=\\\\sum_{x\\\\in\\\\operatorname{supp}(X)}x\\\\,p_X(x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2950,7 +2966,8 @@
           "formula_id": "ps.random_variables.expectation_and_linearity.continuous_expectation.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\int_{-\\infty}^{\\infty}x f_X(x)\\,dx"
+          "latex": "E[X]=\\int_{-\\infty}^{\\infty}x f_X(x)\\,dx",
+          "cas": "parse_latex('E[X]=\\\\int_{-\\\\infty}^{\\\\infty}x f_X(x)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3053,7 +3070,8 @@
           "formula_id": "ps.random_variables.expectation_and_linearity.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[aX+b]=aE[X]+b"
+          "latex": "E[aX+b]=aE[X]+b",
+          "cas": "parse_latex('E[aX+b]=aE[X]+b', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3148,7 +3166,8 @@
           "formula_id": "ps.random_variables.moment_generating_function.f01.formula_01",
           "name_ko": "적률생성함수",
           "role": "moment_generating_function",
-          "latex": "M_X(t)=E[e^{tX}]"
+          "latex": "M_X(t)=E[e^{tX}]",
+          "cas": "parse_latex('M_X(t)=E[e^{tX}]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3242,7 +3261,8 @@
           "formula_id": "ps.random_variables.moment_generating_function.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "M_X^{(n)}(0)=E[X^n]"
+          "latex": "M_X^{(n)}(0)=E[X^n]",
+          "cas": "parse_latex('M_X^{(n)}(0)=E[X^n]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3363,7 +3383,8 @@
           "formula_id": "ps.random_variables.lotus.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[g(X)]=\\sum_x g(x)p_X(x)"
+          "latex": "E[g(X)]=\\sum_x g(x)p_X(x)",
+          "cas": "parse_latex('E[g(X)]=\\\\sum_x g(x)p_X(x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3486,7 +3507,8 @@
           "formula_id": "ps.random_variables.lotus.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[g(X)]=\\int_{-\\infty}^{\\infty}g(x)f_X(x)\\,dx"
+          "latex": "E[g(X)]=\\int_{-\\infty}^{\\infty}g(x)f_X(x)\\,dx",
+          "cas": "parse_latex('E[g(X)]=\\\\int_{-\\\\infty}^{\\\\infty}g(x)f_X(x)\\\\,dx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3609,7 +3631,8 @@
           "formula_id": "ps.random_variables.cdf_interval_probability.f01.formula_01",
           "name_ko": "반개구간 확률",
           "role": "probability_relation",
-          "latex": "P(a<X\\le b)=F_X(b)-F_X(a)"
+          "latex": "P(a<X\\le b)=F_X(b)-F_X(a)",
+          "cas": "parse_latex('P(a<X\\\\le b)=F_X(b)-F_X(a)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3736,7 +3759,8 @@
           "formula_id": "ps.random_variables.cdf_interval_probability.f02.formula_01",
           "name_ko": "폐구간 확률",
           "role": "probability_relation",
-          "latex": "P(a\\le X\\le b)=F_X(b)-F_X(a^-)"
+          "latex": "P(a\\le X\\le b)=F_X(b)-F_X(a^-)",
+          "cas": "parse_latex('P(a\\\\le X\\\\le b)=F_X(b)-F_X(a^-)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3854,7 +3878,8 @@
           "formula_id": "ps.random_variables.cdf_interval_probability.f03.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "F_X(a^-)=\\lim_{x\\uparrow a}F_X(x)"
+          "latex": "F_X(a^-)=\\lim_{x\\uparrow a}F_X(x)",
+          "cas": "parse_latex('F_X(a^-)=\\\\lim_{x\\\\uparrow a}F_X(x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3963,7 +3988,8 @@
           "formula_id": "ps.random_variables.cdf_interval_probability.f04.formula_01",
           "name_ko": "확률질량함수",
           "role": "probability_mass",
-          "latex": "P(X=a)=F_X(a)-F_X(a^-)"
+          "latex": "P(X=a)=F_X(a)-F_X(a^-)",
+          "cas": "parse_latex('P(X=a)=F_X(a)-F_X(a^-)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4072,7 +4098,8 @@
           "formula_id": "ps.random_variables.pgf_derivatives.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "G_X'(1)=E[X]"
+          "latex": "G_X'(1)=E[X]",
+          "cas": "parse_latex(\"G_X'(1)=E[X]\", backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4186,7 +4213,8 @@
           "formula_id": "ps.random_variables.pgf_derivatives.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "G_X''(1)=E[X(X-1)]"
+          "latex": "G_X''(1)=E[X(X-1)]",
+          "cas": "parse_latex(\"G_X''(1)=E[X(X-1)]\", backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4300,7 +4328,8 @@
           "formula_id": "ps.random_variables.pgf_derivatives.f03.formula_01",
           "name_ko": "분산",
           "role": "variance",
-          "latex": "\\operatorname{Var}(X)\n=G_X''(1)+G_X'(1)-[G_X'(1)]^2"
+          "latex": "\\operatorname{Var}(X)\n=G_X''(1)+G_X'(1)-[G_X'(1)]^2",
+          "cas": "parse_latex(\"\\\\operatorname{Var}(X)\\n=G_X''(1)+G_X'(1)-[G_X'(1)]^2\", backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4414,7 +4443,8 @@
           "formula_id": "ps.random_variables.expectation_existence.f01.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=E[X^+]-E[X^-]"
+          "latex": "E[X]=E[X^+]-E[X^-]",
+          "cas": "parse_latex('E[X]=E[X^+]-E[X^-]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4518,7 +4548,8 @@
           "formula_id": "ps.random_variables.survival_tail_integral.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "S_X(x)=1-F_X(x)"
+          "latex": "S_X(x)=1-F_X(x)",
+          "cas": "parse_latex('S_X(x)=1-F_X(x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4622,7 +4653,8 @@
           "formula_id": "ps.random_variables.survival_tail_integral.f02.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X]=\\int_0^\\infty P(X>t)\\,dt"
+          "latex": "E[X]=\\int_0^\\infty P(X>t)\\,dt",
+          "cas": "parse_latex('E[X]=\\\\int_0^\\\\infty P(X>t)\\\\,dt', backend='antlr')"
         }
       ],
       "application_conditions": [

@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.anova.oneway_f_test",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_18_anova",
+  "concept_name_ko": "일원 ANOVA F검정",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.oneway_f_test",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA F검정",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA F검정\n개념 ID: ps.anova.oneway_f_test\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 집단간 평균제곱과 오차 평균제곱의 비로 평균 동일성을 검정한다.\n검색 태그: anova, ss_df_details, oneway_f_test",
+      "token_count": 94,
+      "content_hash": "0b8c1bf59341e96177158f961536c3ea85a7b682c9dc590a6a9f975ed5aaefe9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.oneway_f_test",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA F검정",
+      "chunk_index": 1,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA F검정\n개념 ID: ps.anova.oneway_f_test\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.anova.oneway_f_test.condition_01\n설명: $a\\ge2$, $N>a$이고 $MS_E>0$이어야 한다.\n검증 규칙: anova_f_statistic_denominators_valid equals 참\n\n조건 ID: ps.anova.oneway_f_test.condition_02\n설명: 정확한 $F_{a-1,N-a}$ 기준분포에는 독립·정규·등분산 오차가 필요하다.\n검증 규칙: exact_oneway_anova_conditions equals 참",
+      "token_count": 181,
+      "content_hash": "8918af27918565406c275922f2d5ae11dc8319b018b7f66a2419646473dda001",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.oneway_f_test",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA F검정",
+      "chunk_index": 2,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA F검정\n개념 ID: ps.anova.oneway_f_test\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.anova.oneway_f_test.property_01\n설명: 이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다.\n\n성질 ID: ps.anova.oneway_f_test.property_02\n설명: 비활성 개요에 보존한 수학적 관계: $F=\\frac{MS_A}{MS_E}$",
+      "token_count": 151,
+      "content_hash": "deab018bd13a91395feed620254630a1c402d5d9e3bc9f4bc3eb6ad4c3adad5b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.oneway_f_test",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA F검정",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA F검정\n개념 ID: ps.anova.oneway_f_test\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- F분포 (ps.continuous_distributions.f_distribution, 중요도: required)\n- 가설검정의 구조 (ps.hypothesis_testing.test_structure, 중요도: required)\n- 다중회귀모형 (ps.multiple_linear_regression.multiple_regression_model, 중요도: recommended)\n\n관련 개념:\n- ps.anova.oneway_sums_of_squares_and_df\n\n학습 목표 ID: ps.anova.oneway_f_test.objective_01\n행동 동사: identify\n목표: 일원 ANOVA F검정의 정의, 공식과 적용 조건을 식별한다.\n\n학습 목표 ID: ps.anova.oneway_f_test.objective_02\n행동 동사: apply\n목표: 일원 ANOVA F검정의 정의, 공식과 적용 조건을 적용한다.\n\n학습 목표 ID: ps.anova.oneway_f_test.objective_03\n행동 동사: interpret\n목표: 일원 ANOVA F검정의 정의, 공식과 적용 조건을 해석한다.",
+      "token_count": 300,
+      "content_hash": "b95307cd367cdb10557edb8957631b30fa09a2fcab3a2e57e56afd7f2348ef78",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.anova.oneway_f_test",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_18_anova",
+      "concept_name_ko": "일원 ANOVA F검정",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 분산분석\n개념: 일원 ANOVA F검정\n개념 ID: ps.anova.oneway_f_test\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, anova_table_completion, f_test, post_hoc_selection\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, degrees_of_freedom_check, condition_rule_check, domain_check",
+      "token_count": 161,
+      "content_hash": "b70044e50188f23e5d5b4b82c7f519c3d9a98c47d03a1df6e2d08557f9f7321c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

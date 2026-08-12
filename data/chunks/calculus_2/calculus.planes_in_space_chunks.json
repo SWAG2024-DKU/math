@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.planes_in_space",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch02_vectors_in_space",
+  "concept_name_ko": "공간에서 평면의 방정식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 법선벡터 n=<a,b,c>와 평면 위의 점 P0으로 평면은 점-법선형 a(x-x0)+b(y-y0)+c(z-z0)=0, 또는 일반형 ax+by+cz=d로 나타낸다. 일직선상에 있지 않은 세 점으로는 두 방향벡터의 외적으로 법선벡터를 구해 평면을 결정할 수 있다. 두 평면의 관계(평행·수직·교선)는 법선벡터로 판정한다.\n검색 태그: plane_in_space, normal_vector",
+      "token_count": 190,
+      "content_hash": "29e64061c4ce8c6d6dc1a3866b7919f1263c553c4ead8150e8f25277939bbced",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 평면의 점-법선형\n공식 ID: plane_point_normal_form\n역할: definition\nLaTeX: a(x-x_0)+b(y-y_0)+c(z-z_0)=0\nCAS 표현: Eq(a*(x-x0)+b*(y-y0)+c*(z-z0), 0)\n\n공식명: 평면의 일반형\n공식 ID: plane_general_form\n역할: standard_form\nLaTeX: ax+by+cz=d,\\qquad\\mathbf{n}=\\langle a,b,c\\rangle\nCAS 표현: Eq(a*x+b*y+c*z, d)\n\n공식명: 세 점을 지나는 평면\n공식 ID: plane_from_three_points\n역할: construction\nLaTeX: \\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}\nCAS 표현: PQ.cross(PR)\n\n공식명: 두 평면의 관계\n공식 ID: two_planes_relation\n역할: theorem\nLaTeX: \\mathbf{n}_1=c\\mathbf{n}_2\\implies\\text{평행/일치};\\qquad\\mathbf{n}_1\\cdot\\mathbf{n}_2=0\\implies\\text{수직}\nCAS 표현: n1.dot(n2)",
+      "token_count": 370,
+      "content_hash": "d5a8b1ec5b63b3a2349094b67347c7f717c8c5431b8751fd243ab00b05b0600b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 2,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 두 평면 사이의 각\n공식 ID: angle_between_planes\n역할: theorem\nLaTeX: \\cos\\theta=\\frac{|\\mathbf{n}_1\\cdot\\mathbf{n}_2|}{\\|\\mathbf{n}_1\\|\\|\\mathbf{n}_2\\|}\nCAS 표현: acos(Abs(n1.dot(n2))/(n1.norm()*n2.norm()))\n\n공식명: 직선과 평면 사이의 각\n공식 ID: line_plane_angle\n역할: theorem\nLaTeX: \\sin\\alpha=\\frac{|\\mathbf{v}\\cdot\\mathbf{n}|}{\\|\\mathbf{v}\\|\\|\\mathbf{n}\\|}\nCAS 표현: asin(Abs(v.dot(n))/(v.norm()*n.norm()))\n\n공식명: 두 평면의 교선 방향벡터\n공식 ID: planes_intersection_direction\n역할: theorem\nLaTeX: \\mathbf{n}_1\\times\\mathbf{n}_2\nCAS 표현: n1.cross(n2)",
+      "token_count": 329,
+      "content_hash": "4f07adf68d03987444746dee3c4cb761cbf29977207005cd19bf8b9e3540e44d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 3,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: three_points_not_collinear\n설명: 세 점으로 평면을 만들려면 세 점이 일직선상에 있지 않아야 한다.\n검증 규칙: three_points_not_collinear equals 참",
+      "token_count": 105,
+      "content_hash": "a4902fd6a9af09518fc3f670f9e8b87c33d961efd794bf0401407d059f0f5414",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 4,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: normal_vs_direction_distinction\n설명: 직선의 방향벡터와 평면의 법선벡터를 혼동하지 않아야 한다: 직선은 방향벡터에 평행하고, 평면은 법선벡터에 수직이다.",
+      "token_count": 112,
+      "content_hash": "fa8d44b5c5bcdde7aa7c346c4b164d79d9ff497a159819da5ab454fcb636fe80",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 5,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 외적 (calculus.cross_product, 중요도: required)\n- 공간에서 직선의 방정식 (calculus.lines_in_space, 중요도: recommended)\n\n관련 개념:\n- calculus.distance_formulas_in_space\n\n학습 목표 ID: write_plane_equation\n행동 동사: construct\n목표: 점과 법선벡터(또는 세 점)로부터 평면의 방정식을 세운다.\n\n학습 목표 ID: classify_two_planes_relation\n행동 동사: classify\n목표: 법선벡터로 두 평면의 평행·수직 관계를 판정한다.\n\n학습 목표 ID: compute_angle_between_plane_and_line_or_plane\n행동 동사: calculate\n목표: 두 평면 사이의 각 또는 직선과 평면 사이의 각을 구한다.",
+      "token_count": 251,
+      "content_hash": "e3a5d17a9be555e373e138b56d8379a394691ddd1cc5f3b736eab91491a66e91",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 법선벡터와 방향벡터를 바꿔 사용\n오개념 ID: calculus.planes_space.normal_direction_swap\n설명: 평면의 방정식을 세우면서 법선벡터 자리에 평면 위의 방향벡터를 사용한다.\n진단 태그: swap_normal_vector_and_direction_vector\n피드백: 평면의 방정식 a(x-x0)+b(y-y0)+c(z-z0)=0의 <a,b,c>는 평면에 수직인 법선벡터여야 하며, 평면 위에 놓인 방향벡터를 쓰면 안 된다.",
+      "token_count": 214,
+      "content_hash": "24cad90256047fb3757d561657ae53a857c70d0f518f8c6ef69f94dd60dc1ca8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.planes_in_space",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch02_vectors_in_space",
+      "concept_name_ko": "공간에서 평면의 방정식",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 공간의 벡터\n개념: 공간에서 평면의 방정식\n개념 ID: calculus.planes_in_space\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: plane_equation_construction, two_planes_relation_classification, angle_between_plane_and_line\n지원 정답 유형: equation, classification, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 127,
+      "content_hash": "de605a2f8702b52e80c884302ec8840312de8b5fb94955a742352a5ca992bb77",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

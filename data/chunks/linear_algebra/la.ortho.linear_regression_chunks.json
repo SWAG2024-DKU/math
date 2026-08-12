@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.ortho.linear_regression",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_04_orthogonality_optimization",
+  "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 다수의 관측 데이터 포인트를 가장 잘 설명하는 모델의 파라미터를 찾기 위해 데이터를 최소제곱법 정규방정식 시스템으로 설계하고 계산하는 과정이다.\n검색 태그: linear_regression, design_matrix, curve_fitting",
+      "token_count": 113,
+      "content_hash": "3b05bc4b7c5a591854d6d31291aaba8c662146eda7c4e2694ba3c49f52516d02",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 선형 회귀 설계모델\n공식 ID: linear_regression_model\n역할: definition\nLaTeX: X \\boldsymbol{\\beta} = \\mathbf{y}\nCAS 표현: Eq(X * beta, y)\n\n공식명: 파라미터 최적해\n공식 ID: regression_parameter_solution\n역할: formula\nLaTeX: \\hat{\\boldsymbol{\\beta}} = (X^T X)^{-1}X^T \\mathbf{y}\nCAS 표현: (X.T * X).inv() * X.T * y",
+      "token_count": 185,
+      "content_hash": "7b241838e7ee13af3b7d6a4ed6494fd683f08d9fd89c6cda2cf3d86d0116dcd8",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: parameter_linear_form\n설명: 구해야 하는 파라미터에 대해 1차 선형결합 형태여야 한다.\n검증 규칙: linear_in_parameters equals 참",
+      "token_count": 101,
+      "content_hash": "ff25cb2f7d970d294ed7bf11425caad9634f5b0b729440e755676b673fcad689",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: design_matrix_flexibility\n설명: 설계 행렬의 매핑 방식에 따라 다중 선형 회귀, 다항식 커브 피팅 등으로 확장할 수 있다.",
+      "token_count": 98,
+      "content_hash": "8ba6751040a7f53bf9a1fd85829abea89cd94e04e9f3183d08c1a4924b0c7868",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 최소제곱법 (la.ortho.least_squares, 중요도: required)\n- 행렬과 벡터의 곱 (la.matrix.multiplication, 중요도: required)\n\n관련 개념:\n- la.ortho.least_squares\n\n학습 목표 ID: build_regression_model\n행동 동사: model\n목표: 관측 데이터를 바탕으로 설계 행렬을 구성하고 회귀 계수를 구한다.",
+      "token_count": 158,
+      "content_hash": "78e8d016a37bcbecb8c2a25eda2961308de1412309ea798b2f3ac636c5675368",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 상수항 절편 열 누락\n오개념 ID: la.ortho.linear_regression.intercept_column_omission\n설명: 설계 행렬 X를 구성할 때 상수항을 위한 모든 성분이 1인 열을 누락하여 원점을 지나도록 강제한다.\n진단 태그: missing_intercept_column\n피드백: 절편이 존재하는 모델에서는 설계 행렬의 첫 번째 열에 모든 성분이 1인 열을 반드시 포함해야 합니다.",
+      "token_count": 178,
+      "content_hash": "7252925523aa0036e395b04b870f2a7cde987bae16d2e35d7b06242ad590e629",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.linear_regression",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "데이터 피팅 및 선형 회귀 (Linear Regression)",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 데이터 피팅 및 선형 회귀 (Linear Regression)\n개념 ID: la.ortho.linear_regression\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: linear_regression_calculation\n지원 정답 유형: vector\n난이도 범위: 2 ~ 4\n권장 검증기: regression_residual_check",
+      "token_count": 103,
+      "content_hash": "c56ec54afea475c3b22f545ac12574bdcde2719a5f0ea7363706961dc6c035be",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

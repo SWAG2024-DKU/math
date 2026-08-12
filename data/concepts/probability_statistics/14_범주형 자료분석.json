@@ -223,7 +223,8 @@
           "formula_id": "ps.categorical_analysis.multinomial_logistic_model.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "\\log\\frac{P(Y=j\\mid x)}{P(Y=J\\mid x)}\n=\\beta_{j0}+\\beta_j^Tx"
+          "latex": "\\log\\frac{P(Y=j\\mid x)}{P(Y=J\\mid x)}\n=\\beta_{j0}+\\beta_j^Tx",
+          "cas": "parse_latex('\\\\log\\\\frac{P(Y=j\\\\mid x)}{P(Y=J\\\\mid x)}\\n=\\\\beta_{j0}+\\\\beta_j^Tx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -346,7 +347,8 @@
           "formula_id": "ps.categorical_analysis.ordinal_proportional_odds_model.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "\\log\\frac{P(Y\\le j\\mid x)}{P(Y>j\\mid x)}\n=\\alpha_j-\\beta^Tx"
+          "latex": "\\log\\frac{P(Y\\le j\\mid x)}{P(Y>j\\mid x)}\n=\\alpha_j-\\beta^Tx",
+          "cas": "parse_latex('\\\\log\\\\frac{P(Y\\\\le j\\\\mid x)}{P(Y>j\\\\mid x)}\\n=\\\\alpha_j-\\\\beta^Tx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1012,7 +1014,8 @@
           "formula_id": "ps.categorical_analysis.pearson_residual.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "r_{ij}=\\frac{O_{ij}-E_{ij}}{\\sqrt{E_{ij}}}"
+          "latex": "r_{ij}=\\frac{O_{ij}-E_{ij}}{\\sqrt{E_{ij}}}",
+          "cas": "parse_latex('r_{ij}=\\\\frac{O_{ij}-E_{ij}}{\\\\sqrt{E_{ij}}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1114,7 +1117,8 @@
           "formula_id": "ps.categorical_analysis.mantel_haenszel_or.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\widehat{OR}_{MH}\n=\n\\frac{\\sum_k a_kd_k/n_k}\n{\\sum_k b_kc_k/n_k}"
+          "latex": "\\widehat{OR}_{MH}\n=\n\\frac{\\sum_k a_kd_k/n_k}\n{\\sum_k b_kc_k/n_k}",
+          "cas": "parse_latex('\\\\widehat{OR}_{MH}\\n=\\n\\\\frac{\\\\sum_k a_kd_k/n_k}\\n{\\\\sum_k b_kc_k/n_k}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1242,7 +1246,8 @@
           "formula_id": "ps.categorical_analysis.cohen_kappa.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "\\kappa=\\frac{p_o-p_e}{1-p_e}"
+          "latex": "\\kappa=\\frac{p_o-p_e}{1-p_e}",
+          "cas": "parse_latex('\\\\kappa=\\\\frac{p_o-p_e}{1-p_e}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1821,7 +1826,8 @@
           "formula_id": "ps.categorical_analysis.risk_ratio_log_wald_se.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE(\\log\\widehat{RR})\n=\n\\sqrt{\n\\frac1a-\\frac1{a+b}\n+\\frac1c-\\frac1{c+d}\n}"
+          "latex": "SE(\\log\\widehat{RR})\n=\n\\sqrt{\n\\frac1a-\\frac1{a+b}\n+\\frac1c-\\frac1{c+d}\n}",
+          "cas": "parse_latex('SE(\\\\log\\\\widehat{RR})\\n=\\n\\\\sqrt{\\n\\\\frac1a-\\\\frac1{a+b}\\n+\\\\frac1c-\\\\frac1{c+d}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1970,7 +1976,8 @@
           "formula_id": "ps.categorical_analysis.adjusted_pearson_residual.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "r_{ij}^{\\mathrm{adj}}\n=\n\\frac{O_{ij}-E_{ij}}\n{\\sqrt{E_{ij}(1-p_{i+})(1-p_{+j})}}"
+          "latex": "r_{ij}^{\\mathrm{adj}}\n=\n\\frac{O_{ij}-E_{ij}}\n{\\sqrt{E_{ij}(1-p_{i+})(1-p_{+j})}}",
+          "cas": "parse_latex('r_{ij}^{\\\\mathrm{adj}}\\n=\\n\\\\frac{O_{ij}-E_{ij}}\\n{\\\\sqrt{E_{ij}(1-p_{i+})(1-p_{+j})}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2322,7 +2329,8 @@
           "formula_id": "ps.categorical_analysis.cramers_v.formula_01",
           "name_ko": "효과크기",
           "role": "effect_size",
-          "latex": "V=\\sqrt{\\frac{\\chi^2}{n\\min(r-1,c-1)}}"
+          "latex": "V=\\sqrt{\\frac{\\chi^2}{n\\min(r-1,c-1)}}",
+          "cas": "parse_latex('V=\\\\sqrt{\\\\frac{\\\\chi^2}{n\\\\min(r-1,c-1)}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2461,7 +2469,8 @@
           "formula_id": "ps.categorical_analysis.risk_difference_2x2.formula_01",
           "name_ko": "효과측도",
           "role": "effect_measure",
-          "latex": "RD=\\frac{a}{a+b}-\\frac{c}{c+d}"
+          "latex": "RD=\\frac{a}{a+b}-\\frac{c}{c+d}",
+          "cas": "parse_latex('RD=\\\\frac{a}{a+b}-\\\\frac{c}{c+d}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2579,7 +2588,8 @@
           "formula_id": "ps.categorical_analysis.risk_ratio_2x2.formula_01",
           "name_ko": "효과측도",
           "role": "effect_measure",
-          "latex": "RR=\\frac{a/(a+b)}{c/(c+d)}"
+          "latex": "RR=\\frac{a/(a+b)}{c/(c+d)}",
+          "cas": "parse_latex('RR=\\\\frac{a/(a+b)}{c/(c+d)}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2706,7 +2716,8 @@
           "formula_id": "ps.categorical_analysis.odds_ratio_2x2.formula_01",
           "name_ko": "효과측도",
           "role": "effect_measure",
-          "latex": "OR=\\frac{ad}{bc}"
+          "latex": "OR=\\frac{ad}{bc}",
+          "cas": "parse_latex('OR=\\\\frac{ad}{bc}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2806,7 +2817,8 @@
           "formula_id": "ps.categorical_analysis.binary_logistic_model.formula_01",
           "name_ko": "모형식",
           "role": "model_equation",
-          "latex": "\\log\\frac{P(Y=1\\mid x)}{1-P(Y=1\\mid x)}=\\beta_0+\\beta^Tx"
+          "latex": "\\log\\frac{P(Y=1\\mid x)}{1-P(Y=1\\mid x)}=\\beta_0+\\beta^Tx",
+          "cas": "parse_latex('\\\\log\\\\frac{P(Y=1\\\\mid x)}{1-P(Y=1\\\\mid x)}=\\\\beta_0+\\\\beta^Tx', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2972,7 +2984,8 @@
           "formula_id": "ps.categorical_analysis.fisher_exact_two_by_two.formula_01",
           "name_ko": "정확 확률질량함수",
           "role": "exact_probability_mass",
-          "latex": "P(A=a)\n=\n\\frac{\n\\binom{a+b}{a}\n\\binom{c+d}{c}\n}{\n\\binom{a+b+c+d}{a+c}\n}"
+          "latex": "P(A=a)\n=\n\\frac{\n\\binom{a+b}{a}\n\\binom{c+d}{c}\n}{\n\\binom{a+b+c+d}{a+c}\n}",
+          "cas": "parse_latex('P(A=a)\\n=\\n\\\\frac{\\n\\\\binom{a+b}{a}\\n\\\\binom{c+d}{c}\\n}{\\n\\\\binom{a+b+c+d}{a+c}\\n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3179,7 +3192,8 @@
           "formula_id": "ps.categorical_analysis.diagnostic_likelihood_ratios.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "LR^+\n=\n\\frac{\\operatorname{Sensitivity}}\n{1-\\operatorname{Specificity}}"
+          "latex": "LR^+\n=\n\\frac{\\operatorname{Sensitivity}}\n{1-\\operatorname{Specificity}}",
+          "cas": "parse_latex('LR^+\\n=\\n\\\\frac{\\\\operatorname{Sensitivity}}\\n{1-\\\\operatorname{Specificity}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3302,7 +3316,8 @@
           "formula_id": "ps.categorical_analysis.diagnostic_likelihood_ratios.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "LR^-\n=\n\\frac{1-\\operatorname{Sensitivity}}\n{\\operatorname{Specificity}}"
+          "latex": "LR^-\n=\n\\frac{1-\\operatorname{Sensitivity}}\n{\\operatorname{Specificity}}",
+          "cas": "parse_latex('LR^-\\n=\\n\\\\frac{1-\\\\operatorname{Sensitivity}}\\n{\\\\operatorname{Specificity}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3425,7 +3440,8 @@
           "formula_id": "ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\operatorname{Sensitivity}=P(+\\mid D)"
+          "latex": "\\operatorname{Sensitivity}=P(+\\mid D)",
+          "cas": "parse_latex('\\\\operatorname{Sensitivity}=P(+\\\\mid D)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3530,7 +3546,8 @@
           "formula_id": "ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f02.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\operatorname{Specificity}=P(-\\mid D^c)"
+          "latex": "\\operatorname{Specificity}=P(-\\mid D^c)",
+          "cas": "parse_latex('\\\\operatorname{Specificity}=P(-\\\\mid D^c)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3635,7 +3652,8 @@
           "formula_id": "ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f03.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "PPV=P(D\\mid +)"
+          "latex": "PPV=P(D\\mid +)",
+          "cas": "parse_latex('PPV=P(D\\\\mid +)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3740,7 +3758,8 @@
           "formula_id": "ps.categorical_analysis.diagnostic_sensitivity_specificity_predictive_values.f04.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "NPV=P(D^c\\mid -)"
+          "latex": "NPV=P(D^c\\mid -)",
+          "cas": "parse_latex('NPV=P(D^c\\\\mid -)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3846,7 +3865,8 @@
           "formula_id": "ps.categorical_analysis.goodness_of_fit.f01.formula_01",
           "name_ko": "점근 검정통계량",
           "role": "asymptotic_test_statistic",
-          "latex": "\\chi^2=\n\\sum_{i=1}^{k}\n\\frac{(O_i-E_i)^2}{E_i}"
+          "latex": "\\chi^2=\n\\sum_{i=1}^{k}\n\\frac{(O_i-E_i)^2}{E_i}",
+          "cas": "parse_latex('\\\\chi^2=\\n\\\\sum_{i=1}^{k}\\n\\\\frac{(O_i-E_i)^2}{E_i}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3995,7 +4015,8 @@
           "formula_id": "ps.categorical_analysis.goodness_of_fit.f02.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=k-1-m"
+          "latex": "df=k-1-m",
+          "cas": "parse_latex('df=k-1-m', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4135,7 +4156,8 @@
           "formula_id": "ps.categorical_analysis.independence_homogeneity.f01.formula_01",
           "name_ko": "expected count",
           "role": "expected_count",
-          "latex": "E_{ij}=\\frac{R_iC_j}{n}"
+          "latex": "E_{ij}=\\frac{R_iC_j}{n}",
+          "cas": "parse_latex('E_{ij}=\\\\frac{R_iC_j}{n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4250,7 +4272,8 @@
           "formula_id": "ps.categorical_analysis.independence_homogeneity.f02.formula_01",
           "name_ko": "점근 검정통계량",
           "role": "asymptotic_test_statistic",
-          "latex": "\\chi^2=\n\\sum_{i=1}^{r}\\sum_{j=1}^{c}\n\\frac{(O_{ij}-E_{ij})^2}{E_{ij}}"
+          "latex": "\\chi^2=\n\\sum_{i=1}^{r}\\sum_{j=1}^{c}\n\\frac{(O_{ij}-E_{ij})^2}{E_{ij}}",
+          "cas": "parse_latex('\\\\chi^2=\\n\\\\sum_{i=1}^{r}\\\\sum_{j=1}^{c}\\n\\\\frac{(O_{ij}-E_{ij})^2}{E_{ij}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4392,7 +4415,8 @@
           "formula_id": "ps.categorical_analysis.independence_homogeneity.f03.formula_01",
           "name_ko": "자유도",
           "role": "degrees_of_freedom",
-          "latex": "df=(r-1)(c-1)"
+          "latex": "df=(r-1)(c-1)",
+          "cas": "parse_latex('df=(r-1)(c-1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4516,7 +4540,8 @@
           "formula_id": "ps.categorical_analysis.likelihood_ratio_chisq_extended_models.f01.formula_01",
           "name_ko": "검정통계량",
           "role": "test_statistic",
-          "latex": "G^2=2\\sum_{i,j}O_{ij}\\log\\frac{O_{ij}}{E_{ij}}"
+          "latex": "G^2=2\\sum_{i,j}O_{ij}\\log\\frac{O_{ij}}{E_{ij}}",
+          "cas": "parse_latex('G^2=2\\\\sum_{i,j}O_{ij}\\\\log\\\\frac{O_{ij}}{E_{ij}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4650,7 +4675,8 @@
           "formula_id": "ps.categorical_analysis.likelihood_ratio_chisq_extended_models.f02.formula_01",
           "name_ko": "표기 규약",
           "role": "convention",
-          "latex": "0\\log\\frac{0}{E_{ij}}=0"
+          "latex": "0\\log\\frac{0}{E_{ij}}=0",
+          "cas": "parse_latex('0\\\\log\\\\frac{0}{E_{ij}}=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4766,7 +4792,8 @@
           "formula_id": "ps.categorical_analysis.odds_ratio_log_wald_ci.f01.formula_01",
           "name_ko": "표준오차",
           "role": "standard_error",
-          "latex": "SE(\\log\\widehat{OR})\n=\n\\sqrt{\\frac1a+\\frac1b+\\frac1c+\\frac1d}"
+          "latex": "SE(\\log\\widehat{OR})\n=\n\\sqrt{\\frac1a+\\frac1b+\\frac1c+\\frac1d}",
+          "cas": "parse_latex('SE(\\\\log\\\\widehat{OR})\\n=\\n\\\\sqrt{\\\\frac1a+\\\\frac1b+\\\\frac1c+\\\\frac1d}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4909,7 +4936,8 @@
           "formula_id": "ps.categorical_analysis.odds_ratio_log_wald_ci.f02.formula_01",
           "name_ko": "신뢰구간",
           "role": "confidence_interval",
-          "latex": "\\widehat{OR}\\,\n\\exp\\left[\n\\pm z_{1-\\alpha/2}SE(\\log\\widehat{OR})\n\\right]"
+          "latex": "\\widehat{OR}\\,\n\\exp\\left[\n\\pm z_{1-\\alpha/2}SE(\\log\\widehat{OR})\n\\right]",
+          "cas": "parse_latex('\\\\widehat{OR}\\\\,\\n\\\\exp\\\\left[\\n\\\\pm z_{1-\\\\alpha/2}SE(\\\\log\\\\widehat{OR})\\n\\\\right]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5061,7 +5089,8 @@
           "formula_id": "ps.categorical_analysis.phi_coefficient.f01.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\begin{pmatrix}\na & b\\\\\nc & d\n\\end{pmatrix}"
+          "latex": "\\begin{pmatrix}\na & b\\\\\nc & d\n\\end{pmatrix}",
+          "cas": "parse_latex('\\\\begin{pmatrix}\\na & b\\\\\\\\\\nc & d\\n\\\\end{pmatrix}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5174,7 +5203,8 @@
           "formula_id": "ps.categorical_analysis.phi_coefficient.f02.formula_01",
           "name_ko": "효과크기",
           "role": "effect_size",
-          "latex": "\\phi=\n\\frac{ad-bc}\n{\\sqrt{(a+b)(c+d)(a+c)(b+d)}}"
+          "latex": "\\phi=\n\\frac{ad-bc}\n{\\sqrt{(a+b)(c+d)(a+c)(b+d)}}",
+          "cas": "parse_latex('\\\\phi=\\n\\\\frac{ad-bc}\\n{\\\\sqrt{(a+b)(c+d)(a+c)(b+d)}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5314,7 +5344,8 @@
           "formula_id": "ps.categorical_analysis.phi_coefficient.f03.formula_01",
           "name_ko": "효과크기 관계",
           "role": "effect_size_relation",
-          "latex": "|\\phi|=\\sqrt{\\frac{\\chi^2}{n}}"
+          "latex": "|\\phi|=\\sqrt{\\frac{\\chi^2}{n}}",
+          "cas": "parse_latex('|\\\\phi|=\\\\sqrt{\\\\frac{\\\\chi^2}{n}}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5454,7 +5485,8 @@
           "formula_id": "ps.categorical_analysis.mcnemar_test.f01.formula_01",
           "name_ko": "점근 검정통계량",
           "role": "asymptotic_test_statistic",
-          "latex": "\\chi^2_{\\mathrm{McNemar}}\n=\n\\frac{(b-c)^2}{b+c}"
+          "latex": "\\chi^2_{\\mathrm{McNemar}}\n=\n\\frac{(b-c)^2}{b+c}",
+          "cas": "parse_latex('\\\\chi^2_{\\\\mathrm{McNemar}}\\n=\\n\\\\frac{(b-c)^2}{b+c}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -5593,7 +5625,8 @@
           "formula_id": "ps.categorical_analysis.mcnemar_test.f02.formula_01",
           "name_ko": "점근 검정통계량",
           "role": "asymptotic_test_statistic",
-          "latex": "\\chi^2_{\\mathrm{McNemar,cc}}=\\frac{\\max\\{|b-c|-1,0\\}^2}{b+c}"
+          "latex": "\\chi^2_{\\mathrm{McNemar,cc}}=\\frac{\\max\\{|b-c|-1,0\\}^2}{b+c}",
+          "cas": "parse_latex('\\\\chi^2_{\\\\mathrm{McNemar,cc}}=\\\\frac{\\\\max\\\\{|b-c|-1,0\\\\}^2}{b+c}', backend='antlr')"
         }
       ],
       "application_conditions": [

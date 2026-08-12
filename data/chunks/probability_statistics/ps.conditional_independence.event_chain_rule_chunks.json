@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.conditional_independence.event_chain_rule",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_05_conditional_independence",
+  "concept_name_ko": "사건 확률의 연쇄법칙",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.event_chain_rule",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "사건 확률의 연쇄법칙",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 사건 확률의 연쇄법칙\n개념 ID: ps.conditional_independence.event_chain_rule\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 교집합 확률을 순차 조건부확률의 곱으로 분해한다.\n검색 태그: conditional_independence, chain_rule, event_chain_rule",
+      "token_count": 99,
+      "content_hash": "852a0767e81cde1389faf8cf2708cfaa88e90efee11a1913fd849d07ba8a5d1a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.event_chain_rule",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "사건 확률의 연쇄법칙",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 사건 확률의 연쇄법칙\n개념 ID: ps.conditional_independence.event_chain_rule\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 핵심 관계식\n공식 ID: ps.conditional_independence.event_chain_rule.formula_01\n역할: core_formula\nLaTeX: P\\left(\\bigcap_{i=1}^{n}A_i\\right)\n=P(A_1)\\prod_{i=2}^{n}\nP\\left(A_i\\mid \\bigcap_{j=1}^{i-1}A_j\\right)",
+      "token_count": 162,
+      "content_hash": "b590f8a037ff9c190df3ddb276baf8e0f6c1342f3e92f8817835737f2b756f1b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.event_chain_rule",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "사건 확률의 연쇄법칙",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 사건 확률의 연쇄법칙\n개념 ID: ps.conditional_independence.event_chain_rule\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.conditional_independence.event_chain_rule.condition_01\n설명: $i=2,\\ldots,n$에서 선행 교집합의 확률이 양수여야 해당 조건부확률이 정의된다.\n검증 규칙: all_prefix_intersection_probabilities_positive equals 참\n\n조건 ID: ps.conditional_independence.event_chain_rule.condition_02\n설명: $n\\ge1$인 유한 사건열이어야 한다.\n검증 규칙: event_count_positive_integer equals 참\n\n조건 ID: ps.conditional_independence.event_chain_rule.condition_03\n설명: 식에 등장하는 모든 사건은 같은 확률공간의 시그마 대수에 속해야 한다.\n검증 규칙: events_measurable equals 참\n\n조건 ID: ps.conditional_independence.event_chain_rule.condition_04\n설명: 모든 사건은 동일한 확률공간의 시그마대수에 속해야 한다.\n검증 규칙: events_measurable_in_common_sigma_algebra equals 참",
+      "token_count": 317,
+      "content_hash": "f5609da4f142a899a94a2e869255745006a4380db7ad033fde6cdb93f00aaea2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.event_chain_rule",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "사건 확률의 연쇄법칙",
+      "chunk_index": 3,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 사건 확률의 연쇄법칙\n개념 ID: ps.conditional_independence.event_chain_rule\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률 공리 (ps.probability_basics.probability_axioms, 중요도: required)\n- 집합 (math.sets, 중요도: required)\n\n관련 개념:\n- ps.conditional_independence.chain_rule\n\n학습 목표 ID: ps.conditional_independence.event_chain_rule.objective_01\n행동 동사: apply\n목표: 사건 확률의 연쇄법칙의 공식과 적용 조건을 구분하여 적용한다.",
+      "token_count": 171,
+      "content_hash": "441692ea9f97832981b5c8afa2a7e1f15b838fab8081d491eeeba688466cdf26",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.conditional_independence.event_chain_rule",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_05_conditional_independence",
+      "concept_name_ko": "사건 확률의 연쇄법칙",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 조건부확률과 독립\n개념: 사건 확률의 연쇄법칙\n개념 ID: ps.conditional_independence.event_chain_rule\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check",
+      "token_count": 153,
+      "content_hash": "2a19f529691eb0d4f33951ead0b5fe5ba720bebece1e4194ca7e678549b50a37",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

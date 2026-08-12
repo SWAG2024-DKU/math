@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.trig_derivatives",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch03_differentiation_rules",
+  "concept_name_ko": "삼각함수의 도함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: sin x, cos x의 도함수는 두 특별한 삼각극한(lim sinθ/θ=1, lim (cosθ-1)/θ=0)을 이용해 정의로부터 직접 증명되며, 나머지 삼각함수(tan, csc, sec, cot)의 도함수는 몫법칙으로 유도된다.\n검색 태그: trigonometric_derivative, special_trig_limit",
+      "token_count": 136,
+      "content_hash": "914f866cd210bf57828dc59916a0be081f78404e95708accea66eb0a52c4faee",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 두 가지 특별한 삼각극한\n공식 ID: special_trig_limits\n역할: lemma\nLaTeX: \\lim_{\\theta\\to0}\\frac{\\sin\\theta}{\\theta}=1,\\qquad\\lim_{\\theta\\to0}\\frac{\\cos\\theta-1}{\\theta}=0\nCAS 표현: limit(sin(theta)/theta, theta, 0)\n\n공식명: 사인·코사인의 도함수\n공식 ID: sin_cos_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}(\\sin x)=\\cos x,\\qquad\\frac{d}{dx}(\\cos x)=-\\sin x\nCAS 표현: diff(sin(x), x)\n\n공식명: 나머지 삼각함수의 도함수\n공식 ID: other_trig_derivatives\n역할: theorem\nLaTeX: \\frac{d}{dx}(\\tan x)=\\sec^2x,\\quad\\frac{d}{dx}(\\csc x)=-\\csc x\\cot x,\\quad\\frac{d}{dx}(\\sec x)=\\sec x\\tan x,\\quad\\frac{d}{dx}(\\cot x)=-\\csc^2x\nCAS 표현: diff(tan(x), x)",
+      "token_count": 371,
+      "content_hash": "8fb5dc4683e64a9b2b61ef2bcff856e79ad0cf65d6c156db1f74abf028162844",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: radian_measure_required\n설명: x(또는 θ)의 단위는 라디안이어야 한다.\n검증 규칙: angle_unit equals radian\n\n조건 ID: tan_sec_cos_nonzero\n설명: tan x, sec x의 도함수는 cos x≠0인 점에서 성립한다.\n검증 규칙: cos_x not_equals 0\n\n조건 ID: cot_csc_sin_nonzero\n설명: cot x, csc x의 도함수는 sin x≠0인 점에서 성립한다.\n검증 규칙: sin_x not_equals 0",
+      "token_count": 188,
+      "content_hash": "4688ef39e8a56cf8c6da4d19b8dff07bd1fb7fc9e83ae3a940f5711fa5640570",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: co_functions_negative_sign\n설명: co-가 붙은 함수(cos, csc, cot)는 도함수에 음(-)의 부호가 붙는다.\n\n성질 ID: cyclic_higher_derivatives\n설명: sin, cos의 고계도함수는 sin→cos→-sin→-cos→sin의 주기 4로 순환한다(예: cos x의 27계도함수는 sin x).\n\n성질 ID: substitution_for_trig_limits\n설명: 치환(θ=kx)과 분자·분모를 θ로 나누는 방법으로 다양한 삼각극한을 계산할 수 있다(예: lim sin7x/4x=7/4).",
+      "token_count": 212,
+      "content_hash": "a304c727d20363bcd9728e4a346ed723f23eadd3c11b230059b13cbac9e8dcf9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 몫법칙 (calculus.quotient_rule, 중요도: required)\n- 조임정리 (calculus.squeeze_theorem, 중요도: recommended)\n\n관련 개념:\n- calculus.chain_rule\n\n학습 목표 ID: differentiate_trig_functions\n행동 동사: calculate\n목표: 여섯 삼각함수의 도함수를 계산한다.\n\n학습 목표 ID: evaluate_trig_limits_via_substitution\n행동 동사: calculate\n목표: 치환을 이용해 sinθ/θ 형태의 삼각극한을 계산한다.",
+      "token_count": 182,
+      "content_hash": "9dee84c6248d980a5268c0a7683e4c44411d1b83b5ffa4d2a62943d2ee592047",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: co-함수 도함수의 음의 부호 누락\n오개념 ID: calculus.trig_derivatives.missing_negative_sign\n설명: cos x, csc x, cot x의 도함수를 부호 없이 sin x, csc x cot x, csc^2 x로 잘못 쓴다.\n진단 태그: forget_cofunction_negative_sign\n피드백: cos, csc, cot의 도함수에는 음의 부호가 붙는다: (cos x)'=-sin x, (csc x)'=-csc x cot x, (cot x)'=-csc^2 x.\n\n오개념: 각도가 라디안이 아니라고 착각하고 미분\n오개념 ID: calculus.trig_derivatives.degree_mode\n설명: x가 도(degree) 단위라고 가정한 채 sin x, cos x의 도함수 공식을 그대로 적용한다.\n진단 태그: apply_trig_derivative_in_degree_mode\n피드백: sin, cos의 미분공식은 x가 라디안 단위일 때만 성립한다.",
+      "token_count": 325,
+      "content_hash": "2f6b895e0a62e1a707cc0ede61e3c87c9ecfea8068c6941a0cbc298fd1e659d4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.trig_derivatives",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "삼각함수의 도함수",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 삼각함수의 도함수\n개념 ID: calculus.trig_derivatives\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: trig_derivative_calculation, trig_limit_via_substitution\n지원 정답 유형: expression, scalar\n난이도 범위: 1 ~ 3\n권장 검증기: symbolic_equivalence",
+      "token_count": 108,
+      "content_hash": "f1179b35e11258016eec2be8f857203109750826b2f46490312f259994626854",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

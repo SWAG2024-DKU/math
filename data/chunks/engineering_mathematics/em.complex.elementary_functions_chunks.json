@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.complex.elementary_functions",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_08_complex_analysis",
+  "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 실수 초등함수를 복소변수로 확장한 함수다.\n검색 태그: complex_exponential, complex_logarithm, multivalued_function, trigonometric_functions",
+      "token_count": 99,
+      "content_hash": "cccd41d9be1705a48bbebc34de9ce7ed4a095dde0c44a8abed42228346bcaf39",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 복소지수함수\n공식 ID: complex_exponential\n역할: definition\nLaTeX: e^z=e^x(\\cos y+i\\sin y)\nCAS 표현: Eq(exp(z), exp(x) * (cos(y) + I * sin(y)))\n\n공식명: 복소로그함수\n공식 ID: complex_logarithm\n역할: definition\nLaTeX: \\log z=\\ln|z|+i(\\arg z+2\\pi k)\nCAS 표현: Eq(log(z), log(abs(z)) + I * (argument(z) + 2*pi*k))",
+      "token_count": 198,
+      "content_hash": "6d3090feee0dfe630ec89ce76f4e535df6db2b925639f8537953fdaa9584f20d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: branch_cut_specification\n설명: 복소로그와 일반 거듭제곱을 단일값으로 다루려면 branch와 branch cut을 지정해야 한다.\n검증 규칙: branch_cut_specified equals 참",
+      "token_count": 108,
+      "content_hash": "507c223447b3e38775d0c6c888579a28e7115f6fd3e6e84a5abfcc4cf9177207",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: exponential_periodicity_and_zeros\n설명: e^z는 주기 2pi i를 갖고 영점이 없으며 복소 삼각함수는 지수함수로 표현된다.",
+      "token_count": 99,
+      "content_hash": "3d91eff54e9846c7f3e4ea212da5f6a6543b372563d2143bf7b983473329fd8d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- Euler 공식 (em.complex.euler_demoivre, 중요도: required)\n- 다가함수 (calculus.logarithm, 중요도: required)\n- 극형식 (em.complex.cartesian_polar_form, 중요도: required)\n\n관련 개념:\n- em.complex.taylor_laurent_series\n\n학습 목표 ID: compute_complex_elementary\n행동 동사: calculate\n목표: 복소지수, 로그, 삼각함수의 값을 계산하고 다가함수 성질을 다룬다.",
+      "token_count": 191,
+      "content_hash": "2f9f641c0bfb5216e0560a6ca51b76559059bd887a73b5cc35c3f01286f4ef11",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 복소로그의 단일값 오인\n오개념 ID: em.complex.elementary_functions.log_single_valued\n설명: 복소로그 함수 \\log z를 실수 로그처럼 단일값 함수로 오인한다.\n진단 태그: confuse_complex_log_with_real\n피드백: 복소로그는 편각의 다가성 때문에 \\log z = \\ln|z| + i(\\arg z + 2\\pi k) 형태의 다가함수입니다.",
+      "token_count": 188,
+      "content_hash": "26fab80a2ce4a1e5e30feaf5255f0bda30c30798ba581b5ce8f2f2a6e1a17e43",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.complex.elementary_functions",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_08_complex_analysis",
+      "concept_name_ko": "8.7 복소지수·로그·삼각함수",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 복소해석\n개념: 8.7 복소지수·로그·삼각함수\n개념 ID: em.complex.elementary_functions\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: complex_elementary_function_calculation\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: expression_equivalence",
+      "token_count": 100,
+      "content_hash": "ee753e969981b62486e489d9c7b9e0de07ecf5b2d1574c815134236971ecd5d2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

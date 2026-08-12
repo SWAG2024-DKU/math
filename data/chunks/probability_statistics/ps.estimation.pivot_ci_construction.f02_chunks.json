@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.pivot_ci_construction.f02",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "피벗구간의 포함확률",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.pivot_ci_construction.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "피벗구간의 포함확률",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 피벗구간의 포함확률\n개념 ID: ps.estimation.pivot_ci_construction.f02\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 모수에 의존하지 않는 피벗량의 두 분위수 사이 포함확률을 명시한다.\n검색 태그: estimation, pivot_ci_construction, confidence_interval, formula_atomic, definition",
+      "token_count": 103,
+      "content_hash": "f0949046669f6aa93e2cc3778f02aa698f3d5cd6b4dd36a7e63eb35466c46b34",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.pivot_ci_construction.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "피벗구간의 포함확률",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 피벗구간의 포함확률\n개념 ID: ps.estimation.pivot_ci_construction.f02\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 피벗 포함확률\n공식 ID: ps.estimation.pivot_ci_construction.f02.formula_01\n역할: coverage_probability\nLaTeX: P(a\\le Q(X,\\theta)\\le b)=1-\\alpha",
+      "token_count": 113,
+      "content_hash": "16dcb1d3234a823391df4873e5412f5dac649fd2b32df99ff1b62131234f1b1c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.pivot_ci_construction.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "피벗구간의 포함확률",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 피벗구간의 포함확률\n개념 ID: ps.estimation.pivot_ci_construction.f02\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.estimation.pivot_ci_construction.f02.condition_01\n설명: 피벗 $Q(X,\\theta)$의 분포는 미지모수에 의존하지 않아야 한다.\n검증 규칙: pivot_distribution_parameter_free equals 참\n\n조건 ID: ps.estimation.pivot_ci_construction.f02.condition_02\n설명: 신뢰수준은 $0<\\alpha<1$이어야 한다.\n검증 규칙: alpha greater_than 0\n\n조건 ID: ps.estimation.pivot_ci_construction.f02.condition_03\n설명: 신뢰수준의 유의확률은 $\\alpha<1$이어야 한다.\n검증 규칙: alpha less_than 1",
+      "token_count": 226,
+      "content_hash": "6b182f72f3a492d0ab99e9ae8cacc4ad9586ef7c82b539aedadd0c559bf456a2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.pivot_ci_construction.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "피벗구간의 포함확률",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 피벗구간의 포함확률\n개념 ID: ps.estimation.pivot_ci_construction.f02\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.estimation.pivot_ci_construction.f02.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 97,
+      "content_hash": "099def4019da0404dc0ececfc142bd1d32e5a423bf54f700ae3e5e8ceefe7cf2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.pivot_ci_construction.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "피벗구간의 포함확률",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 피벗구간의 포함확률\n개념 ID: ps.estimation.pivot_ci_construction.f02\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률표본과 통계량 (ps.sampling_distributions.random_sample_statistic, 중요도: required)\n- 최대가능도추정 (ps.estimation.maximum_likelihood, 중요도: required)\n- 미적분 (calculus.core, 중요도: recommended)\n\n관련 개념:\n- ps.estimation.pivot_ci_construction\n- ps.estimation.sample_size_fpc\n- ps.estimation.mle_asymptotic_distribution\n\n학습 목표 ID: ps.estimation.pivot_ci_construction.f02.objective_01\n행동 동사: identify\n목표: 피벗과 신뢰구간 구성 수식 2의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.estimation.pivot_ci_construction.f02.objective_02\n행동 동사: apply\n목표: 피벗과 신뢰구간 구성 수식 2을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.estimation.pivot_ci_construction.f02.objective_03\n행동 동사: verify\n목표: 피벗과 신뢰구간 구성 수식 2의 조건 충족 여부를 검증한다.",
+      "token_count": 331,
+      "content_hash": "742977d02b1ed9da89bc2b964b6489daf96155156e436026d6c68abde1c24912",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.pivot_ci_construction.f02",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "피벗구간의 포함확률",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: 피벗구간의 포함확률\n개념 ID: ps.estimation.pivot_ci_construction.f02\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, interval\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 148,
+      "content_hash": "6a5ef784df5ce5575b18dc2abccfdf9cb8be0c33a213c62a4ef8228fcae49171",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

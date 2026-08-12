@@ -295,7 +295,8 @@
           "formula_id": "ps.inequalities_limit_theory.continuous_mapping_theorem.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "X_n\\xrightarrow{d}X\\quad\\Longrightarrow\\quad g(X_n)\\xrightarrow{d}g(X)"
+          "latex": "X_n\\xrightarrow{d}X\\quad\\Longrightarrow\\quad g(X_n)\\xrightarrow{d}g(X)",
+          "cas": "parse_latex('X_n\\\\xrightarrow{d}X\\\\quad\\\\Longrightarrow\\\\quad g(X_n)\\\\xrightarrow{d}g(X)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -392,7 +393,8 @@
           "formula_id": "ps.inequalities_limit_theory.dominated_convergence.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[X_n]\\to E[X]"
+          "latex": "E[X_n]\\to E[X]",
+          "cas": "parse_latex('E[X_n]\\\\to E[X]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -496,7 +498,8 @@
           "formula_id": "ps.inequalities_limit_theory.fatou_lemma.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "E[\\liminf_{n\\to\\infty}X_n]\n\\le\n\\liminf_{n\\to\\infty}E[X_n]"
+          "latex": "E[\\liminf_{n\\to\\infty}X_n]\n\\le\n\\liminf_{n\\to\\infty}E[X_n]",
+          "cas": "parse_latex('E[\\\\liminf_{n\\\\to\\\\infty}X_n]\\n\\\\le\\n\\\\liminf_{n\\\\to\\\\infty}E[X_n]', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -662,7 +665,8 @@
           "formula_id": "ps.inequalities_limit_theory.slutsky_ratio.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "\\frac{X_n}{Y_n}\\xrightarrow{d}\\frac{X}{c}"
+          "latex": "\\frac{X_n}{Y_n}\\xrightarrow{d}\\frac{X}{c}",
+          "cas": "parse_latex('\\\\frac{X_n}{Y_n}\\\\xrightarrow{d}\\\\frac{X}{c}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -836,7 +840,8 @@
           "formula_id": "ps.inequalities_limit_theory.markov_inequality.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P(X\\ge a)\\le\\frac{E[X]}{a}"
+          "latex": "P(X\\ge a)\\le\\frac{E[X]}{a}",
+          "cas": "parse_latex('P(X\\\\ge a)\\\\le\\\\frac{E[X]}{a}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1139,7 +1144,8 @@
           "formula_id": "ps.inequalities_limit_theory.almost_sure_convergence.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "X_n\\xrightarrow{a.s.}X\n\\iff\nP\\left(\\lim_{n\\to\\infty}X_n=X\\right)=1"
+          "latex": "X_n\\xrightarrow{a.s.}X\n\\iff\nP\\left(\\lim_{n\\to\\infty}X_n=X\\right)=1",
+          "cas": "parse_latex('X_n\\\\xrightarrow{a.s.}X\\n\\\\iff\\nP\\\\left(\\\\lim_{n\\\\to\\\\infty}X_n=X\\\\right)=1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1241,7 +1247,8 @@
           "formula_id": "ps.inequalities_limit_theory.convergence_in_distribution.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "X_n\\xrightarrow{d}X\n\\iff\nF_{X_n}(x)\\to F_X(x)"
+          "latex": "X_n\\xrightarrow{d}X\n\\iff\nF_{X_n}(x)\\to F_X(x)",
+          "cas": "parse_latex('X_n\\\\xrightarrow{d}X\\n\\\\iff\\nF_{X_n}(x)\\\\to F_X(x)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1345,7 +1352,8 @@
           "formula_id": "ps.inequalities_limit_theory.convergence_in_probability.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "X_n\\xrightarrow{P}X\n\\iff\nP(|X_n-X|>\\varepsilon)\\to0"
+          "latex": "X_n\\xrightarrow{P}X\n\\iff\nP(|X_n-X|>\\varepsilon)\\to0",
+          "cas": "parse_latex('X_n\\\\xrightarrow{P}X\\n\\\\iff\\nP(|X_n-X|>\\\\varepsilon)\\\\to0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1544,7 +1552,8 @@
           "formula_id": "ps.inequalities_limit_theory.l1_convergence.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "X_n\\xrightarrow{L^1}X\n\\iff\nE|X_n-X|\\to0"
+          "latex": "X_n\\xrightarrow{L^1}X\n\\iff\nE|X_n-X|\\to0",
+          "cas": "parse_latex('X_n\\\\xrightarrow{L^1}X\\n\\\\iff\\nE|X_n-X|\\\\to0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -1655,7 +1664,8 @@
           "formula_id": "ps.inequalities_limit_theory.l2_convergence.formula_01",
           "name_ko": "적률 관계",
           "role": "moment_relation",
-          "latex": "X_n\\xrightarrow{L^2}X\n\\iff\nE[(X_n-X)^2]\\to0"
+          "latex": "X_n\\xrightarrow{L^2}X\n\\iff\nE[(X_n-X)^2]\\to0",
+          "cas": "parse_latex('X_n\\\\xrightarrow{L^2}X\\n\\\\iff\\nE[(X_n-X)^2]\\\\to0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2309,7 +2319,8 @@
           "formula_id": "ps.inequalities_limit_theory.hoeffding_inequality.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P(S_n-E[S_n]\\ge t)\n\\le\n\\exp\\left(\n-\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2}\n\\right)"
+          "latex": "P(S_n-E[S_n]\\ge t)\n\\le\n\\exp\\left(\n-\\frac{2t^2}{\\sum_{i=1}^{n}(b_i-a_i)^2}\n\\right)",
+          "cas": "parse_latex('P(S_n-E[S_n]\\\\ge t)\\n\\\\le\\n\\\\exp\\\\left(\\n-\\\\frac{2t^2}{\\\\sum_{i=1}^{n}(b_i-a_i)^2}\\n\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2545,7 +2556,8 @@
           "formula_id": "ps.inequalities_limit_theory.cantelli_inequality.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P(X-\\mu\\ge a)\n\\le\n\\frac{\\sigma^2}{\\sigma^2+a^2}"
+          "latex": "P(X-\\mu\\ge a)\n\\le\n\\frac{\\sigma^2}{\\sigma^2+a^2}",
+          "cas": "parse_latex('P(X-\\\\mu\\\\ge a)\\n\\\\le\\n\\\\frac{\\\\sigma^2}{\\\\sigma^2+a^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2836,7 +2848,8 @@
           "formula_id": "ps.inequalities_limit_theory.borel_cantelli_first.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A_n\\ \\text{i.o.})=0"
+          "latex": "P(A_n\\ \\text{i.o.})=0",
+          "cas": "parse_latex('P(A_n\\\\ \\\\text{i.o.})=0', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -2940,7 +2953,8 @@
           "formula_id": "ps.inequalities_limit_theory.borel_cantelli_second.f02.formula_01",
           "name_ko": "핵심 관계식",
           "role": "core_formula",
-          "latex": "P(A_n\\ \\text{i.o.})=1"
+          "latex": "P(A_n\\ \\text{i.o.})=1",
+          "cas": "parse_latex('P(A_n\\\\ \\\\text{i.o.})=1', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3053,7 +3067,8 @@
           "formula_id": "ps.inequalities_limit_theory.chernoff_bound.f01.formula_01",
           "name_ko": "고정 $t$에 대한 Chernoff 상계",
           "role": "bound",
-          "latex": "P(X\\ge a)\\le e^{-ta}M_X(t)"
+          "latex": "P(X\\ge a)\\le e^{-ta}M_X(t)",
+          "cas": "parse_latex('P(X\\\\ge a)\\\\le e^{-ta}M_X(t)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3167,7 +3182,8 @@
           "formula_id": "ps.inequalities_limit_theory.chernoff_bound.f02.formula_01",
           "name_ko": "최적화된 Chernoff 상계",
           "role": "bound",
-          "latex": "P(X\\ge a)\\le\\inf_{\\substack{t>0\\\\M_X(t)<\\infty}}e^{-ta}M_X(t)"
+          "latex": "P(X\\ge a)\\le\\inf_{\\substack{t>0\\\\M_X(t)<\\infty}}e^{-ta}M_X(t)",
+          "cas": "parse_latex('P(X\\\\ge a)\\\\le\\\\inf_{\\\\substack{t>0\\\\\\\\M_X(t)<\\\\infty}}e^{-ta}M_X(t)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3367,7 +3383,8 @@
           "formula_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "X_n+Y_n\\xrightarrow{d}X+c"
+          "latex": "X_n+Y_n\\xrightarrow{d}X+c",
+          "cas": "parse_latex('X_n+Y_n\\\\xrightarrow{d}X+c', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3474,7 +3491,8 @@
           "formula_id": "ps.inequalities_limit_theory.slutsky_sum_product.f02_product.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "X_nY_n\\xrightarrow{d}cX"
+          "latex": "X_nY_n\\xrightarrow{d}cX",
+          "cas": "parse_latex('X_nY_n\\\\xrightarrow{d}cX', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3581,7 +3599,8 @@
           "formula_id": "ps.inequalities_limit_theory.chebyshev_inequality.f01.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P(|X-\\mu|\\ge\\varepsilon)\\le\\frac{\\sigma^2}{\\varepsilon^2}"
+          "latex": "P(|X-\\mu|\\ge\\varepsilon)\\le\\frac{\\sigma^2}{\\varepsilon^2}",
+          "cas": "parse_latex('P(|X-\\\\mu|\\\\ge\\\\varepsilon)\\\\le\\\\frac{\\\\sigma^2}{\\\\varepsilon^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3695,7 +3714,8 @@
           "formula_id": "ps.inequalities_limit_theory.chebyshev_inequality.f02.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "P(|X-\\mu|\\ge k\\sigma)\\le\\frac1{k^2}"
+          "latex": "P(|X-\\mu|\\ge k\\sigma)\\le\\frac1{k^2}",
+          "cas": "parse_latex('P(|X-\\\\mu|\\\\ge k\\\\sigma)\\\\le\\\\frac1{k^2}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3809,7 +3829,8 @@
           "formula_id": "ps.inequalities_limit_theory.convergence_mode_implications.f01.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "X_n\\xrightarrow{L^2}X\n\\Longrightarrow X_n\\xrightarrow{L^1}X\n\\Longrightarrow X_n\\xrightarrow{P}X\n\\Longrightarrow X_n\\xrightarrow{d}X"
+          "latex": "X_n\\xrightarrow{L^2}X\n\\Longrightarrow X_n\\xrightarrow{L^1}X\n\\Longrightarrow X_n\\xrightarrow{P}X\n\\Longrightarrow X_n\\xrightarrow{d}X",
+          "cas": "parse_latex('X_n\\\\xrightarrow{L^2}X\\n\\\\Longrightarrow X_n\\\\xrightarrow{L^1}X\\n\\\\Longrightarrow X_n\\\\xrightarrow{P}X\\n\\\\Longrightarrow X_n\\\\xrightarrow{d}X', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -3916,7 +3937,8 @@
           "formula_id": "ps.inequalities_limit_theory.convergence_mode_implications.f02.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "X_n\\xrightarrow{a.s.}X\n\\Longrightarrow X_n\\xrightarrow{P}X"
+          "latex": "X_n\\xrightarrow{a.s.}X\n\\Longrightarrow X_n\\xrightarrow{P}X",
+          "cas": "parse_latex('X_n\\\\xrightarrow{a.s.}X\\n\\\\Longrightarrow X_n\\\\xrightarrow{P}X', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4021,7 +4043,8 @@
           "formula_id": "ps.inequalities_limit_theory.law_large_numbers.f01.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "\\bar X_n\\xrightarrow{P}\\mu"
+          "latex": "\\bar X_n\\xrightarrow{P}\\mu",
+          "cas": "parse_latex('\\\\bar X_n\\\\xrightarrow{P}\\\\mu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4134,7 +4157,8 @@
           "formula_id": "ps.inequalities_limit_theory.law_large_numbers.f02.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "\\bar X_n\\xrightarrow{a.s.}\\mu"
+          "latex": "\\bar X_n\\xrightarrow{a.s.}\\mu",
+          "cas": "parse_latex('\\\\bar X_n\\\\xrightarrow{a.s.}\\\\mu', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4247,7 +4271,8 @@
           "formula_id": "ps.inequalities_limit_theory.central_limit_theorem.f02.formula_01",
           "name_ko": "점근 결과",
           "role": "asymptotic_result",
-          "latex": "\\frac{\\sum_{i=1}^{n}X_i-n\\mu}{\\sigma\\sqrt n}\n\\xrightarrow{d}N(0,1)"
+          "latex": "\\frac{\\sum_{i=1}^{n}X_i-n\\mu}{\\sigma\\sqrt n}\n\\xrightarrow{d}N(0,1)",
+          "cas": "parse_latex('\\\\frac{\\\\sum_{i=1}^{n}X_i-n\\\\mu}{\\\\sigma\\\\sqrt n}\\n\\\\xrightarrow{d}N(0,1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4369,7 +4394,8 @@
           "formula_id": "ps.inequalities_limit_theory.central_limit_theorem.f03.formula_01",
           "name_ko": "점근 기준분포",
           "role": "asymptotic_distribution",
-          "latex": "\\frac{\\bar X_n-\\mu}{\\sigma/\\sqrt n}\n\\xrightarrow{d}N(0,1)"
+          "latex": "\\frac{\\bar X_n-\\mu}{\\sigma/\\sqrt n}\n\\xrightarrow{d}N(0,1)",
+          "cas": "parse_latex('\\\\frac{\\\\bar X_n-\\\\mu}{\\\\sigma/\\\\sqrt n}\\n\\\\xrightarrow{d}N(0,1)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4493,7 +4519,8 @@
           "formula_id": "ps.inequalities_limit_theory.central_limit_theorem.f04.formula_01",
           "name_ko": "근사식",
           "role": "approximation",
-          "latex": "\\bar X_n\\approx N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)"
+          "latex": "\\bar X_n\\approx N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)",
+          "cas": "parse_latex('\\\\bar X_n\\\\approx N\\\\left(\\\\mu,\\\\frac{\\\\sigma^2}{n}\\\\right)', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4642,7 +4669,8 @@
           "formula_id": "ps.inequalities_limit_theory.berry_esseen.f02.formula_01",
           "name_ko": "상계·하계",
           "role": "bound",
-          "latex": "\\sup_x\\left|P\\!\\left(\\frac{\\sqrt n(\\bar X-\\mu)}{\\sigma}\\le x\\right)-\\Phi(x)\\right|\\le \\frac{C\\rho}{\\sigma^3\\sqrt n}"
+          "latex": "\\sup_x\\left|P\\!\\left(\\frac{\\sqrt n(\\bar X-\\mu)}{\\sigma}\\le x\\right)-\\Phi(x)\\right|\\le \\frac{C\\rho}{\\sigma^3\\sqrt n}",
+          "cas": "parse_latex('\\\\sup_x\\\\left|P\\\\!\\\\left(\\\\frac{\\\\sqrt n(\\\\bar X-\\\\mu)}{\\\\sigma}\\\\le x\\\\right)-\\\\Phi(x)\\\\right|\\\\le \\\\frac{C\\\\rho}{\\\\sigma^3\\\\sqrt n}', backend='antlr')"
         }
       ],
       "application_conditions": [
@@ -4801,7 +4829,8 @@
           "formula_id": "ps.inequalities_limit_theory.berry_esseen.third_absolute_moment.formula_01",
           "name_ko": "정의",
           "role": "definition",
-          "latex": "\\rho=E|X_i-\\mu|^3"
+          "latex": "\\rho=E|X_i-\\mu|^3",
+          "cas": "parse_latex('\\\\rho=E|X_i-\\\\mu|^3', backend='antlr')"
         }
       ],
       "application_conditions": [

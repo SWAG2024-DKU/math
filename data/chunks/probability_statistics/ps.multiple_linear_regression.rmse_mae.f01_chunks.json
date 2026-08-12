@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_17_multiple_linear_regression",
+  "concept_name_ko": "RMSE와 MAE — 평가지표",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_17_multiple_linear_regression",
+      "concept_name_ko": "RMSE와 MAE — 평가지표",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 다중선형회귀분석\n개념: RMSE와 MAE — 평가지표\n개념 ID: ps.multiple_linear_regression.rmse_mae.f01\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 이 개념은 RMSE와 MAE에서 사용하는 수학적 관계 공식을 제시하며, 명시된 적용 조건에서만 사용한다.\n검색 태그: multiple_linear_regression, diagnostics_validation, rmse_mae, formula_atomic, evaluation_metric",
+      "token_count": 127,
+      "content_hash": "857de9033f1e765ba7ea191a55ea5c67669302d0077f399df931af19e5347256",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_17_multiple_linear_regression",
+      "concept_name_ko": "RMSE와 MAE — 평가지표",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 다중선형회귀분석\n개념: RMSE와 MAE — 평가지표\n개념 ID: ps.multiple_linear_regression.rmse_mae.f01\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 평가지표\n공식 ID: ps.multiple_linear_regression.rmse_mae.f01.formula_01\n역할: evaluation_metric\nLaTeX: RMSE\n=\n\\sqrt{\n\\frac1m\\sum_{i=1}^{m}(y_i-\\hat y_i)^2\n}",
+      "token_count": 143,
+      "content_hash": "534ac2528a5a478e8cc21545abc8139a80e14811a8331dbdde5e6650a2531ff9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_17_multiple_linear_regression",
+      "concept_name_ko": "RMSE와 MAE — 평가지표",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 다중선형회귀분석\n개념: RMSE와 MAE — 평가지표\n개념 ID: ps.multiple_linear_regression.rmse_mae.f01\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.multiple_linear_regression.rmse_mae.f01.condition_01\n설명: 평가표본의 크기는 $m\\ge1$이어야 한다.\n검증 규칙: evaluation_sample_size greater_or_equal 1\n\n조건 ID: ps.multiple_linear_regression.rmse_mae.f01.condition_02\n설명: 모든 관측의 실제값과 예측값이 유한해야 한다.\n검증 규칙: evaluation_values_finite equals 참\n\n조건 ID: ps.multiple_linear_regression.rmse_mae.f01.condition_03\n설명: `evaluation_sample_size`에 대응하는 값은 정수여야 한다.\n검증 규칙: evaluation_sample_size_is_integer equals 참",
+      "token_count": 253,
+      "content_hash": "3b8069520a607f450b5c847a850e62ed5a12bb04093218ef0c2ea8b4b5684033",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_17_multiple_linear_regression",
+      "concept_name_ko": "RMSE와 MAE — 평가지표",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 다중선형회귀분석\n개념: RMSE와 MAE — 평가지표\n개념 ID: ps.multiple_linear_regression.rmse_mae.f01\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.multiple_linear_regression.rmse_mae.f01.property_01\n설명: 이 수식은 application_conditions에 명시된 조건에서만 사용한다.",
+      "token_count": 113,
+      "content_hash": "78219f30a6f008cf17561e1d06ebff90ced5f9094e257f8e8400fd26d3bbaf5d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_17_multiple_linear_regression",
+      "concept_name_ko": "RMSE와 MAE — 평가지표",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 다중선형회귀분석\n개념: RMSE와 MAE — 평가지표\n개념 ID: ps.multiple_linear_regression.rmse_mae.f01\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 회귀모형 (ps.simple_linear_regression.regression_model, 중요도: required)\n\n관련 개념:\n- ps.multiple_linear_regression.rmse_mae\n- ps.multiple_linear_regression.diagnostics_validation\n\n학습 목표 ID: ps.multiple_linear_regression.rmse_mae.f01.objective_01\n행동 동사: identify\n목표: 평가지표의 수식과 정의역을 식별한다.\n\n학습 목표 ID: ps.multiple_linear_regression.rmse_mae.f01.objective_02\n행동 동사: apply\n목표: 평가지표을 해당 적용 조건 아래에서 계산한다.\n\n학습 목표 ID: ps.multiple_linear_regression.rmse_mae.f01.objective_03\n행동 동사: verify\n목표: 평가지표의 조건 충족 여부를 검증한다.",
+      "token_count": 284,
+      "content_hash": "a536d4f5b46d4710e049012c53b5c515e264c065e13c212a122f5f226d7e215d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multiple_linear_regression.rmse_mae.f01",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_17_multiple_linear_regression",
+      "concept_name_ko": "RMSE와 MAE — 평가지표",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 다중선형회귀분석\n개념: RMSE와 MAE — 평가지표\n개념 ID: ps.multiple_linear_regression.rmse_mae.f01\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, coefficient_estimation, model_interpretation, diagnostic_check, formula_application\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, matrix_dimension_check, condition_rule_check, domain_check, symbolic_equivalence, numerical_tolerance",
+      "token_count": 168,
+      "content_hash": "cab6af9c7e047560a9eacd9b0096dbb52df05b1712e648d64ced9968637c584f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

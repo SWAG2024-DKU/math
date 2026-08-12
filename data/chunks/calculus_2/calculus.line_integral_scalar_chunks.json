@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.line_integral_scalar",
+  "subject_id": "calculus_2",
+  "chapter_id": "calc2_v3_ch06_vector_calculus",
+  "concept_name_ko": "스칼라함수의 선적분",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 매끄러운 곡선 C: r(t)=<x(t),y(t),z(t)>(a≤t≤b)를 따라 스칼라함수 f의 선적분은 ∫C f ds=∫[a,b]f(r(t))‖r'(t)‖dt이다. 선밀도 ρ가 주어지면 곡선의 질량 m=∫C ρ ds, 질량중심을 구할 수 있다. 스칼라 선적분은 곡선의 방향에 영향을 받지 않는다.\n검색 태그: line_integral, scalar_line_integral",
+      "token_count": 198,
+      "content_hash": "2b3042c55bb4b6d2e50461327cfdffa1524a1304fa3d9aa0eac0805d795a7c14",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 스칼라함수의 선적분\n공식 ID: scalar_line_integral\n역할: definition\nLaTeX: \\int_Cf\\,ds=\\int_a^bf(\\mathbf{r}(t))\\|\\mathbf{r}'(t)\\|\\,dt\nCAS 표현: Integral(f(r(t))*rprime(t).norm(), (t,a,b))\n\n공식명: 곡선의 질량\n공식 ID: mass_via_line_integral\n역할: application\nLaTeX: m=\\int_C\\rho\\,ds\nCAS 표현: Integral(rho, C)\n\n공식명: 곡선의 질량중심\n공식 ID: center_of_mass_curve\n역할: application\nLaTeX: \\bar x=\\frac1m\\int_Cx\\rho\\,ds,\\quad\\bar y=\\frac1m\\int_Cy\\rho\\,ds,\\quad\\bar z=\\frac1m\\int_Cz\\rho\\,ds\nCAS 표현: Integral(x*rho, C)/m\n\n공식명: 방향에 무관\n공식 ID: scalar_line_integral_orientation_independent\n역할: property\nLaTeX: \\int_{-C}f\\,ds=\\int_Cf\\,ds\nCAS 표현: Integral(f, -C) - Integral(f, C)",
+      "token_count": 375,
+      "content_hash": "5464deadaba2e7365a67a5001d749b606889a7e98bc15af00ca04d1913801aea",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: curve_smooth_not_retraced\n설명: 매개화가 곡선을 중복 추적하지 않아야 정확한 값을 준다.\n검증 규칙: curve_traced_exactly_once equals 참",
+      "token_count": 110,
+      "content_hash": "702b8b8ec49e7a10c34bc5d0b6496ea308234be0ebecde9400823b73b1da14b1",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: involves_speed_not_velocity\n설명: 스칼라 선적분에는 ‖r'(t)‖(속력)가 들어간다.",
+      "token_count": 90,
+      "content_hash": "6fd59a40d59332a1d6b51ca8e0b0ffa4ce35d45cc34406f05a2d4f3e42ea5772",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 공간곡선의 호의 길이와 곡률 (calculus.vector_valued_arc_length_and_curvature, 중요도: required)\n\n관련 개념:\n- calculus.line_integral_vector_field\n\n학습 목표 ID: compute_scalar_line_integral\n행동 동사: calculate\n목표: 스칼라함수의 선적분을 계산한다.\n\n학습 목표 ID: compute_curve_mass_and_center\n행동 동사: calculate\n목표: 선밀도로부터 곡선의 질량과 질량중심을 구한다.",
+      "token_count": 192,
+      "content_hash": "bf5823a0493d5061a502f33c17aae966078c96a104493498343572503557037d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 속도벡터를 그대로 사용\n오개념 ID: calculus.line_integral_scalar.use_velocity_not_speed\n설명: ∫C f ds에서 ‖r'(t)‖ 대신 r'(t)(벡터)를 곱한다.\n진단 태그: use_velocity_vector_instead_of_speed_in_scalar_line_integral\n피드백: 스칼라 선적분은 f(r(t))에 속력 ‖r'(t)‖(스칼라)를 곱해 적분해야 한다.",
+      "token_count": 199,
+      "content_hash": "736d7fb18f966e593f151e9d0ce501e00e08f51928089c4419e3c4e4c1cae2f0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.line_integral_scalar",
+      "subject_id": "calculus_2",
+      "chapter_id": "calc2_v3_ch06_vector_calculus",
+      "concept_name_ko": "스칼라함수의 선적분",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 2\n단원: 벡터미적분\n개념: 스칼라함수의 선적분\n개념 ID: calculus.line_integral_scalar\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: scalar_line_integral_calculation, curve_mass_calculation\n지원 정답 유형: scalar\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 112,
+      "content_hash": "e308e085a32f060a8311d68185dd83672b38629a3b6691e4563bcc1ba64d1a5b",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.chain_rule",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch03_differentiation_rules",
+  "concept_name_ko": "연쇄법칙",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: y=f(u), u=g(x)일 때 합성함수 F=f∘g의 도함수는 F'(x)=f'(g(x))·g'(x)이다. 외부함수를 내부함수에서 계산한 값에 도함수를 취하고, 내부함수의 도함수를 곱하는 방식으로 계산한다.\n검색 태그: chain_rule, composition",
+      "token_count": 133,
+      "content_hash": "b3a0692a2a7db34403d60cb3f0b62b1042de6de129f0637792e5ab938444e2bd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 연쇄법칙\n공식 ID: chain_rule\n역할: theorem\nLaTeX: F'(x)=f'(g(x))\\cdot g'(x),\\qquad\\frac{dy}{dx}=\\frac{dy}{du}\\cdot\\frac{du}{dx}\nCAS 표현: diff(f(g(x)), x)\n\n공식명: 연쇄법칙과 결합된 거듭제곱 법칙\n공식 ID: generalized_power_rule\n역할: special_case\nLaTeX: \\frac{d}{dx}[g(x)]^n=n[g(x)]^{n-1}\\cdot g'(x)\nCAS 표현: diff(g(x)**n, x)\n\n공식명: 합성 지수함수의 도함수\n공식 ID: composed_exponential_derivative\n역할: special_case\nLaTeX: \\frac{d}{dx}[e^{g(x)}]=e^{g(x)}g'(x),\\qquad\\frac{d}{dx}[b^{g(x)}]=b^{g(x)}\\ln b\\,g'(x)\nCAS 표현: diff(exp(g(x)), x)",
+      "token_count": 343,
+      "content_hash": "318349f878bda9c6edc7cbd8de92719c6a54350d086aa8f637aa08c05ddf3820",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: inner_then_outer_differentiable\n설명: g가 x에서 미분가능하고 f가 g(x)에서 미분가능해야 F=f∘g가 x에서 미분가능하다.\n검증 규칙: g_differentiable_at_x_and_f_differentiable_at_g_x equals 참",
+      "token_count": 121,
+      "content_hash": "5f7dd0e483e94b18cb708d4371e072500f5bd0e626be0a712b8a5b6c35d6f100",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: outside_to_inside\n설명: 연쇄법칙은 '외부에서 내부로' 미분한다: 외부함수의 도함수를 내부함수 값에서 계산한 뒤, 내부함수의 도함수를 곱한다.\n\n성질 ID: repeated_for_multiple_composition\n설명: 세 함수 이상의 합성에는 연쇄법칙을 여러 번 적용한다(예: dy/dt=dy/du·du/dx·dx/dt).\n\n성질 ID: leibniz_not_literal_fraction\n설명: 라이프니츠 표기 dy/du·du/dx는 분수처럼 약분되는 것처럼 보이지만, du가 독립적으로 정의된 양이 아니므로 실제 대수적 분수는 아니다.",
+      "token_count": 208,
+      "content_hash": "9e3278d9baa6278429e629f2b0423f0396f7796ca7d6268f62b525d869efa867",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 함수로서의 도함수와 미분가능성 (calculus.derivative, 중요도: required)\n- 함수의 사칙연산과 합성함수 (calculus.function_arithmetic_and_composition, 중요도: required)\n\n관련 개념:\n- calculus.implicit_differentiation\n- calculus.related_rates\n\n학습 목표 ID: identify_inner_outer_functions\n행동 동사: identify\n목표: 합성함수에서 외부함수와 내부함수를 식별한다.\n\n학습 목표 ID: apply_chain_rule\n행동 동사: apply\n목표: 연쇄법칙으로 합성함수를 미분한다.\n\n학습 목표 ID: apply_chain_rule_repeatedly\n행동 동사: apply\n목표: 세 겹 이상 중첩된 합성함수에 연쇄법칙을 반복 적용한다.",
+      "token_count": 241,
+      "content_hash": "deba3ae4cf79ee94bcff3937e7ac0b9982f4212aa4fe5701fb7392f0df0c1500",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 내부함수의 도함수 곱하기 누락\n오개념 ID: calculus.chain_rule.forget_inner_derivative\n설명: 외부함수만 미분하고 내부함수의 도함수를 곱하지 않는다.\n진단 태그: forget_inner_derivative_factor\n피드백: 연쇄법칙은 외부함수의 도함수에 반드시 내부함수의 도함수를 곱해야 완성된다.\n\n오개념: 외부함수와 내부함수 혼동\n오개념 ID: calculus.chain_rule.inner_outer_swap\n설명: sin(x^2)과 sin^2 x=(\\sin x)^2에서 외부·내부함수를 반대로 파악한다.\n진단 태그: swap_inner_and_outer_function\n피드백: sin(x^2)은 외부=사인, 내부=제곱이고, sin^2 x=(sin x)^2은 외부=제곱, 내부=사인이다.",
+      "token_count": 278,
+      "content_hash": "ac18a3cab8fd911892512622a925db4dd9b3f1833e391b6d342380ed8f62d391",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 6,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 거듭제곱 법칙과 지수함수 미분 혼동\n오개념 ID: calculus.chain_rule.power_vs_exponential_confusion\n설명: 밑이 변수·지수가 상수인 x^n과 밑이 상수·지수가 변수인 b^x의 미분공식을 서로 바꿔 적용한다.\n진단 태그: confuse_power_rule_and_exponential_rule\n피드백: x^n의 도함수는 nx^{n-1}(거듭제곱 법칙)이고, b^x의 도함수는 b^x ln b(지수함수 미분)이다. 밑·지수가 모두 변수이면 로그 미분법이 필요하다.",
+      "token_count": 225,
+      "content_hash": "45279aea9aeb10d37fffb84eb1f8f64154281e97edad6ec526b40f1fa3c940cd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.chain_rule",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "연쇄법칙",
+      "chunk_index": 7,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 연쇄법칙\n개념 ID: calculus.chain_rule\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: chain_rule_application, inner_outer_identification, repeated_chain_rule\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 101,
+      "content_hash": "0a25f126a79106db602505f46703794aba04dec2507b124a5dd04528cc50fbe4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

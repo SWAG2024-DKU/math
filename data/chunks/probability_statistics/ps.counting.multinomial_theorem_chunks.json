@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.counting.multinomial_theorem",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_03_counting",
+  "concept_name_ko": "다항정리",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.multinomial_theorem",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "다항정리",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 다항정리\n개념 ID: ps.counting.multinomial_theorem\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: k개 항의 합을 비음수 정수 지수들의 다항계수로 전개한다.\n검색 태그: counting, multinomial_pigeonhole, multinomial_theorem",
+      "token_count": 91,
+      "content_hash": "9245417054eea9416303bf577c5f55187ca4b13d70574c4db61e14b7928b841c",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.multinomial_theorem",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "다항정리",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 다항정리\n개념 ID: ps.counting.multinomial_theorem\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 핵심 관계식\n공식 ID: ps.counting.multinomial_theorem.formula_01\n역할: core_formula\nLaTeX: (x_1+\\cdots+x_k)^n\n=\\sum_{\\substack{n_1+\\cdots+n_k=n\\\\ n_1,\\ldots,n_k\\in\\mathbb Z_{\\ge0}}}\n\\frac{n!}{n_1!\\cdots n_k!}\n\\prod_{j=1}^{k}x_j^{n_j}",
+      "token_count": 181,
+      "content_hash": "51e7d0d8065eba73c62804de59493515f21c034506b980ee0b904922c0f923a5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.multinomial_theorem",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "다항정리",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 다항정리\n개념 ID: ps.counting.multinomial_theorem\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.counting.multinomial_theorem.condition_01\n설명: $k\\in\\mathbb Z_{\\ge1}$이어야 한다.\n검증 규칙: term_count greater_or_equal 1\n\n조건 ID: ps.counting.multinomial_theorem.condition_02\n설명: $k$는 정수여야 한다.\n검증 규칙: term_count_is_integer equals 참\n\n조건 ID: ps.counting.multinomial_theorem.condition_03\n설명: $n\\in\\mathbb Z_{\\ge0}$이어야 한다.\n검증 규칙: total_degree greater_or_equal 0\n\n조건 ID: ps.counting.multinomial_theorem.condition_04\n설명: $n$은 정수여야 한다.\n검증 규칙: total_degree_is_integer equals 참",
+      "token_count": 247,
+      "content_hash": "efaebddea434032b9ddd3ff11fee2cc77c4e93bbf2c0d632b6054f3ca633b059",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.multinomial_theorem",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "다항정리",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 다항정리\n개념 ID: ps.counting.multinomial_theorem\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.counting.multinomial_theorem.property_01\n설명: 이 개념의 공식은 같은 개념 객체의 application_conditions에 기록된 조건 범위에서만 적용한다.",
+      "token_count": 95,
+      "content_hash": "4cfb29fcd24323be6c0e2d5a0eedba79d172577a0aa77e9025b717992f5bfa7a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.multinomial_theorem",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "다항정리",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 다항정리\n개념 ID: ps.counting.multinomial_theorem\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 집합 (math.sets, 중요도: required)\n- 팩토리얼 (math.factorial, 중요도: required)\n\n관련 개념:\n- ps.counting.stars_and_bars\n\n학습 목표 ID: ps.counting.multinomial_theorem.objective_01\n행동 동사: identify\n목표: 다항정리의 정의, 공식과 적용 조건을 식별한다.\n\n학습 목표 ID: ps.counting.multinomial_theorem.objective_02\n행동 동사: apply\n목표: 다항정리의 정의, 공식과 적용 조건을 적용한다.\n\n학습 목표 ID: ps.counting.multinomial_theorem.objective_03\n행동 동사: interpret\n목표: 다항정리의 정의, 공식과 적용 조건을 해석한다.",
+      "token_count": 227,
+      "content_hash": "c62469f94f642d167a096f8a4a983370cd19ce3f89b758c19f6005c89bab762d",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.counting.multinomial_theorem",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_03_counting",
+      "concept_name_ko": "다항정리",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 경우의 수\n개념: 다항정리\n개념 ID: ps.counting.multinomial_theorem\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, counting_calculation, method_selection\n지원 정답 유형: single_choice, boolean, expression, scalar\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, integer_nonnegative_check, condition_rule_check, domain_check",
+      "token_count": 147,
+      "content_hash": "19506d892487dbc365f23c356262ac89333614c557c7ad8c472ae53574376764",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

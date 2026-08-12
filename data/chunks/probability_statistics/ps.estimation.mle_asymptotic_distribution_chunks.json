@@ -1,0 +1,131 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.estimation.mle_asymptotic_distribution",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_12_estimation",
+  "concept_name_ko": "MLE의 점근 분포",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.mle_asymptotic_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "MLE의 점근 분포",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: MLE의 점근 분포\n개념 ID: ps.estimation.mle_asymptotic_distribution\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 적절한 정규성 조건 아래 스칼라 모수의 MLE는 $\\sqrt n(\\hat\\theta_{MLE}-\\theta_0) \\xrightarrow{d} N\\left(0,I_1(\\theta_0)^{-1}\\right)$ 을 만족한다. 벡터 모수에서는 Fisher 정보행렬의 역행렬이 점근 공분산행렬이 된다. 경계점, 비식별 모형, 혼합모형 등에서는 이 표준 결과가 실패할 수 있다.\n검색 태그: estimation, mle_asymptotic_distribution, distribution",
+      "token_count": 197,
+      "content_hash": "c1085dcca30faddecc6560f89d25f73f8e2563ba7cefde165e5c28ef7fa64649",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.mle_asymptotic_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "MLE의 점근 분포",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: MLE의 점근 분포\n개념 ID: ps.estimation.mle_asymptotic_distribution\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 점근 기준분포\n공식 ID: ps.estimation.mle_asymptotic_distribution.formula_01\n역할: asymptotic_distribution\nLaTeX: \\sqrt n(\\hat\\theta_{MLE}-\\theta_0)\n\\xrightarrow{d}\nN\\left(0,I_1(\\theta_0)^{-1}\\right)",
+      "token_count": 148,
+      "content_hash": "82980e8571864a242f54306b8a2baccb309bc5a6190b758305ca7e43831b6668",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.mle_asymptotic_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "MLE의 점근 분포",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: MLE의 점근 분포\n개념 ID: ps.estimation.mle_asymptotic_distribution\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: ps.estimation.mle_asymptotic_distribution.condition_01\n설명: 모형은 식별 가능해야 한다.\n검증 규칙: model_identifiable equals 참\n\n조건 ID: ps.estimation.mle_asymptotic_distribution.condition_02\n설명: 참모수는 모수공간의 내부점이어야 한다.\n검증 규칙: true_parameter_interior equals 참\n\n조건 ID: ps.estimation.mle_asymptotic_distribution.condition_03\n설명: $0<I_1(\\theta_0)<\\infty$이고 가역이어야 한다.\n검증 규칙: fisher_information_positive_finite_invertible equals 참\n\n조건 ID: ps.estimation.mle_asymptotic_distribution.condition_04\n설명: 로그가능도는 필요한 차수까지 미분 가능해야 한다.\n검증 규칙: log_likelihood_sufficiently_differentiable equals 참\n\n조건 ID: ps.estimation.mle_asymptotic_distribution.condition_05\n설명: Fisher 정보는 유한하고 비특이여야 한다.\n검증 규칙: fisher_information_finite_nonsingular equals 참\n\n조건 ID: ps.estimation.mle_asymptotic_distribution.condition_06\n설명: 미분·기댓값·극한 교환을 정당화하는 지배조건이 필요하다.\n검증 규칙: domination_for_limit_interchange equals 참",
+      "token_count": 386,
+      "content_hash": "d6e180104b90d3b91923e1e5aa485071fb381a03cbe1304c6c12e779c04e5ec4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 6,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.mle_asymptotic_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "MLE의 점근 분포",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: MLE의 점근 분포\n개념 ID: ps.estimation.mle_asymptotic_distribution\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.estimation.mle_asymptotic_distribution.property_01\n설명: 벡터 모수에서는 Fisher 정보행렬의 역행렬이 점근 공분산행렬이 된다.\n\n성질 ID: ps.estimation.mle_asymptotic_distribution.property_02\n설명: 경계점, 비식별 모형, 혼합모형 등에서는 이 표준 결과가 실패할 수 있다.\n\n성질 ID: ps.estimation.mle_asymptotic_distribution.property_03\n설명: 적절한 정규성 조건 아래 스칼라 모수의 MLE는 $\\sqrt n(\\hat\\theta_{MLE}-\\theta_0) \\xrightarrow{d} N\\left(0,I_1(\\theta_0)^{-1}\\right)$ 을 만족한다.",
+      "token_count": 258,
+      "content_hash": "f96da81e6c645ceb223ea1175f6ccef77fb77279e0ad7454d1f51bf47b0950a4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.mle_asymptotic_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "MLE의 점근 분포",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: MLE의 점근 분포\n개념 ID: ps.estimation.mle_asymptotic_distribution\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 확률표본과 통계량 (ps.sampling_distributions.random_sample_statistic, 중요도: required)\n- 최대가능도추정 (ps.estimation.maximum_likelihood, 중요도: required)\n- 미적분 (calculus.core, 중요도: recommended)\n\n관련 개념:\n- ps.estimation.pivot_ci_construction\n- ps.estimation.likelihood_ratio_ci\n\n학습 목표 ID: ps.estimation.mle_asymptotic_distribution.objective_01\n행동 동사: identify\n목표: MLE의 점근 분포의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.estimation.mle_asymptotic_distribution.objective_02\n행동 동사: apply\n목표: MLE의 점근 분포의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.estimation.mle_asymptotic_distribution.objective_03\n행동 동사: interpret\n목표: 계산 결과를 MLE의 점근 분포의 의미와 조건에 맞게 해석한다.",
+      "token_count": 312,
+      "content_hash": "503a728025908fd4767f01c7ada714ef8bdc284db9f858c2309745d8dea56a7f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.estimation.mle_asymptotic_distribution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_12_estimation",
+      "concept_name_ko": "MLE의 점근 분포",
+      "chunk_index": 5,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 추정이론\n개념: MLE의 점근 분포\n개념 ID: ps.estimation.mle_asymptotic_distribution\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: concept_identification, assumption_check, formula_application, distribution_identification, moment_calculation, estimator_derivation, confidence_interval\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution, interval\n난이도 범위: 3 ~ 5\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, condition_rule_check, domain_check",
+      "token_count": 160,
+      "content_hash": "fb7c8e590b4f5e956ae0ee165f382acca25ec8aee6c586ac06d24d0630789d98",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

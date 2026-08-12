@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.intermediate_value_theorem",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch02_limits_and_derivatives",
+  "concept_name_ko": "중간값 정리",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: f가 폐구간 [a,b]에서 연속이고 f(a)≠f(b)일 때, N이 f(a)와 f(b) 사이의 어떤 값이면 f(c)=N을 만족하는 c가 개구간 (a,b) 안에 적어도 하나 존재한다.\n검색 태그: intermediate_value_theorem, root_existence",
+      "token_count": 134,
+      "content_hash": "02519b295e5403cf358db179c02ef4c784359722b42ce98c5e617a1b7be739d4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 중간값 정리\n공식 ID: ivt\n역할: theorem\nLaTeX: f\\text{가 }[a,b]\\text{에서 연속},\\ N\\text{이 }f(a)\\text{와 }f(b)\\text{ 사이}\\implies\\exists c\\in(a,b),\\ f(c)=N\nCAS 표현: solve(Eq(f(c), N), c)",
+      "token_count": 146,
+      "content_hash": "0dce1b3a054e953619cd41f3db8e02605a8004b92de26f348cc2e6c3b5c583ae",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: continuous_on_closed_interval\n설명: f는 폐구간 [a,b]에서 연속이어야 한다.\n검증 규칙: continuous_on_a_b equals 참\n\n조건 ID: n_between_endpoints\n설명: N은 f(a)와 f(b) 사이의 값이어야 한다.\n검증 규칙: n_between_f_a_and_f_b equals 참",
+      "token_count": 152,
+      "content_hash": "608a4a2cda6a8083ed3d0d9424e53b769983c7ea8a25ac05c1545a3dfefa29d9",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: root_existence_via_sign_change\n설명: f(a)와 f(b)의 부호가 다르면(f(a)<0<f(b) 등) 그 사이에 근이 존재함을 보이는 데 활용된다.\n\n성질 ID: no_uniqueness_guarantee\n설명: 중간값 정리는 c의 존재만 보장하며 유일성까지 보장하지는 않는다.\n\n성질 ID: iterative_root_narrowing\n설명: 정리를 반복 적용하면(이분법적 접근) 근의 위치를 더 좁은 구간으로 좁힐 수 있다.",
+      "token_count": 182,
+      "content_hash": "26faa3a88c8067530ac823d0a8caaee4dfd153a61e3823828cf2b97451f5180e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 연속의 정의와 불연속의 유형 (calculus.continuity, 중요도: required)\n\n관련 개념:\n- calculus.continuous_function_algebra_and_composition\n\n학습 목표 ID: verify_ivt_conditions\n행동 동사: verify\n목표: 중간값 정리 적용에 필요한 연속성과 구간 조건을 확인한다.\n\n학습 목표 ID: locate_root_interval\n행동 동사: identify\n목표: 부호 변화를 이용해 방정식의 근이 존재하는 구간을 찾는다.",
+      "token_count": 172,
+      "content_hash": "939b13237fc4da125c578bfce4977b11a25afe6e23283e848af0492d61e4c9ba",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 불연속 함수에 중간값 정리 적용\n오개념 ID: calculus.ivt.discontinuous_application\n설명: f가 [a,b]에서 연속이 아닌데도 중간값 정리를 적용해 근의 존재를 주장한다.\n진단 태그: apply_ivt_without_continuity\n피드백: 중간값 정리는 f가 폐구간에서 연속이어야 성립하며, 불연속이면 일반적으로 성립하지 않는다.\n\n오개념: 근의 유일성 과잉 해석\n오개념 ID: calculus.ivt.uniqueness_assumption\n설명: 중간값 정리로 근이 존재함을 보인 뒤 그 근이 유일하다고 단정한다.\n진단 태그: assume_uniqueness_from_ivt\n피드백: 중간값 정리는 c의 존재만 보장하며, 유일성은 추가 논증(예: 단조성)이 필요하다.",
+      "token_count": 260,
+      "content_hash": "a3c23e4f2fb00f1671ea33767c374c1f5c5085b931b9c6f6c937677d2530b237",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.intermediate_value_theorem",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch02_limits_and_derivatives",
+      "concept_name_ko": "중간값 정리",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 극한과 도함수\n개념: 중간값 정리\n개념 ID: calculus.intermediate_value_theorem\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: ivt_condition_check, root_interval_location\n지원 정답 유형: boolean, interval\n난이도 범위: 2 ~ 3\n권장 검증기: sign_chart_check",
+      "token_count": 103,
+      "content_hash": "0eba0cb2fdae8d3351f85fa76c9b12146888f35b08f0db556ad1fe9aba390710",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

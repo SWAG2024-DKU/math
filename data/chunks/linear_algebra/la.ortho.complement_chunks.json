@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "la.ortho.complement",
+  "subject_id": "linear_algebra",
+  "chapter_id": "la_04_orthogonality_optimization",
+  "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 부분공간 W에 속한 모든 벡터와 내적이 0이 되는 벡터들의 집합을 직교 여공간이라 하며, 행렬의 4대 부분공간 간 직교 관계를 대수적으로 모델링한다.\n검색 태그: orthogonal_complement, subspace, orthogonality",
+      "token_count": 123,
+      "content_hash": "9283d4cc45e79ebb7db7eed539fde9d71a14d5f7b6c21af43d5d619c2792491f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 직교 여공간 정의\n공식 ID: orthogonal_complement_def\n역할: definition\nLaTeX: W^\\perp = \\{\\mathbf{z} \\in \\mathbb{R}^n \\mid \\mathbf{z} \\cdot \\mathbf{w} = 0 \\text{ for all } \\mathbf{w} \\in W \\}\nCAS 표현: orthogonal_complement(W)\n\n공식명: 핵심 부분공간 직교성\n공식 ID: fundamental_subspaces_orthogonality\n역할: property\nLaTeX: N(A) = C(A^T)^\\perp, \\quad N(A^T) = C(A)^\\perp\nCAS 표현: is_orthogonal(null_space(A), row_space(A))",
+      "token_count": 250,
+      "content_hash": "570958b8fdbd0c77a0e7dd377004997aa52c8af8871baebb80f0cb5db48fec4e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: use_basis_for_complement\n설명: 부분공간 W에 직교하는 벡터를 구할 때 W의 기저 벡터들과의 내적이 0이 되는지 검증하면 충분하다.\n검증 규칙: test_against_basis equals 참",
+      "token_count": 117,
+      "content_hash": "1a38f39e14a5abe7ac5b9c905b2a8ba94482462c4fb10d9ac542ec9d8b26ce0e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: complement_dimension_sum\n설명: 공간과 그 직교 여공간의 차원을 합하면 항상 전체 공간의 차원이 된다.",
+      "token_count": 84,
+      "content_hash": "9e45918bf15fe4f4575b959b5c6e4ca9e2f90587a5801f400e0c139e27d06fe0",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 내적 (la.ortho.norm_distance, 중요도: required)\n- 열공간 (la.space.column_space, 중요도: required)\n- 영공간 (la.space.null_space, 중요도: required)\n- 기저 (la.space.basis, 중요도: required)\n\n관련 개념:\n- la.ortho.projection\n\n학습 목표 ID: compute_orthogonal_complement\n행동 동사: calculate\n목표: 주어진 부분공간의 직교 여공간을 구한다.",
+      "token_count": 179,
+      "content_hash": "680ff0117d1e28deb673fd5836353fd7d27bc61ad6a139200147eb11bb576894",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 부분공간 매핑 축 역전\n오개념 ID: la.ortho.complement.subspace_mapping_error\n설명: 열공간의 직교 여공간을 구할 때 좌영공간이 아닌 원본 영공간을 계산한다.\n진단 태그: wrong_complement_mapping\n피드백: 열공간 C(A)의 직교 여공간은 좌영공간 N(A^T)입니다.",
+      "token_count": 159,
+      "content_hash": "31d788ba3b30f67fa9efe29d4e007f9b19464d4da5ef4c6f6ef9da37b1b07c0e",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "la.ortho.complement",
+      "subject_id": "linear_algebra",
+      "chapter_id": "la_04_orthogonality_optimization",
+      "concept_name_ko": "직교성과 직교 여공간 (Orthogonal Complement)",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 선형대수학\n단원: 직교성과 최적화\n개념: 직교성과 직교 여공간 (Orthogonal Complement)\n개념 ID: la.ortho.complement\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: orthogonal_complement_calculation\n지원 정답 유형: vector_list\n난이도 범위: 2 ~ 4\n권장 검증기: dot_product_zero_check",
+      "token_count": 105,
+      "content_hash": "125e28520b454b8dee06a85a96e9695032ee399fb6f5917f2fb56e911d8dd41f",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

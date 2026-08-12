@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "em.ode.separable",
+  "subject_id": "engineering_mathematics",
+  "chapter_id": "em_01_first_order_odes",
+  "concept_name_ko": "변수분리형 방정식",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 독립변수와 종속변수에 관한 항을 서로 다른 편으로 분리한 뒤 각각 적분하는 방정식이다.\n검색 태그: separable_ode, integration, constant_solution",
+      "token_count": 94,
+      "content_hash": "6e45c9296bcb5084f94bd264d9be2d1a3aaf8bb53d0a1ddb06121485a2fc0bfc",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 변수분리형 표준형\n공식 ID: separable_form\n역할: definition\nLaTeX: \\frac{dy}{dx}=g(x)h(y)\nCAS 표현: Eq(Derivative(y, x), g(x) * h(y))\n\n공식명: 적분 형태\n공식 ID: separable_integral\n역할: formula\nLaTeX: \\int\\frac{1}{h(y)}\\,dy=\\int g(x)\\,dx+C\nCAS 표현: Eq(Integral(1/h(y), y), Integral(g(x), x) + C)",
+      "token_count": 195,
+      "content_hash": "91d0de33bc9e047e5145643da529a738008a8d00302f8149e9f816d7a8053b88",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: h_y_nonzero\n설명: h(y) != 0인 구간에서 나눗셈이 가능하다.\n검증 규칙: h_y_not_zero equals 참",
+      "token_count": 94,
+      "content_hash": "a99b25439347d75d1b22f14fd7c302f8c648eb18eba71edb70e8fdcd36c06fed",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: implicit_solutions_separable\n설명: 해가 음함수 형태로 남을 수 있다.",
+      "token_count": 76,
+      "content_hash": "1e89dfdb9127709eab61e087b121af59d1fb1e4c465b234ca9ae98df48f2c785",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 부정적분 (calculus.integral, 중요도: required)\n- 로그함수 (calculus.logarithm, 중요도: required)\n- 1계 상미분방정식 (em.ode.first_order_intro, 중요도: required)\n\n관련 개념:\n- em.ode.homogeneous\n\n학습 목표 ID: solve_separable_ode\n행동 동사: solve\n목표: 변수분리형 미분방정식을 풀고 일반해를 구한다.",
+      "token_count": 170,
+      "content_hash": "761686b9b4e922f0c7135ecc74a4c83ddde23c9f6be6ddbd270310f9ce2b2395",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 상수해 누락\n오개념 ID: em.ode.separable.lost_equilibrium_solution\n설명: h(y)로 나눌 때 h(y)=0인 평형해 또는 상수해가 누락된다.\n진단 태그: lost_constant_solution\n피드백: 나누기 전에 h(y)=0을 만족하는 상수해를 별도로 확인해야 합니다.",
+      "token_count": 152,
+      "content_hash": "cf2eddb35181f09310a927cea9b32a56f4942a89faf9c81eab2ee14f08f084e5",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "em.ode.separable",
+      "subject_id": "engineering_mathematics",
+      "chapter_id": "em_01_first_order_odes",
+      "concept_name_ko": "변수분리형 방정식",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 공학수학\n단원: 1계 상미분방정식\n개념: 변수분리형 방정식\n개념 ID: em.ode.separable\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: separable_ode_solving\n지원 정답 유형: expression\n난이도 범위: 1 ~ 3\n권장 검증기: ode_solution_check",
+      "token_count": 94,
+      "content_hash": "142258f801a7f8c7d7ad4ec390a4e80c859f72254051211cc258abb316a29d25",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

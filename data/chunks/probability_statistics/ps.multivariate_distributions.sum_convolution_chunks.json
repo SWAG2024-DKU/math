@@ -1,0 +1,111 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "ps.multivariate_distributions.sum_convolution",
+  "subject_id": "probability_statistics",
+  "chapter_id": "ps_09_multivariate_distributions",
+  "concept_name_ko": "확률변수의 합과 합성곱",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.sum_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "확률변수의 합과 합성곱",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 확률변수의 합과 합성곱\n개념 ID: ps.multivariate_distributions.sum_convolution\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 독립 변수들의 합의 분포를 계산한다. 세부 공식은 적용 조건별 관련 개념으로 분리한다.\n검색 태그: multivariate_distributions, sum_convolution, probability",
+      "token_count": 102,
+      "content_hash": "7840585bcfd2a999e9392b185aeb57a33c2eae9aad1bfcc0fd68e041f650fcab",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.sum_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "확률변수의 합과 합성곱",
+      "chunk_index": 1,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 확률변수의 합과 합성곱\n개념 ID: ps.multivariate_distributions.sum_convolution\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: ps.multivariate_distributions.sum_convolution.property_01\n설명: 서로 다른 적용 조건을 갖는 공식을 한 조건 목록에 결합하지 않고 세부 개념으로 분리한다.",
+      "token_count": 108,
+      "content_hash": "de40d0d5810b325c8edec515b1ef344bf30ed171a282dff3c27686c7d2265ca2",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.sum_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "확률변수의 합과 합성곱",
+      "chunk_index": 2,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 확률변수의 합과 합성곱\n개념 ID: ps.multivariate_distributions.sum_convolution\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 적분, 독립 (calculus.integral, 중요도: required)\n\n관련 개념:\n- ps.multivariate_distributions.continuous_convolution\n- ps.multivariate_distributions.discrete_convolution\n\n학습 목표 ID: ps.multivariate_distributions.sum_convolution.objective_01\n행동 동사: identify\n목표: 확률변수의 합과 합성곱의 정의와 적용 조건을 식별한다.\n\n학습 목표 ID: ps.multivariate_distributions.sum_convolution.objective_02\n행동 동사: apply\n목표: 확률변수의 합과 합성곱의 핵심 공식을 적절한 상황에 적용한다.\n\n학습 목표 ID: ps.multivariate_distributions.sum_convolution.objective_03\n행동 동사: interpret\n목표: 계산 결과를 확률변수의 합과 합성곱의 의미와 조건에 맞게 해석한다.",
+      "token_count": 273,
+      "content_hash": "c0e8427e6e0883f30ca0ba007e470fdf24f0b938f946bb2910e2d48ea0b1ddfd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 5,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.sum_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "확률변수의 합과 합성곱",
+      "chunk_index": 3,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 확률변수의 합과 합성곱\n개념 ID: ps.multivariate_distributions.sum_convolution\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 확률변수의 합과 합성곱 관련 오해 1\n오개념 ID: ps.multivariate_distributions.sum_convolution.misconception_01\n설명: 정의와 적용 조건을 충분히 확인하지 않고 해당 공식을 기계적으로 적용한다.\n진단 태그: ps_multivariate_distributions_sum_convolution_misconception_01\n피드백: 독립이 아니면 결합분포를 사용해야 한다.",
+      "token_count": 170,
+      "content_hash": "525387c6be1e87cc22e636bf6d34f89cbff8d5e950aa6de0333980c28b9e161a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "ps.multivariate_distributions.sum_convolution",
+      "subject_id": "probability_statistics",
+      "chapter_id": "ps_09_multivariate_distributions",
+      "concept_name_ko": "확률변수의 합과 합성곱",
+      "chunk_index": 4,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 확률과 통계\n단원: 다변량 확률분포\n개념: 확률변수의 합과 합성곱\n개념 ID: ps.multivariate_distributions.sum_convolution\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 거짓\n지원 문제 유형: concept_identification, assumption_check, formula_application, probability_calculation, distribution_identification, moment_calculation\n지원 정답 유형: single_choice, boolean, expression, scalar, distribution\n난이도 범위: 2 ~ 4\n권장 검증기: assumption_check, symbolic_equivalence, numerical_tolerance, probability_constraint_check, condition_rule_check, domain_check\n생성 참고사항: 탐색용 개요다. 문제 생성에는 related_concepts의 세부 개념을 사용한다.",
+      "token_count": 195,
+      "content_hash": "5f042a21feab91d88922a8766e046a7c1b7be045f7a5d9d18dde873b2c6ef832",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}

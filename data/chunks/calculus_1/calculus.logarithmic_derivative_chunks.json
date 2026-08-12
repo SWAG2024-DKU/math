@@ -1,0 +1,151 @@
+{
+  "chunk_schema_version": "1.0.0",
+  "concept_id": "calculus.logarithmic_derivative",
+  "subject_id": "calculus_1",
+  "chapter_id": "calc1_ch03_differentiation_rules",
+  "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "max_tokens": 420,
+  "chunks": [
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 0,
+      "chunk_type": "definition",
+      "heading": "개념 정의",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 정의 및 개요\n\n개념 정의\n정의: 로그함수는 지수함수의 역함수이므로 음함수 미분법으로 그 도함수를 구할 수 있다. 곱·몫·거듭제곱이 복잡하게 얽힌 함수는 양변에 자연로그를 취해 간단히 한 뒤 음함수 미분(로그 미분법)으로 쉽게 미분할 수 있다.\n검색 태그: logarithmic_derivative, logarithmic_differentiation",
+      "token_count": 155,
+      "content_hash": "a31b9fc43ac387acc43fd460d8fd864bb20053e14aac4fe4fb984e4f8db25b98",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 1,
+      "chunk_type": "formula",
+      "heading": "핵심 공식",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 핵심 공식\n\n핵심 공식\n공식명: 로그함수의 도함수\n공식 ID: log_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}(\\log_bx)=\\frac{1}{x\\ln b},\\qquad\\frac{d}{dx}(\\ln x)=\\frac{1}{x}\nCAS 표현: diff(log(x, b), x)\n\n공식명: 절댓값을 포함한 자연로그의 도함수\n공식 ID: log_abs_derivative\n역할: theorem\nLaTeX: \\frac{d}{dx}\\ln|x|=\\frac{1}{x}\\ (x\\neq0),\\qquad\\frac{d}{dx}\\ln|g(x)|=\\frac{g'(x)}{g(x)}\nCAS 표현: diff(log(Abs(x)), x)\n\n공식명: e의 극한 표현\n공식 ID: e_limit_definitions\n역할: corollary\nLaTeX: e=\\lim_{x\\to0}(1+x)^{1/x}=\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^n\nCAS 표현: limit((1+x)**(1/x), x, 0)",
+      "token_count": 362,
+      "content_hash": "0f313d48ab1c51028d021edf1942107aa6c3fe4e6729c4f28100ff38890a2c63",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 3,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 2,
+      "chunk_type": "condition",
+      "heading": "공식 및 개념의 적용 조건",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 적용 조건\n\n공식 및 개념의 적용 조건\n조건 ID: log_derivative_domain\n설명: 로그함수 도함수 공식은 x>0(ln|x| 형태에서는 x≠0)에서 성립한다.\n검증 규칙: x not_equals 0\n\n조건 ID: logarithmic_diff_zero_check\n설명: 로그 미분법에서 원래 함수가 0이 되는 점은 로그가 정의되지 않으므로 별도로 확인해야 한다.\n검증 규칙: original_function_zero_points_checked_separately equals 참",
+      "token_count": 174,
+      "content_hash": "f72ea85fa6d007221ff45850f56f8debda91c8c27b493d0d881f80fe372e47cd",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 3,
+      "chunk_type": "property",
+      "heading": "주요 성질",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 주요 성질\n\n주요 성질\n성질 ID: natural_log_simplest_formula\n설명: ln e=1이기 때문에 밑이 e인 자연로그를 쓸 때 미분공식이 가장 간단해지며, 이것이 미적분학에서 자연로그가 주로 쓰이는 이유다.\n\n성질 ID: logarithmic_differentiation_steps\n설명: 로그 미분법의 단계: (1) 양변에 자연로그를 취해 로그법칙으로 간단히 한다, (2) x에 대해 음함수 미분한다, (3) y에 대해 정리하며 원래 y의 식을 대입한다.\n\n성질 ID: log_diff_proves_general_power_rule\n설명: f(x)<0이어서 ln f(x)가 정의되지 않는 경우에도 ln|f(x)|를 이용해 로그 미분법을 적용할 수 있으며, 이 방법으로 임의의 실수 n에 대한 일반 거듭제곱 법칙을 증명할 수 있다.\n\n성질 ID: four_base_exponent_cases\n설명: 밑·지수의 네 가지 경우: (1) 둘 다 상수 → 도함수 0, (2) 밑이 변수·지수가 상수 → 거듭제곱 법칙, (3) 밑이 상수·지수가 변수 → 지수함수 미분, (4) 둘 다 변수 → 로그 미분법 필요.",
+      "token_count": 353,
+      "content_hash": "4ff38480d19225468624ac174b4d6b896278adc6a223e1a6d450e922746382d4",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 4,
+      "chunk_type": "learning",
+      "heading": "선수 개념·관련 개념·학습 목표",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 선수 및 학습 관계\n\n선수 개념·관련 개념·학습 목표\n선수 개념:\n- 로그함수와 로그법칙 (calculus.logarithm, 중요도: required)\n- 음함수 미분법 (calculus.implicit_differentiation, 중요도: required)\n\n관련 개념:\n- calculus.exponential_derivative\n\n학습 목표 ID: differentiate_log_functions\n행동 동사: calculate\n목표: 로그함수와 그 합성형의 도함수를 구한다.\n\n학습 목표 ID: apply_logarithmic_differentiation\n행동 동사: apply\n목표: 곱·몫·변수 지수가 얽힌 함수에 로그 미분법을 적용한다.",
+      "token_count": 203,
+      "content_hash": "a52d7983d4ba59e378341ca856bc044d409e2683b31743be6ec8a0b67f32d070",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 4,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 5,
+      "chunk_type": "misconception",
+      "heading": "자주 발생하는 오개념과 피드백",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 오개념 및 피드백\n\n자주 발생하는 오개념과 피드백\n오개념: 합성 로그함수 미분에서 연쇄법칙 누락\n오개념 ID: calculus.log_derivative.forget_chain_rule_argument\n설명: ln(g(x))의 도함수를 1/g(x)로만 쓰고 g'(x)를 곱하지 않는다.\n진단 태그: forget_chain_rule_in_log_derivative\n피드백: d/dx ln(g(x))=g'(x)/g(x)이며, 연쇄법칙에 따라 g'(x)를 반드시 곱해야 한다.\n\n오개념: 밑·지수 네 가지 경우 오분류\n오개념 ID: calculus.log_derivative.four_cases_confusion\n설명: 밑과 지수가 모두 변수인 함수(x^{√x} 등)에 단순 거듭제곱 법칙이나 지수함수 미분을 적용한다.\n진단 태그: misapply_rule_for_variable_base_and_exponent\n피드백: 밑과 지수가 모두 변수이면 거듭제곱 법칙도 지수함수 미분도 아닌 로그 미분법이 필요하다.",
+      "token_count": 340,
+      "content_hash": "e0893b06a687bf5c80ef9985d40fa874205da9d36beb6cdd8c88978d813ca20a",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 2,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    },
+    {
+      "chunk_schema_version": "1.0.0",
+      "concept_id": "calculus.logarithmic_derivative",
+      "subject_id": "calculus_1",
+      "chapter_id": "calc1_ch03_differentiation_rules",
+      "concept_name_ko": "로그함수의 도함수와 로그 미분법",
+      "chunk_index": 6,
+      "chunk_type": "generation",
+      "heading": "문제 생성 프로필",
+      "content_text": "과목: 미분적분학 1\n단원: 미분법\n개념: 로그함수의 도함수와 로그 미분법\n개념 ID: calculus.logarithmic_derivative\n정보 유형: 문제 생성 정보\n\n문제 생성 프로필\n문제 생성 활성화: 참\n지원 문제 유형: log_derivative_calculation, logarithmic_differentiation_application\n지원 정답 유형: expression\n난이도 범위: 2 ~ 4\n권장 검증기: symbolic_equivalence",
+      "token_count": 113,
+      "content_hash": "cb41962849bc3205442b3b17f6c3b58de89b04542ba35b71e07e2a5dc833ee62",
+      "source_content_version": 1,
+      "metadata": {
+        "item_count": 1,
+        "split_strategy": "semantic_item_boundary",
+        "embedding_model": "intfloat/multilingual-e5-base",
+        "max_tokens": 420
+      }
+    }
+  ]
+}
