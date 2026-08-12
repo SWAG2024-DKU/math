@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_02_vector_spaces.la.space.linear_independence.linear_independence_test.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_02_vector_spaces",
+    "unit_name_ko": "벡터 공간과 선형구조",
+    "concept_ids": [
+      "la.space.linear_independence"
+    ],
+    "formula_ids": [
+      "independence_condition"
+    ],
+    "tags": [
+      "linear_independence",
+      "linear_dependence",
+      "homogeneous_system"
+    ]
+  },
+  "classification": {
+    "problem_type": "linear_independence_test",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "V": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "검사할 벡터들을 열벡터로 갖는 행렬."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "행렬 V의 열벡터들이 선형독립인지 판정하시오.\nV = {{ V }}"
+    ],
+    "latex_templates": [
+      "\\operatorname{rank}(V)=\\text{number of columns}\\;?"
+    ],
+    "cas_template": "V.rank() == V.cols",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "cas_template": "V.rank() == V.cols",
+    "latex_template": "\\mathrm{True}\\;\\text{or}\\;\\mathrm{False}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "rank_matrix_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "주어진 벡터 집합의 선형독립 및 종속 여부를 판정한다.",
+        "formula_id": "independence_condition",
+        "cas_expression": "V.rank() == V.cols"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "rank_matrix_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.space.linear_independence.all_vectors_expressed",
+      "misconception_id": "la.space.linear_independence.all_vectors_expressed",
+      "transformation": "apply_misconception:misunderstand_linear_dependence",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.space.linear_independence' (선형독립과 선형종속 판정) and problem_type 'linear_independence_test'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

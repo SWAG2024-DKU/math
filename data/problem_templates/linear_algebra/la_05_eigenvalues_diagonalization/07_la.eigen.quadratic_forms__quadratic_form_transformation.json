@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.quadratic_forms.quadratic_form_transformation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_05_eigenvalues_diagonalization",
+    "unit_name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+    "concept_ids": [
+      "la.eigen.quadratic_forms"
+    ],
+    "formula_ids": [
+      "quadratic_form_definition",
+      "principal_axes_theorem"
+    ],
+    "tags": [
+      "quadratic_forms",
+      "principal_axes_theorem",
+      "cross_product"
+    ]
+  },
+  "classification": {
+    "problem_type": "quadratic_form_transformation",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "이차형식 x^T A x를 정의하는 실수 대칭행렬."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "대칭행렬 A가 정의하는 이차형식 x^T A x를 주축 좌표계에서 대각형식으로 나타내시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "\\mathbf x^TA\\mathbf x=\\mathbf y^TD\\mathbf y"
+    ],
+    "cas_template": "principal_axis_quadratic_form(A)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "principal_axis_quadratic_form(A)",
+    "latex_template": "\\sum_i\\lambda_i y_i^2",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "quadratic_form_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "symbolic_derivation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "이차 형식의 주축 변환을 수행하고 혼합항을 소거한다.",
+        "formula_id": "quadratic_form_definition",
+        "cas_expression": "principal_axis_quadratic_form(A)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "quadratic_form_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.eigen.quadratic_forms.coefficient_split_error",
+      "misconception_id": "la.eigen.quadratic_forms.coefficient_split_error",
+      "transformation": "apply_misconception:symmetric_coefficient_split_error",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.eigen.quadratic_forms' (이차 형식 (Quadratic Forms)과 주축 정리) and problem_type 'quadratic_form_transformation'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

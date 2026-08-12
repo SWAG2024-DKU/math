@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_02_vector_spaces.la.space.basis.basis_verification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_02_vector_spaces",
+    "unit_name_ko": "벡터 공간과 선형구조",
+    "concept_ids": [
+      "la.space.basis"
+    ],
+    "formula_ids": [
+      "basis_conditions"
+    ],
+    "tags": [
+      "basis",
+      "dimension",
+      "span"
+    ]
+  },
+  "classification": {
+    "problem_type": "basis_verification",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "V": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "후보 기저 벡터들을 열벡터로 갖는 행렬."
+    },
+    "n": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "목표 공간 R^n의 차원."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "V의 열벡터들이 R^{{ n }}의 기저인지 판정하시오.\nV = {{ V }}"
+    ],
+    "latex_templates": [
+      "\\operatorname{Basis}(\\mathbb{R}^{ {{ n }} })\\;?"
+    ],
+    "cas_template": "V.rows == n and V.cols == n and V.rank() == n",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "cas_template": "V.rows == n and V.cols == n and V.rank() == n",
+    "latex_template": "\\mathrm{True}\\;\\text{or}\\;\\mathrm{False}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "rank_matrix_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "주어진 벡터 집합이 특정 공간의 기저가 되는지 검증한다.",
+        "formula_id": "basis_conditions",
+        "cas_expression": "V.rows == n and V.cols == n and V.rank() == n"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "rank_matrix_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.space.basis.partial_verification",
+      "misconception_id": "la.space.basis.partial_verification",
+      "transformation": "apply_misconception:incomplete_basis_check",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.space.basis' (기저(Basis) 판정과 기저의 구성) and problem_type 'basis_verification'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

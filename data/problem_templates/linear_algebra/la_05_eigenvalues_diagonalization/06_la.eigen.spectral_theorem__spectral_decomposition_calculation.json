@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.spectral_theorem.spectral_decomposition_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_05_eigenvalues_diagonalization",
+    "unit_name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+    "concept_ids": [
+      "la.eigen.spectral_theorem"
+    ],
+    "formula_ids": [
+      "spectral_decomposition_formula"
+    ],
+    "tags": [
+      "spectral_theorem",
+      "spectral_decomposition",
+      "outer_product"
+    ]
+  },
+  "classification": {
+    "problem_type": "spectral_decomposition_calculation",
+    "answer_type": "matrix_list",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "스펙트럼 분해할 실수 대칭행렬."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "실수 대칭행렬 A의 스펙트럼 분해 A = sum(lambda_i P_i)를 구하시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "A=\\sum_i\\lambda_iP_i"
+    ],
+    "cas_template": "spectral_decomposition(A)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "matrix_list",
+    "cas_template": "spectral_decomposition(A)",
+    "latex_template": "\\{(\\lambda_i,P_i)\\}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "matrix_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "symbolic_derivation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "대칭행렬의 스펙트럼 분해를 수행한다.",
+        "formula_id": "spectral_decomposition_formula",
+        "cas_expression": "spectral_decomposition(A)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "matrix_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.eigen.spectral_theorem.outer_vs_inner_confusion",
+      "misconception_id": "la.eigen.spectral_theorem.outer_vs_inner_confusion",
+      "transformation": "apply_misconception:outer_inner_product_confusion",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.eigen.spectral_theorem' (스펙트럼 정리 (Spectral Theorem)) and problem_type 'spectral_decomposition_calculation'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}
