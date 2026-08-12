@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_02_vector_spaces.la.space.change_of_basis.change_of_basis_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_02_vector_spaces",
+    "unit_name_ko": "벡터 공간과 선형구조",
+    "concept_ids": [
+      "la.space.change_of_basis"
+    ],
+    "formula_ids": [
+      "coordinate_vector",
+      "transition_matrix"
+    ],
+    "tags": [
+      "change_of_basis",
+      "transition_matrix",
+      "coordinate_vector"
+    ]
+  },
+  "classification": {
+    "problem_type": "change_of_basis_calculation",
+    "answer_type": "matrix",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "B": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "기존 기저를 열벡터로 갖는 가역행렬."
+    },
+    "C": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "새 기저를 열벡터로 갖는 가역행렬."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [
+    {
+      "constraint_id": "basis_B_invertible",
+      "scope": "generation",
+      "description": "B는 기저 행렬이므로 가역이어야 한다.",
+      "rule": {
+        "left": "det(B)",
+        "operator": "not_equals",
+        "right": 0
+      },
+      "on_failure": "resample"
+    },
+    {
+      "constraint_id": "basis_C_invertible",
+      "scope": "generation",
+      "description": "C는 기저 행렬이므로 가역이어야 한다.",
+      "rule": {
+        "left": "det(C)",
+        "operator": "not_equals",
+        "right": 0
+      },
+      "on_failure": "resample"
+    }
+  ],
+  "problem_builder": {
+    "text_templates_ko": [
+      "기저 B에서 기저 C로 좌표를 변환하는 전이행렬 P_(C<-B)를 구하시오.\nB = {{ B }}, C = {{ C }}"
+    ],
+    "latex_templates": [
+      "P_{C\\leftarrow B}=C^{-1}B"
+    ],
+    "cas_template": "C.inv()*B",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "matrix",
+    "cas_template": "C.inv()*B",
+    "latex_template": "C^{-1}B",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "matrix_inverse_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "기저 변환 행렬과 좌표벡터를 계산한다.",
+        "formula_id": "coordinate_vector",
+        "cas_expression": "C.inv()*B"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "matrix_inverse_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.space.change_of_basis.matrix_order_reversal",
+      "misconception_id": "la.space.change_of_basis.matrix_order_reversal",
+      "transformation": "apply_misconception:wrong_augmented_matrix_for_transition",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.space.change_of_basis' (기저 변환 행렬과 좌표벡터 (Change of Basis)) and problem_type 'change_of_basis_calculation'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

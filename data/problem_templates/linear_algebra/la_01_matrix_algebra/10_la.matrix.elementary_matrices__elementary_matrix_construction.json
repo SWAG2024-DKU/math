@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.elementary_matrices.elementary_matrix_construction.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_01_matrix_algebra",
+    "unit_name_ko": "연립방정식과 행렬대수",
+    "concept_ids": [
+      "la.matrix.elementary_matrices"
+    ],
+    "formula_ids": [
+      "elementary_matrix_multiplication",
+      "elementary_matrix_inverse"
+    ],
+    "tags": [
+      "elementary_matrix",
+      "row_operation",
+      "inverse"
+    ]
+  },
+  "classification": {
+    "problem_type": "elementary_matrix_construction",
+    "answer_type": "matrix",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "n": {
+      "type": "integer",
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "기본행렬의 차원."
+    },
+    "target_row": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "변경할 행의 0-based 인덱스."
+    },
+    "source_row": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "더해 줄 행의 0-based 인덱스."
+    },
+    "c": {
+      "type": "integer",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [
+        0
+      ],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "행 가산 계수."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [
+    {
+      "constraint_id": "different_rows",
+      "scope": "generation",
+      "description": "서로 다른 행을 사용한다.",
+      "rule": {
+        "left": "target_row",
+        "operator": "not_equals",
+        "right": "source_row"
+      },
+      "on_failure": "resample"
+    }
+  ],
+  "problem_builder": {
+    "text_templates_ko": [
+      "n={{ n }}일 때 행연산 R_{{ target_row }} + ({{ c }})R_{{ source_row }} -> R_{{ target_row }} 에 대응하는 기본행렬 E를 구하시오."
+    ],
+    "latex_templates": [
+      "R_{{ target_row }}+({{ c }})R_{{ source_row }}\\to R_{{ target_row }}"
+    ],
+    "cas_template": "eye(n).elementary_row_op(op='n->n+km', row1=target_row, row2=source_row, k=c)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "matrix",
+    "cas_template": "eye(n).elementary_row_op(op='n->n+km', row1=target_row, row2=source_row, k=c)",
+    "latex_template": "E",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "matrix_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "주어진 ERO에 대응하는 기본행렬과 그 역행렬을 구성한다.",
+        "formula_id": "elementary_matrix_multiplication",
+        "cas_expression": "eye(n).elementary_row_op(op='n->n+km', row1=target_row, row2=source_row, k=c)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "matrix_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.matrix.elementary_matrices.right_multiplication",
+      "misconception_id": "la.matrix.elementary_matrices.right_multiplication",
+      "transformation": "apply_misconception:elementary_matrix_right_multiplication",
+      "validator": "not_equivalent_to_correct_answer"
+    },
+    {
+      "rule_id": "from_la.matrix.elementary_matrices.inverse_operation_error",
+      "misconception_id": "la.matrix.elementary_matrices.inverse_operation_error",
+      "transformation": "apply_misconception:elementary_inverse_operation_error",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.matrix.elementary_matrices' (기본행렬(Elementary Matrix)과 행연산의 행렬 표현) and problem_type 'elementary_matrix_construction'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

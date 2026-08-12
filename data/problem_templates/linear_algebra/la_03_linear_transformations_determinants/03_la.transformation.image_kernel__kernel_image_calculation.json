@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.transformation.image_kernel.kernel_image_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_03_linear_transformations_determinants",
+    "unit_name_ko": "선형변환과 행렬식",
+    "concept_ids": [
+      "la.transformation.image_kernel"
+    ],
+    "formula_ids": [
+      "kernel_definition",
+      "image_definition"
+    ],
+    "tags": [
+      "kernel",
+      "image",
+      "injective",
+      "surjective"
+    ]
+  },
+  "classification": {
+    "problem_type": "kernel_image_calculation",
+    "answer_type": "vector_list",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "선형변환 T(x)=Ax의 표준행렬."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "T(x)=Ax에 대해 Ker(T)의 기저와 Im(T)의 기저를 구하시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "\\operatorname{Ker}(T)=N(A),\\quad \\operatorname{Im}(T)=C(A)"
+    ],
+    "cas_template": "(A.nullspace(), A.columnspace())",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "vector_list",
+    "cas_template": "(A.nullspace(), A.columnspace())",
+    "latex_template": "\\big(\\operatorname{Basis}N(A),\\operatorname{Basis}C(A)\\big)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "rank_nullity_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "주어진 선형변환 행렬의 커널과 상을 구한다.",
+        "formula_id": "kernel_definition",
+        "cas_expression": "(A.nullspace(), A.columnspace())"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "rank_nullity_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.transformation.image_kernel.codomain_confusion",
+      "misconception_id": "la.transformation.image_kernel.codomain_confusion",
+      "transformation": "apply_misconception:confuse_image_with_codomain",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.transformation.image_kernel' (선형변환의 상(Image)과 커널(Kernel)) and problem_type 'kernel_image_calculation'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

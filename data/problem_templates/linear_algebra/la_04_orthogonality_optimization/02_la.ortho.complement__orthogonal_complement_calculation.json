@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.complement.orthogonal_complement_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_04_orthogonality_optimization",
+    "unit_name_ko": "직교성과 최적화",
+    "concept_ids": [
+      "la.ortho.complement"
+    ],
+    "formula_ids": [
+      "orthogonal_complement_def",
+      "fundamental_subspaces_orthogonality"
+    ],
+    "tags": [
+      "orthogonal_complement",
+      "subspace",
+      "orthogonality"
+    ]
+  },
+  "classification": {
+    "problem_type": "orthogonal_complement_calculation",
+    "answer_type": "vector_list",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "W": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "부분공간 W의 기저 벡터들을 열벡터로 갖는 행렬."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "W의 열벡터들이 생성하는 부분공간의 직교 여공간 W^perp의 기저를 구하시오.\nW = {{ W }}"
+    ],
+    "latex_templates": [
+      "W^\\perp=N(W^T)"
+    ],
+    "cas_template": "W.T.nullspace()",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "vector_list",
+    "cas_template": "W.T.nullspace()",
+    "latex_template": "\\operatorname{Basis}(W^\\perp)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "dot_product_zero_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "주어진 부분공간의 직교 여공간을 구한다.",
+        "formula_id": "orthogonal_complement_def",
+        "cas_expression": "W.T.nullspace()"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "dot_product_zero_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.ortho.complement.subspace_mapping_error",
+      "misconception_id": "la.ortho.complement.subspace_mapping_error",
+      "transformation": "apply_misconception:wrong_complement_mapping",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.ortho.complement' (직교성과 직교 여공간 (Orthogonal Complement)) and problem_type 'orthogonal_complement_calculation'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

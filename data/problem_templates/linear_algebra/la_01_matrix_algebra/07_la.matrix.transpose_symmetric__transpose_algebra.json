@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.transpose_symmetric.transpose_algebra.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_01_matrix_algebra",
+    "unit_name_ko": "연립방정식과 행렬대수",
+    "concept_ids": [
+      "la.matrix.transpose_symmetric"
+    ],
+    "formula_ids": [
+      "transpose_product",
+      "symmetric_matrix"
+    ],
+    "tags": [
+      "transpose",
+      "symmetric_matrix",
+      "skew_symmetric"
+    ]
+  },
+  "classification": {
+    "problem_type": "transpose_algebra",
+    "answer_type": "matrix",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "행렬 A."
+    },
+    "B": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "곱 AB가 정의되도록 크기를 맞춘 행렬 B."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "주어진 A, B에 대하여 (AB)^T를 계산하시오.\nA = {{ A }}, B = {{ B }}"
+    ],
+    "latex_templates": [
+      "(AB)^T"
+    ],
+    "cas_template": "(A*B).T",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "matrix",
+    "cas_template": "B.T*A.T",
+    "latex_template": "B^T A^T",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "matrix_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "전치행렬의 분배법칙을 수식에 적용한다.",
+        "formula_id": "transpose_product",
+        "cas_expression": "B.T*A.T"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "matrix_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.matrix.transpose_symmetric.product_reversal",
+      "misconception_id": "la.matrix.transpose_symmetric.product_reversal",
+      "transformation": "apply_misconception:transpose_product_order_error",
+      "validator": "not_equivalent_to_correct_answer"
+    },
+    {
+      "rule_id": "from_la.matrix.transpose_symmetric.rectangular_symmetry",
+      "misconception_id": "la.matrix.transpose_symmetric.rectangular_symmetry",
+      "transformation": "apply_misconception:symmetry_on_rectangular_matrix",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.matrix.transpose_symmetric' (전치행렬과 대칭행렬·교대대칭행렬의 연산) and problem_type 'transpose_algebra'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

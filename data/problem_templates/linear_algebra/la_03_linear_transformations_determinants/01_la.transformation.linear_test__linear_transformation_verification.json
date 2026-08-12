@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.transformation.linear_test.linear_transformation_verification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_03_linear_transformations_determinants",
+    "unit_name_ko": "선형변환과 행렬식",
+    "concept_ids": [
+      "la.transformation.linear_test"
+    ],
+    "formula_ids": [
+      "superposition_principle"
+    ],
+    "tags": [
+      "linear_transformation",
+      "superposition",
+      "mapping"
+    ]
+  },
+  "classification": {
+    "problem_type": "linear_transformation_verification",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "선형 부분을 나타내는 행렬."
+    },
+    "b": {
+      "type": "vector",
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "아핀 평행이동 항. b=0일 때만 T(x)=Ax+b가 선형."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "변환 T(x)=Ax+b가 선형변환인지 판정하시오.\nA = {{ A }}, b = {{ b }}"
+    ],
+    "latex_templates": [
+      "T(\\mathbf{x})=A\\mathbf{x}+\\mathbf{b}"
+    ],
+    "cas_template": "is_zero_vector(b)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "cas_template": "is_zero_vector(b)",
+    "latex_template": "T(\\mathbf 0)=\\mathbf 0",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "superposition_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "주어진 함수가 선형성 조건을 만족하는지 판정한다.",
+        "formula_id": "superposition_principle",
+        "cas_expression": "is_zero_vector(b)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "superposition_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.transformation.linear_test.affine_confusion",
+      "misconception_id": "la.transformation.linear_test.affine_confusion",
+      "transformation": "apply_misconception:confuse_affine_with_linear",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.transformation.linear_test' (선형변환의 판정과 성질) and problem_type 'linear_transformation_verification'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

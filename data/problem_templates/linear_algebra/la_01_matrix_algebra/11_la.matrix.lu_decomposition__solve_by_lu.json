@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.lu_decomposition.solve_by_lu.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_01_matrix_algebra",
+    "unit_name_ko": "연립방정식과 행렬대수",
+    "concept_ids": [
+      "la.matrix.lu_decomposition"
+    ],
+    "formula_ids": [
+      "lu_model",
+      "forward_substitution",
+      "backward_substitution"
+    ],
+    "tags": [
+      "lu_decomposition",
+      "forward_substitution",
+      "backward_substitution"
+    ]
+  },
+  "classification": {
+    "problem_type": "solve_by_lu",
+    "answer_type": "vector",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "LU 분해 가능한 정사각행렬."
+    },
+    "b": {
+      "type": "vector",
+      "required": true,
+      "min": -8,
+      "max": 8,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "우변 벡터."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [
+    {
+      "constraint_id": "nonsingular",
+      "scope": "generation",
+      "description": "유일해가 존재하도록 det(A) != 0을 만족해야 한다.",
+      "rule": {
+        "left": "det(A)",
+        "operator": "not_equals",
+        "right": 0
+      },
+      "on_failure": "resample"
+    }
+  ],
+  "problem_builder": {
+    "text_templates_ko": [
+      "LU 분해와 전진/후진대입을 사용하여 A x = b의 해 x를 구하시오.\nA = {{ A }}, b = {{ b }}"
+    ],
+    "latex_templates": [
+      "A\\mathbf{x}=\\mathbf b"
+    ],
+    "cas_template": "A.LUsolve(b)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "vector",
+    "cas_template": "A.LUsolve(b)",
+    "latex_template": "\\mathbf{x}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "matrix_multiplication_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "rule_based_steps",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "가우스 소거법을 역추적하여 L과 U 행렬을 도출한다.",
+        "formula_id": "lu_model",
+        "cas_expression": "A.LUsolve(b)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "matrix_multiplication_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.matrix.lu_decomposition.purpose_misunderstanding",
+      "misconception_id": "la.matrix.lu_decomposition.purpose_misunderstanding",
+      "transformation": "apply_misconception:lu_purpose_misunderstanding",
+      "validator": "not_equivalent_to_correct_answer"
+    },
+    {
+      "rule_id": "from_la.matrix.lu_decomposition.l_sign_error",
+      "misconception_id": "la.matrix.lu_decomposition.l_sign_error",
+      "transformation": "apply_misconception:lu_multiplier_sign_error",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.matrix.lu_decomposition' (LU 분해와 PA=LU 분해) and problem_type 'solve_by_lu'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

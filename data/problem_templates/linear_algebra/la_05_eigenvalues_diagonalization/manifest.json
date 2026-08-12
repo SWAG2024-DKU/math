@@ -1,0 +1,55 @@
+{
+  "subject_id": "linear_algebra",
+  "unit_id": "la_05_eigenvalues_diagonalization",
+  "template_count": 8,
+  "templates": [
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.eigenvalue.eigenvalue_calculation.v1",
+      "concept_id": "la.eigen.eigenvalue",
+      "problem_type": "eigenvalue_calculation",
+      "file": "01_la.eigen.eigenvalue__eigenvalue_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.eigenvector.eigenvector_calculation.v1",
+      "concept_id": "la.eigen.eigenvector",
+      "problem_type": "eigenvector_calculation",
+      "file": "02_la.eigen.eigenvector__eigenvector_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.diagonalization.matrix_diagonalization.v1",
+      "concept_id": "la.eigen.diagonalization",
+      "problem_type": "matrix_diagonalization",
+      "file": "03_la.eigen.diagonalization__matrix_diagonalization.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.powers.matrix_power_calculation.v1",
+      "concept_id": "la.eigen.powers",
+      "problem_type": "matrix_power_calculation",
+      "file": "04_la.eigen.powers__matrix_power_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.symmetric_diagonalization.orthogonal_diagonalization_calculation.v1",
+      "concept_id": "la.eigen.symmetric_diagonalization",
+      "problem_type": "orthogonal_diagonalization_calculation",
+      "file": "05_la.eigen.symmetric_diagonalization__orthogonal_diagonalization_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.spectral_theorem.spectral_decomposition_calculation.v1",
+      "concept_id": "la.eigen.spectral_theorem",
+      "problem_type": "spectral_decomposition_calculation",
+      "file": "06_la.eigen.spectral_theorem__spectral_decomposition_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.quadratic_forms.quadratic_form_transformation.v1",
+      "concept_id": "la.eigen.quadratic_forms",
+      "problem_type": "quadratic_form_transformation",
+      "file": "07_la.eigen.quadratic_forms__quadratic_form_transformation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.positive_definite.positive_definite_test.v1",
+      "concept_id": "la.eigen.positive_definite",
+      "problem_type": "positive_definite_test",
+      "file": "08_la.eigen.positive_definite__positive_definite_test.json"
+    }
+  ]
+}
