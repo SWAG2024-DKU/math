@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.telescoping_series_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch10_sequences_and_series",
+    "unit_name_ko": "수열과 급수",
+    "concept_ids": [
+      "calculus.series_convergence"
+    ],
+    "formula_ids": [
+      "series_sum_def",
+      "geometric_series_sum",
+      "divergence_test",
+      "series_linearity"
+    ],
+    "tags": [
+      "series",
+      "geometric_series",
+      "divergence_test",
+      "telescoping_series"
+    ]
+  },
+  "classification": {
+    "problem_type": "telescoping_series_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "a_n": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "망원급수의 일반항."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "망원급수 sum({{ a_n }}, n=1..infinity)의 합을 구하시오."
+    ],
+    "latex_templates": [
+      "\\sum_{n=1}^{\\infty}a_n"
+    ],
+    "cas_template": "summation(a_n,(n,1,oo))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "summation(a_n,(n,1,oo))",
+    "latex_template": "\\sum_{n=1}^{\\infty}a_n",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제에 주어진 값을 확인하고 적용 공식을 선택한다.",
+        "formula_id": "series_sum_def",
+        "cas_expression": "summation(a_n,(n,1,oo))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산한 뒤 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "summation(a_n,(n,1,oo))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.series_convergence.misconception.1",
+      "misconception_id": "calculus.series_convergence.divergence_test_converse",
+      "transformation": "assume_divergence_test_implies_convergence",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.series_convergence.misconception.2",
+      "misconception_id": "calculus.series_convergence.sequence_vs_series_confusion",
+      "transformation": "confuse_sequence_convergence_with_series_convergence",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc1_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": ""
+  }
+}

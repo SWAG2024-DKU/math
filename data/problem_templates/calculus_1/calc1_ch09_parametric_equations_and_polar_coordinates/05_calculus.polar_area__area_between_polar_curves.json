@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.area_between_polar_curves.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch09_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.polar_area"
+    ],
+    "formula_ids": [
+      "sector_area",
+      "polar_region_area",
+      "polar_area_between_curves"
+    ],
+    "tags": [
+      "polar_area"
+    ]
+  },
+  "classification": {
+    "problem_type": "area_between_polar_curves",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "r_outer": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "바깥쪽 극곡선."
+    },
+    "r_inner": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "안쪽 극곡선."
+    },
+    "a": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "각 구간 시작값."
+    },
+    "b": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "각 구간 끝값."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "r={{ r_outer }}와 r={{ r_inner }} 사이 영역의 넓이를 {{ a }}<=theta<={{ b }}에서 구하시오."
+    ],
+    "latex_templates": [
+      "A=\\frac12\\int_a^b(r_{\\rm out}^2-r_{\\rm in}^2)\\,d\\theta"
+    ],
+    "cas_template": "integrate((r_outer**2-r_inner**2)/2,(theta,a,b))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "integrate((r_outer**2-r_inner**2)/2,(theta,a,b))",
+    "latex_template": "\\frac12\\int_a^b(r_{\\rm out}^2-r_{\\rm in}^2)\\,d\\theta",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_tolerance"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제에 주어진 값을 확인하고 적용 공식을 선택한다.",
+        "formula_id": "sector_area",
+        "cas_expression": "integrate((r_outer**2-r_inner**2)/2,(theta,a,b))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산한 뒤 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "integrate((r_outer**2-r_inner**2)/2,(theta,a,b))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.polar_area.misconception.1",
+      "misconception_id": "calculus.polar_area.miss_origin_intersection",
+      "transformation": "miss_origin_intersection_in_polar_curves",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.polar_area.misconception.2",
+      "misconception_id": "calculus.polar_area.forget_half_factor",
+      "transformation": "forget_one_half_in_polar_area_formula",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc1_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": ""
+  }
+}

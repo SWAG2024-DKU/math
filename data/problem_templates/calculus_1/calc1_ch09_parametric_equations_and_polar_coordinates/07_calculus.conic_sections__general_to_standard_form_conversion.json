@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.general_to_standard_form_conversion.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch09_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.conic_sections"
+    ],
+    "formula_ids": [
+      "parabola_standard_form",
+      "ellipse_standard_form",
+      "ellipse_standard_form_vertical",
+      "hyperbola_standard_form",
+      "hyperbola_standard_form_vertical",
+      "shifted_conic"
+    ],
+    "tags": [
+      "conic_section",
+      "parabola",
+      "ellipse",
+      "hyperbola"
+    ]
+  },
+  "classification": {
+    "problem_type": "general_to_standard_form_conversion",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "general_equation": {
+      "type": "equation",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "일반형 원뿔곡선 방정식."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "원뿔곡선 {{ general_equation }}을 완전제곱을 이용하여 표준형으로 변환하시오."
+    ],
+    "latex_templates": [
+      "Ax^2+Cy^2+Dx+Ey+F=0"
+    ],
+    "cas_template": "conic_to_standard_form(general_equation)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "conic_to_standard_form(general_equation)",
+    "latex_template": "\\text{standard conic equation}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제에 주어진 값을 확인하고 적용 공식을 선택한다.",
+        "formula_id": "parabola_standard_form",
+        "cas_expression": "conic_to_standard_form(general_equation)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산한 뒤 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "conic_to_standard_form(general_equation)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.conic_sections.misconception.1",
+      "misconception_id": "calculus.conic.swap_c_squared_sign",
+      "transformation": "swap_c_squared_formula_between_ellipse_and_hyperbola",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.conic_sections.misconception.2",
+      "misconception_id": "calculus.conic.hyperbola_y_intercept_assumption",
+      "transformation": "assume_hyperbola_has_missing_intercept",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc1_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": ""
+  }
+}

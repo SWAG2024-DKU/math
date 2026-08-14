@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.geometric_sequence_limit_classification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch10_sequences_and_series",
+    "unit_name_ko": "수열과 급수",
+    "concept_ids": [
+      "calculus.sequence_limit"
+    ],
+    "formula_ids": [
+      "sequence_limit_def",
+      "function_to_sequence_limit",
+      "sequence_limit_laws",
+      "geometric_sequence_limit"
+    ],
+    "tags": [
+      "sequence",
+      "sequence_limit",
+      "geometric_sequence"
+    ]
+  },
+  "classification": {
+    "problem_type": "geometric_sequence_limit_classification",
+    "answer_type": "classification",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "r": {
+      "type": "real",
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "등비수열 r^n의 공비."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "수열 a_n=({{ r }})^n의 수렴/발산과 극한을 분류하시오."
+    ],
+    "latex_templates": [
+      "a_n=r^n"
+    ],
+    "cas_template": "classify_geometric_sequence_limit(r)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "classification",
+    "cas_template": "classify_geometric_sequence_limit(r)",
+    "latex_template": "\\text{convergent/divergent}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "numeric_tolerance",
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제에 주어진 값을 확인하고 적용 공식을 선택한다.",
+        "formula_id": "sequence_limit_def",
+        "cas_expression": "classify_geometric_sequence_limit(r)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산한 뒤 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "classify_geometric_sequence_limit(r)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.sequence_limit.misconception.1",
+      "misconception_id": "calculus.sequence_limit.converse_assumption",
+      "transformation": "assume_converse_of_function_to_sequence_theorem",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.sequence_limit.misconception.2",
+      "misconception_id": "calculus.sequence_limit.geometric_boundary_error",
+      "transformation": "misjudge_geometric_sequence_boundary_convergence",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc1_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": ""
+  }
+}

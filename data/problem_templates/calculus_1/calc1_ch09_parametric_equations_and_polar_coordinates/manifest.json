@@ -1,0 +1,127 @@
+{
+  "subject_id": "calculus_1",
+  "unit_id": "calc1_ch09_parametric_equations_and_polar_coordinates",
+  "template_count": 20,
+  "templates": [
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_curves.parametric_curve_sketching.v1",
+      "concept_id": "calculus.parametric_curves",
+      "problem_type": "parametric_curve_sketching",
+      "file": "01_calculus.parametric_curves__parametric_curve_sketching.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_curves.parameter_elimination.v1",
+      "concept_id": "calculus.parametric_curves",
+      "problem_type": "parameter_elimination",
+      "file": "01_calculus.parametric_curves__parameter_elimination.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_line.parametric_tangent_slope_calculation.v1",
+      "concept_id": "calculus.parametric_tangent_line",
+      "problem_type": "parametric_tangent_slope_calculation",
+      "file": "02_calculus.parametric_tangent_line__parametric_tangent_slope_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_line.horizontal_vertical_tangent_identification.v1",
+      "concept_id": "calculus.parametric_tangent_line",
+      "problem_type": "horizontal_vertical_tangent_identification",
+      "file": "02_calculus.parametric_tangent_line__horizontal_vertical_tangent_identification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_line.parametric_second_derivative_calculation.v1",
+      "concept_id": "calculus.parametric_tangent_line",
+      "problem_type": "parametric_second_derivative_calculation",
+      "file": "02_calculus.parametric_tangent_line__parametric_second_derivative_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_area_calculation.v1",
+      "concept_id": "calculus.parametric_area_arc_length_and_surface",
+      "problem_type": "parametric_area_calculation",
+      "file": "03_calculus.parametric_area_arc_length_and_surface__parametric_area_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_arc_length_calculation.v1",
+      "concept_id": "calculus.parametric_area_arc_length_and_surface",
+      "problem_type": "parametric_arc_length_calculation",
+      "file": "03_calculus.parametric_area_arc_length_and_surface__parametric_arc_length_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_surface_area_calculation.v1",
+      "concept_id": "calculus.parametric_area_arc_length_and_surface",
+      "problem_type": "parametric_surface_area_calculation",
+      "file": "03_calculus.parametric_area_arc_length_and_surface__parametric_surface_area_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_coordinates.polar_cartesian_conversion.v1",
+      "concept_id": "calculus.polar_coordinates",
+      "problem_type": "polar_cartesian_conversion",
+      "file": "04_calculus.polar_coordinates__polar_cartesian_conversion.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_coordinates.polar_symmetry_classification.v1",
+      "concept_id": "calculus.polar_coordinates",
+      "problem_type": "polar_symmetry_classification",
+      "file": "04_calculus.polar_coordinates__polar_symmetry_classification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_coordinates.polar_curve_identification.v1",
+      "concept_id": "calculus.polar_coordinates",
+      "problem_type": "polar_curve_identification",
+      "file": "04_calculus.polar_coordinates__polar_curve_identification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.polar_area_calculation.v1",
+      "concept_id": "calculus.polar_area",
+      "problem_type": "polar_area_calculation",
+      "file": "05_calculus.polar_area__polar_area_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.polar_curve_intersection.v1",
+      "concept_id": "calculus.polar_area",
+      "problem_type": "polar_curve_intersection",
+      "file": "05_calculus.polar_area__polar_curve_intersection.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.area_between_polar_curves.v1",
+      "concept_id": "calculus.polar_area",
+      "problem_type": "area_between_polar_curves",
+      "file": "05_calculus.polar_area__area_between_polar_curves.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_arc_length_and_tangent.polar_arc_length_calculation.v1",
+      "concept_id": "calculus.polar_arc_length_and_tangent",
+      "problem_type": "polar_arc_length_calculation",
+      "file": "06_calculus.polar_arc_length_and_tangent__polar_arc_length_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_arc_length_and_tangent.polar_tangent_slope_calculation.v1",
+      "concept_id": "calculus.polar_arc_length_and_tangent",
+      "problem_type": "polar_tangent_slope_calculation",
+      "file": "06_calculus.polar_arc_length_and_tangent__polar_tangent_slope_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_arc_length_and_tangent.pole_tangent_calculation.v1",
+      "concept_id": "calculus.polar_arc_length_and_tangent",
+      "problem_type": "pole_tangent_calculation",
+      "file": "06_calculus.polar_arc_length_and_tangent__pole_tangent_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.conic_type_classification.v1",
+      "concept_id": "calculus.conic_sections",
+      "problem_type": "conic_type_classification",
+      "file": "07_calculus.conic_sections__conic_type_classification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.conic_element_calculation.v1",
+      "concept_id": "calculus.conic_sections",
+      "problem_type": "conic_element_calculation",
+      "file": "07_calculus.conic_sections__conic_element_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.general_to_standard_form_conversion.v1",
+      "concept_id": "calculus.conic_sections",
+      "problem_type": "general_to_standard_form_conversion",
+      "file": "07_calculus.conic_sections__general_to_standard_form_conversion.json"
+    }
+  ]
+}

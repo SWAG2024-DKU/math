@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.polar_curve_intersection.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch09_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.polar_area"
+    ],
+    "formula_ids": [
+      "sector_area",
+      "polar_region_area",
+      "polar_area_between_curves"
+    ],
+    "tags": [
+      "polar_area"
+    ]
+  },
+  "classification": {
+    "problem_type": "polar_curve_intersection",
+    "answer_type": "set",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "r1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "첫 번째 극곡선."
+    },
+    "r2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "두 번째 극곡선."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "극곡선 r={{ r1 }}과 r={{ r2 }}의 교점을 구하시오. 원점 교점도 확인하시오."
+    ],
+    "latex_templates": [
+      "r_1(\\theta)=r_2(\\theta)"
+    ],
+    "cas_template": "polar_intersections(r1,r2,theta)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "set",
+    "cas_template": "polar_intersections(r1,r2,theta)",
+    "latex_template": "\\{(r,\\theta)\\}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_tolerance"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제에 주어진 값을 확인하고 적용 공식을 선택한다.",
+        "formula_id": "sector_area",
+        "cas_expression": "polar_intersections(r1,r2,theta)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산한 뒤 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "polar_intersections(r1,r2,theta)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.polar_area.misconception.1",
+      "misconception_id": "calculus.polar_area.miss_origin_intersection",
+      "transformation": "miss_origin_intersection_in_polar_curves",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.polar_area.misconception.2",
+      "misconception_id": "calculus.polar_area.forget_half_factor",
+      "transformation": "forget_one_half_in_polar_area_formula",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc1_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": ""
+  }
+}

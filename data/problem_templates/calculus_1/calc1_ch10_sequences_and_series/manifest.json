@@ -1,0 +1,133 @@
+{
+  "subject_id": "calculus_1",
+  "unit_id": "calc1_ch10_sequences_and_series",
+  "template_count": 21,
+  "templates": [
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.sequence_convergence_check.v1",
+      "concept_id": "calculus.sequence_limit",
+      "problem_type": "sequence_convergence_check",
+      "file": "01_calculus.sequence_limit__sequence_convergence_check.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.sequence_limit_calculation.v1",
+      "concept_id": "calculus.sequence_limit",
+      "problem_type": "sequence_limit_calculation",
+      "file": "01_calculus.sequence_limit__sequence_limit_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.geometric_sequence_limit_classification.v1",
+      "concept_id": "calculus.sequence_limit",
+      "problem_type": "geometric_sequence_limit_classification",
+      "file": "01_calculus.sequence_limit__geometric_sequence_limit_classification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.monotonic_and_bounded_sequence.monotonicity_boundedness_classification.v1",
+      "concept_id": "calculus.monotonic_and_bounded_sequence",
+      "problem_type": "monotonicity_boundedness_classification",
+      "file": "02_calculus.monotonic_and_bounded_sequence__monotonicity_boundedness_classification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.monotonic_and_bounded_sequence.monotonic_theorem_application.v1",
+      "concept_id": "calculus.monotonic_and_bounded_sequence",
+      "problem_type": "monotonic_theorem_application",
+      "file": "02_calculus.monotonic_and_bounded_sequence__monotonic_theorem_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.monotonic_and_bounded_sequence.recursive_sequence_limit_calculation.v1",
+      "concept_id": "calculus.monotonic_and_bounded_sequence",
+      "problem_type": "recursive_sequence_limit_calculation",
+      "file": "02_calculus.monotonic_and_bounded_sequence__recursive_sequence_limit_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.geometric_series_sum_calculation.v1",
+      "concept_id": "calculus.series_convergence",
+      "problem_type": "geometric_series_sum_calculation",
+      "file": "03_calculus.series_convergence__geometric_series_sum_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.divergence_test_application.v1",
+      "concept_id": "calculus.series_convergence",
+      "problem_type": "divergence_test_application",
+      "file": "03_calculus.series_convergence__divergence_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.telescoping_series_calculation.v1",
+      "concept_id": "calculus.series_convergence",
+      "problem_type": "telescoping_series_calculation",
+      "file": "03_calculus.series_convergence__telescoping_series_calculation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.integral_test.integral_test_application.v1",
+      "concept_id": "calculus.integral_test",
+      "problem_type": "integral_test_application",
+      "file": "04_calculus.integral_test__integral_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.integral_test.p_series_classification.v1",
+      "concept_id": "calculus.integral_test",
+      "problem_type": "p_series_classification",
+      "file": "04_calculus.integral_test__p_series_classification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.integral_test.remainder_estimation.v1",
+      "concept_id": "calculus.integral_test",
+      "problem_type": "remainder_estimation",
+      "file": "04_calculus.integral_test__remainder_estimation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.comparison_tests.direct_comparison_test_application.v1",
+      "concept_id": "calculus.comparison_tests",
+      "problem_type": "direct_comparison_test_application",
+      "file": "05_calculus.comparison_tests__direct_comparison_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.comparison_tests.limit_comparison_test_application.v1",
+      "concept_id": "calculus.comparison_tests",
+      "problem_type": "limit_comparison_test_application",
+      "file": "05_calculus.comparison_tests__limit_comparison_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.comparison_tests.comparison_series_construction.v1",
+      "concept_id": "calculus.comparison_tests",
+      "problem_type": "comparison_series_construction",
+      "file": "05_calculus.comparison_tests__comparison_series_construction.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.alternating_series_test_application.v1",
+      "concept_id": "calculus.alternating_series_and_absolute_convergence",
+      "problem_type": "alternating_series_test_application",
+      "file": "06_calculus.alternating_series_and_absolute_convergence__alternating_series_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.alternating_series_error_estimation.v1",
+      "concept_id": "calculus.alternating_series_and_absolute_convergence",
+      "problem_type": "alternating_series_error_estimation",
+      "file": "06_calculus.alternating_series_and_absolute_convergence__alternating_series_error_estimation.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.absolute_conditional_classification.v1",
+      "concept_id": "calculus.alternating_series_and_absolute_convergence",
+      "problem_type": "absolute_conditional_classification",
+      "file": "06_calculus.alternating_series_and_absolute_convergence__absolute_conditional_classification.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.ratio_test_application.v1",
+      "concept_id": "calculus.ratio_and_root_tests",
+      "problem_type": "ratio_test_application",
+      "file": "07_calculus.ratio_and_root_tests__ratio_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.root_test_application.v1",
+      "concept_id": "calculus.ratio_and_root_tests",
+      "problem_type": "root_test_application",
+      "file": "07_calculus.ratio_and_root_tests__root_test_application.json"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.test_selection_reasoning.v1",
+      "concept_id": "calculus.ratio_and_root_tests",
+      "problem_type": "test_selection_reasoning",
+      "file": "07_calculus.ratio_and_root_tests__test_selection_reasoning.json"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.alternating_series_test_application.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch10_sequences_and_series",
+    "unit_name_ko": "수열과 급수",
+    "concept_ids": [
+      "calculus.alternating_series_and_absolute_convergence"
+    ],
+    "formula_ids": [
+      "alternating_series_test",
+      "alternating_series_error_bound",
+      "absolute_conditional_convergence_def",
+      "absolute_convergence_implies_convergence"
+    ],
+    "tags": [
+      "alternating_series",
+      "absolute_convergence",
+      "conditional_convergence"
+    ]
+  },
+  "classification": {
+    "problem_type": "alternating_series_test_application",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "b_n": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "교대급수의 양의 크기 b_n."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "교대급수 sum (-1)^(n-1)b_n, b_n={{ b_n }}에 교대급수판정법을 적용하여 수렴하는지 판정하시오."
+    ],
+    "latex_templates": [
+      "\\sum(-1)^{n-1}b_n"
+    ],
+    "cas_template": "alternating_series_test(b_n,n)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "cas_template": "alternating_series_test(b_n,n)",
+    "latex_template": "\\mathrm{True}\\ \\text{or}\\ \\mathrm{False}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_tolerance"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제에 주어진 값을 확인하고 적용 공식을 선택한다.",
+        "formula_id": "alternating_series_test",
+        "cas_expression": "alternating_series_test(b_n,n)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산한 뒤 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "alternating_series_test(b_n,n)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.alternating_series_and_absolute_convergence.misconception.1",
+      "misconception_id": "calculus.alternating_series.absolute_convergence_converse",
+      "transformation": "assume_convergence_implies_absolute_convergence",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc1_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": ""
+  }
+}
