@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_and_concavity.parametric_tangent_line_equation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch07_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.parametric_tangent_and_concavity"
+    ],
+    "formula_ids": [
+      "parametric_tangent_line_equation",
+      "parametric_concavity"
+    ],
+    "tags": [
+      "parametric_curve",
+      "tangent_line",
+      "concavity"
+    ]
+  },
+  "classification": {
+    "problem_type": "parametric_tangent_line_equation",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "y0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y0 파라미터"
+    },
+    "m": {
+      "type": "integer",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "m 파라미터"
+    },
+    "x0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "x0 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "매개곡선의 접선의 방정식과 오목성 - parametric_tangent_line_equation 유형의 문제를 해결하시오. 주어진 파라미터: {{ y0 }}, {{ m }}, {{ x0 }}"
+    ],
+    "latex_templates": [
+      "(x_0,y_0)=(f(t_0),g(t_0)),\\quad m=\\left.\\frac{dy}{dx}\\right|_{t=t_0}\\implies y-y_0=m(x-x_0)"
+    ],
+    "cas_template": "Eq(y-y0, m*(x-x0))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "Eq(y-y0, m*(x-x0))",
+    "latex_template": "(x_0,y_0)=(f(t_0),g(t_0)),\\quad m=\\left.\\frac{dy}{dx}\\right|_{t=t_0}\\implies y-y_0=m(x-x_0)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "parametric_tangent_line_equation",
+        "cas_expression": "Eq(y-y0, m*(x-x0))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Eq(y-y0, m*(x-x0))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.parametric_tangent_and_concavity.misconception.1",
+      "misconception_id": "calculus.parametric_concavity.use_dt_sign_instead_of_dx",
+      "transformation": "use_d2y_dt2_sign_for_concavity",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

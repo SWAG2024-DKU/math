@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.area_via_cross_product.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch02_vectors_in_space",
+    "unit_name_ko": "공간의 벡터",
+    "concept_ids": [
+      "calculus.cross_product"
+    ],
+    "formula_ids": [
+      "cross_product_definition",
+      "cross_product_magnitude",
+      "cross_product_anticommutative",
+      "parallelogram_triangle_area"
+    ],
+    "tags": [
+      "cross_product",
+      "parallelogram_area"
+    ]
+  },
+  "classification": {
+    "problem_type": "area_via_cross_product",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "u": {
+      "type": "vector",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "u 파라미터"
+    },
+    "v": {
+      "type": "vector",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "v 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "외적 - area_via_cross_product 유형의 문제를 해결하시오. 주어진 파라미터: {{ u }}, {{ v }}"
+    ],
+    "latex_templates": [
+      "A_{\\text{평행사변형}}=\\|\\mathbf{u}\\times\\mathbf{v}\\|,\\qquad A_{\\triangle}=\\tfrac12\\|\\mathbf{u}\\times\\mathbf{v}\\|"
+    ],
+    "cas_template": "u.cross(v).norm()",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "u.cross(v).norm()",
+    "latex_template": "A_{\\text{평행사변형}}=\\|\\mathbf{u}\\times\\mathbf{v}\\|,\\qquad A_{\\triangle}=\\tfrac12\\|\\mathbf{u}\\times\\mathbf{v}\\|",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "parallelogram_triangle_area",
+        "cas_expression": "u.cross(v).norm()"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "u.cross(v).norm()"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.cross_product.misconception.1",
+      "misconception_id": "calculus.cross_product.result_is_scalar",
+      "transformation": "treat_cross_product_result_as_scalar",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.cross_product.misconception.2",
+      "misconception_id": "calculus.cross_product.assume_commutative",
+      "transformation": "assume_cross_product_commutative",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

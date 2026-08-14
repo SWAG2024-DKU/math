@@ -1,0 +1,79 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v2_ch07_parametric_equations_and_polar_coordinates",
+  "template_count": 12,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parameter_elimination_and_line_parametrization.parameter_elimination.v1",
+      "concept_id": "calculus.parameter_elimination_and_line_parametrization",
+      "problem_type": "parameter_elimination",
+      "file": "01_calculus.parameter_elimination_and_line_parametrization__parameter_elimination.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parameter_elimination_and_line_parametrization.line_segment_parametrization.v1",
+      "concept_id": "calculus.parameter_elimination_and_line_parametrization",
+      "problem_type": "line_segment_parametrization",
+      "file": "01_calculus.parameter_elimination_and_line_parametrization__line_segment_parametrization.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_and_concavity.parametric_tangent_line_equation.v1",
+      "concept_id": "calculus.parametric_tangent_and_concavity",
+      "problem_type": "parametric_tangent_line_equation",
+      "file": "02_calculus.parametric_tangent_and_concavity__parametric_tangent_line_equation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_and_concavity.parametric_concavity_classification.v1",
+      "concept_id": "calculus.parametric_tangent_and_concavity",
+      "problem_type": "parametric_concavity_classification",
+      "file": "02_calculus.parametric_tangent_and_concavity__parametric_concavity_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_surface_area_of_revolution.surface_area_of_revolution_about_x_axis.v1",
+      "concept_id": "calculus.parametric_surface_area_of_revolution",
+      "problem_type": "surface_area_of_revolution_about_x_axis",
+      "file": "03_calculus.parametric_surface_area_of_revolution__surface_area_of_revolution_about_x_axis.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_surface_area_of_revolution.surface_area_of_revolution_about_y_axis.v1",
+      "concept_id": "calculus.parametric_surface_area_of_revolution",
+      "problem_type": "surface_area_of_revolution_about_y_axis",
+      "file": "03_calculus.parametric_surface_area_of_revolution__surface_area_of_revolution_about_y_axis.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.named_polar_curves_and_symmetry.polar_curve_identification.v1",
+      "concept_id": "calculus.named_polar_curves_and_symmetry",
+      "problem_type": "polar_curve_identification",
+      "file": "04_calculus.named_polar_curves_and_symmetry__polar_curve_identification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.named_polar_curves_and_symmetry.polar_symmetry_test_application.v1",
+      "concept_id": "calculus.named_polar_curves_and_symmetry",
+      "problem_type": "polar_symmetry_test_application",
+      "file": "04_calculus.named_polar_curves_and_symmetry__polar_symmetry_test_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.named_polar_curves_and_symmetry.polar_to_cartesian_circle_conversion.v1",
+      "concept_id": "calculus.named_polar_curves_and_symmetry",
+      "problem_type": "polar_to_cartesian_circle_conversion",
+      "file": "04_calculus.named_polar_curves_and_symmetry__polar_to_cartesian_circle_conversion.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.conic_eccentricity_and_polar_equation.eccentricity_classification.v1",
+      "concept_id": "calculus.conic_eccentricity_and_polar_equation",
+      "problem_type": "eccentricity_classification",
+      "file": "05_calculus.conic_eccentricity_and_polar_equation__eccentricity_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.conic_eccentricity_and_polar_equation.conic_polar_equation_construction.v1",
+      "concept_id": "calculus.conic_eccentricity_and_polar_equation",
+      "problem_type": "conic_polar_equation_construction",
+      "file": "05_calculus.conic_eccentricity_and_polar_equation__conic_polar_equation_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.general_conic_equation_classification.discriminant_classification.v1",
+      "concept_id": "calculus.general_conic_equation_classification",
+      "problem_type": "discriminant_classification",
+      "file": "06_calculus.general_conic_equation_classification__discriminant_classification.json"
+    }
+  ]
+}

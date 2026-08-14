@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.magnitude_and_unit_vector_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch02_vectors_in_space",
+    "unit_name_ko": "공간의 벡터",
+    "concept_ids": [
+      "calculus.vectors_in_plane"
+    ],
+    "formula_ids": [
+      "vector_pq",
+      "vector_magnitude_2d",
+      "unit_vector",
+      "standard_basis_2d",
+      "vector_addition_scalar",
+      "direction_angle"
+    ],
+    "tags": [
+      "vector",
+      "unit_vector",
+      "direction_angle"
+    ]
+  },
+  "classification": {
+    "problem_type": "magnitude_and_unit_vector_calculation",
+    "answer_type": "vector",
+    "difficulty": {
+      "base": 1,
+      "min": 1,
+      "max": 2
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "v1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "v1 파라미터"
+    },
+    "v2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "v2 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "평면의 벡터 - magnitude_and_unit_vector_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ v1 }}, {{ v2 }}"
+    ],
+    "latex_templates": [
+      "\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2}"
+    ],
+    "cas_template": "sqrt(v1**2+v2**2)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "vector",
+    "cas_template": "sqrt(v1**2+v2**2)",
+    "latex_template": "\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "vector_magnitude_2d",
+        "cas_expression": "sqrt(v1**2+v2**2)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "sqrt(v1**2+v2**2)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.vectors_in_plane.misconception.1",
+      "misconception_id": "calculus.vectors_plane.magnitude_as_sum",
+      "transformation": "compute_magnitude_as_sum_of_components",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.vectors_in_plane.misconception.2",
+      "misconception_id": "calculus.vectors_plane.point_vector_confusion",
+      "transformation": "conflate_point_and_position_vector",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

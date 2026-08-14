@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.forced_oscillation_and_resonance.resonance_condition_check.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch07_second_order_differential_equations",
+    "unit_name_ko": "이계 미분방정식",
+    "concept_ids": [
+      "calculus.forced_oscillation_and_resonance"
+    ],
+    "formula_ids": [
+      "forced_oscillation_ode",
+      "transient_steady_decomposition",
+      "periodic_forcing",
+      "resonance_condition"
+    ],
+    "tags": [
+      "forced_oscillation",
+      "resonance"
+    ]
+  },
+  "classification": {
+    "problem_type": "resonance_condition_check",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "omega": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "omega 파라미터"
+    },
+    "omega0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "omega0 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "강제진동과 공명 - resonance_condition_check 유형의 문제를 해결하시오. 주어진 파라미터: {{ omega }}, {{ omega0 }}"
+    ],
+    "latex_templates": [
+      "\\omega=\\omega_0\\ (\\text{감쇠 없는 이상적 경우})"
+    ],
+    "cas_template": "Eq(omega, omega0)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "cas_template": "Eq(omega, omega0)",
+    "latex_template": "\\omega=\\omega_0\\ (\\text{감쇠 없는 이상적 경우})",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "ode_residual",
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "resonance_condition",
+        "cas_expression": "Eq(omega, omega0)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Eq(omega, omega0)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "ode_residual",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.forced_oscillation_and_resonance.misconception.1",
+      "misconception_id": "calculus.forced_oscillation.confuse_natural_and_forcing_frequency",
+      "transformation": "confuse_natural_and_forcing_angular_frequency",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

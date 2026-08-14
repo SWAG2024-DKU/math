@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.characteristic_equation_solving.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch07_second_order_differential_equations",
+    "unit_name_ko": "이계 미분방정식",
+    "concept_ids": [
+      "calculus.constant_coefficient_homogeneous_ode"
+    ],
+    "formula_ids": [
+      "characteristic_equation",
+      "distinct_real_roots_solution",
+      "repeated_root_solution",
+      "complex_roots_solution",
+      "second_order_ivp"
+    ],
+    "tags": [
+      "characteristic_equation",
+      "constant_coefficient_ode"
+    ]
+  },
+  "classification": {
+    "problem_type": "characteristic_equation_solving",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "a": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "a 파라미터"
+    },
+    "r": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "r 파라미터"
+    },
+    "b": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "b 파라미터"
+    },
+    "c": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "c 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "상수계수 동차방정식과 특성방정식 - characteristic_equation_solving 유형의 문제를 해결하시오. 주어진 파라미터: {{ a }}, {{ r }}, {{ b }}, {{ c }}"
+    ],
+    "latex_templates": [
+      "ay''+by'+cy=0,\\ y=e^{rx}\\implies ar^2+br+c=0"
+    ],
+    "cas_template": "Eq(a*r**2+b*r+c, 0)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "Eq(a*r**2+b*r+c, 0)",
+    "latex_template": "ay''+by'+cy=0,\\ y=e^{rx}\\implies ar^2+br+c=0",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "ode_residual"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "characteristic_equation",
+        "cas_expression": "Eq(a*r**2+b*r+c, 0)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Eq(a*r**2+b*r+c, 0)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "ode_residual",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.constant_coefficient_homogeneous_ode.misconception.1",
+      "misconception_id": "calculus.constant_coeff_ode.forget_x_for_repeated_root",
+      "transformation": "forget_x_factor_for_repeated_root_solution",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.constant_coefficient_homogeneous_ode.misconception.2",
+      "misconception_id": "calculus.constant_coeff_ode.complex_root_kept_complex",
+      "transformation": "leave_complex_root_solution_unconverted",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

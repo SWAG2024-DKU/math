@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.space_curve_identification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch03_vector_valued_functions",
+    "unit_name_ko": "벡터값 함수",
+    "concept_ids": [
+      "calculus.vector_valued_functions_and_space_curves"
+    ],
+    "formula_ids": [
+      "vector_valued_function_def",
+      "vector_function_domain",
+      "helix_example",
+      "vector_function_limit"
+    ],
+    "tags": [
+      "vector_valued_function",
+      "space_curve",
+      "helix"
+    ]
+  },
+  "classification": {
+    "problem_type": "space_curve_identification",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "f": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "f 파라미터"
+    },
+    "g": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "g 파라미터"
+    },
+    "h": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "h 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "벡터값 함수와 공간곡선 - space_curve_identification 유형의 문제를 해결하시오. 주어진 파라미터: {{ f }}, {{ g }}, {{ h }}"
+    ],
+    "latex_templates": [
+      "\\mathbf{r}(t)=\\langle f(t),g(t),h(t)\\rangle=f(t)\\mathbf{i}+g(t)\\mathbf{j}+h(t)\\mathbf{k}"
+    ],
+    "cas_template": "Matrix([f(t), g(t), h(t)])",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "Matrix([f(t), g(t), h(t)])",
+    "latex_template": "\\mathbf{r}(t)=\\langle f(t),g(t),h(t)\\rangle=f(t)\\mathbf{i}+g(t)\\mathbf{j}+h(t)\\mathbf{k}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "domain_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "vector_valued_function_def",
+        "cas_expression": "Matrix([f(t), g(t), h(t)])"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Matrix([f(t), g(t), h(t)])"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "domain_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.vector_valued_functions_and_space_curves.misconception.1",
+      "misconception_id": "calculus.vector_function.same_parameter_for_intersection",
+      "transformation": "assume_shared_parameter_for_curve_intersection",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

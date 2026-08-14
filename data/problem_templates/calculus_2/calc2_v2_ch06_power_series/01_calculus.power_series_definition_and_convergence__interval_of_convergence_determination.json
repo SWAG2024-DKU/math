@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.interval_of_convergence_determination.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch06_power_series",
+    "unit_name_ko": "멱급수",
+    "concept_ids": [
+      "calculus.power_series_definition_and_convergence"
+    ],
+    "formula_ids": [
+      "power_series_def",
+      "radius_of_convergence_ratio",
+      "radius_of_convergence_root"
+    ],
+    "tags": [
+      "power_series",
+      "radius_of_convergence",
+      "interval_of_convergence"
+    ]
+  },
+  "classification": {
+    "problem_type": "interval_of_convergence_determination",
+    "answer_type": "interval",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "c": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "c 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "멱급수의 정의, 수렴반지름과 수렴구간 - interval_of_convergence_determination 유형의 문제를 해결하시오. 주어진 파라미터: {{ c }}"
+    ],
+    "latex_templates": [
+      "\\lim_{n\\to\\infty}\\left|\\frac{c_{n+1}}{c_n}\\right|=\\ell\\implies R=\\frac1\\ell\\ (\\ell=0\\Rightarrow R=\\infty,\\ \\ell=\\infty\\Rightarrow R=0)"
+    ],
+    "cas_template": "1/limit(Abs(c[n+1]/c[n]), n, oo)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "interval",
+    "cas_template": "1/limit(Abs(c[n+1]/c[n]), n, oo)",
+    "latex_template": "\\lim_{n\\to\\infty}\\left|\\frac{c_{n+1}}{c_n}\\right|=\\ell\\implies R=\\frac1\\ell\\ (\\ell=0\\Rightarrow R=\\infty,\\ \\ell=\\infty\\Rightarrow R=0)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "radius_of_convergence_ratio",
+        "cas_expression": "1/limit(Abs(c[n+1]/c[n]), n, oo)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "1/limit(Abs(c[n+1]/c[n]), n, oo)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.power_series_definition_and_convergence.misconception.1",
+      "misconception_id": "calculus.power_series_convergence.radius_equals_interval",
+      "transformation": "confuse_radius_with_interval_of_convergence",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.power_series_definition_and_convergence.misconception.2",
+      "misconception_id": "calculus.power_series_convergence.skip_endpoint_check",
+      "transformation": "skip_endpoint_convergence_check",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

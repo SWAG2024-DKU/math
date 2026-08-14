@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.parametric_surfaces_and_surface_area.surface_area_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch06_vector_calculus",
+    "unit_name_ko": "벡터미적분",
+    "concept_ids": [
+      "calculus.parametric_surfaces_and_surface_area"
+    ],
+    "formula_ids": [
+      "parametric_surface_def",
+      "surface_normal_vector",
+      "surface_area_parametric",
+      "surface_area_graph"
+    ],
+    "tags": [
+      "parametric_surface",
+      "surface_area"
+    ]
+  },
+  "classification": {
+    "problem_type": "surface_area_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "ru": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "ru 파라미터"
+    },
+    "rv": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "rv 파라미터"
+    },
+    "u": {
+      "type": "vector",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "u 파라미터"
+    },
+    "v": {
+      "type": "vector",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "v 파라미터"
+    },
+    "D": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "D 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "매개곡면과 곡면적 - surface_area_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ ru }}, {{ rv }}, {{ u }}, {{ v }}, {{ D }}"
+    ],
+    "latex_templates": [
+      "A(S)=\\iint_D\\|\\mathbf{r}_u\\times\\mathbf{r}_v\\|\\,dA"
+    ],
+    "cas_template": "Integral(ru.cross(rv).norm(), (u,v), D)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "Integral(ru.cross(rv).norm(), (u,v), D)",
+    "latex_template": "A(S)=\\iint_D\\|\\mathbf{r}_u\\times\\mathbf{r}_v\\|\\,dA",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "surface_area_parametric",
+        "cas_expression": "Integral(ru.cross(rv).norm(), (u,v), D)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Integral(ru.cross(rv).norm(), (u,v), D)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.parametric_surfaces_and_surface_area.misconception.1",
+      "misconception_id": "calculus.parametric_surface.forget_cross_product_norm",
+      "transformation": "use_vector_instead_of_norm_in_surface_area",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

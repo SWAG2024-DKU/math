@@ -1,0 +1,145 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v3_ch06_vector_calculus",
+  "template_count": 23,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.vector_fields.vector_field_classification.v1",
+      "concept_id": "calculus.vector_fields",
+      "problem_type": "vector_field_classification",
+      "file": "01_calculus.vector_fields__vector_field_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.vector_fields.vector_field_domain_calculation.v1",
+      "concept_id": "calculus.vector_fields",
+      "problem_type": "vector_field_domain_calculation",
+      "file": "01_calculus.vector_fields__vector_field_domain_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_scalar.scalar_line_integral_calculation.v1",
+      "concept_id": "calculus.line_integral_scalar",
+      "problem_type": "scalar_line_integral_calculation",
+      "file": "02_calculus.line_integral_scalar__scalar_line_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_scalar.curve_mass_calculation.v1",
+      "concept_id": "calculus.line_integral_scalar",
+      "problem_type": "curve_mass_calculation",
+      "file": "02_calculus.line_integral_scalar__curve_mass_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_vector_field.vector_line_integral_calculation.v1",
+      "concept_id": "calculus.line_integral_vector_field",
+      "problem_type": "vector_line_integral_calculation",
+      "file": "03_calculus.line_integral_vector_field__vector_line_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_vector_field.work_calculation.v1",
+      "concept_id": "calculus.line_integral_vector_field",
+      "problem_type": "work_calculation",
+      "file": "03_calculus.line_integral_vector_field__work_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.conservativeness_test.v1",
+      "concept_id": "calculus.conservative_vector_field",
+      "problem_type": "conservativeness_test",
+      "file": "04_calculus.conservative_vector_field__conservativeness_test.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.potential_function_construction.v1",
+      "concept_id": "calculus.conservative_vector_field",
+      "problem_type": "potential_function_construction",
+      "file": "04_calculus.conservative_vector_field__potential_function_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.line_integral_via_potential.v1",
+      "concept_id": "calculus.conservative_vector_field",
+      "problem_type": "line_integral_via_potential",
+      "file": "04_calculus.conservative_vector_field__line_integral_via_potential.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.greens_theorem_application.v1",
+      "concept_id": "calculus.greens_theorem",
+      "problem_type": "greens_theorem_application",
+      "file": "05_calculus.greens_theorem__greens_theorem_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.area_via_greens_theorem.v1",
+      "concept_id": "calculus.greens_theorem",
+      "problem_type": "area_via_greens_theorem",
+      "file": "05_calculus.greens_theorem__area_via_greens_theorem.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.region_with_hole_line_integral.v1",
+      "concept_id": "calculus.greens_theorem",
+      "problem_type": "region_with_hole_line_integral",
+      "file": "05_calculus.greens_theorem__region_with_hole_line_integral.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_and_curl.divergence_calculation.v1",
+      "concept_id": "calculus.divergence_and_curl",
+      "problem_type": "divergence_calculation",
+      "file": "06_calculus.divergence_and_curl__divergence_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_and_curl.curl_calculation.v1",
+      "concept_id": "calculus.divergence_and_curl",
+      "problem_type": "curl_calculation",
+      "file": "06_calculus.divergence_and_curl__curl_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_and_curl.fundamental_identity_application.v1",
+      "concept_id": "calculus.divergence_and_curl",
+      "problem_type": "fundamental_identity_application",
+      "file": "06_calculus.divergence_and_curl__fundamental_identity_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.parametric_surfaces_and_surface_area.surface_normal_calculation.v1",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "problem_type": "surface_normal_calculation",
+      "file": "07_calculus.parametric_surfaces_and_surface_area__surface_normal_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.parametric_surfaces_and_surface_area.surface_area_calculation.v1",
+      "concept_id": "calculus.parametric_surfaces_and_surface_area",
+      "problem_type": "surface_area_calculation",
+      "file": "07_calculus.parametric_surfaces_and_surface_area__surface_area_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.surface_integral_and_flux.scalar_surface_integral_calculation.v1",
+      "concept_id": "calculus.surface_integral_and_flux",
+      "problem_type": "scalar_surface_integral_calculation",
+      "file": "08_calculus.surface_integral_and_flux__scalar_surface_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.surface_integral_and_flux.flux_calculation.v1",
+      "concept_id": "calculus.surface_integral_and_flux",
+      "problem_type": "flux_calculation",
+      "file": "08_calculus.surface_integral_and_flux__flux_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.stokes_theorem.stokes_theorem_application.v1",
+      "concept_id": "calculus.stokes_theorem",
+      "problem_type": "stokes_theorem_application",
+      "file": "09_calculus.stokes_theorem__stokes_theorem_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.stokes_theorem.surface_choice_for_stokes.v1",
+      "concept_id": "calculus.stokes_theorem",
+      "problem_type": "surface_choice_for_stokes",
+      "file": "09_calculus.stokes_theorem__surface_choice_for_stokes.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_theorem.divergence_theorem_application.v1",
+      "concept_id": "calculus.divergence_theorem",
+      "problem_type": "divergence_theorem_application",
+      "file": "10_calculus.divergence_theorem__divergence_theorem_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_theorem.region_with_cavity_flux.v1",
+      "concept_id": "calculus.divergence_theorem",
+      "problem_type": "region_with_cavity_flux",
+      "file": "10_calculus.divergence_theorem__region_with_cavity_flux.json"
+    }
+  ]
+}

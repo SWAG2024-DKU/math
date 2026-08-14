@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.region_with_hole_line_integral.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch06_vector_calculus",
+    "unit_name_ko": "벡터미적분",
+    "concept_ids": [
+      "calculus.greens_theorem"
+    ],
+    "formula_ids": [
+      "greens_theorem_circulation",
+      "greens_theorem_flux",
+      "greens_area_formula"
+    ],
+    "tags": [
+      "greens_theorem",
+      "circulation",
+      "flux"
+    ]
+  },
+  "classification": {
+    "problem_type": "region_with_hole_line_integral",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "Q": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "Q 파라미터"
+    },
+    "D": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "D 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "Green 정리 - region_with_hole_line_integral 유형의 문제를 해결하시오. 주어진 파라미터: {{ Q }}, {{ D }}"
+    ],
+    "latex_templates": [
+      "\\oint_CP\\,dx+Q\\,dy=\\iint_D\\left(\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}\\right)dA"
+    ],
+    "cas_template": "Integral(diff(Q(x,y),x)-diff(P(x,y),y), (x,y), D)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "Integral(diff(Q(x,y),x)-diff(P(x,y),y), (x,y), D)",
+    "latex_template": "\\oint_CP\\,dx+Q\\,dy=\\iint_D\\left(\\frac{\\partial Q}{\\partial x}-\\frac{\\partial P}{\\partial y}\\right)dA",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "greens_theorem_circulation",
+        "cas_expression": "Integral(diff(Q(x,y),x)-diff(P(x,y),y), (x,y), D)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Integral(diff(Q(x,y),x)-diff(P(x,y),y), (x,y), D)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.greens_theorem.misconception.1",
+      "misconception_id": "calculus.greens_theorem.wrong_orientation",
+      "transformation": "apply_greens_theorem_with_wrong_orientation",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.greens_theorem.misconception.2",
+      "misconception_id": "calculus.greens_theorem.forget_inner_boundary_reversal",
+      "transformation": "use_same_orientation_for_outer_and_inner_boundary",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

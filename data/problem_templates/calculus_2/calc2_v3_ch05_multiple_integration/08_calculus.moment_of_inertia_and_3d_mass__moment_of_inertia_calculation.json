@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.moment_of_inertia_and_3d_mass.moment_of_inertia_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch05_multiple_integration",
+    "unit_name_ko": "다중적분",
+    "concept_ids": [
+      "calculus.moment_of_inertia_and_3d_mass"
+    ],
+    "formula_ids": [
+      "moment_of_inertia_2d",
+      "mass_3d",
+      "center_of_mass_3d",
+      "moment_of_inertia_3d"
+    ],
+    "tags": [
+      "moment_of_inertia",
+      "center_of_mass_3d"
+    ]
+  },
+  "classification": {
+    "problem_type": "moment_of_inertia_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "rho": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "rho 파라미터"
+    },
+    "D": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "D 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "관성모멘트와 공간물체의 질량·질량중심 - moment_of_inertia_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ rho }}, {{ D }}"
+    ],
+    "latex_templates": [
+      "I_x=\\iint_Dy^2\\rho\\,dA,\\quad I_y=\\iint_Dx^2\\rho\\,dA,\\quad I_0=\\iint_D(x^2+y^2)\\rho\\,dA=I_x+I_y"
+    ],
+    "cas_template": "Integral(y**2*rho(x,y), (x,y), D)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "Integral(y**2*rho(x,y), (x,y), D)",
+    "latex_template": "I_x=\\iint_Dy^2\\rho\\,dA,\\quad I_y=\\iint_Dx^2\\rho\\,dA,\\quad I_0=\\iint_D(x^2+y^2)\\rho\\,dA=I_x+I_y",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "moment_of_inertia_2d",
+        "cas_expression": "Integral(y**2*rho(x,y), (x,y), D)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Integral(y**2*rho(x,y), (x,y), D)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.moment_of_inertia_and_3d_mass.misconception.1",
+      "misconception_id": "calculus.moment_of_inertia.wrong_axis_distance",
+      "transformation": "use_wrong_distance_squared_for_moment_of_inertia",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parameter_elimination_and_line_parametrization.parameter_elimination.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch07_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.parameter_elimination_and_line_parametrization"
+    ],
+    "formula_ids": [
+      "parameter_elimination_example",
+      "line_parametrization",
+      "segment_parametrization",
+      "ellipse_parametrization"
+    ],
+    "tags": [
+      "parametric_curve",
+      "parameter_elimination",
+      "line_parametrization"
+    ]
+  },
+  "classification": {
+    "problem_type": "parameter_elimination",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input_expression": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "문제 생성을 위한 입력 식 또는 데이터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "매개변수 제거와 직선·선분·타원의 매개화 - parameter_elimination 유형의 문제를 해결하시오. 주어진 파라미터: {{ input_expression }}"
+    ],
+    "latex_templates": [
+      "x=t+1,\\ y=t^2\\implies t=x-1\\implies y=(x-1)^2"
+    ],
+    "cas_template": "(x-1)**2",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "(x-1)**2",
+    "latex_template": "x=t+1,\\ y=t^2\\implies t=x-1\\implies y=(x-1)^2",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "parameter_elimination_example",
+        "cas_expression": "(x-1)**2"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "(x-1)**2"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.parameter_elimination_and_line_parametrization.misconception.1",
+      "misconception_id": "calculus.parameter_elimination.forget_range_restriction",
+      "transformation": "forget_to_carry_over_parameter_range",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

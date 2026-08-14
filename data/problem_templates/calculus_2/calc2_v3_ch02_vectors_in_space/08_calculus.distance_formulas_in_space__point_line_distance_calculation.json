@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.point_line_distance_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch02_vectors_in_space",
+    "unit_name_ko": "공간의 벡터",
+    "concept_ids": [
+      "calculus.distance_formulas_in_space"
+    ],
+    "formula_ids": [
+      "point_plane_distance",
+      "parallel_planes_distance",
+      "point_line_distance"
+    ],
+    "tags": [
+      "distance_formula",
+      "point_plane_distance",
+      "point_line_distance"
+    ]
+  },
+  "classification": {
+    "problem_type": "point_line_distance_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "v": {
+      "type": "vector",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "v 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "공간에서 점·직선·평면 사이의 거리 - point_line_distance_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ v }}"
+    ],
+    "latex_templates": [
+      "D=\\frac{\\|\\overrightarrow{P_0P}\\times\\mathbf{v}\\|}{\\|\\mathbf{v}\\|}"
+    ],
+    "cas_template": "P0P.cross(v).norm()/v.norm()",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "P0P.cross(v).norm()/v.norm()",
+    "latex_template": "D=\\frac{\\|\\overrightarrow{P_0P}\\times\\mathbf{v}\\|}{\\|\\mathbf{v}\\|}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_tolerance"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "point_line_distance",
+        "cas_expression": "P0P.cross(v).norm()/v.norm()"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "P0P.cross(v).norm()/v.norm()"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.distance_formulas_in_space.misconception.1",
+      "misconception_id": "calculus.distance_space.forget_absolute_value",
+      "transformation": "forget_absolute_value_in_point_plane_distance",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

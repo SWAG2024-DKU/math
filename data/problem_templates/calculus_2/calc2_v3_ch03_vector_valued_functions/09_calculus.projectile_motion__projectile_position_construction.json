@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.projectile_motion.projectile_position_construction.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch03_vector_valued_functions",
+    "unit_name_ko": "벡터값 함수",
+    "concept_ids": [
+      "calculus.projectile_motion"
+    ],
+    "formula_ids": [
+      "projectile_position"
+    ],
+    "tags": [
+      "projectile_motion",
+      "constant_acceleration"
+    ]
+  },
+  "classification": {
+    "problem_type": "projectile_position_construction",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "r0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "r0 파라미터"
+    },
+    "v0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "v0 파라미터"
+    },
+    "g": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "g 파라미터"
+    },
+    "k": {
+      "type": "integer",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "k 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "발사체 운동 - projectile_position_construction 유형의 문제를 해결하시오. 주어진 파라미터: {{ r0 }}, {{ v0 }}, {{ g }}, {{ k }}"
+    ],
+    "latex_templates": [
+      "\\mathbf{r}(t)=\\mathbf{r}_0+\\mathbf{v}_0t+\\frac12\\mathbf{a}t^2=\\mathbf{r}_0+\\mathbf{v}_0t-\\frac12gt^2\\mathbf{k}"
+    ],
+    "cas_template": "r0 + v0*t - (1/2)*g*t**2*k",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "r0 + v0*t - (1/2)*g*t**2*k",
+    "latex_template": "\\mathbf{r}(t)=\\mathbf{r}_0+\\mathbf{v}_0t+\\frac12\\mathbf{a}t^2=\\mathbf{r}_0+\\mathbf{v}_0t-\\frac12gt^2\\mathbf{k}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_sampling"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "projectile_position",
+        "cas_expression": "r0 + v0*t - (1/2)*g*t**2*k"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "r0 + v0*t - (1/2)*g*t**2*k"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_sampling",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.projectile_motion.misconception.1",
+      "misconception_id": "calculus.projectile_motion.wrong_gravity_sign",
+      "transformation": "wrong_gravity_sign_relative_to_axis",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

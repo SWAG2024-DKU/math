@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.gradient_and_level_sets.level_surface_tangent_plane_construction.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+    "unit_name_ko": "다변수함수의 미분",
+    "concept_ids": [
+      "calculus.gradient_and_level_sets"
+    ],
+    "formula_ids": [
+      "gradient_perpendicular_to_level_curve",
+      "level_surface_tangent_plane",
+      "normal_line"
+    ],
+    "tags": [
+      "gradient",
+      "level_surface",
+      "normal_line"
+    ]
+  },
+  "classification": {
+    "problem_type": "level_surface_tangent_plane_construction",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "gradF": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "gradF 파라미터"
+    },
+    "x0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "x0 파라미터"
+    },
+    "y0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y0 파라미터"
+    },
+    "z0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "z0 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "그래디언트와 등위곡선·등위곡면의 접평면 - level_surface_tangent_plane_construction 유형의 문제를 해결하시오. 주어진 파라미터: {{ gradF }}, {{ x0 }}, {{ y0 }}, {{ z0 }}"
+    ],
+    "latex_templates": [
+      "F(x,y,z)=k,\\ P_0=(x_0,y_0,z_0)\\implies\\nabla F(P_0)\\cdot\\langle x-x_0,y-y_0,z-z_0\\rangle=0"
+    ],
+    "cas_template": "Eq(gradF(P0).dot(Matrix([x-x0,y-y0,z-z0])), 0)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "Eq(gradF(P0).dot(Matrix([x-x0,y-y0,z-z0])), 0)",
+    "latex_template": "F(x,y,z)=k,\\ P_0=(x_0,y_0,z_0)\\implies\\nabla F(P_0)\\cdot\\langle x-x_0,y-y_0,z-z_0\\rangle=0",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "level_surface_tangent_plane",
+        "cas_expression": "Eq(gradF(P0).dot(Matrix([x-x0,y-y0,z-z0])), 0)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Eq(gradF(P0).dot(Matrix([x-x0,y-y0,z-z0])), 0)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.gradient_and_level_sets.misconception.1",
+      "misconception_id": "calculus.gradient_level_sets.use_gradient_as_tangent_direction",
+      "transformation": "use_gradient_as_tangent_direction_instead_of_normal",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_polar.polar_double_integral_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch05_multiple_integration",
+    "unit_name_ko": "다중적분",
+    "concept_ids": [
+      "calculus.double_integral_polar"
+    ],
+    "formula_ids": [
+      "polar_area_element",
+      "polar_double_integral"
+    ],
+    "tags": [
+      "double_integral",
+      "polar_coordinates"
+    ]
+  },
+  "classification": {
+    "problem_type": "polar_double_integral_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "f": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "f 파라미터"
+    },
+    "r": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "r 파라미터"
+    },
+    "g1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "g1 파라미터"
+    },
+    "g2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "g2 파라미터"
+    },
+    "alpha": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "alpha 파라미터"
+    },
+    "beta": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "beta 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "극좌표에서의 이중적분 - polar_double_integral_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ f }}, {{ r }}, {{ g1 }}, {{ g2 }}, {{ alpha }}, {{ beta }}"
+    ],
+    "latex_templates": [
+      "\\iint_Df(x,y)\\,dA=\\int_\\alpha^\\beta\\int_{g_1(\\theta)}^{g_2(\\theta)}f(r\\cos\\theta,r\\sin\\theta)\\,r\\,dr\\,d\\theta"
+    ],
+    "cas_template": "Integral(Integral(f(r*cos(theta),r*sin(theta))*r, (r,g1(theta),g2(theta))), (theta,alpha,beta))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "Integral(Integral(f(r*cos(theta),r*sin(theta))*r, (r,g1(theta),g2(theta))), (theta,alpha,beta))",
+    "latex_template": "\\iint_Df(x,y)\\,dA=\\int_\\alpha^\\beta\\int_{g_1(\\theta)}^{g_2(\\theta)}f(r\\cos\\theta,r\\sin\\theta)\\,r\\,dr\\,d\\theta",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "polar_double_integral",
+        "cas_expression": "Integral(Integral(f(r*cos(theta),r*sin(theta))*r, (r,g1(theta),g2(theta))), (theta,alpha,beta))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Integral(Integral(f(r*cos(theta),r*sin(theta))*r, (r,g1(theta),g2(theta))), (theta,alpha,beta))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.double_integral_polar.misconception.1",
+      "misconception_id": "calculus.double_integral_polar.forget_r_factor",
+      "transformation": "forget_jacobian_factor_r_in_polar_integral",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

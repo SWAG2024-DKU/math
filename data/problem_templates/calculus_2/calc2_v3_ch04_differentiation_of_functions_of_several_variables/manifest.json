@@ -1,0 +1,139 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+  "template_count": 22,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_functions.multivariable_domain_calculation.v1",
+      "concept_id": "calculus.multivariable_functions",
+      "problem_type": "multivariable_domain_calculation",
+      "file": "01_calculus.multivariable_functions__multivariable_domain_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_functions.level_curve_sketching.v1",
+      "concept_id": "calculus.multivariable_functions",
+      "problem_type": "level_curve_sketching",
+      "file": "01_calculus.multivariable_functions__level_curve_sketching.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_limit_and_continuity.path_test_limit_nonexistence.v1",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "problem_type": "path_test_limit_nonexistence",
+      "file": "02_calculus.multivariable_limit_and_continuity__path_test_limit_nonexistence.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_limit_and_continuity.polar_substitution_limit_calculation.v1",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "problem_type": "polar_substitution_limit_calculation",
+      "file": "02_calculus.multivariable_limit_and_continuity__polar_substitution_limit_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_limit_and_continuity.continuity_verification.v1",
+      "concept_id": "calculus.multivariable_limit_and_continuity",
+      "problem_type": "continuity_verification",
+      "file": "02_calculus.multivariable_limit_and_continuity__continuity_verification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.partial_derivative.partial_derivative_calculation.v1",
+      "concept_id": "calculus.partial_derivative",
+      "problem_type": "partial_derivative_calculation",
+      "file": "03_calculus.partial_derivative__partial_derivative_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.partial_derivative.second_order_partial_calculation.v1",
+      "concept_id": "calculus.partial_derivative",
+      "problem_type": "second_order_partial_calculation",
+      "file": "03_calculus.partial_derivative__second_order_partial_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.partial_derivative.clairaut_theorem_verification.v1",
+      "concept_id": "calculus.partial_derivative",
+      "problem_type": "clairaut_theorem_verification",
+      "file": "03_calculus.partial_derivative__clairaut_theorem_verification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.tangent_plane_and_linear_approximation.tangent_plane_construction.v1",
+      "concept_id": "calculus.tangent_plane_and_linear_approximation",
+      "problem_type": "tangent_plane_construction",
+      "file": "04_calculus.tangent_plane_and_linear_approximation__tangent_plane_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.tangent_plane_and_linear_approximation.linearization_estimation.v1",
+      "concept_id": "calculus.tangent_plane_and_linear_approximation",
+      "problem_type": "linearization_estimation",
+      "file": "04_calculus.tangent_plane_and_linear_approximation__linearization_estimation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.tangent_plane_and_linear_approximation.total_differential_estimation.v1",
+      "concept_id": "calculus.tangent_plane_and_linear_approximation",
+      "problem_type": "total_differential_estimation",
+      "file": "04_calculus.tangent_plane_and_linear_approximation__total_differential_estimation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_chain_rule.multivariable_chain_rule_application.v1",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "problem_type": "multivariable_chain_rule_application",
+      "file": "05_calculus.multivariable_chain_rule__multivariable_chain_rule_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_chain_rule.multivariable_implicit_differentiation.v1",
+      "concept_id": "calculus.multivariable_chain_rule",
+      "problem_type": "multivariable_implicit_differentiation",
+      "file": "05_calculus.multivariable_chain_rule__multivariable_implicit_differentiation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.directional_derivative_and_gradient.directional_derivative_calculation.v1",
+      "concept_id": "calculus.directional_derivative_and_gradient",
+      "problem_type": "directional_derivative_calculation",
+      "file": "06_calculus.directional_derivative_and_gradient__directional_derivative_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.directional_derivative_and_gradient.max_increase_direction_calculation.v1",
+      "concept_id": "calculus.directional_derivative_and_gradient",
+      "problem_type": "max_increase_direction_calculation",
+      "file": "06_calculus.directional_derivative_and_gradient__max_increase_direction_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.gradient_and_level_sets.level_surface_tangent_plane_construction.v1",
+      "concept_id": "calculus.gradient_and_level_sets",
+      "problem_type": "level_surface_tangent_plane_construction",
+      "file": "07_calculus.gradient_and_level_sets__level_surface_tangent_plane_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.gradient_and_level_sets.normal_line_construction.v1",
+      "concept_id": "calculus.gradient_and_level_sets",
+      "problem_type": "normal_line_construction",
+      "file": "07_calculus.gradient_and_level_sets__normal_line_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.critical_point_calculation.v1",
+      "concept_id": "calculus.multivariable_extrema",
+      "problem_type": "critical_point_calculation",
+      "file": "08_calculus.multivariable_extrema__critical_point_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.second_derivative_test_classification.v1",
+      "concept_id": "calculus.multivariable_extrema",
+      "problem_type": "second_derivative_test_classification",
+      "file": "08_calculus.multivariable_extrema__second_derivative_test_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.absolute_extrema_on_closed_region.v1",
+      "concept_id": "calculus.multivariable_extrema",
+      "problem_type": "absolute_extrema_on_closed_region",
+      "file": "08_calculus.multivariable_extrema__absolute_extrema_on_closed_region.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.lagrange_multipliers.lagrange_system_construction.v1",
+      "concept_id": "calculus.lagrange_multipliers",
+      "problem_type": "lagrange_system_construction",
+      "file": "09_calculus.lagrange_multipliers__lagrange_system_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.lagrange_multipliers.constrained_optimization_solving.v1",
+      "concept_id": "calculus.lagrange_multipliers",
+      "problem_type": "constrained_optimization_solving",
+      "file": "09_calculus.lagrange_multipliers__constrained_optimization_solving.json"
+    }
+  ]
+}

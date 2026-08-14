@@ -1,0 +1,127 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v2_ch06_power_series",
+  "template_count": 20,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.radius_of_convergence_calculation.v1",
+      "concept_id": "calculus.power_series_definition_and_convergence",
+      "problem_type": "radius_of_convergence_calculation",
+      "file": "01_calculus.power_series_definition_and_convergence__radius_of_convergence_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.interval_of_convergence_determination.v1",
+      "concept_id": "calculus.power_series_definition_and_convergence",
+      "problem_type": "interval_of_convergence_determination",
+      "file": "01_calculus.power_series_definition_and_convergence__interval_of_convergence_determination.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.endpoint_convergence_check.v1",
+      "concept_id": "calculus.power_series_definition_and_convergence",
+      "problem_type": "endpoint_convergence_check",
+      "file": "01_calculus.power_series_definition_and_convergence__endpoint_convergence_check.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_as_function.geometric_power_series_representation.v1",
+      "concept_id": "calculus.power_series_as_function",
+      "problem_type": "geometric_power_series_representation",
+      "file": "02_calculus.power_series_as_function__geometric_power_series_representation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_algebra.power_series_combination.v1",
+      "concept_id": "calculus.power_series_algebra",
+      "problem_type": "power_series_combination",
+      "file": "03_calculus.power_series_algebra__power_series_combination.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_algebra.cauchy_product_calculation.v1",
+      "concept_id": "calculus.power_series_algebra",
+      "problem_type": "cauchy_product_calculation",
+      "file": "03_calculus.power_series_algebra__cauchy_product_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_algebra.coefficient_determination.v1",
+      "concept_id": "calculus.power_series_algebra",
+      "problem_type": "coefficient_determination",
+      "file": "03_calculus.power_series_algebra__coefficient_determination.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.term_by_term_differentiation.v1",
+      "concept_id": "calculus.power_series_term_by_term_calculus",
+      "problem_type": "term_by_term_differentiation",
+      "file": "04_calculus.power_series_term_by_term_calculus__term_by_term_differentiation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.term_by_term_integration.v1",
+      "concept_id": "calculus.power_series_term_by_term_calculus",
+      "problem_type": "term_by_term_integration",
+      "file": "04_calculus.power_series_term_by_term_calculus__term_by_term_integration.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.power_series_substitution.v1",
+      "concept_id": "calculus.power_series_term_by_term_calculus",
+      "problem_type": "power_series_substitution",
+      "file": "04_calculus.power_series_term_by_term_calculus__power_series_substitution.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_polynomial_construction.v1",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "problem_type": "taylor_polynomial_construction",
+      "file": "05_calculus.taylor_maclaurin_series__taylor_polynomial_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_series_derivation.v1",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "problem_type": "taylor_series_derivation",
+      "file": "05_calculus.taylor_maclaurin_series__taylor_series_derivation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_coefficient_extraction.v1",
+      "concept_id": "calculus.taylor_maclaurin_series",
+      "problem_type": "taylor_coefficient_extraction",
+      "file": "05_calculus.taylor_maclaurin_series__taylor_coefficient_extraction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.common_maclaurin_series.common_series_recall.v1",
+      "concept_id": "calculus.common_maclaurin_series",
+      "problem_type": "common_series_recall",
+      "file": "06_calculus.common_maclaurin_series__common_series_recall.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.common_maclaurin_series.series_convergence_interval_identification.v1",
+      "concept_id": "calculus.common_maclaurin_series",
+      "problem_type": "series_convergence_interval_identification",
+      "file": "06_calculus.common_maclaurin_series__series_convergence_interval_identification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_remainder_and_error_bound.taylor_error_estimation.v1",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "problem_type": "taylor_error_estimation",
+      "file": "07_calculus.taylor_remainder_and_error_bound__taylor_error_estimation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_remainder_and_error_bound.required_degree_determination.v1",
+      "concept_id": "calculus.taylor_remainder_and_error_bound",
+      "problem_type": "required_degree_determination",
+      "file": "07_calculus.taylor_remainder_and_error_bound__required_degree_determination.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.binomial_series_expansion.v1",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "problem_type": "binomial_series_expansion",
+      "file": "08_calculus.binomial_series_and_series_applications__binomial_series_expansion.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.series_based_integration.v1",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "problem_type": "series_based_integration",
+      "file": "08_calculus.binomial_series_and_series_applications__series_based_integration.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.series_based_limit_evaluation.v1",
+      "concept_id": "calculus.binomial_series_and_series_applications",
+      "problem_type": "series_based_limit_evaluation",
+      "file": "08_calculus.binomial_series_and_series_applications__series_based_limit_evaluation.json"
+    }
+  ]
+}

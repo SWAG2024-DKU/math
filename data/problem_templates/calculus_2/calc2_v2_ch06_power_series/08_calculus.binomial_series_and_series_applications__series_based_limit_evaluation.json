@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.series_based_limit_evaluation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch06_power_series",
+    "unit_name_ko": "멱급수",
+    "concept_ids": [
+      "calculus.binomial_series_and_series_applications"
+    ],
+    "formula_ids": [
+      "generalized_binomial_coefficient",
+      "binomial_series",
+      "series_integration_example"
+    ],
+    "tags": [
+      "binomial_series",
+      "power_series_application"
+    ]
+  },
+  "classification": {
+    "problem_type": "series_based_limit_evaluation",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "binomial": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "binomial 파라미터"
+    },
+    "r": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "r 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "이항급수와 멱급수의 응용 - series_based_limit_evaluation 유형의 문제를 해결하시오. 주어진 파라미터: {{ binomial }}, {{ r }}"
+    ],
+    "latex_templates": [
+      "\\binom{r}{n}=\\frac{r(r-1)(r-2)\\cdots(r-n+1)}{n!},\\qquad\\binom{r}{0}=1"
+    ],
+    "cas_template": "binomial(r, n)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "binomial(r, n)",
+    "latex_template": "\\binom{r}{n}=\\frac{r(r-1)(r-2)\\cdots(r-n+1)}{n!},\\qquad\\binom{r}{0}=1",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_tolerance"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "generalized_binomial_coefficient",
+        "cas_expression": "binomial(r, n)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "binomial(r, n)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.binomial_series_and_series_applications.misconception.1",
+      "misconception_id": "calculus.binomial_series.endpoint_assumed_uniform",
+      "transformation": "assume_binomial_series_endpoint_convergence_independent_of_r",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

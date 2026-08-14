@@ -1,0 +1,151 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v3_ch02_vectors_in_space",
+  "template_count": 24,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.vector_from_points_construction.v1",
+      "concept_id": "calculus.vectors_in_plane",
+      "problem_type": "vector_from_points_construction",
+      "file": "01_calculus.vectors_in_plane__vector_from_points_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.magnitude_and_unit_vector_calculation.v1",
+      "concept_id": "calculus.vectors_in_plane",
+      "problem_type": "magnitude_and_unit_vector_calculation",
+      "file": "01_calculus.vectors_in_plane__magnitude_and_unit_vector_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.direction_angle_calculation.v1",
+      "concept_id": "calculus.vectors_in_plane",
+      "problem_type": "direction_angle_calculation",
+      "file": "01_calculus.vectors_in_plane__direction_angle_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_3d_space.3d_distance_midpoint_calculation.v1",
+      "concept_id": "calculus.vectors_in_3d_space",
+      "problem_type": "3d_distance_midpoint_calculation",
+      "file": "02_calculus.vectors_in_3d_space__3d_distance_midpoint_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_3d_space.sphere_equation_construction.v1",
+      "concept_id": "calculus.vectors_in_3d_space",
+      "problem_type": "sphere_equation_construction",
+      "file": "02_calculus.vectors_in_3d_space__sphere_equation_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.dot_product_calculation.v1",
+      "concept_id": "calculus.dot_product",
+      "problem_type": "dot_product_calculation",
+      "file": "03_calculus.dot_product__dot_product_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.angle_or_orthogonality_determination.v1",
+      "concept_id": "calculus.dot_product",
+      "problem_type": "angle_or_orthogonality_determination",
+      "file": "03_calculus.dot_product__angle_or_orthogonality_determination.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.projection_calculation.v1",
+      "concept_id": "calculus.dot_product",
+      "problem_type": "projection_calculation",
+      "file": "03_calculus.dot_product__projection_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.work_calculation.v1",
+      "concept_id": "calculus.dot_product",
+      "problem_type": "work_calculation",
+      "file": "03_calculus.dot_product__work_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.cross_product_calculation.v1",
+      "concept_id": "calculus.cross_product",
+      "problem_type": "cross_product_calculation",
+      "file": "04_calculus.cross_product__cross_product_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.parallelism_check.v1",
+      "concept_id": "calculus.cross_product",
+      "problem_type": "parallelism_check",
+      "file": "04_calculus.cross_product__parallelism_check.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.area_via_cross_product.v1",
+      "concept_id": "calculus.cross_product",
+      "problem_type": "area_via_cross_product",
+      "file": "04_calculus.cross_product__area_via_cross_product.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.scalar_triple_product.parallelepiped_volume_calculation.v1",
+      "concept_id": "calculus.scalar_triple_product",
+      "problem_type": "parallelepiped_volume_calculation",
+      "file": "05_calculus.scalar_triple_product__parallelepiped_volume_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.scalar_triple_product.coplanarity_check.v1",
+      "concept_id": "calculus.scalar_triple_product",
+      "problem_type": "coplanarity_check",
+      "file": "05_calculus.scalar_triple_product__coplanarity_check.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.lines_in_space.line_equation_construction.v1",
+      "concept_id": "calculus.lines_in_space",
+      "problem_type": "line_equation_construction",
+      "file": "06_calculus.lines_in_space__line_equation_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.lines_in_space.two_lines_relation_classification.v1",
+      "concept_id": "calculus.lines_in_space",
+      "problem_type": "two_lines_relation_classification",
+      "file": "06_calculus.lines_in_space__two_lines_relation_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.plane_equation_construction.v1",
+      "concept_id": "calculus.planes_in_space",
+      "problem_type": "plane_equation_construction",
+      "file": "07_calculus.planes_in_space__plane_equation_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.two_planes_relation_classification.v1",
+      "concept_id": "calculus.planes_in_space",
+      "problem_type": "two_planes_relation_classification",
+      "file": "07_calculus.planes_in_space__two_planes_relation_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.angle_between_plane_and_line.v1",
+      "concept_id": "calculus.planes_in_space",
+      "problem_type": "angle_between_plane_and_line",
+      "file": "07_calculus.planes_in_space__angle_between_plane_and_line.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.point_plane_distance_calculation.v1",
+      "concept_id": "calculus.distance_formulas_in_space",
+      "problem_type": "point_plane_distance_calculation",
+      "file": "08_calculus.distance_formulas_in_space__point_plane_distance_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.point_line_distance_calculation.v1",
+      "concept_id": "calculus.distance_formulas_in_space",
+      "problem_type": "point_line_distance_calculation",
+      "file": "08_calculus.distance_formulas_in_space__point_line_distance_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.parallel_planes_distance_calculation.v1",
+      "concept_id": "calculus.distance_formulas_in_space",
+      "problem_type": "parallel_planes_distance_calculation",
+      "file": "08_calculus.distance_formulas_in_space__parallel_planes_distance_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.quadric_surfaces.quadric_surface_classification.v1",
+      "concept_id": "calculus.quadric_surfaces",
+      "problem_type": "quadric_surface_classification",
+      "file": "09_calculus.quadric_surfaces__quadric_surface_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.quadric_surfaces.cross_section_identification.v1",
+      "concept_id": "calculus.quadric_surfaces",
+      "problem_type": "cross_section_identification",
+      "file": "09_calculus.quadric_surfaces__cross_section_identification.json"
+    }
+  ]
+}

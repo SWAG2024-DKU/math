@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.term_by_term_differentiation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch06_power_series",
+    "unit_name_ko": "멱급수",
+    "concept_ids": [
+      "calculus.power_series_term_by_term_calculus"
+    ],
+    "formula_ids": [
+      "term_by_term_differentiation",
+      "term_by_term_integration",
+      "geometric_series_derivative",
+      "geometric_series_integral",
+      "power_series_substitution"
+    ],
+    "tags": [
+      "power_series",
+      "term_by_term_differentiation",
+      "term_by_term_integration"
+    ]
+  },
+  "classification": {
+    "problem_type": "term_by_term_differentiation",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "c_n": {
+      "type": "integer",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "c_n 파라미터"
+    },
+    "a": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "a 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "멱급수의 항별 미분·적분과 변수 치환 - term_by_term_differentiation 유형의 문제를 해결하시오. 주어진 파라미터: {{ c_n }}, {{ a }}"
+    ],
+    "latex_templates": [
+      "f'(x)=\\sum_{n=1}^\\infty nc_n(x-a)^{n-1}\\quad(|x-a|<R)"
+    ],
+    "cas_template": "Sum(n*c_n*(x-a)**(n-1), (n,1,oo))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "Sum(n*c_n*(x-a)**(n-1), (n,1,oo))",
+    "latex_template": "f'(x)=\\sum_{n=1}^\\infty nc_n(x-a)^{n-1}\\quad(|x-a|<R)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "domain_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "term_by_term_differentiation",
+        "cas_expression": "Sum(n*c_n*(x-a)**(n-1), (n,1,oo))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Sum(n*c_n*(x-a)**(n-1), (n,1,oo))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "domain_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.power_series_term_by_term_calculus.misconception.1",
+      "misconception_id": "calculus.term_by_term.radius_unchanged_endpoint_assumed_same",
+      "transformation": "assume_endpoint_convergence_unchanged_after_term_by_term_operation",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.power_series_term_by_term_calculus.misconception.2",
+      "misconception_id": "calculus.substitution.skip_new_convergence_check",
+      "transformation": "skip_recomputing_convergence_after_substitution",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_3d_space.3d_distance_midpoint_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch02_vectors_in_space",
+    "unit_name_ko": "공간의 벡터",
+    "concept_ids": [
+      "calculus.vectors_in_3d_space"
+    ],
+    "formula_ids": [
+      "distance_3d",
+      "midpoint_3d",
+      "sphere_equation",
+      "vector_3d_magnitude",
+      "standard_basis_3d"
+    ],
+    "tags": [
+      "3d_coordinates",
+      "vector",
+      "sphere"
+    ]
+  },
+  "classification": {
+    "problem_type": "3d_distance_midpoint_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "x2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "x2 파라미터"
+    },
+    "x1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "x1 파라미터"
+    },
+    "y2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y2 파라미터"
+    },
+    "y1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y1 파라미터"
+    },
+    "z2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "z2 파라미터"
+    },
+    "z1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "z1 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "3차원 공간의 좌표와 벡터 - 3d_distance_midpoint_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ x2 }}, {{ x1 }}, {{ y2 }}, {{ y1 }}, {{ z2 }}, {{ z1 }}"
+    ],
+    "latex_templates": [
+      "d(P,Q)=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}"
+    ],
+    "cas_template": "sqrt((x2-x1)**2+(y2-y1)**2+(z2-z1)**2)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "sqrt((x2-x1)**2+(y2-y1)**2+(z2-z1)**2)",
+    "latex_template": "d(P,Q)=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "distance_3d",
+        "cas_expression": "sqrt((x2-x1)**2+(y2-y1)**2+(z2-z1)**2)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "sqrt((x2-x1)**2+(y2-y1)**2+(z2-z1)**2)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.vectors_in_3d_space.misconception.1",
+      "misconception_id": "calculus.vectors_3d.coordinate_plane_variable_confusion",
+      "transformation": "confuse_coordinate_plane_defining_variable",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

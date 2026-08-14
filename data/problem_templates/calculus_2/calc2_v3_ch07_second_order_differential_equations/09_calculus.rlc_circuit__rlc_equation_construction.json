@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.rlc_circuit.rlc_equation_construction.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch07_second_order_differential_equations",
+    "unit_name_ko": "이계 미분방정식",
+    "concept_ids": [
+      "calculus.rlc_circuit"
+    ],
+    "formula_ids": [
+      "rlc_circuit_equation",
+      "rlc_spring_mass_analogy",
+      "rlc_free_response"
+    ],
+    "tags": [
+      "rlc_circuit",
+      "electrical_analogy"
+    ]
+  },
+  "classification": {
+    "problem_type": "rlc_equation_construction",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "Q": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "Q 파라미터"
+    },
+    "R": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "R 파라미터"
+    },
+    "C": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "C 파라미터"
+    },
+    "E": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "E 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "RLC 직렬회로 - rlc_equation_construction 유형의 문제를 해결하시오. 주어진 파라미터: {{ Q }}, {{ R }}, {{ C }}, {{ E }}"
+    ],
+    "latex_templates": [
+      "LQ''+RQ'+\\frac1CQ=E(t),\\qquad I(t)=Q'(t)"
+    ],
+    "cas_template": "Eq(L*diff(Q(t),t,2)+R*diff(Q(t),t)+Q(t)/C, E(t))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "Eq(L*diff(Q(t),t,2)+R*diff(Q(t),t)+Q(t)/C, E(t))",
+    "latex_template": "LQ''+RQ'+\\frac1CQ=E(t),\\qquad I(t)=Q'(t)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "ode_residual"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "rlc_circuit_equation",
+        "cas_expression": "Eq(L*diff(Q(t),t,2)+R*diff(Q(t),t)+Q(t)/C, E(t))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Eq(L*diff(Q(t),t,2)+R*diff(Q(t),t)+Q(t)/C, E(t))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "ode_residual",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.rlc_circuit.misconception.1",
+      "misconception_id": "calculus.rlc_circuit.confuse_charge_and_current",
+      "transformation": "confuse_charge_and_current_in_rlc",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

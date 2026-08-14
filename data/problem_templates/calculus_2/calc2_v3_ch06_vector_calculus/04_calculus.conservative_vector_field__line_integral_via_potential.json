@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.line_integral_via_potential.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch06_vector_calculus",
+    "unit_name_ko": "벡터미적분",
+    "concept_ids": [
+      "calculus.conservative_vector_field"
+    ],
+    "formula_ids": [
+      "conservative_field_def",
+      "fundamental_theorem_line_integrals",
+      "closed_curve_zero",
+      "conservative_test_2d",
+      "conservative_test_3d"
+    ],
+    "tags": [
+      "conservative_vector_field",
+      "potential_function",
+      "path_independence"
+    ]
+  },
+  "classification": {
+    "problem_type": "line_integral_via_potential",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "f": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "f 파라미터"
+    },
+    "B": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "B 파라미터"
+    },
+    "A": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "A 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "보존적 벡터장과 선적분의 기본정리 - line_integral_via_potential 유형의 문제를 해결하시오. 주어진 파라미터: {{ f }}, {{ B }}, {{ A }}"
+    ],
+    "latex_templates": [
+      "\\int_C\\mathbf{F}\\cdot d\\mathbf{r}=f(B)-f(A)\\quad(\\mathbf{F}=\\nabla f,\\ C:A\\to B)"
+    ],
+    "cas_template": "f(B) - f(A)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "f(B) - f(A)",
+    "latex_template": "\\int_C\\mathbf{F}\\cdot d\\mathbf{r}=f(B)-f(A)\\quad(\\mathbf{F}=\\nabla f,\\ C:A\\to B)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "fundamental_theorem_line_integrals",
+        "cas_expression": "f(B) - f(A)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "f(B) - f(A)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.conservative_vector_field.misconception.1",
+      "misconception_id": "calculus.conservative_field.py_qx_sufficient_without_domain_check",
+      "transformation": "conclude_conservative_without_simply_connected_check",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

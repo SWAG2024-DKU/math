@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_cylindrical.cylindrical_triple_integral_setup.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch05_multiple_integration",
+    "unit_name_ko": "다중적분",
+    "concept_ids": [
+      "calculus.triple_integral_cylindrical"
+    ],
+    "formula_ids": [
+      "cylindrical_conversion",
+      "cylindrical_volume_element"
+    ],
+    "tags": [
+      "triple_integral",
+      "cylindrical_coordinates"
+    ]
+  },
+  "classification": {
+    "problem_type": "cylindrical_triple_integral_setup",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "r": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "r 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "원기둥좌표의 삼중적분 - cylindrical_triple_integral_setup 유형의 문제를 해결하시오. 주어진 파라미터: {{ r }}"
+    ],
+    "latex_templates": [
+      "x=r\\cos\\theta,\\quad y=r\\sin\\theta,\\quad z=z,\\qquad x^2+y^2=r^2"
+    ],
+    "cas_template": "(r*cos(theta), r*sin(theta), z)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "(r*cos(theta), r*sin(theta), z)",
+    "latex_template": "x=r\\cos\\theta,\\quad y=r\\sin\\theta,\\quad z=z,\\qquad x^2+y^2=r^2",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "cylindrical_conversion",
+        "cas_expression": "(r*cos(theta), r*sin(theta), z)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "(r*cos(theta), r*sin(theta), z)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.triple_integral_cylindrical.misconception.1",
+      "misconception_id": "calculus.cylindrical_integral.forget_r",
+      "transformation": "forget_jacobian_r_in_cylindrical_volume_element",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.critical_point_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+    "unit_name_ko": "다변수함수의 미분",
+    "concept_ids": [
+      "calculus.multivariable_extrema"
+    ],
+    "formula_ids": [
+      "critical_point_def",
+      "second_derivative_test",
+      "extreme_value_theorem_multivariable"
+    ],
+    "tags": [
+      "multivariable_extrema",
+      "second_derivative_test",
+      "saddle_point"
+    ]
+  },
+  "classification": {
+    "problem_type": "critical_point_calculation",
+    "answer_type": "set",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "fx": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "fx 파라미터"
+    },
+    "a": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "a 파라미터"
+    },
+    "b": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "b 파라미터"
+    },
+    "fy": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "fy 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "다변수함수의 극값과 이차미분판정법 - critical_point_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ fx }}, {{ a }}, {{ b }}, {{ fy }}"
+    ],
+    "latex_templates": [
+      "f_x(a,b)=0,\\ f_y(a,b)=0\\ \\text{또는 편도함수 중 하나 이상이 존재하지 않음}"
+    ],
+    "cas_template": "solve([Eq(fx(a,b),0), Eq(fy(a,b),0)], [a,b])",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "set",
+    "cas_template": "solve([Eq(fx(a,b),0), Eq(fy(a,b),0)], [a,b])",
+    "latex_template": "f_x(a,b)=0,\\ f_y(a,b)=0\\ \\text{또는 편도함수 중 하나 이상이 존재하지 않음}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_sampling"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "critical_point_def",
+        "cas_expression": "solve([Eq(fx(a,b),0), Eq(fy(a,b),0)], [a,b])"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "solve([Eq(fx(a,b),0), Eq(fy(a,b),0)], [a,b])"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_sampling",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.multivariable_extrema.misconception.1",
+      "misconception_id": "calculus.multivariable_extrema.critical_point_always_extremum",
+      "transformation": "assume_critical_point_is_always_extremum",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.multivariable_extrema.misconception.2",
+      "misconception_id": "calculus.multivariable_extrema.ignore_boundary",
+      "transformation": "skip_boundary_check_for_absolute_extrema",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

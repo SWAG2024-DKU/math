@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.plane_equation_construction.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch02_vectors_in_space",
+    "unit_name_ko": "공간의 벡터",
+    "concept_ids": [
+      "calculus.planes_in_space"
+    ],
+    "formula_ids": [
+      "plane_point_normal_form",
+      "plane_general_form",
+      "plane_from_three_points",
+      "two_planes_relation",
+      "angle_between_planes",
+      "line_plane_angle",
+      "planes_intersection_direction"
+    ],
+    "tags": [
+      "plane_in_space",
+      "normal_vector"
+    ]
+  },
+  "classification": {
+    "problem_type": "plane_equation_construction",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "a": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "a 파라미터"
+    },
+    "x0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "x0 파라미터"
+    },
+    "b": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "b 파라미터"
+    },
+    "y0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y0 파라미터"
+    },
+    "c": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "c 파라미터"
+    },
+    "z0": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "z0 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "공간에서 평면의 방정식 - plane_equation_construction 유형의 문제를 해결하시오. 주어진 파라미터: {{ a }}, {{ x0 }}, {{ b }}, {{ y0 }}, {{ c }}, {{ z0 }}"
+    ],
+    "latex_templates": [
+      "a(x-x_0)+b(y-y_0)+c(z-z_0)=0"
+    ],
+    "cas_template": "Eq(a*(x-x0)+b*(y-y0)+c*(z-z0), 0)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "Eq(a*(x-x0)+b*(y-y0)+c*(z-z0), 0)",
+    "latex_template": "a(x-x_0)+b(y-y_0)+c(z-z_0)=0",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "plane_point_normal_form",
+        "cas_expression": "Eq(a*(x-x0)+b*(y-y0)+c*(z-z0), 0)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "Eq(a*(x-x0)+b*(y-y0)+c*(z-z0), 0)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.planes_in_space.misconception.1",
+      "misconception_id": "calculus.planes_space.normal_direction_swap",
+      "transformation": "swap_normal_vector_and_direction_vector",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

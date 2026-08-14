@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.center_of_mass_2d.center_of_mass_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch05_multiple_integration",
+    "unit_name_ko": "다중적분",
+    "concept_ids": [
+      "calculus.center_of_mass_2d"
+    ],
+    "formula_ids": [
+      "mass_2d",
+      "moments_2d",
+      "center_of_mass_2d",
+      "centroid_uniform_density"
+    ],
+    "tags": [
+      "center_of_mass",
+      "moment",
+      "centroid"
+    ]
+  },
+  "classification": {
+    "problem_type": "center_of_mass_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "m": {
+      "type": "integer",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "m 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "얇은 판의 질량, 모멘트, 질량중심 - center_of_mass_calculation 유형의 문제를 해결하시오. 주어진 파라미터: {{ m }}"
+    ],
+    "latex_templates": [
+      "\\bar x=\\frac{M_y}m=\\frac1m\\iint_Dx\\rho\\,dA,\\qquad\\bar y=\\frac{M_x}m=\\frac1m\\iint_Dy\\rho\\,dA"
+    ],
+    "cas_template": "My/m",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "My/m",
+    "latex_template": "\\bar x=\\frac{M_y}m=\\frac1m\\iint_Dx\\rho\\,dA,\\qquad\\bar y=\\frac{M_x}m=\\frac1m\\iint_Dy\\rho\\,dA",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "center_of_mass_2d",
+        "cas_expression": "My/m"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "My/m"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.center_of_mass_2d.misconception.1",
+      "misconception_id": "calculus.center_of_mass_2d.swap_moment_variable",
+      "transformation": "swap_x_and_y_in_moment_formulas",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

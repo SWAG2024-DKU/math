@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_surface_area_of_revolution.surface_area_of_revolution_about_x_axis.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch07_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.parametric_surface_area_of_revolution"
+    ],
+    "formula_ids": [
+      "surface_area_revolution_x_axis",
+      "surface_area_revolution_y_axis"
+    ],
+    "tags": [
+      "parametric_curve",
+      "surface_area_of_revolution"
+    ]
+  },
+  "classification": {
+    "problem_type": "surface_area_of_revolution_about_x_axis",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "alpha": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "alpha 파라미터"
+    },
+    "beta": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "beta 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "매개곡선의 회전체 표면적 - surface_area_of_revolution_about_x_axis 유형의 문제를 해결하시오. 주어진 파라미터: {{ alpha }}, {{ beta }}"
+    ],
+    "latex_templates": [
+      "S=2\\pi\\int_\\alpha^\\beta|y(t)|\\sqrt{[x'(t)]^2+[y'(t)]^2}\\,dt"
+    ],
+    "cas_template": "2*pi*Integral(Abs(y(t))*sqrt(diff(x(t),t)**2+diff(y(t),t)**2), (t,alpha,beta))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "2*pi*Integral(Abs(y(t))*sqrt(diff(x(t),t)**2+diff(y(t),t)**2), (t,alpha,beta))",
+    "latex_template": "S=2\\pi\\int_\\alpha^\\beta|y(t)|\\sqrt{[x'(t)]^2+[y'(t)]^2}\\,dt",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence",
+      "numeric_sampling"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "surface_area_revolution_x_axis",
+        "cas_expression": "2*pi*Integral(Abs(y(t))*sqrt(diff(x(t),t)**2+diff(y(t),t)**2), (t,alpha,beta))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "2*pi*Integral(Abs(y(t))*sqrt(diff(x(t),t)**2+diff(y(t),t)**2), (t,alpha,beta))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numeric_sampling",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.parametric_surface_area_of_revolution.misconception.1",
+      "misconception_id": "calculus.parametric_surface_area.omit_absolute_value",
+      "transformation": "omit_absolute_value_in_surface_area_formula",
+      "validator": "distractor_validity_check"
+    },
+    {
+      "rule_id": "calculus.parametric_surface_area_of_revolution.misconception.2",
+      "misconception_id": "calculus.parametric_surface_area.confuse_x_and_y_axis_formula",
+      "transformation": "swap_axis_distance_in_surface_area_formula",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

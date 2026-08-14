@@ -1,0 +1,145 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v3_ch03_vector_valued_functions",
+  "template_count": 23,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.vector_function_domain_calculation.v1",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "problem_type": "vector_function_domain_calculation",
+      "file": "01_calculus.vector_valued_functions_and_space_curves__vector_function_domain_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.space_curve_identification.v1",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "problem_type": "space_curve_identification",
+      "file": "01_calculus.vector_valued_functions_and_space_curves__space_curve_identification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.curve_intersection_calculation.v1",
+      "concept_id": "calculus.vector_valued_functions_and_space_curves",
+      "problem_type": "curve_intersection_calculation",
+      "file": "01_calculus.vector_valued_functions_and_space_curves__curve_intersection_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_derivative_and_tangent.vector_derivative_calculation.v1",
+      "concept_id": "calculus.vector_derivative_and_tangent",
+      "problem_type": "vector_derivative_calculation",
+      "file": "02_calculus.vector_derivative_and_tangent__vector_derivative_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_derivative_and_tangent.tangent_line_construction.v1",
+      "concept_id": "calculus.vector_derivative_and_tangent",
+      "problem_type": "tangent_line_construction",
+      "file": "02_calculus.vector_derivative_and_tangent__tangent_line_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_derivative_and_tangent.unit_tangent_calculation.v1",
+      "concept_id": "calculus.vector_derivative_and_tangent",
+      "problem_type": "unit_tangent_calculation",
+      "file": "02_calculus.vector_derivative_and_tangent__unit_tangent_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_differentiation_rules.vector_differentiation_rule_application.v1",
+      "concept_id": "calculus.vector_differentiation_rules",
+      "problem_type": "vector_differentiation_rule_application",
+      "file": "03_calculus.vector_differentiation_rules__vector_differentiation_rule_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_differentiation_rules.vector_chain_rule_application.v1",
+      "concept_id": "calculus.vector_differentiation_rules",
+      "problem_type": "vector_chain_rule_application",
+      "file": "03_calculus.vector_differentiation_rules__vector_chain_rule_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_differentiation_rules.constant_magnitude_orthogonality_proof.v1",
+      "concept_id": "calculus.vector_differentiation_rules",
+      "problem_type": "constant_magnitude_orthogonality_proof",
+      "file": "03_calculus.vector_differentiation_rules__constant_magnitude_orthogonality_proof.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_integral.vector_integral_calculation.v1",
+      "concept_id": "calculus.vector_integral",
+      "problem_type": "vector_integral_calculation",
+      "file": "04_calculus.vector_integral__vector_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_integral.vector_initial_value_problem.v1",
+      "concept_id": "calculus.vector_integral",
+      "problem_type": "vector_initial_value_problem",
+      "file": "04_calculus.vector_integral__vector_initial_value_problem.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_arc_length_and_curvature.space_curve_arc_length_calculation.v1",
+      "concept_id": "calculus.vector_valued_arc_length_and_curvature",
+      "problem_type": "space_curve_arc_length_calculation",
+      "file": "05_calculus.vector_valued_arc_length_and_curvature__space_curve_arc_length_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_arc_length_and_curvature.curvature_calculation.v1",
+      "concept_id": "calculus.vector_valued_arc_length_and_curvature",
+      "problem_type": "curvature_calculation",
+      "file": "05_calculus.vector_valued_arc_length_and_curvature__curvature_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.frenet_frame.frenet_frame_calculation.v1",
+      "concept_id": "calculus.frenet_frame",
+      "problem_type": "frenet_frame_calculation",
+      "file": "06_calculus.frenet_frame__frenet_frame_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.frenet_frame.osculating_circle_construction.v1",
+      "concept_id": "calculus.frenet_frame",
+      "problem_type": "osculating_circle_construction",
+      "file": "06_calculus.frenet_frame__osculating_circle_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.velocity_acceleration_calculation.v1",
+      "concept_id": "calculus.velocity_and_acceleration_in_space",
+      "problem_type": "velocity_acceleration_calculation",
+      "file": "07_calculus.velocity_and_acceleration_in_space__velocity_acceleration_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.displacement_vs_distance_calculation.v1",
+      "concept_id": "calculus.velocity_and_acceleration_in_space",
+      "problem_type": "displacement_vs_distance_calculation",
+      "file": "07_calculus.velocity_and_acceleration_in_space__displacement_vs_distance_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.position_reconstruction_from_acceleration.v1",
+      "concept_id": "calculus.velocity_and_acceleration_in_space",
+      "problem_type": "position_reconstruction_from_acceleration",
+      "file": "07_calculus.velocity_and_acceleration_in_space__position_reconstruction_from_acceleration.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.tangential_normal_acceleration.acceleration_decomposition.v1",
+      "concept_id": "calculus.tangential_normal_acceleration",
+      "problem_type": "acceleration_decomposition",
+      "file": "08_calculus.tangential_normal_acceleration__acceleration_decomposition.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.tangential_normal_acceleration.speed_change_analysis.v1",
+      "concept_id": "calculus.tangential_normal_acceleration",
+      "problem_type": "speed_change_analysis",
+      "file": "08_calculus.tangential_normal_acceleration__speed_change_analysis.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.tangential_normal_acceleration.uniform_circular_motion_calculation.v1",
+      "concept_id": "calculus.tangential_normal_acceleration",
+      "problem_type": "uniform_circular_motion_calculation",
+      "file": "08_calculus.tangential_normal_acceleration__uniform_circular_motion_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.projectile_motion.projectile_position_construction.v1",
+      "concept_id": "calculus.projectile_motion",
+      "problem_type": "projectile_position_construction",
+      "file": "09_calculus.projectile_motion__projectile_position_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.projectile_motion.projectile_motion_solving.v1",
+      "concept_id": "calculus.projectile_motion",
+      "problem_type": "projectile_motion_solving",
+      "file": "09_calculus.projectile_motion__projectile_motion_solving.json"
+    }
+  ]
+}

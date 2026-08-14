@@ -1,0 +1,127 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v3_ch05_multiple_integration",
+  "template_count": 20,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_over_rectangle.double_integral_rectangle_calculation.v1",
+      "concept_id": "calculus.double_integral_over_rectangle",
+      "problem_type": "double_integral_rectangle_calculation",
+      "file": "01_calculus.double_integral_over_rectangle__double_integral_rectangle_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_over_rectangle.average_value_2d_calculation.v1",
+      "concept_id": "calculus.double_integral_over_rectangle",
+      "problem_type": "average_value_2d_calculation",
+      "file": "01_calculus.double_integral_over_rectangle__average_value_2d_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.region_type_classification.v1",
+      "concept_id": "calculus.double_integral_general_region",
+      "problem_type": "region_type_classification",
+      "file": "02_calculus.double_integral_general_region__region_type_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.integration_order_swap.v1",
+      "concept_id": "calculus.double_integral_general_region",
+      "problem_type": "integration_order_swap",
+      "file": "02_calculus.double_integral_general_region__integration_order_swap.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.volume_between_surfaces_calculation.v1",
+      "concept_id": "calculus.double_integral_general_region",
+      "problem_type": "volume_between_surfaces_calculation",
+      "file": "02_calculus.double_integral_general_region__volume_between_surfaces_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_polar.polar_double_integral_setup.v1",
+      "concept_id": "calculus.double_integral_polar",
+      "problem_type": "polar_double_integral_setup",
+      "file": "03_calculus.double_integral_polar__polar_double_integral_setup.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_polar.polar_double_integral_calculation.v1",
+      "concept_id": "calculus.double_integral_polar",
+      "problem_type": "polar_double_integral_calculation",
+      "file": "03_calculus.double_integral_polar__polar_double_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.triple_integral_setup.v1",
+      "concept_id": "calculus.triple_integral",
+      "problem_type": "triple_integral_setup",
+      "file": "04_calculus.triple_integral__triple_integral_setup.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.triple_integral_calculation.v1",
+      "concept_id": "calculus.triple_integral",
+      "problem_type": "triple_integral_calculation",
+      "file": "04_calculus.triple_integral__triple_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.solid_volume_via_triple_integral.v1",
+      "concept_id": "calculus.triple_integral",
+      "problem_type": "solid_volume_via_triple_integral",
+      "file": "04_calculus.triple_integral__solid_volume_via_triple_integral.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_cylindrical.cylindrical_triple_integral_setup.v1",
+      "concept_id": "calculus.triple_integral_cylindrical",
+      "problem_type": "cylindrical_triple_integral_setup",
+      "file": "05_calculus.triple_integral_cylindrical__cylindrical_triple_integral_setup.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_cylindrical.cylindrical_triple_integral_calculation.v1",
+      "concept_id": "calculus.triple_integral_cylindrical",
+      "problem_type": "cylindrical_triple_integral_calculation",
+      "file": "05_calculus.triple_integral_cylindrical__cylindrical_triple_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_spherical.spherical_triple_integral_setup.v1",
+      "concept_id": "calculus.triple_integral_spherical",
+      "problem_type": "spherical_triple_integral_setup",
+      "file": "06_calculus.triple_integral_spherical__spherical_triple_integral_setup.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_spherical.spherical_triple_integral_calculation.v1",
+      "concept_id": "calculus.triple_integral_spherical",
+      "problem_type": "spherical_triple_integral_calculation",
+      "file": "06_calculus.triple_integral_spherical__spherical_triple_integral_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.center_of_mass_2d.mass_and_moment_calculation.v1",
+      "concept_id": "calculus.center_of_mass_2d",
+      "problem_type": "mass_and_moment_calculation",
+      "file": "07_calculus.center_of_mass_2d__mass_and_moment_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.center_of_mass_2d.center_of_mass_calculation.v1",
+      "concept_id": "calculus.center_of_mass_2d",
+      "problem_type": "center_of_mass_calculation",
+      "file": "07_calculus.center_of_mass_2d__center_of_mass_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.moment_of_inertia_and_3d_mass.moment_of_inertia_calculation.v1",
+      "concept_id": "calculus.moment_of_inertia_and_3d_mass",
+      "problem_type": "moment_of_inertia_calculation",
+      "file": "08_calculus.moment_of_inertia_and_3d_mass__moment_of_inertia_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.moment_of_inertia_and_3d_mass.3d_mass_center_calculation.v1",
+      "concept_id": "calculus.moment_of_inertia_and_3d_mass",
+      "problem_type": "3d_mass_center_calculation",
+      "file": "08_calculus.moment_of_inertia_and_3d_mass__3d_mass_center_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.jacobian_and_change_of_variables.jacobian_calculation.v1",
+      "concept_id": "calculus.jacobian_and_change_of_variables",
+      "problem_type": "jacobian_calculation",
+      "file": "09_calculus.jacobian_and_change_of_variables__jacobian_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.jacobian_and_change_of_variables.change_of_variables_integral_calculation.v1",
+      "concept_id": "calculus.jacobian_and_change_of_variables",
+      "problem_type": "change_of_variables_integral_calculation",
+      "file": "09_calculus.jacobian_and_change_of_variables__change_of_variables_integral_calculation.json"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.conic_eccentricity_and_polar_equation.conic_polar_equation_construction.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v2_ch07_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.conic_eccentricity_and_polar_equation"
+    ],
+    "formula_ids": [
+      "eccentricity_definition",
+      "eccentricity_classification",
+      "conic_polar_equation"
+    ],
+    "tags": [
+      "conic_section",
+      "eccentricity",
+      "polar_equation"
+    ]
+  },
+  "classification": {
+    "problem_type": "conic_polar_equation_construction",
+    "answer_type": "equation",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "e": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "e 파라미터"
+    },
+    "d": {
+      "type": "real",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "d 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "이심률에 의한 원뿔곡선 정의와 극방정식 - conic_polar_equation_construction 유형의 문제를 해결하시오. 주어진 파라미터: {{ e }}, {{ d }}"
+    ],
+    "latex_templates": [
+      "r=\\frac{ed}{1\\pm e\\cos\\theta}\\quad\\text{또는}\\quad r=\\frac{ed}{1\\pm e\\sin\\theta}"
+    ],
+    "cas_template": "e*d/(1+e*cos(theta))",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "equation",
+    "cas_template": "e*d/(1+e*cos(theta))",
+    "latex_template": "r=\\frac{ed}{1\\pm e\\cos\\theta}\\quad\\text{또는}\\quad r=\\frac{ed}{1\\pm e\\sin\\theta}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "conic_polar_equation",
+        "cas_expression": "e*d/(1+e*cos(theta))"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "e*d/(1+e*cos(theta))"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.conic_eccentricity_and_polar_equation.misconception.1",
+      "misconception_id": "calculus.conic_eccentricity.boundary_value_error",
+      "transformation": "misclassify_conic_at_eccentricity_boundary",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

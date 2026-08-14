@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.second_order_linear_ode_and_superposition.homogeneous_classification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch07_second_order_differential_equations",
+    "unit_name_ko": "이계 미분방정식",
+    "concept_ids": [
+      "calculus.second_order_linear_ode_and_superposition"
+    ],
+    "formula_ids": [
+      "second_order_linear_ode",
+      "superposition_principle",
+      "wronskian",
+      "homogeneous_general_solution"
+    ],
+    "tags": [
+      "second_order_ode",
+      "superposition_principle",
+      "wronskian"
+    ]
+  },
+  "classification": {
+    "problem_type": "homogeneous_classification",
+    "answer_type": "classification",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "c1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "c1 파라미터"
+    },
+    "y1": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y1 파라미터"
+    },
+    "c2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "c2 파라미터"
+    },
+    "y2": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "y2 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "이계 선형 미분방정식과 중첩원리 - homogeneous_classification 유형의 문제를 해결하시오. 주어진 파라미터: {{ c1 }}, {{ y1 }}, {{ c2 }}, {{ y2 }}"
+    ],
+    "latex_templates": [
+      "y=c_1y_1+c_2y_2\\quad(y_1,y_2\\text{ 선형독립})"
+    ],
+    "cas_template": "c1*y1(x)+c2*y2(x)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "classification",
+    "cas_template": "c1*y1(x)+c2*y2(x)",
+    "latex_template": "y=c_1y_1+c_2y_2\\quad(y_1,y_2\\text{ 선형독립})",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "homogeneous_general_solution",
+        "cas_expression": "c1*y1(x)+c2*y2(x)"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "c1*y1(x)+c2*y2(x)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.second_order_linear_ode_and_superposition.misconception.1",
+      "misconception_id": "calculus.second_order_linear.superposition_for_nonhomogeneous",
+      "transformation": "apply_superposition_to_nonhomogeneous_equation",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}

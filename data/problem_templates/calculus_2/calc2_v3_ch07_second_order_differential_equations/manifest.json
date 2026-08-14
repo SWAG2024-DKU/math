@@ -1,0 +1,145 @@
+{
+  "subject_id": "calculus_2",
+  "unit_id": "calc2_v3_ch07_second_order_differential_equations",
+  "template_count": 23,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.second_order_linear_ode_and_superposition.homogeneous_classification.v1",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "problem_type": "homogeneous_classification",
+      "file": "01_calculus.second_order_linear_ode_and_superposition__homogeneous_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.second_order_linear_ode_and_superposition.wronskian_linear_independence_check.v1",
+      "concept_id": "calculus.second_order_linear_ode_and_superposition",
+      "problem_type": "wronskian_linear_independence_check",
+      "file": "01_calculus.second_order_linear_ode_and_superposition__wronskian_linear_independence_check.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.characteristic_equation_solving.v1",
+      "concept_id": "calculus.constant_coefficient_homogeneous_ode",
+      "problem_type": "characteristic_equation_solving",
+      "file": "02_calculus.constant_coefficient_homogeneous_ode__characteristic_equation_solving.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.homogeneous_general_solution_construction.v1",
+      "concept_id": "calculus.constant_coefficient_homogeneous_ode",
+      "problem_type": "homogeneous_general_solution_construction",
+      "file": "02_calculus.constant_coefficient_homogeneous_ode__homogeneous_general_solution_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.second_order_ivp_solving.v1",
+      "concept_id": "calculus.constant_coefficient_homogeneous_ode",
+      "problem_type": "second_order_ivp_solving",
+      "file": "02_calculus.constant_coefficient_homogeneous_ode__second_order_ivp_solving.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.nonhomogeneous_ode_general_solution.general_solution_decomposition.v1",
+      "concept_id": "calculus.nonhomogeneous_ode_general_solution",
+      "problem_type": "general_solution_decomposition",
+      "file": "03_calculus.nonhomogeneous_ode_general_solution__general_solution_decomposition.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.undetermined_coefficients.undetermined_coefficients_ansatz_selection.v1",
+      "concept_id": "calculus.undetermined_coefficients",
+      "problem_type": "undetermined_coefficients_ansatz_selection",
+      "file": "04_calculus.undetermined_coefficients__undetermined_coefficients_ansatz_selection.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.undetermined_coefficients.undetermined_coefficients_solving.v1",
+      "concept_id": "calculus.undetermined_coefficients",
+      "problem_type": "undetermined_coefficients_solving",
+      "file": "04_calculus.undetermined_coefficients__undetermined_coefficients_solving.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.undetermined_coefficients.duplication_case_handling.v1",
+      "concept_id": "calculus.undetermined_coefficients",
+      "problem_type": "duplication_case_handling",
+      "file": "04_calculus.undetermined_coefficients__duplication_case_handling.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.variation_of_parameters.variation_of_parameters_application.v1",
+      "concept_id": "calculus.variation_of_parameters",
+      "problem_type": "variation_of_parameters_application",
+      "file": "05_calculus.variation_of_parameters__variation_of_parameters_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.shm_equation_setup.v1",
+      "concept_id": "calculus.simple_harmonic_motion",
+      "problem_type": "shm_equation_setup",
+      "file": "06_calculus.simple_harmonic_motion__shm_equation_setup.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.amplitude_phase_conversion.v1",
+      "concept_id": "calculus.simple_harmonic_motion",
+      "problem_type": "amplitude_phase_conversion",
+      "file": "06_calculus.simple_harmonic_motion__amplitude_phase_conversion.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.period_frequency_calculation.v1",
+      "concept_id": "calculus.simple_harmonic_motion",
+      "problem_type": "period_frequency_calculation",
+      "file": "06_calculus.simple_harmonic_motion__period_frequency_calculation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.damped_harmonic_motion.damping_type_classification.v1",
+      "concept_id": "calculus.damped_harmonic_motion",
+      "problem_type": "damping_type_classification",
+      "file": "07_calculus.damped_harmonic_motion__damping_type_classification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.damped_harmonic_motion.damped_motion_solving.v1",
+      "concept_id": "calculus.damped_harmonic_motion",
+      "problem_type": "damped_motion_solving",
+      "file": "07_calculus.damped_harmonic_motion__damped_motion_solving.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.forced_oscillation_and_resonance.forced_oscillation_solving.v1",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "problem_type": "forced_oscillation_solving",
+      "file": "08_calculus.forced_oscillation_and_resonance__forced_oscillation_solving.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.forced_oscillation_and_resonance.resonance_condition_check.v1",
+      "concept_id": "calculus.forced_oscillation_and_resonance",
+      "problem_type": "resonance_condition_check",
+      "file": "08_calculus.forced_oscillation_and_resonance__resonance_condition_check.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.rlc_circuit.rlc_equation_construction.v1",
+      "concept_id": "calculus.rlc_circuit",
+      "problem_type": "rlc_equation_construction",
+      "file": "09_calculus.rlc_circuit__rlc_equation_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.rlc_circuit.rlc_analogy_application.v1",
+      "concept_id": "calculus.rlc_circuit",
+      "problem_type": "rlc_analogy_application",
+      "file": "09_calculus.rlc_circuit__rlc_analogy_application.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.power_series_solutions_of_ode.recurrence_relation_derivation.v1",
+      "concept_id": "calculus.power_series_solutions_of_ode",
+      "problem_type": "recurrence_relation_derivation",
+      "file": "10_calculus.power_series_solutions_of_ode__recurrence_relation_derivation.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.power_series_solutions_of_ode.power_series_solution_construction.v1",
+      "concept_id": "calculus.power_series_solutions_of_ode",
+      "problem_type": "power_series_solution_construction",
+      "file": "10_calculus.power_series_solutions_of_ode__power_series_solution_construction.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.bessel_equation.bessel_equation_identification.v1",
+      "concept_id": "calculus.bessel_equation",
+      "problem_type": "bessel_equation_identification",
+      "file": "11_calculus.bessel_equation__bessel_equation_identification.json"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.bessel_equation.bessel_series_derivation.v1",
+      "concept_id": "calculus.bessel_equation",
+      "problem_type": "bessel_series_derivation",
+      "file": "11_calculus.bessel_equation__bessel_series_derivation.json"
+    }
+  ]
+}

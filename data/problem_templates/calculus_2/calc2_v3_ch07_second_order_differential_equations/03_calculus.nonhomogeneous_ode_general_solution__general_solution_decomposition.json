@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.nonhomogeneous_ode_general_solution.general_solution_decomposition.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch07_second_order_differential_equations",
+    "unit_name_ko": "이계 미분방정식",
+    "concept_ids": [
+      "calculus.nonhomogeneous_ode_general_solution"
+    ],
+    "formula_ids": [
+      "nonhomogeneous_general_solution",
+      "complementary_and_particular_def"
+    ],
+    "tags": [
+      "nonhomogeneous_ode",
+      "particular_solution",
+      "complementary_solution"
+    ]
+  },
+  "classification": {
+    "problem_type": "general_solution_decomposition",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 2,
+      "min": 2,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "yc": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "yc 파라미터"
+    },
+    "yp": {
+      "type": "expression",
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "yp 파라미터"
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "비동차방정식의 일반해 구조 - general_solution_decomposition 유형의 문제를 해결하시오. 주어진 파라미터: {{ yc }}, {{ yp }}"
+    ],
+    "latex_templates": [
+      "y=y_c+y_p"
+    ],
+    "cas_template": "yc + yp",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "cas_template": "yc + yp",
+    "latex_template": "y=y_c+y_p",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "ode_residual"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "문제 조건을 확인하고 적용할 공식을 선택한다.",
+        "formula_id": "nonhomogeneous_general_solution",
+        "cas_expression": "yc + yp"
+      },
+      {
+        "step": 2,
+        "action": "CAS 식으로 계산하고 결과를 정규화한다.",
+        "formula_id": null,
+        "cas_expression": "yc + yp"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "ode_residual",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "calculus.nonhomogeneous_ode_general_solution.misconception.1",
+      "misconception_id": "calculus.nonhomogeneous_ode.omit_complementary_solution",
+      "transformation": "omit_complementary_solution_from_general_solution",
+      "validator": "distractor_validity_check"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": null,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "generate_calc2_problem_templates.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Blueprint generated from Calculus II concept catalog generation_profile and formula metadata."
+  }
+}
