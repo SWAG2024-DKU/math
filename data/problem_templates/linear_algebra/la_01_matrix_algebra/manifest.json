@@ -1,0 +1,139 @@
+{
+  "subject_id": "linear_algebra",
+  "unit_id": "la_01_matrix_algebra",
+  "template_count": 22,
+  "templates": [
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.system_form.equation_to_matrix.v1",
+      "concept_id": "la.matrix.system_form",
+      "problem_type": "equation_to_matrix",
+      "file": "01_la.matrix.system_form__equation_to_matrix.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.system_form.matrix_to_vector_equation.v1",
+      "concept_id": "la.matrix.system_form",
+      "problem_type": "matrix_to_vector_equation",
+      "file": "01_la.matrix.system_form__matrix_to_vector_equation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ero_application.v1",
+      "concept_id": "la.matrix.ero_ref",
+      "problem_type": "ero_application",
+      "file": "02_la.matrix.ero_ref__ero_application.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ref_identification.v1",
+      "concept_id": "la.matrix.ero_ref",
+      "problem_type": "ref_identification",
+      "file": "02_la.matrix.ero_ref__ref_identification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rref.rref_calculation.v1",
+      "concept_id": "la.matrix.rref",
+      "problem_type": "rref_calculation",
+      "file": "03_la.matrix.rref__rref_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rref.consistency_check.v1",
+      "concept_id": "la.matrix.rref",
+      "problem_type": "consistency_check",
+      "file": "03_la.matrix.rref__consistency_check.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rank.rank_calculation.v1",
+      "concept_id": "la.matrix.rank",
+      "problem_type": "rank_calculation",
+      "file": "04_la.matrix.rank__rank_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rank.matrix_rank_property.v1",
+      "concept_id": "la.matrix.rank",
+      "problem_type": "matrix_rank_property",
+      "file": "04_la.matrix.rank__matrix_rank_property.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.parametric_solution.free_variable_identification.v1",
+      "concept_id": "la.matrix.parametric_solution",
+      "problem_type": "free_variable_identification",
+      "file": "05_la.matrix.parametric_solution__free_variable_identification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.parametric_solution.parametric_solution_extraction.v1",
+      "concept_id": "la.matrix.parametric_solution",
+      "problem_type": "parametric_solution_extraction",
+      "file": "05_la.matrix.parametric_solution__parametric_solution_extraction.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.matrix_multiplication.v1",
+      "concept_id": "la.matrix.multiplication",
+      "problem_type": "matrix_multiplication",
+      "file": "06_la.matrix.multiplication__matrix_multiplication.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.algebraic_expansion_verification.v1",
+      "concept_id": "la.matrix.multiplication",
+      "problem_type": "algebraic_expansion_verification",
+      "file": "06_la.matrix.multiplication__algebraic_expansion_verification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.transpose_symmetric.transpose_algebra.v1",
+      "concept_id": "la.matrix.transpose_symmetric",
+      "problem_type": "transpose_algebra",
+      "file": "07_la.matrix.transpose_symmetric__transpose_algebra.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.transpose_symmetric.symmetry_classification.v1",
+      "concept_id": "la.matrix.transpose_symmetric",
+      "problem_type": "symmetry_classification",
+      "file": "07_la.matrix.transpose_symmetric__symmetry_classification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.inverse_gauss_jordan.inverse_calculation.v1",
+      "concept_id": "la.matrix.inverse_gauss_jordan",
+      "problem_type": "inverse_calculation",
+      "file": "08_la.matrix.inverse_gauss_jordan__inverse_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.inverse_gauss_jordan.singular_matrix_identification.v1",
+      "concept_id": "la.matrix.inverse_gauss_jordan",
+      "problem_type": "singular_matrix_identification",
+      "file": "08_la.matrix.inverse_gauss_jordan__singular_matrix_identification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.imt.equivalence_theorem_check.v1",
+      "concept_id": "la.matrix.imt",
+      "problem_type": "equivalence_theorem_check",
+      "file": "09_la.matrix.imt__equivalence_theorem_check.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.imt.invertibility_determination.v1",
+      "concept_id": "la.matrix.imt",
+      "problem_type": "invertibility_determination",
+      "file": "09_la.matrix.imt__invertibility_determination.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.elementary_matrices.elementary_matrix_construction.v1",
+      "concept_id": "la.matrix.elementary_matrices",
+      "problem_type": "elementary_matrix_construction",
+      "file": "10_la.matrix.elementary_matrices__elementary_matrix_construction.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.elementary_matrices.elementary_inverse_calculation.v1",
+      "concept_id": "la.matrix.elementary_matrices",
+      "problem_type": "elementary_inverse_calculation",
+      "file": "10_la.matrix.elementary_matrices__elementary_inverse_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.lu_decomposition.lu_factorization.v1",
+      "concept_id": "la.matrix.lu_decomposition",
+      "problem_type": "lu_factorization",
+      "file": "11_la.matrix.lu_decomposition__lu_factorization.json"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.lu_decomposition.solve_by_lu.v1",
+      "concept_id": "la.matrix.lu_decomposition",
+      "problem_type": "solve_by_lu",
+      "file": "11_la.matrix.lu_decomposition__solve_by_lu.json"
+    }
+  ]
+}

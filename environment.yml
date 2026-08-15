@@ -7,6 +7,10 @@ dependencies:
       - psycopg[binary]
       - python-dotenv
       - pydantic
+      - numpy
+      - pandas
+      - openpyxl
+      - transformers
       - sentence-transformers
       - pgvector
       - pytest

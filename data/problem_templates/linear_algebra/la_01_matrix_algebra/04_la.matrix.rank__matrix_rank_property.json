@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rank.matrix_rank_property.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_01_matrix_algebra",
+    "unit_name_ko": "연립방정식과 행렬대수",
+    "concept_ids": [
+      "la.matrix.rank"
+    ],
+    "formula_ids": [
+      "rank_definition_pivot"
+    ],
+    "tags": [
+      "rank",
+      "pivot",
+      "matrix_dimension"
+    ]
+  },
+  "classification": {
+    "problem_type": "matrix_rank_property",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "m": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "행렬의 행 개수."
+    },
+    "n": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "행렬의 열 개수."
+    }
+  },
+  "parameter_dependencies": [],
+  "constraints": [],
+  "problem_builder": {
+    "text_templates_ko": [
+      "m={{ m }}, n={{ n }}일 때 m x n 행렬이 가질 수 있는 최대 랭크를 구하시오."
+    ],
+    "latex_templates": [
+      "\\max\\operatorname{rank}(A),\\quad A\\in\\mathbb{R}^{ {{ m }}\\times {{ n }} }"
+    ],
+    "cas_template": "Min(m, n)",
+    "context_templates": [],
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "cas_template": "Min(m, n)",
+    "latex_template": "\\min(m,n)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "equivalence": {
+      "method": "symbolic_equivalence",
+      "tolerance": null
+    },
+    "required_checks": [
+      "rank_computation_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "formula_substitution",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "행렬을 소거하여 피봇의 개수를 세고 랭크를 산출한다[cite: 2, 3].",
+        "formula_id": "rank_definition_pivot",
+        "cas_expression": "Min(m, n)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "rank_computation_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "distractor_rules": [
+    {
+      "rule_id": "from_la.matrix.rank.zero_row_confusion",
+      "misconception_id": "la.matrix.rank.zero_row_confusion",
+      "transformation": "apply_misconception:confuse_rank_with_zero_row_count",
+      "validator": "not_equivalent_to_correct_answer"
+    }
+  ],
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "maximum_answer_complexity": null,
+    "maximum_denominator": 12,
+    "allow_decimal_answer": false,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_at": null,
+    "updated_at": null,
+    "created_by": "concept_catalog_converter.py",
+    "reviewed_by": null,
+    "review_status": "not_reviewed",
+    "notes": "Auto-generated from concept 'la.matrix.rank' (행렬의 랭크 (Rank)) and problem_type 'matrix_rank_property'. 행렬 크기/가역성/REF 형태처럼 sampler 단계에서 보장해야 하는 조건은 실제 문제 생성 엔진 구현 시 추가 검증이 필요하다."
+  }
+}

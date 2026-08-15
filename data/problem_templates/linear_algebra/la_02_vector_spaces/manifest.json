@@ -1,0 +1,67 @@
+{
+  "subject_id": "linear_algebra",
+  "unit_id": "la_02_vector_spaces",
+  "template_count": 10,
+  "templates": [
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.subspace_test.subspace_verification.v1",
+      "concept_id": "la.space.subspace_test",
+      "problem_type": "subspace_verification",
+      "file": "01_la.space.subspace_test__subspace_verification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.span.span_membership_test.v1",
+      "concept_id": "la.space.span",
+      "problem_type": "span_membership_test",
+      "file": "02_la.space.span__span_membership_test.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.linear_independence.linear_independence_test.v1",
+      "concept_id": "la.space.linear_independence",
+      "problem_type": "linear_independence_test",
+      "file": "03_la.space.linear_independence__linear_independence_test.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.basis.basis_verification.v1",
+      "concept_id": "la.space.basis",
+      "problem_type": "basis_verification",
+      "file": "04_la.space.basis__basis_verification.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.column_space.column_space_basis.v1",
+      "concept_id": "la.space.column_space",
+      "problem_type": "column_space_basis",
+      "file": "05_la.space.column_space__column_space_basis.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.row_space.row_space_basis.v1",
+      "concept_id": "la.space.row_space",
+      "problem_type": "row_space_basis",
+      "file": "06_la.space.row_space__row_space_basis.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.null_space.null_space_basis.v1",
+      "concept_id": "la.space.null_space",
+      "problem_type": "null_space_basis",
+      "file": "07_la.space.null_space__null_space_basis.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.null_space.left_null_space_basis.v1",
+      "concept_id": "la.space.null_space",
+      "problem_type": "left_null_space_basis",
+      "file": "07_la.space.null_space__left_null_space_basis.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.rank_nullity.rank_nullity_calculation.v1",
+      "concept_id": "la.space.rank_nullity",
+      "problem_type": "rank_nullity_calculation",
+      "file": "08_la.space.rank_nullity__rank_nullity_calculation.json"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.change_of_basis.change_of_basis_calculation.v1",
+      "concept_id": "la.space.change_of_basis",
+      "problem_type": "change_of_basis_calculation",
+      "file": "09_la.space.change_of_basis__change_of_basis_calculation.json"
+    }
+  ]
+}
