@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.pappus_theorem.pappus_theorem_application.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_1.pappus_theorem_application.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch08_further_applications_of_integration",
+    "unit_name_ko": "적분의 추가 응용",
+    "concept_ids": [
+      "calculus.pappus_theorem"
+    ],
+    "formula_ids": [
+      "pappus_theorem",
+      "torus_volume"
+    ],
+    "tags": [
+      "pappus_theorem",
+      "centroid",
+      "volume_of_revolution"
+    ]
+  },
+  "classification": {
+    "problem_type": "pappus_theorem_application",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input": {
+      "type": "symbolic_input",
+      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "region_entirely_on_one_side_of_axis equals True",
+      "required": true,
+      "description": "파푸스 정리는 영역이 회전축을 가로지르지 않아야(축의 한쪽에 완전히 놓여야) 적용할 수 있다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "pappus_theorem_application",
+    "required_objects": [
+      "input"
+    ],
+    "semantic_structure": [
+      "영역이 회전축의 한쪽에 완전히 놓여 있는지 확인한다.",
+      "파푸스 정리로 회전체의 부피를 계산한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'pappus theorem application' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "engine": "sympy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "pappus_theorem",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_1.pappus_theorem_application.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

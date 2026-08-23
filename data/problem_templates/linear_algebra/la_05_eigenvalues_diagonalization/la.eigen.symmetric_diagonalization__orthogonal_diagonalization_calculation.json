@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.symmetric_diagonalization.orthogonal_diagonalization_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "ready",
+  "generation_rule_id": "linear_algebra.orthogonal_diagonalization_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "curated",
+  "executable": true,
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_05_eigenvalues_diagonalization",
+    "unit_name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+    "concept_ids": [
+      "la.eigen.symmetric_diagonalization"
+    ],
+    "formula_ids": [
+      "orthogonal_diagonalization_formula"
+    ],
+    "tags": [
+      "orthogonal_diagonalization",
+      "symmetric_matrix",
+      "spectral_property"
+    ]
+  },
+  "classification": {
+    "problem_type": "orthogonal_diagonalization_calculation",
+    "answer_type": "matrix_pair",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5,
+      "factors": {}
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "실수 대칭행렬."
+    }
+  },
+  "constraints": [],
+  "problem_builder": {
+    "operation": "orthogonal_diagonalization_calculation",
+    "required_objects": [
+      "A"
+    ],
+    "semantic_structure": [
+      "orthogonal_diagonalization_calculation 유형의 수학 객체를 제시한다.",
+      "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+    ],
+    "text_templates_ko": [
+      "실수 대칭행렬 A를 A=QDQ^T 형태로 직교대각화하고 Q와 D를 구하시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "A=QDQ^T"
+    ],
+    "cas_template": "orthogonal_diagonalize_pair(A)",
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "matrix_pair",
+    "engine": "sympy",
+    "cas_template": "orthogonal_diagonalize_pair(A)",
+    "latex_template": "(Q,D)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "orthogonal_matrix_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "orthogonal_diagonalization_formula",
+        "cas_expression": "orthogonal_diagonalize_pair(A)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "orthogonal_matrix_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'linear_algebra.orthogonal_diagonalization_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+  }
+}

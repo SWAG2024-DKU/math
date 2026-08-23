@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_surface_area_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_1.parametric_surface_area_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch09_parametric_equations_and_polar_coordinates",
+    "unit_name_ko": "매개방정식과 극좌표",
+    "concept_ids": [
+      "calculus.parametric_area_arc_length_and_surface"
+    ],
+    "formula_ids": [
+      "parametric_area",
+      "parametric_arc_length",
+      "parametric_speed",
+      "parametric_surface_area"
+    ],
+    "tags": [
+      "parametric_curve",
+      "arc_length",
+      "surface_area"
+    ]
+  },
+  "classification": {
+    "problem_type": "parametric_surface_area_calculation",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input": {
+      "type": "symbolic_input",
+      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "curve_traced_exactly_once_on_interval equals True",
+      "required": true,
+      "description": "호의 길이·곡면 넓이 공식은 곡선이 매개변수 구간에서 정확히 한 번만 지나가야 정확한 값을 준다. 두 번 그려지면 실제 길이의 배수로 잘못 계산된다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "g(t) greater_or_equal 0",
+      "required": true,
+      "description": "x축 회전 곡면 넓이 공식은 g(t)≥0을 전제로 한다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "parametric_surface_area_calculation",
+    "required_objects": [
+      "input"
+    ],
+    "semantic_structure": [
+      "매개곡선 아래 넓이를 치환적분으로 계산한다.",
+      "매개곡선의 호의 길이를 계산한다.",
+      "공식 적용 전에 곡선이 구간에서 정확히 한 번만 그려지는지 확인한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'parametric surface area calculation' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "engine": "sympy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "numeric_tolerance",
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "parametric_area",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_1.parametric_surface_area_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

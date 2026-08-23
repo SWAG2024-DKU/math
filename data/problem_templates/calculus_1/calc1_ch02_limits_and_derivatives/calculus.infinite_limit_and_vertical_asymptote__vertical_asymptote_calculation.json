@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.infinite_limit_and_vertical_asymptote.vertical_asymptote_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_1.vertical_asymptote_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch02_limits_and_derivatives",
+    "unit_name_ko": "극한과 도함수",
+    "concept_ids": [
+      "calculus.infinite_limit_and_vertical_asymptote"
+    ],
+    "formula_ids": [
+      "infinite_limit",
+      "one_sided_infinite_limit"
+    ],
+    "tags": [
+      "infinite_limit",
+      "vertical_asymptote"
+    ]
+  },
+  "classification": {
+    "problem_type": "vertical_asymptote_calculation",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input": {
+      "type": "symbolic_input",
+      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "infinite_limit_means_finite_limit_exists equals False",
+      "required": true,
+      "description": "∞는 수가 아니므로 lim f(x)=∞라는 표현이 극한이 (유한하게) 존재함을 의미하지는 않는다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "vertical_asymptote_calculation",
+    "required_objects": [
+      "input"
+    ],
+    "semantic_structure": [
+      "주어진 함수가 특정 점에서 무한극한을 갖는지 판별한다.",
+      "함수의 수직점근선을 찾는다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'vertical asymptote calculation' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "engine": "sympy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "infinite_limit",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_1.vertical_asymptote_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

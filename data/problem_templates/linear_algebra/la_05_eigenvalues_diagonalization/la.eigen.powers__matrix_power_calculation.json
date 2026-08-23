@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.powers.matrix_power_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "ready",
+  "generation_rule_id": "linear_algebra.matrix_power_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "curated",
+  "executable": true,
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_05_eigenvalues_diagonalization",
+    "unit_name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+    "concept_ids": [
+      "la.eigen.powers"
+    ],
+    "formula_ids": [
+      "matrix_power_formula"
+    ],
+    "tags": [
+      "matrix_powers",
+      "dynamical_system",
+      "diagonalization"
+    ]
+  },
+  "classification": {
+    "problem_type": "matrix_power_calculation",
+    "answer_type": "matrix",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {}
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "거듭제곱을 계산할 대각화 가능한 정사각행렬."
+    },
+    "k": {
+      "type": "integer",
+      "required": true,
+      "min": 2,
+      "max": 10,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "양의 정수 지수."
+    }
+  },
+  "constraints": [],
+  "problem_builder": {
+    "operation": "matrix_power_calculation",
+    "required_objects": [
+      "A",
+      "k"
+    ],
+    "semantic_structure": [
+      "matrix_power_calculation 유형의 수학 객체를 제시한다.",
+      "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+    ],
+    "text_templates_ko": [
+      "대각화를 활용하여 A^{{ k }}를 구하시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "A^k=PD^kP^{-1}"
+    ],
+    "cas_template": "A**k",
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "matrix",
+    "engine": "sympy",
+    "cas_template": "A**k",
+    "latex_template": "A^k",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "matrix_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "matrix_power_formula",
+        "cas_expression": "A**k"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "matrix_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'linear_algebra.matrix_power_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+  }
+}

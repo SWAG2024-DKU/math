@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_vector_field.work_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_2.work_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch06_vector_calculus",
+    "unit_name_ko": "벡터미적분",
+    "concept_ids": [
+      "calculus.line_integral_vector_field"
+    ],
+    "formula_ids": [
+      "vector_line_integral",
+      "vector_line_integral_component_form",
+      "work_via_line_integral",
+      "orientation_reversal",
+      "piecewise_smooth_additivity"
+    ],
+    "tags": [
+      "line_integral",
+      "vector_line_integral",
+      "work"
+    ]
+  },
+  "classification": {
+    "problem_type": "work_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input": {
+      "type": "symbolic_input",
+      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "both_vectors_nonzero equals True",
+      "required": true,
+      "description": "각도공식과 직교 조건은 두 벡터가 모두 영벡터가 아니어야 적용된다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "vector_line_integral_orientation_dependent equals True",
+      "required": true,
+      "description": "벡터장 선적분은 곡선의 방향에 의존한다(스칼라 선적분과 달리 방향을 바꾸면 부호가 반대가 됨)."
+    }
+  ],
+  "problem_builder": {
+    "operation": "work_calculation",
+    "required_objects": [
+      "input"
+    ],
+    "semantic_structure": [
+      "두 벡터의 내적을 계산한다.",
+      "내적으로 두 벡터 사이의 각을 구하거나 직교 여부를 판정한다.",
+      "한 벡터를 다른 벡터 방향으로 정사영한다.",
+      "힘벡터와 변위벡터의 내적으로 일을 계산한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'work calculation' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "engine": "sympy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "vector_line_integral",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_2.work_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. 공유 draft_auto Rule의 answer_type을 현재 Concept의 지원 타입 'scalar'에 맞게 조정했으며, 정답식은 검토 전까지 비워둠. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

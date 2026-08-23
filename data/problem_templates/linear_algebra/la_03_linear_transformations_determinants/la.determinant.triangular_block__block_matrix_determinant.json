@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.triangular_block.block_matrix_determinant.v1",
+  "template_version": "1.0.0",
+  "status": "ready",
+  "generation_rule_id": "linear_algebra.block_matrix_determinant.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "curated",
+  "executable": true,
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_03_linear_transformations_determinants",
+    "unit_name_ko": "선형변환과 행렬식",
+    "concept_ids": [
+      "la.determinant.triangular_block"
+    ],
+    "formula_ids": [
+      "triangular_det",
+      "block_triangular_det"
+    ],
+    "tags": [
+      "determinant",
+      "triangular_matrix",
+      "block_matrix"
+    ]
+  },
+  "classification": {
+    "problem_type": "block_matrix_determinant",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {}
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "B": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "블록 대각행렬의 첫 번째 정사각 블록."
+    },
+    "C": {
+      "type": "matrix",
+      "required": true,
+      "min": -4,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "블록 대각행렬의 두 번째 정사각 블록."
+    }
+  },
+  "constraints": [],
+  "problem_builder": {
+    "operation": "block_matrix_determinant",
+    "required_objects": [
+      "B",
+      "C"
+    ],
+    "semantic_structure": [
+      "block_matrix_determinant 유형의 수학 객체를 제시한다.",
+      "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+    ],
+    "text_templates_ko": [
+      "블록 대각행렬 A = diag(B,C)의 행렬식을 구하시오.\nB = {{ B }}, C = {{ C }}"
+    ],
+    "latex_templates": [
+      "\\det\\begin{bmatrix}B&0\\\\0&C\\end{bmatrix}"
+    ],
+    "cas_template": "B.det()*C.det()",
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "engine": "sympy",
+    "cas_template": "B.det()*C.det()",
+    "latex_template": "\\det(B)\\det(C)",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "determinant_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "triangular_det",
+        "cas_expression": "B.det()*C.det()"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "determinant_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'linear_algebra.block_matrix_determinant.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+  }
+}

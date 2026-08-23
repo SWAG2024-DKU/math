@@ -1,181 +1,225 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any
+from typing import Iterable
 
-from pydantic import ValidationError
+from pydantic import BaseModel, ConfigDict, Field
 
-from app.schemas.concept import Concept, ConceptCatalog
+from app.schemas.concept import ConceptCatalog
 
 
-@dataclass(frozen=True, slots=True)
-class ProblemTypeInfo:
-    """
-    Concept에서 추출한 하나의 문제 유형과 그 출처 정보.
+class ProblemTypeInfo(BaseModel):
+    """Concept JSON에서 추출한 Problem Type 메타데이터."""
 
-    Problem Type 자체뿐 아니라 다음 단계인 Generation Rule 조회와
-    ProblemTemplate 조립에 필요한 최소 메타데이터를 함께 보존한다.
-    """
+    model_config = ConfigDict(extra="forbid")
 
-    language: str
-
+    # Taxonomy
     subject_id: str
     subject_name_ko: str
-
     unit_id: str
     unit_name_ko: str
-
     concept_id: str
     concept_name_ko: str
 
+    # Problem classification
     problem_type: str
+    language: str = "ko-KR"
 
-    formula_ids: tuple[str, ...]
-    tags: tuple[str, ...]
+    # Concept / generation metadata
+    formula_ids: list[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list)
+    supported_answer_types: list[str] = Field(default_factory=list)
 
-    supported_answer_types: tuple[str, ...]
-    difficulty_min: int
-    difficulty_max: int
-    recommended_validators: tuple[str, ...]
-    generation_notes: str | None
+    difficulty_min: int | None = None
+    difficulty_max: int | None = None
 
-    def to_dict(self) -> dict[str, Any]:
-        """JSON 직렬화 등에 사용할 수 있는 dict 형태로 변환한다."""
-        return asdict(self)
+    recommended_validators: list[str] = Field(default_factory=list)
+    generation_notes: str | None = None
 
-
-def _ensure_unique_problem_types(concept: Concept) -> None:
-    """
-    하나의 Concept 안에 같은 problem_type이 중복 선언되었는지 확인한다.
-
-    현재 Concept Pydantic Schema는 supported_problem_types 내부 중복까지는
-    검사하지 않으므로 추출 단계에서 중복 생성을 방지한다.
-    """
-
-    problem_types = concept.generation_profile.supported_problem_types
-
-    if len(problem_types) != len(set(problem_types)):
-        duplicated = sorted(
-            {
-                problem_type
-                for problem_type in problem_types
-                if problem_types.count(problem_type) > 1
-            }
-        )
-        raise ValueError(
-            f"{concept.concept_id}: supported_problem_types에 중복이 있습니다: "
-            f"{', '.join(duplicated)}"
-        )
+    source_file: str | None = None
 
 
 def extract_from_concept(
     catalog: ConceptCatalog,
-    concept: Concept,
+    concept,
+    *,
+    source_file: str | None = None,
 ) -> list[ProblemTypeInfo]:
     """
-    Concept 하나에서 활성화된 Problem Type을 추출한다.
-
-    generation_profile.enabled가 False이면 빈 목록을 반환한다.
-    Problem Type 하나당 ProblemTypeInfo 하나를 생성한다.
+    Concept 하나에서 generation_profile.enabled=True인
+    supported_problem_types를 ProblemTypeInfo로 변환한다.
     """
 
-    profile = concept.generation_profile
+    profile = getattr(concept, "generation_profile", None)
 
-    if not profile.enabled:
+    if profile is None or not getattr(profile, "enabled", False):
         return []
 
-    _ensure_unique_problem_types(concept)
-
-    formula_ids = tuple(
-        formula.formula_id
-        for formula in concept.formulas
+    problem_types = list(
+        getattr(profile, "supported_problem_types", []) or []
     )
-    tags = tuple(concept.tags)
-    supported_answer_types = tuple(profile.supported_answer_types)
-    recommended_validators = tuple(profile.recommended_validators)
+
+    if not problem_types:
+        return []
+
+    # ------------------------------------------------------------------
+    # Taxonomy
+    # ------------------------------------------------------------------
+    subject = getattr(catalog, "subject", None)
+    unit = getattr(catalog, "unit", None)
+
+    subject_id = getattr(subject, "subject_id", None)
+    subject_name_ko = getattr(subject, "name_ko", None)
+
+    unit_id = getattr(unit, "unit_id", None)
+    unit_name_ko = getattr(unit, "name_ko", None)
+
+    concept_id = getattr(concept, "concept_id", None)
+    concept_name_ko = (
+        getattr(concept, "name_ko", None)
+        or getattr(concept, "concept_name_ko", None)
+        or concept_id
+    )
+
+    if not subject_id:
+        raise ValueError(f"subject_id가 없습니다: {source_file}")
+
+    if not subject_name_ko:
+        subject_name_ko = subject_id
+
+    if not unit_id:
+        raise ValueError(f"unit_id가 없습니다: {source_file}")
+
+    if not unit_name_ko:
+        unit_name_ko = unit_id
+
+    if not concept_id:
+        raise ValueError(f"concept_id가 없습니다: {source_file}")
+
+    # ------------------------------------------------------------------
+    # Generation metadata
+    # ------------------------------------------------------------------
+    difficulty_range = getattr(profile, "difficulty_range", None)
+
+    difficulty_min = (
+        getattr(difficulty_range, "min", None)
+        if difficulty_range is not None
+        else None
+    )
+
+    difficulty_max = (
+        getattr(difficulty_range, "max", None)
+        if difficulty_range is not None
+        else None
+    )
+
+    formulas = list(getattr(concept, "formulas", []) or [])
+
+    formula_ids = [
+        getattr(formula, "formula_id")
+        for formula in formulas
+        if getattr(formula, "formula_id", None)
+    ]
+
+    tags = list(getattr(concept, "tags", []) or [])
+
+    supported_answer_types = list(
+        getattr(profile, "supported_answer_types", []) or []
+    )
+
+    recommended_validators = list(
+        getattr(profile, "recommended_validators", []) or []
+    )
+
+    generation_notes = getattr(
+        profile,
+        "generation_notes",
+        None,
+    )
+
+    language = getattr(catalog, "language", None) or "ko-KR"
 
     return [
         ProblemTypeInfo(
-            language=catalog.language,
-            subject_id=catalog.subject.subject_id,
-            subject_name_ko=catalog.subject.name_ko,
-            unit_id=catalog.unit.unit_id,
-            unit_name_ko=catalog.unit.name_ko,
-            concept_id=concept.concept_id,
-            concept_name_ko=concept.name_ko,
+            subject_id=subject_id,
+            subject_name_ko=subject_name_ko,
+            unit_id=unit_id,
+            unit_name_ko=unit_name_ko,
+            concept_id=concept_id,
+            concept_name_ko=concept_name_ko,
             problem_type=problem_type,
+            language=language,
             formula_ids=formula_ids,
             tags=tags,
             supported_answer_types=supported_answer_types,
-            difficulty_min=profile.difficulty_range.min,
-            difficulty_max=profile.difficulty_range.max,
+            difficulty_min=difficulty_min,
+            difficulty_max=difficulty_max,
             recommended_validators=recommended_validators,
-            generation_notes=profile.generation_notes,
+            generation_notes=generation_notes,
+            source_file=source_file,
         )
-        for problem_type in profile.supported_problem_types
+        for problem_type in problem_types
     ]
 
 
 def extract_from_catalog(
     catalog: ConceptCatalog,
+    *,
+    source_file: str | None = None,
 ) -> list[ProblemTypeInfo]:
     """ConceptCatalog 안의 모든 Concept에서 Problem Type을 추출한다."""
 
-    problem_types: list[ProblemTypeInfo] = []
+    results: list[ProblemTypeInfo] = []
 
-    for concept in catalog.concepts:
-        problem_types.extend(
+    for concept in list(getattr(catalog, "concepts", []) or []):
+        results.extend(
             extract_from_concept(
-                catalog=catalog,
-                concept=concept,
+                catalog,
+                concept,
+                source_file=source_file,
             )
         )
 
-    return problem_types
-
-
-def load_catalog(path: str | Path) -> ConceptCatalog:
-    """
-    Concept JSON 파일을 읽고 기존 ConceptCatalog Pydantic 모델로 검증한다.
-
-    JSON 문법 오류나 Pydantic 검증 오류는 파일 경로를 포함한 예외로
-    다시 전달해 어느 Concept 파일에서 문제가 발생했는지 알 수 있게 한다.
-    """
-
-    catalog_path = Path(path)
-
-    if not catalog_path.is_file():
-        raise FileNotFoundError(
-            f"Concept JSON 파일을 찾을 수 없습니다: {catalog_path}"
-        )
-
-    try:
-        raw = json.loads(
-            catalog_path.read_text(encoding="utf-8")
-        )
-    except json.JSONDecodeError as exc:
-        raise ValueError(
-            f"유효하지 않은 JSON 파일입니다: {catalog_path}"
-        ) from exc
-
-    try:
-        return ConceptCatalog.model_validate(raw)
-    except ValidationError as exc:
-        raise ValueError(
-            f"ConceptCatalog 검증에 실패했습니다: {catalog_path}\n{exc}"
-        ) from exc
+    return results
 
 
 def extract_from_file(
-    path: str | Path,
+    file_path: str | Path,
 ) -> list[ProblemTypeInfo]:
-    """Concept JSON 파일 하나에서 모든 Problem Type을 추출한다."""
+    """Concept JSON 파일 하나를 Pydantic 검증 후 Problem Type으로 변환한다."""
+
+    path = Path(file_path)
+
+    if not path.exists():
+        raise FileNotFoundError(f"파일을 찾을 수 없습니다: {path}")
+
+    if not path.is_file():
+        raise ValueError(f"파일 경로가 아닙니다: {path}")
+
+    if path.suffix.lower() != ".json":
+        raise ValueError(f"JSON 파일이 아닙니다: {path}")
+
+    with path.open("r", encoding="utf-8") as f:
+        raw = json.load(f)
+
+    catalog = ConceptCatalog.model_validate(raw)
 
     return extract_from_catalog(
-        load_catalog(path)
+        catalog,
+        source_file=str(path),
     )
+
+
+def _iter_json_files(
+    directory: Path,
+    *,
+    recursive: bool,
+) -> Iterable[Path]:
+    if recursive:
+        yield from sorted(directory.rglob("*.json"))
+    else:
+        yield from sorted(directory.glob("*.json"))
 
 
 def extract_from_directory(
@@ -184,28 +228,46 @@ def extract_from_directory(
     recursive: bool = True,
 ) -> list[ProblemTypeInfo]:
     """
-    디렉터리 안의 Concept JSON 파일들을 순회하며 Problem Type을 추출한다.
+    디렉터리 안의 Concept JSON 전체에서 Problem Type을 추출한다.
 
-    기본적으로 하위 과목 디렉터리까지 재귀 탐색한다. 따라서
-    data/concepts/linear_algebra뿐 아니라 data/concepts 전체를 넘겨도 된다.
-    파일 순서는 실행할 때마다 동일하도록 경로명 기준으로 정렬한다.
+    예:
+        extract_from_directory("data/concepts/linear_algebra")
+        extract_from_directory("data/concepts")
     """
 
-    concepts_dir = Path(directory)
+    path = Path(directory)
 
-    if not concepts_dir.is_dir():
-        raise NotADirectoryError(
-            f"Concept 디렉터리를 찾을 수 없습니다: {concepts_dir}"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"디렉터리를 찾을 수 없습니다: {path}"
         )
 
-    pattern = "**/*.json" if recursive else "*.json"
-    concept_files = sorted(concepts_dir.glob(pattern))
-
-    problem_types: list[ProblemTypeInfo] = []
-
-    for concept_file in concept_files:
-        problem_types.extend(
-            extract_from_file(concept_file)
+    if not path.is_dir():
+        raise ValueError(
+            f"디렉터리 경로가 아닙니다: {path}"
         )
 
-    return problem_types
+    results: list[ProblemTypeInfo] = []
+
+    for json_file in _iter_json_files(
+        path,
+        recursive=recursive,
+    ):
+        results.extend(
+            extract_from_file(json_file)
+        )
+
+    return results
+
+
+def unique_problem_types(
+    items: Iterable[ProblemTypeInfo],
+) -> list[str]:
+    """중복 제거한 Problem Type 문자열 목록을 정렬해 반환한다."""
+
+    return sorted(
+        {
+            item.problem_type
+            for item in items
+        }
+    )

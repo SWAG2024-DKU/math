@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.second_derivative_test_classification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_2.second_derivative_test_classification.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_2",
+    "subject_name_ko": "미분적분학 2",
+    "unit_id": "calc2_v3_ch04_differentiation_of_functions_of_several_variables",
+    "unit_name_ko": "다변수함수의 미분",
+    "concept_ids": [
+      "calculus.multivariable_extrema"
+    ],
+    "formula_ids": [
+      "critical_point_def",
+      "second_derivative_test",
+      "extreme_value_theorem_multivariable"
+    ],
+    "tags": [
+      "multivariable_extrema",
+      "second_derivative_test",
+      "saddle_point"
+    ]
+  },
+  "classification": {
+    "problem_type": "second_derivative_test_classification",
+    "answer_type": "classification",
+    "difficulty": {
+      "base": 4,
+      "min": 3,
+      "max": 5,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "f": {
+      "type": "expression",
+      "description": "문제 유형에 적합한 단순 함수/수식",
+      "allowed_families": [
+        "polynomial",
+        "rational",
+        "exponential",
+        "logarithmic",
+        "trigonometric"
+      ]
+    },
+    "x": {
+      "type": "symbol",
+      "description": "주 독립변수"
+    },
+    "data": {
+      "type": "numeric_data",
+      "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
+      "size_min": 3,
+      "size_max": 30
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "D not_equals 0",
+      "required": true,
+      "description": "이차미분판정법에서 D=0이면 다른 방법이 필요하다(판정 불가)."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "domain_closed_bounded_and_f_continuous equals True",
+      "required": true,
+      "description": "극값정리를 적용하려면 영역이 닫히고 유계이며 함수가 연속이어야 한다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "second_derivative_test_classification",
+    "required_objects": [
+      "f",
+      "x",
+      "data"
+    ],
+    "semantic_structure": [
+      "다변수함수의 임계점을 구한다.",
+      "이차미분판정법으로 임계점을 국소최대·최소·안장점으로 분류한다.",
+      "닫힌 유계 영역에서 절대최댓값·최솟값을 구한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'second derivative test classification' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "classification",
+    "engine": "python",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": null,
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "numeric_sampling",
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "critical_point_def",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "numeric_sampling",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_2.second_derivative_test_classification.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

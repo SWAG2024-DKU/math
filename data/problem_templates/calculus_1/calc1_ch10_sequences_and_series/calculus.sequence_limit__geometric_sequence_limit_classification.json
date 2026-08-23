@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.geometric_sequence_limit_classification.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_1.geometric_sequence_limit_classification.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch10_sequences_and_series",
+    "unit_name_ko": "수열과 급수",
+    "concept_ids": [
+      "calculus.sequence_limit"
+    ],
+    "formula_ids": [
+      "sequence_limit_def",
+      "function_to_sequence_limit",
+      "sequence_limit_laws",
+      "geometric_sequence_limit"
+    ],
+    "tags": [
+      "sequence",
+      "sequence_limit",
+      "geometric_sequence"
+    ]
+  },
+  "classification": {
+    "problem_type": "geometric_sequence_limit_classification",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "f": {
+      "type": "expression",
+      "description": "문제 유형에 적합한 단순 함수/수식",
+      "allowed_families": [
+        "polynomial",
+        "rational",
+        "exponential",
+        "logarithmic",
+        "trigonometric"
+      ]
+    },
+    "x": {
+      "type": "symbol",
+      "description": "주 독립변수"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "converse_of_function_to_sequence_limit_theorem equals False",
+      "required": true,
+      "description": "함수의 극한으로부터 수열의 극한을 얻는 정리는 역이 성립하지 않는다 — 수열의 수렴으로부터 대응 함수의 극한을 함부로 말할 수 없다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "inequality_holds_eventually equals True",
+      "required": true,
+      "description": "수열의 조임정리는 어떤 N 이후 모든 n에서 a_n≤b_n≤c_n이고 lim a_n=lim c_n=L이면 lim b_n=L이다(처음 유한개 항은 무시 가능)."
+    }
+  ],
+  "problem_builder": {
+    "operation": "geometric_sequence_limit_classification",
+    "required_objects": [
+      "f",
+      "x"
+    ],
+    "semantic_structure": [
+      "수열이 수렴하는지 판정하고 극한값을 구한다.",
+      "극한법칙으로 결합된 수열의 극한을 계산한다.",
+      "공비 r의 범위에 따라 등비수열의 극한을 판정한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'geometric sequence limit classification' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "engine": "python",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": null,
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "numeric_tolerance",
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "sequence_limit_def",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "numeric_tolerance",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_1.geometric_sequence_limit_classification.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

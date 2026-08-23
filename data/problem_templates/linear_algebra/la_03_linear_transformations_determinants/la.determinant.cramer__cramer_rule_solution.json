@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.cramer.cramer_rule_solution.v1",
+  "template_version": "1.0.0",
+  "status": "ready",
+  "generation_rule_id": "linear_algebra.cramer_rule_solution.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "curated",
+  "executable": true,
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_03_linear_transformations_determinants",
+    "unit_name_ko": "선형변환과 행렬식",
+    "concept_ids": [
+      "la.determinant.cramer"
+    ],
+    "formula_ids": [
+      "cramer_rule",
+      "adjugate_inverse"
+    ],
+    "tags": [
+      "cramers_rule",
+      "adjugate_matrix",
+      "inverse_matrix"
+    ]
+  },
+  "classification": {
+    "problem_type": "cramer_rule_solution",
+    "answer_type": "vector",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {}
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "Cramer 법칙을 적용할 가역 정사각행렬."
+    },
+    "b": {
+      "type": "vector",
+      "required": true,
+      "min": -8,
+      "max": 8,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "우변 벡터."
+    }
+  },
+  "constraints": [
+    {
+      "type": "cramer_nonsingular",
+      "expression": "{\"constraint_id\": \"cramer_nonsingular\", \"scope\": \"generation\", \"description\": \"Cramer 법칙 적용을 위해 A는 가역이어야 한다.\", \"rule\": {\"left\": \"det(A)\", \"operator\": \"not_equals\", \"right\": 0}, \"on_failure\": \"resample\"}",
+      "required": true,
+      "description": "Cramer 법칙 적용을 위해 A는 가역이어야 한다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "cramer_rule_solution",
+    "required_objects": [
+      "A",
+      "b"
+    ],
+    "semantic_structure": [
+      "cramer_rule_solution 유형의 수학 객체를 제시한다.",
+      "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+    ],
+    "text_templates_ko": [
+      "Cramer 법칙을 이용하여 A x = b의 해 x를 구하시오.\nA = {{ A }}, b = {{ b }}"
+    ],
+    "latex_templates": [
+      "x_i=\\frac{\\det(A_i)}{\\det(A)}"
+    ],
+    "cas_template": "A.LUsolve(b)",
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "vector",
+    "engine": "sympy",
+    "cas_template": "A.LUsolve(b)",
+    "latex_template": "\\mathbf x",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "cramer_solution_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "cramer_rule",
+        "cas_expression": "A.LUsolve(b)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "cramer_solution_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'linear_algebra.cramer_rule_solution.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+  }
+}

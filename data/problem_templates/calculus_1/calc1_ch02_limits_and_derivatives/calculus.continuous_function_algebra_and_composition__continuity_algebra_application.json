@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.continuous_function_algebra_and_composition.continuity_algebra_application.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_1.continuity_algebra_application.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch02_limits_and_derivatives",
+    "unit_name_ko": "극한과 도함수",
+    "concept_ids": [
+      "calculus.continuous_function_algebra_and_composition"
+    ],
+    "formula_ids": [
+      "continuous_algebra",
+      "composition_continuity",
+      "limit_composition_swap"
+    ],
+    "tags": [
+      "continuity",
+      "composition",
+      "elementary_functions"
+    ]
+  },
+  "classification": {
+    "problem_type": "continuity_algebra_application",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 2,
+      "min": 2,
+      "max": 3,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input": {
+      "type": "symbolic_input",
+      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "f_and_g_continuous_at_a equals True",
+      "required": true,
+      "description": "사칙연산 정리는 f, g가 모두 a에서 연속이어야 성립한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "g_at_a not_equals 0",
+      "required": true,
+      "description": "몫의 연속성은 g(a)≠0일 때만 성립한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "g_continuous_at_a_and_f_continuous_at_g_a equals True",
+      "required": true,
+      "description": "합성함수 연속 정리는 내부함수 g가 a에서, 외부함수 f가 g(a)에서 각각 연속이어야 한다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "continuity_algebra_application",
+    "required_objects": [
+      "input"
+    ],
+    "semantic_structure": [
+      "연속함수의 사칙연산 정리로 결합된 함수의 연속성을 판정한다.",
+      "합성함수의 연속 조건을 확인한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'continuity algebra application' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "engine": "python",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": null,
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "continuous_algebra",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_1.continuity_algebra_application.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

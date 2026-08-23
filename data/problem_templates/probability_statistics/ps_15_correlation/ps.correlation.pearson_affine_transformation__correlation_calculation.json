@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "probability_statistics.ps_15_correlation.ps.correlation.pearson_affine_transformation.correlation_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "probability_statistics.correlation_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "probability_statistics",
+    "subject_name_ko": "확률과 통계",
+    "unit_id": "ps_15_correlation",
+    "unit_name_ko": "상관분석",
+    "concept_ids": [
+      "ps.correlation.pearson_affine_transformation"
+    ],
+    "formula_ids": [
+      "ps.correlation.pearson_affine_transformation.formula_01"
+    ],
+    "tags": [
+      "correlation",
+      "pearson_correlation",
+      "pearson_affine_transformation"
+    ]
+  },
+  "classification": {
+    "problem_type": "correlation_calculation",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "data": {
+      "type": "numeric_data",
+      "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
+      "size_min": 3,
+      "size_max": 30
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "paired_sample_size greater_or_equal 2",
+      "required": true,
+      "description": "$n\\ge2$여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "concordant_discordant_counts_valid equals True",
+      "required": true,
+      "description": "$C$와 $D$는 동일한 $n$개 쌍에서 계산한 유효한 일치쌍·불일치쌍 수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "paired_sample_size_is_integer equals True",
+      "required": true,
+      "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "kendall_tau_b_denominator_positive equals True",
+      "required": true,
+      "description": "분모의 두 동점보정 항은 양수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "kendall_pair_counts_nonnegative_integers equals True",
+      "required": true,
+      "description": "$C,D,T_x,T_y$는 동일한 표본쌍에서 일관되게 집계한 비음수 정수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "ties_present equals False",
+      "required": true,
+      "description": "동점이 없어야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "paired_sample_size greater_or_equal 2",
+      "required": true,
+      "description": "짝지어진 관측 수는 $n\\ge2$여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "tie_ranking_rule_documented equals True",
+      "required": true,
+      "description": "동점에는 평균순위 등 명시한 순위 규칙을 사용해야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "both_rank_variances_positive equals True",
+      "required": true,
+      "description": "두 순위 중 적어도 하나의 분산이 0이면 상관계수가 정의되지 않는다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "original_variances_positive equals True",
+      "required": true,
+      "description": "$\\operatorname{Var}(X)>0$이고 $\\operatorname{Var}(Y)>0$이어야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "affine_scale_coefficients_nonzero equals True",
+      "required": true,
+      "description": "$b\\ne0$이고 $d\\ne0$이어야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "original_variances_finite equals True",
+      "required": true,
+      "description": "X와 Y의 분산은 유한해야 한다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "correlation_calculation",
+    "required_objects": [
+      "data"
+    ],
+    "semantic_structure": [
+      "Kendall τ-a의 공식과 적용 조건을 구분하여 적용한다.",
+      "Kendall τ-b의 공식과 적용 조건을 구분하여 적용한다.",
+      "Spearman 무동점 차이공식의 공식과 적용 조건을 구분하여 적용한다.",
+      "Spearman 순위상관의 공식과 적용 조건을 구분하여 적용한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'correlation calculation' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "engine": "numpy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": null,
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "assumption_check",
+      "condition_rule_check",
+      "correlation_range_check",
+      "domain_check",
+      "numerical_tolerance",
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "ps.correlation.pearson_affine_transformation.formula_01",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "assumption_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "condition_rule_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "correlation_range_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "domain_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numerical_tolerance",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'probability_statistics.correlation_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

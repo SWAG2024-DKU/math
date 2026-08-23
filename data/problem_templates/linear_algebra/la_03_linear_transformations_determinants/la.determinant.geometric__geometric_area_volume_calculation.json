@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.geometric.geometric_area_volume_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "ready",
+  "generation_rule_id": "linear_algebra.geometric_area_volume_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "curated",
+  "executable": true,
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_03_linear_transformations_determinants",
+    "unit_name_ko": "선형변환과 행렬식",
+    "concept_ids": [
+      "la.determinant.geometric"
+    ],
+    "formula_ids": [
+      "geometric_volume",
+      "multiplicative_property_det"
+    ],
+    "tags": [
+      "determinant",
+      "geometric_meaning",
+      "scaling_factor",
+      "volume"
+    ]
+  },
+  "classification": {
+    "problem_type": "geometric_area_volume_calculation",
+    "answer_type": "scalar",
+    "difficulty": {
+      "base": 2,
+      "min": 1,
+      "max": 3,
+      "factors": {}
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "열벡터들이 평행사변형/평행육면체를 생성하는 정사각행렬."
+    }
+  },
+  "constraints": [],
+  "problem_builder": {
+    "operation": "geometric_area_volume_calculation",
+    "required_objects": [
+      "A"
+    ],
+    "semantic_structure": [
+      "geometric_area_volume_calculation 유형의 수학 객체를 제시한다.",
+      "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+    ],
+    "text_templates_ko": [
+      "A의 열벡터들이 생성하는 평행사변형 또는 평행육면체의 넓이/부피를 구하시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "|\\det(A)|"
+    ],
+    "cas_template": "Abs(A.det())",
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "scalar",
+    "engine": "sympy",
+    "cas_template": "Abs(A.det())",
+    "latex_template": "|\\det(A)|",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "absolute_value_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "geometric_volume",
+        "cas_expression": "Abs(A.det())"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "absolute_value_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'linear_algebra.geometric_area_volume_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+  }
+}

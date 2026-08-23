@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "probability_statistics.ps_14_categorical_analysis.ps.categorical_analysis.independence_homogeneity.f03.contingency_table_calculation.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "probability_statistics.contingency_table_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "probability_statistics",
+    "subject_name_ko": "확률과 통계",
+    "unit_id": "ps_14_categorical_analysis",
+    "unit_name_ko": "범주형 자료분석",
+    "concept_ids": [
+      "ps.categorical_analysis.independence_homogeneity.f03"
+    ],
+    "formula_ids": [
+      "ps.categorical_analysis.independence_homogeneity.f03.formula_01"
+    ],
+    "tags": [
+      "categorical_analysis",
+      "independence_homogeneity",
+      "testing",
+      "independence",
+      "formula_atomic",
+      "core_formula"
+    ]
+  },
+  "classification": {
+    "problem_type": "contingency_table_calculation",
+    "answer_type": "boolean",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "input": {
+      "type": "symbolic_input",
+      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "response_category_count greater_or_equal 2",
+      "required": true,
+      "description": "반응변수는 둘 이상의 상호배타적 범주를 가져야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "reference_category_defined equals True",
+      "required": true,
+      "description": "기준범주 $J$를 명시해야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "response_category_count_is_integer equals True",
+      "required": true,
+      "description": "`response_category_count`에 대응하는 값은 정수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "all_category_probabilities_positive equals True",
+      "required": true,
+      "description": "모든 범주확률은 양수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "category_probability_sum equals 1",
+      "required": true,
+      "description": "범주확률의 합은 1이어야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "response_categories_ordered equals True",
+      "required": true,
+      "description": "반응범주에는 명확한 순서가 있어야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "cutpoints_strictly_ordered equals True",
+      "required": true,
+      "description": "절단점은 순서대로 증가해야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "proportional_odds_assumption_plausible equals True",
+      "required": true,
+      "description": "비례오즈의 공통기울기 가정이 적절해야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "expected_count greater_than 0",
+      "required": true,
+      "description": "Pearson 잔차는 기대도수 $E_{ij}>0$인 셀에서 정의된다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "all_stratum_totals_positive equals True",
+      "required": true,
+      "description": "각 층의 전체도수는 $n_k>0$이어야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "mantel_haenszel_denominator greater_than 0",
+      "required": true,
+      "description": "분모 $\\sum_k b_kc_k/n_k$는 양수여야 한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "stratified_common_odds_ratio_model equals True",
+      "required": true,
+      "description": "층별 2×2 표와 공통 오즈비 모형이 의미 있어야 한다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "contingency_table_calculation",
+    "required_objects": [
+      "input"
+    ],
+    "semantic_structure": [
+      "다항 로지스틱 회귀모형의 공식과 적용 조건을 구분하여 적용한다.",
+      "순서형 비례오즈 모형의 공식과 적용 조건을 구분하여 적용한다.",
+      "Pearson 잔차의 정의와 적용 조건을 식별한다.",
+      "Pearson 잔차의 핵심 공식을 적절한 상황에 적용한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'contingency table calculation' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "boolean",
+    "engine": "numpy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": null,
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "assumption_check",
+      "condition_rule_check",
+      "domain_check",
+      "numerical_tolerance",
+      "symbolic_equivalence",
+      "table_margin_check"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "ps.categorical_analysis.independence_homogeneity.f03.formula_01",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "assumption_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "condition_rule_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "domain_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "numerical_tolerance",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "table_margin_check",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'probability_statistics.contingency_table_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

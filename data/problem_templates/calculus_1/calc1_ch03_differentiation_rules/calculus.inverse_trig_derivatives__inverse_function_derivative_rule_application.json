@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.inverse_trig_derivatives.inverse_function_derivative_rule_application.v1",
+  "template_version": "1.0.0",
+  "status": "draft",
+  "generation_rule_id": "calculus_1.inverse_function_derivative_rule_application.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "draft_auto",
+  "executable": false,
+  "taxonomy": {
+    "subject_id": "calculus_1",
+    "subject_name_ko": "미분적분학 1",
+    "unit_id": "calc1_ch03_differentiation_rules",
+    "unit_name_ko": "미분법",
+    "concept_ids": [
+      "calculus.inverse_trig_derivatives"
+    ],
+    "formula_ids": [
+      "inverse_function_derivative",
+      "arcsin_arccos_derivative",
+      "arctan_arccot_derivative",
+      "arcsec_arccsc_derivative"
+    ],
+    "tags": [
+      "inverse_trig_derivative",
+      "inverse_function_derivative"
+    ]
+  },
+  "classification": {
+    "problem_type": "inverse_function_derivative_rule_application",
+    "answer_type": "expression",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {
+        "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+        "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+      }
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
+      "rows_min": 2,
+      "rows_max": 4,
+      "cols_min": 2,
+      "cols_max": 4,
+      "element_type": "integer",
+      "element_min": -5,
+      "element_max": 5
+    },
+    "f": {
+      "type": "expression",
+      "description": "문제 유형에 적합한 단순 함수/수식",
+      "allowed_families": [
+        "polynomial",
+        "rational",
+        "exponential",
+        "logarithmic",
+        "trigonometric"
+      ]
+    },
+    "x": {
+      "type": "symbol",
+      "description": "주 독립변수"
+    }
+  },
+  "constraints": [
+    {
+      "type": "concept_application_condition",
+      "expression": "f_prime_at_f_inv_x not_equals 0",
+      "required": true,
+      "description": "역함수 미분법은 f가 일대일·미분가능하고, f'(f^{-1}(x))≠0인 점에서 성립한다(그 값이 0이면 역함수 그래프가 수직접선을 가진다)."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "abs_x less_than 1",
+      "required": true,
+      "description": "역사인·역코사인의 도함수 공식은 |x|<1에서 성립한다."
+    },
+    {
+      "type": "concept_application_condition",
+      "expression": "abs_x greater_than 1",
+      "required": true,
+      "description": "역시컨트·역코시컨트의 도함수 공식은 |x|>1에서 성립하며, 가지 선택(치역을 어떻게 잡는지)에 따라 부호가 달라질 수 있다."
+    }
+  ],
+  "problem_builder": {
+    "operation": "inverse_function_derivative_rule_application",
+    "required_objects": [
+      "A",
+      "f",
+      "x"
+    ],
+    "semantic_structure": [
+      "음함수 미분법으로 역삼각함수의 도함수를 유도한다.",
+      "역삼각함수가 포함된 합성함수를 연쇄법칙과 함께 미분한다."
+    ],
+    "text_templates_ko": [
+      "다음 조건을 이용하여 'inverse function derivative rule application' 문제를 해결하시오."
+    ],
+    "latex_templates": [],
+    "cas_template": null,
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "expression",
+    "engine": "sympy",
+    "cas_template": null,
+    "latex_template": null,
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "symbolic_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "inverse_function_derivative",
+        "cas_expression": null
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "symbolic_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'calculus_1.inverse_function_derivative_rule_application.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.parametric_solution.free_variable_identification.v1",
+  "template_version": "1.0.0",
+  "status": "ready",
+  "generation_rule_id": "linear_algebra.free_variable_identification.v1",
+  "generation_rule_version": "1.0.0",
+  "generation_rule_status": "curated",
+  "executable": true,
+  "taxonomy": {
+    "subject_id": "linear_algebra",
+    "subject_name_ko": "선형대수학",
+    "unit_id": "la_01_matrix_algebra",
+    "unit_name_ko": "연립방정식과 행렬대수",
+    "concept_ids": [
+      "la.matrix.parametric_solution"
+    ],
+    "formula_ids": [
+      "parametric_vector_form"
+    ],
+    "tags": [
+      "parametric_solution",
+      "free_variables",
+      "affine_space"
+    ]
+  },
+  "classification": {
+    "problem_type": "free_variable_identification",
+    "answer_type": "vector_expression",
+    "difficulty": {
+      "base": 3,
+      "min": 2,
+      "max": 4,
+      "factors": {}
+    },
+    "generation_strategy": "forward_generation",
+    "language": "ko-KR"
+  },
+  "parameters": {
+    "A": {
+      "type": "matrix",
+      "required": true,
+      "min": -5,
+      "max": 5,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": "uniform",
+      "description": "자유변수를 식별할 계수행렬."
+    }
+  },
+  "constraints": [],
+  "problem_builder": {
+    "operation": "free_variable_identification",
+    "required_objects": [
+      "A"
+    ],
+    "semantic_structure": [
+      "free_variable_identification 유형의 수학 객체를 제시한다.",
+      "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+    ],
+    "text_templates_ko": [
+      "행렬 A의 RREF를 기준으로 자유변수에 해당하는 열의 인덱스를 구하시오.\nA = {{ A }}"
+    ],
+    "latex_templates": [
+      "A={{ A }}"
+    ],
+    "cas_template": "free_variable_indices(A)",
+    "render_engine": "jinja2"
+  },
+  "answer_spec": {
+    "answer_type": "vector_expression",
+    "engine": "sympy",
+    "cas_template": "free_variable_indices(A)",
+    "latex_template": "\\{j\\mid j\\text{ is a non-pivot column}\\}",
+    "canonicalization": {
+      "method": "simplify",
+      "exact_value_preferred": true
+    },
+    "required_checks": [
+      "null_space_check",
+      "linear_combination_equivalence"
+    ]
+  },
+  "solution_spec": {
+    "solution_strategy": "engine_then_explanation",
+    "solution_plan": [
+      {
+        "step": 1,
+        "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+        "formula_id": "parametric_vector_form",
+        "cas_expression": "free_variable_indices(A)"
+      }
+    ],
+    "explanation_policy": {
+      "use_verified_answer_only": true,
+      "use_knowledge_base": true,
+      "allow_llm_calculation": false
+    }
+  },
+  "validation": {
+    "validators": [
+      {
+        "name": "null_space_check",
+        "required": true,
+        "config": {}
+      },
+      {
+        "name": "linear_combination_equivalence",
+        "required": true,
+        "config": {}
+      }
+    ],
+    "generation_max_attempts": 100,
+    "all_required_must_pass": true
+  },
+  "quality_rules": {
+    "duplicate_check": true,
+    "answer_complexity_check": true,
+    "ambiguity_check": true,
+    "minimum_distinct_parameter_sets": 20
+  },
+  "storage_policy": {
+    "save_failed_generations": true,
+    "save_validation_trace": true,
+    "save_seed": true,
+    "save_template_snapshot": true
+  },
+  "metadata": {
+    "created_by": "template_builder.py",
+    "review_status": "not_reviewed",
+    "notes": "Generation Rule 'linear_algebra.free_variable_identification.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+  }
+}
