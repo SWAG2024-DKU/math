@@ -42,8 +42,12 @@ CREATE TABLE IF NOT EXISTS problem.problem_templates (
         CHECK (
             status IN (
                 'draft',
-                'ready',
-                'deprecated'
+                'schema_validated',
+                'math_validated',
+                'human_reviewed',
+                'active',
+                'deprecated',
+                'ready'
             )
         ),
 
@@ -82,5 +86,5 @@ ON problem.problem_templates(
     problem_type
 )
 WHERE
-    status = 'ready'
+    status IN ('ready', 'active')
     AND executable = TRUE;

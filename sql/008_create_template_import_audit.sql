@@ -11,5 +11,14 @@ CREATE TABLE IF NOT EXISTS problem.template_import_audit (
 
     reason TEXT,
 
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    CONSTRAINT template_import_audit_action_check
+        CHECK (
+            action IN (
+                'inserted',
+                'skipped',
+                'duplicate_resolved'
+            )
+        )
 );
