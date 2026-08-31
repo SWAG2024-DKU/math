@@ -15,7 +15,7 @@ except ImportError:
     AutoTokenizer = None  # type: ignore[assignment]
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT_DIR = PROJECT_ROOT / "data" / "chunks"
 REPORT_DIR = PROJECT_ROOT / "scripts" / "search"
 JSON_REPORT_PATH = REPORT_DIR / "chunk_validation_report.json"
