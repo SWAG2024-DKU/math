@@ -1,1 +1,0 @@
-from .linear_algebra import LINEAR_ALGEBRA_RULES
