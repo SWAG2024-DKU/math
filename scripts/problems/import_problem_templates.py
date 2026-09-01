@@ -1,4 +1,14 @@
+from __future__ import annotations
+
+import sys
 from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 
 from app.db.connection import get_connection
 
@@ -18,17 +28,12 @@ from app.problems.template_repository import (
 )
 
 
-PROJECT_ROOT = (
-    Path(__file__)
-    .resolve()
-    .parents[2]
-)
-
 TEMPLATE_ROOT = (
     PROJECT_ROOT
     / "data"
     / "problem_templates"
 )
+
 
 def import_to_database(
     validated_templates,
@@ -166,6 +171,7 @@ def import_to_database(
         "audit_records": audit_inserted_count,
     }
 
+
 def main():
 
     items = scan_template_files(
@@ -220,7 +226,7 @@ def main():
         len(validated),
     )
 
-        # DB에 넣을 record 구조가 정상적으로
+    # DB에 넣을 record 구조가 정상적으로
     # 만들어지는지 하나 확인한다.
     sample_path, sample_raw, sample_template = (
         validated[0]
@@ -258,9 +264,9 @@ def main():
     )
 
     result = import_to_database(
-    validated,
-    audit,
-    PROJECT_ROOT,
+        validated,
+        audit,
+        PROJECT_ROOT,
     )
 
     print(
