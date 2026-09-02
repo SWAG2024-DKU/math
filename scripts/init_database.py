@@ -6,7 +6,7 @@ from app.db.connection import get_connection
 PROJECT_ROOT = (
     Path(__file__)
     .resolve()
-    .parents[1]
+    .parents[2]
 )
 
 SQL_DIR = PROJECT_ROOT / "sql"
