@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "generation_rule_catalog",
   "subject_id": "probability_statistics",
   "rule_count": 23,
@@ -80,6 +80,7 @@
         "ps.anova.welch_anova_statistic.f02.formula_01",
         "ps.anova.welch_anova_statistic.f03.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -91,80 +92,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "model_terms_dimensionally_conformable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.ancova_model.1",
+            "scope": "generation",
+            "description": "반응변수, 집단효과, 공변량과 오차항의 차원이 적합해야 한다.",
+            "rule": {
+              "left": "model_terms_dimensionally_conformable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응변수, 집단효과, 공변량과 오차항의 차원이 적합해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "effect_coding_or_identifiability_constraint_specified equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.ancova_model.2",
+            "scope": "generation",
+            "description": "모형의 집단효과와 절편을 유일하게 해석할 수 있도록 코딩 또는 식별 제약을 명시해야 한다.",
+            "rule": {
+              "left": "effect_coding_or_identifiability_constraint_specified",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모형의 집단효과와 절편을 유일하게 해석할 수 있도록 코딩 또는 식별 제약을 명시해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "comparison_count_positive_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.bonferroni_adjustment.3",
+            "scope": "generation",
+            "description": "$m\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+            "rule": {
+              "left": "comparison_count_positive_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$m\\in\\mathbb Z_{\\ge1}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.bonferroni_adjustment.4",
+            "scope": "generation",
+            "description": "$0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sphericity_correction_applicable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.sphericity_df_correction.5",
+            "scope": "generation",
+            "description": "반복측정 요인이 세 수준 이상이고 구형성 위배가 문제되는 단변량 분석이어야 한다.",
+            "rule": {
+              "left": "sphericity_correction_applicable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반복측정 요인이 세 수준 이상이고 구형성 위배가 문제되는 단변량 분석이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "epsilon_in_right_closed_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.sphericity_df_correction.6",
+            "scope": "generation",
+            "description": "$0<\\epsilon\\le1$이어야 한다.",
+            "rule": {
+              "left": "epsilon_in_right_closed_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\epsilon\\le1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "groups_independent equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.7",
+            "scope": "generation",
+            "description": "집단별 관측은 서로 독립이어야 한다.",
+            "rule": {
+              "left": "groups_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "집단별 관측은 서로 독립이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "homoskedasticity_condition equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.8",
+            "scope": "generation",
+            "description": "오차분산은 모든 집단에서 동일해야 한다.",
+            "rule": {
+              "left": "homoskedasticity_condition",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "오차분산은 모든 집단에서 동일해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "balanced_positive_group_sizes equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.9",
+            "scope": "generation",
+            "description": "균형형 HSD 식에는 모든 집단의 표본크기가 같은 양의 정수여야 한다.",
+            "rule": {
+              "left": "balanced_positive_group_sizes",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "균형형 HSD 식에는 모든 집단의 표본크기가 같은 양의 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.10",
+            "scope": "generation",
+            "description": "가족별 유의수준은 $0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "가족별 유의수준은 $0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "errors_normal_within_groups equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.11",
+            "scope": "generation",
+            "description": "정확한 studentized range 기준에는 각 집단 오차의 정규성이 필요하다.",
+            "rule": {
+              "left": "errors_normal_within_groups",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정확한 studentized range 기준에는 각 집단 오차의 정규성이 필요하다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "group_count equals 2",
+          "expression": {
+            "constraint_id": "auto.ps.anova.two_group_f_t_equivalence.12",
+            "scope": "generation",
+            "description": "비교 집단은 정확히 두 개여야 한다.",
+            "rule": {
+              "left": "group_count",
+              "operator": "equals",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "비교 집단은 정확히 두 개여야 한다."
         }
@@ -1267,6 +1393,7 @@
         "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
         "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -1282,76 +1409,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "potential_outcomes_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f01.1",
+            "scope": "generation",
+            "description": "처치수준 0과 1에 대한 잠재결과 $Y_i(0),Y_i(1)$가 정의되어 있어야 한다.",
+            "rule": {
+              "left": "potential_outcomes_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "처치수준 0과 1에 대한 잠재결과 $Y_i(0),Y_i(1)$가 정의되어 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "potential_outcome_difference_integrable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f02.2",
+            "scope": "generation",
+            "description": "$Y(1)-Y(0)$의 기댓값이 존재해야 한다.",
+            "rule": {
+              "left": "potential_outcome_difference_integrable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$Y(1)-Y(0)$의 기댓값이 존재해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treated_sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.3",
+            "scope": "generation",
+            "description": "처치집단 표본크기는 1 이상이어야 한다.",
+            "rule": {
+              "left": "treated_sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "처치집단 표본크기는 1 이상이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "control_sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.4",
+            "scope": "generation",
+            "description": "대조집단 표본크기는 1 이상이어야 한다.",
+            "rule": {
+              "left": "control_sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "대조집단 표본크기는 1 이상이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treatment_assignment_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.5",
+            "scope": "generation",
+            "description": "각 관측단위의 처치상태가 명확히 정의되어야 한다.",
+            "rule": {
+              "left": "treatment_assignment_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 관측단위의 처치상태가 명확히 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treated_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.6",
+            "scope": "generation",
+            "description": "`treated_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "treated_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`treated_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "control_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.7",
+            "scope": "generation",
+            "description": "`control_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "control_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`control_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_observations_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.8",
+            "scope": "generation",
+            "description": "관측값은 모두 양수여야 한다.",
+            "rule": {
+              "left": "all_observations_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "관측값은 모두 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.9",
+            "scope": "generation",
+            "description": "자료 개수는 $n\\ge1$이어야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "자료 개수는 $n\\ge1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.10",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_observations_nonzero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.harmonic_mean.11",
+            "scope": "generation",
+            "description": "각 관측값은 0이 아니어야 한다.",
+            "rule": {
+              "left": "all_observations_nonzero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 관측값은 0이 아니어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sum_of_reciprocals not_equals 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.harmonic_mean.12",
+            "scope": "generation",
+            "description": "역수의 합은 0이 아니어야 한다.",
+            "rule": {
+              "left": "sum_of_reciprocals",
+              "operator": "not_equals",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "역수의 합은 0이 아니어야 한다."
         }
@@ -1561,6 +1809,7 @@
         "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
         "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -1576,76 +1825,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "mean_square_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.1",
+            "scope": "generation",
+            "description": "$MSE>0$이어야 한다.",
+            "rule": {
+              "left": "mean_square_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$MSE>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "leverage less_than 1",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.2",
+            "scope": "generation",
+            "description": "$h_{ii}<1$이어야 한다.",
+            "rule": {
+              "left": "leverage",
+              "operator": "less_than",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$h_{ii}<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "parameter_count_positive_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.3",
+            "scope": "generation",
+            "description": "계수 수 $p\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+            "rule": {
+              "left": "parameter_count_positive_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계수 수 $p\\in\\mathbb Z_{\\ge1}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.4",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "s_xx greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.5",
+            "scope": "generation",
+            "description": "$S_{xx}>0$이어야 한다.",
+            "rule": {
+              "left": "s_xx",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$S_{xx}>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.6",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "observed_and_fitted_values_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.raw_residual.7",
+            "scope": "generation",
+            "description": "$y_i$와 $\\hat y_i$가 같은 관측단위에 대해 정의되어야 한다.",
+            "rule": {
+              "left": "observed_and_fitted_values_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$y_i$와 $\\hat y_i$가 같은 관측단위에 대해 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "mean_square_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.studentized_residual.8",
+            "scope": "generation",
+            "description": "$MSE=s^2>0$이어야 한다.",
+            "rule": {
+              "left": "mean_square_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$MSE=s^2>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "deleted_residual_standard_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.externally_studentized_residual.9",
+            "scope": "generation",
+            "description": "삭제 표준오차 $s_{(i)}>0$이어야 한다.",
+            "rule": {
+              "left": "deleted_residual_standard_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "삭제 표준오차 $s_{(i)}>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_mean_linear_in_predictor equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.regression_model.f01.10",
+            "scope": "generation",
+            "description": "조건부 평균을 선형으로 모형화한다.",
+            "rule": {
+              "left": "conditional_mean_linear_in_predictor",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "조건부 평균을 선형으로 모형화한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_error_mean_zero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.regression_model.f01.11",
+            "scope": "generation",
+            "description": "오차의 조건부 평균은 0으로 둔다.",
+            "rule": {
+              "left": "conditional_error_mean_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "오차의 조건부 평균은 0으로 둔다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "slope_and_sample_means_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.least_squares.f02.12",
+            "scope": "generation",
+            "description": "$\\hat\\beta_1$과 표본평균이 정의되어 있어야 한다.",
+            "rule": {
+              "left": "slope_and_sample_means_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\hat\\beta_1$과 표본평균이 정의되어 있어야 한다."
         }
@@ -2748,6 +3118,7 @@
         "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
         "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -2763,76 +3134,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "potential_outcomes_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f01.1",
+            "scope": "generation",
+            "description": "처치수준 0과 1에 대한 잠재결과 $Y_i(0),Y_i(1)$가 정의되어 있어야 한다.",
+            "rule": {
+              "left": "potential_outcomes_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "처치수준 0과 1에 대한 잠재결과 $Y_i(0),Y_i(1)$가 정의되어 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "potential_outcome_difference_integrable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f02.2",
+            "scope": "generation",
+            "description": "$Y(1)-Y(0)$의 기댓값이 존재해야 한다.",
+            "rule": {
+              "left": "potential_outcome_difference_integrable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$Y(1)-Y(0)$의 기댓값이 존재해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treated_sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.3",
+            "scope": "generation",
+            "description": "처치집단 표본크기는 1 이상이어야 한다.",
+            "rule": {
+              "left": "treated_sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "처치집단 표본크기는 1 이상이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "control_sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.4",
+            "scope": "generation",
+            "description": "대조집단 표본크기는 1 이상이어야 한다.",
+            "rule": {
+              "left": "control_sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "대조집단 표본크기는 1 이상이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treatment_assignment_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.5",
+            "scope": "generation",
+            "description": "각 관측단위의 처치상태가 명확히 정의되어야 한다.",
+            "rule": {
+              "left": "treatment_assignment_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 관측단위의 처치상태가 명확히 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treated_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.6",
+            "scope": "generation",
+            "description": "`treated_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "treated_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`treated_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "control_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.7",
+            "scope": "generation",
+            "description": "`control_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "control_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`control_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_observations_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.8",
+            "scope": "generation",
+            "description": "관측값은 모두 양수여야 한다.",
+            "rule": {
+              "left": "all_observations_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "관측값은 모두 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.9",
+            "scope": "generation",
+            "description": "자료 개수는 $n\\ge1$이어야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "자료 개수는 $n\\ge1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.10",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_observations_nonzero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.harmonic_mean.11",
+            "scope": "generation",
+            "description": "각 관측값은 0이 아니어야 한다.",
+            "rule": {
+              "left": "all_observations_nonzero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 관측값은 0이 아니어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sum_of_reciprocals not_equals 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.harmonic_mean.12",
+            "scope": "generation",
+            "description": "역수의 합은 0이 아니어야 한다.",
+            "rule": {
+              "left": "sum_of_reciprocals",
+              "operator": "not_equals",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "역수의 합은 0이 아니어야 한다."
         }
@@ -2994,6 +3486,7 @@
         "ps.estimation.score_information_definitions.f02.formula_01",
         "ps.estimation.variance_chisquare_ci.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -3006,80 +3499,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "estimator_unbiased_for_target equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.1",
+            "scope": "generation",
+            "description": "$T$는 $g(\\theta)$의 불편추정량이어야 한다.",
+            "rule": {
+              "left": "estimator_unbiased_for_target",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$T$는 $g(\\theta)$의 불편추정량이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "cramer_rao_regularity_conditions equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.2",
+            "scope": "generation",
+            "description": "미분과 적분의 교환 등 Cramér–Rao 정칙조건이 성립해야 한다.",
+            "rule": {
+              "left": "cramer_rao_regularity_conditions",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "미분과 적분의 교환 등 Cramér–Rao 정칙조건이 성립해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "fisher_information_positive_finite equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.3",
+            "scope": "generation",
+            "description": "$0<I_n(\\theta)<\\infty$이어야 한다.",
+            "rule": {
+              "left": "fisher_information_positive_finite",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<I_n(\\theta)<\\infty$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "target_function_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.4",
+            "scope": "generation",
+            "description": "$g$는 해당 모수점에서 미분 가능해야 한다.",
+            "rule": {
+              "left": "target_function_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$g$는 해당 모수점에서 미분 가능해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "log_likelihood_twice_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.fisher_information_hessian_identity.5",
+            "scope": "generation",
+            "description": "로그밀도는 두 번 미분 가능해야 한다.",
+            "rule": {
+              "left": "log_likelihood_twice_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "로그밀도는 두 번 미분 가능해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "derivative_expectation_interchange_valid equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.fisher_information_hessian_identity.6",
+            "scope": "generation",
+            "description": "미분과 적분의 교환이 허용되어야 한다.",
+            "rule": {
+              "left": "derivative_expectation_interchange_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "미분과 적분의 교환이 허용되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "score_mean_zero_regularity equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.fisher_information_hessian_identity.7",
+            "scope": "generation",
+            "description": "점수의 평균이 0이 되는 정칙조건이 성립해야 한다.",
+            "rule": {
+              "left": "score_mean_zero_regularity",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "점수의 평균이 0이 되는 정칙조건이 성립해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "margin_of_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.8",
+            "scope": "generation",
+            "description": "$E>0$이어야 한다.",
+            "rule": {
+              "left": "margin_of_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$E>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.9",
+            "scope": "generation",
+            "description": "$0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "population_standard_deviation_known_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.10",
+            "scope": "generation",
+            "description": "$\\sigma>0$이고 계획 단계에서 알려져 있어야 한다.",
+            "rule": {
+              "left": "population_standard_deviation_known_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\sigma>0$이고 계획 단계에서 알려져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "normal_reference_approximation_valid equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.11",
+            "scope": "generation",
+            "description": "정규모집단 정확식 또는 정규근사가 타당한 설계여야 한다.",
+            "rule": {
+              "left": "normal_reference_approximation_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정규모집단 정확식 또는 정규근사가 타당한 설계여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_rounding equals ceiling",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.12",
+            "scope": "generation",
+            "description": "계산값은 위로 올림한다.",
+            "rule": {
+              "left": "sample_size_rounding",
+              "operator": "equals",
+              "right": "ceiling"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계산값은 위로 올림한다."
         }
@@ -3207,6 +3825,7 @@
         "ps.categorical_analysis.risk_ratio_2x2.formula_01",
         "ps.categorical_analysis.risk_ratio_log_wald_se.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression",
@@ -3220,76 +3839,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "response_category_count greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.1",
+            "scope": "generation",
+            "description": "반응변수는 둘 이상의 상호배타적 범주를 가져야 한다.",
+            "rule": {
+              "left": "response_category_count",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응변수는 둘 이상의 상호배타적 범주를 가져야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "reference_category_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.2",
+            "scope": "generation",
+            "description": "기준범주 $J$를 명시해야 한다.",
+            "rule": {
+              "left": "reference_category_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "기준범주 $J$를 명시해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "response_category_count_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.3",
+            "scope": "generation",
+            "description": "`response_category_count`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "response_category_count_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`response_category_count`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_category_probabilities_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.4",
+            "scope": "generation",
+            "description": "모든 범주확률은 양수여야 한다.",
+            "rule": {
+              "left": "all_category_probabilities_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모든 범주확률은 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_probability_sum equals 1",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.5",
+            "scope": "generation",
+            "description": "범주확률의 합은 1이어야 한다.",
+            "rule": {
+              "left": "category_probability_sum",
+              "operator": "equals",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "범주확률의 합은 1이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "response_categories_ordered equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.ordinal_proportional_odds_model.6",
+            "scope": "generation",
+            "description": "반응범주에는 명확한 순서가 있어야 한다.",
+            "rule": {
+              "left": "response_categories_ordered",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응범주에는 명확한 순서가 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "cutpoints_strictly_ordered equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.ordinal_proportional_odds_model.7",
+            "scope": "generation",
+            "description": "절단점은 순서대로 증가해야 한다.",
+            "rule": {
+              "left": "cutpoints_strictly_ordered",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "절단점은 순서대로 증가해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "proportional_odds_assumption_plausible equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.ordinal_proportional_odds_model.8",
+            "scope": "generation",
+            "description": "비례오즈의 공통기울기 가정이 적절해야 한다.",
+            "rule": {
+              "left": "proportional_odds_assumption_plausible",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "비례오즈의 공통기울기 가정이 적절해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "expected_count greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.pearson_residual.9",
+            "scope": "generation",
+            "description": "Pearson 잔차는 기대도수 $E_{ij}>0$인 셀에서 정의된다.",
+            "rule": {
+              "left": "expected_count",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "Pearson 잔차는 기대도수 $E_{ij}>0$인 셀에서 정의된다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_stratum_totals_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.mantel_haenszel_or.10",
+            "scope": "generation",
+            "description": "각 층의 전체도수는 $n_k>0$이어야 한다.",
+            "rule": {
+              "left": "all_stratum_totals_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 층의 전체도수는 $n_k>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "mantel_haenszel_denominator greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.mantel_haenszel_or.11",
+            "scope": "generation",
+            "description": "분모 $\\sum_k b_kc_k/n_k$는 양수여야 한다.",
+            "rule": {
+              "left": "mantel_haenszel_denominator",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "분모 $\\sum_k b_kc_k/n_k$는 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "stratified_common_odds_ratio_model equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.mantel_haenszel_or.12",
+            "scope": "generation",
+            "description": "층별 2×2 표와 공통 오즈비 모형이 의미 있어야 한다.",
+            "rule": {
+              "left": "stratified_common_odds_ratio_model",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "층별 2×2 표와 공통 오즈비 모형이 의미 있어야 한다."
         }
@@ -3386,6 +4126,7 @@
         "ps.correlation.spearman_no_tie_difference_formula.formula_01",
         "ps.correlation.spearman_rank_correlation.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression",
@@ -3396,80 +4137,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "paired_sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_a.1",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "paired_sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "concordant_discordant_counts_valid equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_a.2",
+            "scope": "generation",
+            "description": "$C$와 $D$는 동일한 $n$개 쌍에서 계산한 유효한 일치쌍·불일치쌍 수여야 한다.",
+            "rule": {
+              "left": "concordant_discordant_counts_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$C$와 $D$는 동일한 $n$개 쌍에서 계산한 유효한 일치쌍·불일치쌍 수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "paired_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_a.3",
+            "scope": "generation",
+            "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "paired_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "kendall_tau_b_denominator_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_b.4",
+            "scope": "generation",
+            "description": "분모의 두 동점보정 항은 양수여야 한다.",
+            "rule": {
+              "left": "kendall_tau_b_denominator_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "분모의 두 동점보정 항은 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "kendall_pair_counts_nonnegative_integers equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_b.5",
+            "scope": "generation",
+            "description": "$C,D,T_x,T_y$는 동일한 표본쌍에서 일관되게 집계한 비음수 정수여야 한다.",
+            "rule": {
+              "left": "kendall_pair_counts_nonnegative_integers",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$C,D,T_x,T_y$는 동일한 표본쌍에서 일관되게 집계한 비음수 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "ties_present equals False",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_no_tie_difference_formula.6",
+            "scope": "generation",
+            "description": "동점이 없어야 한다.",
+            "rule": {
+              "left": "ties_present",
+              "operator": "equals",
+              "right": false
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "동점이 없어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "paired_sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_rank_correlation.7",
+            "scope": "generation",
+            "description": "짝지어진 관측 수는 $n\\ge2$여야 한다.",
+            "rule": {
+              "left": "paired_sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "짝지어진 관측 수는 $n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "tie_ranking_rule_documented equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_rank_correlation.8",
+            "scope": "generation",
+            "description": "동점에는 평균순위 등 명시한 순위 규칙을 사용해야 한다.",
+            "rule": {
+              "left": "tie_ranking_rule_documented",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "동점에는 평균순위 등 명시한 순위 규칙을 사용해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "both_rank_variances_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_rank_correlation.9",
+            "scope": "generation",
+            "description": "두 순위 중 적어도 하나의 분산이 0이면 상관계수가 정의되지 않는다.",
+            "rule": {
+              "left": "both_rank_variances_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "두 순위 중 적어도 하나의 분산이 0이면 상관계수가 정의되지 않는다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "original_variances_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.pearson_affine_transformation.10",
+            "scope": "generation",
+            "description": "$\\operatorname{Var}(X)>0$이고 $\\operatorname{Var}(Y)>0$이어야 한다.",
+            "rule": {
+              "left": "original_variances_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\operatorname{Var}(X)>0$이고 $\\operatorname{Var}(Y)>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "affine_scale_coefficients_nonzero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.pearson_affine_transformation.11",
+            "scope": "generation",
+            "description": "$b\\ne0$이고 $d\\ne0$이어야 한다.",
+            "rule": {
+              "left": "affine_scale_coefficients_nonzero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$b\\ne0$이고 $d\\ne0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "original_variances_finite equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.pearson_affine_transformation.12",
+            "scope": "generation",
+            "description": "X와 Y의 분산은 유한해야 한다.",
+            "rule": {
+              "left": "original_variances_finite",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "X와 Y의 분산은 유한해야 한다."
         }
@@ -3566,6 +4432,7 @@
         "ps.counting.pigeonhole_principle.formula_01",
         "ps.counting.two_set_inclusion_exclusion.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression",
@@ -3578,76 +4445,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "alternative_sets_pairwise_disjoint equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.addition_rule.1",
+            "scope": "generation",
+            "description": "단순 합의 법칙 $m+n$을 사용하려면 선택 가능한 경우들의 집합이 서로 겹치지 않아야 한다.",
+            "rule": {
+              "left": "alternative_sets_pairwise_disjoint",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "단순 합의 법칙 $m+n$을 사용하려면 선택 가능한 경우들의 집합이 서로 겹치지 않아야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alternative_counts_finite_nonnegative_integers equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.addition_rule.2",
+            "scope": "generation",
+            "description": "각 대안의 경우의 수는 유한한 비음수 정수여야 한다.",
+            "rule": {
+              "left": "alternative_counts_finite_nonnegative_integers",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 대안의 경우의 수는 유한한 비음수 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "exponent_nonnegative_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.binomial_theorem.3",
+            "scope": "generation",
+            "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다.",
+            "rule": {
+              "left": "exponent_nonnegative_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "constant_number_of_followup_choices equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiplication_rule.4",
+            "scope": "generation",
+            "description": "첫 단계의 각 선택 뒤에 가능한 두 번째 단계 선택 수가 동일하게 $n$개여야 단순한 $mn$식을 쓴다.",
+            "rule": {
+              "left": "constant_number_of_followup_choices",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "첫 단계의 각 선택 뒤에 가능한 두 번째 단계 선택 수가 동일하게 $n$개여야 단순한 $mn$식을 쓴다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "stage_choice_counts_nonnegative_integers equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiplication_rule.5",
+            "scope": "generation",
+            "description": "$m,n$은 비음수 정수여야 한다.",
+            "rule": {
+              "left": "stage_choice_counts_nonnegative_integers",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$m,n$은 비음수 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "multiplicity_counts_sum_to_total equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiset_permutation.6",
+            "scope": "generation",
+            "description": "$n_i\\in\\mathbb Z_{\\ge0}$이고 $\\sum_i n_i=n$이어야 한다.",
+            "rule": {
+              "left": "multiplicity_counts_sum_to_total",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n_i\\in\\mathbb Z_{\\ge0}$이고 $\\sum_i n_i=n$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "identical_items_indistinguishable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiset_permutation.7",
+            "scope": "generation",
+            "description": "같은 종류의 원소끼리는 구별하지 않는다.",
+            "rule": {
+              "left": "identical_items_indistinguishable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "같은 종류의 원소끼리는 구별하지 않는다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "object_type_count greater_or_equal 0",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.8",
+            "scope": "generation",
+            "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다.",
+            "rule": {
+              "left": "object_type_count",
+              "operator": "greater_or_equal",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "object_type_count_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.9",
+            "scope": "generation",
+            "description": "$n$은 정수여야 한다.",
+            "rule": {
+              "left": "object_type_count_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "selection_length greater_or_equal 0",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.10",
+            "scope": "generation",
+            "description": "$r\\in\\mathbb Z_{\\ge0}$이어야 한다.",
+            "rule": {
+              "left": "selection_length",
+              "operator": "greater_or_equal",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$r\\in\\mathbb Z_{\\ge0}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "selection_length_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.11",
+            "scope": "generation",
+            "description": "$r$은 정수여야 한다.",
+            "rule": {
+              "left": "selection_length_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$r$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "repetition_allowed equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.12",
+            "scope": "generation",
+            "description": "각 위치에서 같은 종류를 반복 선택할 수 있고 순서를 구분해야 한다.",
+            "rule": {
+              "left": "repetition_allowed",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 위치에서 같은 종류를 반복 선택할 수 있고 순서를 구분해야 한다."
         }
@@ -3852,6 +4840,7 @@
         "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
         "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -3867,76 +4856,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "mean_square_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.1",
+            "scope": "generation",
+            "description": "$MSE>0$이어야 한다.",
+            "rule": {
+              "left": "mean_square_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$MSE>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "leverage less_than 1",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.2",
+            "scope": "generation",
+            "description": "$h_{ii}<1$이어야 한다.",
+            "rule": {
+              "left": "leverage",
+              "operator": "less_than",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$h_{ii}<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "parameter_count_positive_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.3",
+            "scope": "generation",
+            "description": "계수 수 $p\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+            "rule": {
+              "left": "parameter_count_positive_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계수 수 $p\\in\\mathbb Z_{\\ge1}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.4",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "s_xx greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.5",
+            "scope": "generation",
+            "description": "$S_{xx}>0$이어야 한다.",
+            "rule": {
+              "left": "s_xx",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$S_{xx}>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.6",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "observed_and_fitted_values_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.raw_residual.7",
+            "scope": "generation",
+            "description": "$y_i$와 $\\hat y_i$가 같은 관측단위에 대해 정의되어야 한다.",
+            "rule": {
+              "left": "observed_and_fitted_values_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$y_i$와 $\\hat y_i$가 같은 관측단위에 대해 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "mean_square_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.studentized_residual.8",
+            "scope": "generation",
+            "description": "$MSE=s^2>0$이어야 한다.",
+            "rule": {
+              "left": "mean_square_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$MSE=s^2>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "deleted_residual_standard_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.externally_studentized_residual.9",
+            "scope": "generation",
+            "description": "삭제 표준오차 $s_{(i)}>0$이어야 한다.",
+            "rule": {
+              "left": "deleted_residual_standard_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "삭제 표준오차 $s_{(i)}>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_mean_linear_in_predictor equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.regression_model.f01.10",
+            "scope": "generation",
+            "description": "조건부 평균을 선형으로 모형화한다.",
+            "rule": {
+              "left": "conditional_mean_linear_in_predictor",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "조건부 평균을 선형으로 모형화한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_error_mean_zero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.regression_model.f01.11",
+            "scope": "generation",
+            "description": "오차의 조건부 평균은 0으로 둔다.",
+            "rule": {
+              "left": "conditional_error_mean_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "오차의 조건부 평균은 0으로 둔다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "slope_and_sample_means_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.least_squares.f02.12",
+            "scope": "generation",
+            "description": "$\\hat\\beta_1$과 표본평균이 정의되어 있어야 한다.",
+            "rule": {
+              "left": "slope_and_sample_means_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\hat\\beta_1$과 표본평균이 정의되어 있어야 한다."
         }
@@ -4361,6 +5471,7 @@
         "ps.sampling_distributions.two_sample_statistics.f02.formula_01",
         "ps.sampling_distributions.variance_ratio_f_exact.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -4374,80 +5485,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "total_observation_count greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.1",
+            "scope": "generation",
+            "description": "전체 관측수는 0보다 커야 한다.",
+            "rule": {
+              "left": "total_observation_count",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "전체 관측수는 0보다 커야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_frequency greater_or_equal 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.2",
+            "scope": "generation",
+            "description": "도수는 0 이상의 정수여야 한다.",
+            "rule": {
+              "left": "category_frequency",
+              "operator": "greater_or_equal",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "도수는 0 이상의 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_frequency_not_exceed_total equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.3",
+            "scope": "generation",
+            "description": "도수는 전체 관측수를 넘을 수 없다.",
+            "rule": {
+              "left": "category_frequency_not_exceed_total",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "도수는 전체 관측수를 넘을 수 없다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_frequency_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.4",
+            "scope": "generation",
+            "description": "도수는 정수여야 한다.",
+            "rule": {
+              "left": "category_frequency_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "도수는 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "categories_or_classes_ordered equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f02.5",
+            "scope": "generation",
+            "description": "범주 또는 계급은 누적할 순서가 정해져 있어야 한다.",
+            "rule": {
+              "left": "categories_or_classes_ordered",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "범주 또는 계급은 누적할 순서가 정해져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "frequencies_nonnegative equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f02.6",
+            "scope": "generation",
+            "description": "각 도수는 비음수여야 한다.",
+            "rule": {
+              "left": "frequencies_nonnegative",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 도수는 비음수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.ecdf_robust_dispersion.f01.7",
+            "scope": "generation",
+            "description": "경험적 분포함수와 MAD를 계산하려면 관측값이 적어도 하나인 표본, 즉 $n\\ge1$이 필요하다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "경험적 분포함수와 MAD를 계산하려면 관측값이 적어도 하나인 표본, 즉 $n\\ge1$이 필요하다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.ecdf_robust_dispersion.f01.8",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "joint_density_exists equals True",
+          "expression": {
+            "constraint_id": "auto.ps.conditional_independence.density_chain_rule.9",
+            "scope": "generation",
+            "description": "표시된 결합밀도가 존재해야 한다.",
+            "rule": {
+              "left": "joint_density_exists",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표시된 결합밀도가 존재해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_densities_exist equals True",
+          "expression": {
+            "constraint_id": "auto.ps.conditional_independence.density_chain_rule.10",
+            "scope": "generation",
+            "description": "표시된 조건부밀도들이 존재해야 한다.",
+            "rule": {
+              "left": "conditional_densities_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표시된 조건부밀도들이 존재해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditioning_marginal_densities_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.conditional_independence.density_chain_rule.11",
+            "scope": "generation",
+            "description": "조건부밀도의 분모가 되는 주변밀도는 평가점에서 양수여야 한다.",
+            "rule": {
+              "left": "conditioning_marginal_densities_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "조건부밀도의 분모가 되는 주변밀도는 평가점에서 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "joint_and_marginal_density_or_pmf_exist equals True",
+          "expression": {
+            "constraint_id": "auto.ps.conditional_independence.random_variable_independence_density.12",
+            "scope": "generation",
+            "description": "결합 및 주변 밀도 또는 질량함수가 존재해야 한다.",
+            "rule": {
+              "left": "joint_and_marginal_density_or_pmf_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "결합 및 주변 밀도 또는 질량함수가 존재해야 한다."
         }
@@ -4578,6 +5814,7 @@
         "ps.categorical_analysis.risk_ratio_2x2.formula_01",
         "ps.categorical_analysis.risk_ratio_log_wald_se.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression",
@@ -4591,76 +5828,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "response_category_count greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.1",
+            "scope": "generation",
+            "description": "반응변수는 둘 이상의 상호배타적 범주를 가져야 한다.",
+            "rule": {
+              "left": "response_category_count",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응변수는 둘 이상의 상호배타적 범주를 가져야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "reference_category_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.2",
+            "scope": "generation",
+            "description": "기준범주 $J$를 명시해야 한다.",
+            "rule": {
+              "left": "reference_category_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "기준범주 $J$를 명시해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "response_category_count_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.3",
+            "scope": "generation",
+            "description": "`response_category_count`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "response_category_count_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`response_category_count`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_category_probabilities_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.4",
+            "scope": "generation",
+            "description": "모든 범주확률은 양수여야 한다.",
+            "rule": {
+              "left": "all_category_probabilities_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모든 범주확률은 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_probability_sum equals 1",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.multinomial_logistic_model.5",
+            "scope": "generation",
+            "description": "범주확률의 합은 1이어야 한다.",
+            "rule": {
+              "left": "category_probability_sum",
+              "operator": "equals",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "범주확률의 합은 1이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "response_categories_ordered equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.ordinal_proportional_odds_model.6",
+            "scope": "generation",
+            "description": "반응범주에는 명확한 순서가 있어야 한다.",
+            "rule": {
+              "left": "response_categories_ordered",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응범주에는 명확한 순서가 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "cutpoints_strictly_ordered equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.ordinal_proportional_odds_model.7",
+            "scope": "generation",
+            "description": "절단점은 순서대로 증가해야 한다.",
+            "rule": {
+              "left": "cutpoints_strictly_ordered",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "절단점은 순서대로 증가해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "proportional_odds_assumption_plausible equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.ordinal_proportional_odds_model.8",
+            "scope": "generation",
+            "description": "비례오즈의 공통기울기 가정이 적절해야 한다.",
+            "rule": {
+              "left": "proportional_odds_assumption_plausible",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "비례오즈의 공통기울기 가정이 적절해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "expected_count greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.pearson_residual.9",
+            "scope": "generation",
+            "description": "Pearson 잔차는 기대도수 $E_{ij}>0$인 셀에서 정의된다.",
+            "rule": {
+              "left": "expected_count",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "Pearson 잔차는 기대도수 $E_{ij}>0$인 셀에서 정의된다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_stratum_totals_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.mantel_haenszel_or.10",
+            "scope": "generation",
+            "description": "각 층의 전체도수는 $n_k>0$이어야 한다.",
+            "rule": {
+              "left": "all_stratum_totals_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 층의 전체도수는 $n_k>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "mantel_haenszel_denominator greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.mantel_haenszel_or.11",
+            "scope": "generation",
+            "description": "분모 $\\sum_k b_kc_k/n_k$는 양수여야 한다.",
+            "rule": {
+              "left": "mantel_haenszel_denominator",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "분모 $\\sum_k b_kc_k/n_k$는 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "stratified_common_odds_ratio_model equals True",
+          "expression": {
+            "constraint_id": "auto.ps.categorical_analysis.mantel_haenszel_or.12",
+            "scope": "generation",
+            "description": "층별 2×2 표와 공통 오즈비 모형이 의미 있어야 한다.",
+            "rule": {
+              "left": "stratified_common_odds_ratio_model",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "층별 2×2 표와 공통 오즈비 모형이 의미 있어야 한다."
         }
@@ -4817,6 +6175,7 @@
         "ps.estimation.score_information_definitions.f02.formula_01",
         "ps.estimation.variance_chisquare_ci.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -4831,76 +6190,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "estimator_unbiased_for_target equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.1",
+            "scope": "generation",
+            "description": "$T$는 $g(\\theta)$의 불편추정량이어야 한다.",
+            "rule": {
+              "left": "estimator_unbiased_for_target",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$T$는 $g(\\theta)$의 불편추정량이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "cramer_rao_regularity_conditions equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.2",
+            "scope": "generation",
+            "description": "미분과 적분의 교환 등 Cramér–Rao 정칙조건이 성립해야 한다.",
+            "rule": {
+              "left": "cramer_rao_regularity_conditions",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "미분과 적분의 교환 등 Cramér–Rao 정칙조건이 성립해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "fisher_information_positive_finite equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.3",
+            "scope": "generation",
+            "description": "$0<I_n(\\theta)<\\infty$이어야 한다.",
+            "rule": {
+              "left": "fisher_information_positive_finite",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<I_n(\\theta)<\\infty$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "target_function_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.cramer_rao_lower_bound.4",
+            "scope": "generation",
+            "description": "$g$는 해당 모수점에서 미분 가능해야 한다.",
+            "rule": {
+              "left": "target_function_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$g$는 해당 모수점에서 미분 가능해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "log_likelihood_twice_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.fisher_information_hessian_identity.5",
+            "scope": "generation",
+            "description": "로그밀도는 두 번 미분 가능해야 한다.",
+            "rule": {
+              "left": "log_likelihood_twice_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "로그밀도는 두 번 미분 가능해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "derivative_expectation_interchange_valid equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.fisher_information_hessian_identity.6",
+            "scope": "generation",
+            "description": "미분과 적분의 교환이 허용되어야 한다.",
+            "rule": {
+              "left": "derivative_expectation_interchange_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "미분과 적분의 교환이 허용되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "score_mean_zero_regularity equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.fisher_information_hessian_identity.7",
+            "scope": "generation",
+            "description": "점수의 평균이 0이 되는 정칙조건이 성립해야 한다.",
+            "rule": {
+              "left": "score_mean_zero_regularity",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "점수의 평균이 0이 되는 정칙조건이 성립해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "margin_of_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.8",
+            "scope": "generation",
+            "description": "$E>0$이어야 한다.",
+            "rule": {
+              "left": "margin_of_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$E>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.9",
+            "scope": "generation",
+            "description": "$0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "population_standard_deviation_known_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.10",
+            "scope": "generation",
+            "description": "$\\sigma>0$이고 계획 단계에서 알려져 있어야 한다.",
+            "rule": {
+              "left": "population_standard_deviation_known_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\sigma>0$이고 계획 단계에서 알려져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "normal_reference_approximation_valid equals True",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.11",
+            "scope": "generation",
+            "description": "정규모집단 정확식 또는 정규근사가 타당한 설계여야 한다.",
+            "rule": {
+              "left": "normal_reference_approximation_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정규모집단 정확식 또는 정규근사가 타당한 설계여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_rounding equals ceiling",
+          "expression": {
+            "constraint_id": "auto.ps.estimation.sample_size_mean_known_sigma.12",
+            "scope": "generation",
+            "description": "계산값은 위로 올림한다.",
+            "rule": {
+              "left": "sample_size_rounding",
+              "operator": "equals",
+              "right": "ceiling"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계산값은 위로 올림한다."
         }
@@ -5026,6 +6506,7 @@
         "ps.anova.welch_anova_statistic.f02.formula_01",
         "ps.anova.welch_anova_statistic.f03.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -5037,80 +6518,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "model_terms_dimensionally_conformable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.ancova_model.1",
+            "scope": "generation",
+            "description": "반응변수, 집단효과, 공변량과 오차항의 차원이 적합해야 한다.",
+            "rule": {
+              "left": "model_terms_dimensionally_conformable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응변수, 집단효과, 공변량과 오차항의 차원이 적합해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "effect_coding_or_identifiability_constraint_specified equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.ancova_model.2",
+            "scope": "generation",
+            "description": "모형의 집단효과와 절편을 유일하게 해석할 수 있도록 코딩 또는 식별 제약을 명시해야 한다.",
+            "rule": {
+              "left": "effect_coding_or_identifiability_constraint_specified",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모형의 집단효과와 절편을 유일하게 해석할 수 있도록 코딩 또는 식별 제약을 명시해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "comparison_count_positive_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.bonferroni_adjustment.3",
+            "scope": "generation",
+            "description": "$m\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+            "rule": {
+              "left": "comparison_count_positive_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$m\\in\\mathbb Z_{\\ge1}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.bonferroni_adjustment.4",
+            "scope": "generation",
+            "description": "$0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sphericity_correction_applicable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.sphericity_df_correction.5",
+            "scope": "generation",
+            "description": "반복측정 요인이 세 수준 이상이고 구형성 위배가 문제되는 단변량 분석이어야 한다.",
+            "rule": {
+              "left": "sphericity_correction_applicable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반복측정 요인이 세 수준 이상이고 구형성 위배가 문제되는 단변량 분석이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "epsilon_in_right_closed_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.sphericity_df_correction.6",
+            "scope": "generation",
+            "description": "$0<\\epsilon\\le1$이어야 한다.",
+            "rule": {
+              "left": "epsilon_in_right_closed_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\epsilon\\le1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "groups_independent equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.7",
+            "scope": "generation",
+            "description": "집단별 관측은 서로 독립이어야 한다.",
+            "rule": {
+              "left": "groups_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "집단별 관측은 서로 독립이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "homoskedasticity_condition equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.8",
+            "scope": "generation",
+            "description": "오차분산은 모든 집단에서 동일해야 한다.",
+            "rule": {
+              "left": "homoskedasticity_condition",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "오차분산은 모든 집단에서 동일해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "balanced_positive_group_sizes equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.9",
+            "scope": "generation",
+            "description": "균형형 HSD 식에는 모든 집단의 표본크기가 같은 양의 정수여야 한다.",
+            "rule": {
+              "left": "balanced_positive_group_sizes",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "균형형 HSD 식에는 모든 집단의 표본크기가 같은 양의 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.10",
+            "scope": "generation",
+            "description": "가족별 유의수준은 $0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "가족별 유의수준은 $0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "errors_normal_within_groups equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.11",
+            "scope": "generation",
+            "description": "정확한 studentized range 기준에는 각 집단 오차의 정규성이 필요하다.",
+            "rule": {
+              "left": "errors_normal_within_groups",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정확한 studentized range 기준에는 각 집단 오차의 정규성이 필요하다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "group_count equals 2",
+          "expression": {
+            "constraint_id": "auto.ps.anova.two_group_f_t_equivalence.12",
+            "scope": "generation",
+            "description": "비교 집단은 정확히 두 개여야 한다.",
+            "rule": {
+              "left": "group_count",
+              "operator": "equals",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "비교 집단은 정확히 두 개여야 한다."
         }
@@ -6213,6 +7819,7 @@
         "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
         "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -6228,76 +7835,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "potential_outcomes_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f01.1",
+            "scope": "generation",
+            "description": "처치수준 0과 1에 대한 잠재결과 $Y_i(0),Y_i(1)$가 정의되어 있어야 한다.",
+            "rule": {
+              "left": "potential_outcomes_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "처치수준 0과 1에 대한 잠재결과 $Y_i(0),Y_i(1)$가 정의되어 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "potential_outcome_difference_integrable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f02.2",
+            "scope": "generation",
+            "description": "$Y(1)-Y(0)$의 기댓값이 존재해야 한다.",
+            "rule": {
+              "left": "potential_outcome_difference_integrable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$Y(1)-Y(0)$의 기댓값이 존재해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treated_sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.3",
+            "scope": "generation",
+            "description": "처치집단 표본크기는 1 이상이어야 한다.",
+            "rule": {
+              "left": "treated_sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "처치집단 표본크기는 1 이상이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "control_sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.4",
+            "scope": "generation",
+            "description": "대조집단 표본크기는 1 이상이어야 한다.",
+            "rule": {
+              "left": "control_sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "대조집단 표본크기는 1 이상이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treatment_assignment_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.5",
+            "scope": "generation",
+            "description": "각 관측단위의 처치상태가 명확히 정의되어야 한다.",
+            "rule": {
+              "left": "treatment_assignment_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 관측단위의 처치상태가 명확히 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "treated_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.6",
+            "scope": "generation",
+            "description": "`treated_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "treated_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`treated_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "control_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.foundations.observational_experimental_studies.f03.7",
+            "scope": "generation",
+            "description": "`control_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "control_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`control_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_observations_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.8",
+            "scope": "generation",
+            "description": "관측값은 모두 양수여야 한다.",
+            "rule": {
+              "left": "all_observations_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "관측값은 모두 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.9",
+            "scope": "generation",
+            "description": "자료 개수는 $n\\ge1$이어야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "자료 개수는 $n\\ge1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.geometric_mean.10",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "all_observations_nonzero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.harmonic_mean.11",
+            "scope": "generation",
+            "description": "각 관측값은 0이 아니어야 한다.",
+            "rule": {
+              "left": "all_observations_nonzero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 관측값은 0이 아니어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sum_of_reciprocals not_equals 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.harmonic_mean.12",
+            "scope": "generation",
+            "description": "역수의 합은 0이 아니어야 한다.",
+            "rule": {
+              "left": "sum_of_reciprocals",
+              "operator": "not_equals",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "역수의 합은 0이 아니어야 한다."
         }
@@ -6449,6 +8177,7 @@
         "ps.hypothesis_testing.wald_test.formula_01",
         "ps.multiple_linear_regression.general_linear_wald.asymptotic_null_distribution.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -6461,80 +8190,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "sampling_model equals iid_normal",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.1",
+            "scope": "generation",
+            "description": "표본은 i.i.d. 정규표본이어야 한다.",
+            "rule": {
+              "left": "sampling_model",
+              "operator": "equals",
+              "right": "iid_normal"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본은 i.i.d. 정규표본이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.2",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.3",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "null_hypothesis equals population_variance_equals_null_value",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare_null_distribution.4",
+            "scope": "generation",
+            "description": "귀무가설 $H_0:\\sigma^2=\\sigma_0^2$가 성립하는 기준분포를 사용한다.",
+            "rule": {
+              "left": "null_hypothesis",
+              "operator": "equals",
+              "right": "population_variance_equals_null_value"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "귀무가설 $H_0:\\sigma^2=\\sigma_0^2$가 성립하는 기준분포를 사용한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "population_standard_deviation_known_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.5",
+            "scope": "generation",
+            "description": "$\\sigma>0$이고 알려져 있어야 한다.",
+            "rule": {
+              "left": "population_standard_deviation_known_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\sigma>0$이고 알려져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sampling_model equals iid_finite_variance",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.6",
+            "scope": "generation",
+            "description": "표본은 독립동일분포이고 분산이 유한해야 한다.",
+            "rule": {
+              "left": "sampling_model",
+              "operator": "equals",
+              "right": "iid_finite_variance"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본은 독립동일분포이고 분산이 유한해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "inference_regime equals asymptotic_clt",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.7",
+            "scope": "generation",
+            "description": "표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다.",
+            "rule": {
+              "left": "inference_regime",
+              "operator": "equals",
+              "right": "asymptotic_clt"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "null_hypothesis equals population_mean_equals_null_value",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.8",
+            "scope": "generation",
+            "description": "귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다.",
+            "rule": {
+              "left": "null_hypothesis",
+              "operator": "equals",
+              "right": "population_mean_equals_null_value"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_exact.9",
+            "scope": "generation",
+            "description": "$n\\ge1$이어야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_statistic.10",
+            "scope": "generation",
+            "description": "$n$은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "two_samples_independent equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.11",
+            "scope": "generation",
+            "description": "두 표본은 서로 독립이어야 한다.",
+            "rule": {
+              "left": "two_samples_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "두 표본은 서로 독립이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "both_samples_iid_normal equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.12",
+            "scope": "generation",
+            "description": "각 표본은 i.i.d. 정규표본이어야 한다.",
+            "rule": {
+              "left": "both_samples_iid_normal",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 표본은 i.i.d. 정규표본이어야 한다."
         }
@@ -6632,6 +8486,7 @@
         "ps.counting.pigeonhole_principle.formula_01",
         "ps.counting.two_set_inclusion_exclusion.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression",
@@ -6644,76 +8499,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "alternative_sets_pairwise_disjoint equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.addition_rule.1",
+            "scope": "generation",
+            "description": "단순 합의 법칙 $m+n$을 사용하려면 선택 가능한 경우들의 집합이 서로 겹치지 않아야 한다.",
+            "rule": {
+              "left": "alternative_sets_pairwise_disjoint",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "단순 합의 법칙 $m+n$을 사용하려면 선택 가능한 경우들의 집합이 서로 겹치지 않아야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alternative_counts_finite_nonnegative_integers equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.addition_rule.2",
+            "scope": "generation",
+            "description": "각 대안의 경우의 수는 유한한 비음수 정수여야 한다.",
+            "rule": {
+              "left": "alternative_counts_finite_nonnegative_integers",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 대안의 경우의 수는 유한한 비음수 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "exponent_nonnegative_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.binomial_theorem.3",
+            "scope": "generation",
+            "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다.",
+            "rule": {
+              "left": "exponent_nonnegative_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "constant_number_of_followup_choices equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiplication_rule.4",
+            "scope": "generation",
+            "description": "첫 단계의 각 선택 뒤에 가능한 두 번째 단계 선택 수가 동일하게 $n$개여야 단순한 $mn$식을 쓴다.",
+            "rule": {
+              "left": "constant_number_of_followup_choices",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "첫 단계의 각 선택 뒤에 가능한 두 번째 단계 선택 수가 동일하게 $n$개여야 단순한 $mn$식을 쓴다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "stage_choice_counts_nonnegative_integers equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiplication_rule.5",
+            "scope": "generation",
+            "description": "$m,n$은 비음수 정수여야 한다.",
+            "rule": {
+              "left": "stage_choice_counts_nonnegative_integers",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$m,n$은 비음수 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "multiplicity_counts_sum_to_total equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiset_permutation.6",
+            "scope": "generation",
+            "description": "$n_i\\in\\mathbb Z_{\\ge0}$이고 $\\sum_i n_i=n$이어야 한다.",
+            "rule": {
+              "left": "multiplicity_counts_sum_to_total",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n_i\\in\\mathbb Z_{\\ge0}$이고 $\\sum_i n_i=n$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "identical_items_indistinguishable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.multiset_permutation.7",
+            "scope": "generation",
+            "description": "같은 종류의 원소끼리는 구별하지 않는다.",
+            "rule": {
+              "left": "identical_items_indistinguishable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "같은 종류의 원소끼리는 구별하지 않는다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "object_type_count greater_or_equal 0",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.8",
+            "scope": "generation",
+            "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다.",
+            "rule": {
+              "left": "object_type_count",
+              "operator": "greater_or_equal",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\in\\mathbb Z_{\\ge0}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "object_type_count_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.9",
+            "scope": "generation",
+            "description": "$n$은 정수여야 한다.",
+            "rule": {
+              "left": "object_type_count_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "selection_length greater_or_equal 0",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.10",
+            "scope": "generation",
+            "description": "$r\\in\\mathbb Z_{\\ge0}$이어야 한다.",
+            "rule": {
+              "left": "selection_length",
+              "operator": "greater_or_equal",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$r\\in\\mathbb Z_{\\ge0}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "selection_length_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.11",
+            "scope": "generation",
+            "description": "$r$은 정수여야 한다.",
+            "rule": {
+              "left": "selection_length_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$r$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "repetition_allowed equals True",
+          "expression": {
+            "constraint_id": "auto.ps.counting.permutation_with_repetition.12",
+            "scope": "generation",
+            "description": "각 위치에서 같은 종류를 반복 선택할 수 있고 순서를 구분해야 한다.",
+            "rule": {
+              "left": "repetition_allowed",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 위치에서 같은 종류를 반복 선택할 수 있고 순서를 구분해야 한다."
         }
@@ -6918,6 +8894,7 @@
         "ps.simple_linear_regression.variation_decomposition_r2.f02.formula_01",
         "ps.simple_linear_regression.variation_decomposition_r2.f02_residual.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -6933,76 +8910,202 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "mean_square_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.1",
+            "scope": "generation",
+            "description": "$MSE>0$이어야 한다.",
+            "rule": {
+              "left": "mean_square_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$MSE>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "leverage less_than 1",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.2",
+            "scope": "generation",
+            "description": "$h_{ii}<1$이어야 한다.",
+            "rule": {
+              "left": "leverage",
+              "operator": "less_than",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$h_{ii}<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "parameter_count_positive_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.cooks_distance.3",
+            "scope": "generation",
+            "description": "계수 수 $p\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+            "rule": {
+              "left": "parameter_count_positive_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계수 수 $p\\in\\mathbb Z_{\\ge1}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.4",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "s_xx greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.5",
+            "scope": "generation",
+            "description": "$S_{xx}>0$이어야 한다.",
+            "rule": {
+              "left": "s_xx",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$S_{xx}>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.leverage.6",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "observed_and_fitted_values_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.raw_residual.7",
+            "scope": "generation",
+            "description": "$y_i$와 $\\hat y_i$가 같은 관측단위에 대해 정의되어야 한다.",
+            "rule": {
+              "left": "observed_and_fitted_values_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$y_i$와 $\\hat y_i$가 같은 관측단위에 대해 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "mean_square_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.studentized_residual.8",
+            "scope": "generation",
+            "description": "$MSE=s^2>0$이어야 한다.",
+            "rule": {
+              "left": "mean_square_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$MSE=s^2>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "deleted_residual_standard_error greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.externally_studentized_residual.9",
+            "scope": "generation",
+            "description": "삭제 표준오차 $s_{(i)}>0$이어야 한다.",
+            "rule": {
+              "left": "deleted_residual_standard_error",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "삭제 표준오차 $s_{(i)}>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_mean_linear_in_predictor equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.regression_model.f01.10",
+            "scope": "generation",
+            "description": "조건부 평균을 선형으로 모형화한다.",
+            "rule": {
+              "left": "conditional_mean_linear_in_predictor",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "조건부 평균을 선형으로 모형화한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "conditional_error_mean_zero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.regression_model.f01.11",
+            "scope": "generation",
+            "description": "오차의 조건부 평균은 0으로 둔다.",
+            "rule": {
+              "left": "conditional_error_mean_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "오차의 조건부 평균은 0으로 둔다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "slope_and_sample_means_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.simple_linear_regression.least_squares.f02.12",
+            "scope": "generation",
+            "description": "$\\hat\\beta_1$과 표본평균이 정의되어 있어야 한다.",
+            "rule": {
+              "left": "slope_and_sample_means_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\hat\\beta_1$과 표본평균이 정의되어 있어야 한다."
         }
@@ -7377,6 +9480,7 @@
         "ps.sampling_distributions.two_sample_statistics.f02.formula_01",
         "ps.sampling_distributions.variance_ratio_f_exact.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -7391,76 +9495,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "total_observation_count greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.1",
+            "scope": "generation",
+            "description": "전체 관측수는 0보다 커야 한다.",
+            "rule": {
+              "left": "total_observation_count",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "전체 관측수는 0보다 커야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_frequency greater_or_equal 0",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.2",
+            "scope": "generation",
+            "description": "도수는 0 이상의 정수여야 한다.",
+            "rule": {
+              "left": "category_frequency",
+              "operator": "greater_or_equal",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "도수는 0 이상의 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_frequency_not_exceed_total equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.3",
+            "scope": "generation",
+            "description": "도수는 전체 관측수를 넘을 수 없다.",
+            "rule": {
+              "left": "category_frequency_not_exceed_total",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "도수는 전체 관측수를 넘을 수 없다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "category_frequency_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f01.4",
+            "scope": "generation",
+            "description": "도수는 정수여야 한다.",
+            "rule": {
+              "left": "category_frequency_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "도수는 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "categories_or_classes_ordered equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f02.5",
+            "scope": "generation",
+            "description": "범주 또는 계급은 누적할 순서가 정해져 있어야 한다.",
+            "rule": {
+              "left": "categories_or_classes_ordered",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "범주 또는 계급은 누적할 순서가 정해져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "frequencies_nonnegative equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.frequency_distribution_graphs.f02.6",
+            "scope": "generation",
+            "description": "각 도수는 비음수여야 한다.",
+            "rule": {
+              "left": "frequencies_nonnegative",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 도수는 비음수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.ecdf_robust_dispersion.f01.7",
+            "scope": "generation",
+            "description": "경험적 분포함수와 MAD를 계산하려면 관측값이 적어도 하나인 표본, 즉 $n\\ge1$이 필요하다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "경험적 분포함수와 MAD를 계산하려면 관측값이 적어도 하나인 표본, 즉 $n\\ge1$이 필요하다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.descriptive_statistics.ecdf_robust_dispersion.f01.8",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "measurability_condition equals True",
+          "expression": {
+            "constraint_id": "auto.ps.random_variables.random_variable_distribution.f01.9",
+            "scope": "generation",
+            "description": "가측성을 만족해야 한다.",
+            "rule": {
+              "left": "measurability_condition",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "가측성을 만족해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "lower_endpoint_is_real equals True",
+          "expression": {
+            "constraint_id": "auto.ps.random_variables.cdf_interval_probability.f01.10",
+            "scope": "generation",
+            "description": "$a\\in\\mathbb R$이어야 한다.",
+            "rule": {
+              "left": "lower_endpoint_is_real",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$a\\in\\mathbb R$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "upper_endpoint_is_real equals True",
+          "expression": {
+            "constraint_id": "auto.ps.random_variables.cdf_interval_probability.f01.11",
+            "scope": "generation",
+            "description": "$b\\in\\mathbb R$이어야 한다.",
+            "rule": {
+              "left": "upper_endpoint_is_real",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$b\\in\\mathbb R$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "lower_endpoint_not_exceed_upper_endpoint equals True",
+          "expression": {
+            "constraint_id": "auto.ps.random_variables.cdf_interval_probability.f01.12",
+            "scope": "generation",
+            "description": "$a\\le b$여야 한다.",
+            "rule": {
+              "left": "lower_endpoint_not_exceed_upper_endpoint",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$a\\le b$여야 한다."
         }
@@ -7588,6 +9813,7 @@
         "ps.anova.welch_anova_statistic.f02.formula_01",
         "ps.anova.welch_anova_statistic.f03.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -7601,76 +9827,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "model_terms_dimensionally_conformable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.ancova_model.1",
+            "scope": "generation",
+            "description": "반응변수, 집단효과, 공변량과 오차항의 차원이 적합해야 한다.",
+            "rule": {
+              "left": "model_terms_dimensionally_conformable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반응변수, 집단효과, 공변량과 오차항의 차원이 적합해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "effect_coding_or_identifiability_constraint_specified equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.ancova_model.2",
+            "scope": "generation",
+            "description": "모형의 집단효과와 절편을 유일하게 해석할 수 있도록 코딩 또는 식별 제약을 명시해야 한다.",
+            "rule": {
+              "left": "effect_coding_or_identifiability_constraint_specified",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모형의 집단효과와 절편을 유일하게 해석할 수 있도록 코딩 또는 식별 제약을 명시해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "comparison_count_positive_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.bonferroni_adjustment.3",
+            "scope": "generation",
+            "description": "$m\\in\\mathbb Z_{\\ge1}$이어야 한다.",
+            "rule": {
+              "left": "comparison_count_positive_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$m\\in\\mathbb Z_{\\ge1}$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.bonferroni_adjustment.4",
+            "scope": "generation",
+            "description": "$0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sphericity_correction_applicable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.sphericity_df_correction.5",
+            "scope": "generation",
+            "description": "반복측정 요인이 세 수준 이상이고 구형성 위배가 문제되는 단변량 분석이어야 한다.",
+            "rule": {
+              "left": "sphericity_correction_applicable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "반복측정 요인이 세 수준 이상이고 구형성 위배가 문제되는 단변량 분석이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "epsilon_in_right_closed_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.sphericity_df_correction.6",
+            "scope": "generation",
+            "description": "$0<\\epsilon\\le1$이어야 한다.",
+            "rule": {
+              "left": "epsilon_in_right_closed_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$0<\\epsilon\\le1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "groups_independent equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.7",
+            "scope": "generation",
+            "description": "집단별 관측은 서로 독립이어야 한다.",
+            "rule": {
+              "left": "groups_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "집단별 관측은 서로 독립이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "homoskedasticity_condition equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.8",
+            "scope": "generation",
+            "description": "오차분산은 모든 집단에서 동일해야 한다.",
+            "rule": {
+              "left": "homoskedasticity_condition",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "오차분산은 모든 집단에서 동일해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "balanced_positive_group_sizes equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.9",
+            "scope": "generation",
+            "description": "균형형 HSD 식에는 모든 집단의 표본크기가 같은 양의 정수여야 한다.",
+            "rule": {
+              "left": "balanced_positive_group_sizes",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "균형형 HSD 식에는 모든 집단의 표본크기가 같은 양의 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "alpha_in_open_unit_interval equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.10",
+            "scope": "generation",
+            "description": "가족별 유의수준은 $0<\\alpha<1$이어야 한다.",
+            "rule": {
+              "left": "alpha_in_open_unit_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "가족별 유의수준은 $0<\\alpha<1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "errors_normal_within_groups equals True",
+          "expression": {
+            "constraint_id": "auto.ps.anova.tukey_hsd_balanced.11",
+            "scope": "generation",
+            "description": "정확한 studentized range 기준에는 각 집단 오차의 정규성이 필요하다.",
+            "rule": {
+              "left": "errors_normal_within_groups",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정확한 studentized range 기준에는 각 집단 오차의 정규성이 필요하다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "group_count equals 2",
+          "expression": {
+            "constraint_id": "auto.ps.anova.two_group_f_t_equivalence.12",
+            "scope": "generation",
+            "description": "비교 집단은 정확히 두 개여야 한다.",
+            "rule": {
+              "left": "group_count",
+              "operator": "equals",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "비교 집단은 정확히 두 개여야 한다."
         }
@@ -7813,6 +10160,7 @@
         "ps.hypothesis_testing.wald_test.asymptotic_null_distribution.formula_01",
         "ps.hypothesis_testing.wald_test.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -7827,76 +10175,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "population_standard_deviation_known_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.1",
+            "scope": "generation",
+            "description": "$\\sigma>0$이고 알려져 있어야 한다.",
+            "rule": {
+              "left": "population_standard_deviation_known_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\sigma>0$이고 알려져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sampling_model equals iid_finite_variance",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.2",
+            "scope": "generation",
+            "description": "표본은 독립동일분포이고 분산이 유한해야 한다.",
+            "rule": {
+              "left": "sampling_model",
+              "operator": "equals",
+              "right": "iid_finite_variance"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본은 독립동일분포이고 분산이 유한해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "inference_regime equals asymptotic_clt",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.3",
+            "scope": "generation",
+            "description": "표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다.",
+            "rule": {
+              "left": "inference_regime",
+              "operator": "equals",
+              "right": "asymptotic_clt"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "null_hypothesis equals population_mean_equals_null_value",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.4",
+            "scope": "generation",
+            "description": "귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다.",
+            "rule": {
+              "left": "null_hypothesis",
+              "operator": "equals",
+              "right": "population_mean_equals_null_value"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sampling_model equals iid_normal",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_exact.5",
+            "scope": "generation",
+            "description": "표본은 i.i.d. 정규표본이어야 한다.",
+            "rule": {
+              "left": "sampling_model",
+              "operator": "equals",
+              "right": "iid_normal"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본은 i.i.d. 정규표본이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_exact.6",
+            "scope": "generation",
+            "description": "$n\\ge1$이어야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_exact.7",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_statistic.8",
+            "scope": "generation",
+            "description": "$n$은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "two_samples_independent equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.9",
+            "scope": "generation",
+            "description": "두 표본은 서로 독립이어야 한다.",
+            "rule": {
+              "left": "two_samples_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "두 표본은 서로 독립이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "both_samples_iid_normal equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.10",
+            "scope": "generation",
+            "description": "각 표본은 i.i.d. 정규표본이어야 한다.",
+            "rule": {
+              "left": "both_samples_iid_normal",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 표본은 i.i.d. 정규표본이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "both_sample_sizes_at_least_two equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.11",
+            "scope": "generation",
+            "description": "$n_1,n_2\\ge2$여야 한다.",
+            "rule": {
+              "left": "both_sample_sizes_at_least_two",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n_1,n_2\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "denominator_sample_variance greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.12",
+            "scope": "generation",
+            "description": "분모 표본분산은 양수여야 한다.",
+            "rule": {
+              "left": "denominator_sample_variance",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "분모 표본분산은 양수여야 한다."
         }
@@ -8428,6 +10897,7 @@
         "ps.sampling_distributions.two_sample_statistics.f02.formula_01",
         "ps.sampling_distributions.variance_ratio_f_exact.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "distribution",
@@ -8439,80 +10909,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "event_sequence_decreases_to_limit equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.continuity_from_above.1",
+            "scope": "generation",
+            "description": "$A_{n+1}\\subseteq A_n$이고 $A=\\bigcap_nA_n$이어야 한다.",
+            "rule": {
+              "left": "event_sequence_decreases_to_limit",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$A_{n+1}\\subseteq A_n$이고 $A=\\bigcap_nA_n$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_sequence_increases_to_limit equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.continuity_from_below.2",
+            "scope": "generation",
+            "description": "$A_n\\subseteq A_{n+1}$이고 $A=\\bigcup_nA_n$이어야 한다.",
+            "rule": {
+              "left": "event_sequence_increases_to_limit",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$A_n\\subseteq A_{n+1}$이고 $A=\\bigcup_nA_n$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "common_universe_for_complements equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.de_morgan_laws.f01.3",
+            "scope": "generation",
+            "description": "여집합은 동일한 전체집합 $\\Omega$에 대해 정의되어야 한다.",
+            "rule": {
+              "left": "common_universe_for_complements",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "여집합은 동일한 전체집합 $\\Omega$에 대해 정의되어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_space_defined equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_space_sample_space_events.f01.4",
+            "scope": "generation",
+            "description": "$\\Omega$가 표본공간으로 정의되어 있어야 한다.",
+            "rule": {
+              "left": "sample_space_defined",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\Omega$가 표본공간으로 정의되어 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_family_is_sigma_algebra equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_space_sample_space_events.f01.5",
+            "scope": "generation",
+            "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다.",
+            "rule": {
+              "left": "event_family_is_sigma_algebra",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "probability_measure_defined_on_sigma_algebra equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_space_sample_space_events.f01.6",
+            "scope": "generation",
+            "description": "$P$는 $\\mathcal F$ 위에 정의된 확률측도여야 한다.",
+            "rule": {
+              "left": "probability_measure_defined_on_sigma_algebra",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$P$는 $\\mathcal F$ 위에 정의된 확률측도여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "family_is_sigma_algebra equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_space_sample_space_events.f03.7",
+            "scope": "generation",
+            "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다.",
+            "rule": {
+              "left": "family_is_sigma_algebra",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\mathcal F$는 $\\Omega$ 위의 $\\sigma$-대수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_measurable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_properties.f01.8",
+            "scope": "generation",
+            "description": "$A$는 확률공간의 사건이어야 한다.",
+            "rule": {
+              "left": "event_measurable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$A$는 확률공간의 사건이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_A_measurable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_properties.f02.9",
+            "scope": "generation",
+            "description": "$A$는 사건이어야 한다.",
+            "rule": {
+              "left": "event_A_measurable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$A$는 사건이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_B_measurable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_properties.f02.10",
+            "scope": "generation",
+            "description": "$B$는 사건이어야 한다.",
+            "rule": {
+              "left": "event_B_measurable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$B$는 사건이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_inclusion equals A_subset_B",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.probability_properties.f03.11",
+            "scope": "generation",
+            "description": "$A\\subseteq B$여야 한다.",
+            "rule": {
+              "left": "event_inclusion",
+              "operator": "equals",
+              "right": "A_subset_B"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$A\\subseteq B$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "event_A_measurable equals True",
+          "expression": {
+            "constraint_id": "auto.ps.probability_basics.bonferroni_inequality.f01.12",
+            "scope": "generation",
+            "description": "$A$는 확률공간의 사건이어야 한다.",
+            "rule": {
+              "left": "event_A_measurable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$A$는 확률공간의 사건이어야 한다."
         }
@@ -8609,6 +11204,7 @@
         "ps.correlation.spearman_no_tie_difference_formula.formula_01",
         "ps.correlation.spearman_rank_correlation.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression",
@@ -8621,76 +11217,197 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "paired_sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_a.1",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "paired_sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "concordant_discordant_counts_valid equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_a.2",
+            "scope": "generation",
+            "description": "$C$와 $D$는 동일한 $n$개 쌍에서 계산한 유효한 일치쌍·불일치쌍 수여야 한다.",
+            "rule": {
+              "left": "concordant_discordant_counts_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$C$와 $D$는 동일한 $n$개 쌍에서 계산한 유효한 일치쌍·불일치쌍 수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "paired_sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_a.3",
+            "scope": "generation",
+            "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "paired_sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`paired_sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "kendall_tau_b_denominator_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_b.4",
+            "scope": "generation",
+            "description": "분모의 두 동점보정 항은 양수여야 한다.",
+            "rule": {
+              "left": "kendall_tau_b_denominator_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "분모의 두 동점보정 항은 양수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "kendall_pair_counts_nonnegative_integers equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.kendall_tau_b.5",
+            "scope": "generation",
+            "description": "$C,D,T_x,T_y$는 동일한 표본쌍에서 일관되게 집계한 비음수 정수여야 한다.",
+            "rule": {
+              "left": "kendall_pair_counts_nonnegative_integers",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$C,D,T_x,T_y$는 동일한 표본쌍에서 일관되게 집계한 비음수 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "ties_present equals False",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_no_tie_difference_formula.6",
+            "scope": "generation",
+            "description": "동점이 없어야 한다.",
+            "rule": {
+              "left": "ties_present",
+              "operator": "equals",
+              "right": false
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "동점이 없어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "paired_sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_rank_correlation.7",
+            "scope": "generation",
+            "description": "짝지어진 관측 수는 $n\\ge2$여야 한다.",
+            "rule": {
+              "left": "paired_sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "짝지어진 관측 수는 $n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "tie_ranking_rule_documented equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_rank_correlation.8",
+            "scope": "generation",
+            "description": "동점에는 평균순위 등 명시한 순위 규칙을 사용해야 한다.",
+            "rule": {
+              "left": "tie_ranking_rule_documented",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "동점에는 평균순위 등 명시한 순위 규칙을 사용해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "both_rank_variances_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.spearman_rank_correlation.9",
+            "scope": "generation",
+            "description": "두 순위 중 적어도 하나의 분산이 0이면 상관계수가 정의되지 않는다.",
+            "rule": {
+              "left": "both_rank_variances_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "두 순위 중 적어도 하나의 분산이 0이면 상관계수가 정의되지 않는다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "original_variances_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.pearson_affine_transformation.10",
+            "scope": "generation",
+            "description": "$\\operatorname{Var}(X)>0$이고 $\\operatorname{Var}(Y)>0$이어야 한다.",
+            "rule": {
+              "left": "original_variances_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\operatorname{Var}(X)>0$이고 $\\operatorname{Var}(Y)>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "affine_scale_coefficients_nonzero equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.pearson_affine_transformation.11",
+            "scope": "generation",
+            "description": "$b\\ne0$이고 $d\\ne0$이어야 한다.",
+            "rule": {
+              "left": "affine_scale_coefficients_nonzero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$b\\ne0$이고 $d\\ne0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "original_variances_finite equals True",
+          "expression": {
+            "constraint_id": "auto.ps.correlation.pearson_affine_transformation.12",
+            "scope": "generation",
+            "description": "X와 Y의 분산은 유한해야 한다.",
+            "rule": {
+              "left": "original_variances_finite",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "X와 Y의 분산은 유한해야 한다."
         }
@@ -8835,6 +11552,7 @@
         "ps.hypothesis_testing.wald_test.asymptotic_null_distribution.formula_01",
         "ps.hypothesis_testing.wald_test.formula_01"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "classification",
@@ -8847,80 +11565,205 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "sampling_model equals iid_normal",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare.1",
+            "scope": "generation",
+            "description": "표본은 i.i.d. 정규표본이어야 한다.",
+            "rule": {
+              "left": "sampling_model",
+              "operator": "equals",
+              "right": "iid_normal"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본은 i.i.d. 정규표본이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 2",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare.2",
+            "scope": "generation",
+            "description": "$n\\ge2$여야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 2
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge2$여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "null_variance greater_than 0",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare.3",
+            "scope": "generation",
+            "description": "$\\sigma_0^2>0$이어야 한다.",
+            "rule": {
+              "left": "null_variance",
+              "operator": "greater_than",
+              "right": 0
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\sigma_0^2>0$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_variance_chisquare.4",
+            "scope": "generation",
+            "description": "`sample_size`에 대응하는 값은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "`sample_size`에 대응하는 값은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "population_standard_deviation_known_positive equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.5",
+            "scope": "generation",
+            "description": "$\\sigma>0$이고 알려져 있어야 한다.",
+            "rule": {
+              "left": "population_standard_deviation_known_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$\\sigma>0$이고 알려져 있어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sampling_model equals iid_finite_variance",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.6",
+            "scope": "generation",
+            "description": "표본은 독립동일분포이고 분산이 유한해야 한다.",
+            "rule": {
+              "left": "sampling_model",
+              "operator": "equals",
+              "right": "iid_finite_variance"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본은 독립동일분포이고 분산이 유한해야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "inference_regime equals asymptotic_clt",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.7",
+            "scope": "generation",
+            "description": "표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다.",
+            "rule": {
+              "left": "inference_regime",
+              "operator": "equals",
+              "right": "asymptotic_clt"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "표본크기가 CLT 근사를 정당화할 만큼 충분히 커야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "null_hypothesis equals population_mean_equals_null_value",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_asymptotic.8",
+            "scope": "generation",
+            "description": "귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다.",
+            "rule": {
+              "left": "null_hypothesis",
+              "operator": "equals",
+              "right": "population_mean_equals_null_value"
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "귀무가설 $H_0:\\mu=\\mu_0$가 성립하는 기준분포를 사용한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size greater_or_equal 1",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_exact.9",
+            "scope": "generation",
+            "description": "$n\\ge1$이어야 한다.",
+            "rule": {
+              "left": "sample_size",
+              "operator": "greater_or_equal",
+              "right": 1
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n\\ge1$이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "sample_size_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.one_sample_z_mean_statistic.10",
+            "scope": "generation",
+            "description": "$n$은 정수여야 한다.",
+            "rule": {
+              "left": "sample_size_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "$n$은 정수여야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "two_samples_independent equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.11",
+            "scope": "generation",
+            "description": "두 표본은 서로 독립이어야 한다.",
+            "rule": {
+              "left": "two_samples_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "두 표본은 서로 독립이어야 한다."
         },
         {
           "type": "concept_application_condition",
-          "expression": "both_samples_iid_normal equals True",
+          "expression": {
+            "constraint_id": "auto.ps.hypothesis_testing.two_sample_variance_f.12",
+            "scope": "generation",
+            "description": "각 표본은 i.i.d. 정규표본이어야 한다.",
+            "rule": {
+              "left": "both_samples_iid_normal",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 표본은 i.i.d. 정규표본이어야 한다."
         }

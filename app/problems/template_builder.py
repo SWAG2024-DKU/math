@@ -90,6 +90,35 @@ def _resolve_answer_type(
     return supported[0], True
 
 
+def _resolve_primary_formula_id(
+    problem_type: ProblemTypeInfo,
+    rule: GenerationRule,
+) -> str | None:
+    """현재 Concept에 실제로 속하는 대표 공식만 선택한다."""
+
+    formula_ids = _unique(problem_type.formula_ids)
+    primary_formula_id = rule.primary_formula_id
+
+    if primary_formula_id is not None:
+        if primary_formula_id not in formula_ids:
+            raise ValueError(
+                "Generation Rule의 primary_formula_id가 현재 Concept에 없습니다: "
+                f"{primary_formula_id} / {problem_type.concept_id}"
+            )
+        return primary_formula_id
+
+    # 공식이 정확히 하나일 때만 자동 선택한다. 여러 개라면 임의로 첫 번째
+    # 공식을 고르지 않고 None으로 남겨 후속 검토 대상으로 만든다.
+    return formula_ids[0] if len(formula_ids) == 1 else None
+
+
+def _dump_model(value: object) -> object:
+    model_dump = getattr(value, "model_dump", None)
+    if callable(model_dump):
+        return model_dump(mode="python", exclude_unset=True)
+    return value
+
+
 def build_template(
     problem_type: ProblemTypeInfo,
     rule: GenerationRule,
@@ -114,7 +143,11 @@ def build_template(
     )
 
     template_status = "ready" if is_ready else "draft"
-    review_status = "reviewed" if rule.status == "reviewed" else "not_reviewed"
+    review_status = (
+        "reviewed"
+        if rule.status in {"curated", "reviewed"}
+        else "not_reviewed"
+    )
 
     validator_names = _unique(
         [
@@ -124,11 +157,15 @@ def build_template(
     )
 
     formula_ids = _unique(problem_type.formula_ids)
-    first_formula_id = formula_ids[0] if formula_ids else None
+    primary_formula_id = _resolve_primary_formula_id(problem_type, rule)
 
     parameter_dict = {
-        name: spec.model_dump(mode="python")
+        name: spec.model_dump(mode="python", exclude_unset=True)
         for name, spec in rule.parameter_spec.items()
+    }
+    symbol_dict = {
+        name: spec.model_dump(mode="python", exclude_unset=True)
+        for name, spec in rule.symbol_spec.items()
     }
 
     effective_answer_expression = (
@@ -187,10 +224,11 @@ def build_template(
             "language": problem_type.language,
         },
         parameters=parameter_dict,
+        symbols=symbol_dict,
         constraints=[
             {
                 "type": constraint.type,
-                "expression": constraint.expression,
+                "expression": _dump_model(constraint.expression),
                 "required": constraint.required,
                 "description": constraint.description,
             }
@@ -218,6 +256,7 @@ def build_template(
         },
         solution_spec={
             "solution_strategy": "engine_then_explanation",
+            "primary_formula_id": primary_formula_id,
             "solution_plan": [
                 {
                     "step": 1,
@@ -225,7 +264,7 @@ def build_template(
                         "Generation Rule의 계산식을 사용하여 정답을 계산하고 "
                         "Validator로 결과를 검증한다."
                     ),
-                    "formula_id": first_formula_id,
+                    "formula_id": primary_formula_id,
                     "cas_expression": effective_answer_expression,
                 }
             ],
