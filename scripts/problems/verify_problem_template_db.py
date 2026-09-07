@@ -31,7 +31,11 @@ EXPECTED_EXECUTABLE_READY = 56
 STATUS_RANK = {
     "deprecated": 0,
     "draft": 1,
-    "ready": 2,
+    "schema_validated": 2,
+    "math_validated": 3,
+    "human_reviewed": 4,
+    "ready": 5,
+    "active": 6,
 }
 
 RULE_STATUS_RANK = {
