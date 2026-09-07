@@ -1,7 +1,6 @@
 import sys
 from pathlib import Path
 
-
 PROJECT_ROOT = (
     Path(__file__)
     .resolve()
@@ -13,7 +12,6 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 from app.db.connection import get_connection
-
 
 SQL_DIR = PROJECT_ROOT / "sql"
 
@@ -27,6 +25,7 @@ SQL_FILES = [
     "006_create_problem_templates.sql",
     "007_create_template_concepts.sql",
     "008_create_template_import_audit.sql",
+    "009_create_concept_chunks_hnsw_index.sql",
 ]
 
 
