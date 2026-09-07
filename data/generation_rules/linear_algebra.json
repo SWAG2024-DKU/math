@@ -1019,15 +1019,19 @@
           "distribution": "uniform"
         },
         "lambda_val": {
-          "type": "integer",
+          "type": "derived",
           "description": "A의 고윳값 중 하나.",
           "required": true,
-          "min": -8,
-          "max": 8,
-          "exclude": [],
-          "choices": [],
-          "step": null,
-          "distribution": "uniform"
+          "depends_on": [
+            "A"
+          ],
+          "derived": {
+            "depends_on": [
+              "A"
+            ],
+            "expression": "list(A.eigenvals().keys())[0]",
+            "engine": "sympy"
+          }
         }
       },
       "constraints": [],
@@ -1222,6 +1226,18 @@
           },
           "required": true,
           "description": "서로 다른 행을 사용한다."
+        },
+        {
+          "type": "index_bound",
+          "expression": "source_row < n",
+          "required": true,
+          "description": "source_row는 행렬 크기 n보다 작아야 한다."
+        },
+        {
+          "type": "index_bound",
+          "expression": "target_row < n",
+          "required": true,
+          "description": "target_row는 행렬 크기 n보다 작아야 한다."
         }
       ],
       "construction": {
@@ -1712,7 +1728,14 @@
           "distribution": "uniform"
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "full_rank",
+          "expression": "V.rank() == V.cols",
+          "required": true,
+          "description": "Gram-Schmidt 입력 벡터 집합은 선형독립이어야 한다."
+        }
+      ],
       "construction": {
         "operation": "gram_schmidt_orthogonalization",
         "required_objects": [
@@ -2103,7 +2126,14 @@
           "distribution": "uniform"
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "full_rank",
+          "expression": "A.rank() == A.cols",
+          "required": true,
+          "description": "정규방정식의 유일해를 위해 A는 full column rank여야 한다."
+        }
+      ],
       "construction": {
         "operation": "least_squares_calculation",
         "required_objects": [
@@ -2323,7 +2353,14 @@
           "distribution": "uniform"
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "full_rank",
+          "expression": "X.rank() == X.cols",
+          "required": true,
+          "description": "회귀계수의 유일해를 위해 X는 full column rank여야 한다."
+        }
+      ],
       "construction": {
         "operation": "linear_regression_calculation",
         "required_objects": [
@@ -2473,7 +2510,8 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "generator": "lu_factorable_matrix"
         }
       },
       "constraints": [],
@@ -2546,7 +2584,24 @@
           "distribution": "uniform"
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "diagonalizable",
+          "expression": {
+            "constraint_id": "matrix_diagonalizable",
+            "scope": "generation",
+            "description": "A는 대각화 가능한 행렬이어야 한다.",
+            "rule": {
+              "left": "A",
+              "operator": "diagonal",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
+          "required": true,
+          "description": "대각화 가능한 행렬만 생성한다."
+        }
+      ],
       "construction": {
         "operation": "matrix_diagonalization",
         "required_objects": [
@@ -2627,7 +2682,14 @@
           "distribution": "uniform"
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "dimension_match",
+          "expression": "A.cols == B.rows",
+          "required": true,
+          "description": "행렬곱 AB가 정의되도록 A의 열 수와 B의 행 수를 일치시킨다."
+        }
+      ],
       "construction": {
         "operation": "matrix_multiplication",
         "required_objects": [
@@ -3160,7 +3222,8 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "generator": "symmetric_matrix"
         }
       },
       "constraints": [],
@@ -3289,7 +3352,7 @@
       },
       "validation": {
         "validators": [
-          "idempotent_symmetric_check"
+          "vector_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3576,7 +3639,8 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "generator": "symmetric_matrix"
         }
       },
       "constraints": [],
@@ -4256,7 +4320,8 @@
       },
       "validation": {
         "validators": [
-          "zero_row_detection"
+          "determinant_zero_check",
+          "rank_deficiency_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4477,7 +4542,8 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "generator": "symmetric_matrix"
         }
       },
       "constraints": [],
@@ -4577,7 +4643,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_check"
+          "matrix_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4823,7 +4889,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_equivalence"
+          "boolean_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
