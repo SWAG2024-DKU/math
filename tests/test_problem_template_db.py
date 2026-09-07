@@ -8,7 +8,6 @@ import pytest
 from psycopg.errors import CheckViolation, ForeignKeyViolation, UniqueViolation
 from psycopg.types.json import Jsonb
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_PROBLEMS_DIR = PROJECT_ROOT / "scripts" / "problems"
 
@@ -17,8 +16,9 @@ if str(PROJECT_ROOT) not in sys.path:
 if str(SCRIPTS_PROBLEMS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_PROBLEMS_DIR))
 
-from app.db.connection import get_connection
 import verify_problem_template_db as verifier
+
+from app.db.connection import get_connection
 
 
 @pytest.fixture
@@ -41,6 +41,7 @@ def assert_required_tables(conn) -> None:
         "problem.problem_templates",
         "problem.template_concepts",
         "problem.template_import_audit",
+        "problem.allowed_answer_types",
         "kb.concepts",
     ):
         row = conn.execute(
@@ -59,22 +60,58 @@ def insert_test_template(
     difficulty_min: int = 1,
     difficulty_base: int = 1,
     difficulty_max: int = 2,
+    answer_type: str | None = None,
+    generation_strategy: str = "forward_generation",
+    generation_rule_status: str = "draft_auto",
+    payload_problem_type: str | None = None,
+    content_hash_override: str | None = None,
 ) -> None:
+    if answer_type is None:
+        row = conn.execute(
+            """
+            SELECT answer_type
+            FROM problem.allowed_answer_types
+            ORDER BY answer_type
+            LIMIT 1
+            """
+        ).fetchone()
+        assert row is not None, "allowed_answer_types가 비어 있습니다."
+        answer_type = row["answer_type"]
+
+    problem_type = "test_problem"
+
     payload = {
         "template_id": template_id,
         "template_version": "1.0.0",
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "status": status,
+        "executable": executable,
+        "generation_rule_id": "test.rule.v1",
+        "generation_rule_version": "1.0.0",
+        "generation_rule_status": generation_rule_status,
         "taxonomy": {
             "subject_id": "test_subject",
             "unit_id": "test_unit",
             "concept_ids": [],
         },
         "classification": {
-            "problem_type": "test_problem",
-            "answer_type": "scalar",
+            "problem_type": payload_problem_type or problem_type,
+            "answer_type": answer_type,
+            "difficulty": {
+                "base": difficulty_base,
+                "min": difficulty_min,
+                "max": difficulty_max,
+            },
+            "generation_strategy": generation_strategy,
+            "language": "ko-KR",
         },
     }
+
+    content_hash = (
+        content_hash_override
+        if content_hash_override is not None
+        else verifier.canonical_hash(payload)
+    )
 
     conn.execute(
         """
@@ -84,6 +121,9 @@ def insert_test_template(
             schema_version,
             status,
             executable,
+            generation_rule_id,
+            generation_rule_version,
+            generation_rule_status,
             subject_id,
             unit_id,
             problem_type,
@@ -100,17 +140,20 @@ def insert_test_template(
         VALUES (
             %(template_id)s,
             '1.0.0',
-            '1.0.0',
+            '1.1.0',
             %(status)s,
             %(executable)s,
+            'test.rule.v1',
+            '1.0.0',
+            %(generation_rule_status)s,
             'test_subject',
             'test_unit',
-            'test_problem',
-            'scalar',
+            %(problem_type)s,
+            %(answer_type)s,
             %(difficulty_base)s,
             %(difficulty_min)s,
             %(difficulty_max)s,
-            'forward_generation',
+            %(generation_strategy)s,
             'ko-KR',
             'tests/generated_test_template.json',
             %(content_hash)s,
@@ -121,10 +164,14 @@ def insert_test_template(
             "template_id": template_id,
             "status": status,
             "executable": executable,
+            "generation_rule_status": generation_rule_status,
+            "problem_type": problem_type,
+            "answer_type": answer_type,
             "difficulty_base": difficulty_base,
             "difficulty_min": difficulty_min,
             "difficulty_max": difficulty_max,
-            "content_hash": verifier.canonical_hash(payload),
+            "generation_strategy": generation_strategy,
+            "content_hash": content_hash,
             "payload": Jsonb(payload),
         },
     )
@@ -142,7 +189,6 @@ def test_source_template_counts_are_reproducible():
 
 
 def test_source_duplicate_resolution_has_no_ties():
-    # scan_source_templates() 내부에서 동률 충돌이 있으면 VerificationError가 발생한다.
     result = verifier.scan_source_templates()
     assert len(result.winners) == verifier.EXPECTED_UNIQUE_TEMPLATES
 
@@ -397,4 +443,91 @@ def test_duplicate_primary_key_is_rejected(db_conn):
             insert_test_template(
                 db_conn,
                 template_id=template_id,
+            )
+
+
+def test_ready_non_executable_is_rejected_by_db(db_conn):
+    template_id = "test.ready.nonexec." + uuid.uuid4().hex
+
+    with pytest.raises(CheckViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                status="ready",
+                executable=False,
+            )
+
+
+def test_non_positive_difficulty_is_rejected_by_db(db_conn):
+    template_id = "test.negative.difficulty." + uuid.uuid4().hex
+
+    with pytest.raises(CheckViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                difficulty_min=-3,
+                difficulty_base=-2,
+                difficulty_max=-1,
+            )
+
+
+def test_invalid_generation_strategy_is_rejected_by_db(db_conn):
+    template_id = "test.invalid.strategy." + uuid.uuid4().hex
+
+    with pytest.raises(CheckViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                generation_strategy="totally_invalid_strategy",
+            )
+
+
+def test_invalid_generation_rule_status_is_rejected_by_db(db_conn):
+    template_id = "test.invalid.rule.status." + uuid.uuid4().hex
+
+    with pytest.raises(CheckViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                generation_rule_status="invalid_rule_status",
+            )
+
+
+def test_unknown_answer_type_is_rejected_by_db(db_conn):
+    template_id = "test.invalid.answer.type." + uuid.uuid4().hex
+
+    with pytest.raises(ForeignKeyViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                answer_type="unknown_answer_type_" + uuid.uuid4().hex,
+            )
+
+
+def test_payload_relational_mismatch_is_rejected_by_db(db_conn):
+    template_id = "test.payload.mismatch." + uuid.uuid4().hex
+
+    with pytest.raises(CheckViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                payload_problem_type="different_problem_type",
+            )
+
+
+def test_invalid_content_hash_format_is_rejected_by_db(db_conn):
+    template_id = "test.invalid.hash." + uuid.uuid4().hex
+
+    with pytest.raises(CheckViolation):
+        with db_conn.transaction():
+            insert_test_template(
+                db_conn,
+                template_id=template_id,
+                content_hash_override="not-a-valid-sha256",
             )

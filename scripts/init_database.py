@@ -26,6 +26,7 @@ SQL_FILES = [
     "007_create_template_concepts.sql",
     "008_create_template_import_audit.sql",
     "009_create_concept_chunks_hnsw_index.sql",
+    "010_harden_problem_template_constraints.sql",
 ]
 
 
