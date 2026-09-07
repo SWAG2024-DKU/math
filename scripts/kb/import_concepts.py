@@ -7,7 +7,6 @@ from typing import Any
 
 from pydantic import ValidationError
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 if str(PROJECT_ROOT) not in sys.path:
@@ -15,13 +14,9 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 from app.db.connection import get_connection
-from app.kb.repository import (
-    count_concepts,
-    count_concepts_by_subject,
-    upsert_concepts,
-)
+from app.kb.repository import (count_concepts, count_concepts_by_subject,
+                               upsert_concepts)
 from app.schemas.concept import ConceptCatalog
-
 
 CONCEPTS_DIR = PROJECT_ROOT / "data" / "concepts"
 MARKDOWN_DIR = PROJECT_ROOT / "data" / "markdown"
