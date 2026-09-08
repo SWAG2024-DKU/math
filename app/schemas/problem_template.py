@@ -41,7 +41,10 @@ class ClassificationSpec(StrictModel):
     problem_type: str
     answer_type: str
     difficulty: DifficultySpec
-    generation_strategy: Literal["forward_generation"] = "forward_generation"
+    generation_strategy: Literal[
+        "forward_generation",
+        "reverse_generation",
+    ] = "forward_generation"
     language: str = "ko-KR"
 
 
@@ -67,12 +70,22 @@ class CanonicalizationSpec(StrictModel):
     exact_value_preferred: bool = True
 
 
+class EquivalenceSpec(StrictModel):
+    """정답 동치 판정 방식. 상수 재명명·대수적 변형을 어디까지 같다고 볼지."""
+
+    method: str | None = None
+    tolerance: float | None = None
+    allow_algebraic_rearrangement: bool | None = None
+    allow_constant_renaming: bool | None = None
+
+
 class AnswerTemplateSpec(StrictModel):
     answer_type: str
     engine: Literal["sympy", "numpy", "python", "none"]
     cas_template: str | None = None
     latex_template: str | None = None
     canonicalization: CanonicalizationSpec
+    equivalence: EquivalenceSpec | None = None
     required_checks: list[str] = Field(default_factory=list)
 
 
@@ -113,6 +126,11 @@ class QualityRulesSpec(StrictModel):
     ambiguity_check: bool = True
     minimum_distinct_parameter_sets: int = Field(default=20, ge=1)
 
+    # answer_complexity_check가 실제로 쓸 임계값. 없으면 검사기가 기준을 못 잡는다.
+    maximum_answer_complexity: int | None = None
+    maximum_denominator: int | None = None
+    allow_decimal_answer: bool | None = None
+
 
 class StoragePolicySpec(StrictModel):
     save_failed_generations: bool = True
@@ -121,9 +139,21 @@ class StoragePolicySpec(StrictModel):
     save_template_snapshot: bool = True
 
 
+class DistractorRule(StrictModel):
+    """오답 선택지 생성 규칙. misconception_id는 개념 카탈로그에 등록된 것이어야 한다."""
+
+    rule_id: str
+    misconception_id: str
+    transformation: str
+    validator: str | None = None
+
+
 class TemplateMetadata(StrictModel):
     created_by: str = "template_builder.py"
     review_status: Literal["not_reviewed", "reviewed"] = "not_reviewed"
+    reviewed_by: str | None = None
+    created_at: str | None = None
+    updated_at: str | None = None
     notes: str | None = None
 
 
@@ -140,7 +170,18 @@ class ProblemTemplate(BaseModel):
 
     template_id: str
     template_version: str = "1.0.0"
-    status: Literal["draft", "ready", "deprecated"] = "draft"
+    # 데이터 구조 설계 10.3의 6단계 생명주기.
+    # "ready"는 template_builder.py가 실제로 찍어내는 값이고 기존 템플릿 56개가
+    # 쓰고 있어 함께 허용한다. 데이터 이관이 끝나면 뺀다.
+    status: Literal[
+        "draft",
+        "schema_validated",
+        "math_validated",
+        "human_reviewed",
+        "active",
+        "deprecated",
+        "ready",
+    ] = "draft"
 
     generation_rule_id: str
     generation_rule_version: str
@@ -152,12 +193,19 @@ class ProblemTemplate(BaseModel):
 
     # GenerationRule의 parameter_spec을 손실 없이 넘기기 위해 유연한 dict로 둔다.
     parameters: dict[str, dict[str, Any]] = Field(default_factory=dict)
+
+    # 샘플링된 파라미터로 계산되는 파생 값. 현재 데이터는 전부 빈 배열이라
+    # 항목 구조가 확정되지 않았다 — 확정되면 전용 모델로 조인다.
+    parameter_dependencies: list[dict[str, Any]] = Field(default_factory=list)
+
     constraints: list[ConstraintTemplate] = Field(default_factory=list)
 
     problem_builder: ProblemBuilderSpec
     answer_spec: AnswerTemplateSpec
     solution_spec: SolutionSpec
     validation: ValidationTemplateSpec
+
+    distractor_rules: list[DistractorRule] = Field(default_factory=list)
 
     quality_rules: QualityRulesSpec = Field(default_factory=QualityRulesSpec)
     storage_policy: StoragePolicySpec = Field(default_factory=StoragePolicySpec)
