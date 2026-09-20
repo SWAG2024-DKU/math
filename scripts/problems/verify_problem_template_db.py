@@ -31,7 +31,11 @@ EXPECTED_EXECUTABLE_READY = 56
 STATUS_RANK = {
     "deprecated": 0,
     "draft": 1,
-    "ready": 2,
+    "schema_validated": 2,
+    "math_validated": 3,
+    "human_reviewed": 4,
+    "ready": 5,
+    "active": 6,
 }
 
 RULE_STATUS_RANK = {
@@ -64,7 +68,7 @@ class VerificationError(RuntimeError):
 
 
 def canonical_hash(payload: dict[str, Any]) -> str:
-    """DB payload와 content_hash를 비교할 때 사용하는 canonical SHA-256."""
+    """DB payloadì™€ content_hashë¥¼ ë¹„êµí•  ë•Œ ì‚¬ìš©í•˜ëŠ” canonical SHA-256."""
     canonical = json.dumps(
         payload,
         ensure_ascii=False,
@@ -75,7 +79,7 @@ def canonical_hash(payload: dict[str, Any]) -> str:
 
 
 def template_rank(data: dict[str, Any]) -> tuple[int, int, int]:
-    """중복 Template winner 선정을 위한 독립 검증용 우선순위."""
+    """ì¤‘ë³µ Template winner ì„ ì •ì„ ìœ„í•œ ë…ë¦½ ê²€ì¦ìš© ìš°ì„ ìˆœìœ„."""
     return (
         STATUS_RANK.get(data.get("status"), -1),
         int(bool(data.get("executable", False))),
@@ -85,7 +89,7 @@ def template_rank(data: dict[str, Any]) -> tuple[int, int, int]:
 
 def select_winner(candidates: list[SourceCandidate]) -> SourceCandidate:
     if not candidates:
-        raise VerificationError("빈 candidate 목록입니다.")
+        raise VerificationError("ë¹ˆ candidate ëª©ë¡ìž…ë‹ˆë‹¤.")
 
     ordered = sorted(
         candidates,
@@ -102,7 +106,7 @@ def select_winner(candidates: list[SourceCandidate]) -> SourceCandidate:
     if first_rank == second_rank:
         paths = ", ".join(str(item.path) for item in ordered[:2])
         raise VerificationError(
-            "자동으로 결정할 수 없는 동일 우선순위 template 충돌이 있습니다: "
+            "ìžë™ìœ¼ë¡œ ê²°ì •í•  ìˆ˜ ì—†ëŠ” ë™ì¼ ìš°ì„ ìˆœìœ„ template ì¶©ëŒì´ ìžˆìŠµë‹ˆë‹¤: "
             + paths
         )
 
@@ -111,8 +115,8 @@ def select_winner(candidates: list[SourceCandidate]) -> SourceCandidate:
 
 def scan_source_templates() -> SourceScanResult:
     """
-    B Importer의 함수를 재사용하지 않고 raw 파일을 독립적으로 스캔한다.
-    C 검증이 importer와 같은 버그를 공유하지 않도록 하기 위함이다.
+    B Importerì˜ í•¨ìˆ˜ë¥¼ ìž¬ì‚¬ìš©í•˜ì§€ ì•Šê³  raw íŒŒì¼ì„ ë…ë¦½ì ìœ¼ë¡œ ìŠ¤ìº”í•œë‹¤.
+    C ê²€ì¦ì´ importerì™€ ê°™ì€ ë²„ê·¸ë¥¼ ê³µìœ í•˜ì§€ ì•Šë„ë¡ í•˜ê¸° ìœ„í•¨ì´ë‹¤.
     """
     files = sorted(TEMPLATE_DIR.rglob("*.json"))
 
@@ -132,7 +136,7 @@ def scan_source_templates() -> SourceScanResult:
         template_version = raw.get("template_version", "1.0.0")
 
         if not template_id:
-            raise VerificationError(f"template_id가 없는 파일: {path}")
+            raise VerificationError(f"template_idê°€ ì—†ëŠ” íŒŒì¼: {path}")
 
         groups[(template_id, template_version)].append(
             SourceCandidate(path=path, data=raw)
@@ -165,7 +169,7 @@ def scan_source_templates() -> SourceScanResult:
 def require_equal(name: str, actual: int, expected: int) -> None:
     if actual != expected:
         raise VerificationError(
-            f"{name} 불일치: expected={expected}, actual={actual}"
+            f"{name} ë¶ˆì¼ì¹˜: expected={expected}, actual={actual}"
         )
     print(f"[OK] {name}: {actual}")
 
@@ -205,7 +209,7 @@ def require_table(conn, table_name: str) -> None:
     ).fetchone()
 
     if row["table_name"] is None:
-        raise VerificationError(f"필수 DB table이 없습니다: {table_name}")
+        raise VerificationError(f"í•„ìˆ˜ DB tableì´ ì—†ìŠµë‹ˆë‹¤: {table_name}")
 
 
 def scalar_count(conn, sql: str, params: tuple[Any, ...] = ()) -> int:
@@ -495,7 +499,7 @@ def verify_db(source_result: SourceScanResult) -> None:
         hash_mismatch_count, hash_samples = count_hash_mismatches(conn)
         if hash_mismatch_count:
             raise VerificationError(
-                "content_hash mismatch가 있습니다: "
+                "content_hash mismatchê°€ ìžˆìŠµë‹ˆë‹¤: "
                 + "; ".join(hash_samples)
             )
         print("[OK] content_hash mismatches: 0")
@@ -506,7 +510,7 @@ def verify_db(source_result: SourceScanResult) -> None:
         )
         if key_mismatch_count:
             raise VerificationError(
-                "source/DB template key mismatch가 있습니다: "
+                "source/DB template key mismatchê°€ ìžˆìŠµë‹ˆë‹¤: "
                 + "; ".join(key_samples)
             )
         print("[OK] source/DB template key mismatches: 0")
@@ -517,7 +521,7 @@ def verify_db(source_result: SourceScanResult) -> None:
         )
         if source_path_mismatch_count:
             raise VerificationError(
-                "source_path mismatch가 있습니다: "
+                "source_path mismatchê°€ ìžˆìŠµë‹ˆë‹¤: "
                 + "; ".join(path_samples)
             )
         print("[OK] source_path mismatches: 0")
@@ -576,7 +580,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--source-only",
         action="store_true",
-        help="DB 연결 없이 data/problem_templates 파일만 검사합니다.",
+        help="DB ì—°ê²° ì—†ì´ data/problem_templates íŒŒì¼ë§Œ ê²€ì‚¬í•©ë‹ˆë‹¤.",
     )
     return parser.parse_args()
 
@@ -602,7 +606,7 @@ def main() -> int:
     except Exception as exc:
         print()
         print(
-            "[FAIL] 예상하지 못한 오류가 발생했습니다: "
+            "[FAIL] ì˜ˆìƒí•˜ì§€ ëª»í•œ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤: "
             f"{type(exc).__name__}: {exc}"
         )
         return 1
