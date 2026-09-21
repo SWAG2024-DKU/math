@@ -92,7 +92,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "regression_residual_check"
+      "least_squares_check"
     ]
   },
   "solution_spec": {
@@ -114,7 +114,7 @@
   "validation": {
     "validators": [
       {
-        "name": "regression_residual_check",
+        "name": "least_squares_check",
         "required": true,
         "config": {}
       }

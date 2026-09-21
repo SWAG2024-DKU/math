@@ -92,7 +92,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "consistency_theorem_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
@@ -114,7 +114,7 @@
   "validation": {
     "validators": [
       {
-        "name": "consistency_theorem_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }

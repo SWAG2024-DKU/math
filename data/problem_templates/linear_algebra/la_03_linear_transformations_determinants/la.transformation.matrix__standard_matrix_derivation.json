@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_multiplication_check"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_multiplication_check",
+        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }

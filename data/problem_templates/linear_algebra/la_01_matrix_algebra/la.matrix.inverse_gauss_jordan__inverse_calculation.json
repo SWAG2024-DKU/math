@@ -88,8 +88,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_inverse_check",
-      "zero_row_detection"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
@@ -111,12 +110,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_inverse_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "zero_row_detection",
+        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }

@@ -91,8 +91,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "linear_combination_equivalence",
-      "null_space_check"
+      "parametric_solution_check"
     ]
   },
   "solution_spec": {
@@ -114,12 +113,7 @@
   "validation": {
     "validators": [
       {
-        "name": "linear_combination_equivalence",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "null_space_check",
+        "name": "parametric_solution_check",
         "required": true,
         "config": {}
       }

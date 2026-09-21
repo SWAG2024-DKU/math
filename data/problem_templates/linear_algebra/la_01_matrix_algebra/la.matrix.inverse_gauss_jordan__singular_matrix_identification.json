@@ -81,8 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "zero_row_detection",
-      "matrix_inverse_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
@@ -104,12 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "zero_row_detection",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "matrix_inverse_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }

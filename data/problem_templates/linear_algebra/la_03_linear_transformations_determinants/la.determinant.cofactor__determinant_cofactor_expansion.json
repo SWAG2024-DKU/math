@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "determinant_check"
+      "scalar_equality_check"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "determinant_check",
+        "name": "scalar_equality_check",
         "required": true,
         "config": {}
       }

@@ -79,7 +79,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "pairwise_orthogonality_check"
+      "gram_schmidt_check"
     ]
   },
   "solution_spec": {
@@ -101,7 +101,7 @@
   "validation": {
     "validators": [
       {
-        "name": "pairwise_orthogonality_check",
+        "name": "gram_schmidt_check",
         "required": true,
         "config": {}
       }

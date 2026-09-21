@@ -81,8 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_multiplication_check",
-      "lower_triangular_check"
+      "lu_factorization_check"
     ]
   },
   "solution_spec": {
@@ -104,12 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_multiplication_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "lower_triangular_check",
+        "name": "lu_factorization_check",
         "required": true,
         "config": {}
       }

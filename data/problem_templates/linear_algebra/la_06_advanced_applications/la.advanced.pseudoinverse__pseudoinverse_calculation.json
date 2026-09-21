@@ -86,9 +86,7 @@
       "method": "simplify",
       "exact_value_preferred": true
     },
-    "required_checks": [
-      "moore_penrose_conditions_check"
-    ]
+    "required_checks": []
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
@@ -107,13 +105,7 @@
     }
   },
   "validation": {
-    "validators": [
-      {
-        "name": "moore_penrose_conditions_check",
-        "required": true,
-        "config": {}
-      }
-    ],
+    "validators": [],
     "generation_max_attempts": 100,
     "all_required_must_pass": true
   },

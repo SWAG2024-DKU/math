@@ -105,7 +105,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_inverse_check"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
@@ -127,7 +127,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_inverse_check",
+        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }

@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "quadratic_form_equivalence"
+      "quadratic_form_check"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "quadratic_form_equivalence",
+        "name": "quadratic_form_check",
         "required": true,
         "config": {}
       }

@@ -81,7 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "characteristic_polynomial_check"
+      "eigenvalue_check"
     ]
   },
   "solution_spec": {
@@ -103,7 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "characteristic_polynomial_check",
+        "name": "eigenvalue_check",
         "required": true,
         "config": {}
       }

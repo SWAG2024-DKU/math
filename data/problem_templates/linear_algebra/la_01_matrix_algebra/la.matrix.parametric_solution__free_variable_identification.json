@@ -79,8 +79,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "null_space_check",
-      "linear_combination_equivalence"
+      "index_set_check"
     ]
   },
   "solution_spec": {
@@ -102,12 +101,7 @@
   "validation": {
     "validators": [
       {
-        "name": "null_space_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "linear_combination_equivalence",
+        "name": "index_set_check",
         "required": true,
         "config": {}
       }

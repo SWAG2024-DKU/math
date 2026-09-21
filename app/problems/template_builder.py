@@ -5,6 +5,7 @@ from typing import Iterable
 from app.problems.problem_type_extractor import ProblemTypeInfo
 from app.schemas.generation_rule import GenerationRule
 from app.schemas.problem_template import ProblemTemplate
+from app.problems.validator_policy import ALLOWED_VALIDATORS, validate_curated_mapping
 
 
 def _unique(items: Iterable[str]) -> list[str]:
@@ -116,12 +117,15 @@ def build_template(
     template_status = "ready" if is_ready else "draft"
     review_status = "reviewed" if rule.status == "reviewed" else "not_reviewed"
 
-    validator_names = _unique(
-        [
-            *rule.validation.validators,
-            *problem_type.recommended_validators,
-        ]
-    )
+    # Rules own the semantic contract. Concept recommendations must never
+    # silently append an unrelated or stronger mathematical check.
+    if rule.status in {"curated", "reviewed"}:
+        validate_curated_mapping(rule)
+        validator_names = list(rule.validation.validators)
+    else:
+        allowed = ALLOWED_VALIDATORS.get(answer_type, set())
+        validator_names = [name for name in _unique(rule.validation.validators)
+                           if name in allowed]
 
     formula_ids = _unique(problem_type.formula_ids)
     first_formula_id = formula_ids[0] if formula_ids else None

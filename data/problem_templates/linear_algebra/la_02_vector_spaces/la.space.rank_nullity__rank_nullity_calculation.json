@@ -79,7 +79,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "dimension_equality_check"
+      "scalar_equality_check"
     ]
   },
   "solution_spec": {
@@ -101,7 +101,7 @@
   "validation": {
     "validators": [
       {
-        "name": "dimension_equality_check",
+        "name": "scalar_equality_check",
         "required": true,
         "config": {}
       }

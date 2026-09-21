@@ -93,7 +93,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "equation_equivalence"
     ]
   },
   "solution_spec": {
@@ -115,7 +115,7 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "equation_equivalence",
         "required": true,
         "config": {}
       }

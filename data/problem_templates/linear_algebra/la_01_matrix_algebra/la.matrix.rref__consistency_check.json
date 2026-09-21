@@ -79,8 +79,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "consistency_theorem_check",
-      "rref_form_check"
+      "choice_equality"
     ]
   },
   "solution_spec": {
@@ -102,12 +101,7 @@
   "validation": {
     "validators": [
       {
-        "name": "consistency_theorem_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "rref_form_check",
+        "name": "choice_equality",
         "required": true,
         "config": {}
       }

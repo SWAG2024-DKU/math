@@ -81,7 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "rank_nullity_check"
+      "kernel_image_check"
     ]
   },
   "solution_spec": {
@@ -103,7 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "rank_nullity_check",
+        "name": "kernel_image_check",
         "required": true,
         "config": {}
       }

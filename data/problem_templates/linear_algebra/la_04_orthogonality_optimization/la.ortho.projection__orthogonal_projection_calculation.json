@@ -99,7 +99,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "idempotent_symmetric_check"
+      "projection_check"
     ]
   },
   "solution_spec": {
@@ -121,7 +121,7 @@
   "validation": {
     "validators": [
       {
-        "name": "idempotent_symmetric_check",
+        "name": "projection_check",
         "required": true,
         "config": {}
       }

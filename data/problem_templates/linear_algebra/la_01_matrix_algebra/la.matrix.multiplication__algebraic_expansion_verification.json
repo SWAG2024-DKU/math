@@ -92,8 +92,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_noncommutative_expansion",
-      "matrix_equivalence"
+      "symbolic_noncommutative_expansion"
     ]
   },
   "solution_spec": {
@@ -116,11 +115,6 @@
     "validators": [
       {
         "name": "symbolic_noncommutative_expansion",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }

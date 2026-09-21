@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_equivalence"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_equivalence",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }

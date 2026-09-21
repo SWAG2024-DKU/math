@@ -81,7 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "absolute_value_check"
+      "scalar_equality_check"
     ]
   },
   "solution_spec": {
@@ -103,7 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "absolute_value_check",
+        "name": "scalar_equality_check",
         "required": true,
         "config": {}
       }

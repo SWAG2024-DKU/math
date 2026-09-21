@@ -92,7 +92,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_multiplication_zero_check"
+      "basis_equivalence"
     ]
   },
   "solution_spec": {
@@ -114,7 +114,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_multiplication_zero_check",
+        "name": "basis_equivalence",
         "required": true,
         "config": {}
       }

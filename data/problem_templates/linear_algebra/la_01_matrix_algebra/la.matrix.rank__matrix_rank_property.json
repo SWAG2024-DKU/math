@@ -91,7 +91,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "rank_computation_check"
+      "scalar_equality_check"
     ]
   },
   "solution_spec": {
@@ -113,7 +113,7 @@
   "validation": {
     "validators": [
       {
-        "name": "rank_computation_check",
+        "name": "scalar_equality_check",
         "required": true,
         "config": {}
       }

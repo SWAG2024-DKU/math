@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_product_identity_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_product_identity_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }

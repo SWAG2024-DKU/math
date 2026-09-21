@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "dot_product_zero_check"
+      "basis_equivalence"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "dot_product_zero_check",
+        "name": "basis_equivalence",
         "required": true,
         "config": {}
       }

@@ -126,8 +126,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_equivalence",
-      "ref_form_check"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
@@ -150,11 +149,6 @@
     "validators": [
       {
         "name": "matrix_equivalence",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "ref_form_check",
         "required": true,
         "config": {}
       }

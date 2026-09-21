@@ -80,7 +80,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "qr_product_check"
+      "qr_factorization_check"
     ]
   },
   "solution_spec": {
@@ -102,7 +102,7 @@
   "validation": {
     "validators": [
       {
-        "name": "qr_product_check",
+        "name": "qr_factorization_check",
         "required": true,
         "config": {}
       }

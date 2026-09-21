@@ -99,7 +99,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "cramer_solution_check"
+      "linear_system_check"
     ]
   },
   "solution_spec": {
@@ -121,7 +121,7 @@
   "validation": {
     "validators": [
       {
-        "name": "cramer_solution_check",
+        "name": "linear_system_check",
         "required": true,
         "config": {}
       }

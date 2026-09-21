@@ -79,7 +79,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_equivalence"
+      "spectral_decomposition_check"
     ]
   },
   "solution_spec": {
@@ -101,7 +101,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_equivalence",
+        "name": "spectral_decomposition_check",
         "required": true,
         "config": {}
       }

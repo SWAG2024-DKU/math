@@ -79,7 +79,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "orthogonal_matrix_check"
+      "orthogonal_diagonalization_check"
     ]
   },
   "solution_spec": {
@@ -101,7 +101,7 @@
   "validation": {
     "validators": [
       {
-        "name": "orthogonal_matrix_check",
+        "name": "orthogonal_diagonalization_check",
         "required": true,
         "config": {}
       }

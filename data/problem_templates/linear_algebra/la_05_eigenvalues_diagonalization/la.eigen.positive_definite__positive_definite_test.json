@@ -81,7 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "eigenvalue_sign_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
@@ -103,7 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "eigenvalue_sign_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }

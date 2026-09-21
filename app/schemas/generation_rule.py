@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class FlexibleModel(BaseModel):
@@ -81,6 +81,13 @@ class GenerationRule(BaseModel):
     difficulty: DifficultySpec
 
     notes: str | None = None
+
+    @model_validator(mode="after")
+    def validate_math_mapping(self):
+        if self.status in {"curated", "reviewed"}:
+            from app.problems.validator_policy import validate_curated_mapping
+            validate_curated_mapping(self)
+        return self
 
 
 class GenerationRuleCatalog(BaseModel):

@@ -81,7 +81,7 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "ref_form_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
@@ -103,7 +103,7 @@
   "validation": {
     "validators": [
       {
-        "name": "ref_form_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }
