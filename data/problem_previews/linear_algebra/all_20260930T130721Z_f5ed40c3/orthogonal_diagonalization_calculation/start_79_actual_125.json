@@ -1,0 +1,477 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.symmetric_diagonalization.orthogonal_diagonalization_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.orthogonal_diagonalization_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "orthogonal_diagonalization_calculation",
+  "answer_type": "matrix_pair",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "실수 대칭행렬 A를 A=QDQ^T 형태로 직교대각화하고 Q와 D를 구하시오.\nA = Matrix([[-1, 0], [0, -2]])",
+  "statement_latex": "A=QDQ^T",
+  "parameters": {
+    "A": [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -2
+      ]
+    ]
+  },
+  "expected_answer": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        -2,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ]
+  ],
+  "seed": 125,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": "migration.orthogonal_diagonalization_calculation.A.symmetric",
+        "on_failure": "resample",
+        "message": "A는 실수 대칭행렬",
+        "observed": {
+          "left": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -2
+            ]
+          ],
+          "operator": "symmetric",
+          "actual": true,
+          "expected": true
+        }
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "orthogonal_diagonalization_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 95,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 2,
+        "seed": 96,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 3,
+        "seed": 97,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 4,
+        "seed": 98,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 5,
+        "seed": 99,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 6,
+        "seed": 100,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 7,
+        "seed": 101,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 8,
+        "seed": 102,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 9,
+        "seed": 103,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 10,
+        "seed": 104,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 11,
+        "seed": 105,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 12,
+        "seed": 106,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 13,
+        "seed": 107,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 14,
+        "seed": 108,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 15,
+        "seed": 109,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 16,
+        "seed": 110,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 17,
+        "seed": 111,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 18,
+        "seed": 112,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 19,
+        "seed": 113,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 20,
+        "seed": 114,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 21,
+        "seed": 115,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 22,
+        "seed": 116,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 23,
+        "seed": 117,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 24,
+        "seed": 118,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 25,
+        "seed": 119,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 26,
+        "seed": 120,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 27,
+        "seed": 121,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 28,
+        "seed": 122,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 29,
+        "seed": 123,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,0]"
+      },
+      {
+        "attempt": 30,
+        "seed": 124,
+        "passed": false,
+        "stage": "construction",
+        "message": "결과의 유한성을 확정할 수 없습니다."
+      },
+      {
+        "attempt": 31,
+        "seed": 125,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.symmetric_diagonalization.orthogonal_diagonalization_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.orthogonal_diagonalization_calculation.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_05_eigenvalues_diagonalization",
+      "unit_name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+      "concept_ids": [
+        "la.eigen.symmetric_diagonalization"
+      ],
+      "formula_ids": [
+        "orthogonal_diagonalization_formula"
+      ],
+      "tags": [
+        "orthogonal_diagonalization",
+        "symmetric_matrix",
+        "spectral_property"
+      ]
+    },
+    "classification": {
+      "problem_type": "orthogonal_diagonalization_calculation",
+      "answer_type": "matrix_pair",
+      "difficulty": {
+        "base": 4,
+        "min": 3,
+        "max": 5,
+        "factors": {}
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "A": {
+        "type": "matrix",
+        "description": "실수 대칭행렬.",
+        "required": true,
+        "min": -4,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [
+          "symmetric"
+        ],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": {
+            "min": 2,
+            "max": 3
+          },
+          "cols": "A.rows",
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [
+      {
+        "type": "generation_precondition",
+        "expression": {
+          "constraint_id": "migration.orthogonal_diagonalization_calculation.A.symmetric",
+          "scope": "generation",
+          "description": "A는 실수 대칭행렬",
+          "rule": {
+            "left": "A",
+            "operator": "symmetric",
+            "right": null,
+            "args": []
+          },
+          "on_failure": "resample"
+        },
+        "required": true,
+        "description": "A는 실수 대칭행렬"
+      }
+    ],
+    "problem_builder": {
+      "operation": "orthogonal_diagonalization_calculation",
+      "required_objects": [
+        "A"
+      ],
+      "semantic_structure": [
+        "orthogonal_diagonalization_calculation 유형의 수학 객체를 제시한다.",
+        "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+      ],
+      "text_templates_ko": [
+        "실수 대칭행렬 A를 A=QDQ^T 형태로 직교대각화하고 Q와 D를 구하시오.\nA = {{ A }}"
+      ],
+      "latex_templates": [
+        "A=QDQ^T"
+      ],
+      "cas_template": "orthogonal_diagonalize_pair(A)",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "matrix_pair",
+      "engine": "sympy",
+      "cas_template": "orthogonal_diagonalize_pair(A)",
+      "latex_template": "(Q,D)",
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "orthogonal_diagonalization_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "orthogonal_diagonalization_formula",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "orthogonal_diagonalization_formula",
+          "cas_expression": "orthogonal_diagonalize_pair(A)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "orthogonal_diagonalization_check",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.orthogonal_diagonalization_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+    }
+  }
+}

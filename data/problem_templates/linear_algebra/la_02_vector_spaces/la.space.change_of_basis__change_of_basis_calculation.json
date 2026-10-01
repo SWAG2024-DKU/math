@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_02_vector_spaces.la.space.change_of_basis.change_of_basis_calculation.v1",
   "template_version": "1.0.0",
@@ -41,6 +41,7 @@
   "parameters": {
     "B": {
       "type": "matrix",
+      "description": "기존 기저를 열벡터로 갖는 가역행렬.",
       "required": true,
       "min": -4,
       "max": 4,
@@ -48,10 +49,35 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "기존 기저를 열벡터로 갖는 가역행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 2,
+          "max": 3
+        },
+        "cols": "B.rows",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
     "C": {
       "type": "matrix",
+      "description": "새 기저를 열벡터로 갖는 가역행렬.",
       "required": true,
       "min": -4,
       "max": 4,
@@ -59,19 +85,65 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "새 기저를 열벡터로 갖는 가역행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": "B.rows",
+        "cols": "B.cols",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [
+        "B"
+      ],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [
     {
       "type": "basis_B_invertible",
-      "expression": "{\"constraint_id\": \"basis_B_invertible\", \"scope\": \"generation\", \"description\": \"B는 기저 행렬이므로 가역이어야 한다.\", \"rule\": {\"left\": \"det(B)\", \"operator\": \"not_equals\", \"right\": 0}, \"on_failure\": \"resample\"}",
+      "expression": {
+        "constraint_id": "basis_B_invertible",
+        "scope": "generation",
+        "description": "B는 기저 행렬이므로 가역이어야 한다.",
+        "rule": {
+          "left": "det(B)",
+          "operator": "not_equals",
+          "right": 0,
+          "args": []
+        },
+        "on_failure": "resample"
+      },
       "required": true,
       "description": "B는 기저 행렬이므로 가역이어야 한다."
     },
     {
       "type": "basis_C_invertible",
-      "expression": "{\"constraint_id\": \"basis_C_invertible\", \"scope\": \"generation\", \"description\": \"C는 기저 행렬이므로 가역이어야 한다.\", \"rule\": {\"left\": \"det(C)\", \"operator\": \"not_equals\", \"right\": 0}, \"on_failure\": \"resample\"}",
+      "expression": {
+        "constraint_id": "basis_C_invertible",
+        "scope": "generation",
+        "description": "C는 기저 행렬이므로 가역이어야 한다.",
+        "rule": {
+          "left": "det(C)",
+          "operator": "not_equals",
+          "right": 0,
+          "args": []
+        },
+        "on_failure": "resample"
+      },
       "required": true,
       "description": "C는 기저 행렬이므로 가역이어야 한다."
     }
@@ -105,16 +177,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_inverse_check"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "coordinate_vector",
+        "formula_id": null,
         "cas_expression": "C.inv()*B"
       }
     ],
@@ -127,7 +200,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_inverse_check",
+        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }
@@ -149,7 +222,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.change_of_basis_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

@@ -1,0 +1,573 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "linear_algebra",
+  "seed_start": 17,
+  "seeds_per_template": 20,
+  "timeout_seconds": 180.0,
+  "templates": [
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.elementary_matrices.elementary_inverse_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.elementary_matrices__elementary_inverse_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "elementary_inverse_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.elementary_matrices.elementary_matrix_construction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.elementary_matrices__elementary_matrix_construction.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "elementary_matrix_construction"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ero_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.ero_ref__ero_application.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "ero_application"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ref_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.ero_ref__ref_identification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "ref_identification"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.imt.equivalence_theorem_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.imt__equivalence_theorem_check.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "equivalence_theorem_check"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.imt.invertibility_determination.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.imt__invertibility_determination.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "invertibility_determination"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.inverse_gauss_jordan.inverse_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.inverse_gauss_jordan__inverse_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.inverse_gauss_jordan.singular_matrix_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.inverse_gauss_jordan__singular_matrix_identification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "singular_matrix_identification"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.lu_decomposition.lu_factorization.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.lu_decomposition__lu_factorization.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "lu_factorization"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.lu_decomposition.solve_by_lu.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.lu_decomposition__solve_by_lu.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "solve_by_lu"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.algebraic_expansion_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.multiplication__algebraic_expansion_verification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "algebraic_expansion_verification"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.matrix_multiplication.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.multiplication__matrix_multiplication.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "matrix_multiplication"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.parametric_solution.free_variable_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.parametric_solution__free_variable_identification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "free_variable_identification"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.parametric_solution.parametric_solution_extraction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.parametric_solution__parametric_solution_extraction.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_solution_extraction"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rank.matrix_rank_property.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.rank__matrix_rank_property.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "matrix_rank_property"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rank.rank_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.rank__rank_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rank_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rref.consistency_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.rref__consistency_check.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "consistency_check"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rref.rref_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.rref__rref_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rref_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.system_form.equation_to_matrix.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.system_form__equation_to_matrix.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "equation_to_matrix"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.system_form.matrix_to_vector_equation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.system_form__matrix_to_vector_equation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "matrix_to_vector_equation"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.transpose_symmetric.symmetry_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.transpose_symmetric__symmetry_classification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "symmetry_classification"
+    },
+    {
+      "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.transpose_symmetric.transpose_algebra.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_01_matrix_algebra\\la.matrix.transpose_symmetric__transpose_algebra.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "transpose_algebra"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.basis.basis_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.basis__basis_verification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "basis_verification"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.change_of_basis.change_of_basis_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.change_of_basis__change_of_basis_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "change_of_basis_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.column_space.column_space_basis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.column_space__column_space_basis.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "column_space_basis"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.linear_independence.linear_independence_test.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.linear_independence__linear_independence_test.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linear_independence_test"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.null_space.left_null_space_basis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.null_space__left_null_space_basis.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "left_null_space_basis"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.null_space.null_space_basis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.null_space__null_space_basis.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "null_space_basis"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.rank_nullity.rank_nullity_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.rank_nullity__rank_nullity_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rank_nullity_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.row_space.row_space_basis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.row_space__row_space_basis.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "row_space_basis"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.span.span_membership_test.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.span__span_membership_test.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "span_membership_test"
+    },
+    {
+      "template_id": "linear_algebra.la_02_vector_spaces.la.space.subspace_test.subspace_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_02_vector_spaces\\la.space.subspace_test__subspace_verification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "subspace_verification"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.cofactor.determinant_cofactor_expansion.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.determinant.cofactor__determinant_cofactor_expansion.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "determinant_cofactor_expansion"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.cramer.cramer_rule_solution.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.determinant.cramer__cramer_rule_solution.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cramer_rule_solution"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.ero.determinant_by_ero.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.determinant.ero__determinant_by_ero.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "determinant_by_ero"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.geometric.geometric_area_volume_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.determinant.geometric__geometric_area_volume_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "geometric_area_volume_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.determinant.triangular_block.block_matrix_determinant.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.determinant.triangular_block__block_matrix_determinant.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "block_matrix_determinant"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.transformation.image_kernel.kernel_image_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.transformation.image_kernel__kernel_image_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "kernel_image_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.transformation.linear_test.linear_transformation_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.transformation.linear_test__linear_transformation_verification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linear_transformation_verification"
+    },
+    {
+      "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.transformation.matrix.standard_matrix_derivation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_03_linear_transformations_determinants\\la.transformation.matrix__standard_matrix_derivation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "standard_matrix_derivation"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.complement.orthogonal_complement_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.complement__orthogonal_complement_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "orthogonal_complement_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.gram_schmidt.gram_schmidt_orthogonalization.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.gram_schmidt__gram_schmidt_orthogonalization.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "gram_schmidt_orthogonalization"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.least_squares.least_squares_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.least_squares__least_squares_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "least_squares_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.linear_regression.linear_regression_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.linear_regression__linear_regression_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linear_regression_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.norm_distance.norm_distance_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.norm_distance__norm_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "norm_distance_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.orthonormal_set.orthonormal_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.orthonormal_set__orthonormal_verification.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "orthonormal_verification"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.projection.orthogonal_projection_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.projection__orthogonal_projection_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "orthogonal_projection_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.qr_decomposition.qr_factorization_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_04_orthogonality_optimization\\la.ortho.qr_decomposition__qr_factorization_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "qr_factorization_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.diagonalization.matrix_diagonalization.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.diagonalization__matrix_diagonalization.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "matrix_diagonalization"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.eigenvalue.eigenvalue_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.eigenvalue__eigenvalue_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "eigenvalue_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.eigenvector.eigenvector_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.eigenvector__eigenvector_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "eigenvector_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.positive_definite.positive_definite_test.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.positive_definite__positive_definite_test.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "positive_definite_test"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.powers.matrix_power_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.powers__matrix_power_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "matrix_power_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.quadratic_forms.quadratic_form_transformation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.quadratic_forms__quadratic_form_transformation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "quadratic_form_transformation"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.spectral_theorem.spectral_decomposition_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.spectral_theorem__spectral_decomposition_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "spectral_decomposition_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.symmetric_diagonalization.orthogonal_diagonalization_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.symmetric_diagonalization__orthogonal_diagonalization_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "orthogonal_diagonalization_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.compact_svd.compact_svd_approximation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_06_advanced_applications\\la.advanced.compact_svd__compact_svd_approximation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "compact_svd_approximation"
+    },
+    {
+      "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.complex_space.complex_inner_product_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_06_advanced_applications\\la.advanced.complex_space__complex_inner_product_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_inner_product_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.jordan_form.jordan_canonical_form_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_06_advanced_applications\\la.advanced.jordan_form__jordan_canonical_form_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "jordan_canonical_form_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.pca.pca_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_06_advanced_applications\\la.advanced.pca__pca_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "pca_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.pseudoinverse.pseudoinverse_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_06_advanced_applications\\la.advanced.pseudoinverse__pseudoinverse_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "pseudoinverse_calculation"
+    },
+    {
+      "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.svd.svd_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_06_advanced_applications\\la.advanced.svd__svd_calculation.json",
+      "status": "completed",
+      "succeeded": 20,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "svd_calculation"
+    }
+  ],
+  "completed": 62,
+  "partial_failure": 0,
+  "skipped": 0,
+  "errors": 0,
+  "timed_out": 0
+}

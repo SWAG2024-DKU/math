@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.eigenvector.eigenvector_calculation.v1",
   "template_version": "1.0.0",
@@ -41,6 +41,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "고유벡터를 계산할 정사각행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -48,20 +49,72 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "고유벡터를 계산할 정사각행렬."
+      "allowed_families": [
+        "symmetric"
+      ],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 2,
+          "max": 3
+        },
+        "cols": "A.rows",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": "small_integer_spectrum_symmetric"
     },
     "lambda_val": {
-      "type": "integer",
+      "type": "derived",
+      "description": "A의 고윳값 중 하나.",
       "required": true,
-      "min": -8,
-      "max": 8,
+      "min": null,
+      "max": null,
       "exclude": [],
       "choices": [],
       "step": null,
-      "distribution": "uniform",
-      "description": "A의 고윳값 중 하나."
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [
+        "A"
+      ],
+      "derived": {
+        "depends_on": [
+          "A"
+        ],
+        "expression": "list(A.eigenvals().keys())",
+        "engine": "sympy",
+        "selection": "random"
+      },
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "eigenvector_calculation",
@@ -92,16 +145,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_multiplication_zero_check"
+      "basis_equivalence"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "eigenspace_definition",
+        "formula_id": null,
         "cas_expression": "(A-lambda_val*eye(A.rows)).nullspace()"
       }
     ],
@@ -114,7 +168,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_multiplication_zero_check",
+        "name": "basis_equivalence",
         "required": true,
         "config": {}
       }
@@ -136,7 +190,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.eigenvector_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

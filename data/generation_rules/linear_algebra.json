@@ -32,7 +32,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         },
         "B": {
           "type": "matrix",
@@ -43,7 +50,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": "A.rows",
+            "cols": "A.cols"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -58,7 +72,7 @@
           "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
         ],
         "text_templates": [
-          "행렬 곱셈의 비교환성을 고려하여 (A+B)^2를 전개하시오."
+          "두 행렬에 대해 (A+B)^2를 AB와 BA의 순서를 구별하여 전개한 뒤 계산하시오.\nA = {{ A }}, B = {{ B }}"
         ],
         "latex_templates": [
           "(A+B)^2"
@@ -113,7 +127,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": "n",
+            "cols": "n"
+          },
+          "depends_on": [
+            "n"
+          ]
         },
         "n": {
           "type": "integer",
@@ -155,7 +176,7 @@
       },
       "validation": {
         "validators": [
-          "rank_matrix_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -195,7 +216,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "B.rows"
+          }
         },
         "C": {
           "type": "matrix",
@@ -206,7 +234,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "C.rows"
+          }
         }
       },
       "constraints": [],
@@ -237,7 +272,7 @@
       },
       "validation": {
         "validators": [
-          "determinant_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -277,7 +312,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "B.rows"
+          }
         },
         "C": {
           "type": "matrix",
@@ -288,7 +330,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": "B.rows",
+            "cols": "B.cols"
+          },
+          "depends_on": [
+            "B"
+          ]
         }
       },
       "constraints": [
@@ -352,7 +401,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_inverse_check"
+          "matrix_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -391,7 +440,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -421,7 +474,7 @@
       },
       "validation": {
         "validators": [
-          "span_equivalence_check"
+          "basis_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -436,9 +489,9 @@
     {
       "rule_id": "linear_algebra.compact_svd_approximation.v1",
       "rule_version": "1.0.0",
-      "status": "draft_auto",
-      "executable": false,
-      "manual_review_required": true,
+      "status": "curated",
+      "executable": true,
+      "manual_review_required": false,
       "subject_id": "linear_algebra",
       "problem_type": "compact_svd_approximation",
       "source_concept_ids": [
@@ -448,48 +501,25 @@
         "eckart_young_mirsky",
         "truncated_svd_formula"
       ],
-      "primary_formula_id": null,
+      "primary_formula_id": "truncated_svd_formula",
       "supported_answer_types": [
         "matrix"
       ],
       "parameter_spec": {
         "A": {
           "type": "matrix",
-          "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          },
+          "generator": "small_svd_matrix",
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5,
-          "shape": {
-            "rows": {
-              "min": 2,
-              "max": 4
-            },
-            "cols": {
-              "min": 2,
-              "max": 4
-            }
-          }
+          "element_max": 5
         }
       },
       "symbol_spec": {},
-      "constraints": [
-        {
-          "type": "concept_application_condition",
-          "expression": {
-            "constraint_id": "auto.la.advanced.compact_svd.1",
-            "scope": "generation",
-            "description": "외적을 합산하는 스펙트럼 분해 방식을 적용할 때 특이값이 큰 순서대로 내림차순 정렬되어 있어야 한다.",
-            "rule": {
-              "left": "singular_values_sorted_descending",
-              "operator": "equals",
-              "right": true
-            },
-            "on_failure": "resample"
-          },
-          "required": true,
-          "description": "외적을 합산하는 스펙트럼 분해 방식을 적용할 때 특이값이 큰 순서대로 내림차순 정렬되어 있어야 한다."
-        }
-      ],
+      "constraints": [],
       "construction": {
         "operation": "compact_svd_approximation",
         "required_objects": [
@@ -499,21 +529,21 @@
           "절단 SVD를 활용해 저랭크 행렬 근사를 수행한다."
         ],
         "text_templates": [
-          "다음 조건을 이용하여 'compact svd approximation' 문제를 해결하시오."
+          "행렬 A = {{ A }}에 대해 Frobenius 노름을 최소화하는 rank 1 근사행렬을 구하시오."
         ],
         "latex_templates": [],
-        "builder_expression": null
+        "builder_expression": "compact_svd_rank_one(A)"
       },
       "answer_spec": {
         "answer_type": "matrix",
-        "engine": "numpy",
-        "expression": null,
+        "engine": "sympy",
+        "expression": "compact_svd_rank_one(A)",
         "latex_expression": null,
-        "canonicalization": null
+        "canonicalization": "simplify"
       },
       "validation": {
         "validators": [
-          "frobenius_norm_check"
+          "compact_svd_optimality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -526,14 +556,14 @@
           "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
         }
       },
-      "notes": "Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+      "notes": "선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
     },
     {
       "rule_id": "linear_algebra.complex_inner_product_calculation.v1",
       "rule_version": "1.0.0",
-      "status": "draft_auto",
-      "executable": false,
-      "manual_review_required": true,
+      "status": "curated",
+      "executable": true,
+      "manual_review_required": false,
       "subject_id": "linear_algebra",
       "problem_type": "complex_inner_product_calculation",
       "source_concept_ids": [
@@ -544,59 +574,62 @@
         "conjugate_transpose_def",
         "unitary_matrix_condition"
       ],
-      "primary_formula_id": null,
+      "primary_formula_id": "complex_inner_product",
       "supported_answer_types": [
         "scalar"
       ],
       "parameter_spec": {
-        "input": {
-          "type": "symbolic_input",
-          "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+        "u": {
+          "type": "vector",
+          "shape": {
+            "dimension": 2
+          },
+          "generator": "small_gaussian_vector",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5
+        },
+        "v": {
+          "type": "vector",
+          "shape": {
+            "dimension": 2
+          },
+          "generator": "complex_real_inner_partner",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
+          "depends_on": [
+            "u"
+          ]
         }
       },
       "symbol_spec": {},
-      "constraints": [
-        {
-          "type": "concept_application_condition",
-          "expression": {
-            "constraint_id": "auto.la.advanced.complex_space.1",
-            "scope": "generation",
-            "description": "복소 내적에서는 교환법칙이 성립하지 않으며 순서를 바꿀 때 켤레 복소수가 튀어나오는 제약을 반영해야 한다.",
-            "rule": {
-              "left": "satisfies_conjugate_symmetry",
-              "operator": "equals",
-              "right": true
-            },
-            "on_failure": "resample"
-          },
-          "required": true,
-          "description": "복소 내적에서는 교환법칙이 성립하지 않으며 순서를 바꿀 때 켤레 복소수가 튀어나오는 제약을 반영해야 한다."
-        }
-      ],
+      "constraints": [],
       "construction": {
         "operation": "complex_inner_product_calculation",
         "required_objects": [
-          "input"
+          "u",
+          "v"
         ],
         "semantic_structure": [
           "복소 벡터 공간에서 켤레 전치와 복소 내적을 계산한다."
         ],
         "text_templates": [
-          "다음 조건을 이용하여 'complex inner product calculation' 문제를 해결하시오."
+          "첫째 인자를 켤레로 취하는 복소 내적 u^H v를 구하시오. u = {{ u }}, v = {{ v }}"
         ],
         "latex_templates": [],
-        "builder_expression": null
+        "builder_expression": "complex_inner_product(u, v)"
       },
       "answer_spec": {
         "answer_type": "scalar",
         "engine": "sympy",
-        "expression": null,
+        "expression": "complex_inner_product(u, v)",
         "latex_expression": null,
         "canonicalization": "simplify"
       },
       "validation": {
         "validators": [
-          "complex_conjugate_check"
+          "complex_inner_product_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -609,7 +642,7 @@
           "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
         }
       },
-      "notes": "Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+      "notes": "선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
     },
     {
       "rule_id": "linear_algebra.consistency_check.v1",
@@ -638,7 +671,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -668,7 +705,7 @@
       },
       "validation": {
         "validators": [
-          "consistency_theorem_check"
+          "choice_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -708,7 +745,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         },
         "b": {
           "type": "vector",
@@ -719,7 +763,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [
@@ -767,7 +817,7 @@
       },
       "validation": {
         "validators": [
-          "cramer_solution_check"
+          "linear_system_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -806,7 +856,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -836,7 +893,7 @@
       },
       "validation": {
         "validators": [
-          "determinant_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -876,7 +933,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -906,7 +970,7 @@
       },
       "validation": {
         "validators": [
-          "determinant_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -946,7 +1010,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -976,7 +1047,7 @@
       },
       "validation": {
         "validators": [
-          "characteristic_polynomial_check"
+          "eigenvalue_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1016,18 +1087,34 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "allowed_families": [
+            "symmetric"
+          ],
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          },
+          "generator": "small_integer_spectrum_symmetric"
         },
         "lambda_val": {
-          "type": "integer",
+          "type": "derived",
           "description": "A의 고윳값 중 하나.",
           "required": true,
-          "min": -8,
-          "max": 8,
-          "exclude": [],
-          "choices": [],
-          "step": null,
-          "distribution": "uniform"
+          "depends_on": [
+            "A"
+          ],
+          "derived": {
+            "depends_on": [
+              "A"
+            ],
+            "expression": "list(A.eigenvals().keys())",
+            "engine": "sympy",
+            "selection": "random"
+          }
         }
       },
       "constraints": [],
@@ -1058,7 +1145,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_zero_check"
+          "basis_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1098,7 +1185,12 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 3
+          },
+          "generator": "elementary_matrix"
         }
       },
       "constraints": [],
@@ -1222,6 +1314,18 @@
           },
           "required": true,
           "description": "서로 다른 행을 사용한다."
+        },
+        {
+          "type": "generation_precondition",
+          "expression": "source_row < n",
+          "required": true,
+          "description": "source_row은 n보다 작아야 한다."
+        },
+        {
+          "type": "generation_precondition",
+          "expression": "target_row < n",
+          "required": true,
+          "description": "target_row은 n보다 작아야 한다."
         }
       ],
       "construction": {
@@ -1294,7 +1398,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          }
         },
         "b": {
           "type": "vector",
@@ -1305,7 +1413,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -1336,7 +1450,7 @@
       },
       "validation": {
         "validators": [
-          "symbolic_equivalence"
+          "matrix_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1375,7 +1489,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -1405,7 +1526,7 @@
       },
       "validation": {
         "validators": [
-          "logical_equivalence_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1446,7 +1567,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 3
+          }
         },
         "target_row": {
           "type": "integer",
@@ -1570,7 +1695,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -1600,7 +1729,7 @@
       },
       "validation": {
         "validators": [
-          "null_space_check"
+          "index_set_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1640,7 +1769,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -1670,7 +1806,7 @@
       },
       "validation": {
         "validators": [
-          "absolute_value_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1709,10 +1845,22 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          },
+          "generator": "orthogonal_integer_norm_columns"
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": "rank(V) == V.cols",
+          "required": true,
+          "description": "V의 열벡터가 선형독립"
+        }
+      ],
       "construction": {
         "operation": "gram_schmidt_orthogonalization",
         "required_objects": [
@@ -1739,7 +1887,7 @@
       },
       "validation": {
         "validators": [
-          "pairwise_orthogonality_check"
+          "gram_schmidt_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1780,7 +1928,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [
@@ -1827,7 +1982,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_inverse_check"
+          "matrix_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1866,7 +2021,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -1896,7 +2058,7 @@
       },
       "validation": {
         "validators": [
-          "logical_equivalence_check"
+          "choice_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -1911,9 +2073,9 @@
     {
       "rule_id": "linear_algebra.jordan_canonical_form_calculation.v1",
       "rule_version": "1.0.0",
-      "status": "draft_auto",
-      "executable": false,
-      "manual_review_required": true,
+      "status": "curated",
+      "executable": true,
+      "manual_review_required": false,
       "subject_id": "linear_algebra",
       "problem_type": "jordan_canonical_form_calculation",
       "source_concept_ids": [
@@ -1924,53 +2086,43 @@
         "jordan_block_structure",
         "jordan_decomposition_formula"
       ],
-      "primary_formula_id": null,
+      "primary_formula_id": "jordan_decomposition_formula",
       "supported_answer_types": [
         "matrix_pair"
       ],
       "parameter_spec": {
-        "input": {
-          "type": "symbolic_input",
-          "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+        "A": {
+          "type": "matrix",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          },
+          "generator": "defective_jordan_matrix",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5
         }
       },
       "symbol_spec": {},
-      "constraints": [
-        {
-          "type": "concept_application_condition",
-          "expression": {
-            "constraint_id": "auto.la.advanced.jordan_form.1",
-            "scope": "generation",
-            "description": "대각화 가능한 행렬에 적용하면 1이 붙은 블록은 생성되지 않고 대각행렬 D 그 자체로 출력되어야 한다.",
-            "rule": {
-              "left": "recovers_diagonal_matrix",
-              "operator": "equals",
-              "right": true
-            },
-            "on_failure": "resample"
-          },
-          "required": true,
-          "description": "대각화 가능한 행렬에 적용하면 1이 붙은 블록은 생성되지 않고 대각행렬 D 그 자체로 출력되어야 한다."
-        }
-      ],
+      "constraints": [],
       "construction": {
         "operation": "jordan_canonical_form_calculation",
         "required_objects": [
-          "input"
+          "A"
         ],
         "semantic_structure": [
           "결함 행렬에 대한 조르당 표준형과 전이행렬 M을 구한다."
         ],
         "text_templates": [
-          "다음 조건을 이용하여 'jordan canonical form calculation' 문제를 해결하시오."
+          "A = P J P^(-1)을 만족하는 가역행렬 P와 조르당 표준형 J를 구하시오. A = {{ A }}"
         ],
         "latex_templates": [],
-        "builder_expression": null
+        "builder_expression": "jordan_defective_pair(A)"
       },
       "answer_spec": {
         "answer_type": "matrix_pair",
         "engine": "sympy",
-        "expression": null,
+        "expression": "jordan_defective_pair(A)",
         "latex_expression": null,
         "canonicalization": "simplify"
       },
@@ -1989,7 +2141,7 @@
           "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
         }
       },
-      "notes": "Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+      "notes": "선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
     },
     {
       "rule_id": "linear_algebra.kernel_image_calculation.v1",
@@ -2019,7 +2171,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -2049,7 +2205,7 @@
       },
       "validation": {
         "validators": [
-          "rank_nullity_check"
+          "kernel_image_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2089,7 +2245,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 3,
+              "max": 4
+            },
+            "cols": 2
+          }
         },
         "b": {
           "type": "vector",
@@ -2100,10 +2263,23 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": "rank(A) == A.cols",
+          "required": true,
+          "description": "A는 full column rank"
+        }
+      ],
       "construction": {
         "operation": "least_squares_calculation",
         "required_objects": [
@@ -2131,7 +2307,7 @@
       },
       "validation": {
         "validators": [
-          "normal_equation_residual_check"
+          "least_squares_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2170,7 +2346,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          }
         }
       },
       "constraints": [],
@@ -2200,7 +2380,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_zero_check"
+          "basis_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2239,7 +2419,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          }
         }
       },
       "constraints": [],
@@ -2269,7 +2453,7 @@
       },
       "validation": {
         "validators": [
-          "rank_matrix_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2309,7 +2493,15 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 3,
+              "max": 4
+            },
+            "cols": 2
+          },
+          "generator": "regression_design_matrix"
         },
         "y": {
           "type": "vector",
@@ -2320,10 +2512,23 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "X.rows"
+          },
+          "depends_on": [
+            "X"
+          ]
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": "rank(X) == X.cols",
+          "required": true,
+          "description": "X는 full column rank"
+        }
+      ],
       "construction": {
         "operation": "linear_regression_calculation",
         "required_objects": [
@@ -2351,7 +2556,7 @@
       },
       "validation": {
         "validators": [
-          "regression_residual_check"
+          "least_squares_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2390,7 +2595,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          }
         },
         "b": {
           "type": "vector",
@@ -2401,7 +2610,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -2432,7 +2647,7 @@
       },
       "validation": {
         "validators": [
-          "superposition_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2473,10 +2688,33 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": {
+            "constraint_id": "migration.lu_factorization.A.lu_without_pivoting",
+            "scope": "generation",
+            "description": "A는 행 교환 없이 LU 분해 가능",
+            "rule": {
+              "left": "A",
+              "operator": "lu_without_pivoting"
+            },
+            "on_failure": "resample"
+          },
+          "required": true,
+          "description": "A는 행 교환 없이 LU 분해 가능"
+        }
+      ],
       "construction": {
         "operation": "lu_factorization",
         "required_objects": [
@@ -2503,8 +2741,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_check",
-          "lower_triangular_check"
+          "lu_factorization_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2543,10 +2780,33 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": {
+            "constraint_id": "migration.matrix_diagonalization.A.diagonalizable",
+            "scope": "generation",
+            "description": "A는 실수 범위에서 대각화 가능",
+            "rule": {
+              "left": "A",
+              "operator": "diagonalizable"
+            },
+            "on_failure": "resample"
+          },
+          "required": true,
+          "description": "A는 실수 범위에서 대각화 가능"
+        }
+      ],
       "construction": {
         "operation": "matrix_diagonalization",
         "required_objects": [
@@ -2573,7 +2833,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_equivalence"
+          "diagonalization_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2613,7 +2873,17 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": {
+              "min": 2,
+              "max": 3
+            }
+          }
         },
         "B": {
           "type": "matrix",
@@ -2624,7 +2894,17 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": "A.cols",
+            "cols": {
+              "min": 2,
+              "max": 3
+            }
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -2694,7 +2974,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         },
         "k": {
           "type": "integer",
@@ -2817,7 +3104,7 @@
       },
       "validation": {
         "validators": [
-          "rank_computation_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2858,7 +3145,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          }
         },
         "b": {
           "type": "vector",
@@ -2869,7 +3160,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -2877,7 +3174,8 @@
         "operation": "matrix_to_vector_equation",
         "required_objects": [
           "A",
-          "b"
+          "b",
+          "x"
         ],
         "semantic_structure": [
           "matrix_to_vector_equation 유형의 수학 객체를 제시한다.",
@@ -2900,7 +3198,7 @@
       },
       "validation": {
         "validators": [
-          "symbolic_equivalence"
+          "equation_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -2910,7 +3208,17 @@
         "max": 2,
         "factors": {}
       },
-      "notes": "기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+      "notes": "기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule.",
+      "symbol_spec": {
+        "x": {
+          "role": "unknown",
+          "dimension": "A.cols",
+          "assumptions": {
+            "real": true
+          },
+          "description": "A의 열 개수와 같은 길이의 미지수 열벡터"
+        }
+      }
     },
     {
       "rule_id": "linear_algebra.norm_distance_calculation.v1",
@@ -2940,7 +3248,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": {
+              "min": 2,
+              "max": 3
+            }
+          }
         },
         "v": {
           "type": "vector",
@@ -2951,7 +3265,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "u.dimension"
+          },
+          "depends_on": [
+            "u"
+          ]
         }
       },
       "constraints": [],
@@ -3021,7 +3341,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -3051,7 +3375,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_zero_check"
+          "basis_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3091,7 +3415,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          }
         }
       },
       "constraints": [],
@@ -3121,7 +3449,7 @@
       },
       "validation": {
         "validators": [
-          "dot_product_zero_check"
+          "basis_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3160,10 +3488,36 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "allowed_families": [
+            "symmetric"
+          ],
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": {
+            "constraint_id": "migration.orthogonal_diagonalization_calculation.A.symmetric",
+            "scope": "generation",
+            "description": "A는 실수 대칭행렬",
+            "rule": {
+              "left": "A",
+              "operator": "symmetric"
+            },
+            "on_failure": "resample"
+          },
+          "required": true,
+          "description": "A는 실수 대칭행렬"
+        }
+      ],
       "construction": {
         "operation": "orthogonal_diagonalization_calculation",
         "required_objects": [
@@ -3190,7 +3544,7 @@
       },
       "validation": {
         "validators": [
-          "orthogonal_matrix_check"
+          "orthogonal_diagonalization_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3230,7 +3584,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": {
+              "min": 2,
+              "max": 3
+            }
+          }
         },
         "b": {
           "type": "vector",
@@ -3241,7 +3601,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "a.dimension"
+          },
+          "depends_on": [
+            "a"
+          ]
         }
       },
       "constraints": [
@@ -3289,7 +3655,7 @@
       },
       "validation": {
         "validators": [
-          "idempotent_symmetric_check"
+          "projection_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3329,7 +3695,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          }
         }
       },
       "constraints": [],
@@ -3359,7 +3729,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_product_identity_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3398,7 +3768,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         },
         "b": {
           "type": "vector",
@@ -3409,7 +3783,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -3440,8 +3820,7 @@
       },
       "validation": {
         "validators": [
-          "linear_combination_equivalence",
-          "null_space_check"
+          "parametric_solution_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3456,9 +3835,9 @@
     {
       "rule_id": "linear_algebra.pca_calculation.v1",
       "rule_version": "1.0.0",
-      "status": "draft_auto",
+      "status": "curated",
       "executable": true,
-      "manual_review_required": true,
+      "manual_review_required": false,
       "subject_id": "linear_algebra",
       "problem_type": "pca_calculation",
       "source_concept_ids": [
@@ -3475,41 +3854,18 @@
       "parameter_spec": {
         "A": {
           "type": "matrix",
-          "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
+          "shape": {
+            "rows": 4,
+            "cols": 2
+          },
+          "generator": "centered_pca_matrix",
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5,
-          "shape": {
-            "rows": {
-              "min": 2,
-              "max": 4
-            },
-            "cols": {
-              "min": 2,
-              "max": 4
-            }
-          }
+          "element_max": 5
         }
       },
       "symbol_spec": {},
-      "constraints": [
-        {
-          "type": "concept_application_condition",
-          "expression": {
-            "constraint_id": "auto.la.advanced.pca.1",
-            "scope": "generation",
-            "description": "공분산을 계산하기 전 모든 데이터의 각 피처에 대해 평균을 0으로 맞추는 중심화 전처리를 수행해야 한다.",
-            "rule": {
-              "left": "is_mean_centered",
-              "operator": "equals",
-              "right": true
-            },
-            "on_failure": "resample"
-          },
-          "required": true,
-          "description": "공분산을 계산하기 전 모든 데이터의 각 피처에 대해 평균을 0으로 맞추는 중심화 전처리를 수행해야 한다."
-        }
-      ],
+      "constraints": [],
       "construction": {
         "operation": "pca_calculation",
         "required_objects": [
@@ -3519,21 +3875,21 @@
           "데이터 행렬에 대해 PCA를 수행하여 주성분 축을 도출한다."
         ],
         "text_templates": [
-          "다음 조건을 이용하여 'pca calculation' 문제를 해결하시오."
+          "행이 관측값인 중심화 데이터 A = {{ A }}에 대해 최대 분산의 1차원 주성분 공간으로 직교 투영하는 2x2 행렬을 구하시오."
         ],
         "latex_templates": [],
-        "builder_expression": null
+        "builder_expression": "pca_projection(A)"
       },
       "answer_spec": {
         "answer_type": "matrix",
         "engine": "sympy",
-        "expression": "(1 / (n - 1)) * X.T * X",
+        "expression": "pca_projection(A)",
         "latex_expression": null,
         "canonicalization": "simplify"
       },
       "validation": {
         "validators": [
-          "covariance_eigen_check"
+          "pca_projection_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3546,7 +3902,7 @@
           "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
         }
       },
-      "notes": "Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+      "notes": "선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
     },
     {
       "rule_id": "linear_algebra.positive_definite_test.v1",
@@ -3576,10 +3932,36 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "allowed_families": [
+            "symmetric"
+          ],
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": {
+            "constraint_id": "migration.positive_definite_test.A.symmetric",
+            "scope": "generation",
+            "description": "A는 실수 대칭행렬",
+            "rule": {
+              "left": "A",
+              "operator": "symmetric"
+            },
+            "on_failure": "resample"
+          },
+          "required": true,
+          "description": "A는 실수 대칭행렬"
+        }
+      ],
       "construction": {
         "operation": "positive_definite_test",
         "required_objects": [
@@ -3606,7 +3988,7 @@
       },
       "validation": {
         "validators": [
-          "eigenvalue_sign_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3621,9 +4003,9 @@
     {
       "rule_id": "linear_algebra.pseudoinverse_calculation.v1",
       "rule_version": "1.0.0",
-      "status": "draft_auto",
-      "executable": false,
-      "manual_review_required": true,
+      "status": "curated",
+      "executable": true,
+      "manual_review_required": false,
       "subject_id": "linear_algebra",
       "problem_type": "pseudoinverse_calculation",
       "source_concept_ids": [
@@ -3633,45 +4015,25 @@
         "least_squares_pseudoinverse",
         "pseudoinverse_formula"
       ],
-      "primary_formula_id": null,
+      "primary_formula_id": "pseudoinverse_formula",
       "supported_answer_types": [
         "matrix"
       ],
       "parameter_spec": {
         "A": {
           "type": "matrix",
-          "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          },
+          "generator": "rank_one_pseudoinverse_matrix",
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5,
-          "shape": {
-            "rows": {
-              "min": 2,
-              "max": 4
-            },
-            "cols": "A.rows"
-          }
+          "element_max": 5
         }
       },
       "symbol_spec": {},
-      "constraints": [
-        {
-          "type": "concept_application_condition",
-          "expression": {
-            "constraint_id": "auto.la.advanced.pseudoinverse.1",
-            "scope": "generation",
-            "description": "가역인 정사각행렬에 적용하면 본래의 역행렬과 100% 일치해야 한다.",
-            "rule": {
-              "left": "recovers_inverse",
-              "operator": "equals",
-              "right": true
-            },
-            "on_failure": "resample"
-          },
-          "required": true,
-          "description": "가역인 정사각행렬에 적용하면 본래의 역행렬과 100% 일치해야 한다."
-        }
-      ],
+      "constraints": [],
       "construction": {
         "operation": "pseudoinverse_calculation",
         "required_objects": [
@@ -3681,15 +4043,15 @@
           "SVD를 이용해 행렬의 무어-펜로즈 의사역행렬을 구한다."
         ],
         "text_templates": [
-          "다음 조건을 이용하여 'pseudoinverse calculation' 문제를 해결하시오."
+          "rank 1 행렬 A = {{ A }}의 무어-펜로즈 의사역행렬 A^+를 구하시오."
         ],
         "latex_templates": [],
-        "builder_expression": null
+        "builder_expression": "moore_penrose_pinv(A)"
       },
       "answer_spec": {
         "answer_type": "matrix",
         "engine": "sympy",
-        "expression": null,
+        "expression": "moore_penrose_pinv(A)",
         "latex_expression": null,
         "canonicalization": "simplify"
       },
@@ -3708,7 +4070,7 @@
           "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
         }
       },
-      "notes": "Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+      "notes": "선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
     },
     {
       "rule_id": "linear_algebra.qr_factorization_calculation.v1",
@@ -3738,7 +4100,12 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          },
+          "generator": "orthogonal_integer_norm_columns"
         }
       },
       "constraints": [],
@@ -3768,7 +4135,7 @@
       },
       "validation": {
         "validators": [
-          "qr_product_check"
+          "qr_factorization_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3808,7 +4175,15 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          },
+          "generator": "small_integer_spectrum_symmetric"
         }
       },
       "constraints": [],
@@ -3838,7 +4213,7 @@
       },
       "validation": {
         "validators": [
-          "quadratic_form_equivalence"
+          "quadratic_form_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3877,7 +4252,17 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": {
+              "min": 2,
+              "max": 3
+            }
+          }
         }
       },
       "constraints": [],
@@ -3907,7 +4292,7 @@
       },
       "validation": {
         "validators": [
-          "rank_computation_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -3946,7 +4331,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -3976,7 +4365,7 @@
       },
       "validation": {
         "validators": [
-          "dimension_equality_check"
+          "scalar_equality_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4017,7 +4406,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 4
+          }
         }
       },
       "constraints": [],
@@ -4047,7 +4440,7 @@
       },
       "validation": {
         "validators": [
-          "ref_form_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4086,7 +4479,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         }
       },
       "constraints": [],
@@ -4116,7 +4513,7 @@
       },
       "validation": {
         "validators": [
-          "span_equivalence_check"
+          "basis_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4155,7 +4552,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 4
+          }
         }
       },
       "constraints": [],
@@ -4185,7 +4586,7 @@
       },
       "validation": {
         "validators": [
-          "rref_form_check"
+          "matrix_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4226,7 +4627,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -4256,7 +4664,7 @@
       },
       "validation": {
         "validators": [
-          "zero_row_detection"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4297,7 +4705,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         },
         "b": {
           "type": "vector",
@@ -4308,7 +4723,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [
@@ -4356,7 +4777,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_check"
+          "linear_system_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4396,7 +4817,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          }
         },
         "b": {
           "type": "vector",
@@ -4407,7 +4832,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "V.rows"
+          },
+          "depends_on": [
+            "V"
+          ]
         }
       },
       "constraints": [],
@@ -4438,7 +4869,7 @@
       },
       "validation": {
         "validators": [
-          "consistency_theorem_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4477,10 +4908,36 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "allowed_families": [
+            "symmetric"
+          ],
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
-      "constraints": [],
+      "constraints": [
+        {
+          "type": "generation_precondition",
+          "expression": {
+            "constraint_id": "migration.spectral_decomposition_calculation.A.symmetric",
+            "scope": "generation",
+            "description": "A는 실수 대칭행렬",
+            "rule": {
+              "left": "A",
+              "operator": "symmetric"
+            },
+            "on_failure": "resample"
+          },
+          "required": true,
+          "description": "A는 실수 대칭행렬"
+        }
+      ],
       "construction": {
         "operation": "spectral_decomposition_calculation",
         "required_objects": [
@@ -4507,7 +4964,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_equivalence"
+          "spectral_decomposition_check"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4547,7 +5004,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 3,
+            "cols": 2
+          }
         }
       },
       "constraints": [],
@@ -4577,7 +5038,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_multiplication_check"
+          "matrix_equivalence"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4616,7 +5077,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         },
         "b": {
           "type": "vector",
@@ -4627,7 +5092,13 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "dimension": "A.rows"
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],
@@ -4658,7 +5129,7 @@
       },
       "validation": {
         "validators": [
-          "subspace_axiom_check"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4673,9 +5144,9 @@
     {
       "rule_id": "linear_algebra.svd_calculation.v1",
       "rule_version": "1.0.0",
-      "status": "draft_auto",
-      "executable": false,
-      "manual_review_required": true,
+      "status": "curated",
+      "executable": true,
+      "manual_review_required": false,
       "subject_id": "linear_algebra",
       "problem_type": "svd_calculation",
       "source_concept_ids": [
@@ -4685,48 +5156,25 @@
         "singular_values_definition",
         "svd_formula"
       ],
-      "primary_formula_id": null,
+      "primary_formula_id": "svd_formula",
       "supported_answer_types": [
         "matrix_tuple"
       ],
       "parameter_spec": {
         "A": {
           "type": "matrix",
-          "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
+          "shape": {
+            "rows": 2,
+            "cols": 2
+          },
+          "generator": "small_svd_matrix",
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5,
-          "shape": {
-            "rows": {
-              "min": 2,
-              "max": 4
-            },
-            "cols": {
-              "min": 2,
-              "max": 4
-            }
-          }
+          "element_max": 5
         }
       },
       "symbol_spec": {},
-      "constraints": [
-        {
-          "type": "concept_application_condition",
-          "expression": {
-            "constraint_id": "auto.la.advanced.svd.1",
-            "scope": "generation",
-            "description": "특이값을 구하기 위한 A^T A는 양의 반정부호 대칭행렬이므로 고윳값은 항상 0 이상의 실수여야 한다.",
-            "rule": {
-              "left": "is_positive_semi_definite",
-              "operator": "equals",
-              "right": true
-            },
-            "on_failure": "resample"
-          },
-          "required": true,
-          "description": "특이값을 구하기 위한 A^T A는 양의 반정부호 대칭행렬이므로 고윳값은 항상 0 이상의 실수여야 한다."
-        }
-      ],
+      "constraints": [],
       "construction": {
         "operation": "svd_calculation",
         "required_objects": [
@@ -4736,15 +5184,15 @@
           "임의의 행렬에 대해 SVD를 수행하여 U, Sigma, V 행렬을 구한다."
         ],
         "text_templates": [
-          "다음 조건을 이용하여 'svd calculation' 문제를 해결하시오."
+          "A = U Σ V^H이고 특이값이 내림차순인 특이값 분해 (U, Σ, V)를 구하시오. A = {{ A }}"
         ],
         "latex_templates": [],
-        "builder_expression": null
+        "builder_expression": "advanced_svd(A)"
       },
       "answer_spec": {
         "answer_type": "matrix_tuple",
         "engine": "sympy",
-        "expression": null,
+        "expression": "advanced_svd(A)",
         "latex_expression": null,
         "canonicalization": "simplify"
       },
@@ -4763,7 +5211,7 @@
           "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
         }
       },
-      "notes": "Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+      "notes": "선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
     },
     {
       "rule_id": "linear_algebra.symmetry_classification.v1",
@@ -4793,7 +5241,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 3
+            },
+            "cols": "A.rows"
+          }
         }
       },
       "constraints": [],
@@ -4823,7 +5278,7 @@
       },
       "validation": {
         "validators": [
-          "matrix_equivalence"
+          "boolean_equality"
         ],
         "all_required": true,
         "max_generation_attempts": 100
@@ -4863,7 +5318,11 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": 2,
+            "cols": 3
+          }
         },
         "B": {
           "type": "matrix",
@@ -4874,7 +5333,14 @@
           "exclude": [],
           "choices": [],
           "step": null,
-          "distribution": "uniform"
+          "distribution": "uniform",
+          "shape": {
+            "rows": "A.cols",
+            "cols": 2
+          },
+          "depends_on": [
+            "A"
+          ]
         }
       },
       "constraints": [],

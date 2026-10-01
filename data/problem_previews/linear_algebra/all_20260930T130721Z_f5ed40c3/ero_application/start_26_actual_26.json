@@ -1,0 +1,345 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ero_application.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.ero_application.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "ero_application",
+  "answer_type": "matrix",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "행렬 A에 기본행연산 R_1 + (-2)R_0 -> R_1 를 적용한 결과를 구하시오.\nA = Matrix([[5, -3, 4], [-3, 0, 3], [2, -6, -4]])",
+  "statement_latex": "R_1+(-2)R_0\\to R_1",
+  "parameters": {
+    "A": [
+      [
+        5,
+        -3,
+        4
+      ],
+      [
+        -3,
+        0,
+        3
+      ],
+      [
+        2,
+        -6,
+        -4
+      ]
+    ],
+    "target_row": 1,
+    "source_row": 0,
+    "c": -2
+  },
+  "expected_answer": [
+    [
+      5,
+      -3,
+      4
+    ],
+    [
+      -13,
+      6,
+      -5
+    ],
+    [
+      2,
+      -6,
+      -4
+    ]
+  ],
+  "seed": 26,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": "different_rows",
+        "on_failure": "resample",
+        "message": "서로 다른 두 행을 사용한다.",
+        "observed": {
+          "left": 1,
+          "operator": "not_equals",
+          "right": 0
+        }
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "matrix_equivalence",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 26,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ero_application.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.ero_application.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_01_matrix_algebra",
+      "unit_name_ko": "연립방정식과 행렬대수",
+      "concept_ids": [
+        "la.matrix.ero_ref"
+      ],
+      "formula_ids": [
+        "ero_swap",
+        "ero_scale",
+        "ero_replace"
+      ],
+      "tags": [
+        "ero",
+        "ref",
+        "gaussian_elimination"
+      ]
+    },
+    "classification": {
+      "problem_type": "ero_application",
+      "answer_type": "matrix",
+      "difficulty": {
+        "base": 2,
+        "min": 1,
+        "max": 3,
+        "factors": {}
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "A": {
+        "type": "matrix",
+        "description": "기본행연산을 적용할 행렬.",
+        "required": true,
+        "min": -6,
+        "max": 6,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": 3,
+          "cols": 3,
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "target_row": {
+        "type": "integer",
+        "description": "변경할 행의 0-based 인덱스.",
+        "required": true,
+        "min": 0,
+        "max": 2,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "source_row": {
+        "type": "integer",
+        "description": "더해 줄 행의 0-based 인덱스.",
+        "required": true,
+        "min": 0,
+        "max": 2,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "c": {
+        "type": "integer",
+        "description": "R_target + c R_source에 사용할 0이 아닌 정수.",
+        "required": true,
+        "min": -4,
+        "max": 4,
+        "exclude": [
+          0
+        ],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [
+      {
+        "type": "different_rows",
+        "expression": {
+          "constraint_id": "different_rows",
+          "scope": "generation",
+          "description": "서로 다른 두 행을 사용한다.",
+          "rule": {
+            "left": "target_row",
+            "operator": "not_equals",
+            "right": "source_row",
+            "args": []
+          },
+          "on_failure": "resample"
+        },
+        "required": true,
+        "description": "서로 다른 두 행을 사용한다."
+      }
+    ],
+    "problem_builder": {
+      "operation": "ero_application",
+      "required_objects": [
+        "A",
+        "target_row",
+        "source_row",
+        "c"
+      ],
+      "semantic_structure": [
+        "ero_application 유형의 수학 객체를 제시한다.",
+        "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+      ],
+      "text_templates_ko": [
+        "행렬 A에 기본행연산 R_{{ target_row }} + ({{ c }})R_{{ source_row }} -> R_{{ target_row }} 를 적용한 결과를 구하시오.\nA = {{ A }}"
+      ],
+      "latex_templates": [
+        "R_{{ target_row }}+({{ c }})R_{{ source_row }}\\to R_{{ target_row }}"
+      ],
+      "cas_template": "A.elementary_row_op(op='n->n+km', row1=target_row, row2=source_row, k=c)",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "matrix",
+      "engine": "sympy",
+      "cas_template": "A.elementary_row_op(op='n->n+km', row1=target_row, row2=source_row, k=c)",
+      "latex_template": "\\operatorname{ERO}(A)",
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "matrix_equivalence"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": null,
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": null,
+          "cas_expression": "A.elementary_row_op(op='n->n+km', row1=target_row, row2=source_row, k=c)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "matrix_equivalence",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.ero_application.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+    }
+  }
+}

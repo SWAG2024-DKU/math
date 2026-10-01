@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rank.matrix_rank_property.v1",
   "template_version": "1.0.0",
@@ -40,6 +40,7 @@
   "parameters": {
     "m": {
       "type": "integer",
+      "description": "행렬의 행 개수.",
       "required": true,
       "min": 1,
       "max": 6,
@@ -47,10 +48,26 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "행렬의 행 개수."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
     "n": {
       "type": "integer",
+      "description": "행렬의 열 개수.",
       "required": true,
       "min": 1,
       "max": 6,
@@ -58,9 +75,25 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "행렬의 열 개수."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "matrix_rank_property",
@@ -91,11 +124,12 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "rank_computation_check"
+      "scalar_equality_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "rank_definition_pivot",
     "solution_plan": [
       {
         "step": 1,
@@ -113,7 +147,7 @@
   "validation": {
     "validators": [
       {
-        "name": "rank_computation_check",
+        "name": "scalar_equality_check",
         "required": true,
         "config": {}
       }
@@ -135,7 +169,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.matrix_rank_property.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

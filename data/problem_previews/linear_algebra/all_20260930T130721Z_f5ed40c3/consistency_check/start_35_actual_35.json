@@ -1,0 +1,203 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rref.consistency_check.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.consistency_check.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "consistency_check",
+  "answer_type": "single_choice",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "다음 첨가행렬이 나타내는 연립일차방정식의 해 존재 여부를 판정하시오. (해 없음 / 해 존재)\n[A|b] = Matrix([[2, -1, 6], [-4, 5, -1]])",
+  "statement_latex": "[A\\mid\\mathbf b]=\\left[\\begin{matrix}2 & -1 & 6\\\\-4 & 5 & -1\\end{matrix}\\right]",
+  "parameters": {
+    "Aug": [
+      [
+        2,
+        -1,
+        6
+      ],
+      [
+        -4,
+        5,
+        -1
+      ]
+    ]
+  },
+  "expected_answer": "해 존재",
+  "seed": 35,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "choice_equality",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 35,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.rref.consistency_check.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.consistency_check.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_01_matrix_algebra",
+      "unit_name_ko": "연립방정식과 행렬대수",
+      "concept_ids": [
+        "la.matrix.rref"
+      ],
+      "formula_ids": [
+        "inconsistent_condition"
+      ],
+      "tags": [
+        "rref",
+        "consistency",
+        "gauss_jordan"
+      ]
+    },
+    "classification": {
+      "problem_type": "consistency_check",
+      "answer_type": "single_choice",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {}
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "Aug": {
+        "type": "matrix",
+        "description": "연립방정식의 첨가행렬 [A|b].",
+        "required": true,
+        "min": -6,
+        "max": 6,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": 2,
+          "cols": 3,
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "consistency_check",
+      "required_objects": [
+        "Aug"
+      ],
+      "semantic_structure": [
+        "consistency_check 유형의 수학 객체를 제시한다.",
+        "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+      ],
+      "text_templates_ko": [
+        "다음 첨가행렬이 나타내는 연립일차방정식의 해 존재 여부를 판정하시오. (해 없음 / 해 존재)\n[A|b] = {{ Aug }}"
+      ],
+      "latex_templates": [
+        "[A\\mid\\mathbf b]={{ Aug }}"
+      ],
+      "cas_template": "is_consistent_augmented(Aug)",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "single_choice",
+      "engine": "sympy",
+      "cas_template": "'해 존재' if is_consistent_augmented(Aug) else '해 없음'",
+      "latex_template": "\\text{해 존재 여부}",
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "choice_equality"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "inconsistent_condition",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "inconsistent_condition",
+          "cas_expression": "'해 존재' if is_consistent_augmented(Aug) else '해 없음'"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "choice_equality",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.consistency_check.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+    }
+  }
+}

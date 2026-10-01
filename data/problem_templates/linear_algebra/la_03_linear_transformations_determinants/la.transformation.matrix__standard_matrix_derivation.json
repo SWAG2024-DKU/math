@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_03_linear_transformations_determinants.la.transformation.matrix.standard_matrix_derivation.v1",
   "template_version": "1.0.0",
@@ -41,6 +41,7 @@
   "parameters": {
     "images": {
       "type": "matrix",
+      "description": "표준기저 e_i의 상 T(e_i)를 열벡터로 모은 행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -48,9 +49,31 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "표준기저 e_i의 상 T(e_i)를 열벡터로 모은 행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": 3,
+        "cols": 2,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "standard_matrix_derivation",
@@ -80,16 +103,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_multiplication_check"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "standard_matrix_definition",
+        "formula_id": null,
         "cas_expression": "images"
       }
     ],
@@ -102,7 +126,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_multiplication_check",
+        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }
@@ -124,7 +148,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.standard_matrix_derivation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

@@ -1,0 +1,286 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.diagonalization.matrix_diagonalization.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.matrix_diagonalization.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "matrix_diagonalization",
+  "answer_type": "matrix_pair",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "행렬 A를 A=PDP^{-1} 형태로 대각화하고 P와 D를 구하시오.\nA = Matrix([[-3, 0], [0, 2]])",
+  "statement_latex": "A=PDP^{-1}",
+  "parameters": {
+    "A": [
+      [
+        -3,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "expected_answer": [
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        -3,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  ],
+  "seed": 78,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": "migration.matrix_diagonalization.A.diagonalizable",
+        "on_failure": "resample",
+        "message": "A는 실수 범위에서 대각화 가능",
+        "observed": {
+          "left": [
+            [
+              -3,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "operator": "diagonalizable",
+          "actual": true,
+          "expected": true
+        }
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "diagonalization_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 75,
+        "passed": false,
+        "stage": "constraints",
+        "message": "A는 실수 범위에서 대각화 가능"
+      },
+      {
+        "attempt": 2,
+        "seed": 76,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0][0,1]"
+      },
+      {
+        "attempt": 3,
+        "seed": 77,
+        "passed": false,
+        "stage": "constraints",
+        "message": "A는 실수 범위에서 대각화 가능"
+      },
+      {
+        "attempt": 4,
+        "seed": 78,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.diagonalization.matrix_diagonalization.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.matrix_diagonalization.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_05_eigenvalues_diagonalization",
+      "unit_name_ko": "고윳값, 대각화 및 스펙트럼 정리",
+      "concept_ids": [
+        "la.eigen.diagonalization"
+      ],
+      "formula_ids": [
+        "diagonalization_formula"
+      ],
+      "tags": [
+        "diagonalization",
+        "transition_matrix",
+        "eigenvector_matrix"
+      ]
+    },
+    "classification": {
+      "problem_type": "matrix_diagonalization",
+      "answer_type": "matrix_pair",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {}
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "A": {
+        "type": "matrix",
+        "description": "대각화 가능한 정사각행렬.",
+        "required": true,
+        "min": -4,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": {
+            "min": 2,
+            "max": 3
+          },
+          "cols": "A.rows",
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [
+      {
+        "type": "generation_precondition",
+        "expression": {
+          "constraint_id": "migration.matrix_diagonalization.A.diagonalizable",
+          "scope": "generation",
+          "description": "A는 실수 범위에서 대각화 가능",
+          "rule": {
+            "left": "A",
+            "operator": "diagonalizable",
+            "right": null,
+            "args": []
+          },
+          "on_failure": "resample"
+        },
+        "required": true,
+        "description": "A는 실수 범위에서 대각화 가능"
+      }
+    ],
+    "problem_builder": {
+      "operation": "matrix_diagonalization",
+      "required_objects": [
+        "A"
+      ],
+      "semantic_structure": [
+        "matrix_diagonalization 유형의 수학 객체를 제시한다.",
+        "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+      ],
+      "text_templates_ko": [
+        "행렬 A를 A=PDP^{-1} 형태로 대각화하고 P와 D를 구하시오.\nA = {{ A }}"
+      ],
+      "latex_templates": [
+        "A=PDP^{-1}"
+      ],
+      "cas_template": "diagonalize_pair(A)",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "matrix_pair",
+      "engine": "sympy",
+      "cas_template": "diagonalize_pair(A)",
+      "latex_template": "(P,D)",
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "diagonalization_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "diagonalization_formula",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "diagonalization_formula",
+          "cas_expression": "diagonalize_pair(A)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "diagonalization_check",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.matrix_diagonalization.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+    }
+  }
+}

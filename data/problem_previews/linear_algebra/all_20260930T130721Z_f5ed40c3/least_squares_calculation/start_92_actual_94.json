@@ -1,0 +1,348 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.least_squares.least_squares_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.least_squares_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "least_squares_calculation",
+  "answer_type": "vector",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "과결정계 A x ≈ b의 최소제곱해 x_hat을 구하시오.\nA = Matrix([[-4, -1], [-1, 1], [-5, 5]]), b = Matrix([[7], [3], [1]])",
+  "statement_latex": "\\hat{\\mathbf x}=(A^TA)^{-1}A^T\\mathbf b",
+  "parameters": {
+    "A": [
+      [
+        -4,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -5,
+        5
+      ]
+    ],
+    "b": [
+      [
+        7
+      ],
+      [
+        3
+      ],
+      [
+        1
+      ]
+    ]
+  },
+  "expected_answer": [
+    [
+      "-19/13"
+    ],
+    [
+      "-15/13"
+    ]
+  ],
+  "seed": 94,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": null,
+        "on_failure": "resample",
+        "message": "A는 full column rank",
+        "observed": true
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "least_squares_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 92,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 2,
+        "seed": 93,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[1,0]"
+      },
+      {
+        "attempt": 3,
+        "seed": 94,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      },
+      {
+        "attempt": 4,
+        "seed": 95,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 5,
+        "seed": 96,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 6,
+        "seed": 97,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[1,0]"
+      },
+      {
+        "attempt": 7,
+        "seed": 98,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 8,
+        "seed": 99,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 9,
+        "seed": 100,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 10,
+        "seed": 101,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[0,0]"
+      },
+      {
+        "attempt": 11,
+        "seed": 102,
+        "passed": false,
+        "stage": "answer_policy",
+        "message": "최종 정답이 허용 범위를 벗어남: answer[1,0]"
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.least_squares.least_squares_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.least_squares_calculation.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_04_orthogonality_optimization",
+      "unit_name_ko": "직교성과 최적화",
+      "concept_ids": [
+        "la.ortho.least_squares"
+      ],
+      "formula_ids": [
+        "normal_equation",
+        "least_squares_solution"
+      ],
+      "tags": [
+        "least_squares",
+        "normal_equation",
+        "approximation"
+      ]
+    },
+    "classification": {
+      "problem_type": "least_squares_calculation",
+      "answer_type": "vector",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {}
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "A": {
+        "type": "matrix",
+        "description": "과결정계의 설계행렬. 열랭크가 가득 차도록 생성한다.",
+        "required": true,
+        "min": -5,
+        "max": 5,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": {
+            "min": 3,
+            "max": 4
+          },
+          "cols": 2,
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "b": {
+        "type": "vector",
+        "description": "관측 벡터. A의 행 수와 같은 길이.",
+        "required": true,
+        "min": -8,
+        "max": 8,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": null,
+          "cols": null,
+          "dimension": "A.rows",
+          "length": null,
+          "size": null
+        },
+        "depends_on": [
+          "A"
+        ],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [
+      {
+        "type": "generation_precondition",
+        "expression": "rank(A) == A.cols",
+        "required": true,
+        "description": "A는 full column rank"
+      }
+    ],
+    "problem_builder": {
+      "operation": "least_squares_calculation",
+      "required_objects": [
+        "A",
+        "b"
+      ],
+      "semantic_structure": [
+        "least_squares_calculation 유형의 수학 객체를 제시한다.",
+        "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+      ],
+      "text_templates_ko": [
+        "과결정계 A x ≈ b의 최소제곱해 x_hat을 구하시오.\nA = {{ A }}, b = {{ b }}"
+      ],
+      "latex_templates": [
+        "\\hat{\\mathbf x}=(A^TA)^{-1}A^T\\mathbf b"
+      ],
+      "cas_template": "(A.T*A).inv()*A.T*b",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "vector",
+      "engine": "sympy",
+      "cas_template": "(A.T*A).inv()*A.T*b",
+      "latex_template": "(A^TA)^{-1}A^T\\mathbf b",
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "least_squares_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": null,
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": null,
+          "cas_expression": "(A.T*A).inv()*A.T*b"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "least_squares_check",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.least_squares_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+    }
+  }
+}

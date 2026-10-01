@@ -18,7 +18,7 @@ if str(SCRIPTS_PROBLEMS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_PROBLEMS_DIR))
 
 from app.db.connection import get_connection
-import verify_problem_template_db as verifier
+from scripts.problems import verify_problem_template_db as verifier
 
 
 @pytest.fixture

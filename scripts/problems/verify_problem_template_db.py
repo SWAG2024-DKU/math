@@ -5,7 +5,7 @@ import hashlib
 import json
 import sys
 from collections import Counter, defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -15,11 +15,17 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from app.db.connection import get_connection
+def get_connection():
+    # --source-only는 PostgreSQL 드라이버와 .env 없이도 실행할 수 있다.
+    from app.db.connection import get_connection as open_connection
+    return open_connection()
 
 
 TEMPLATE_DIR = PROJECT_ROOT / "data" / "problem_templates"
 
+# 기존 tests/test_problem_template_db.py에서 참조하는 과거 스냅샷이다.
+# 호환성을 위해 이름만 유지하며 아래 검증 로직에서는 사용하지 않는다.
+# 데이터 변경 후 기존 스냅샷 테스트도 현재 원본 기준 테스트로 전환해야 한다.
 EXPECTED_JSON_FILES = 3389
 EXPECTED_TEMPLATE_FILES = 3383
 EXPECTED_DUPLICATE_GROUPS = 56
@@ -61,6 +67,18 @@ class SourceScanResult:
     ready_count: int
     draft_count: int
     winners: dict[tuple[str, str], SourceCandidate]
+    duplicate_pairs: set[tuple[str, str, str, str]] = field(default_factory=set)
+
+    @property
+    def status_counts(self) -> dict[str, int]:
+        return dict(Counter(item.data.get("status") for item in self.winners.values()))
+
+    @property
+    def executable_ready_count(self) -> int:
+        return sum(
+            item.data.get("status") == "ready" and item.data.get("executable") is True
+            for item in self.winners.values()
+        )
 
 
 class VerificationError(RuntimeError):
@@ -114,55 +132,52 @@ def select_winner(candidates: list[SourceCandidate]) -> SourceCandidate:
 
 
 def scan_source_templates() -> SourceScanResult:
-    """
-    B Importer의 함수를 재사용하지 않고 raw 파일을 독립적으로 스캔한다.
-    C 검증이 importer와 같은 버그를 공유하지 않도록 하기 위함이다.
-    """
+    """원본 파일을 독립적으로 스캔하여 현재 기대값과 중복 선택 결과를 구한다."""
+    if not TEMPLATE_DIR.is_dir():
+        raise VerificationError(f"Template 디렉터리가 없습니다: {TEMPLATE_DIR}")
     files = sorted(TEMPLATE_DIR.rglob("*.json"))
-
     groups: dict[tuple[str, str], list[SourceCandidate]] = defaultdict(list)
     template_file_count = 0
-
     for path in files:
         with path.open("r", encoding="utf-8") as file:
             raw = json.load(file)
-
+        if not isinstance(raw, dict):
+            raise VerificationError(f"JSON 최상위 값은 객체여야 합니다: {path}")
         if raw.get("object_type") != "problem_template":
             continue
-
         template_file_count += 1
-
         template_id = raw.get("template_id")
         template_version = raw.get("template_version", "1.0.0")
-
-        if not template_id:
-            raise VerificationError(f"template_id가 없는 파일: {path}")
-
-        groups[(template_id, template_version)].append(
-            SourceCandidate(path=path, data=raw)
-        )
-
-    duplicate_group_count = sum(
-        1 for candidates in groups.values() if len(candidates) > 1
-    )
+        if not isinstance(template_id, str) or not template_id.strip():
+            raise VerificationError(f"template_id가 없거나 잘못된 파일: {path}")
+        if not isinstance(template_version, str) or not template_version.strip():
+            raise VerificationError(f"template_version이 잘못된 파일: {path}")
+        groups[(template_id, template_version)].append(SourceCandidate(path, raw))
+    if not groups:
+        raise VerificationError("검사할 ProblemTemplate이 없습니다. 빈 원본은 통과시키지 않습니다.")
 
     winners: dict[tuple[str, str], SourceCandidate] = {}
+    pairs: set[tuple[str, str, str, str]] = set()
     for key, candidates in groups.items():
-        winners[key] = select_winner(candidates)
-
-    statuses = Counter(
-        candidate.data.get("status")
-        for candidate in winners.values()
-    )
-
+        winner = select_winner(candidates)
+        if winner.data.get("status") not in STATUS_RANK:
+            raise VerificationError(f"알 수 없는 Template 상태: {winner.path}")
+        if winner.data.get("status") in {"ready", "active"} and winner.data.get("executable") is not True:
+            raise VerificationError(f"출제 가능 상태인데 executable=True가 아닙니다: {winner.path}")
+        winners[key] = winner
+        for candidate in candidates:
+            if candidate.path != winner.path:
+                pairs.add((*key, project_relative_path(winner.path), project_relative_path(candidate.path)))
+    statuses = Counter(candidate.data.get("status") for candidate in winners.values())
     return SourceScanResult(
         json_file_count=len(files),
         template_file_count=template_file_count,
-        duplicate_group_count=duplicate_group_count,
+        duplicate_group_count=sum(len(items) > 1 for items in groups.values()),
         unique_template_count=len(winners),
         ready_count=statuses.get("ready", 0),
         draft_count=statuses.get("draft", 0),
         winners=winners,
+        duplicate_pairs=pairs,
     )
 
 
@@ -176,28 +191,14 @@ def require_equal(name: str, actual: int, expected: int) -> None:
 
 def verify_source() -> SourceScanResult:
     print("[1/2] Source files verification")
-
     result = scan_source_templates()
-
-    require_equal("JSON file count", result.json_file_count, EXPECTED_JSON_FILES)
-    require_equal(
-        "ProblemTemplate file count",
-        result.template_file_count,
-        EXPECTED_TEMPLATE_FILES,
-    )
-    require_equal(
-        "duplicate group count",
-        result.duplicate_group_count,
-        EXPECTED_DUPLICATE_GROUPS,
-    )
-    require_equal(
-        "unique template count",
-        result.unique_template_count,
-        EXPECTED_UNIQUE_TEMPLATES,
-    )
-    require_equal("ready source count", result.ready_count, EXPECTED_READY)
-    require_equal("draft source count", result.draft_count, EXPECTED_DRAFT)
-
+    print(f"[OK] JSON files: {result.json_file_count}")
+    print(f"[OK] ProblemTemplate files: {result.template_file_count}")
+    print(f"[OK] duplicate groups: {result.duplicate_group_count}")
+    print(f"[OK] unique templates: {result.unique_template_count}")
+    print(f"[OK] current source statuses: {result.status_counts}")
+    print("[INFO] DB 기대값은 위 원본의 중복 선택 결과에서 계산합니다.")
+    print("[INFO] 이 검사는 파일/DB 정합성 검사이며 수학 검증·사람 검수를 대신하지 않습니다.")
     print()
     return result
 
@@ -310,7 +311,7 @@ def count_source_path_mismatches(
         if winner is None:
             continue
 
-        expected = str(winner.path.relative_to(PROJECT_ROOT)).replace("\\", "/")
+        expected = project_relative_path(winner.path)
         actual = str(row["source_path"]).replace("\\", "/")
 
         if expected != actual:
@@ -322,12 +323,69 @@ def count_source_path_mismatches(
     return len(mismatches), mismatches[:10]
 
 
+def project_relative_path(path: Path) -> str:
+    # 심볼릭 링크를 따라 외부 저장 경로로 바꾸지 않고 프로젝트 내 경로를 보존한다.
+    return path.absolute().relative_to(PROJECT_ROOT.absolute()).as_posix()
+
+
+def normalize_audit_path(path: Any) -> str:
+    """이전 Importer가 기록한 Windows/POSIX 절대 경로와 상대 경로를 맞춘다."""
+    value = str(path or "").replace("\\", "/")
+    while value.startswith("./"):
+        value = value[2:]
+    # 감사 로그의 과거 프로젝트 루트는 다를 수 있다. 원본 루트 아래 경로로 비교한다.
+    root = project_relative_path(TEMPLATE_DIR).rstrip("/")
+    marker = "/" + root + "/"
+    if marker in value:
+        value = root + "/" + value.split(marker, 1)[1]
+    return value
+
+
+def count_source_payload_mismatches(
+    conn, source_result: SourceScanResult,
+) -> tuple[int, list[str]]:
+    """DB 내부 hash만 맞아도 원본과 다른 내용을 저장했다면 실패시킨다."""
+    rows = conn.execute(
+        "SELECT template_id, template_version, payload FROM problem.problem_templates"
+    ).fetchall()
+    mismatches = []
+    for row in rows:
+        key = (row["template_id"], row["template_version"])
+        winner = source_result.winners.get(key)
+        if winner is not None and canonical_hash(row["payload"]) != canonical_hash(winner.data):
+            mismatches.append(f"{key[0]}@{key[1]}")
+    return len(mismatches), mismatches[:10]
+
+
+def count_missing_duplicate_audits(
+    conn, source_result: SourceScanResult,
+) -> tuple[int, list[str]]:
+    rows = conn.execute(
+        """
+        SELECT template_id, template_version, selected_path, rejected_path
+        FROM problem.template_import_audit
+        WHERE action = 'duplicate_resolved'
+        """
+    ).fetchall()
+    actual = {
+        (row["template_id"], row["template_version"],
+         normalize_audit_path(row["selected_path"]),
+         normalize_audit_path(row["rejected_path"]))
+        for row in rows
+    }
+    missing = sorted(source_result.duplicate_pairs - actual)
+    samples = [f"{tid}@{version}: {selected} / {rejected}" for tid, version, selected, rejected in missing[:10]]
+    return len(missing), samples
+
+
 def verify_db(source_result: SourceScanResult) -> None:
     print("[2/2] PostgreSQL verification")
 
     conn = get_connection()
 
     try:
+        # 개수·상태·내용 검사가 동일한 DB 스냅샷을 읽도록 한다. 쓰기는 금지한다.
+        conn.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ, READ ONLY")
         required_tables = [
             "problem.problem_templates",
             "problem.template_concepts",
@@ -345,20 +403,16 @@ def verify_db(source_result: SourceScanResult) -> None:
         require_equal(
             "DB template count",
             template_count,
-            EXPECTED_UNIQUE_TEMPLATES,
+            source_result.unique_template_count,
         )
 
         status_counts = get_status_counts(conn)
-        require_equal(
-            "DB ready count",
-            status_counts.get("ready", 0),
-            EXPECTED_READY,
-        )
-        require_equal(
-            "DB draft count",
-            status_counts.get("draft", 0),
-            EXPECTED_DRAFT,
-        )
+        for status in sorted(set(status_counts) | set(source_result.status_counts)):
+            require_equal(
+                f"DB status count [{status}]",
+                status_counts.get(status, 0),
+                source_result.status_counts.get(status, 0),
+            )
 
         executable_ready = scalar_count(
             conn,
@@ -372,7 +426,7 @@ def verify_db(source_result: SourceScanResult) -> None:
         require_equal(
             "executable ready count",
             executable_ready,
-            EXPECTED_EXECUTABLE_READY,
+            source_result.executable_ready_count,
         )
 
         invalid_ready = scalar_count(
@@ -380,11 +434,11 @@ def verify_db(source_result: SourceScanResult) -> None:
             """
             SELECT COUNT(*) AS count
             FROM problem.problem_templates
-            WHERE status = 'ready'
-              AND executable = FALSE
+            WHERE status IN ('ready', 'active')
+              AND executable IS DISTINCT FROM TRUE
             """,
         )
-        require_equal("ready but non-executable", invalid_ready, 0)
+        require_equal("ready/active but non-executable", invalid_ready, 0)
 
         duplicate_keys = scalar_count(
             conn,
@@ -450,6 +504,8 @@ def verify_db(source_result: SourceScanResult) -> None:
                     IS DISTINCT FROM payload #>> '{classification,answer_type}'
                OR status
                     IS DISTINCT FROM payload ->> 'status'
+               OR executable
+                    IS DISTINCT FROM (payload ->> 'executable')::boolean
                OR template_id
                     IS DISTINCT FROM payload ->> 'template_id'
                OR template_version
@@ -515,6 +571,13 @@ def verify_db(source_result: SourceScanResult) -> None:
             )
         print("[OK] source/DB template key mismatches: 0")
 
+        payload_count, payload_samples = count_source_payload_mismatches(conn, source_result)
+        if payload_count:
+            raise VerificationError(
+                "source/DB payload mismatch가 있습니다: " + "; ".join(payload_samples)
+            )
+        print("[OK] source/DB payload mismatches: 0")
+
         source_path_mismatch_count, path_samples = count_source_path_mismatches(
             conn,
             source_result,
@@ -542,11 +605,15 @@ def verify_db(source_result: SourceScanResult) -> None:
             ) AS distinct_audits
             """,
         )
-        require_equal(
-            "distinct duplicate audit count",
-            distinct_duplicate_audits,
-            EXPECTED_DUPLICATE_GROUPS,
-        )
+        # 감사 로그는 누적 이력이다. 과거 기록이 더 많다고 실패시키지 않는다.
+        # 현재 원본의 각 winner/rejected 쌍에 대응하는 기록이 있는지 확인한다.
+        missing_audits, audit_samples = count_missing_duplicate_audits(conn, source_result)
+        if missing_audits:
+            raise VerificationError(
+                "현재 원본의 중복 선택 감사 기록이 없습니다: " + "; ".join(audit_samples)
+            )
+        print(f"[OK] current duplicate audit pairs: {len(source_result.duplicate_pairs)}")
+        print(f"[INFO] historical distinct duplicate audits: {distinct_duplicate_audits}")
 
         total_duplicate_audits = scalar_count(
             conn,

@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Iterable
 
 from app.problems.problem_type_extractor import ProblemTypeInfo
+from app.problems.validator_policy import ALLOWED_VALIDATORS, validate_curated_mapping
 from app.schemas.generation_rule import GenerationRule
 from app.schemas.problem_template import ProblemTemplate
 
@@ -149,12 +150,18 @@ def build_template(
         else "not_reviewed"
     )
 
-    validator_names = _unique(
-        [
-            *rule.validation.validators,
-            *problem_type.recommended_validators,
+    # GenerationRule이 수학적 계약의 원본이다. Concept의 추천 Validator를
+    # 무조건 합치면 답 유형과 맞지 않는 검사가 추가될 수 있다.
+    if rule.status in {"curated", "reviewed"}:
+        validate_curated_mapping(rule)
+        validator_names = list(rule.validation.validators)
+    else:
+        allowed = ALLOWED_VALIDATORS.get(answer_type, set())
+        validator_names = [
+            name
+            for name in _unique(rule.validation.validators)
+            if name in allowed
         ]
-    )
 
     formula_ids = _unique(problem_type.formula_ids)
     primary_formula_id = _resolve_primary_formula_id(problem_type, rule)

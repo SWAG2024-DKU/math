@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.system_form.matrix_to_vector_equation.v1",
   "template_version": "1.0.0",
@@ -42,6 +42,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "벡터 방정식의 열벡터들을 담는 계수행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -49,10 +50,32 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "벡터 방정식의 열벡터들을 담는 계수행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": 2,
+        "cols": 2,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
     "b": {
       "type": "vector",
+      "description": "우변 벡터. A의 행 수와 같은 길이를 가져야 한다.",
       "required": true,
       "min": -9,
       "max": 9,
@@ -60,7 +83,40 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "우변 벡터. A의 행 수와 같은 길이를 가져야 한다."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": null,
+        "cols": null,
+        "dimension": "A.rows",
+        "length": null,
+        "size": null
+      },
+      "depends_on": [
+        "A"
+      ],
+      "derived": null,
+      "generator": null
+    }
+  },
+  "symbols": {
+    "x": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": "A.cols",
+      "description": "A의 열 개수와 같은 길이의 미지수 열벡터"
     }
   },
   "constraints": [],
@@ -68,7 +124,8 @@
     "operation": "matrix_to_vector_equation",
     "required_objects": [
       "A",
-      "b"
+      "b",
+      "x"
     ],
     "semantic_structure": [
       "matrix_to_vector_equation 유형의 수학 객체를 제시한다.",
@@ -93,16 +150,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "equation_equivalence"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "matrix_equation",
+        "formula_id": null,
         "cas_expression": "Eq(A*x, b)"
       }
     ],
@@ -115,7 +173,7 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "equation_equivalence",
         "required": true,
         "config": {}
       }
@@ -137,7 +195,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.matrix_to_vector_equation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

@@ -589,6 +589,322 @@ def _migrate_draft_structure(
         )
 
 
+def _ensure_linear_algebra_matrix_multiplication_shape(
+    data: dict[str, Any],
+) -> None:
+    """기존 curated Rule에도 AB의 행렬 크기 관계를 채운다.
+
+    A의 이미 검수한 크기와 B의 열 크기는 유지한다. B.rows만 A.cols에
+    연결하며, 명시적인 의존관계도 기록한다. 재실행해도 같은 결과가 나온다.
+    """
+
+    if (data.get("subject_id"), data.get("problem_type")) != (
+        "linear_algebra", "matrix_multiplication"
+    ):
+        return
+
+    parameters = data.get("parameter_spec", {})
+    left, right = parameters.get("A"), parameters.get("B")
+    if not isinstance(left, dict) or not isinstance(right, dict):
+        raise GenerationRuleBuildError(
+            "linear_algebra/matrix_multiplication: A와 B 파라미터가 필요합니다."
+        )
+    if left.get("type") != "matrix" or right.get("type") != "matrix":
+        raise GenerationRuleBuildError(
+            "linear_algebra/matrix_multiplication: A와 B는 행렬이어야 합니다."
+        )
+
+    left_shape = left.setdefault("shape", {})
+    right_shape = right.setdefault("shape", {})
+    if not isinstance(left_shape, dict) or not isinstance(right_shape, dict):
+        raise GenerationRuleBuildError(
+            "linear_algebra/matrix_multiplication: shape는 객체여야 합니다."
+        )
+    left_shape.setdefault("rows", {"min": 2, "max": 3})
+    left_shape.setdefault("cols", {"min": 2, "max": 3})
+    right_shape["rows"] = "A.cols"
+    right_shape.setdefault("cols", {"min": 2, "max": 3})
+    right["depends_on"] = _unique([*right.get("depends_on", []), "A"])
+
+
+def _migrate_linear_algebra_runtime_requirements(data: dict[str, Any]) -> None:
+    """열 가지 curated 선형대수 Rule의 실행 가능한 전제조건을 채운다.
+
+    같은 JSON에 여러 번 실행해도 항목을 중복 추가하지 않는다. 기존 정답식,
+    검증기 및 사용자가 작성한 Constraint는 보존한다.
+    """
+
+    if data.get("subject_id") != "linear_algebra":
+        return
+
+    problem_type = data.get("problem_type")
+    parameters = data.get("parameter_spec", {})
+    constraints = data.setdefault("constraints", [])
+
+    def spec(name: str, expected_type: str) -> dict[str, Any]:
+        value = parameters.get(name)
+        if not isinstance(value, dict) or value.get("type") != expected_type:
+            raise GenerationRuleBuildError(
+                f"linear_algebra/{problem_type}: {name}은 "
+                f"{expected_type} 파라미터여야 합니다."
+            )
+        return value
+
+    def shape(name: str, expected_type: str, **dimensions: Any) -> dict[str, Any]:
+        value = spec(name, expected_type)
+        current = value.setdefault("shape", {})
+        if not isinstance(current, dict):
+            raise GenerationRuleBuildError(
+                f"linear_algebra/{problem_type}: {name}.shape는 객체여야 합니다."
+            )
+        for field, dimension in dimensions.items():
+            current.setdefault(field, dimension)
+        return value
+
+    def dependent_shape(name: str, expected_type: str, dependency: str, **dimensions: Any) -> None:
+        value = shape(name, expected_type, **dimensions)
+        value["depends_on"] = _unique([*value.get("depends_on", []), dependency])
+
+    def require(expression: str | dict[str, Any], label: str) -> None:
+        if any(c.get("expression") == expression for c in constraints if isinstance(c, dict)):
+            return
+        constraints.append({
+            "type": "generation_precondition",
+            "expression": expression,
+            "required": True,
+            "description": label,
+        })
+
+    def property_constraint(name: str, operator: str, label: str) -> None:
+        require({
+            "constraint_id": f"migration.{problem_type}.{name}.{operator}",
+            "scope": "generation",
+            "description": label,
+            "rule": {"left": name, "operator": operator},
+            "on_failure": "resample",
+        }, label)
+
+    square = {"rows": {"min": 2, "max": 3}, "cols": "A.rows"}
+
+    if problem_type == "elementary_matrix_construction":
+        spec("n", "integer")
+        for name in ("source_row", "target_row"):
+            spec(name, "integer")
+            require(f"{name} < n", f"{name}은 n보다 작아야 한다.")
+        # 서로 다른 행이라는 기존 조건을 삭제하지 않는다.
+
+    elif problem_type == "lu_factorization":
+        shape("A", "matrix", **square)
+        property_constraint("A", "lu_without_pivoting", "A는 행 교환 없이 LU 분해 가능")
+
+    elif problem_type == "gram_schmidt_orthogonalization":
+        shape("V", "matrix", rows=3, cols=2)
+        require("rank(V) == V.cols", "V의 열벡터가 선형독립")
+
+    elif problem_type == "least_squares_calculation":
+        shape("A", "matrix", rows={"min": 3, "max": 4}, cols=2)
+        dependent_shape("b", "vector", "A", dimension="A.rows")
+        require("rank(A) == A.cols", "A는 full column rank")
+
+    elif problem_type == "linear_regression_calculation":
+        design = shape("X", "matrix", rows={"min": 3, "max": 4}, cols=2)
+        design["generator"] = "regression_design_matrix"
+        dependent_shape("y", "vector", "X", dimension="X.rows")
+        require("rank(X) == X.cols", "X는 full column rank")
+        # 전용 샘플러가 첫 열을 1로 고정하고 나머지 열은 무작위로 채운다.
+
+    elif problem_type == "eigenvector_calculation":
+        matrix = shape("A", "matrix", **square)
+        matrix["allowed_families"] = ["symmetric"]
+        value = spec("lambda_val", "integer") if parameters.get("lambda_val", {}).get("type") == "integer" else spec("lambda_val", "derived")
+        value["type"] = "derived"
+        for field in ("min", "max", "step", "choices", "exclude", "distribution"):
+            value.pop(field, None)
+        value["depends_on"] = _unique([*value.get("depends_on", []), "A"])
+        value["derived"] = {
+            "depends_on": ["A"],
+            "expression": "list(A.eigenvals().keys())",
+            "engine": "sympy",
+            "selection": "random",
+        }
+
+    elif problem_type == "matrix_diagonalization":
+        shape("A", "matrix", **square)
+        property_constraint("A", "diagonalizable", "A는 실수 범위에서 대각화 가능")
+
+    elif problem_type in {
+        "orthogonal_diagonalization_calculation",
+        "spectral_decomposition_calculation",
+        "positive_definite_test",
+    }:
+        matrix = shape("A", "matrix", **square)
+        matrix["allowed_families"] = ["symmetric"]
+        property_constraint("A", "symmetric", "A는 실수 대칭행렬")
+
+
+def _migrate_linear_algebra_curated_shapes(data: dict[str, Any]) -> None:
+    """curated 선형대수 Rule의 행렬·벡터 크기 관계를 완성한다.
+
+    기존에 사람이 검수해 넣은 shape 필드는 보존하고 누락 필드만 채운다.
+    다른 파라미터를 참조하는 경우 depends_on도 함께 추가한다. 같은 입력에
+    여러 번 실행해도 결과가 바뀌지 않는 반복 가능한 마이그레이션이다.
+    """
+
+    if data.get("subject_id") != "linear_algebra" or data.get("status") != "curated":
+        return
+
+    problem_type = data.get("problem_type")
+    parameters = data.get("parameter_spec", {})
+    ranged = {"min": 2, "max": 3}
+
+    # (parameter name, shape, explicit dependencies)
+    mappings: dict[str, list[tuple[str, dict[str, Any], list[str]]]] = {
+        "algebraic_expansion_verification": [
+            ("A", {"rows": ranged, "cols": "A.rows"}, []),
+            ("B", {"rows": "A.rows", "cols": "A.cols"}, ["A"]),
+        ],
+        "basis_verification": [("V", {"rows": "n", "cols": "n"}, ["n"])],
+        "block_matrix_determinant": [
+            ("B", {"rows": ranged, "cols": "B.rows"}, []),
+            ("C", {"rows": ranged, "cols": "C.rows"}, []),
+        ],
+        "change_of_basis_calculation": [
+            ("B", {"rows": ranged, "cols": "B.rows"}, []),
+            ("C", {"rows": "B.rows", "cols": "B.cols"}, ["B"]),
+        ],
+        "column_space_basis": [("A", {"rows": 3, "cols": 3}, [])],
+        "consistency_check": [("Aug", {"rows": 2, "cols": 3}, [])],
+        "cramer_rule_solution": [
+            ("A", {"rows": ranged, "cols": "A.rows"}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "determinant_by_ero": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "determinant_cofactor_expansion": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "eigenvalue_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "eigenvector_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "elementary_inverse_calculation": [("E", {"rows": 3, "cols": 3}, [])],
+        "equation_to_matrix": [
+            ("A", {"rows": 2, "cols": 2}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "equivalence_theorem_check": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "ero_application": [("A", {"rows": 3, "cols": 3}, [])],
+        "free_variable_identification": [("A", {"rows": 2, "cols": 3}, [])],
+        "geometric_area_volume_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "gram_schmidt_orthogonalization": [("V", {"rows": 3, "cols": 2}, [])],
+        "inverse_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "invertibility_determination": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "kernel_image_calculation": [("A", {"rows": 3, "cols": 3}, [])],
+        "least_squares_calculation": [
+            ("A", {"rows": {"min": 3, "max": 4}, "cols": 2}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "left_null_space_basis": [("A", {"rows": 3, "cols": 2}, [])],
+        "linear_independence_test": [("V", {"rows": 3, "cols": 2}, [])],
+        "linear_regression_calculation": [
+            ("X", {"rows": {"min": 3, "max": 4}, "cols": 2}, []),
+            ("y", {"dimension": "X.rows"}, ["X"]),
+        ],
+        "linear_transformation_verification": [
+            ("A", {"rows": 2, "cols": 2}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "lu_factorization": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "matrix_diagonalization": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "matrix_multiplication": [
+            ("A", {"rows": ranged, "cols": ranged}, []),
+            ("B", {"rows": "A.cols", "cols": ranged}, ["A"]),
+        ],
+        "matrix_power_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "matrix_to_vector_equation": [
+            ("A", {"rows": 2, "cols": 2}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "norm_distance_calculation": [
+            ("u", {"dimension": ranged}, []),
+            ("v", {"dimension": "u.dimension"}, ["u"]),
+        ],
+        "null_space_basis": [("A", {"rows": 2, "cols": 3}, [])],
+        "orthogonal_complement_calculation": [("W", {"rows": 3, "cols": 2}, [])],
+        "orthogonal_diagonalization_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "orthogonal_projection_calculation": [
+            ("a", {"dimension": ranged}, []),
+            ("b", {"dimension": "a.dimension"}, ["a"]),
+        ],
+        "orthonormal_verification": [("Q", {"rows": 3, "cols": 2}, [])],
+        "parametric_solution_extraction": [
+            ("A", {"rows": 2, "cols": 3}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "positive_definite_test": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "qr_factorization_calculation": [("A", {"rows": 3, "cols": 2}, [])],
+        "quadratic_form_transformation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "rank_calculation": [("A", {"rows": ranged, "cols": ranged}, [])],
+        "rank_nullity_calculation": [("A", {"rows": 2, "cols": 3}, [])],
+        "ref_identification": [("A", {"rows": 3, "cols": 4}, [])],
+        "row_space_basis": [("A", {"rows": 2, "cols": 3}, [])],
+        "rref_calculation": [("A", {"rows": 3, "cols": 4}, [])],
+        "singular_matrix_identification": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "solve_by_lu": [
+            ("A", {"rows": ranged, "cols": "A.rows"}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "span_membership_test": [
+            ("V", {"rows": 3, "cols": 2}, []),
+            ("b", {"dimension": "V.rows"}, ["V"]),
+        ],
+        "spectral_decomposition_calculation": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "standard_matrix_derivation": [("images", {"rows": 3, "cols": 2}, [])],
+        "subspace_verification": [
+            ("A", {"rows": 2, "cols": 3}, []),
+            ("b", {"dimension": "A.rows"}, ["A"]),
+        ],
+        "symmetry_classification": [("A", {"rows": ranged, "cols": "A.rows"}, [])],
+        "transpose_algebra": [
+            ("A", {"rows": 2, "cols": 3}, []),
+            ("B", {"rows": "A.cols", "cols": 2}, ["A"]),
+        ],
+    }
+
+    # 스칼라 파라미터만 사용하는 두 유형은 shape 마이그레이션 대상이 아니다.
+    no_shape_required = {"elementary_matrix_construction", "matrix_rank_property"}
+    entries = mappings.get(problem_type)
+    if entries is None:
+        if problem_type in no_shape_required:
+            return
+        raise GenerationRuleBuildError(
+            f"linear_algebra/{problem_type}: curated shape 매핑이 없습니다."
+        )
+
+    for name, dimensions, dependencies in entries:
+        spec = parameters.get(name)
+        if not isinstance(spec, dict) or spec.get("type") not in {"matrix", "vector"}:
+            raise GenerationRuleBuildError(
+                f"linear_algebra/{problem_type}: {name}은 matrix/vector 파라미터여야 합니다."
+            )
+        current = spec.setdefault("shape", {})
+        if not isinstance(current, dict):
+            raise GenerationRuleBuildError(
+                f"linear_algebra/{problem_type}: {name}.shape는 객체여야 합니다."
+            )
+        for field, value in dimensions.items():
+            current.setdefault(field, copy.deepcopy(value))
+        if dependencies:
+            spec["depends_on"] = _unique([*spec.get("depends_on", []), *dependencies])
+
+    missing = [
+        name
+        for name, spec in parameters.items()
+        if isinstance(spec, dict)
+        and spec.get("type") in {"matrix", "vector"}
+        and not spec.get("shape")
+    ]
+    if missing:
+        raise GenerationRuleBuildError(
+            f"linear_algebra/{problem_type}: 크기 규칙 누락: {', '.join(missing)}"
+        )
+
+
 def _fallback_answer_engine(subject_id: str, answer_type: str) -> tuple[str, str | None]:
     if subject_id == "probability_statistics" or answer_type == "numerical_approximation":
         return "numpy", None
@@ -679,11 +995,24 @@ def _refresh_existing_rule(
     실행 엔진과 연결한 정보는 보존한다.
     """
 
-    # curated/reviewed Rule의 수학 설계는 보존하고, 이중 인코딩만 정규화한다.
+    # curated/reviewed Rule의 수학 설계를 보존하면서, 선형대수 행렬 곱셈의
+    # 누락된 크기 관계만 채운다. Validator 매핑 등 다른 검수 정보는 유지한다.
     if existing.status != "draft_auto":
-        return _normalize_legacy_constraint_encoding(existing)
+        data = _normalize_legacy_constraint_encoding(existing).model_dump(
+            mode="python", exclude_unset=True
+        )
+        _ensure_linear_algebra_matrix_multiplication_shape(data)
+        _migrate_linear_algebra_runtime_requirements(data)
+        _migrate_linear_algebra_curated_shapes(data)
+        return GenerationRule.model_validate(data)
 
     data = existing.model_dump(mode="python", exclude_unset=True)
+
+    # 기존 초안도 매번 동일한 상태로 정규화한다. 예전 executable=True 값이
+    # answer_type 변경 여부와 관계없이 다음 동기화 결과에 남지 않도록 한다.
+    # curated/reviewed는 위 분기에서 반환하므로 이 초기화 대상이 아니다.
+    data["executable"] = False
+    data["manual_review_required"] = True
 
     data["source_concept_ids"] = metadata["source_concept_ids"]
     data["source_formula_ids"] = metadata["source_formula_ids"]
@@ -704,7 +1033,10 @@ def _refresh_existing_rule(
             subject_id=existing.subject_id,
             problem_type=existing.problem_type,
         )
+        _ensure_linear_algebra_matrix_multiplication_shape(data)
         data["constraints"] = metadata["constraints"]
+        _migrate_linear_algebra_runtime_requirements(data)
+        _migrate_linear_algebra_curated_shapes(data)
         data["construction"]["semantic_structure"] = (
             metadata["semantic_structure"]
             or data["construction"]["semantic_structure"]

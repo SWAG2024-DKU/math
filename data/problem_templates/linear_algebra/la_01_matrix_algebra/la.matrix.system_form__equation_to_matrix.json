@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.system_form.equation_to_matrix.v1",
   "template_version": "1.0.0",
@@ -42,6 +42,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "연립일차방정식의 계수행렬. 2x2 또는 3x3의 작은 정수 행렬을 권장한다.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -49,10 +50,32 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "연립일차방정식의 계수행렬. 2x2 또는 3x3의 작은 정수 행렬을 권장한다."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": 2,
+        "cols": 2,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
     "b": {
       "type": "vector",
+      "description": "연립일차방정식의 상수벡터. A의 행 수와 같은 길이를 가져야 한다.",
       "required": true,
       "min": -9,
       "max": 9,
@@ -60,9 +83,33 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "연립일차방정식의 상수벡터. A의 행 수와 같은 길이를 가져야 한다."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": null,
+        "cols": null,
+        "dimension": "A.rows",
+        "length": null,
+        "size": null
+      },
+      "depends_on": [
+        "A"
+      ],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "equation_to_matrix",
@@ -93,16 +140,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "matrix_equivalence"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "matrix_equation",
+        "formula_id": null,
         "cas_expression": "Matrix.hstack(A, b)"
       }
     ],
@@ -115,7 +163,7 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }
@@ -137,7 +185,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.equation_to_matrix.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

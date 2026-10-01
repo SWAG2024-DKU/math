@@ -1,0 +1,260 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.algebraic_expansion_verification.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.algebraic_expansion_verification.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "algebraic_expansion_verification",
+  "answer_type": "expression",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "두 행렬에 대해 (A+B)^2를 AB와 BA의 순서를 구별하여 전개한 뒤 계산하시오.\nA = Matrix([[-1, -4], [3, -2]]), B = Matrix([[-3, 1], [-3, -1]])",
+  "statement_latex": "(A+B)^2",
+  "parameters": {
+    "A": [
+      [
+        -1,
+        -4
+      ],
+      [
+        3,
+        -2
+      ]
+    ],
+    "B": [
+      [
+        -3,
+        1
+      ],
+      [
+        -3,
+        -1
+      ]
+    ]
+  },
+  "expected_answer": [
+    [
+      16,
+      21
+    ],
+    [
+      0,
+      9
+    ]
+  ],
+  "seed": 22,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "symbolic_noncommutative_expansion",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 22,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.algebraic_expansion_verification.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.algebraic_expansion_verification.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_01_matrix_algebra",
+      "unit_name_ko": "연립방정식과 행렬대수",
+      "concept_ids": [
+        "la.matrix.multiplication"
+      ],
+      "formula_ids": [
+        "matrix_multiplication",
+        "non_commutative"
+      ],
+      "tags": [
+        "matrix_multiplication",
+        "non_commutative",
+        "zero_divisor"
+      ]
+    },
+    "classification": {
+      "problem_type": "algebraic_expansion_verification",
+      "answer_type": "expression",
+      "difficulty": {
+        "base": 2,
+        "min": 1,
+        "max": 3,
+        "factors": {}
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "A": {
+        "type": "matrix",
+        "description": "정사각행렬 A.",
+        "required": true,
+        "min": -4,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": {
+            "min": 2,
+            "max": 3
+          },
+          "cols": "A.rows",
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "B": {
+        "type": "matrix",
+        "description": "A와 같은 크기의 정사각행렬 B.",
+        "required": true,
+        "min": -4,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": "uniform",
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": "A.rows",
+          "cols": "A.cols",
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [
+          "A"
+        ],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "algebraic_expansion_verification",
+      "required_objects": [
+        "A",
+        "B"
+      ],
+      "semantic_structure": [
+        "algebraic_expansion_verification 유형의 수학 객체를 제시한다.",
+        "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
+      ],
+      "text_templates_ko": [
+        "두 행렬에 대해 (A+B)^2를 AB와 BA의 순서를 구별하여 전개한 뒤 계산하시오.\nA = {{ A }}, B = {{ B }}"
+      ],
+      "latex_templates": [
+        "(A+B)^2"
+      ],
+      "cas_template": "A*A + A*B + B*A + B*B",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "expression",
+      "engine": "sympy",
+      "cas_template": "A*A + A*B + B*A + B*B",
+      "latex_template": "A^2+AB+BA+B^2",
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "symbolic_noncommutative_expansion"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": null,
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": null,
+          "cas_expression": "A*A + A*B + B*A + B*B"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "symbolic_noncommutative_expansion",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.algebraic_expansion_verification.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
+    }
+  }
+}

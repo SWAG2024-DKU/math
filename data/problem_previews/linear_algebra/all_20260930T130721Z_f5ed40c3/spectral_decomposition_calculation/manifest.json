@@ -1,0 +1,175 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.spectral_theorem.spectral_decomposition_calculation.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.spectral_theorem__spectral_decomposition_calculation.json",
+  "template_sha256": "385633f2f85f66aad5d613ea27da4c493b887c3c84cd18122481a8cbee60924f",
+  "seed_start": 17,
+  "requested_count": 20,
+  "timeout_seconds": 180.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 19,
+      "passed": true,
+      "attempts": 3,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_19.json"
+    },
+    {
+      "requested_seed": 20,
+      "actual_seed": 28,
+      "passed": true,
+      "attempts": 9,
+      "duplicate_retries": 0,
+      "file": "start_20_actual_28.json"
+    },
+    {
+      "requested_seed": 29,
+      "actual_seed": 29,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_29_actual_29.json"
+    },
+    {
+      "requested_seed": 30,
+      "actual_seed": 33,
+      "passed": true,
+      "attempts": 4,
+      "duplicate_retries": 0,
+      "file": "start_30_actual_33.json"
+    },
+    {
+      "requested_seed": 34,
+      "actual_seed": 42,
+      "passed": true,
+      "attempts": 9,
+      "duplicate_retries": 0,
+      "file": "start_34_actual_42.json"
+    },
+    {
+      "requested_seed": 43,
+      "actual_seed": 43,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_43_actual_43.json"
+    },
+    {
+      "requested_seed": 44,
+      "actual_seed": 51,
+      "passed": true,
+      "attempts": 8,
+      "duplicate_retries": 0,
+      "file": "start_44_actual_51.json"
+    },
+    {
+      "requested_seed": 52,
+      "actual_seed": 53,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_52_actual_53.json"
+    },
+    {
+      "requested_seed": 54,
+      "actual_seed": 69,
+      "passed": true,
+      "attempts": 16,
+      "duplicate_retries": 0,
+      "file": "start_54_actual_69.json"
+    },
+    {
+      "requested_seed": 70,
+      "actual_seed": 78,
+      "passed": true,
+      "attempts": 9,
+      "duplicate_retries": 0,
+      "file": "start_70_actual_78.json"
+    },
+    {
+      "requested_seed": 79,
+      "actual_seed": 102,
+      "passed": true,
+      "attempts": 8,
+      "duplicate_retries": 1,
+      "file": "start_79_actual_102.json"
+    },
+    {
+      "requested_seed": 103,
+      "actual_seed": 108,
+      "passed": true,
+      "attempts": 6,
+      "duplicate_retries": 0,
+      "file": "start_103_actual_108.json"
+    },
+    {
+      "requested_seed": 109,
+      "actual_seed": 125,
+      "passed": true,
+      "attempts": 17,
+      "duplicate_retries": 0,
+      "file": "start_109_actual_125.json"
+    },
+    {
+      "requested_seed": 126,
+      "actual_seed": 135,
+      "passed": true,
+      "attempts": 10,
+      "duplicate_retries": 0,
+      "file": "start_126_actual_135.json"
+    },
+    {
+      "requested_seed": 136,
+      "actual_seed": 137,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_136_actual_137.json"
+    },
+    {
+      "requested_seed": 138,
+      "actual_seed": 139,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_138_actual_139.json"
+    },
+    {
+      "requested_seed": 140,
+      "actual_seed": 140,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_140_actual_140.json"
+    },
+    {
+      "requested_seed": 141,
+      "actual_seed": 141,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_141_actual_141.json"
+    },
+    {
+      "requested_seed": 142,
+      "actual_seed": 149,
+      "passed": true,
+      "attempts": 8,
+      "duplicate_retries": 0,
+      "file": "start_142_actual_149.json"
+    },
+    {
+      "requested_seed": 150,
+      "actual_seed": 162,
+      "passed": true,
+      "attempts": 13,
+      "duplicate_retries": 0,
+      "file": "start_150_actual_162.json"
+    }
+  ],
+  "succeeded": 20,
+  "failed": 0,
+  "timed_out": 0
+}

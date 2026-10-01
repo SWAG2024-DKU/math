@@ -1,0 +1,246 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.complex_space.complex_inner_product_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.complex_inner_product_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "complex_inner_product_calculation",
+  "answer_type": "scalar",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "첫째 인자를 켤레로 취하는 복소 내적 u^H v를 구하시오. u = Matrix([[2 + I], [1 + I]]), v = Matrix([[-3], [1 - 2*I]])",
+  "statement_latex": null,
+  "parameters": {
+    "u": [
+      [
+        "2 + I"
+      ],
+      [
+        "1 + I"
+      ]
+    ],
+    "v": [
+      [
+        -3
+      ],
+      [
+        "1 - 2*I"
+      ]
+    ]
+  },
+  "expected_answer": -7,
+  "seed": 17,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "complex_inner_product_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 17,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.complex_space.complex_inner_product_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.complex_inner_product_calculation.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_06_advanced_applications",
+      "unit_name_ko": "현대적 심화 응용",
+      "concept_ids": [
+        "la.advanced.complex_space"
+      ],
+      "formula_ids": [
+        "conjugate_transpose_def",
+        "complex_inner_product",
+        "unitary_matrix_condition"
+      ],
+      "tags": [
+        "complex_inner_product",
+        "hermitian_matrix",
+        "unitary_matrix",
+        "conjugate_transpose"
+      ]
+    },
+    "classification": {
+      "problem_type": "complex_inner_product_calculation",
+      "answer_type": "scalar",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "u": {
+        "type": "vector",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": "integer",
+        "element_min": -5,
+        "element_max": 5,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": null,
+          "cols": null,
+          "dimension": 2,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": "small_gaussian_vector"
+      },
+      "v": {
+        "type": "vector",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": "integer",
+        "element_min": -5,
+        "element_max": 5,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": null,
+          "cols": null,
+          "dimension": 2,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [
+          "u"
+        ],
+        "derived": null,
+        "generator": "complex_real_inner_partner"
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "complex_inner_product_calculation",
+      "required_objects": [
+        "u",
+        "v"
+      ],
+      "semantic_structure": [
+        "복소 벡터 공간에서 켤레 전치와 복소 내적을 계산한다."
+      ],
+      "text_templates_ko": [
+        "첫째 인자를 켤레로 취하는 복소 내적 u^H v를 구하시오. u = {{ u }}, v = {{ v }}"
+      ],
+      "latex_templates": [],
+      "cas_template": "complex_inner_product(u, v)",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "scalar",
+      "engine": "sympy",
+      "cas_template": "complex_inner_product(u, v)",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "complex_inner_product_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "complex_inner_product",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "complex_inner_product",
+          "cas_expression": "complex_inner_product(u, v)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "complex_inner_product_check",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.complex_inner_product_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
+    }
+  }
+}

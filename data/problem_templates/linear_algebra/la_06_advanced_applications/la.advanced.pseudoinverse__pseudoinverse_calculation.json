@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.pseudoinverse.pseudoinverse_calculation.v1",
   "template_version": "1.0.0",
-  "status": "draft",
+  "status": "ready",
   "generation_rule_id": "linear_algebra.pseudoinverse_calculation.v1",
   "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "linear_algebra",
     "subject_name_ko": "선형대수학",
@@ -44,24 +44,40 @@
   "parameters": {
     "A": {
       "type": "matrix",
-      "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-      "rows_min": 2,
-      "rows_max": 4,
-      "cols_min": 2,
-      "cols_max": 4,
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
       "element_type": "integer",
       "element_min": -5,
-      "element_max": 5
+      "element_max": 5,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": 2,
+        "cols": 2,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": "rank_one_pseudoinverse_matrix"
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "recovers_inverse equals True",
-      "required": true,
-      "description": "가역인 정사각행렬에 적용하면 본래의 역행렬과 100% 일치해야 한다."
-    }
-  ],
+  "symbols": {},
+  "constraints": [],
   "problem_builder": {
     "operation": "pseudoinverse_calculation",
     "required_objects": [
@@ -71,16 +87,16 @@
       "SVD를 이용해 행렬의 무어-펜로즈 의사역행렬을 구한다."
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'pseudoinverse calculation' 문제를 해결하시오."
+      "rank 1 행렬 A = {{ A }}의 무어-펜로즈 의사역행렬 A^+를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "moore_penrose_pinv(A)",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "matrix",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "moore_penrose_pinv(A)",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
@@ -92,12 +108,13 @@
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "pseudoinverse_formula",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "pseudoinverse_formula",
-        "cas_expression": null
+        "cas_expression": "moore_penrose_pinv(A)"
       }
     ],
     "explanation_policy": {
@@ -131,7 +148,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
-    "notes": "Generation Rule 'linear_algebra.pseudoinverse_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "review_status": "reviewed",
+    "notes": "Generation Rule 'linear_algebra.pseudoinverse_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
   }
 }

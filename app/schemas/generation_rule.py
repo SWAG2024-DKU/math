@@ -351,6 +351,24 @@ class GenerationRule(BaseModel):
             )
         return self
 
+    @model_validator(mode="after")
+    def validate_linear_algebra_validator_mapping(self) -> "GenerationRule":
+        """검수된 선형대수 Rule의 Validator 계약을 로드 시점에 고정한다.
+
+        다른 과목과 ``draft_auto`` Rule은 아직 단계적 구현 대상이므로 여기서
+        차단하지 않는다. 선형대수 curated/reviewed Rule만 4번 담당자가 검수한
+        매핑과 정확히 일치해야 한다.
+        """
+
+        if (
+            self.subject_id == "linear_algebra"
+            and self.status in {"curated", "reviewed"}
+        ):
+            from app.problems.validator_policy import validate_curated_mapping
+
+            validate_curated_mapping(self)
+        return self
+
 
 class GenerationRuleCatalog(BaseModel):
     model_config = ConfigDict(extra="forbid")

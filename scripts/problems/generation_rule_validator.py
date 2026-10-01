@@ -621,8 +621,9 @@ def _validate_operation_requirements(
             f"{operation}에 필요한 실수 대칭행렬 생성 조건이 없습니다.",
         )
 
-    if operation == "matrix_diagonalization" and not _condition_contains(
-        constraints, "diagonal"
+    if operation == "matrix_diagonalization" and not (
+        _condition_contains(constraints, "diagonalizable")
+        or _condition_contains(constraints, "is_diagonalizable")
     ):
         add(
             "diagonalizable_condition_missing",
@@ -630,8 +631,8 @@ def _validate_operation_requirements(
         )
 
     if operation == "lu_factorization" and not (
-        _condition_contains(constraints, "pivot")
-        or _condition_contains(constraints, "minor")
+        _condition_contains(constraints, "lu_without_pivoting")
+        or _condition_contains(constraints, "supports_lu_without_pivoting")
         or _mapping(parameters.get("A")).get("generator") == "lu_factorable_matrix"
     ):
         add(
