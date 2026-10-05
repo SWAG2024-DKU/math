@@ -30,23 +30,23 @@ CREATE TABLE IF NOT EXISTS problem.problem_instances (
     instance_id UUID PRIMARY KEY,
     template_id VARCHAR(500) NOT NULL,
     template_version VARCHAR(30) NOT NULL,
-    template_content_hash CHAR(64) NOT NULL,
+    template_content_hash CHAR(64) NOT NULL CHECK (template_content_hash ~ '^[0-9a-f]{64}$'),
     subject_id VARCHAR(100) NOT NULL CHECK (subject_id = 'linear_algebra'),
     problem_type VARCHAR(200) NOT NULL,
     seed BIGINT NOT NULL,
     statement TEXT NOT NULL CHECK (length(trim(statement)) > 0),
-    expected_answer JSONB NOT NULL,
+    expected_answer JSONB NOT NULL CHECK (jsonb_typeof(expected_answer) <> 'null'),
     payload JSONB NOT NULL CHECK (jsonb_typeof(payload) = 'object'),
-    problem_hash CHAR(64) NOT NULL,
+    problem_hash CHAR(64) NOT NULL CHECK (problem_hash ~ '^[0-9a-f]{64}$'),
     source_path TEXT NOT NULL,
-    source_sha256 CHAR(64) NOT NULL,
+    source_sha256 CHAR(64) NOT NULL CHECK (source_sha256 ~ '^[0-9a-f]{64}$'),
     status TEXT NOT NULL DEFAULT 'pending'
         CHECK (status IN ('pending', 'rejected', 'confirmed')),
-    human_reviewer_id TEXT,
+    human_reviewer_id TEXT CHECK (length(trim(human_reviewer_id)) > 0),
     human_review_decision TEXT CHECK (human_review_decision IN ('approved', 'rejected')),
     human_reviewed_at TIMESTAMPTZ,
     confirmed_at TIMESTAMPTZ,
-    confirmed_validator_version TEXT,
+    confirmed_validator_version TEXT CHECK (length(trim(confirmed_validator_version)) > 0),
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     FOREIGN KEY (template_id, template_version)
         REFERENCES problem.problem_templates(template_id, template_version)
@@ -75,9 +75,9 @@ CREATE TABLE IF NOT EXISTS problem.instance_validation_runs (
     run_id UUID PRIMARY KEY,
     instance_id UUID NOT NULL REFERENCES problem.problem_instances(instance_id)
         ON DELETE RESTRICT,
-    validator_version TEXT NOT NULL,
-    source_sha256 CHAR(64) NOT NULL,
-    template_content_hash CHAR(64) NOT NULL,
+    validator_version TEXT NOT NULL CHECK (length(trim(validator_version)) > 0),
+    source_sha256 CHAR(64) NOT NULL CHECK (source_sha256 ~ '^[0-9a-f]{64}$'),
+    template_content_hash CHAR(64) NOT NULL CHECK (template_content_hash ~ '^[0-9a-f]{64}$'),
     result TEXT NOT NULL CHECK (result IN ('passed', 'failed', 'unsupported')),
     report JSONB NOT NULL CHECK (jsonb_typeof(report) = 'object'),
     checked_at TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -138,6 +138,7 @@ BEGIN
 END $$;
 
 REVOKE ALL ON problem.problem_instances, problem.instance_validation_runs FROM PUBLIC;
+REVOKE ALL ON problem.problem_instances, problem.instance_validation_runs FROM problem_reader;
 GRANT USAGE ON SCHEMA problem TO problem_reader;
 GRANT SELECT ON problem.confirmed_instances TO problem_reader;
 
