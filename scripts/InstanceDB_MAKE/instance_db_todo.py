@@ -1,5 +1,4 @@
 """Preview Instance를 pending으로 적재하고 독립 검증/사람 승인 후 확정한다.
-
 Template DB 파트의 Python 파일을 import하지 않는다. 두 파트는
 기존 Template의 (ID, 버전, 정규화된 SHA-256) 규칙만 공유한다.
 """
@@ -39,10 +38,16 @@ def read_template_hashes(template_zip: Path) -> dict[tuple[str, str], str]:
             if not path.endswith('.json'):
                 continue
             value = json.loads(z.read(path))
+            if not isinstance(value, dict):
+                raise ValueError(f'Template은 JSON 객체여야 합니다: {path}')
             if value.get('object_type') != 'problem_template':
                 continue
             if value.get('status') != 'ready' or value.get('taxonomy', {}).get('subject_id') != 'linear_algebra':
                 raise ValueError(f'출제 대상이 아닌 Template: {path}')
+            try:
+                _check_template_snapshot(value)
+            except ValueError as exc:
+                raise ValueError(f'잘못된 Template: {path}: {exc}') from exc
             key = (value['template_id'], value['template_version'])
             if key in hashes:
                 raise ValueError(f'Template ID/버전 중복: {key}')
@@ -60,6 +65,10 @@ def read_previews(preview_zip: Path, template_hashes: dict[tuple[str, str], str]
                 continue
             source_bytes = z.read(path)
             value = json.loads(source_bytes)
+            try:
+                _validate_payload_structure(value)
+            except ValueError as exc:
+                raise ValueError(f'잘못된 Preview: {path}: {exc}') from exc
             key = (value['template_id'], value['template_version'])
             expected = template_hashes.get(key)
             if expected is None or _hash(value.get('template_snapshot')) != expected:
@@ -74,8 +83,10 @@ def read_previews(preview_zip: Path, template_hashes: dict[tuple[str, str], str]
                 raise ValueError(f'동일 Template/seed 중복: {identity}')
             keys.add(identity)
             problem_hash = _hash([key[0], value['statement'], value['expected_answer']])
-            records.append(PendingInstance(*key, expected, problem_hash, path,
-                                           hashlib.sha256(source_bytes).hexdigest(), seed, value))
+            record = PendingInstance(*key, expected, problem_hash, path,
+                                     hashlib.sha256(source_bytes).hexdigest(), seed, value)
+            _check_record(record)
+            records.append(record)
     if not records:
         raise ValueError('Preview Instance가 없습니다.')
     return records
@@ -84,18 +95,15 @@ def read_previews(preview_zip: Path, template_hashes: dict[tuple[str, str], str]
 def _db_connection():
     """DB 의존성은 쓰기 단계에서만 로드한다. 직접 실행도 지원한다."""
     import sys
-
     project_root = str(Path(__file__).resolve().parents[2])
     if project_root not in sys.path:
         sys.path.insert(0, project_root)
     from app.db.connection import get_connection
-
     return get_connection()
 
 
 def _jsonb(value: object):
     from psycopg.types.json import Jsonb
-
     return Jsonb(value)
 
 
@@ -119,8 +127,245 @@ def _check_digest(value: object, name: str) -> str:
     return value
 
 
+def _template_schema():
+    """프로젝트의 기존 Pydantic Template 스키마만 로드한다."""
+    import sys
+    project_root = str(Path(__file__).resolve().parents[2])
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+    from app.schemas.problem_template import ProblemTemplate
+    return ProblemTemplate
+
+
+def _check_template_snapshot(value: object):
+    if not isinstance(value, dict):
+        raise ValueError('template_snapshot은 완전한 Template JSON 객체여야 합니다.')
+    required = {'schema_version', 'object_type', 'template_id', 'template_version',
+                'status', 'executable', 'generation_rule_id', 'generation_rule_version',
+                'generation_rule_status', 'taxonomy', 'classification', 'parameters',
+                'problem_builder', 'answer_spec', 'solution_spec', 'validation'}
+    missing = required - value.keys()
+    if missing:
+        raise ValueError(f'Template 필수 필드 누락: {sorted(missing)}')
+    template = _template_schema().model_validate(value)
+    if template.taxonomy.subject_id != 'linear_algebra' or template.status != 'ready' or not template.executable:
+        raise ValueError('선형대수 ready/executable Template만 허용합니다.')
+    if template.classification.answer_type != template.answer_spec.answer_type:
+        raise ValueError('Template 내부 answer_type이 일치하지 않습니다.')
+    return template
+
+
+def _check_math_text(value: str, *, symbolic: bool = False, equation: bool = False,
+                     solution_set: bool = False) -> None:
+    """직렬화된 수식의 문법/구조만 확인한다. 계산하거나 문자열을 실행하지 않는다."""
+    import ast
+    import math
+    if not value.strip() or len(value) > 20000:
+        raise ValueError('비어 있거나 너무 긴 수학 표현입니다.')
+    try:
+        tree = ast.parse(value, mode='eval')
+    except (SyntaxError, RecursionError) as exc:
+        raise ValueError('수학 표현의 문법이 잘못됐습니다.') from exc
+    nodes = list(ast.walk(tree))
+    if len(nodes) > 4000:
+        raise ValueError('수학 표현이 너무 복잡합니다.')
+    allowed_calls = {'sqrt': (1,), 'Rational': (2,)}
+    if equation:
+        allowed_calls.update({'Eq': (2,), 'Matrix': (1,)})
+        if not (isinstance(tree.body, ast.Call) and isinstance(tree.body.func, ast.Name)
+                and tree.body.func.id == 'Eq' and len(tree.body.args) == 2):
+            raise ValueError('equation 정답은 Eq(좌변, 우변) 형식이어야 합니다.')
+    containers = (ast.List, ast.Tuple, ast.Set) if solution_set or equation else ()
+    if solution_set and value == 'EmptySet':
+        return
+    if solution_set and not (isinstance(tree.body, ast.Set) and
+                             all(isinstance(item, ast.Tuple) for item in tree.body.elts)):
+        raise ValueError('기호 벡터 해집합은 {(성분, ...)} 또는 EmptySet 형식이어야 합니다.')
+    function_names = {id(node.func) for node in nodes if isinstance(node, ast.Call)}
+    allowed_nodes = (ast.Expression, ast.Constant, ast.Name, ast.Load, ast.BinOp,
+                     ast.UnaryOp, ast.Add, ast.Sub, ast.Mult, ast.Div, ast.Pow,
+                     ast.UAdd, ast.USub, ast.Call) + containers
+    for node in nodes:
+        if not isinstance(node, allowed_nodes):
+            raise ValueError('허용되지 않은 수학 표현 구조입니다.')
+        if isinstance(node, ast.Constant) and type(node.value) not in (int, float):
+            raise ValueError('수식에는 숫자 상수만 허용합니다.')
+        if isinstance(node, ast.Constant) and type(node.value) is float and not math.isfinite(node.value):
+            raise ValueError('수식에 비유한 수치가 있습니다.')
+        if isinstance(node, ast.Call):
+            if (not isinstance(node.func, ast.Name) or node.func.id not in allowed_calls
+                    or len(node.args) not in allowed_calls[node.func.id] or node.keywords):
+                raise ValueError('허용되지 않은 수식 함수/인자입니다.')
+        if isinstance(node, ast.Name):
+            if id(node) in function_names or node.id == 'I':
+                continue
+            if not symbolic or node.id.startswith('_'):
+                raise ValueError(f'허용되지 않은 수학 기호: {node.id}')
+
+
+def _check_scalar_structure(value: object) -> None:
+    import math
+    if type(value) is int:
+        return
+    if type(value) is float and math.isfinite(value):
+        return
+    if isinstance(value, str):
+        _check_math_text(value)
+        return
+    raise ValueError('수치 정답/원소는 유한한 숫자 또는 수치식 문자열이어야 합니다.')
+
+
+def _check_matrix_structure(value: object) -> tuple[int, int]:
+    if not isinstance(value, list) or not value or not all(isinstance(row, list) and row for row in value):
+        raise ValueError('행렬은 비어 있지 않은 2차원 배열이어야 합니다.')
+    columns = len(value[0])
+    if any(len(row) != columns for row in value):
+        raise ValueError('행렬의 행 길이가 다릅니다.')
+    for row in value:
+        for item in row:
+            _check_scalar_structure(item)
+    return len(value), columns
+
+
+def _check_vector_structure(value: object) -> None:
+    if not isinstance(value, list) or not value:
+        raise ValueError('벡터는 비어 있지 않은 배열이어야 합니다.')
+    if any(isinstance(item, list) for item in value):
+        rows, columns = _check_matrix_structure(value)
+        if rows != 1 and columns != 1:
+            raise ValueError('벡터는 한 행 또는 한 열이어야 합니다.')
+    else:
+        for item in value:
+            _check_scalar_structure(item)
+
+
+def _check_answer_structure(answer: object, answer_type: str, problem_type: str) -> None:
+    if answer is None:
+        raise ValueError('expected_answer는 null일 수 없습니다.')
+    if answer_type == 'boolean':
+        if type(answer) is not bool:
+            raise ValueError('boolean 정답은 true/false여야 합니다.')
+    elif answer_type in {'single_choice', 'multiple_choice'}:
+        # 현재 선형대수 Preview는 두 유형 모두 문자열로 직렬화한다.
+        if not isinstance(answer, str) or not answer.strip():
+            raise ValueError('선택형 정답은 비어 있지 않은 문자열이어야 합니다.')
+    elif answer_type == 'scalar':
+        _check_scalar_structure(answer)
+    elif answer_type == 'matrix':
+        _check_matrix_structure(answer)
+    elif answer_type == 'vector':
+        _check_vector_structure(answer)
+    elif answer_type in {'scalar_list', 'vector_list'}:
+        if not isinstance(answer, list):
+            raise ValueError(f'{answer_type} 정답은 배열이어야 합니다.')
+        if problem_type == 'kernel_image_calculation':
+            if len(answer) != 2 or not all(isinstance(part, list) for part in answer):
+                raise ValueError('핵/상 정답은 두 기저 목록이어야 합니다.')
+            for basis in answer:
+                for item in basis:
+                    _check_vector_structure(item)
+        else:
+            check = _check_scalar_structure if answer_type == 'scalar_list' else _check_vector_structure
+            for item in answer:
+                check(item)
+    elif answer_type in {'matrix_pair', 'matrix_tuple'}:
+        count = 2 if answer_type == 'matrix_pair' else 3
+        if not isinstance(answer, list) or len(answer) != count:
+            raise ValueError(f'{answer_type} 정답에는 행렬 {count}개가 필요합니다.')
+        for item in answer:
+            _check_matrix_structure(item)
+    elif answer_type == 'matrix_list':
+        if not isinstance(answer, list) or not answer:
+            raise ValueError('matrix_list 정답은 비어 있지 않은 배열이어야 합니다.')
+        for item in answer:
+            if problem_type == 'spectral_decomposition_calculation':
+                if not isinstance(item, list) or len(item) != 2:
+                    raise ValueError('스펙트럼 분해 정답은 [고유값, 투영행렬] 목록이어야 합니다.')
+                _check_scalar_structure(item[0])
+                _check_matrix_structure(item[1])
+            else:
+                _check_matrix_structure(item)
+    elif answer_type == 'equation':
+        if not isinstance(answer, str):
+            raise ValueError('equation 정답은 수식 문자열이어야 합니다.')
+        _check_math_text(answer, symbolic=True, equation=True)
+    elif answer_type in {'expression', 'vector_expression'}:
+        if isinstance(answer, str):
+            _check_math_text(answer, symbolic=True, solution_set=answer_type == 'vector_expression')
+        elif isinstance(answer, list):
+            if answer_type == 'expression':
+                _check_matrix_structure(answer)
+            elif answer:
+                _check_vector_structure(answer)
+        else:
+            if answer_type == 'vector_expression':
+                raise ValueError('vector_expression 정답은 배열 또는 해집합 문자열이어야 합니다.')
+            _check_scalar_structure(answer)
+    else:
+        raise ValueError(f'지원하지 않는 정답 유형: {answer_type}')
+
+
+def _validate_payload_structure(value: object) -> None:
+    if not isinstance(value, dict):
+        raise ValueError('payload는 JSON 객체여야 합니다.')
+    required = {'subject_id', 'template_id', 'template_version', 'generation_rule_id',
+                'generation_rule_version', 'problem_type', 'answer_type', 'template_status',
+                'publishable', 'statement', 'seed', 'parameters', 'expected_answer', 'template_snapshot'}
+    missing = required - value.keys()
+    if missing:
+        raise ValueError(f'Instance 필수 필드 누락: {sorted(missing)}')
+    if type(value['seed']) is not int or not -(2 ** 63) <= value['seed'] < 2 ** 63:
+        raise ValueError('seed는 bool이 아닌 BIGINT 범위의 정수여야 합니다.')
+    if value['publishable'] is not False:
+        raise ValueError('비공개 Preview만 허용합니다.')
+    if not isinstance(value['statement'], str) or not value['statement'].strip():
+        raise ValueError('문제 문장이 없습니다.')
+    json.dumps(value, allow_nan=False)
+    template = _check_template_snapshot(value['template_snapshot'])
+    matches = {'subject_id': template.taxonomy.subject_id, 'template_id': template.template_id,
+               'template_version': template.template_version, 'generation_rule_id': template.generation_rule_id,
+               'generation_rule_version': template.generation_rule_version,
+               'problem_type': template.classification.problem_type,
+               'answer_type': template.answer_spec.answer_type, 'template_status': template.status}
+    for name, expected in matches.items():
+        if value[name] != expected:
+            raise ValueError(f'Instance의 {name}이 Template snapshot과 다릅니다.')
+    parameters = value['parameters']
+    if not isinstance(parameters, dict):
+        raise ValueError('parameters는 JSON 객체여야 합니다.')
+    required_parameters = {name for name, spec in template.parameters.items() if spec.required}
+    required_parameters.update(set(template.problem_builder.required_objects) - set(template.symbols))
+    missing = required_parameters - parameters.keys()
+    unknown = parameters.keys() - template.parameters.keys()
+    if missing or unknown:
+        raise ValueError(f'parameters 누락={sorted(missing)}, 미선언={sorted(unknown)}')
+    for name, item in parameters.items():
+        kind = template.parameters[name].type
+        try:
+            if kind == 'matrix':
+                _check_matrix_structure(item)
+            elif kind == 'vector':
+                _check_vector_structure(item)
+            elif kind == 'integer':
+                if type(item) is not int:
+                    raise ValueError('정수여야 합니다.')
+            elif kind in {'rational', 'real', 'derived'}:
+                _check_scalar_structure(item)
+            elif kind == 'choice':
+                choices = template.parameters[name].choices
+                if item is None or (choices and item not in choices):
+                    raise ValueError('선택지에 없는 값입니다.')
+            else:
+                raise ValueError(f'지원하지 않는 파라미터 타입: {kind}')
+        except ValueError as exc:
+            raise ValueError(f'parameters.{name}: {exc}') from exc
+    _check_answer_structure(value['expected_answer'], template.answer_spec.answer_type,
+                            template.classification.problem_type)
+
+
 def _check_record(record: PendingInstance) -> None:
     value = record.payload
+    _validate_payload_structure(value)
     if not isinstance(value, dict):
         raise ValueError('payload는 JSON 객체여야 합니다.')
     if (value.get('template_id'), value.get('template_version'), value.get('seed')) != (
@@ -152,13 +397,11 @@ def _check_record(record: PendingInstance) -> None:
 
 def insert_pending_instances(records: list[PendingInstance]) -> dict:
     """한 트랜잭션으로 pending 적재. 다른 seed의 동일 문제는 skip한다.
-
     같은 ID/버전/seed는 모든 해시와 payload가 동일할 때만 skip한다.
     오류 발생 시 전체 배치를 롤백하고 실패 경로를 예외에 포함한다.
     반환값/출력의 inserted는 커밋이 끝난 실제 저장 건수다.
     """
     from uuid import uuid4
-
     summary = {'inserted': 0, 'skipped': 0, 'failed': 0, 'records': []}
     current_path = None
     try:
@@ -247,13 +490,11 @@ def insert_pending_instances(records: list[PendingInstance]) -> dict:
 
 def record_independent_validation(instance_id: str, result: dict) -> None:
     """독립 검증 결과를 저장한다. 생성 시 validation_trace는 전달하지 않는다.
-
     result 계약: validator_version, result(passed/failed/unsupported),
     source_sha256, template_content_hash, report(JSON 객체).
     해시는 validator가 실제로 검사한 원본에서 가져와야 한다.
     """
     from uuid import UUID, uuid4
-
     identity = UUID(instance_id)
     if not isinstance(result, dict):
         raise ValueError('독립 검증 결과는 JSON 객체여야 합니다.')
@@ -297,12 +538,10 @@ def confirm_instance(
     human_review_decision: str,
 ) -> None:
     """명시적 사람 승인 + 현재 검증기 버전의 최신 passed일 때만 원자적으로 확정.
-
     호출자는 문제 문장/정답 형식/유일성을 검수한 뒤 approved를 전달한다.
     validator_version은 현재 사용하는 독립 검증기의 버전을 전달한다.
     """
     from uuid import UUID
-
     identity = UUID(instance_id)
     if not isinstance(reviewer_id, str) or not reviewer_id.strip():
         raise ValueError('실제 검수자의 reviewer_id가 필요합니다.')
