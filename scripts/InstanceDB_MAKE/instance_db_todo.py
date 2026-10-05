@@ -81,7 +81,7 @@ def read_previews(preview_zip: Path, template_hashes: dict[tuple[str, str], str]
     return records
 
 
-def _db_connection(): #추가
+def _db_connection():
     """DB 의존성은 쓰기 단계에서만 로드한다. 직접 실행도 지원한다."""
     import sys
 
@@ -93,13 +93,13 @@ def _db_connection(): #추가
     return get_connection()
 
 
-def _jsonb(value: object): #추가
+def _jsonb(value: object):
     from psycopg.types.json import Jsonb
 
     return Jsonb(value)
 
 
-def _check_schema(conn) -> None: #추가
+def _check_schema(conn) -> None:
     """마이그레이션은 자동 적용하지 않고 필요한 관계의 존재를 확인한다."""
     for name in (
         'kb.concepts', 'problem.problem_templates', 'problem.template_concepts',
@@ -111,7 +111,7 @@ def _check_schema(conn) -> None: #추가
             raise RuntimeError(f'DB 관계가 없습니다: {name}. 005~009 SQL을 확인하세요.')
 
 
-def _check_digest(value: object, name: str) -> str: #추가
+def _check_digest(value: object, name: str) -> str:
     if not isinstance(value, str) or len(value) != 64 or any(
         char not in '0123456789abcdef' for char in value
     ):
@@ -119,7 +119,7 @@ def _check_digest(value: object, name: str) -> str: #추가
     return value
 
 
-def _check_record(record: PendingInstance) -> None: #추가
+def _check_record(record: PendingInstance) -> None:
     value = record.payload
     if not isinstance(value, dict):
         raise ValueError('payload는 JSON 객체여야 합니다.')
