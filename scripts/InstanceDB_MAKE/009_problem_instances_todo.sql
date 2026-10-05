@@ -1,13 +1,21 @@
 /*
-TODO: 이 파일은 Preview의 pending 적재와 confirmed 조회를 위한 마이그레이션 초안이다.
-TODO 1. 실제 PostgreSQL의 problem 스키마와 애플리케이션 계정 권한을 확인한다.
-TODO 2. 기존 sql/005_create_problem_schema.sql 및 006~008 마이그레이션이
-        적용되어 있는지 확인한다. Template 테이블은 여기서 다시 만들지 않는다.
-TODO 3. 기존에 같은 이름의 테이블이나 VIEW가 있다면 구조를 대조한다.
-        CREATE TABLE IF NOT EXISTS는 기존 테이블의 구조를 갱신하지 않는다.
+Preview의 pending 적재와 confirmed 조회를 위한 마이그레이션.
+- 전제: sql/005~008 적용 완료. Template 테이블은 여기서 다시 만들지 않는다.
+- 2026-10-05 로컬 DB(math_problem_platform) 대조: 005~008 적용됨,
+  같은 이름의 테이블·VIEW 없음, 계정은 postgres뿐.
+- CREATE TABLE IF NOT EXISTS는 기존 테이블의 구조를 갱신하지 않는다.
+  다른 DB에 적용할 때는 같은 이름의 테이블이 이미 있는지 먼저 대조한다.
+- 전체가 한 트랜잭션이다. 중간에 실패하면 아무것도 남지 않는다.
 */
 
-CREATE SCHEMA IF NOT EXISTS problem;
+BEGIN;
+
+DO $$
+BEGIN
+    IF to_regclass('problem.problem_templates') IS NULL THEN
+        RAISE EXCEPTION 'problem.problem_templates가 없습니다. sql/005~008을 먼저 적용하세요.';
+    END IF;
+END $$;
 
 /*
 TODO: Python의 insert_pending_instances()를 구현할 때 이 테이블에만 먼저 적재한다.
@@ -116,10 +124,21 @@ WHERE pi.status = 'confirmed'
   AND pt.executable = TRUE;
 
 /*
-TODO: 실제 DB 권한 설정 및 애플리케이션 연결 코드를 완성한다.
-TODO 1. 서비스의 일반 문제 조회 계정에 confirmed_instances SELECT만 부여하고,
-        정답을 포함한 problem_instances 원본과 instance_validation_runs에 대한
-        일반 사용자 접근은 막는다. 채점용 접근은 별도 권한으로 설계한다.
-TODO 2. instance_db_todo.py의 pending -> confirmed 승격을 원자적 트랜잭션으로 구현한다.
-TODO 3. 별도 테스트 DB에서 신규 적용·재실행·롤백·권한을 확인한 후 적용한다.
+권한: 일반 문제 조회 역할은 confirmed_instances VIEW만 SELECT한다.
+정답이 든 problem_instances 원본과 instance_validation_runs에는 접근할 수 없다.
+서비스 로그인 계정은 GRANT problem_reader TO <계정>; 으로 이 역할을 받는다.
+TODO: 채점용 접근은 별도 권한으로 설계한다.
+TODO: instance_db_todo.py의 pending -> confirmed 승격을 원자적 트랜잭션으로 구현한다.
 */
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'problem_reader') THEN
+        CREATE ROLE problem_reader NOLOGIN;
+    END IF;
+END $$;
+
+REVOKE ALL ON problem.problem_instances, problem.instance_validation_runs FROM PUBLIC;
+GRANT USAGE ON SCHEMA problem TO problem_reader;
+GRANT SELECT ON problem.confirmed_instances TO problem_reader;
+
+COMMIT;
