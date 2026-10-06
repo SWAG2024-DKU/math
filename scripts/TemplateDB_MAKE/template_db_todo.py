@@ -55,27 +55,123 @@ def read_templates(archive: Path) -> list[TemplateRecord]:
 
 
 def import_template_records(records: list[TemplateRecord]) -> None:
-    """TODO: 선형대수 Template를 프로젝트의 기존 PostgreSQL 테이블에 적재한다.
+    """전달받은 선형대수 Template 전체를 검증하고 한 트랜잭션으로 적재한다.
 
-    TODO 1. 각 원본을 ProblemTemplate.model_validate()로 검사하고
-        classification.answer_type과 answer_spec.answer_type의 일치도 확인한다.
-        app.problems.template_importer.validate_answer_type()을 재사용할 수 있다.
-    TODO 2. 기존 app.db.connection.get_connection()과
-        app.problems.template_repository의 조회·삽입·개념 연결·감사 함수를 재사용한다.
-        기존 scripts/problems/import_problem_templates.py는 전체 과목을 순회하므로
-        이번에는 records의 선형대수 62개만 대상으로 연결한다.
-    TODO 3. ZIP 내부 경로는 실제 프로젝트 경로가 아니다. DB source_path를
-        어떤 상대 경로로 기록할지 정하고 재실행 시 동일 경로를 유지한다.
-        기존 build_db_record()의 normalize_source_path()를 그대로 쓰려면
-        임시 파일을 프로젝트 루트 아래에 둬야 한다.
-    TODO 4. (template_id, template_version)이 이미 있으면 content_hash를 비교한다.
-        같으면 건너뛰고, 다르면 공개된 Template를 덮어쓰지 말고 오류로 종료한다.
-        병렬 적재 가능성이 있다면 SELECT ... FOR UPDATE 또는 충돌 처리로 보호한다.
-    TODO 5. 한 트랜잭션에서 Template와 kb.concepts 외래 키 연결을 저장한다.
-        참조 Concept가 없으면 롤백하고, 결과를 template_import_audit에 기록한다.
-    TODO 6. 적재·건너뜀·오류 건수와 출처 경로를 출력한다.
+    같은 ID/버전의 내용이 다르거나 Concept 연결에 실패하면 전체를 롤백한다.
+    기존 audit 스키마는 오류 action을 허용하지 않아 실패는 출력 후 재발생시킨다.
     """
-    raise NotImplementedError('기존 PostgreSQL Template Importer 연결 작업이 필요합니다.')
+    from pathlib import PurePosixPath, PureWindowsPath
+
+    from app.db.connection import get_connection
+    from app.problems.template_importer import build_db_record, validate_answer_type
+    from app.problems.template_repository import (
+        find_existing_template,
+        insert_template,
+        insert_template_concept,
+        insert_import_audit,
+    )
+    from app.schemas.problem_template import ProblemTemplate
+
+    prepared = []
+    seen = set()
+    results = []
+    current_source = None
+
+    try:
+        # DB에 쓰기 전에 전체 입력을 검사한다. ZIP을 거치지 않은 호출도 검증한다.
+        for item in records:
+            current_source = item.source
+            raw = item.payload
+            template = ProblemTemplate.model_validate(raw)
+            validate_answer_type(template)
+            if (raw.get('object_type') != 'problem_template'
+                    or template.taxonomy.subject_id != 'linear_algebra'
+                    or template.status != 'ready'
+                    or template.executable is not True):
+                raise ValueError('출제 가능한 선형대수 Template만 적재할 수 있습니다.')
+
+            key = (template.template_id, template.template_version)
+            if key != (item.template_id, item.version):
+                raise ValueError('TemplateRecord와 원본의 ID/버전이 다릅니다.')
+            if key in seen:
+                raise ValueError(f'Template ID/버전 중복: {key}')
+            seen.add(key)
+            if content_hash(raw) != item.sha256:
+                raise ValueError('TemplateRecord와 원본의 해시가 다릅니다.')
+
+            # ZIP 출처는 고정된 가상 상대 경로로 기록하며 실제 파일은 만들지 않는다.
+            # build_db_record는 경로 문자열만 처리하므로 임시 파일이 필요 없다.
+            source = PurePosixPath(item.source.replace('\\', '/'))
+            if (source.is_absolute() or PureWindowsPath(item.source).drive
+                    or '..' in source.parts or source.suffix != '.json'):
+                raise ValueError(f'잘못된 ZIP 내부 경로: {item.source}')
+            path = Path('data/problem_templates/_zip_imports/linear_algebra').joinpath(
+                *source.parts
+            )
+            record = build_db_record(path, raw, template, Path('.'))
+            prepared.append((record, template))
+
+        if prepared:
+            current_source = None
+            with get_connection() as conn:
+                with conn.transaction():
+                    # 아직 없는 행도 보호하려고 조회 전 쓰기 잠금을 잡는다.
+                    # 다른 적재 작업의 INSERT/UPDATE는 이 트랜잭션 종료까지 대기한다.
+                    with conn.cursor() as cur:
+                        cur.execute(
+                            'LOCK TABLE problem.problem_templates '
+                            'IN SHARE ROW EXCLUSIVE MODE'
+                        )
+
+                    for record, template in prepared:
+                        current_source = record['source_path']
+                        existing = find_existing_template(
+                            conn, template.template_id, template.template_version
+                        )
+                        if existing is None:
+                            insert_template(conn, record)
+                            # 존재하지 않는 Concept는 FK 오류를 내고 전체 적재를 취소한다.
+                            for concept_id in dict.fromkeys(template.taxonomy.concept_ids):
+                                insert_template_concept(
+                                    conn, template.template_id,
+                                    template.template_version, concept_id,
+                                )
+                            action = 'inserted'
+                            reason = 'New template inserted'
+                        elif existing['content_hash'] == record['content_hash']:
+                            action = 'skipped'
+                            reason = 'Same template already exists'
+                        else:
+                            raise RuntimeError(
+                                '같은 ID/버전의 Template 내용이 다릅니다: '
+                                f'{template.template_id} / {template.template_version}'
+                            )
+
+                        # 성공 이력도 Template 및 Concept 연결과 함께 커밋한다.
+                        insert_import_audit(conn, {
+                            'template_id': template.template_id,
+                            'template_version': template.template_version,
+                            'selected_path': record['source_path'],
+                            'rejected_path': None,
+                            'action': action,
+                            'reason': reason,
+                        })
+                        results.append({'action': action, 'source_path': current_source})
+                    current_source = None
+    except Exception as exc:
+        # 중간에 성공했던 INSERT도 롤백되므로 완료 건수로 집계하지 않는다.
+        print(json.dumps({
+            'inserted': 0, 'skipped': 0, 'errors': 1,
+            'source_path': current_source, 'error': str(exc),
+        }, ensure_ascii=False, indent=2))
+        raise
+
+    # 커밋이 끝난 뒤에만 최종 결과를 출력한다.
+    print(json.dumps({
+        'inserted': sum(row['action'] == 'inserted' for row in results),
+        'skipped': sum(row['action'] == 'skipped' for row in results),
+        'errors': 0, 'sources': results,
+    }, ensure_ascii=False, indent=2))
 
 
 def main() -> None:
