@@ -1,4 +1,4 @@
-"""선형대수 Template ZIP을 확인하고 기존 PostgreSQL Importer에 연결할 준비를 한다.
+"""선형대수 Template ZIP을 검증하고 --insert 지정 시 PostgreSQL에 적재한다.
 
 프로젝트의 sql/005_create_problem_schema.sql 및 006~008 마이그레이션이
 problem.problem_templates, problem.template_concepts와 적재 이력을 정의한다.
@@ -30,7 +30,10 @@ def content_hash(value: dict) -> str:
 
 
 def read_templates(archive: Path) -> list[TemplateRecord]:
-    """ZIP에서 출제 가능한 선형대수 Template만 읽는다."""
+    """DB 연결 없이 ZIP의 선형대수 Template 스키마와 답 유형을 검사한다."""
+    from app.problems.template_importer import validate_answer_type
+    from app.schemas.problem_template import ProblemTemplate
+
     records = []
     seen = set()
     with ZipFile(archive) as z:
@@ -38,8 +41,16 @@ def read_templates(archive: Path) -> list[TemplateRecord]:
             if not path.endswith('.json'):
                 continue
             value = json.loads(z.read(path))
+            if not isinstance(value, dict):
+                raise ValueError(f'JSON 객체가 아닌 파일: {path}')
             if value.get('object_type') != 'problem_template':
                 continue
+            # 읽기 전용 실행에서도 필수 필드와 두 answer_type의 일치를 검사한다.
+            try:
+                template = ProblemTemplate.model_validate(value)
+                validate_answer_type(template)
+            except ValueError as exc:
+                raise ValueError(f'Template 검증 실패: {path}\n{exc}') from exc
             if value.get('taxonomy', {}).get('subject_id') != 'linear_algebra':
                 raise ValueError(f'다른 과목 Template: {path}')
             if value.get('status') != 'ready' or value.get('executable') is not True:
@@ -177,11 +188,18 @@ def import_template_records(records: list[TemplateRecord]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--templates', required=True, type=Path)
+    parser.add_argument(
+        '--insert', action='store_true',
+        help='검증 후 DB에 적재합니다. 생략하면 DB 연결 없이 검증만 합니다.',
+    )
     args = parser.parse_args()
     records = read_templates(args.templates)
     print(json.dumps({'ready_templates': len(records),
                       'problem_types': len({r.payload['classification']['problem_type'] for r in records}),
                       'subject': 'linear_algebra'}, ensure_ascii=False, indent=2))
+    # 명시적으로 --insert를 지정했을 때만 DB 저장 함수를 호출한다.
+    if args.insert:
+        import_template_records(records)
 
 
 if __name__ == '__main__':
