@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "generation_rule_catalog",
   "subject_id": "engineering_mathematics",
   "rule_count": 104,
@@ -18,6 +18,7 @@
       "source_formula_ids": [
         "complex_derivative"
       ],
+      "primary_formula_id": "complex_derivative",
       "supported_answer_types": [
         "boolean"
       ],
@@ -27,10 +28,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "limit_agrees_all_directions equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.differentiation_analytic.1",
+            "scope": "generation",
+            "description": "h가 복소평면의 모든 방향에서 0으로 갈 때 같은 극한이어야 한다.",
+            "rule": {
+              "left": "limit_agrees_all_directions",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "h가 복소평면의 모든 방향에서 0으로 갈 때 같은 극한이어야 한다."
         }
@@ -89,6 +101,7 @@
         "logistic_model",
         "mixing_model"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -98,10 +111,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "parameters_constant_well_mixed equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.models_growth_logistic.1",
+            "scope": "generation",
+            "description": "모델별로 비례계수, 수용력, 유량, 농도가 일정하며 혼합 문제는 탱크 내부가 완전히 섞인다고 가정한다.",
+            "rule": {
+              "left": "parameters_constant_well_mixed",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모델별로 비례계수, 수용력, 유량, 농도가 일정하며 혼합 문제는 탱크 내부가 완전히 섞인다고 가정한다."
         }
@@ -160,6 +189,7 @@
         "equilibrium_point",
         "stability_criterion"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "scalar_list"
       ],
@@ -169,10 +199,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_differentiable_non_zero_derivative equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.autonomous_equilibrium.1",
+            "scope": "generation",
+            "description": "미분판정은 f가 평형점 근방에서 미분 가능하고 f'(y_e) != 0일 때 직접 적용하기 좋다.",
+            "rule": {
+              "left": "f_differentiable_non_zero_derivative",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "미분판정은 f가 평형점 근방에서 미분 가능하고 f'(y_e) != 0일 때 직접 적용하기 좋다."
         }
@@ -231,6 +272,7 @@
         "laplace_linearity",
         "trig_transforms"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -240,10 +282,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "transforms_exist_in_common_roc equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.linearity_table.1",
+            "scope": "generation",
+            "description": "각 함수의 변환이 공통 수렴영역에서 존재해야 한다.",
+            "rule": {
+              "left": "transforms_exist_in_common_roc",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 함수의 변환이 공통 수렴영역에서 존재해야 한다."
         }
@@ -301,6 +359,7 @@
         "bernoulli_form",
         "bernoulli_substitution"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -310,10 +369,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "n_not_0_or_1 equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.bernoulli.1",
+            "scope": "generation",
+            "description": "n != 0, 1이어야 한다.",
+            "rule": {
+              "left": "n_not_0_or_1",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "n != 0, 1이어야 한다."
         }
@@ -371,6 +446,7 @@
         "bisection_error_bound",
         "bisection_midpoint"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "scalar"
       ],
@@ -380,10 +456,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_continuous_sign_change equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.bisection_method.1",
+            "scope": "generation",
+            "description": "f가 [a, b]에서 연속이고 f(a)f(b) < 0이어야 한다.",
+            "rule": {
+              "left": "f_continuous_sign_change",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 [a, b]에서 연속이고 f(a)f(b) < 0이어야 한다."
         }
@@ -442,6 +529,7 @@
         "neumann_condition",
         "robin_condition"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "string"
       ],
@@ -451,10 +539,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "conditions_compatible_and_appropriate equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.boundary_initial_conditions.1",
+            "scope": "generation",
+            "description": "PDE 유형과 물리적 의미에 맞는 조건을 사용하고, 조건들 사이의 호환성을 확인해야 한다.",
+            "rule": {
+              "left": "conditions_compatible_and_appropriate",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "PDE 유형과 물리적 의미에 맞는 조건을 사용하고, 조건들 사이의 호환성을 확인해야 한다."
         }
@@ -512,6 +611,7 @@
         "cauchy_integral_formula_derivative",
         "cauchy_integral_formula_value"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -526,16 +626,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_analytic_inside_positive_contour equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.cauchy_integral_formula.1",
+            "scope": "generation",
+            "description": "f가 C와 내부에서 해석적이고 z_0가 내부에 있으며 C가 양의 방향이어야 한다.",
+            "rule": {
+              "left": "f_analytic_inside_positive_contour",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 C와 내부에서 해석적이고 z_0가 내부에 있으며 C가 양의 방향이어야 한다."
         }
@@ -543,8 +655,7 @@
       "construction": {
         "operation": "cauchy_integral_formula_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "코시 적분공식을 이용해 해석함수의 값 및 도함수와 관련된 닫힌경로 적분을 계산한다."
@@ -594,6 +705,7 @@
         "cauchy_riemann_equations",
         "complex_derivative_via_cr"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean"
       ],
@@ -603,10 +715,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "partial_derivatives_continuous_and_satisfy_cr equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.cauchy_riemann.1",
+            "scope": "generation",
+            "description": "필요조건이며 u, v의 1계 편미분이 근방에서 연속이고 조건을 만족하면 해석성의 충분조건이 된다.",
+            "rule": {
+              "left": "partial_derivatives_continuous_and_satisfy_cr",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "필요조건이며 u, v의 1계 편미분이 근방에서 연속이고 조건을 만족하면 해석성의 충분조건이 된다."
         }
@@ -663,6 +786,7 @@
       "source_formula_ids": [
         "cauchy_integral_theorem_formula"
       ],
+      "primary_formula_id": "cauchy_integral_theorem_formula",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -673,10 +797,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "simply_connected_and_analytic equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.cauchy_integral_theorem.1",
+            "scope": "generation",
+            "description": "f가 단순연결 영역에서 해석적이고 C가 그 영역 안의 닫힌 조각별 매끄러운 경로여야 한다.",
+            "rule": {
+              "left": "simply_connected_and_analytic",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 단순연결 영역에서 해석적이고 C가 그 영역 안의 닫힌 조각별 매끄러운 경로여야 한다."
         }
@@ -735,6 +870,7 @@
         "constant_coefficient_ode",
         "exponential_ansatz"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -744,10 +880,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_constant_coefficient_homogeneous equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.constant_coefficient_homogeneous.1",
+            "scope": "generation",
+            "description": "계수가 상수이고 방정식이 선형 동차일 때 적용한다.",
+            "rule": {
+              "left": "is_constant_coefficient_homogeneous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계수가 상수이고 방정식이 선형 동차일 때 적용한다."
         }
@@ -805,6 +952,7 @@
         "complex_eigenpair_def",
         "real_fundamental_solutions_from_complex"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -812,19 +960,33 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": "A.rows"
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "matrix_is_real_conjugate_pairs equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.complex_eigenvalues.1",
+            "scope": "generation",
+            "description": "실수행렬의 복소 고유값과 고유벡터는 켤레쌍으로 나타난다.",
+            "rule": {
+              "left": "matrix_is_real_conjugate_pairs",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "실수행렬의 복소 고유값과 고유벡터는 켤레쌍으로 나타난다."
         }
@@ -882,6 +1044,7 @@
         "complex_exponential",
         "complex_logarithm"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -896,16 +1059,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "branch_cut_specified equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.elementary_functions.1",
+            "scope": "generation",
+            "description": "복소로그와 일반 거듭제곱을 단일값으로 다루려면 branch와 branch cut을 지정해야 한다.",
+            "rule": {
+              "left": "branch_cut_specified",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "복소로그와 일반 거듭제곱을 단일값으로 다루려면 branch와 branch cut을 지정해야 한다."
         }
@@ -913,8 +1088,7 @@
       "construction": {
         "operation": "complex_elementary_function_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "복소지수, 로그, 삼각함수의 값을 계산하고 다가함수 성질을 다룬다."
@@ -965,6 +1139,7 @@
         "modulus_definition",
         "polar_form"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -974,10 +1149,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "z_not_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.cartesian_polar_form.1",
+            "scope": "generation",
+            "description": "z != 0일 때 편각을 정의하며 편각은 2pi의 정수배만큼 여러 값을 갖는다.",
+            "rule": {
+              "left": "z_not_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "z != 0일 때 편각을 정의하며 편각은 2pi의 정수배만큼 여러 값을 갖는다."
         }
@@ -1035,6 +1221,7 @@
         "complex_fourier_coefficient_cn",
         "complex_fourier_expansion"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -1044,10 +1231,21 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_integrable_over_period equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.complex_fourier_series.1",
+            "scope": "generation",
+            "description": "f가 한 주기에서 적분 가능해야 한다.",
+            "rule": {
+              "left": "f_integrable_over_period",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 한 주기에서 적분 가능해야 한다."
         }
@@ -1105,6 +1303,7 @@
         "complex_continuity",
         "complex_limit"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -1112,13 +1311,19 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         },
         "f": {
           "type": "expression",
@@ -1130,16 +1335,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "limit_independent_of_path equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.limit_continuity.1",
+            "scope": "generation",
+            "description": "임의의 복소경로로 z_0에 접근해도 같은 극한값을 가져야 한다.",
+            "rule": {
+              "left": "limit_independent_of_path",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "임의의 복소경로로 z_0에 접근해도 같은 극한값을 가져야 한다."
         }
@@ -1148,8 +1365,7 @@
         "operation": "complex_limit_evaluation",
         "required_objects": [
           "A",
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "복소함수의 극한 존재성을 판정하고 값을 구한다."
@@ -1199,6 +1415,7 @@
         "antiderivative_theorem",
         "complex_line_integral_def"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -1214,16 +1431,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "curve_piecewise_smooth_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.line_integrals.1",
+            "scope": "generation",
+            "description": "경로가 조각별 매끄럽고 함수가 경로 위에서 연속이어야 한다.",
+            "rule": {
+              "left": "curve_piecewise_smooth_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "경로가 조각별 매끄럽고 함수가 경로 위에서 연속이어야 한다."
         }
@@ -1231,8 +1460,7 @@
       "construction": {
         "operation": "complex_line_integral_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "매개화 및 원시함수를 이용하여 복소선적분을 계산한다."
@@ -1282,6 +1510,7 @@
         "matrix_condition_number",
         "scalar_condition_number"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -1292,10 +1521,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "value_and_inverse_exist equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.condition_number_stability.1",
+            "scope": "generation",
+            "description": "함수값과 역행렬이 존재해야 한다.",
+            "rule": {
+              "left": "value_and_inverse_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "함수값과 역행렬이 존재해야 한다."
         }
@@ -1353,6 +1593,7 @@
         "conservative_field_def",
         "fundamental_theorem_line_integrals"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean",
         "expression"
@@ -1363,10 +1604,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "potential_exists_simply_connected_curl_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.conservative_fields_potentials.1",
+            "scope": "generation",
+            "description": "퍼텐셜함수가 존재해야 하며 단순연결 영역에서 ∇×F=0은 대표적인 충분조건이다.",
+            "rule": {
+              "left": "potential_exists_simply_connected_curl_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "퍼텐셜함수가 존재해야 하며 단순연결 영역에서 ∇×F=0은 대표적인 충분조건이다."
         }
@@ -1424,6 +1676,7 @@
         "convolution_integral",
         "convolution_theorem"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -1431,19 +1684,36 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "transforms_and_convolution_exist equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.convolution.1",
+            "scope": "generation",
+            "description": "각 함수의 Laplace 변환과 convolution 적분이 존재해야 한다.",
+            "rule": {
+              "left": "transforms_and_convolution_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 함수의 Laplace 변환과 convolution 적분이 존재해야 한다."
         }
@@ -1501,6 +1771,7 @@
         "cylindrical_coordinates",
         "spherical_coordinates"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -1511,10 +1782,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "convention_clear_one_to_one equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.cylindrical_spherical_coordinates.1",
+            "scope": "generation",
+            "description": "좌표 convention을 명확히 하고 변환이 일대일인 영역을 사용해야 한다.",
+            "rule": {
+              "left": "convention_clear_one_to_one",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "좌표 convention을 명확히 하고 변환이 일대일인 영역을 사용해야 한다."
         }
@@ -1571,6 +1853,7 @@
       "source_formula_ids": [
         "curl_determinant_formula"
       ],
+      "primary_formula_id": "curl_determinant_formula",
       "supported_answer_types": [
         "vector"
       ],
@@ -1580,10 +1863,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "3d_vector_field_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.curl.1",
+            "scope": "generation",
+            "description": "3차원 벡터장 성분들이 필요한 편미분을 가져야 한다.",
+            "rule": {
+              "left": "3d_vector_field_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "3차원 벡터장 성분들이 필요한 편미분을 가져야 한다."
         }
@@ -1641,6 +1935,7 @@
         "demoivre_theorem",
         "euler_formula"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -1650,10 +1945,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "n_is_integer equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.euler_demoivre.1",
+            "scope": "generation",
+            "description": "de Moivre 공식은 정수 n에 직접 적용한다.",
+            "rule": {
+              "left": "n_is_integer",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "de Moivre 공식은 정수 n에 직접 적용한다."
         }
@@ -1712,6 +2018,7 @@
         "nth_derivative_laplace",
         "second_derivative_laplace"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -1727,19 +2034,35 @@
             "trigonometric"
           ]
         },
-        "x": {
-          "type": "symbol",
-          "description": "주 독립변수"
-        },
         "equation": {
           "type": "equation",
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "x": {
+          "role": "independent_variable",
+          "description": "주 독립변수"
+        },
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "y_and_derivatives_satisfy_conditions equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.derivatives_transform.1",
+            "scope": "generation",
+            "description": "y와 필요한 도함수들이 조각별 연속이고 지수차수 조건을 만족해야 한다.",
+            "rule": {
+              "left": "y_and_derivatives_satisfy_conditions",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "y와 필요한 도함수들이 조각별 연속이고 지수차수 조건을 만족해야 한다."
         }
@@ -1748,7 +2071,6 @@
         "operation": "derivative_laplace_transformation",
         "required_objects": [
           "f",
-          "x",
           "equation"
         ],
         "semantic_structure": [
@@ -1799,6 +2121,7 @@
         "dirac_laplace_transform",
         "dirac_sifting_property"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -1808,10 +2131,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "interpreted_as_distribution_a_non_negative equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.dirac_delta.1",
+            "scope": "generation",
+            "description": "델타는 분포로 해석하며 단측 Laplace에서는 보통 a >= 0을 다룬다.",
+            "rule": {
+              "left": "interpreted_as_distribution_a_non_negative",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "델타는 분포로 해석하며 단측 Laplace에서는 보통 a >= 0을 다룬다."
         }
@@ -1868,6 +2207,7 @@
       "source_formula_ids": [
         "divergence_formula_3d"
       ],
+      "primary_formula_id": "divergence_formula_3d",
       "supported_answer_types": [
         "expression"
       ],
@@ -1877,10 +2217,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "components_have_partial_derivatives equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.divergence.1",
+            "scope": "generation",
+            "description": "벡터장 성분들이 필요한 편미분을 가져야 한다.",
+            "rule": {
+              "left": "components_have_partial_derivatives",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "벡터장 성분들이 필요한 편미분을 가져야 한다."
         }
@@ -1937,6 +2288,7 @@
       "source_formula_ids": [
         "divergence_theorem_formula"
       ],
+      "primary_formula_id": "divergence_theorem_formula",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -1947,10 +2299,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "closed_surface_outward_normal_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.divergence_theorem.1",
+            "scope": "generation",
+            "description": "닫힌곡면에서 바깥쪽 법선을 사용하며 벡터장은 영역에서 연속 편미분 가능해야 한다.",
+            "rule": {
+              "left": "closed_surface_outward_normal_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "닫힌곡면에서 바깥쪽 법선을 사용하며 벡터장은 영역에서 연속 편미분 가능해야 한다."
         }
@@ -2008,6 +2371,7 @@
         "eigenfunction_expansion_initial",
         "pde_eigenfunction_series_solution"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2015,13 +2379,16 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": "A.rows"
+          }
         },
         "f": {
           "type": "expression",
@@ -2033,16 +2400,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_complete_orthogonal_system equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.fourier_eigenfunction_expansion.1",
+            "scope": "generation",
+            "description": "고유함수들이 적절한 함수공간에서 완비 직교계를 이루어야 한다.",
+            "rule": {
+              "left": "is_complete_orthogonal_system",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "고유함수들이 적절한 함수공간에서 완비 직교계를 이루어야 한다."
         }
@@ -2051,8 +2430,7 @@
         "operation": "eigenfunction_expansion_solving",
         "required_objects": [
           "A",
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "고유함수 전개를 통해 초기경계값 문제의 해를 급수 형태로 완성한다."
@@ -2103,6 +2481,7 @@
         "eigen_solution_term",
         "eigenvalue_problem"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2110,19 +2489,33 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": "A.rows"
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "sufficient_independent_eigenvectors equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.eigenvalue_method.1",
+            "scope": "generation",
+            "description": "A가 상수이며 필요한 수만큼 선형독립 고유벡터를 구할 수 있어야 한다.",
+            "rule": {
+              "left": "sufficient_independent_eigenvectors",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "A가 상수이며 필요한 수만큼 선형독립 고유벡터를 구할 수 있어야 한다."
         }
@@ -2180,6 +2573,7 @@
         "absolute_error",
         "relative_error"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "scalar"
       ],
@@ -2189,10 +2583,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "exact_value_not_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.errors.1",
+            "scope": "generation",
+            "description": "상대오차는 정확값 x != 0일 때 직접 정의된다.",
+            "rule": {
+              "left": "exact_value_not_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "상대오차는 정확값 x != 0일 때 직접 정의된다."
         }
@@ -2251,6 +2656,7 @@
         "euler_cauchy_auxiliary",
         "euler_cauchy_second_order"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2260,10 +2666,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "x_non_zero_interval equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.euler_cauchy.1",
+            "scope": "generation",
+            "description": "x = 0을 제외한 x > 0 또는 x < 0 구간에서 다룬다.",
+            "rule": {
+              "left": "x_non_zero_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "x = 0을 제외한 x > 0 또는 x < 0 구간에서 다룬다."
         }
@@ -2321,6 +2738,7 @@
         "euler_method_formula",
         "improved_euler_heun"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -2331,10 +2749,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_smooth_stable_step_size equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.euler_improved_euler.1",
+            "scope": "generation",
+            "description": "f가 충분히 매끄럽고 step size가 안정성 요구를 만족해야 한다.",
+            "rule": {
+              "left": "f_smooth_stable_step_size",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 충분히 매끄럽고 step size가 안정성 요구를 만족해야 한다."
         }
@@ -2392,6 +2821,7 @@
         "integrating_factor_x_condition",
         "integrating_factor_y_condition"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2401,10 +2831,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "ratio_is_single_variable equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.exact_integrating_factor.1",
+            "scope": "generation",
+            "description": "비율이 각각 x만 또는 y만의 함수로 정리될 때 단일변수 적분인자를 구할 수 있다.",
+            "rule": {
+              "left": "ratio_is_single_variable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "비율이 각각 x만 또는 y만의 함수로 정리될 때 단일변수 적분인자를 구할 수 있다."
         }
@@ -2463,6 +2904,7 @@
         "exactness_condition",
         "potential_function"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2472,10 +2914,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "region_simply_connected_and_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.exact.1",
+            "scope": "generation",
+            "description": "M, N과 필요한 편미분이 단순연결 영역에서 연속이어야 한다.",
+            "rule": {
+              "left": "region_simply_connected_and_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "M, N과 필요한 편미분이 단순연결 영역에서 연속이어야 한다."
         }
@@ -2533,6 +2991,7 @@
         "scalar_field_def",
         "vector_field_def"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean"
       ],
@@ -2542,10 +3001,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "domain_continuous_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.scalar_vector_fields.1",
+            "scope": "generation",
+            "description": "함수의 정의역과 성분별 연속성·미분가능성을 확인해야 한다.",
+            "rule": {
+              "left": "domain_continuous_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "함수의 정의역과 성분별 연속성·미분가능성을 확인해야 한다."
         }
@@ -2602,6 +3072,7 @@
       "source_formula_ids": [
         "second_order_central_difference_ode"
       ],
+      "primary_formula_id": "second_order_central_difference_ode",
       "supported_answer_types": [
         "matrix",
         "vector"
@@ -2612,10 +3083,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "smooth_solution_consistent_boundary equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.finite_difference_method.1",
+            "scope": "generation",
+            "description": "해가 필요한 차수만큼 매끄럽고 경계조건을 이산식에 일관되게 반영해야 한다.",
+            "rule": {
+              "left": "smooth_solution_consistent_boundary",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "해가 필요한 차수만큼 매끄럽고 경계조건을 이산식에 일관되게 반영해야 한다."
         }
@@ -2672,6 +3154,7 @@
       "source_formula_ids": [
         "first_shifting_formula"
       ],
+      "primary_formula_id": "first_shifting_formula",
       "supported_answer_types": [
         "expression"
       ],
@@ -2681,10 +3164,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "transform_and_shifted_roc_valid equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.first_shifting_theorem.1",
+            "scope": "generation",
+            "description": "f의 변환이 존재하고 이동된 수렴영역이 유효해야 한다.",
+            "rule": {
+              "left": "transform_and_shifted_roc_valid",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f의 변환이 존재하고 이동된 수렴영역이 유효해야 한다."
         }
@@ -2741,6 +3235,7 @@
       "source_formula_ids": [
         "fixed_point_recurrence"
       ],
+      "primary_formula_id": "fixed_point_recurrence",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -2751,10 +3246,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "derivative_less_than_one equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.fixed_point_iteration.1",
+            "scope": "generation",
+            "description": "g가 구간을 자기 자신으로 보내고 해당 구간에서 |g'(x)| < 1이면 수렴을 보장하기 쉽다.",
+            "rule": {
+              "left": "derivative_less_than_one",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "g가 구간을 자기 자신으로 보내고 해당 구간에서 |g'(x)| < 1이면 수렴을 보장하기 쉽다."
         }
@@ -2812,6 +3318,7 @@
         "fourier_convolution_theorem",
         "fourier_product_theorem"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2819,23 +3326,40 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         },
         "equation": {
           "type": "equation",
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "convolution_and_transform_exist equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.convolution_theorem.1",
+            "scope": "generation",
+            "description": "convolution과 변환이 존재하도록 적절한 적분가능성 또는 함수공간 조건이 필요하다.",
+            "rule": {
+              "left": "convolution_and_transform_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "convolution과 변환이 존재하도록 적절한 적분가능성 또는 함수공간 조건이 필요하다."
         }
@@ -2895,6 +3419,7 @@
         "frequency_shifting_property",
         "time_shifting_property"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2904,10 +3429,21 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "transforms_derivatives_exist equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.properties_shifting_scaling_differentiation.1",
+            "scope": "generation",
+            "description": "각 함수와 도함수의 변환이 존재하거나 분포적 의미에서 정당화되어야 한다.",
+            "rule": {
+              "left": "transforms_derivatives_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "각 함수와 도함수의 변환이 존재하거나 분포적 의미에서 정당화되어야 한다."
         }
@@ -2966,6 +3502,7 @@
         "fourier_coefficient_bn",
         "fourier_series_expansion"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -2981,19 +3518,39 @@
             "trigonometric"
           ]
         },
-        "x": {
-          "type": "symbol",
-          "description": "주 독립변수"
-        },
         "equation": {
           "type": "equation",
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "x": {
+          "role": "independent_variable",
+          "description": "주 독립변수"
+        },
+        "n": {
+          "role": "index",
+          "assumptions": {
+            "integer": true,
+            "nonnegative": true
+          },
+          "description": "수열·급수의 인덱스"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_integrable_over_period equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.series_and_coefficients.1",
+            "scope": "generation",
+            "description": "f가 한 주기에서 적분 가능해야 한다.",
+            "rule": {
+              "left": "f_integrable_over_period",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 한 주기에서 적분 가능해야 한다."
         }
@@ -3002,7 +3559,6 @@
         "operation": "fourier_series_calculation",
         "required_objects": [
           "f",
-          "x",
           "equation"
         ],
         "semantic_structure": [
@@ -3053,6 +3609,7 @@
         "fourier_inverse_definition",
         "fourier_transform_definition"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -3062,10 +3619,21 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "convention_and_integrability equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.transform_and_inverse.1",
+            "scope": "generation",
+            "description": "정규화 convention을 통일해야 하며 적분가능성 조건이 필요하다.",
+            "rule": {
+              "left": "convention_and_integrability",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정규화 convention을 통일해야 하며 적분가능성 조건이 필요하다."
         }
@@ -3123,6 +3691,7 @@
         "fundamental_frequency",
         "periodicity_definition"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -3132,10 +3701,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "periodicity_holds_all_x equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.periodic_functions_fundamental_frequency.1",
+            "scope": "generation",
+            "description": "주기 관계가 모든 x에서 성립해야 하며 기본주기는 가장 작은 양의 주기다.",
+            "rule": {
+              "left": "periodicity_holds_all_x",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "주기 관계가 모든 x에서 성립해야 하며 기본주기는 가장 작은 양의 주기다."
         }
@@ -3193,6 +3773,7 @@
         "gaussian_multiplier",
         "linear_system_ax_b"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "vector"
       ],
@@ -3202,10 +3783,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "avoid_small_pivot_use_partial_pivoting equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.gaussian_elimination_pivoting.1",
+            "scope": "generation",
+            "description": "0 또는 매우 작은 pivot을 피해야 하며 부분 pivoting은 각 열에서 절댓값이 큰 원소를 선택한다.",
+            "rule": {
+              "left": "avoid_small_pivot_use_partial_pivoting",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "0 또는 매우 작은 pivot을 피해야 하며 부분 pivoting은 각 열에서 절댓값이 큰 원소를 선택한다."
         }
@@ -3263,6 +3855,7 @@
         "generalized_eigenvector_eq",
         "repeated_eigenvalue_solution_form"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -3270,28 +3863,46 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": "A.rows"
+          }
         },
         "u": {
           "type": "vector",
           "description": "작은 정수 성분을 갖는 벡터",
-          "dimension_min": 2,
-          "dimension_max": 3,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "dimension": {
+              "min": 2,
+              "max": 3
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "has_defective_matrix equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.repeated_eigenvalues_generalized.1",
+            "scope": "generation",
+            "description": "대수적 중복도보다 고유공간 차원이 작은 경우 적용한다.",
+            "rule": {
+              "left": "has_defective_matrix",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "대수적 중복도보다 고유공간 차원이 작은 경우 적용한다."
         }
@@ -3349,6 +3960,7 @@
       "source_formula_ids": [
         "jump_discontinuity_convergence"
       ],
+      "primary_formula_id": "jump_discontinuity_convergence",
       "supported_answer_types": [
         "scalar"
       ],
@@ -3358,10 +3970,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "piecewise_smooth_finite_jumps equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.convergence_gibbs_phenomenon.1",
+            "scope": "generation",
+            "description": "조각별 매끄럽고 한 주기에 유한 개의 불연속점과 극값을 갖는 함수에 적용한다.",
+            "rule": {
+              "left": "piecewise_smooth_finite_jumps",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "조각별 매끄럽고 한 주기에 유한 개의 불연속점과 극값을 갖는 함수에 적용한다."
         }
@@ -3419,6 +4042,7 @@
         "directional_derivative_formula",
         "gradient_formula"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -3434,16 +4058,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_differentiable_u_is_unit equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.gradient_directional_derivative.1",
+            "scope": "generation",
+            "description": "f가 해당 점에서 미분 가능하고 u가 단위벡터여야 한다.",
+            "rule": {
+              "left": "f_differentiable_u_is_unit",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 해당 점에서 미분 가능하고 u가 단위벡터여야 한다."
         }
@@ -3451,8 +4087,7 @@
       "construction": {
         "operation": "gradient_directional_derivative_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "스칼라장의 그래디언트와 특정 단위벡터 방향의 방향도함수를 계산한다."
@@ -3501,6 +4136,7 @@
       "source_formula_ids": [
         "green_theorem_formula"
       ],
+      "primary_formula_id": "green_theorem_formula",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -3511,10 +4147,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "curve_closed_positive_p_q_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.green_theorem.1",
+            "scope": "generation",
+            "description": "C는 D의 양의 방향 경계이고 조각별 매끄러워야 하며 P, Q는 연속 편미분을 가져야 한다.",
+            "rule": {
+              "left": "curve_closed_positive_p_q_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "C는 D의 양의 방향 경계이고 조각별 매끄러워야 하며 P, Q는 연속 편미분을 가져야 한다."
         }
@@ -3573,6 +4220,7 @@
         "half_range_sine_coefficient",
         "odd_function_an_zero"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -3582,10 +4230,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "symmetry_interval_conditions equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.even_odd_symmetry_half_range.1",
+            "scope": "generation",
+            "description": "대칭성은 원점대칭 구간에서 사용하며 반구간 전개에서는 짝·홀 확장을 선택한다.",
+            "rule": {
+              "left": "symmetry_interval_conditions",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "대칭성은 원점대칭 구간에서 사용하며 반구간 전개에서는 짝·홀 확장을 선택한다."
         }
@@ -3642,6 +4301,7 @@
       "source_formula_ids": [
         "harmonic_equation"
       ],
+      "primary_formula_id": "harmonic_equation",
       "supported_answer_types": [
         "expression"
       ],
@@ -3651,10 +4311,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "second_order_continuous_simply_connected equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.harmonic_conjugate.1",
+            "scope": "generation",
+            "description": "u, v가 2계 연속 편미분 가능해야 하며 단순연결 영역에서 조화켤레를 전역적으로 구성하기 좋다.",
+            "rule": {
+              "left": "second_order_continuous_simply_connected",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "u, v가 2계 연속 편미분 가능해야 하며 단순연결 영역에서 조화켤레를 전역적으로 구성하기 좋다."
         }
@@ -3712,6 +4383,7 @@
         "heat_equation_dirichlet_solution",
         "heat_equation_pde"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -3721,10 +4393,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "alpha_squared_positive_homogeneous equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.heat_equation.1",
+            "scope": "generation",
+            "description": "alpha^2 > 0이고 균질한 1차원 매질과 선형 확산을 가정하는 모델이 대표적이다.",
+            "rule": {
+              "left": "alpha_squared_positive_homogeneous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "alpha^2 > 0이고 균질한 1차원 매질과 선형 확산을 가정하는 모델이 대표적이다."
         }
@@ -3781,6 +4464,7 @@
       "source_formula_ids": [
         "higher_order_ivp_conditions"
       ],
+      "primary_formula_id": "higher_order_ivp_conditions",
       "supported_answer_types": [
         "expression"
       ],
@@ -3790,10 +4474,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "ivp_conditions_continuous_leading_non_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.higher_order_ivp.1",
+            "scope": "generation",
+            "description": "계수함수와 우변이 초기점 근방에서 연속이고 최고계수가 0이 아니어야 유일해가 보장된다.",
+            "rule": {
+              "left": "ivp_conditions_continuous_leading_non_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "계수함수와 우변이 초기점 근방에서 연속이고 최고계수가 0이 아니어야 유일해가 보장된다."
         }
@@ -3850,6 +4545,7 @@
       "source_formula_ids": [
         "higher_order_linear_general_form"
       ],
+      "primary_formula_id": "higher_order_linear_general_form",
       "supported_answer_types": [
         "boolean"
       ],
@@ -3859,10 +4555,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "leading_coefficient_not_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.higher_order_linear.1",
+            "scope": "generation",
+            "description": "최고계수 a_n(x) != 0인 구간에서 표준형으로 나눌 수 있어야 한다.",
+            "rule": {
+              "left": "leading_coefficient_not_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "최고계수 a_n(x) != 0인 구간에서 표준형으로 나눌 수 있어야 한다."
         }
@@ -3921,6 +4633,7 @@
         "distinct_real_roots",
         "repeated_roots"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -3928,23 +4641,45 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         },
         "equation": {
           "type": "equation",
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "real_coefficients_rules_applied equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.characteristic_roots_solutions.1",
+            "scope": "generation",
+            "description": "실수계수 방정식의 복소근은 켤레쌍으로 나타나며 중근은 중복도만큼 x 거듭제곱을 곱해야 한다.",
+            "rule": {
+              "left": "real_coefficients_rules_applied",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "실수계수 방정식의 복소근은 켤레쌍으로 나타나며 중근은 중복도만큼 x 거듭제곱을 곱해야 한다."
         }
@@ -4003,6 +4738,7 @@
         "homogeneous_form",
         "homogeneous_substitution"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -4012,10 +4748,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "x_not_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.homogeneous.1",
+            "scope": "generation",
+            "description": "x != 0인 구간에서 사용하며 치환 후 변수분리형으로 정리 가능해야 한다.",
+            "rule": {
+              "left": "x_not_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "x != 0인 구간에서 사용하며 치환 후 변수분리형으로 정리 가능해야 한다."
         }
@@ -4072,6 +4824,7 @@
       "source_formula_ids": [
         "interpolation_error_formula"
       ],
+      "primary_formula_id": "interpolation_error_formula",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -4082,10 +4835,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_n_plus_one_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.interpolation_error_runge.1",
+            "scope": "generation",
+            "description": "f가 구간에서 (n+1)계 미분 가능해야 한다.",
+            "rule": {
+              "left": "f_n_plus_one_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 구간에서 (n+1)계 미분 가능해야 한다."
         }
@@ -4143,6 +4907,7 @@
         "inverse_laplace_definition",
         "partial_fraction_decomposition"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -4150,23 +4915,42 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": "A.rows"
+          }
         },
         "equation": {
           "type": "equation",
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "numerator_degree_less_than_denominator equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.inverse_partial_fractions.1",
+            "scope": "generation",
+            "description": "분자 차수가 분모보다 크거나 같으면 다항식 나눗셈을 먼저 해야 하며 중복인수와 기약 이차인수를 정확히 반영해야 한다.",
+            "rule": {
+              "left": "numerator_degree_less_than_denominator",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "분자 차수가 분모보다 크거나 같으면 다항식 나눗셈을 먼저 해야 하며 중복인수와 기약 이차인수를 정확히 반영해야 한다."
         }
@@ -4225,6 +5009,7 @@
         "gauss_seidel_iteration",
         "jacobi_iteration"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "vector"
       ],
@@ -4234,10 +5019,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "diagonal_non_zero_diagonally_dominant equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.jacobi_gauss_seidel.1",
+            "scope": "generation",
+            "description": "대각원소가 0이 아니어야 하며 엄격한 대각우세나 대칭 양의정부호는 대표적인 수렴 충분조건이다.",
+            "rule": {
+              "left": "diagonal_non_zero_diagonally_dominant",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "대각원소가 0이 아니어야 하며 엄격한 대각우세나 대칭 양의정부호는 대표적인 수렴 충분조건이다."
         }
@@ -4294,6 +5090,7 @@
       "source_formula_ids": [
         "ivp_definition"
       ],
+      "primary_formula_id": "ivp_definition",
       "supported_answer_types": [
         "boolean"
       ],
@@ -4301,14 +5098,29 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_and_fy_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.ivp_existence_uniqueness.1",
+            "scope": "generation",
+            "description": "존재·유일성 정리는 초기점 주변에서 f와 편미분 f_y의 연속성을 요구한다.",
+            "rule": {
+              "left": "f_and_fy_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "존재·유일성 정리는 초기점 주변에서 f와 편미분 f_y의 연속성을 요구한다."
         }
@@ -4366,6 +5178,7 @@
         "lagrange_basis",
         "lagrange_polynomial"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -4375,10 +5188,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "nodes_are_distinct equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.lagrange_interpolation.1",
+            "scope": "generation",
+            "description": "모든 보간점 x_i가 서로 달라야 한다.",
+            "rule": {
+              "left": "nodes_are_distinct",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "모든 보간점 x_i가 서로 달라야 한다."
         }
@@ -4435,6 +5259,7 @@
       "source_formula_ids": [
         "laplace_transform_integral"
       ],
+      "primary_formula_id": "laplace_transform_integral",
       "supported_answer_types": [
         "boolean"
       ],
@@ -4444,10 +5269,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_piecewise_continuous_and_exponential_order equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.definition_existence.1",
+            "scope": "generation",
+            "description": "f가 모든 유한 구간에서 조각별 연속이고 지수차수 함수이면 충분히 큰 Re(s)에서 변환이 존재한다.",
+            "rule": {
+              "left": "is_piecewise_continuous_and_exponential_order",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 모든 유한 구간에서 조각별 연속이고 지수차수 함수이면 충분히 큰 Re(s)에서 변환이 존재한다."
         }
@@ -4504,6 +5345,7 @@
       "source_formula_ids": [
         "laplace_ivp_workflow"
       ],
+      "primary_formula_id": "laplace_ivp_workflow",
       "supported_answer_types": [
         "expression"
       ],
@@ -4513,10 +5355,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "ode_transformable_ic_at_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.ivp_solving.1",
+            "scope": "generation",
+            "description": "미지해와 입력함수가 Laplace 변환 가능하고 초기조건이 보통 t = 0에서 주어져야 한다.",
+            "rule": {
+              "left": "ode_transformable_ic_at_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "미지해와 입력함수가 Laplace 변환 가능하고 초기조건이 보통 t = 0에서 주어져야 한다."
         }
@@ -4574,6 +5432,7 @@
         "laplace_equation",
         "poisson_equation"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -4581,18 +5440,38 @@
         "data": {
           "type": "numeric_data",
           "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-          "size_min": 3,
-          "size_max": 30
+          "shape": {
+            "size": {
+              "min": 3,
+              "max": 30
+            }
+          }
         },
         "equation": {
           "type": "equation",
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "interior_differentiable_boundary_satisfied equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.laplace_poisson.1",
+            "scope": "generation",
+            "description": "영역 내부에서 필요한 2계 편미분이 존재하고 경계조건을 만족해야 하며 Poisson 방정식은 부호 convention을 통일해야 한다.",
+            "rule": {
+              "left": "interior_differentiable_boundary_satisfied",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "영역 내부에서 필요한 2계 편미분이 존재하고 경계조건을 만족해야 하며 Poisson 방정식은 부호 convention을 통일해야 한다."
         }
@@ -4650,6 +5529,7 @@
       "source_formula_ids": [
         "laplacian_cartesian"
       ],
+      "primary_formula_id": "laplacian_cartesian",
       "supported_answer_types": [
         "expression"
       ],
@@ -4659,10 +5539,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_second_order_differentiable equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.laplacian.1",
+            "scope": "generation",
+            "description": "f가 2계 편미분 가능해야 한다.",
+            "rule": {
+              "left": "f_second_order_differentiable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 2계 편미분 가능해야 한다."
         }
@@ -4720,6 +5611,7 @@
         "laurent_series_expansion",
         "taylor_series_expansion"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -4734,16 +5626,36 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
+        },
+        "n": {
+          "role": "index",
+          "assumptions": {
+            "integer": true,
+            "nonnegative": true
+          },
+          "description": "수열·급수의 인덱스"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "taylor_analytic_laurent_annulus_analytic equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.taylor_laurent_series.1",
+            "scope": "generation",
+            "description": "Taylor 급수는 중심 주변에서 해석적이어야 하며 Laurent 급수는 중심을 제외한 환영역에서 해석적이어야 한다.",
+            "rule": {
+              "left": "taylor_analytic_laurent_annulus_analytic",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "Taylor 급수는 중심 주변에서 해석적이어야 하며 Laurent 급수는 중심을 제외한 환영역에서 해석적이어야 한다."
         }
@@ -4751,8 +5663,7 @@
       "construction": {
         "operation": "laurent_series_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "주어진 복소함수에 대해 테일러 급수 및 로랑 급수 전개를 구한다."
@@ -4802,6 +5713,7 @@
         "least_squares_system",
         "normal_equation"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "vector"
@@ -4812,10 +5724,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "columns_linearly_independent equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.least_squares_approximation.1",
+            "scope": "generation",
+            "description": "A의 열들이 선형독립이면 해가 유일하며 수치적으로는 QR 분해가 정규방정식보다 안정적일 수 있다.",
+            "rule": {
+              "left": "columns_linearly_independent",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "A의 열들이 선형독립이면 해가 유일하며 수치적으로는 QR 분해가 정규방정식보다 안정적일 수 있다."
         }
@@ -4874,6 +5797,7 @@
         "scalar_line_integral",
         "vector_line_integral"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -4889,16 +5813,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "curve_smooth_field_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.line_integrals.1",
+            "scope": "generation",
+            "description": "곡선은 조각별 매끄러워야 하고 장은 곡선 위에서 연속이어야 한다.",
+            "rule": {
+              "left": "curve_smooth_field_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "곡선은 조각별 매끄러워야 하고 장은 곡선 위에서 연속이어야 한다."
         }
@@ -4906,8 +5842,7 @@
       "construction": {
         "operation": "line_integral_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "매개화된 곡선을 따라 스칼라장과 벡터장의 선적분을 계산한다."
@@ -4958,6 +5893,7 @@
         "linear_general_solution",
         "linear_standard_form"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -4967,10 +5903,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_standard_form equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.linear_integrating_factor.1",
+            "scope": "generation",
+            "description": "방정식을 표준형으로 정리해야 하며 P, Q가 다루는 구간에서 연속이어야 한다.",
+            "rule": {
+              "left": "is_standard_form",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "방정식을 표준형으로 정리해야 하며 P, Q가 다루는 구간에서 연속이어야 한다."
         }
@@ -5028,6 +5980,7 @@
         "asymptotic_stability_criterion",
         "instability_criterion"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "string"
       ],
@@ -5037,10 +5990,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "system_is_constant_coefficient_linear equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.linear_stability.1",
+            "scope": "generation",
+            "description": "상수계수 선형 시스템에 직접 적용한다.",
+            "rule": {
+              "left": "system_is_constant_coefficient_linear",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "상수계수 선형 시스템에 직접 적용한다."
         }
@@ -5098,6 +6062,7 @@
         "lu_factorization",
         "triangular_system_solves"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "matrix"
       ],
@@ -5105,19 +6070,36 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "pivoting_pa_lu_if_needed equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.lu_decomposition.1",
+            "scope": "generation",
+            "description": "pivoting이 필요하면 PA=LU 형태를 사용한다.",
+            "rule": {
+              "left": "pivoting_pa_lu_if_needed",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "pivoting이 필요하면 PA=LU 형태를 사용한다."
         }
@@ -5175,6 +6157,7 @@
         "matrix_exponential_series",
         "matrix_exponential_solution"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "matrix"
       ],
@@ -5182,19 +6165,36 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_square_matrix equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.matrix_exponential.1",
+            "scope": "generation",
+            "description": "A는 정사각행렬이어야 하며 유한차원에서는 급수가 항상 수렴한다.",
+            "rule": {
+              "left": "is_square_matrix",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "A는 정사각행렬이어야 하며 유한차원에서는 급수가 항상 수렴한다."
         }
@@ -5252,6 +6252,7 @@
         "mass_spring_damper_ode",
         "natural_frequency_and_damping_ratio"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -5261,10 +6262,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "m_positive_k_positive_c_nonnegative equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.mechanical_vibrations.1",
+            "scope": "generation",
+            "description": "질점, 선형 스프링, 점성감쇠를 가정하며 m > 0, k > 0, c >= 0이다.",
+            "rule": {
+              "left": "m_positive_k_positive_c_nonnegative",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "질점, 선형 스프링, 점성감쇠를 가정하며 m > 0, k > 0, c >= 0이다."
         }
@@ -5321,6 +6333,7 @@
       "source_formula_ids": [
         "newton_divided_difference_formula"
       ],
+      "primary_formula_id": "newton_divided_difference_formula",
       "supported_answer_types": [
         "expression"
       ],
@@ -5330,10 +6343,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "nodes_distinct equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.newton_divided_difference.1",
+            "scope": "generation",
+            "description": "보간점들이 서로 달라야 한다.",
+            "rule": {
+              "left": "nodes_distinct",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "보간점들이 서로 달라야 한다."
         }
@@ -5390,6 +6414,7 @@
       "source_formula_ids": [
         "newton_raphson_formula"
       ],
+      "primary_formula_id": "newton_raphson_formula",
       "supported_answer_types": [
         "scalar"
       ],
@@ -5399,10 +6424,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "derivative_non_zero_initial_close equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.newton_method.1",
+            "scope": "generation",
+            "description": "f'(x_n) != 0이어야 하고 초기값이 근에 충분히 가까워야 빠른 수렴이 기대된다.",
+            "rule": {
+              "left": "derivative_non_zero_initial_close",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f'(x_n) != 0이어야 하고 초기값이 근에 충분히 가까워야 빠른 수렴이 기대된다."
         }
@@ -5459,6 +6495,7 @@
       "source_formula_ids": [
         "nonhomogeneous_general_solution"
       ],
+      "primary_formula_id": "nonhomogeneous_general_solution",
       "supported_answer_types": [
         "expression"
       ],
@@ -5466,19 +6503,36 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "yh_is_homogeneous_general_yp_is_particular equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.nonhomogeneous_structure.1",
+            "scope": "generation",
+            "description": "y_h는 대응 동차방정식의 일반해이고 y_p는 원래 방정식을 만족하는 하나의 특수해여야 한다.",
+            "rule": {
+              "left": "yh_is_homogeneous_general_yp_is_particular",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "y_h는 대응 동차방정식의 일반해이고 y_p는 원래 방정식을 만족하는 하나의 특수해여야 한다."
         }
@@ -5536,6 +6590,7 @@
         "nonhomogeneous_system_def",
         "variation_of_parameters_matrix_formula"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -5545,10 +6600,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "matrix_constant_g_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.nonhomogeneous_systems.1",
+            "scope": "generation",
+            "description": "A가 상수이고 g가 적절히 연속일 때 위 식을 사용한다.",
+            "rule": {
+              "left": "matrix_constant_g_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "A가 상수이고 g가 적절히 연속일 때 위 식을 사용한다."
         }
@@ -5606,6 +6672,7 @@
         "jacobian_matrix_definition",
         "linearized_system_approximation"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "matrix"
       ],
@@ -5615,10 +6682,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "differentiable_at_equilibrium_hyperbolic equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.nonlinear_linearization.1",
+            "scope": "generation",
+            "description": "함수가 평형점 근방에서 미분 가능해야 하며 실수부가 0이 아닌 쌍곡 평형점에서 판정이 유효하다.",
+            "rule": {
+              "left": "differentiable_at_equilibrium_hyperbolic",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "함수가 평형점 근방에서 미분 가능해야 하며 실수부가 0이 아닌 쌍곡 평형점에서 판정이 유효하다."
         }
@@ -5676,6 +6754,7 @@
         "central_difference",
         "forward_difference"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -5691,16 +6770,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "differentiable_optimal_h equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.numerical_differentiation.1",
+            "scope": "generation",
+            "description": "f가 필요한 차수만큼 미분 가능하고 h가 너무 크거나 작지 않아야 한다.",
+            "rule": {
+              "left": "differentiable_optimal_h",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 필요한 차수만큼 미분 가능하고 h가 너무 크거나 작지 않아야 한다."
         }
@@ -5708,8 +6799,7 @@
       "construction": {
         "operation": "numerical_differentiation_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "전진차분과 중심차분 공식을 이용해 도함수를 근사하고 오차 특성을 이해한다."
@@ -5759,6 +6849,7 @@
         "general_form_ode",
         "normal_form_ode"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "boolean"
       ],
@@ -5768,10 +6859,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "can_solve_for_derivative equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.first_order_intro.1",
+            "scope": "generation",
+            "description": "정규형을 사용하려면 주어진 구간에서 방정식을 y'에 관해 풀 수 있어야 한다.",
+            "rule": {
+              "left": "can_solve_for_derivative",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "정규형을 사용하려면 주어진 구간에서 방정식을 y'에 관해 풀 수 있어야 한다."
         }
@@ -5829,6 +6936,7 @@
         "cosine_cosine_orthogonality",
         "sine_cosine_orthogonality"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "scalar"
       ],
@@ -5836,20 +6944,28 @@
         "u": {
           "type": "vector",
           "description": "작은 정수 성분을 갖는 벡터",
-          "dimension_min": 2,
-          "dimension_max": 3,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "dimension": {
+              "min": 2,
+              "max": 3
+            }
+          }
         },
         "v": {
           "type": "vector",
           "description": "u와 호환되는 차원의 벡터",
-          "dimension_min": 2,
-          "dimension_max": 3,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "dimension": "u.dimension"
+          },
+          "depends_on": [
+            "u"
+          ]
         },
         "f": {
           "type": "expression",
@@ -5861,16 +6977,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "m_n_integers_same_interval equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.trigonometric_orthogonality.1",
+            "scope": "generation",
+            "description": "m, n은 정수이며 같은 기본구간과 스케일을 사용해야 한다.",
+            "rule": {
+              "left": "m_n_integers_same_interval",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "m, n은 정수이며 같은 기본구간과 스케일을 사용해야 한다."
         }
@@ -5880,8 +7008,7 @@
         "required_objects": [
           "u",
           "v",
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "삼각함수의 직교성 성질을 이해하고 적분값을 계산한다."
@@ -5930,6 +7057,7 @@
       "source_formula_ids": [
         "parseval_formula"
       ],
+      "primary_formula_id": "parseval_formula",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -5940,10 +7068,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_square_integrable equals True",
+          "expression": {
+            "constraint_id": "auto.em.fourier.parseval_identity.1",
+            "scope": "generation",
+            "description": "f가 제곱적분 가능해야 한다.",
+            "rule": {
+              "left": "f_square_integrable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 제곱적분 가능해야 한다."
         }
@@ -6001,6 +7140,7 @@
         "discriminant_pde",
         "principal_part_2var"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "string"
       ],
@@ -6010,10 +7150,21 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "classified_at_each_point equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.classification.1",
+            "scope": "generation",
+            "description": "가변계수 PDE는 각 점의 계수를 기준으로 분류하며 위치에 따라 유형이 달라질 수 있다.",
+            "rule": {
+              "left": "classified_at_each_point",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "가변계수 PDE는 각 점의 계수를 기준으로 분류하며 위치에 따라 유형이 달라질 수 있다."
         }
@@ -6071,6 +7222,7 @@
         "autonomous_system_2d",
         "equilibrium_point_def"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "vector_list"
       ],
@@ -6080,10 +7232,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_autonomous_system equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.phase_plane_equilibrium.1",
+            "scope": "generation",
+            "description": "시스템이 자율적이어야 시간 이동에 대해 같은 위상구조를 갖는다.",
+            "rule": {
+              "left": "is_autonomous_system",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "시스템이 자율적이어야 시간 이동에 대해 같은 위상구조를 갖는다."
         }
@@ -6141,6 +7304,7 @@
         "residue_theorem_formula",
         "simple_pole_residue"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -6150,10 +7314,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "contour_no_singularity_finite_inside_positive equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.residue_theorem.1",
+            "scope": "generation",
+            "description": "경로 위에는 특이점이 없어야 하고 내부에는 유한 개의 고립특이점이 있어야 하며 경로는 양의 방향이어야 한다.",
+            "rule": {
+              "left": "contour_no_singularity_finite_inside_positive",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "경로 위에는 특이점이 없어야 하고 내부에는 유한 개의 고립특이점이 있어야 하며 경로는 양의 방향이어야 한다."
         }
@@ -6211,6 +7386,7 @@
         "rk4_slopes",
         "rk4_update"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -6221,10 +7397,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_smooth_rk4_stable equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.runge_kutta_4th.1",
+            "scope": "generation",
+            "description": "f가 충분히 매끄럽고 step size가 안정성 범위에 있어야 한다.",
+            "rule": {
+              "left": "f_smooth_rk4_stable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f가 충분히 매끄럽고 step size가 안정성 범위에 있어야 한다."
         }
@@ -6282,6 +7469,7 @@
         "s_differentiation_laplace",
         "time_integration_laplace"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -6296,16 +7484,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "transforms_and_derivatives_exist equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.integration_s_differentiation.1",
+            "scope": "generation",
+            "description": "관련 변환과 미분이 존재하고 적분·미분 순서 교환이 정당화되어야 한다.",
+            "rule": {
+              "left": "transforms_and_derivatives_exist",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "관련 변환과 미분이 존재하고 적분·미분 순서 교환이 정당화되어야 한다."
         }
@@ -6313,8 +7513,7 @@
       "construction": {
         "operation": "s_differentiation_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "시간적분과 s-미분 성질을 이용해 Laplace 변환을 계산한다."
@@ -6363,6 +7562,7 @@
       "source_formula_ids": [
         "secant_formula"
       ],
+      "primary_formula_id": "secant_formula",
       "supported_answer_types": [
         "scalar"
       ],
@@ -6372,10 +7572,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "f_values_distinct_two_initial equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.secant_method.1",
+            "scope": "generation",
+            "description": "f(x_n) != f(x_{n-1})이어야 하며 두 초기값이 필요하다.",
+            "rule": {
+              "left": "f_values_distinct_two_initial",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "f(x_n) != f(x_{n-1})이어야 하며 두 초기값이 필요하다."
         }
@@ -6433,6 +7644,7 @@
         "heaviside_step_function",
         "second_shifting_formula"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -6442,10 +7654,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "a_positive_and_f_t_minus_a equals True",
+          "expression": {
+            "constraint_id": "auto.em.laplace.second_shifting_theorem.1",
+            "scope": "generation",
+            "description": "a > 0이며 지연된 함수가 정확히 f(t-a) 형태로 표현되어야 한다.",
+            "rule": {
+              "left": "a_positive_and_f_t_minus_a",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "a > 0이며 지연된 함수가 정확히 f(t-a) 형태로 표현되어야 한다."
         }
@@ -6503,6 +7726,7 @@
         "separable_form",
         "separable_integral"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -6512,10 +7736,26 @@
           "description": "문제 유형에 맞는 미분방정식/변환 문제"
         }
       },
+      "symbol_spec": {
+        "t": {
+          "role": "independent_variable",
+          "description": "시간 또는 주 독립변수"
+        }
+      },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "h_y_not_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.separable.1",
+            "scope": "generation",
+            "description": "h(y) != 0인 구간에서 나눗셈이 가능하다.",
+            "rule": {
+              "left": "h_y_not_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "h(y) != 0인 구간에서 나눗셈이 가능하다."
         }
@@ -6573,6 +7813,7 @@
         "product_ansatz_pde",
         "separated_odes"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -6582,10 +7823,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "linear_homogeneous_separable equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.separation_of_variables.1",
+            "scope": "generation",
+            "description": "영역과 경계조건이 분리 가능하며 주로 선형 동차 PDE여야 한다.",
+            "rule": {
+              "left": "linear_homogeneous_separable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "영역과 경계조건이 분리 가능하며 주로 선형 동차 PDE여야 한다."
         }
@@ -6642,6 +7894,7 @@
       "source_formula_ids": [
         "composite_simpson_one_third"
       ],
+      "primary_formula_id": "composite_simpson_one_third",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -6652,10 +7905,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "n_even_f_fourth_derivative_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.simpson_rule.1",
+            "scope": "generation",
+            "description": "합성 Simpson 1/3 공식은 등간격 구간 수 n이 짝수여야 하고 f^(4)가 연속이어야 표준 오차식을 적용한다.",
+            "rule": {
+              "left": "n_even_f_fourth_derivative_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "합성 Simpson 1/3 공식은 등간격 구간 수 n이 짝수여야 하고 f^(4)가 연속이어야 표준 오차식을 적용한다."
         }
@@ -6712,6 +7976,7 @@
       "source_formula_ids": [
         "pole_order_definition"
       ],
+      "primary_formula_id": "pole_order_definition",
       "supported_answer_types": [
         "string"
       ],
@@ -6721,10 +7986,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "singularity_is_isolated equals True",
+          "expression": {
+            "constraint_id": "auto.em.complex.isolated_singularities.1",
+            "scope": "generation",
+            "description": "특이점이 고립되어 있어야 Laurent 급수로 분류할 수 있다.",
+            "rule": {
+              "left": "singularity_is_isolated",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "특이점이 고립되어 있어야 Laurent 급수로 분류할 수 있다."
         }
@@ -6781,6 +8057,7 @@
       "source_formula_ids": [
         "state_space_vector_form"
       ],
+      "primary_formula_id": "state_space_vector_form",
       "supported_answer_types": [
         "matrix"
       ],
@@ -6790,10 +8067,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "highest_derivative_isolated equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.state_space_conversion.1",
+            "scope": "generation",
+            "description": "원래 방정식이 최고계 도함수에 관해 풀려 있어야 한다.",
+            "rule": {
+              "left": "highest_derivative_isolated",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "원래 방정식이 최고계 도함수에 관해 풀려 있어야 한다."
         }
@@ -6851,6 +8139,7 @@
         "steady_state_condition",
         "steady_transient_decomposition"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -6860,10 +8149,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "time_independent_boundary_stable equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.steady_state_transient.1",
+            "scope": "generation",
+            "description": "시간독립 경계조건과 안정적인 확산형 시스템에서 특히 유용하다.",
+            "rule": {
+              "left": "time_independent_boundary_stable",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "시간독립 경계조건과 안정적인 확산형 시스템에서 특히 유용하다."
         }
@@ -6920,6 +8220,7 @@
       "source_formula_ids": [
         "stokes_theorem_formula"
       ],
+      "primary_formula_id": "stokes_theorem_formula",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -6930,10 +8231,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "surface_orientable_right_hand_rule equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.stokes_theorem.1",
+            "scope": "generation",
+            "description": "곡면은 방향 가능해야 하며 경계방향과 법선방향은 오른손규칙에 맞아야 한다.",
+            "rule": {
+              "left": "surface_orientable_right_hand_rule",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "곡면은 방향 가능해야 하며 경계방향과 법선방향은 오른손규칙에 맞아야 한다."
         }
@@ -6990,6 +8302,7 @@
       "source_formula_ids": [
         "sturm_liouville_equation"
       ],
+      "primary_formula_id": "sturm_liouville_equation",
       "supported_answer_types": [
         "expression"
       ],
@@ -6999,10 +8312,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "p_w_positive_self_adjoint equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.sturm_liouville.1",
+            "scope": "generation",
+            "description": "p > 0, w > 0이고 계수와 경계조건이 적절한 자기수반 형태여야 한다.",
+            "rule": {
+              "left": "p_w_positive_self_adjoint",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "p > 0, w > 0이고 계수와 경계조건이 적절한 자기수반 형태여야 한다."
         }
@@ -7059,6 +8383,7 @@
       "source_formula_ids": [
         "superposition_operator"
       ],
+      "primary_formula_id": "superposition_operator",
       "supported_answer_types": [
         "boolean"
       ],
@@ -7068,10 +8393,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "is_linear_and_homogeneous equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.superposition_space.1",
+            "scope": "generation",
+            "description": "방정식이 선형이고 동차여야 한다.",
+            "rule": {
+              "left": "is_linear_and_homogeneous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "방정식이 선형이고 동차여야 한다."
         }
@@ -7129,6 +8465,7 @@
         "surface_area_element",
         "surface_integral_flux"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -7144,16 +8481,28 @@
             "logarithmic",
             "trigonometric"
           ]
-        },
+        }
+      },
+      "symbol_spec": {
         "x": {
-          "type": "symbol",
+          "role": "independent_variable",
           "description": "주 독립변수"
         }
       },
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "surface_smooth_orientable_cross_non_zero equals True",
+          "expression": {
+            "constraint_id": "auto.em.vector.surface_integrals_flux.1",
+            "scope": "generation",
+            "description": "곡면이 조각별 매끄럽고 방향 가능해야 하며 r_u × r_v != 0이어야 한다.",
+            "rule": {
+              "left": "surface_smooth_orientable_cross_non_zero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "곡면이 조각별 매끄럽고 방향 가능해야 하며 r_u × r_v != 0이어야 한다."
         }
@@ -7161,8 +8510,7 @@
       "construction": {
         "operation": "surface_integral_calculation",
         "required_objects": [
-          "f",
-          "x"
+          "f"
         ],
         "semantic_structure": [
           "매개화된 곡면을 통과하는 벡터장의 플럭스(Flux)를 계산한다."
@@ -7212,6 +8560,7 @@
         "matrix_ode_general",
         "matrix_ode_homogeneous"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "matrix"
       ],
@@ -7219,19 +8568,36 @@
         "A": {
           "type": "matrix",
           "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-          "rows_min": 2,
-          "rows_max": 4,
-          "cols_min": 2,
-          "cols_max": 4,
           "element_type": "integer",
           "element_min": -5,
-          "element_max": 5
+          "element_max": 5,
+          "shape": {
+            "rows": {
+              "min": 2,
+              "max": 4
+            },
+            "cols": {
+              "min": 2,
+              "max": 4
+            }
+          }
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "equations_are_linear equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.systems_matrix_form.1",
+            "scope": "generation",
+            "description": "성분별 방정식이 미지함수들에 대해 선형이어야 선형 시스템이 된다.",
+            "rule": {
+              "left": "equations_are_linear",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "성분별 방정식이 미지함수들에 대해 선형이어야 선형 시스템이 된다."
         }
@@ -7288,6 +8654,7 @@
       "source_formula_ids": [
         "composite_trapezoidal_rule"
       ],
+      "primary_formula_id": "composite_trapezoidal_rule",
       "supported_answer_types": [
         "expression",
         "scalar"
@@ -7298,10 +8665,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "equispaced_f_double_prime_continuous equals True",
+          "expression": {
+            "constraint_id": "auto.em.numerical.trapezoidal_rule.1",
+            "scope": "generation",
+            "description": "합성공식은 보통 등간격 분할을 사용하고 f''가 연속이면 표준 오차식을 적용한다.",
+            "rule": {
+              "left": "equispaced_f_double_prime_continuous",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "합성공식은 보통 등간격 분할을 사용하고 f''가 연속이면 표준 오차식을 적용한다."
         }
@@ -7358,6 +8736,7 @@
       "source_formula_ids": [
         "resonance_adjustment"
       ],
+      "primary_formula_id": "resonance_adjustment",
       "supported_answer_types": [
         "expression"
       ],
@@ -7367,10 +8746,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "constant_coefficient_and_closed_rhs equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.method_of_undetermined_coefficients.1",
+            "scope": "generation",
+            "description": "상수계수 선형 비동차방정식이며 우변이 다항식, 지수함수, 사인·코사인의 유한 조합일 때 적합하다.",
+            "rule": {
+              "left": "constant_coefficient_and_closed_rhs",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "상수계수 선형 비동차방정식이며 우변이 다항식, 지수함수, 사인·코사인의 유한 조합일 때 적합하다."
         }
@@ -7429,6 +8819,7 @@
         "u_prime_formulas",
         "variation_of_parameters_particular"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -7438,10 +8829,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "standard_form_and_wronskian_nonzero equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.variation_of_parameters.1",
+            "scope": "generation",
+            "description": "동차 기본해 y_1, y_2가 알려져 있고 W != 0인 구간에서 방정식을 표준형으로 정리한 후 적용한다.",
+            "rule": {
+              "left": "standard_form_and_wronskian_nonzero",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "동차 기본해 y_1, y_2가 알려져 있고 W != 0인 구간에서 방정식을 표준형으로 정리한 후 적용한다."
         }
@@ -7499,6 +8901,7 @@
         "dalembert_solution",
         "wave_equation_pde"
       ],
+      "primary_formula_id": null,
       "supported_answer_types": [
         "expression"
       ],
@@ -7508,10 +8911,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "c_positive_infinite_domain equals True",
+          "expression": {
+            "constraint_id": "auto.em.pde.wave_equation.1",
+            "scope": "generation",
+            "description": "c > 0가 일정하고 선형 소진폭 파동을 가정하며 달랑베르 해는 공간이 전체 실수일 때 직접 적용한다.",
+            "rule": {
+              "left": "c_positive_infinite_domain",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "c > 0가 일정하고 선형 소진폭 파동을 가정하며 달랑베르 해는 공간이 전체 실수일 때 직접 적용한다."
         }
@@ -7568,6 +8982,7 @@
       "source_formula_ids": [
         "wronskian_determinant"
       ],
+      "primary_formula_id": "wronskian_determinant",
       "supported_answer_types": [
         "expression"
       ],
@@ -7577,10 +8992,21 @@
           "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
         }
       },
+      "symbol_spec": {},
       "constraints": [
         {
           "type": "concept_application_condition",
-          "expression": "differentiable_and_non_zero_at_point equals True",
+          "expression": {
+            "constraint_id": "auto.em.ode.wronskian.1",
+            "scope": "generation",
+            "description": "함수들이 같은 구간에서 충분히 미분 가능해야 하며 선형 ODE 해들의 경우 한 점에서 W != 0이어야 한다.",
+            "rule": {
+              "left": "differentiable_and_non_zero_at_point",
+              "operator": "equals",
+              "right": true
+            },
+            "on_failure": "resample"
+          },
           "required": true,
           "description": "함수들이 같은 구간에서 충분히 미분 가능해야 하며 선형 ODE 해들의 경우 한 점에서 W != 0이어야 한다."
         }

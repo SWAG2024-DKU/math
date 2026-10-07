@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.positive_definite.positive_definite_test.v1",
   "template_version": "1.0.0",
@@ -42,6 +42,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "양의 정부호 여부를 판정할 실수 대칭행렬.",
       "required": true,
       "min": -4,
       "max": 4,
@@ -49,10 +50,55 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "양의 정부호 여부를 판정할 실수 대칭행렬."
+      "allowed_families": [
+        "symmetric"
+      ],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 2,
+          "max": 3
+        },
+        "cols": "A.rows",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [],
+  "symbols": {},
+  "constraints": [
+    {
+      "type": "generation_precondition",
+      "expression": {
+        "constraint_id": "migration.positive_definite_test.A.symmetric",
+        "scope": "generation",
+        "description": "A는 실수 대칭행렬",
+        "rule": {
+          "left": "A",
+          "operator": "symmetric",
+          "right": null,
+          "args": []
+        },
+        "on_failure": "resample"
+      },
+      "required": true,
+      "description": "A는 실수 대칭행렬"
+    }
+  ],
   "problem_builder": {
     "operation": "positive_definite_test",
     "required_objects": [
@@ -81,16 +127,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "eigenvalue_sign_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "positive_definite_definition",
+        "formula_id": null,
         "cas_expression": "all(ev > 0 for ev in A.eigenvals().keys())"
       }
     ],
@@ -103,7 +150,7 @@
   "validation": {
     "validators": [
       {
-        "name": "eigenvalue_sign_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }
@@ -125,7 +172,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.positive_definite_test.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

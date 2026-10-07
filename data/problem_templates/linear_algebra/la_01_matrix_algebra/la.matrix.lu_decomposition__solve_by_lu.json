@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.lu_decomposition.solve_by_lu.v1",
   "template_version": "1.0.0",
@@ -42,6 +42,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "LU 분해 가능한 정사각행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -49,10 +50,35 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "LU 분해 가능한 정사각행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 2,
+          "max": 3
+        },
+        "cols": "A.rows",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
     "b": {
       "type": "vector",
+      "description": "우변 벡터.",
       "required": true,
       "min": -8,
       "max": 8,
@@ -60,13 +86,48 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "우변 벡터."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": null,
+        "cols": null,
+        "dimension": "A.rows",
+        "length": null,
+        "size": null
+      },
+      "depends_on": [
+        "A"
+      ],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [
     {
       "type": "nonsingular",
-      "expression": "{\"constraint_id\": \"nonsingular\", \"scope\": \"generation\", \"description\": \"유일해가 존재하도록 det(A) != 0을 만족해야 한다.\", \"rule\": {\"left\": \"det(A)\", \"operator\": \"not_equals\", \"right\": 0}, \"on_failure\": \"resample\"}",
+      "expression": {
+        "constraint_id": "nonsingular",
+        "scope": "generation",
+        "description": "유일해가 존재하도록 det(A) != 0을 만족해야 한다.",
+        "rule": {
+          "left": "det(A)",
+          "operator": "not_equals",
+          "right": 0,
+          "args": []
+        },
+        "on_failure": "resample"
+      },
       "required": true,
       "description": "유일해가 존재하도록 det(A) != 0을 만족해야 한다."
     }
@@ -100,17 +161,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_multiplication_check",
-      "lower_triangular_check"
+      "linear_system_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "lu_model",
+        "formula_id": null,
         "cas_expression": "A.LUsolve(b)"
       }
     ],
@@ -123,12 +184,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_multiplication_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "lower_triangular_check",
+        "name": "linear_system_check",
         "required": true,
         "config": {}
       }
@@ -150,7 +206,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.solve_by_lu.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

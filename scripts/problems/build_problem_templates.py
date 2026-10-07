@@ -14,6 +14,10 @@ if str(PROJECT_ROOT) not in sys.path:
 from app.problems.generation_rule_registry import get_rule
 from app.problems.problem_type_extractor import extract_from_directory
 from app.problems.template_builder import build_template
+from scripts.problems.generation_rule_validator import (
+    GenerationRuleValidationError,
+    ensure_generation_rule_valid,
+)
 
 
 DEFAULT_CONCEPT_DIR = PROJECT_ROOT / "data" / "concepts"
@@ -85,10 +89,34 @@ def main() -> None:
 
     counts = Counter()
     generated_files: list[str] = []
+    checked_rules: set[tuple[str, str]] = set()
+    blocked_rules: dict[tuple[str, str], str] = {}
 
     for item in items:
         try:
             rule = get_rule(item.subject_id, item.problem_type)
+            rule_key = (item.subject_id, item.problem_type)
+            if rule_key in blocked_rules:
+                counts["blocked_by_rule_validation"] += 1
+                raise ValueError(blocked_rules[rule_key])
+
+            if rule_key not in checked_rules:
+                try:
+                    # 검증기의 상태별 강도를 그대로 사용한다.
+                    # error는 차단하고 draft_auto 등의 warning은 초안 생성을 허용한다.
+                    issues = ensure_generation_rule_valid(rule)
+                except GenerationRuleValidationError as exc:
+                    blocked_rules[rule_key] = str(exc)
+                    counts["blocked_by_rule_validation"] += 1
+                    raise
+                checked_rules.add(rule_key)
+                warnings = [issue for issue in issues if issue.severity == "warning"]
+                counts["rule_warnings"] += len(warnings)
+                if warnings:
+                    print(
+                        f"[WARN] {rule.rule_id}: 정적 검사 경고 {len(warnings)}건 "
+                        "(오류가 아니므로 생성은 계속합니다.)"
+                    )
             template = build_template(item, rule)
         except Exception as exc:
             counts["failed"] += 1
@@ -155,6 +183,11 @@ def main() -> None:
     print(f"기존 파일 건너뜀: {counts['skipped_existing']}")
     print(f"draft 건너뜀: {counts['skipped_draft']}")
     print(f"실패: {counts['failed']}")
+    print(f"정적 검사로 차단된 대상: {counts['blocked_by_rule_validation']}")
+    print(f"정적 오류 Rule 수: {len(blocked_rules)}")
+    print(f"Rule 정적 검사 경고: {counts['rule_warnings']}")
+    if counts["blocked_by_rule_validation"]:
+        print("[주의] 차단된 대상의 기존 JSON은 자동 삭제하지 않습니다.")
     print(f"출력 디렉터리: {output_dir}")
 
     if counts["failed"]:

@@ -1,0 +1,175 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.symmetric_diagonalization.orthogonal_diagonalization_calculation.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\linear_algebra\\la_05_eigenvalues_diagonalization\\la.eigen.symmetric_diagonalization__orthogonal_diagonalization_calculation.json",
+  "template_sha256": "70ce88701324c6ca169671ece4b753ff0912686bacb112f6366d8a758c585b41",
+  "seed_start": 17,
+  "requested_count": 20,
+  "timeout_seconds": 180.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 29,
+      "passed": true,
+      "attempts": 13,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_29.json"
+    },
+    {
+      "requested_seed": 30,
+      "actual_seed": 33,
+      "passed": true,
+      "attempts": 4,
+      "duplicate_retries": 0,
+      "file": "start_30_actual_33.json"
+    },
+    {
+      "requested_seed": 34,
+      "actual_seed": 42,
+      "passed": true,
+      "attempts": 9,
+      "duplicate_retries": 0,
+      "file": "start_34_actual_42.json"
+    },
+    {
+      "requested_seed": 43,
+      "actual_seed": 78,
+      "passed": true,
+      "attempts": 36,
+      "duplicate_retries": 0,
+      "file": "start_43_actual_78.json"
+    },
+    {
+      "requested_seed": 79,
+      "actual_seed": 125,
+      "passed": true,
+      "attempts": 31,
+      "duplicate_retries": 1,
+      "file": "start_79_actual_125.json"
+    },
+    {
+      "requested_seed": 126,
+      "actual_seed": 139,
+      "passed": true,
+      "attempts": 14,
+      "duplicate_retries": 0,
+      "file": "start_126_actual_139.json"
+    },
+    {
+      "requested_seed": 140,
+      "actual_seed": 140,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_140_actual_140.json"
+    },
+    {
+      "requested_seed": 141,
+      "actual_seed": 149,
+      "passed": true,
+      "attempts": 9,
+      "duplicate_retries": 0,
+      "file": "start_141_actual_149.json"
+    },
+    {
+      "requested_seed": 150,
+      "actual_seed": 164,
+      "passed": true,
+      "attempts": 15,
+      "duplicate_retries": 0,
+      "file": "start_150_actual_164.json"
+    },
+    {
+      "requested_seed": 165,
+      "actual_seed": 206,
+      "passed": true,
+      "attempts": 42,
+      "duplicate_retries": 0,
+      "file": "start_165_actual_206.json"
+    },
+    {
+      "requested_seed": 207,
+      "actual_seed": 209,
+      "passed": true,
+      "attempts": 3,
+      "duplicate_retries": 0,
+      "file": "start_207_actual_209.json"
+    },
+    {
+      "requested_seed": 210,
+      "actual_seed": 222,
+      "passed": true,
+      "attempts": 13,
+      "duplicate_retries": 0,
+      "file": "start_210_actual_222.json"
+    },
+    {
+      "requested_seed": 223,
+      "actual_seed": 281,
+      "passed": true,
+      "attempts": 8,
+      "duplicate_retries": 1,
+      "file": "start_223_actual_281.json"
+    },
+    {
+      "requested_seed": 282,
+      "actual_seed": 305,
+      "passed": true,
+      "attempts": 18,
+      "duplicate_retries": 1,
+      "file": "start_282_actual_305.json"
+    },
+    {
+      "requested_seed": 306,
+      "actual_seed": 323,
+      "passed": true,
+      "attempts": 13,
+      "duplicate_retries": 1,
+      "file": "start_306_actual_323.json"
+    },
+    {
+      "requested_seed": 324,
+      "actual_seed": 326,
+      "passed": true,
+      "attempts": 3,
+      "duplicate_retries": 0,
+      "file": "start_324_actual_326.json"
+    },
+    {
+      "requested_seed": 327,
+      "actual_seed": 338,
+      "passed": true,
+      "attempts": 12,
+      "duplicate_retries": 0,
+      "file": "start_327_actual_338.json"
+    },
+    {
+      "requested_seed": 339,
+      "actual_seed": 356,
+      "passed": true,
+      "attempts": 18,
+      "duplicate_retries": 0,
+      "file": "start_339_actual_356.json"
+    },
+    {
+      "requested_seed": 357,
+      "actual_seed": 396,
+      "passed": true,
+      "attempts": 40,
+      "duplicate_retries": 0,
+      "file": "start_357_actual_396.json"
+    },
+    {
+      "requested_seed": 397,
+      "actual_seed": 419,
+      "passed": true,
+      "attempts": 23,
+      "duplicate_retries": 0,
+      "file": "start_397_actual_419.json"
+    }
+  ],
+  "succeeded": 20,
+  "failed": 0,
+  "timed_out": 0
+}

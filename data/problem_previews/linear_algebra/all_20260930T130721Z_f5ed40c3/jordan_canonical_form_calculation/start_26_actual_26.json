@@ -1,0 +1,224 @@
+{
+  "subject_id": "linear_algebra",
+  "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.jordan_form.jordan_canonical_form_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "linear_algebra.jordan_canonical_form_calculation.v1",
+  "generation_rule_version": "1.0.0",
+  "problem_type": "jordan_canonical_form_calculation",
+  "answer_type": "matrix_pair",
+  "template_status": "ready",
+  "review_status": "reviewed",
+  "publishable": false,
+  "statement": "A = P J P^(-1)을 만족하는 가역행렬 P와 조르당 표준형 J를 구하시오. A = Matrix([[2, -2], [0, 2]])",
+  "statement_latex": null,
+  "parameters": {
+    "A": [
+      [
+        2,
+        -2
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "expected_answer": [
+    [
+      [
+        -2,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  ],
+  "seed": 26,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "jordan_similarity_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 26,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "linear_algebra.la_06_advanced_applications.la.advanced.jordan_form.jordan_canonical_form_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "ready",
+    "generation_rule_id": "linear_algebra.jordan_canonical_form_calculation.v1",
+    "generation_rule_version": "1.0.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "linear_algebra",
+      "subject_name_ko": "선형대수학",
+      "unit_id": "la_06_advanced_applications",
+      "unit_name_ko": "현대적 심화 응용",
+      "concept_ids": [
+        "la.advanced.jordan_form"
+      ],
+      "formula_ids": [
+        "jordan_decomposition_formula",
+        "generalized_eigenvector_chain",
+        "jordan_block_structure"
+      ],
+      "tags": [
+        "jordan_canonical_form",
+        "generalized_eigenvector",
+        "defective_matrix"
+      ]
+    },
+    "classification": {
+      "problem_type": "jordan_canonical_form_calculation",
+      "answer_type": "matrix_pair",
+      "difficulty": {
+        "base": 4,
+        "min": 4,
+        "max": 5,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "A": {
+        "type": "matrix",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": "integer",
+        "element_min": -5,
+        "element_max": 5,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": {
+          "rows": 2,
+          "cols": 2,
+          "dimension": null,
+          "length": null,
+          "size": null
+        },
+        "depends_on": [],
+        "derived": null,
+        "generator": "defective_jordan_matrix"
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "jordan_canonical_form_calculation",
+      "required_objects": [
+        "A"
+      ],
+      "semantic_structure": [
+        "결함 행렬에 대한 조르당 표준형과 전이행렬 M을 구한다."
+      ],
+      "text_templates_ko": [
+        "A = P J P^(-1)을 만족하는 가역행렬 P와 조르당 표준형 J를 구하시오. A = {{ A }}"
+      ],
+      "latex_templates": [],
+      "cas_template": "jordan_defective_pair(A)",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "matrix_pair",
+      "engine": "sympy",
+      "cas_template": "jordan_defective_pair(A)",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "jordan_similarity_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "jordan_decomposition_formula",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "jordan_decomposition_formula",
+          "cas_expression": "jordan_defective_pair(A)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "jordan_similarity_check",
+          "required": true,
+          "config": {}
+        }
+      ],
+      "generation_max_attempts": 100,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "reviewed",
+      "notes": "Generation Rule 'linear_algebra.jordan_canonical_form_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 선형대수 고급 유형: 제한된 정수 입력, 정답 계산, 입력값 기반 독립 검증."
+    }
+  }
+}

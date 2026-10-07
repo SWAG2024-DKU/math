@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_02_vector_spaces.la.space.linear_independence.linear_independence_test.v1",
   "template_version": "1.0.0",
@@ -40,6 +40,7 @@
   "parameters": {
     "V": {
       "type": "matrix",
+      "description": "검사할 벡터들을 열벡터로 갖는 행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -47,9 +48,31 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "검사할 벡터들을 열벡터로 갖는 행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": 3,
+        "cols": 2,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "linear_independence_test",
@@ -79,11 +102,12 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "rank_matrix_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "independence_condition",
     "solution_plan": [
       {
         "step": 1,
@@ -101,7 +125,7 @@
   "validation": {
     "validators": [
       {
-        "name": "rank_matrix_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }
@@ -123,7 +147,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.linear_independence_test.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

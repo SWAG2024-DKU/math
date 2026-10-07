@@ -14,3 +14,5 @@ dependencies:
       - sentence-transformers
       - pgvector
       - pytest
+      - sympy
+      - Jinja2

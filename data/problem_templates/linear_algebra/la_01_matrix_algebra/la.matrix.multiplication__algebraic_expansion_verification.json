@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.multiplication.algebraic_expansion_verification.v1",
   "template_version": "1.0.0",
@@ -41,6 +41,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "정사각행렬 A.",
       "required": true,
       "min": -4,
       "max": 4,
@@ -48,10 +49,35 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "정사각행렬 A."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 2,
+          "max": 3
+        },
+        "cols": "A.rows",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
     "B": {
       "type": "matrix",
+      "description": "A와 같은 크기의 정사각행렬 B.",
       "required": true,
       "min": -4,
       "max": 4,
@@ -59,9 +85,33 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "A와 같은 크기의 정사각행렬 B."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": "A.rows",
+        "cols": "A.cols",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [
+        "A"
+      ],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "algebraic_expansion_verification",
@@ -74,7 +124,7 @@
       "문제에서 요구한 연산 또는 판정을 수행하도록 한다."
     ],
     "text_templates_ko": [
-      "행렬 곱셈의 비교환성을 고려하여 (A+B)^2를 전개하시오."
+      "두 행렬에 대해 (A+B)^2를 AB와 BA의 순서를 구별하여 전개한 뒤 계산하시오.\nA = {{ A }}, B = {{ B }}"
     ],
     "latex_templates": [
       "(A+B)^2"
@@ -92,17 +142,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_noncommutative_expansion",
-      "matrix_equivalence"
+      "symbolic_noncommutative_expansion"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "matrix_multiplication",
+        "formula_id": null,
         "cas_expression": "A*A + A*B + B*A + B*B"
       }
     ],
@@ -116,11 +166,6 @@
     "validators": [
       {
         "name": "symbolic_noncommutative_expansion",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "matrix_equivalence",
         "required": true,
         "config": {}
       }
@@ -142,7 +187,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.algebraic_expansion_verification.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

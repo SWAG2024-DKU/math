@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_01_matrix_algebra.la.matrix.ero_ref.ref_identification.v1",
   "template_version": "1.0.0",
@@ -42,6 +42,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "REF 여부를 판정할 행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -49,9 +50,31 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "REF 여부를 판정할 행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": 3,
+        "cols": 4,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
+  "symbols": {},
   "constraints": [],
   "problem_builder": {
     "operation": "ref_identification",
@@ -81,16 +104,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "ref_form_check"
+      "boolean_equality"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "ero_swap",
+        "formula_id": null,
         "cas_expression": "is_ref(A)"
       }
     ],
@@ -103,7 +127,7 @@
   "validation": {
     "validators": [
       {
-        "name": "ref_form_check",
+        "name": "boolean_equality",
         "required": true,
         "config": {}
       }
@@ -125,7 +149,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.ref_identification.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

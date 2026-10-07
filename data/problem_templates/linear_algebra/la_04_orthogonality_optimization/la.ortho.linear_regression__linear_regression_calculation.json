@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_04_orthogonality_optimization.la.ortho.linear_regression.linear_regression_calculation.v1",
   "template_version": "1.0.0",
@@ -41,6 +41,7 @@
   "parameters": {
     "X": {
       "type": "matrix",
+      "description": "첫 열이 1인 선형회귀 설계행렬.",
       "required": true,
       "min": -5,
       "max": 5,
@@ -48,10 +49,35 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "첫 열이 1인 선형회귀 설계행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 3,
+          "max": 4
+        },
+        "cols": 2,
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": "regression_design_matrix"
     },
     "y": {
       "type": "vector",
+      "description": "반응변수 관측값.",
       "required": true,
       "min": -10,
       "max": 10,
@@ -59,10 +85,41 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "반응변수 관측값."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": null,
+        "cols": null,
+        "dimension": "X.rows",
+        "length": null,
+        "size": null
+      },
+      "depends_on": [
+        "X"
+      ],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [],
+  "symbols": {},
+  "constraints": [
+    {
+      "type": "generation_precondition",
+      "expression": "rank(X) == X.cols",
+      "required": true,
+      "description": "X는 full column rank"
+    }
+  ],
   "problem_builder": {
     "operation": "linear_regression_calculation",
     "required_objects": [
@@ -92,16 +149,17 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "regression_residual_check"
+      "least_squares_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "linear_regression_model",
+        "formula_id": null,
         "cas_expression": "(X.T*X).inv()*X.T*y"
       }
     ],
@@ -114,7 +172,7 @@
   "validation": {
     "validators": [
       {
-        "name": "regression_residual_check",
+        "name": "least_squares_check",
         "required": true,
         "config": {}
       }
@@ -136,7 +194,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.linear_regression_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }

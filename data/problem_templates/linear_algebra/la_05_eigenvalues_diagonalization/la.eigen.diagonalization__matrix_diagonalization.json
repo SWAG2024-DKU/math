@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "linear_algebra.la_05_eigenvalues_diagonalization.la.eigen.diagonalization.matrix_diagonalization.v1",
   "template_version": "1.0.0",
@@ -40,6 +40,7 @@
   "parameters": {
     "A": {
       "type": "matrix",
+      "description": "대각화 가능한 정사각행렬.",
       "required": true,
       "min": -4,
       "max": 4,
@@ -47,10 +48,53 @@
       "choices": [],
       "step": null,
       "distribution": "uniform",
-      "description": "대각화 가능한 정사각행렬."
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": {
+        "rows": {
+          "min": 2,
+          "max": 3
+        },
+        "cols": "A.rows",
+        "dimension": null,
+        "length": null,
+        "size": null
+      },
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [],
+  "symbols": {},
+  "constraints": [
+    {
+      "type": "generation_precondition",
+      "expression": {
+        "constraint_id": "migration.matrix_diagonalization.A.diagonalizable",
+        "scope": "generation",
+        "description": "A는 실수 범위에서 대각화 가능",
+        "rule": {
+          "left": "A",
+          "operator": "diagonalizable",
+          "right": null,
+          "args": []
+        },
+        "on_failure": "resample"
+      },
+      "required": true,
+      "description": "A는 실수 범위에서 대각화 가능"
+    }
+  ],
   "problem_builder": {
     "operation": "matrix_diagonalization",
     "required_objects": [
@@ -79,11 +123,12 @@
       "exact_value_preferred": true
     },
     "required_checks": [
-      "matrix_equivalence"
+      "diagonalization_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "diagonalization_formula",
     "solution_plan": [
       {
         "step": 1,
@@ -101,7 +146,7 @@
   "validation": {
     "validators": [
       {
-        "name": "matrix_equivalence",
+        "name": "diagonalization_check",
         "required": true,
         "config": {}
       }
@@ -123,7 +168,7 @@
   },
   "metadata": {
     "created_by": "template_builder.py",
-    "review_status": "not_reviewed",
+    "review_status": "reviewed",
     "notes": "Generation Rule 'linear_algebra.matrix_diagonalization.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=False. 기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
   }
 }
