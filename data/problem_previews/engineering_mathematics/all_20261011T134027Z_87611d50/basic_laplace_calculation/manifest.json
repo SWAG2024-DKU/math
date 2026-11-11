@@ -1,0 +1,96 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.linearity_table.basic_laplace_calculation.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.linearity_table__basic_laplace_calculation.json",
+  "template_sha256": "f689cb576d41691f0fcd92d9f610466d9b076b61030f94237329df5079eb9fc1",
+  "seed_start": 17,
+  "requested_count": 10,
+  "timeout_seconds": 300.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    },
+    {
+      "requested_seed": 18,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_18_actual_18.json"
+    },
+    {
+      "requested_seed": 19,
+      "actual_seed": 19,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_19_actual_19.json"
+    },
+    {
+      "requested_seed": 20,
+      "actual_seed": 21,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_20_actual_21.json"
+    },
+    {
+      "requested_seed": 22,
+      "actual_seed": 23,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_22_actual_23.json"
+    },
+    {
+      "requested_seed": 24,
+      "actual_seed": 24,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_24_actual_24.json"
+    },
+    {
+      "requested_seed": 25,
+      "actual_seed": 28,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 3,
+      "file": "start_25_actual_28.json"
+    },
+    {
+      "requested_seed": 29,
+      "actual_seed": 30,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_29_actual_30.json"
+    },
+    {
+      "requested_seed": 31,
+      "actual_seed": 34,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 3,
+      "file": "start_31_actual_34.json"
+    },
+    {
+      "requested_seed": 35,
+      "actual_seed": 39,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 4,
+      "file": "start_35_actual_39.json"
+    }
+  ],
+  "succeeded": 10,
+  "failed": 0,
+  "timed_out": 0
+}

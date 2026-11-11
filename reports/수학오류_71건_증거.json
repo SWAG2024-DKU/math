@@ -1,0 +1,2614 @@
+[
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_17_actual_17.json",
+    "statement": "J0(9x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 81*x**2/4",
+    "independent_result": "1853020188851841*x**20/2104533975040000 - 22876792454961*x**18/5261334937600 + 22876792454961*x**16/1315333734400 - 282429536481*x**14/5138022400 + 3486784401*x**12/26214400 - 387420489*x**10/1638400 + 4782969*x**8/16384 - 59049*x**6/256 + 6561*x**4/64 - 81*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_18_actual_18.json",
+    "statement": "J0(3x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 3,
+      "b": 1,
+      "c": 4,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 9*x**2/4",
+    "independent_result": "531441*x**20/2104533975040000 - 59049*x**18/5261334937600 + 531441*x**16/1315333734400 - 59049*x**14/5138022400 + 6561*x**12/26214400 - 6561*x**10/1638400 + 729*x**8/16384 - 81*x**6/256 + 81*x**4/64 - 9*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 18,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_19_actual_20.json",
+    "statement": "J0(12x)의 급수를 x^(22) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 12,
+      "b": 6,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "324*x**4 - 36*x**2 + 1",
+    "independent_result": "-306110016*x**22/3705625 + 8503056*x**20/30625 - 944784*x**18/1225 + 2125764*x**16/1225 - 3779136*x**14/1225 + 104976*x**12/25 - 104976*x**10/25 + 2916*x**8 - 1296*x**6 + 324*x**4 - 36*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 19,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_21_actual_24.json",
+    "statement": "J0(12x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 12,
+      "b": 4,
+      "c": 2,
+      "d": -1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 36*x**2",
+    "independent_result": "8503056*x**20/30625 - 944784*x**18/1225 + 2125764*x**16/1225 - 3779136*x**14/1225 + 104976*x**12/25 - 104976*x**10/25 + 2916*x**8 - 1296*x**6 + 324*x**4 - 36*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 23,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 24,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_25_actual_25.json",
+    "statement": "J0(7x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 7,
+      "b": 1,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 49*x**2/4",
+    "independent_result": "1628413597910449*x**20/281792804290560000 - 33232930569601*x**18/704482010726400 + 678223072849*x**16/2174327193600 - 13841287201*x**14/8493465600 + 13841287201*x**12/2123366400 - 282475249*x**10/14745600 + 5764801*x**8/147456 - 117649*x**6/2304 + 2401*x**4/64 - 49*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 25,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_26_actual_28.json",
+    "statement": "J0(2x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 2,
+      "b": 6,
+      "c": 2,
+      "d": 2,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - x**2",
+    "independent_result": "x**20/13168189440000 - x**18/131681894400 + x**16/1625702400 - x**14/25401600 + x**12/518400 - x**10/14400 + x**8/576 - x**6/36 + x**4/4 - x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 27,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 28,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_29_actual_31.json",
+    "statement": "J0(1x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 1,
+      "b": 4,
+      "c": 1,
+      "d": 1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - x**2/4",
+    "independent_result": "x**20/13807847410237440000 - x**18/34519618525593600 + x**16/106542032486400 - x**14/416179814400 + x**12/2123366400 - x**10/14745600 + x**8/147456 - x**6/2304 + x**4/64 - x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 30,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 31,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_32_actual_32.json",
+    "statement": "J0(2x)의 급수를 x^(22) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "x**4/4 - x**2 + 1",
+    "independent_result": "-x**22/1593350922240000 + x**20/13168189440000 - x**18/131681894400 + x**16/1625702400 - x**14/25401600 + x**12/518400 - x**10/14400 + x**8/576 - x**6/36 + x**4/4 - x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 32,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_33_actual_33.json",
+    "statement": "J0(10x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 10,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 25*x**2",
+    "independent_result": "152587890625*x**20/21069103104 - 152587890625*x**18/5267275776 + 6103515625*x**16/65028096 - 244140625*x**14/1016064 + 9765625*x**12/20736 - 390625*x**10/576 + 390625*x**8/576 - 15625*x**6/36 + 625*x**4/4 - 25*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 33,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/bessel_series_derivation/start_34_actual_36.json",
+    "statement": "J0(6x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 6,
+      "b": 1,
+      "c": 1,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 9*x**2",
+    "independent_result": "531441*x**20/2007040000 - 59049*x**18/20070400 + 531441*x**16/20070400 - 59049*x**14/313600 + 6561*x**12/6400 - 6561*x**10/1600 + 729*x**8/64 - 81*x**6/4 + 81*x**4/4 - 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 34,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 35,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 3,
+          "seed": 36,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_17_actual_17.json",
+    "statement": "y''+9²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 81*x**2/2",
+    "independent_result": "1853020188851841*x**20/370812682240000 - 22876792454961*x**18/975822848000 + 2541865828329*x**16/28700672000 - 94143178827*x**14/358758400 + 1162261467*x**12/1971200 - 43046721*x**10/44800 + 4782969*x**8/4480 - 59049*x**6/80 + 2187*x**4/8 - 81*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_18_actual_18.json",
+    "statement": "y''+3²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 3,
+      "b": 1,
+      "c": 4,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 9*x**2/2",
+    "independent_result": "531441*x**20/370812682240000 - 59049*x**18/975822848000 + 59049*x**16/28700672000 - 19683*x**14/358758400 + 2187*x**12/1971200 - 729*x**10/44800 + 729*x**8/4480 - 81*x**6/80 + 27*x**4/8 - 9*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 18,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_19_actual_20.json",
+    "statement": "y''+12²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(22) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 12,
+      "b": 6,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "864*x**4 - 72*x**2 + 1",
+    "independent_result": "-53496602689536*x**22/108919435625 + 2229025112064*x**20/1414538125 - 61917364224*x**18/14889875 + 7739670528*x**16/875875 - 2579890176*x**14/175175 + 35831808*x**12/1925 - 2985984*x**10/175 + 373248*x**8/35 - 20736*x**6/5 + 864*x**4 - 72*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 19,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_21_actual_24.json",
+    "statement": "y''+12²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 12,
+      "b": 4,
+      "c": 2,
+      "d": -1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 72*x**2",
+    "independent_result": "2229025112064*x**20/1414538125 - 61917364224*x**18/14889875 + 7739670528*x**16/875875 - 2579890176*x**14/175175 + 35831808*x**12/1925 - 2985984*x**10/175 + 373248*x**8/35 - 20736*x**6/5 + 864*x**4 - 72*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 23,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 24,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_25_actual_25.json",
+    "statement": "y''+7²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 7,
+      "b": 1,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 49*x**2/2",
+    "independent_result": "1628413597910449*x**20/49651061391360000 - 33232930569601*x**18/130660687872000 + 678223072849*x**16/426995712000 - 13841287201*x**14/1779148800 + 1977326743*x**12/68428800 - 40353607*x**10/518400 + 823543*x**8/5760 - 117649*x**6/720 + 2401*x**4/24 - 49*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 25,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_26_actual_28.json",
+    "statement": "y''+2²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 2,
+      "b": 6,
+      "c": 2,
+      "d": 2,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 2*x**2",
+    "independent_result": "4*x**20/9280784638125 - 4*x**18/97692469875 + 2*x**16/638512875 - 8*x**14/42567525 + 4*x**12/467775 - 4*x**10/14175 + 2*x**8/315 - 4*x**6/45 + 2*x**4/3 - 2*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 27,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 28,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_29_actual_31.json",
+    "statement": "y''+1²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 1,
+      "b": 4,
+      "c": 1,
+      "d": 1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - x**2/2",
+    "independent_result": "x**20/2432902008176640000 - x**18/6402373705728000 + x**16/20922789888000 - x**14/87178291200 + x**12/479001600 - x**10/3628800 + x**8/40320 - x**6/720 + x**4/24 - x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 30,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 31,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_32_actual_32.json",
+    "statement": "y''+2²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(22) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "2*x**4/3 - 2*x**2 + 1",
+    "independent_result": "-8*x**22/2143861251406875 + 4*x**20/9280784638125 - 4*x**18/97692469875 + 2*x**16/638512875 - 8*x**14/42567525 + 4*x**12/467775 - 4*x**10/14175 + 2*x**8/315 - 4*x**6/45 + 2*x**4/3 - 2*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 32,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_33_actual_33.json",
+    "statement": "y''+10²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 10,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 50*x**2",
+    "independent_result": "610351562500*x**20/14849255421 - 122070312500*x**18/781539759 + 2441406250*x**16/5108103 - 1953125000*x**14/1702701 + 39062500*x**12/18711 - 1562500*x**10/567 + 156250*x**8/63 - 12500*x**6/9 + 1250*x**4/3 - 50*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 33,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_solution_construction/start_34_actual_36.json",
+    "statement": "y''+6²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 6,
+      "b": 1,
+      "c": 1,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 18*x**2",
+    "independent_result": "2125764*x**20/1414538125 - 236196*x**18/14889875 + 118098*x**16/875875 - 157464*x**14/175175 + 8748*x**12/1925 - 2916*x**10/175 + 1458*x**8/35 - 324*x**6/5 + 54*x**4 - 18*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 34,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 35,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 3,
+          "seed": 36,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_17_actual_17.json",
+    "statement": "1/(1-9x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |9x²|<1이다.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 2
+    },
+    "stored_answer": "81*x**4 + 9*x**2 + 1",
+    "independent_result": "31381059609*x**22 + 3486784401*x**20 + 387420489*x**18 + 43046721*x**16 + 4782969*x**14 + 531441*x**12 + 59049*x**10 + 6561*x**8 + 729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_18_actual_18.json",
+    "statement": "1/(1-3x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |3x²|<1이다.",
+    "parameters": {
+      "a": 3,
+      "b": 1,
+      "c": 4,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "9*x**4 + 3*x**2 + 1",
+    "independent_result": "177147*x**22 + 59049*x**20 + 19683*x**18 + 6561*x**16 + 2187*x**14 + 729*x**12 + 243*x**10 + 81*x**8 + 27*x**6 + 9*x**4 + 3*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 18,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_19_actual_19.json",
+    "statement": "1/(1-11x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |11x²|<1이다.",
+    "parameters": {
+      "a": 11,
+      "b": 1,
+      "c": 1,
+      "d": 2,
+      "k": -1,
+      "N": 3
+    },
+    "stored_answer": "1331*x**6 + 121*x**4 + 11*x**2 + 1",
+    "independent_result": "285311670611*x**22 + 25937424601*x**20 + 2357947691*x**18 + 214358881*x**16 + 19487171*x**14 + 1771561*x**12 + 161051*x**10 + 14641*x**8 + 1331*x**6 + 121*x**4 + 11*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 19,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_20_actual_20.json",
+    "statement": "1/(1-12x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |12x²|<1이다.",
+    "parameters": {
+      "a": 12,
+      "b": 6,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 3
+    },
+    "stored_answer": "1728*x**6 + 144*x**4 + 12*x**2 + 1",
+    "independent_result": "743008370688*x**22 + 61917364224*x**20 + 5159780352*x**18 + 429981696*x**16 + 35831808*x**14 + 2985984*x**12 + 248832*x**10 + 20736*x**8 + 1728*x**6 + 144*x**4 + 12*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_21_actual_23.json",
+    "statement": "1/(1-5x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |5x²|<1이다.",
+    "parameters": {
+      "a": 5,
+      "b": 1,
+      "c": 1,
+      "d": 2,
+      "k": 1,
+      "N": 3
+    },
+    "stored_answer": "125*x**6 + 25*x**4 + 5*x**2 + 1",
+    "independent_result": "48828125*x**22 + 9765625*x**20 + 1953125*x**18 + 390625*x**16 + 78125*x**14 + 15625*x**12 + 3125*x**10 + 625*x**8 + 125*x**6 + 25*x**4 + 5*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 23,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_24_actual_24.json",
+    "statement": "1/(1-12x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |12x²|<1이다.",
+    "parameters": {
+      "a": 12,
+      "b": 4,
+      "c": 2,
+      "d": -1,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "144*x**4 + 12*x**2 + 1",
+    "independent_result": "743008370688*x**22 + 61917364224*x**20 + 5159780352*x**18 + 429981696*x**16 + 35831808*x**14 + 2985984*x**12 + 248832*x**10 + 20736*x**8 + 1728*x**6 + 144*x**4 + 12*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 24,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_25_actual_25.json",
+    "statement": "1/(1-7x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |7x²|<1이다.",
+    "parameters": {
+      "a": 7,
+      "b": 1,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 2
+    },
+    "stored_answer": "49*x**4 + 7*x**2 + 1",
+    "independent_result": "1977326743*x**22 + 282475249*x**20 + 40353607*x**18 + 5764801*x**16 + 823543*x**14 + 117649*x**12 + 16807*x**10 + 2401*x**8 + 343*x**6 + 49*x**4 + 7*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 25,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_26_actual_27.json",
+    "statement": "1/(1-11x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |11x²|<1이다.",
+    "parameters": {
+      "a": 11,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "121*x**4 + 11*x**2 + 1",
+    "independent_result": "285311670611*x**22 + 25937424601*x**20 + 2357947691*x**18 + 214358881*x**16 + 19487171*x**14 + 1771561*x**12 + 161051*x**10 + 14641*x**8 + 1331*x**6 + 121*x**4 + 11*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 27,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_28_actual_28.json",
+    "statement": "1/(1-2x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |2x²|<1이다.",
+    "parameters": {
+      "a": 2,
+      "b": 6,
+      "c": 2,
+      "d": 2,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "4*x**4 + 2*x**2 + 1",
+    "independent_result": "2048*x**22 + 1024*x**20 + 512*x**18 + 256*x**16 + 128*x**14 + 64*x**12 + 32*x**10 + 16*x**8 + 8*x**6 + 4*x**4 + 2*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 28,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261005T044638Z_515a1d1e/power_series_substitution/start_29_actual_30.json",
+    "statement": "1/(1-9x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |9x²|<1이다.",
+    "parameters": {
+      "a": 9,
+      "b": 3,
+      "c": 1,
+      "d": 2,
+      "k": -1,
+      "N": 3
+    },
+    "stored_answer": "729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "independent_result": "31381059609*x**22 + 3486784401*x**20 + 387420489*x**18 + 43046721*x**16 + 4782969*x**14 + 531441*x**12 + 59049*x**10 + 6561*x**8 + 729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 30,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T105211Z_d1ee6f0e/bessel_series_derivation/start_17_actual_17.json",
+    "statement": "J0(9x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 81*x**2/4",
+    "independent_result": "1853020188851841*x**20/2104533975040000 - 22876792454961*x**18/5261334937600 + 22876792454961*x**16/1315333734400 - 282429536481*x**14/5138022400 + 3486784401*x**12/26214400 - 387420489*x**10/1638400 + 4782969*x**8/16384 - 59049*x**6/256 + 6561*x**4/64 - 81*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T105211Z_d1ee6f0e/power_series_solution_construction/start_17_actual_17.json",
+    "statement": "y''+9²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 81*x**2/2",
+    "independent_result": "1853020188851841*x**20/370812682240000 - 22876792454961*x**18/975822848000 + 2541865828329*x**16/28700672000 - 94143178827*x**14/358758400 + 1162261467*x**12/1971200 - 43046721*x**10/44800 + 4782969*x**8/4480 - 59049*x**6/80 + 2187*x**4/8 - 81*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T105211Z_d1ee6f0e/power_series_substitution/start_17_actual_17.json",
+    "statement": "1/(1-9x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |9x²|<1이다.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 2
+    },
+    "stored_answer": "81*x**4 + 9*x**2 + 1",
+    "independent_result": "31381059609*x**22 + 3486784401*x**20 + 387420489*x**18 + 43046721*x**16 + 4782969*x**14 + 531441*x**12 + 59049*x**10 + 6561*x**8 + 729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_17_actual_17.json",
+    "statement": "J0(9x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 81*x**2/4",
+    "independent_result": "1853020188851841*x**20/2104533975040000 - 22876792454961*x**18/5261334937600 + 22876792454961*x**16/1315333734400 - 282429536481*x**14/5138022400 + 3486784401*x**12/26214400 - 387420489*x**10/1638400 + 4782969*x**8/16384 - 59049*x**6/256 + 6561*x**4/64 - 81*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_18_actual_18.json",
+    "statement": "J0(3x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 3,
+      "b": 1,
+      "c": 4,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 9*x**2/4",
+    "independent_result": "531441*x**20/2104533975040000 - 59049*x**18/5261334937600 + 531441*x**16/1315333734400 - 59049*x**14/5138022400 + 6561*x**12/26214400 - 6561*x**10/1638400 + 729*x**8/16384 - 81*x**6/256 + 81*x**4/64 - 9*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 18,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_19_actual_20.json",
+    "statement": "J0(12x)의 급수를 x^(22) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 12,
+      "b": 6,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "324*x**4 - 36*x**2 + 1",
+    "independent_result": "-306110016*x**22/3705625 + 8503056*x**20/30625 - 944784*x**18/1225 + 2125764*x**16/1225 - 3779136*x**14/1225 + 104976*x**12/25 - 104976*x**10/25 + 2916*x**8 - 1296*x**6 + 324*x**4 - 36*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 19,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_21_actual_24.json",
+    "statement": "J0(12x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 12,
+      "b": 4,
+      "c": 2,
+      "d": -1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 36*x**2",
+    "independent_result": "8503056*x**20/30625 - 944784*x**18/1225 + 2125764*x**16/1225 - 3779136*x**14/1225 + 104976*x**12/25 - 104976*x**10/25 + 2916*x**8 - 1296*x**6 + 324*x**4 - 36*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 23,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 24,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_25_actual_25.json",
+    "statement": "J0(7x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 7,
+      "b": 1,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 49*x**2/4",
+    "independent_result": "1628413597910449*x**20/281792804290560000 - 33232930569601*x**18/704482010726400 + 678223072849*x**16/2174327193600 - 13841287201*x**14/8493465600 + 13841287201*x**12/2123366400 - 282475249*x**10/14745600 + 5764801*x**8/147456 - 117649*x**6/2304 + 2401*x**4/64 - 49*x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 25,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_26_actual_28.json",
+    "statement": "J0(2x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 2,
+      "b": 6,
+      "c": 2,
+      "d": 2,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - x**2",
+    "independent_result": "x**20/13168189440000 - x**18/131681894400 + x**16/1625702400 - x**14/25401600 + x**12/518400 - x**10/14400 + x**8/576 - x**6/36 + x**4/4 - x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 27,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 28,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_29_actual_31.json",
+    "statement": "J0(1x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 1,
+      "b": 4,
+      "c": 1,
+      "d": 1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - x**2/4",
+    "independent_result": "x**20/13807847410237440000 - x**18/34519618525593600 + x**16/106542032486400 - x**14/416179814400 + x**12/2123366400 - x**10/14745600 + x**8/147456 - x**6/2304 + x**4/64 - x**2/4 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 30,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 31,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_32_actual_32.json",
+    "statement": "J0(2x)의 급수를 x^(22) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "x**4/4 - x**2 + 1",
+    "independent_result": "-x**22/1593350922240000 + x**20/13168189440000 - x**18/131681894400 + x**16/1625702400 - x**14/25401600 + x**12/518400 - x**10/14400 + x**8/576 - x**6/36 + x**4/4 - x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 32,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_33_actual_33.json",
+    "statement": "J0(10x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 10,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 25*x**2",
+    "independent_result": "152587890625*x**20/21069103104 - 152587890625*x**18/5267275776 + 6103515625*x**16/65028096 - 244140625*x**14/1016064 + 9765625*x**12/20736 - 390625*x**10/576 + 390625*x**8/576 - 15625*x**6/36 + 625*x**4/4 - 25*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 33,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/bessel_series_derivation/start_34_actual_36.json",
+    "statement": "J0(6x)의 급수를 x^(21) 항까지 쓰시오. J0(u)=∑(-1)^j(u²/4)^j/(j!)² 이다.",
+    "parameters": {
+      "a": 6,
+      "b": 1,
+      "c": 1,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 9*x**2",
+    "independent_result": "531441*x**20/2007040000 - 59049*x**18/20070400 + 531441*x**16/20070400 - 59049*x**14/313600 + 6561*x**12/6400 - 6561*x**10/1600 + 729*x**8/64 - 81*x**6/4 + 81*x**4/4 - 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 34,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 35,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 3,
+          "seed": 36,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_17_actual_17.json",
+    "statement": "y''+9²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 81*x**2/2",
+    "independent_result": "1853020188851841*x**20/370812682240000 - 22876792454961*x**18/975822848000 + 2541865828329*x**16/28700672000 - 94143178827*x**14/358758400 + 1162261467*x**12/1971200 - 43046721*x**10/44800 + 4782969*x**8/4480 - 59049*x**6/80 + 2187*x**4/8 - 81*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_18_actual_18.json",
+    "statement": "y''+3²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 3,
+      "b": 1,
+      "c": 4,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 9*x**2/2",
+    "independent_result": "531441*x**20/370812682240000 - 59049*x**18/975822848000 + 59049*x**16/28700672000 - 19683*x**14/358758400 + 2187*x**12/1971200 - 729*x**10/44800 + 729*x**8/4480 - 81*x**6/80 + 27*x**4/8 - 9*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 18,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_19_actual_20.json",
+    "statement": "y''+12²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(22) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 12,
+      "b": 6,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "864*x**4 - 72*x**2 + 1",
+    "independent_result": "-53496602689536*x**22/108919435625 + 2229025112064*x**20/1414538125 - 61917364224*x**18/14889875 + 7739670528*x**16/875875 - 2579890176*x**14/175175 + 35831808*x**12/1925 - 2985984*x**10/175 + 373248*x**8/35 - 20736*x**6/5 + 864*x**4 - 72*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 19,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_21_actual_24.json",
+    "statement": "y''+12²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 12,
+      "b": 4,
+      "c": 2,
+      "d": -1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 72*x**2",
+    "independent_result": "2229025112064*x**20/1414538125 - 61917364224*x**18/14889875 + 7739670528*x**16/875875 - 2579890176*x**14/175175 + 35831808*x**12/1925 - 2985984*x**10/175 + 373248*x**8/35 - 20736*x**6/5 + 864*x**4 - 72*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 23,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 24,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_25_actual_25.json",
+    "statement": "y''+7²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 7,
+      "b": 1,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 49*x**2/2",
+    "independent_result": "1628413597910449*x**20/49651061391360000 - 33232930569601*x**18/130660687872000 + 678223072849*x**16/426995712000 - 13841287201*x**14/1779148800 + 1977326743*x**12/68428800 - 40353607*x**10/518400 + 823543*x**8/5760 - 117649*x**6/720 + 2401*x**4/24 - 49*x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 25,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_26_actual_28.json",
+    "statement": "y''+2²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 2,
+      "b": 6,
+      "c": 2,
+      "d": 2,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 2*x**2",
+    "independent_result": "4*x**20/9280784638125 - 4*x**18/97692469875 + 2*x**16/638512875 - 8*x**14/42567525 + 4*x**12/467775 - 4*x**10/14175 + 2*x**8/315 - 4*x**6/45 + 2*x**4/3 - 2*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 27,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 28,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_29_actual_31.json",
+    "statement": "y''+1²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 1,
+      "b": 4,
+      "c": 1,
+      "d": 1,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - x**2/2",
+    "independent_result": "x**20/2432902008176640000 - x**18/6402373705728000 + x**16/20922789888000 - x**14/87178291200 + x**12/479001600 - x**10/3628800 + x**8/40320 - x**6/720 + x**4/24 - x**2/2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 30,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 31,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_32_actual_32.json",
+    "statement": "y''+2²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(22) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "2*x**4/3 - 2*x**2 + 1",
+    "independent_result": "-8*x**22/2143861251406875 + 4*x**20/9280784638125 - 4*x**18/97692469875 + 2*x**16/638512875 - 8*x**14/42567525 + 4*x**12/467775 - 4*x**10/14175 + 2*x**8/315 - 4*x**6/45 + 2*x**4/3 - 2*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 32,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_33_actual_33.json",
+    "statement": "y''+10²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 10,
+      "b": 2,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 1
+    },
+    "stored_answer": "1 - 50*x**2",
+    "independent_result": "610351562500*x**20/14849255421 - 122070312500*x**18/781539759 + 2441406250*x**16/5108103 - 1953125000*x**14/1702701 + 39062500*x**12/18711 - 1562500*x**10/567 + 156250*x**8/63 - 12500*x**6/9 + 1250*x**4/3 - 50*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 33,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_solution_construction/start_34_actual_36.json",
+    "statement": "y''+6²y=0, y(0)=1,y'(0)=0의 급수해에서 x^(21) 이하 부분합을 구하시오.",
+    "parameters": {
+      "a": 6,
+      "b": 1,
+      "c": 1,
+      "d": 0,
+      "k": -1,
+      "N": 1
+    },
+    "stored_answer": "1 - 18*x**2",
+    "independent_result": "2125764*x**20/1414538125 - 236196*x**18/14889875 + 118098*x**16/875875 - 157464*x**14/175175 + 8748*x**12/1925 - 2916*x**10/175 + 1458*x**8/35 - 324*x**6/5 + 54*x**4 - 18*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 34,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 2,
+          "seed": 35,
+          "passed": false,
+          "stage": "answer_policy",
+          "message": "최종 정답이 허용 범위를 벗어남: answer.coefficient"
+        },
+        {
+          "attempt": 3,
+          "seed": 36,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_17_actual_17.json",
+    "statement": "1/(1-9x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |9x²|<1이다.",
+    "parameters": {
+      "a": 9,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": 1,
+      "N": 2
+    },
+    "stored_answer": "81*x**4 + 9*x**2 + 1",
+    "independent_result": "31381059609*x**22 + 3486784401*x**20 + 387420489*x**18 + 43046721*x**16 + 4782969*x**14 + 531441*x**12 + 59049*x**10 + 6561*x**8 + 729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_18_actual_18.json",
+    "statement": "1/(1-3x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |3x²|<1이다.",
+    "parameters": {
+      "a": 3,
+      "b": 1,
+      "c": 4,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "9*x**4 + 3*x**2 + 1",
+    "independent_result": "177147*x**22 + 59049*x**20 + 19683*x**18 + 6561*x**16 + 2187*x**14 + 729*x**12 + 243*x**10 + 81*x**8 + 27*x**6 + 9*x**4 + 3*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 18,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_19_actual_19.json",
+    "statement": "1/(1-11x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |11x²|<1이다.",
+    "parameters": {
+      "a": 11,
+      "b": 1,
+      "c": 1,
+      "d": 2,
+      "k": -1,
+      "N": 3
+    },
+    "stored_answer": "1331*x**6 + 121*x**4 + 11*x**2 + 1",
+    "independent_result": "285311670611*x**22 + 25937424601*x**20 + 2357947691*x**18 + 214358881*x**16 + 19487171*x**14 + 1771561*x**12 + 161051*x**10 + 14641*x**8 + 1331*x**6 + 121*x**4 + 11*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 19,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_20_actual_20.json",
+    "statement": "1/(1-12x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |12x²|<1이다.",
+    "parameters": {
+      "a": 12,
+      "b": 6,
+      "c": 2,
+      "d": 0,
+      "k": -1,
+      "N": 3
+    },
+    "stored_answer": "1728*x**6 + 144*x**4 + 12*x**2 + 1",
+    "independent_result": "743008370688*x**22 + 61917364224*x**20 + 5159780352*x**18 + 429981696*x**16 + 35831808*x**14 + 2985984*x**12 + 248832*x**10 + 20736*x**8 + 1728*x**6 + 144*x**4 + 12*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_21_actual_23.json",
+    "statement": "1/(1-5x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |5x²|<1이다.",
+    "parameters": {
+      "a": 5,
+      "b": 1,
+      "c": 1,
+      "d": 2,
+      "k": 1,
+      "N": 3
+    },
+    "stored_answer": "125*x**6 + 25*x**4 + 5*x**2 + 1",
+    "independent_result": "48828125*x**22 + 9765625*x**20 + 1953125*x**18 + 390625*x**16 + 78125*x**14 + 15625*x**12 + 3125*x**10 + 625*x**8 + 125*x**6 + 25*x**4 + 5*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 23,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_24_actual_24.json",
+    "statement": "1/(1-12x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |12x²|<1이다.",
+    "parameters": {
+      "a": 12,
+      "b": 4,
+      "c": 2,
+      "d": -1,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "144*x**4 + 12*x**2 + 1",
+    "independent_result": "743008370688*x**22 + 61917364224*x**20 + 5159780352*x**18 + 429981696*x**16 + 35831808*x**14 + 2985984*x**12 + 248832*x**10 + 20736*x**8 + 1728*x**6 + 144*x**4 + 12*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 24,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_25_actual_25.json",
+    "statement": "1/(1-7x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |7x²|<1이다.",
+    "parameters": {
+      "a": 7,
+      "b": 1,
+      "c": 2,
+      "d": 0,
+      "k": 1,
+      "N": 2
+    },
+    "stored_answer": "49*x**4 + 7*x**2 + 1",
+    "independent_result": "1977326743*x**22 + 282475249*x**20 + 40353607*x**18 + 5764801*x**16 + 823543*x**14 + 117649*x**12 + 16807*x**10 + 2401*x**8 + 343*x**6 + 49*x**4 + 7*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 25,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_26_actual_27.json",
+    "statement": "1/(1-11x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |11x²|<1이다.",
+    "parameters": {
+      "a": 11,
+      "b": 4,
+      "c": 3,
+      "d": 0,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "121*x**4 + 11*x**2 + 1",
+    "independent_result": "285311670611*x**22 + 25937424601*x**20 + 2357947691*x**18 + 214358881*x**16 + 19487171*x**14 + 1771561*x**12 + 161051*x**10 + 14641*x**8 + 1331*x**6 + 121*x**4 + 11*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 27,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_28_actual_28.json",
+    "statement": "1/(1-2x²)의 거듭제곱급수에서 x^(22) 항까지의 부분합을 쓰시오. |2x²|<1이다.",
+    "parameters": {
+      "a": 2,
+      "b": 6,
+      "c": 2,
+      "d": 2,
+      "k": -1,
+      "N": 2
+    },
+    "stored_answer": "4*x**4 + 2*x**2 + 1",
+    "independent_result": "2048*x**22 + 1024*x**20 + 512*x**18 + 256*x**16 + 128*x**14 + 64*x**12 + 32*x**10 + 16*x**8 + 8*x**6 + 4*x**4 + 2*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 28,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "calculus_2/all_20261011T123952Z_e36b3f6b/power_series_substitution/start_29_actual_30.json",
+    "statement": "1/(1-9x²)의 거듭제곱급수에서 x^(23) 항까지의 부분합을 쓰시오. |9x²|<1이다.",
+    "parameters": {
+      "a": 9,
+      "b": 3,
+      "c": 1,
+      "d": 2,
+      "k": -1,
+      "N": 3
+    },
+    "stored_answer": "729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "independent_result": "31381059609*x**22 + 3486784401*x**20 + 387420489*x**18 + 43046721*x**16 + 4782969*x**14 + 531441*x**12 + 59049*x**10 + 6561*x**8 + 729*x**6 + 81*x**4 + 9*x**2 + 1",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "calculus_2_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 30,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "linear_algebra/all_20260930T130721Z_f5ed40c3/matrix_power_calculation/start_32_actual_32.json",
+    "statement": "대각화를 활용하여 A^9를 구하시오.\nA = Matrix([[-1, -2], [0, -1]])",
+    "parameters": {
+      "A": [
+        [
+          -1,
+          -2
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "k": 9
+    },
+    "stored_answer": [
+      [
+        -1,
+        -18
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "independent_result": "저장 A^k 값은 맞지만 A가 대각화 불가능하여 요구 풀이방법을 사용할 수 없음",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "matrix_equivalence",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 32,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "linear_algebra/all_20260930T130721Z_f5ed40c3/matrix_power_calculation/start_35_actual_35.json",
+    "statement": "대각화를 활용하여 A^7를 구하시오.\nA = Matrix([[-2, 1, -2], [0, 2, 0], [-4, 4, 0]])",
+    "parameters": {
+      "A": [
+        [
+          -2,
+          1,
+          -2
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          -4,
+          4,
+          0
+        ]
+      ],
+      "k": 7
+    },
+    "stored_answer": [
+      [
+        -10880,
+        5056,
+        -5504
+      ],
+      [
+        0,
+        128,
+        0
+      ],
+      [
+        -11008,
+        6400,
+        -5376
+      ]
+    ],
+    "independent_result": "저장 A^k 값은 맞지만 A가 대각화 불가능하여 요구 풀이방법을 사용할 수 없음",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "matrix_equivalence",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 35,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "probability_statistics/all_20261011T105211Z_d8114ff1/power_analysis/start_17_actual_17.json",
+    "statement": "정규 iid 표본에서 알려진 σ=4, n=9, H0: μ=5인 상측 검정이다. 표본평균>7.666666666666666이면 기각한다. 참평균 μ1=3.666666666666667에서 검정력을 Φ 또는 erf로 나타내시오.",
+    "parameters": {
+      "a": 5,
+      "b": 4,
+      "c": 3,
+      "d": -1
+    },
+    "stored_answer": "erfc(3*sqrt(2)/2)/2",
+    "independent_result": "erfc(11999999999999997*sqrt(2)/8000000000000000)/2",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "probability_statistics/all_20261011T105211Z_d8114ff1/test_statistic_calculation/start_17_actual_17.json",
+    "statement": "정규 iid 표본에서 H0: μ=5, 알려진 σ=4, n=9, 표본평균=3.666666666666667이다. Z=(표본평균-μ0)/(σ/√n)를 구하시오.",
+    "parameters": {
+      "a": 5,
+      "b": 4,
+      "c": 3,
+      "d": -1
+    },
+    "stored_answer": -1,
+    "independent_result": "-3999999999999999/4000000000000000",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "probability_statistics/all_20261011T141047Z_ce88d904/hypothesis_decision/start_20_actual_20.json",
+    "statement": "정규 iid 표본의 알려진 σ 모평균 양측 Z 검정이다. H0: μ=6, σ=2, n=9, 표본평균=7.333333333333333이다. 기각 규칙 |Z|≥2에 따라 H0를 기각하는가?",
+    "parameters": {
+      "a": 6,
+      "b": 2,
+      "c": 3,
+      "d": 2
+    },
+    "stored_answer": true,
+    "independent_result": "False",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "probability_statistics/all_20261011T141047Z_ce88d904/power_analysis/start_17_actual_17.json",
+    "statement": "정규 iid 표본에서 알려진 σ=4, n=9, H0: μ=5인 상측 검정이다. 표본평균>7.666666666666666이면 기각한다. 참평균 μ1=3.666666666666667에서 검정력을 Φ 또는 erf로 나타내시오.",
+    "parameters": {
+      "a": 5,
+      "b": 4,
+      "c": 3,
+      "d": -1
+    },
+    "stored_answer": "erfc(3*sqrt(2)/2)/2",
+    "independent_result": "erfc(11999999999999997*sqrt(2)/8000000000000000)/2",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "probability_statistics/all_20261011T141047Z_ce88d904/test_statistic_calculation/start_17_actual_17.json",
+    "statement": "정규 iid 표본에서 H0: μ=5, 알려진 σ=4, n=9, 표본평균=3.666666666666667이다. Z=(표본평균-μ0)/(σ/√n)를 구하시오.",
+    "parameters": {
+      "a": 5,
+      "b": 4,
+      "c": 3,
+      "d": -1
+    },
+    "stored_answer": -1,
+    "independent_result": "-3999999999999999/4000000000000000",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 17,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  },
+  {
+    "path": "probability_statistics/all_20261011T141047Z_ce88d904/test_statistic_calculation/start_20_actual_20.json",
+    "statement": "정규 iid 표본에서 H0: μ=6, 알려진 σ=2, n=9, 표본평균=7.333333333333333이다. Z=(표본평균-μ0)/(σ/√n)를 구하시오.",
+    "parameters": {
+      "a": 6,
+      "b": 2,
+      "c": 3,
+      "d": 2
+    },
+    "stored_answer": 2,
+    "independent_result": "3999999999999999/2000000000000000",
+    "validation_trace": {
+      "constraints": [],
+      "validation_constraints": [],
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "passed": true,
+          "message": ""
+        }
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "seed": 20,
+          "passed": true,
+          "stage": "validated",
+          "message": null
+        }
+      ]
+    }
+  }
+]

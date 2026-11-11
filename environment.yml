@@ -4,15 +4,19 @@ dependencies:
   - python=3.13
   - pip
   - pip:
-      - psycopg[binary]
-      - python-dotenv
-      - pydantic
+      - psycopg[binary]>=3.1,<4
+      - python-dotenv>=1,<2
+      - pydantic>=2,<3
       - numpy
       - pandas
       - openpyxl
       - transformers
       - sentence-transformers
       - pgvector
-      - pytest
-      - sympy
-      - Jinja2
+      - pytest>=8,<10
+      - sympy>=1.13,<2
+      - jinja2>=3.1,<4
+      
+
+
+

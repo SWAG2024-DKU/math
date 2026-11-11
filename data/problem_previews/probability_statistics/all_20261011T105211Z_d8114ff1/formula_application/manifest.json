@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_02_descriptive_statistics.ps.descriptive_statistics.central_tendency.f01.formula_application.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_02_descriptive_statistics/ps.descriptive_statistics.central_tendency.f01__formula_application.json",
+  "template_sha256": "c35576ecc8fb6d4f059eeea9f071230733aeec8dec4abd5eed4b574527d0755c",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

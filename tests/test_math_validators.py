@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 import sympy as s
-from scripts.problems.math_validators import (
+from scripts.problems.common.math_validators import (
     compute_expected_answer,
     run_math_validators,
     validate_answer,

@@ -6,7 +6,7 @@
       "status_counts": {
         "draft_auto": 201
       },
-      "executable_count": 10,
+      "executable_count": 0,
       "manual_review_required_count": 201
     },
     "calculus_2": {
@@ -14,7 +14,7 @@
       "status_counts": {
         "draft_auto": 166
       },
-      "executable_count": 2,
+      "executable_count": 0,
       "manual_review_required_count": 166
     },
     "engineering_mathematics": {
@@ -22,17 +22,16 @@
       "status_counts": {
         "draft_auto": 104
       },
-      "executable_count": 32,
+      "executable_count": 0,
       "manual_review_required_count": 104
     },
     "linear_algebra": {
       "rule_count": 62,
       "status_counts": {
-        "curated": 56,
-        "draft_auto": 6
+        "curated": 62
       },
-      "executable_count": 56,
-      "manual_review_required_count": 6
+      "executable_count": 62,
+      "manual_review_required_count": 0
     },
     "probability_statistics": {
       "rule_count": 23,
@@ -44,7 +43,7 @@
     }
   },
   "status_counts": {
-    "draft_auto": 500,
-    "curated": 56
+    "draft_auto": 494,
+    "curated": 62
   }
 }

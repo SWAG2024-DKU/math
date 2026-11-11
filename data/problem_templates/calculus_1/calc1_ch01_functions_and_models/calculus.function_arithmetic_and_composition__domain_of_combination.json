@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_arithmetic_and_composition.domain_of_combination.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.domain_of_combination.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -31,7 +31,7 @@
   },
   "classification": {
     "problem_type": "domain_of_combination",
-    "answer_type": "expression",
+    "answer_type": "interval",
     "difficulty": {
       "base": 2,
       "min": 1,
@@ -45,70 +45,207 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -6,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "combined_domain equals intersection_of_A_and_B",
-      "required": true,
-      "description": "f의 정의역을 A, g의 정의역을 B라 할 때 f±g, fg의 정의역은 A∩B다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "g_nonzero_on_quotient_domain equals True",
-      "required": true,
-      "description": "f/g의 정의역은 {x∈A∩B | g(x)≠0}이다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "both_g_and_f_of_g_defined equals True",
-      "required": true,
-      "description": "(f∘g)의 정의역은 g(x)와 f(g(x))가 둘 다 정의되는 x의 집합이다."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "domain_of_combination",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "k",
+      "N",
+      "x",
+      "y"
     ],
     "semantic_structure": [
-      "사칙연산으로 결합된 함수의 정의역을 구한다.",
-      "합성함수의 값이나 식을 구한다.",
-      "주어진 함수를 f∘g 형태로 분해한다."
+      "질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'domain of combination' 문제를 해결하시오."
+      "f(x)=sqrt(x-{{ c }}), g(x)=x-{{ c }}-{{ a }}이다. f/g의 실수 정의역을 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "interval",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'domain_of_combination')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "domain_check",
-      "symbolic_equivalence"
+      "calculus_remaining_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "quotient",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "sum_diff",
-        "cas_expression": null
+        "formula_id": "quotient",
+        "cas_expression": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'domain_of_combination')"
       }
     ],
     "explanation_policy": {
@@ -120,17 +257,14 @@
   "validation": {
     "validators": [
       {
-        "name": "domain_check",
+        "name": "calculus_remaining_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "domain_of_combination"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -148,6 +282,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.domain_of_combination.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.domain_of_combination.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:ef7fff12a014ae540f0cea26d1a9b380bc2e92f629dc6040fade492ef6750f08"
   }
 }

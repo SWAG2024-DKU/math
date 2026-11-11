@@ -1,0 +1,298 @@
+{
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.one_sided_limit.one_sided_limit_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "calculus_1.one_sided_limit_calculation.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "one_sided_limit_calculation",
+  "answer_type": "scalar",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "f(x)=1 + Abs(x)/x일 때 x→0+의 우극한을 구하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "a": 1,
+    "point": 0,
+    "b": 1,
+    "f": "1 + Abs(x)/x"
+  },
+  "expected_answer": 2,
+  "seed": 18,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "limit_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 18,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.one_sided_limit.one_sided_limit_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "calculus_1.one_sided_limit_calculation.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "calculus_1",
+      "subject_name_ko": "미분적분학 1",
+      "unit_id": "calc1_ch02_limits_and_derivatives",
+      "unit_name_ko": "극한과 도함수",
+      "concept_ids": [
+        "calculus.one_sided_limit"
+      ],
+      "formula_ids": [
+        "left_limit",
+        "right_limit",
+        "two_sided_limit_condition"
+      ],
+      "tags": [
+        "one_sided_limit",
+        "left_limit",
+        "right_limit"
+      ]
+    },
+    "classification": {
+      "problem_type": "one_sided_limit_calculation",
+      "answer_type": "scalar",
+      "difficulty": {
+        "base": 1,
+        "min": 1,
+        "max": 2,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "a": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 3,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "f": {
+        "type": "expression",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": {
+          "depends_on": [
+            "a",
+            "b"
+          ],
+          "expression": "a*Abs(x)/x+b",
+          "engine": "sympy",
+          "selection": null
+        },
+        "generator": null,
+        "variable": "x"
+      },
+      "point": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [
+          0
+        ],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "b": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": -2,
+        "max": 2,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [],
+    "problem_builder": {
+      "operation": "one_sided_limit_calculation",
+      "required_objects": [
+        "a",
+        "f",
+        "point",
+        "b",
+        "x"
+      ],
+      "semantic_structure": [
+        "f(x)={{ f }}일 때 x→0+의 우극한을 구하시오."
+      ],
+      "text_templates_ko": [
+        "f(x)={{ f }}일 때 x→0+의 우극한을 구하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "f",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "scalar",
+      "engine": "sympy",
+      "cas_template": "limit_value(f,x,point,'+')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "limit_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "right_limit",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "right_limit",
+          "cas_expression": "limit_value(f,x,point,'+')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "limit_check",
+          "required": true,
+          "config": {
+            "direction": "+"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'calculus_1.one_sided_limit_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 문제에 명시한 제한 범위; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:560fe0f0435e32c05ab58c22ec45e8d50bad67a10d65eaa20907286a29358232"
+    }
+  }
+}

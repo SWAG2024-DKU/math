@@ -1,0 +1,96 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_spherical.spherical_triple_integral_calculation.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_2\\calc2_v3_ch05_multiple_integration\\calculus.triple_integral_spherical__spherical_triple_integral_calculation.json",
+  "template_sha256": "7aeaa902a6e30cf635f2b0eb634bc1efef7aad33159f94dd666f65b06001e088",
+  "seed_start": 17,
+  "requested_count": 10,
+  "timeout_seconds": 300.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    },
+    {
+      "requested_seed": 18,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_18_actual_18.json"
+    },
+    {
+      "requested_seed": 19,
+      "actual_seed": 20,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_19_actual_20.json"
+    },
+    {
+      "requested_seed": 21,
+      "actual_seed": 21,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_21_actual_21.json"
+    },
+    {
+      "requested_seed": 22,
+      "actual_seed": 22,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_22_actual_22.json"
+    },
+    {
+      "requested_seed": 23,
+      "actual_seed": 24,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_23_actual_24.json"
+    },
+    {
+      "requested_seed": 25,
+      "actual_seed": 26,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_25_actual_26.json"
+    },
+    {
+      "requested_seed": 27,
+      "actual_seed": 28,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_27_actual_28.json"
+    },
+    {
+      "requested_seed": 29,
+      "actual_seed": 29,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_29_actual_29.json"
+    },
+    {
+      "requested_seed": 30,
+      "actual_seed": 30,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_30_actual_30.json"
+    }
+  ],
+  "succeeded": 10,
+  "failed": 0,
+  "timed_out": 0
+}

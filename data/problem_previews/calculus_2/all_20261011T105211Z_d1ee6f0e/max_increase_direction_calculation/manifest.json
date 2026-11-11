@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.directional_derivative_and_gradient.max_increase_direction_calculation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.directional_derivative_and_gradient__max_increase_direction_calculation.json",
+  "template_sha256": "3cea27af74461c71ca99fcc9868bca02400f17aba23bb08092dacd9ab43d5953",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_18.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

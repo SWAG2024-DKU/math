@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.fixed_point_iteration.fixed_point_iteration_calculation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/engineering_mathematics/em_09_numerical_analysis/em.numerical.fixed_point_iteration__fixed_point_iteration_calculation.json",
+  "template_sha256": "d43d04039dea70663152dc9a2417940b156c9a5efce5f71ac3aa7d8eaf6b6f27",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

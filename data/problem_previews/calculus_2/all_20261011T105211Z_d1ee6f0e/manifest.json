@@ -1,0 +1,1520 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "problem_type_filter": null,
+  "include_draft": true,
+  "seed_start": 17,
+  "seeds_per_template": 1,
+  "timeout_seconds": 30.0,
+  "templates": [
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.binomial_series_expansion.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.binomial_series_and_series_applications__binomial_series_expansion.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "binomial_series_expansion"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.series_based_integration.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.binomial_series_and_series_applications__series_based_integration.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "series_based_integration"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.binomial_series_and_series_applications.series_based_limit_evaluation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.binomial_series_and_series_applications__series_based_limit_evaluation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "series_based_limit_evaluation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.common_maclaurin_series.common_series_recall.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.common_maclaurin_series__common_series_recall.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "common_series_recall"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.common_maclaurin_series.series_convergence_interval_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.common_maclaurin_series__series_convergence_interval_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "series_convergence_interval_identification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_algebra.cauchy_product_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_algebra__cauchy_product_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cauchy_product_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_algebra.coefficient_determination.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_algebra__coefficient_determination.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "coefficient_determination"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_algebra.power_series_combination.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_algebra__power_series_combination.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "power_series_combination"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_as_function.geometric_power_series_representation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_as_function__geometric_power_series_representation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "geometric_power_series_representation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.endpoint_convergence_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_definition_and_convergence__endpoint_convergence_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "endpoint_convergence_check"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.interval_of_convergence_determination.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_definition_and_convergence__interval_of_convergence_determination.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "interval_of_convergence_determination"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_definition_and_convergence.radius_of_convergence_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_definition_and_convergence__radius_of_convergence_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "radius_of_convergence_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.power_series_substitution.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_term_by_term_calculus__power_series_substitution.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "power_series_substitution"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.term_by_term_differentiation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_term_by_term_calculus__term_by_term_differentiation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "term_by_term_differentiation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_term_by_term_calculus.term_by_term_integration.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.power_series_term_by_term_calculus__term_by_term_integration.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "term_by_term_integration"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_coefficient_extraction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.taylor_maclaurin_series__taylor_coefficient_extraction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "taylor_coefficient_extraction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_polynomial_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.taylor_maclaurin_series__taylor_polynomial_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "taylor_polynomial_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_series_derivation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.taylor_maclaurin_series__taylor_series_derivation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "taylor_series_derivation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_remainder_and_error_bound.required_degree_determination.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.taylor_remainder_and_error_bound__required_degree_determination.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "required_degree_determination"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_remainder_and_error_bound.taylor_error_estimation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch06_power_series/calculus.taylor_remainder_and_error_bound__taylor_error_estimation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "taylor_error_estimation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.conic_eccentricity_and_polar_equation.conic_polar_equation_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.conic_eccentricity_and_polar_equation__conic_polar_equation_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "conic_polar_equation_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.conic_eccentricity_and_polar_equation.eccentricity_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.conic_eccentricity_and_polar_equation__eccentricity_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "eccentricity_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.general_conic_equation_classification.discriminant_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.general_conic_equation_classification__discriminant_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "discriminant_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.named_polar_curves_and_symmetry.polar_curve_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.named_polar_curves_and_symmetry__polar_curve_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_curve_identification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.named_polar_curves_and_symmetry.polar_symmetry_test_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.named_polar_curves_and_symmetry__polar_symmetry_test_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_symmetry_test_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.named_polar_curves_and_symmetry.polar_to_cartesian_circle_conversion.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.named_polar_curves_and_symmetry__polar_to_cartesian_circle_conversion.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_to_cartesian_circle_conversion"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parameter_elimination_and_line_parametrization.line_segment_parametrization.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parameter_elimination_and_line_parametrization__line_segment_parametrization.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "line_segment_parametrization"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parameter_elimination_and_line_parametrization.parameter_elimination.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parameter_elimination_and_line_parametrization__parameter_elimination.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parameter_elimination"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_surface_area_of_revolution.surface_area_of_revolution_about_x_axis.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parametric_surface_area_of_revolution__surface_area_of_revolution_about_x_axis.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_area_of_revolution_about_x_axis"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_surface_area_of_revolution.surface_area_of_revolution_about_y_axis.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parametric_surface_area_of_revolution__surface_area_of_revolution_about_y_axis.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_area_of_revolution_about_y_axis"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_and_concavity.parametric_concavity_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parametric_tangent_and_concavity__parametric_concavity_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_concavity_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_and_concavity.parametric_tangent_line_equation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parametric_tangent_and_concavity__parametric_tangent_line_equation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_tangent_line_equation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.area_via_cross_product.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.cross_product__area_via_cross_product.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "area_via_cross_product"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.cross_product_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.cross_product__cross_product_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cross_product_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.cross_product.parallelism_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.cross_product__parallelism_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parallelism_check"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.parallel_planes_distance_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.distance_formulas_in_space__parallel_planes_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parallel_planes_distance_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.point_line_distance_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.distance_formulas_in_space__point_line_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "point_line_distance_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.distance_formulas_in_space.point_plane_distance_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.distance_formulas_in_space__point_plane_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "point_plane_distance_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.angle_or_orthogonality_determination.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.dot_product__angle_or_orthogonality_determination.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "angle_or_orthogonality_determination"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.dot_product_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.dot_product__dot_product_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "dot_product_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.projection_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.dot_product__projection_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "projection_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.dot_product.work_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.dot_product__work_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "work_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.lines_in_space.line_equation_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.lines_in_space__line_equation_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "line_equation_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.lines_in_space.two_lines_relation_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.lines_in_space__two_lines_relation_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "two_lines_relation_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.angle_between_plane_and_line.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.planes_in_space__angle_between_plane_and_line.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "angle_between_plane_and_line"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.plane_equation_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.planes_in_space__plane_equation_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "plane_equation_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.planes_in_space.two_planes_relation_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.planes_in_space__two_planes_relation_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "two_planes_relation_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.quadric_surfaces.cross_section_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.quadric_surfaces__cross_section_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cross_section_identification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.quadric_surfaces.quadric_surface_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.quadric_surfaces__quadric_surface_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "quadric_surface_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.scalar_triple_product.coplanarity_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.scalar_triple_product__coplanarity_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "coplanarity_check"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.scalar_triple_product.parallelepiped_volume_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.scalar_triple_product__parallelepiped_volume_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parallelepiped_volume_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_3d_space.3d_distance_midpoint_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.vectors_in_3d_space__3d_distance_midpoint_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "3d_distance_midpoint_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_3d_space.sphere_equation_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.vectors_in_3d_space__sphere_equation_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "sphere_equation_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.direction_angle_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.vectors_in_plane__direction_angle_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "direction_angle_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.magnitude_and_unit_vector_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.vectors_in_plane__magnitude_and_unit_vector_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "magnitude_and_unit_vector_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch02_vectors_in_space.calculus.vectors_in_plane.vector_from_points_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch02_vectors_in_space/calculus.vectors_in_plane__vector_from_points_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_from_points_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.frenet_frame.frenet_frame_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.frenet_frame__frenet_frame_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "frenet_frame_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.frenet_frame.osculating_circle_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.frenet_frame__osculating_circle_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "osculating_circle_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.projectile_motion.projectile_motion_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.projectile_motion__projectile_motion_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "projectile_motion_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.projectile_motion.projectile_position_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.projectile_motion__projectile_position_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "projectile_position_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.tangential_normal_acceleration.acceleration_decomposition.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.tangential_normal_acceleration__acceleration_decomposition.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "acceleration_decomposition"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.tangential_normal_acceleration.speed_change_analysis.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.tangential_normal_acceleration__speed_change_analysis.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "speed_change_analysis"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.tangential_normal_acceleration.uniform_circular_motion_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.tangential_normal_acceleration__uniform_circular_motion_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "uniform_circular_motion_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_derivative_and_tangent.tangent_line_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_derivative_and_tangent__tangent_line_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_line_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_derivative_and_tangent.unit_tangent_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_derivative_and_tangent__unit_tangent_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "unit_tangent_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_derivative_and_tangent.vector_derivative_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_derivative_and_tangent__vector_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_differentiation_rules.constant_magnitude_orthogonality_proof.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_differentiation_rules__constant_magnitude_orthogonality_proof.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "constant_magnitude_orthogonality_proof"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_differentiation_rules.vector_chain_rule_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_differentiation_rules__vector_chain_rule_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_chain_rule_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_differentiation_rules.vector_differentiation_rule_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_differentiation_rules__vector_differentiation_rule_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_differentiation_rule_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_integral.vector_initial_value_problem.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_integral__vector_initial_value_problem.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_initial_value_problem"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_integral.vector_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_integral__vector_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_arc_length_and_curvature.curvature_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_valued_arc_length_and_curvature__curvature_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "curvature_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_arc_length_and_curvature.space_curve_arc_length_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_valued_arc_length_and_curvature__space_curve_arc_length_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "space_curve_arc_length_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.curve_intersection_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_valued_functions_and_space_curves__curve_intersection_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "curve_intersection_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.space_curve_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_valued_functions_and_space_curves__space_curve_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "space_curve_identification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.vector_valued_functions_and_space_curves.vector_function_domain_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.vector_valued_functions_and_space_curves__vector_function_domain_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_function_domain_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.displacement_vs_distance_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.velocity_and_acceleration_in_space__displacement_vs_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "displacement_vs_distance_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.position_reconstruction_from_acceleration.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.velocity_and_acceleration_in_space__position_reconstruction_from_acceleration.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "position_reconstruction_from_acceleration"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.velocity_acceleration_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.velocity_and_acceleration_in_space__velocity_acceleration_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "velocity_acceleration_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.directional_derivative_and_gradient.directional_derivative_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.directional_derivative_and_gradient__directional_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "directional_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.directional_derivative_and_gradient.max_increase_direction_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.directional_derivative_and_gradient__max_increase_direction_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "max_increase_direction_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.gradient_and_level_sets.level_surface_tangent_plane_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.gradient_and_level_sets__level_surface_tangent_plane_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "level_surface_tangent_plane_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.gradient_and_level_sets.normal_line_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.gradient_and_level_sets__normal_line_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "normal_line_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.lagrange_multipliers.constrained_optimization_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.lagrange_multipliers__constrained_optimization_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "constrained_optimization_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.lagrange_multipliers.lagrange_system_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.lagrange_multipliers__lagrange_system_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "lagrange_system_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_chain_rule.multivariable_chain_rule_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_chain_rule__multivariable_chain_rule_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "multivariable_chain_rule_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_chain_rule.multivariable_implicit_differentiation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_chain_rule__multivariable_implicit_differentiation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "multivariable_implicit_differentiation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.absolute_extrema_on_closed_region.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_extrema__absolute_extrema_on_closed_region.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "absolute_extrema_on_closed_region"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.critical_point_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_extrema__critical_point_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "critical_point_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_extrema.second_derivative_test_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_extrema__second_derivative_test_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "second_derivative_test_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_functions.level_curve_sketching.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_functions__level_curve_sketching.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "level_curve_sketching"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_functions.multivariable_domain_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_functions__multivariable_domain_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "multivariable_domain_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_limit_and_continuity.continuity_verification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_limit_and_continuity__continuity_verification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "continuity_verification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_limit_and_continuity.path_test_limit_nonexistence.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_limit_and_continuity__path_test_limit_nonexistence.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "path_test_limit_nonexistence"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.multivariable_limit_and_continuity.polar_substitution_limit_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.multivariable_limit_and_continuity__polar_substitution_limit_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_substitution_limit_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.partial_derivative.clairaut_theorem_verification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.partial_derivative__clairaut_theorem_verification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "clairaut_theorem_verification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.partial_derivative.partial_derivative_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.partial_derivative__partial_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "partial_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.partial_derivative.second_order_partial_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.partial_derivative__second_order_partial_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "second_order_partial_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.tangent_plane_and_linear_approximation.linearization_estimation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.tangent_plane_and_linear_approximation__linearization_estimation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linearization_estimation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.tangent_plane_and_linear_approximation.tangent_plane_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.tangent_plane_and_linear_approximation__tangent_plane_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_plane_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch04_differentiation_of_functions_of_several_variables.calculus.tangent_plane_and_linear_approximation.total_differential_estimation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch04_differentiation_of_functions_of_several_variables/calculus.tangent_plane_and_linear_approximation__total_differential_estimation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "total_differential_estimation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.center_of_mass_2d.center_of_mass_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.center_of_mass_2d__center_of_mass_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "center_of_mass_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.center_of_mass_2d.mass_and_moment_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.center_of_mass_2d__mass_and_moment_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "mass_and_moment_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.integration_order_swap.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_general_region__integration_order_swap.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "integration_order_swap"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.region_type_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_general_region__region_type_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "region_type_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.volume_between_surfaces_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_general_region__volume_between_surfaces_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "volume_between_surfaces_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_over_rectangle.average_value_2d_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_over_rectangle__average_value_2d_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "average_value_2d_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_over_rectangle.double_integral_rectangle_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_over_rectangle__double_integral_rectangle_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "double_integral_rectangle_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_polar.polar_double_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_polar__polar_double_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_double_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_polar.polar_double_integral_setup.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_polar__polar_double_integral_setup.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_double_integral_setup"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.jacobian_and_change_of_variables.change_of_variables_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.jacobian_and_change_of_variables__change_of_variables_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "change_of_variables_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.jacobian_and_change_of_variables.jacobian_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.jacobian_and_change_of_variables__jacobian_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "jacobian_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.moment_of_inertia_and_3d_mass.3d_mass_center_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.moment_of_inertia_and_3d_mass__3d_mass_center_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "3d_mass_center_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.moment_of_inertia_and_3d_mass.moment_of_inertia_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.moment_of_inertia_and_3d_mass__moment_of_inertia_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "moment_of_inertia_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.solid_volume_via_triple_integral.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral__solid_volume_via_triple_integral.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "solid_volume_via_triple_integral"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.triple_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral__triple_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "triple_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.triple_integral_setup.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral__triple_integral_setup.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "triple_integral_setup"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_cylindrical.cylindrical_triple_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral_cylindrical__cylindrical_triple_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cylindrical_triple_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_cylindrical.cylindrical_triple_integral_setup.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral_cylindrical__cylindrical_triple_integral_setup.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cylindrical_triple_integral_setup"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_spherical.spherical_triple_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral_spherical__spherical_triple_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "spherical_triple_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral_spherical.spherical_triple_integral_setup.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral_spherical__spherical_triple_integral_setup.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "spherical_triple_integral_setup"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.conservativeness_test.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.conservative_vector_field__conservativeness_test.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "conservativeness_test"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.line_integral_via_potential.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.conservative_vector_field__line_integral_via_potential.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "line_integral_via_potential"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.potential_function_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.conservative_vector_field__potential_function_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "potential_function_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_and_curl.curl_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.divergence_and_curl__curl_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "curl_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_and_curl.divergence_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.divergence_and_curl__divergence_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "divergence_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_and_curl.fundamental_identity_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.divergence_and_curl__fundamental_identity_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fundamental_identity_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_theorem.divergence_theorem_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.divergence_theorem__divergence_theorem_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "divergence_theorem_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.divergence_theorem.region_with_cavity_flux.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.divergence_theorem__region_with_cavity_flux.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "region_with_cavity_flux"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.area_via_greens_theorem.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.greens_theorem__area_via_greens_theorem.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "area_via_greens_theorem"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.greens_theorem_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.greens_theorem__greens_theorem_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "greens_theorem_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.greens_theorem.region_with_hole_line_integral.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.greens_theorem__region_with_hole_line_integral.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "region_with_hole_line_integral"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_scalar.curve_mass_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.line_integral_scalar__curve_mass_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "curve_mass_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_scalar.scalar_line_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.line_integral_scalar__scalar_line_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "scalar_line_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_vector_field.vector_line_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.line_integral_vector_field__vector_line_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_line_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_vector_field.work_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.line_integral_vector_field__work_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "work_calculation_dfe9b118"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.parametric_surfaces_and_surface_area.surface_area_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.parametric_surfaces_and_surface_area__surface_area_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_area_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.parametric_surfaces_and_surface_area.surface_normal_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.parametric_surfaces_and_surface_area__surface_normal_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_normal_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.stokes_theorem.stokes_theorem_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.stokes_theorem__stokes_theorem_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "stokes_theorem_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.stokes_theorem.surface_choice_for_stokes.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.stokes_theorem__surface_choice_for_stokes.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_choice_for_stokes"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.surface_integral_and_flux.flux_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.surface_integral_and_flux__flux_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "flux_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.surface_integral_and_flux.scalar_surface_integral_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.surface_integral_and_flux__scalar_surface_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "scalar_surface_integral_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.vector_fields.vector_field_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.vector_fields__vector_field_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_field_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.vector_fields.vector_field_domain_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch06_vector_calculus/calculus.vector_fields__vector_field_domain_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vector_field_domain_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.bessel_equation.bessel_equation_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.bessel_equation__bessel_equation_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "bessel_equation_identification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.bessel_equation.bessel_series_derivation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.bessel_equation__bessel_series_derivation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "bessel_series_derivation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.characteristic_equation_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.constant_coefficient_homogeneous_ode__characteristic_equation_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "characteristic_equation_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.homogeneous_general_solution_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.constant_coefficient_homogeneous_ode__homogeneous_general_solution_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "homogeneous_general_solution_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.constant_coefficient_homogeneous_ode.second_order_ivp_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.constant_coefficient_homogeneous_ode__second_order_ivp_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "second_order_ivp_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.damped_harmonic_motion.damped_motion_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.damped_harmonic_motion__damped_motion_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "damped_motion_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.damped_harmonic_motion.damping_type_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.damped_harmonic_motion__damping_type_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "damping_type_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.forced_oscillation_and_resonance.forced_oscillation_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.forced_oscillation_and_resonance__forced_oscillation_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "forced_oscillation_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.forced_oscillation_and_resonance.resonance_condition_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.forced_oscillation_and_resonance__resonance_condition_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "resonance_condition_check"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.nonhomogeneous_ode_general_solution.general_solution_decomposition.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.nonhomogeneous_ode_general_solution__general_solution_decomposition.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "general_solution_decomposition"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.power_series_solutions_of_ode.power_series_solution_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.power_series_solutions_of_ode__power_series_solution_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "power_series_solution_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.power_series_solutions_of_ode.recurrence_relation_derivation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.power_series_solutions_of_ode__recurrence_relation_derivation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "recurrence_relation_derivation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.rlc_circuit.rlc_analogy_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.rlc_circuit__rlc_analogy_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rlc_analogy_application"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.rlc_circuit.rlc_equation_construction.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.rlc_circuit__rlc_equation_construction.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rlc_equation_construction"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.second_order_linear_ode_and_superposition.homogeneous_classification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.second_order_linear_ode_and_superposition__homogeneous_classification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "homogeneous_classification"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.second_order_linear_ode_and_superposition.wronskian_linear_independence_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.second_order_linear_ode_and_superposition__wronskian_linear_independence_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "wronskian_linear_independence_check"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.amplitude_phase_conversion.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.simple_harmonic_motion__amplitude_phase_conversion.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "amplitude_phase_conversion"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.period_frequency_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.simple_harmonic_motion__period_frequency_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "period_frequency_calculation"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.shm_equation_setup.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.simple_harmonic_motion__shm_equation_setup.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "shm_equation_setup"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.undetermined_coefficients.duplication_case_handling.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.undetermined_coefficients__duplication_case_handling.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "duplication_case_handling"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.undetermined_coefficients.undetermined_coefficients_ansatz_selection.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.undetermined_coefficients__undetermined_coefficients_ansatz_selection.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "undetermined_coefficients_ansatz_selection"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.undetermined_coefficients.undetermined_coefficients_solving.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.undetermined_coefficients__undetermined_coefficients_solving.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "undetermined_coefficients_solving"
+    },
+    {
+      "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.variation_of_parameters.variation_of_parameters_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.variation_of_parameters__variation_of_parameters_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "variation_of_parameters_application"
+    }
+  ],
+  "completed": 167,
+  "partial_failure": 0,
+  "skipped": 0,
+  "errors": 0,
+  "timed_out": 0
+}

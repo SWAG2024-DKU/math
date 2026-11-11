@@ -1,0 +1,86 @@
+{
+  "subjects": {
+    "calculus_1": {
+      "rules": 201,
+      "templates": 202,
+      "seed_checks": 2020,
+      "seed_passed": 2020,
+      "preview_summary": null
+    },
+    "calculus_2": {
+      "rules": 166,
+      "templates": 167,
+      "seed_checks": 1670,
+      "seed_passed": 1670,
+      "preview_summary": null
+    },
+    "engineering_mathematics": {
+      "rules": 104,
+      "templates": 104,
+      "seed_checks": 1040,
+      "seed_passed": 1040,
+      "preview_summary": null
+    },
+    "probability_statistics": {
+      "rules": 23,
+      "templates": 23,
+      "seed_checks": 230,
+      "seed_passed": 230,
+      "preview_summary": null
+    }
+  },
+  "rule_total": 494,
+  "template_total": 496,
+  "seed_checks_passed": 4960,
+  "distinct_previews_audit": {
+    "calculus_1": {
+      "templates": 202,
+      "all_ten_distinct": true
+    },
+    "calculus_2": {
+      "templates": 167,
+      "all_ten_distinct": true
+    },
+    "engineering_mathematics": {
+      "templates": 104,
+      "all_ten_distinct": true
+    },
+    "probability_statistics": {
+      "templates": 23,
+      "all_ten_distinct": true
+    }
+  },
+  "spawn_preview_examples": 496,
+  "pytest_distinct_passed": 2633,
+  "linear_algebra_regression": {
+    "same_output": true,
+    "templates": 62,
+    "checks": 186
+  },
+  "database_modified": false,
+  "human_review": "required",
+  "platform_tested": "Linux Python 3.12",
+  "changed_python_files": [
+    "app/problems/template_builder.py",
+    "app/problems/validator_policy.py",
+    "scripts/problems/save_problem_previews.py",
+    "scripts/problems/problem_instance_generator.py",
+    "scripts/problems/calculus_1_rule_profiles.py",
+    "scripts/problems/review_calculus_2_rules.py",
+    "scripts/problems/math_validators.py",
+    "scripts/problems/review_engineering_mathematics_rules.py",
+    "scripts/problems/build_problem_templates.py",
+    "scripts/problems/generation_rule_validator.py",
+    "scripts/problems/probability_statistics_rule_profiles.py",
+    "scripts/problems/engineering_mathematics_rule_profiles.py",
+    "scripts/problems/calculus_1_remaining_profiles.py",
+    "scripts/problems/review_probability_statistics_rules.py",
+    "scripts/problems/generate_remaining_subjects.py",
+    "scripts/problems/calculus_2_rule_profiles.py",
+    "tests/test_engineering_mathematics_pipeline.py",
+    "tests/test_calculus_2_pipeline.py",
+    "tests/test_calculus_1_full_review.py",
+    "tests/test_calculus_remaining_contracts.py",
+    "tests/test_probability_statistics_pipeline.py"
+  ]
+}

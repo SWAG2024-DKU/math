@@ -1,0 +1,96 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch05_integrals.calculus.substitution.symmetric_interval_shortcut.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.substitution__symmetric_interval_shortcut.json",
+  "template_sha256": "76b01e4b389152a858bbe94c92c9f6ae66b28ac1f7109a77c469c59b397276a2",
+  "seed_start": 17,
+  "requested_count": 10,
+  "timeout_seconds": 300.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    },
+    {
+      "requested_seed": 18,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_18_actual_18.json"
+    },
+    {
+      "requested_seed": 19,
+      "actual_seed": 19,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_19_actual_19.json"
+    },
+    {
+      "requested_seed": 20,
+      "actual_seed": 20,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_20_actual_20.json"
+    },
+    {
+      "requested_seed": 21,
+      "actual_seed": 21,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_21_actual_21.json"
+    },
+    {
+      "requested_seed": 22,
+      "actual_seed": 22,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_22_actual_22.json"
+    },
+    {
+      "requested_seed": 23,
+      "actual_seed": 23,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_23_actual_23.json"
+    },
+    {
+      "requested_seed": 24,
+      "actual_seed": 30,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 6,
+      "file": "start_24_actual_30.json"
+    },
+    {
+      "requested_seed": 31,
+      "actual_seed": 39,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 8,
+      "file": "start_31_actual_39.json"
+    },
+    {
+      "requested_seed": 40,
+      "actual_seed": 41,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_40_actual_41.json"
+    }
+  ],
+  "succeeded": 10,
+  "failed": 0,
+  "timed_out": 0
+}

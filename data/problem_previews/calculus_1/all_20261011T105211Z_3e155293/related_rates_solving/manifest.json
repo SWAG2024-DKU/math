@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.related_rates.related_rates_solving.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch03_differentiation_rules/calculus.related_rates__related_rates_solving.json",
+  "template_sha256": "3659a20018d50b8990d7ae0bc1c1a40649263931af3241c3ea7e5a040ea3e787",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

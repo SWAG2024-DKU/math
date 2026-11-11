@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.double_integral_general_region.volume_between_surfaces_calculation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.double_integral_general_region__volume_between_surfaces_calculation.json",
+  "template_sha256": "e4332cc1fb945dc04d3ac26dd4bf9161e5f4d0d3bfe76d2eadf016d4dd0f12b1",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

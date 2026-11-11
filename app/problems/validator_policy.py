@@ -21,6 +21,37 @@ ALLOWED_VALIDATORS = {
     'interval': {'set_equivalence'},
 }
 
+# 새 과목의 구현된 검사만 허용한다. 개별 Rule 매핑은 검수 후 JSON에 명시한다.
+NEW_VALIDATOR_ANSWER_TYPES = {
+    'derivative_check': {'scalar', 'expression'},
+    'antiderivative_check': {'expression'},
+    'definite_integral_check': {'scalar'},
+    'limit_check': {'scalar'},
+    'series_sum_check': {'scalar'},
+    'multiple_integral_check': {'scalar'},
+    'gradient_check': {'vector_expression'},
+    'divergence_check': {'expression', 'scalar'},
+    'curl_check': {'vector_expression'},
+    'ode_solution_check': {'equation', 'expression'},
+    'laplace_transform_check': {'expression'},
+    'fourier_transform_check': {'expression'},
+    'expectation_check': {'scalar'},
+    'variance_check': {'scalar'},
+    'probability_mass_check': {'scalar'},
+    'sample_statistic_check': {'scalar'},
+}
+ALLOWED_VALIDATORS.setdefault('classification',set())
+NEW_VALIDATOR_ANSWER_TYPES['calculus_relation_check']={'scalar','expression','equation','boolean','classification'}
+NEW_VALIDATOR_ANSWER_TYPES['calculus_remaining_check']={'scalar','expression','equation','boolean','classification','set','interval','numerical_approximation'}
+ALLOWED_VALIDATORS.setdefault('numerical_approximation',set())
+NEW_VALIDATOR_ANSWER_TYPES['calculus_2_check']={'scalar','expression','equation','boolean','classification','set','interval','vector','numerical_approximation'}
+NEW_VALIDATOR_ANSWER_TYPES['probability_statistics_check']={'scalar','boolean','interval','single_choice'}
+ALLOWED_VALIDATORS.setdefault('string',set())
+NEW_VALIDATOR_ANSWER_TYPES['engineering_mathematics_check']={'scalar','scalar_list','expression','boolean','vector','vector_list','matrix','string'}
+for _name, _types in NEW_VALIDATOR_ANSWER_TYPES.items():
+    for _type in _types:
+        ALLOWED_VALIDATORS[_type].add(_name)
+
 # Explicitly reviewed against each curated rule's question and answer expression.
 RULE_VALIDATORS = {
     'compact_svd_approximation': ('compact_svd_optimality_check',),

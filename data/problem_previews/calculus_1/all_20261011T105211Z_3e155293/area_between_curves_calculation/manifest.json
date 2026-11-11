@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.area_between_curves.area_between_curves_calculation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch06_applications_of_integration/calculus.area_between_curves__area_between_curves_calculation.json",
+  "template_sha256": "e97ff63ba70688a15b839eafea49bfa8cc8ef7f79eb19170d197798080fc7c3d",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

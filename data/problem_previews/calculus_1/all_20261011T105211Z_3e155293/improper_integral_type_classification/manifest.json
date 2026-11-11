@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.improper_integral.improper_integral_type_classification.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch07_techniques_of_integration/calculus.improper_integral__improper_integral_type_classification.json",
+  "template_sha256": "c57231a77ac3a12a580a991d6ac2b385de28f836336e3576ab96a9d28c9aa95a",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

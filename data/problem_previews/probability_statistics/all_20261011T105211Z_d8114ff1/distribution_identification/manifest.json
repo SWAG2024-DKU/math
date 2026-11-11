@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_07_discrete_distributions.ps.discrete_distributions.bernoulli.f01.distribution_identification.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_07_discrete_distributions/ps.discrete_distributions.bernoulli.f01__distribution_identification.json",
+  "template_sha256": "bad6ec5c1ce9c1a6a729cd8f584bff54b9f35251d5fd599319b942475f9c7bca",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

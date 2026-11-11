@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_surface_area_calculation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.parametric_surface_area_calculation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -30,7 +30,7 @@
   },
   "classification": {
     "problem_type": "parametric_surface_area_calculation",
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 4,
       "min": 3,
@@ -44,64 +44,207 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -6,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "curve_traced_exactly_once_on_interval equals True",
-      "required": true,
-      "description": "호의 길이·곡면 넓이 공식은 곡선이 매개변수 구간에서 정확히 한 번만 지나가야 정확한 값을 준다. 두 번 그려지면 실제 길이의 배수로 잘못 계산된다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "g(t) greater_or_equal 0",
-      "required": true,
-      "description": "x축 회전 곡면 넓이 공식은 g(t)≥0을 전제로 한다."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "parametric_surface_area_calculation",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "k",
+      "N",
+      "x",
+      "y"
     ],
     "semantic_structure": [
-      "매개곡선 아래 넓이를 치환적분으로 계산한다.",
-      "매개곡선의 호의 길이를 계산한다.",
-      "공식 적용 전에 곡선이 구간에서 정확히 한 번만 그려지는지 확인한다."
+      "질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'parametric surface area calculation' 문제를 해결하시오."
+      "X(t)={{ a }}t, Y(t)={{ b }}t, 0≤t≤1을 X축 둘레로 회전한 곡면 넓이를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'parametric_surface_area_calculation')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "numeric_tolerance",
-      "symbolic_equivalence"
+      "calculus_remaining_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "parametric_surface_area",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "parametric_area",
-        "cas_expression": null
+        "formula_id": "parametric_surface_area",
+        "cas_expression": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'parametric_surface_area_calculation')"
       }
     ],
     "explanation_policy": {
@@ -113,17 +256,14 @@
   "validation": {
     "validators": [
       {
-        "name": "numeric_tolerance",
+        "name": "calculus_remaining_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "parametric_surface_area_calculation"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -141,6 +281,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.parametric_surface_area_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.parametric_surface_area_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:acbebcd73b86589b33f97bc67f668ed23294ecc6b93333d88ed0f600660d3325"
   }
 }

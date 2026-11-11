@@ -1,0 +1,1835 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "problem_type_filter": null,
+  "include_draft": true,
+  "seed_start": 17,
+  "seeds_per_template": 10,
+  "timeout_seconds": 30.0,
+  "templates": [
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.elementary_function_classification.domain_by_family.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.elementary_function_classification__domain_by_family.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "domain_by_family"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.elementary_function_classification.function_family_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.elementary_function_classification__function_family_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "function_family_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.exponential.exponent_law_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.exponential__exponent_law_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "exponent_law_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.exponential.graph_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.exponential__graph_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "graph_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.exponential.monotonicity_from_base.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.exponential__monotonicity_from_base.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "monotonicity_from_base"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function.difference_quotient_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function__difference_quotient_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "difference_quotient_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function.domain_range_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function__domain_range_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "domain_range_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function.vertical_line_test_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function__vertical_line_test_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vertical_line_test_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_arithmetic_and_composition.composition_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_arithmetic_and_composition__composition_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "composition_evaluation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_arithmetic_and_composition.domain_of_combination.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_arithmetic_and_composition__domain_of_combination.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "domain_of_combination"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_arithmetic_and_composition.function_decomposition.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_arithmetic_and_composition__function_decomposition.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "function_decomposition"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_symmetry_monotonicity.even_odd_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_symmetry_monotonicity__even_odd_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "even_odd_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_symmetry_monotonicity.monotonic_interval_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_symmetry_monotonicity__monotonic_interval_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "monotonic_interval_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_transformations.graph_sketch_rule.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_transformations__graph_sketch_rule.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "graph_sketch_rule"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_transformations.heaviside_modeling.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_transformations__heaviside_modeling.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "heaviside_modeling"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_transformations.transformation_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.function_transformations__transformation_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "transformation_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.inverse_trig_function.domain_range_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.inverse_trig_function__domain_range_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "domain_range_identification_c7c9d3a1"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.inverse_trig_function.inverse_trig_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.inverse_trig_function__inverse_trig_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_trig_evaluation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.logarithm.change_of_base.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.logarithm__change_of_base.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "change_of_base"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.logarithm.log_law_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.logarithm__log_law_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "log_law_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.logarithm.natural_vs_common_log.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.logarithm__natural_vs_common_log.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "natural_vs_common_log"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.one_to_one_and_inverse_function.cancellation_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.one_to_one_and_inverse_function__cancellation_verification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cancellation_verification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.one_to_one_and_inverse_function.inverse_function_derivation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.one_to_one_and_inverse_function__inverse_function_derivation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_function_derivation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.one_to_one_and_inverse_function.one_to_one_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.one_to_one_and_inverse_function__one_to_one_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "one_to_one_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.piecewise_and_special_functions.domain_segment_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.piecewise_and_special_functions__domain_segment_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "domain_segment_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.piecewise_and_special_functions.piecewise_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.piecewise_and_special_functions__piecewise_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "piecewise_evaluation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.trigonometric_functions.reciprocal_trig_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.trigonometric_functions__reciprocal_trig_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "reciprocal_trig_evaluation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.trigonometric_functions.trig_domain_range_period_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch01_functions_and_models\\calculus.trigonometric_functions__trig_domain_range_period_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_domain_range_period_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.continuity.continuity_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.continuity__continuity_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "continuity_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.continuity.discontinuity_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.continuity__discontinuity_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "discontinuity_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.continuous_function_algebra_and_composition.composition_continuity_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.continuous_function_algebra_and_composition__composition_continuity_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "composition_continuity_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.continuous_function_algebra_and_composition.continuity_algebra_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.continuous_function_algebra_and_composition__continuity_algebra_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "continuity_algebra_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.derivative.derivative_from_definition.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.derivative__derivative_from_definition.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "derivative_from_definition"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.derivative.differentiability_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.derivative__differentiability_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "differentiability_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.derivative.differentiability_continuity_reasoning.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.derivative__differentiability_continuity_reasoning.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "differentiability_continuity_reasoning"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.derivative_definition_and_rates_of_change.derivative_at_point_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.derivative_definition_and_rates_of_change__derivative_at_point_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "derivative_at_point_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.derivative_definition_and_rates_of_change.rate_of_change_interpretation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.derivative_definition_and_rates_of_change__rate_of_change_interpretation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rate_of_change_interpretation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.derivative_definition_and_rates_of_change.tangent_line_via_derivative.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.derivative_definition_and_rates_of_change__tangent_line_via_derivative.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_line_via_derivative"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.direct_substitution_and_algebraic_limit_techniques.direct_substitution_limit.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.direct_substitution_and_algebraic_limit_techniques__direct_substitution_limit.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "direct_substitution_limit"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.direct_substitution_and_algebraic_limit_techniques.indeterminate_form_resolution.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.direct_substitution_and_algebraic_limit_techniques__indeterminate_form_resolution.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "indeterminate_form_resolution"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.higher_order_derivatives.higher_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.higher_order_derivatives__higher_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "higher_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.higher_order_derivatives.position_derivative_interpretation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.higher_order_derivatives__position_derivative_interpretation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "position_derivative_interpretation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.infinite_limit_and_vertical_asymptote.infinite_limit_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.infinite_limit_and_vertical_asymptote__infinite_limit_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "infinite_limit_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.infinite_limit_and_vertical_asymptote.vertical_asymptote_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.infinite_limit_and_vertical_asymptote__vertical_asymptote_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "vertical_asymptote_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.intermediate_value_theorem.ivt_condition_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.intermediate_value_theorem__ivt_condition_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "ivt_condition_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.intermediate_value_theorem.root_interval_location.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.intermediate_value_theorem__root_interval_location.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "root_interval_location"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_at_infinity_and_horizontal_asymptote.horizontal_asymptote_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_at_infinity_and_horizontal_asymptote__horizontal_asymptote_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "horizontal_asymptote_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_at_infinity_and_horizontal_asymptote.limit_at_infinity_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_at_infinity_and_horizontal_asymptote__limit_at_infinity_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "limit_at_infinity_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_at_infinity_and_horizontal_asymptote.rational_end_behavior_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_at_infinity_and_horizontal_asymptote__rational_end_behavior_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rational_end_behavior_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_definition.limit_existence_reasoning.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_definition__limit_existence_reasoning.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "limit_existence_reasoning"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_definition.limit_numeric_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_definition__limit_numeric_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "limit_numeric_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_laws.limit_law_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_laws__limit_law_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "limit_law_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.limit_laws.limit_law_precondition_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.limit_laws__limit_law_precondition_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "limit_law_precondition_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.one_sided_limit.one_sided_limit_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.one_sided_limit__one_sided_limit_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "one_sided_limit_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.one_sided_limit.two_sided_limit_existence_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.one_sided_limit__two_sided_limit_existence_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "two_sided_limit_existence_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.squeeze_theorem.squeeze_theorem_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.squeeze_theorem__squeeze_theorem_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "squeeze_theorem_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.tangent_and_velocity_problem.instantaneous_velocity_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.tangent_and_velocity_problem__instantaneous_velocity_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "instantaneous_velocity_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.tangent_and_velocity_problem.secant_slope_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.tangent_and_velocity_problem__secant_slope_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "secant_slope_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.tangent_and_velocity_problem.tangent_line_derivation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch02_limits_and_derivatives\\calculus.tangent_and_velocity_problem__tangent_line_derivation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_line_derivation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.chain_rule.chain_rule_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.chain_rule__chain_rule_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "chain_rule_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.chain_rule.inner_outer_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.chain_rule__inner_outer_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inner_outer_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.chain_rule.repeated_chain_rule.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.chain_rule__repeated_chain_rule.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "repeated_chain_rule"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.exponential_derivative.exponential_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.exponential_derivative__exponential_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "exponential_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.exponential_derivative.tangent_slope_interpretation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.exponential_derivative__tangent_slope_interpretation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_slope_interpretation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.hyperbolic_functions.hyperbolic_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.hyperbolic_functions__hyperbolic_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "hyperbolic_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.hyperbolic_functions.hyperbolic_identity_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.hyperbolic_functions__hyperbolic_identity_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "hyperbolic_identity_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.hyperbolic_functions.inverse_hyperbolic_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.hyperbolic_functions__inverse_hyperbolic_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_hyperbolic_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.implicit_differentiation.implicit_differentiation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.implicit_differentiation__implicit_differentiation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "implicit_differentiation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.implicit_differentiation.implicit_second_derivative.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.implicit_differentiation__implicit_second_derivative.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "implicit_second_derivative"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.implicit_differentiation.tangent_line_implicit.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.implicit_differentiation__tangent_line_implicit.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_line_implicit"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.inverse_trig_derivatives.inverse_function_derivative_rule_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.inverse_trig_derivatives__inverse_function_derivative_rule_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_function_derivative_rule_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.inverse_trig_derivatives.inverse_trig_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.inverse_trig_derivatives__inverse_trig_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_trig_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.linear_approximation_and_differentials.error_propagation_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.linear_approximation_and_differentials__error_propagation_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "error_propagation_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.linear_approximation_and_differentials.linear_approximation_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.linear_approximation_and_differentials__linear_approximation_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linear_approximation_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.linear_approximation_and_differentials.linearization_construction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.linear_approximation_and_differentials__linearization_construction.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linearization_construction"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.logarithmic_derivative.log_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.logarithmic_derivative__log_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "log_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.logarithmic_derivative.logarithmic_differentiation_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.logarithmic_derivative__logarithmic_differentiation_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "logarithmic_differentiation_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.power_rule.power_rule_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.power_rule__power_rule_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "power_rule_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.power_rule.tangent_normal_line_derivation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.power_rule__tangent_normal_line_derivation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "tangent_normal_line_derivation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.product_rule.product_rule_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.product_rule__product_rule_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "product_rule_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.product_rule.repeated_product_rule.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.product_rule__repeated_product_rule.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "repeated_product_rule"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.quotient_rule.quotient_rule_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.quotient_rule__quotient_rule_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "quotient_rule_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.quotient_rule.reciprocal_derivative.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.quotient_rule__reciprocal_derivative.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "reciprocal_derivative"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.related_rates.related_rates_equation_formulation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.related_rates__related_rates_equation_formulation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "related_rates_equation_formulation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.related_rates.related_rates_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.related_rates__related_rates_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "related_rates_solving"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.sum_difference_constant_multiple_rule.horizontal_tangent_point_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.sum_difference_constant_multiple_rule__horizontal_tangent_point_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "horizontal_tangent_point_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.sum_difference_constant_multiple_rule.polynomial_differentiation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.sum_difference_constant_multiple_rule__polynomial_differentiation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polynomial_differentiation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.trig_derivatives.trig_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.trig_derivatives__trig_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.trig_derivatives.trig_limit_via_substitution.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch03_differentiation_rules\\calculus.trig_derivatives__trig_limit_via_substitution.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_limit_via_substitution"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.closed_interval_method.closed_interval_extrema_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.closed_interval_method__closed_interval_extrema_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "closed_interval_extrema_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.concavity_and_second_derivative_test.concavity_interval_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.concavity_and_second_derivative_test__concavity_interval_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "concavity_interval_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.concavity_and_second_derivative_test.curve_sketching.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.concavity_and_second_derivative_test__curve_sketching.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "curve_sketching"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.concavity_and_second_derivative_test.inflection_point_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.concavity_and_second_derivative_test__inflection_point_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inflection_point_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.concavity_and_second_derivative_test.second_derivative_test_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.concavity_and_second_derivative_test__second_derivative_test_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "second_derivative_test_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.extreme_values_and_fermats_theorem.critical_number_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.extreme_values_and_fermats_theorem__critical_number_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "critical_number_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.extreme_values_and_fermats_theorem.evt_condition_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.extreme_values_and_fermats_theorem__evt_condition_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "evt_condition_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.extreme_values_and_fermats_theorem.extrema_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.extreme_values_and_fermats_theorem__extrema_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "extrema_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.increasing_decreasing_and_first_derivative_test.first_derivative_test_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.increasing_decreasing_and_first_derivative_test__first_derivative_test_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "first_derivative_test_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.increasing_decreasing_and_first_derivative_test.increasing_decreasing_interval_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.increasing_decreasing_and_first_derivative_test__increasing_decreasing_interval_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "increasing_decreasing_interval_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.indefinite_integral.antiderivative_table_lookup.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.indefinite_integral__antiderivative_table_lookup.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "antiderivative_table_lookup"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.indefinite_integral.initial_value_problem.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.indefinite_integral__initial_value_problem.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "initial_value_problem"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.indefinite_integral.motion_reconstruction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.indefinite_integral__motion_reconstruction.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "motion_reconstruction"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.lhopitals_rule.growth_rate_comparison.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.lhopitals_rule__growth_rate_comparison.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "growth_rate_comparison"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.lhopitals_rule.indeterminate_form_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.lhopitals_rule__indeterminate_form_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "indeterminate_form_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.lhopitals_rule.lhopital_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.lhopitals_rule__lhopital_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "lhopital_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.optimization_problems.economic_optimization.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.optimization_problems__economic_optimization.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "economic_optimization"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.optimization_problems.optimization_formulation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.optimization_problems__optimization_formulation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "optimization_formulation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.optimization_problems.optimization_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.optimization_problems__optimization_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "optimization_solving"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.rolles_theorem_and_mvt.mvt_bound_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.rolles_theorem_and_mvt__mvt_bound_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "mvt_bound_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.rolles_theorem_and_mvt.mvt_point_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.rolles_theorem_and_mvt__mvt_point_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "mvt_point_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.rolles_theorem_and_mvt.rolle_condition_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch04_applications_of_differentiation\\calculus.rolles_theorem_and_mvt__rolle_condition_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "rolle_condition_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.fundamental_theorem_of_calculus_part1.accumulation_function_derivative.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.fundamental_theorem_of_calculus_part1__accumulation_function_derivative.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "accumulation_function_derivative"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.fundamental_theorem_of_calculus_part1.variable_bound_integral_derivative.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.fundamental_theorem_of_calculus_part1__variable_bound_integral_derivative.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "variable_bound_integral_derivative"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.fundamental_theorem_of_calculus_part2.definite_integral_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.fundamental_theorem_of_calculus_part2__definite_integral_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "definite_integral_evaluation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.fundamental_theorem_of_calculus_part2.displacement_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.fundamental_theorem_of_calculus_part2__displacement_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "displacement_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.integral.integrability_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.integral__integrability_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "integrability_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.integral.orientation_convention_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.integral__orientation_convention_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "orientation_convention_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.integral_properties.integral_inequality_proof.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.integral_properties__integral_inequality_proof.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "integral_inequality_proof"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.integral_properties.integral_property_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.integral_properties__integral_property_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "integral_property_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.integral_properties.midpoint_rule_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.integral_properties__midpoint_rule_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "midpoint_rule_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.net_change_theorem.displacement_and_distance_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.net_change_theorem__displacement_and_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "displacement_and_distance_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.net_change_theorem.net_change_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.net_change_theorem__net_change_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "net_change_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.riemann_sum_and_area.area_limit_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.riemann_sum_and_area__area_limit_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "area_limit_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.riemann_sum_and_area.riemann_sum_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.riemann_sum_and_area__riemann_sum_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "riemann_sum_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.substitution.definite_integral_substitution.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.substitution__definite_integral_substitution.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "definite_integral_substitution"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.substitution.indefinite_integral_substitution.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.substitution__indefinite_integral_substitution.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "indefinite_integral_substitution"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch05_integrals.calculus.substitution.symmetric_interval_shortcut.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch05_integrals\\calculus.substitution__symmetric_interval_shortcut.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "symmetric_interval_shortcut"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.area_between_curves.area_between_curves_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.area_between_curves__area_between_curves_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "area_between_curves_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.area_between_curves.intersection_point_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.area_between_curves__intersection_point_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "intersection_point_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.area_between_curves.variable_choice_for_area.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.area_between_curves__variable_choice_for_area.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "variable_choice_for_area"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_cross_section.cross_section_area_construction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_cross_section__cross_section_area_construction.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cross_section_area_construction"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_cross_section.volume_by_cross_section_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_cross_section__volume_by_cross_section_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "volume_by_cross_section_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_cylindrical_shells.cylindrical_shell_volume_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_cylindrical_shells__cylindrical_shell_volume_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cylindrical_shell_volume_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_cylindrical_shells.shell_vs_disk_method_selection.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_cylindrical_shells__shell_vs_disk_method_selection.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "shell_vs_disk_method_selection"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_disk_and_washer.axis_distance_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_disk_and_washer__axis_distance_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "axis_distance_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_disk_and_washer.disk_method_volume.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_disk_and_washer__disk_method_volume.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "disk_method_volume"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_disk_and_washer.washer_method_volume.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch06_applications_of_integration\\calculus.volume_by_disk_and_washer__washer_method_volume.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "washer_method_volume"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.improper_integral.comparison_theorem_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.improper_integral__comparison_theorem_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "comparison_theorem_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.improper_integral.improper_integral_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.improper_integral__improper_integral_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "improper_integral_evaluation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.improper_integral.improper_integral_type_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.improper_integral__improper_integral_type_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "improper_integral_type_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.integration_by_parts.integration_by_parts_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.integration_by_parts__integration_by_parts_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "integration_by_parts_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.integration_by_parts.reduction_formula_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.integration_by_parts__reduction_formula_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "reduction_formula_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.integration_by_parts.self_referential_integral_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.integration_by_parts__self_referential_integral_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "self_referential_integral_solving"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.partial_fractions.partial_fraction_decomposition.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.partial_fractions__partial_fraction_decomposition.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "partial_fraction_decomposition"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.partial_fractions.partial_fraction_integration.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.partial_fractions__partial_fraction_integration.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "partial_fraction_integration"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.trigonometric_integrals.trig_integral_strategy_selection.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.trigonometric_integrals__trig_integral_strategy_selection.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_integral_strategy_selection"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.trigonometric_integrals.trig_power_integral_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.trigonometric_integrals__trig_power_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_power_integral_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.trigonometric_substitution.trig_substitution_integral_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.trigonometric_substitution__trig_substitution_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_substitution_integral_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.trigonometric_substitution.trig_substitution_selection.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch07_techniques_of_integration\\calculus.trigonometric_substitution__trig_substitution_selection.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trig_substitution_selection"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.arc_length.arc_length_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.arc_length__arc_length_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "arc_length_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.arc_length.arc_length_setup.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.arc_length__arc_length_setup.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "arc_length_setup"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.cardiac_output_dye_dilution.cardiac_output_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.cardiac_output_dye_dilution__cardiac_output_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cardiac_output_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.cardiac_output_dye_dilution.numeric_integration_from_data.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.cardiac_output_dye_dilution__numeric_integration_from_data.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "numeric_integration_from_data"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.consumer_producer_surplus.consumer_surplus_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.consumer_producer_surplus__consumer_surplus_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "consumer_surplus_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.consumer_producer_surplus.producer_surplus_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.consumer_producer_surplus__producer_surplus_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "producer_surplus_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.hydrostatic_force.hydrostatic_force_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.hydrostatic_force__hydrostatic_force_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "hydrostatic_force_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.hydrostatic_force.width_function_construction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.hydrostatic_force__width_function_construction.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "width_function_construction"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.pappus_theorem.pappus_applicability_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.pappus_theorem__pappus_applicability_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "pappus_applicability_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.pappus_theorem.pappus_theorem_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.pappus_theorem__pappus_theorem_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "pappus_theorem_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.surface_area_of_revolution.surface_area_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.surface_area_of_revolution__surface_area_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_area_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.surface_area_of_revolution.surface_area_setup.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch08_further_applications_of_integration\\calculus.surface_area_of_revolution__surface_area_setup.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_area_setup"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.conic_element_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.conic_sections__conic_element_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "conic_element_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.conic_type_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.conic_sections__conic_type_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "conic_type_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.conic_sections.general_to_standard_form_conversion.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.conic_sections__general_to_standard_form_conversion.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "general_to_standard_form_conversion"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_arc_length_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_area_arc_length_and_surface__parametric_arc_length_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_arc_length_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_area_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_area_arc_length_and_surface__parametric_area_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_area_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_area_arc_length_and_surface.parametric_surface_area_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_area_arc_length_and_surface__parametric_surface_area_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_surface_area_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_curves.parameter_elimination.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_curves__parameter_elimination.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parameter_elimination"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_curves.parametric_curve_sketching.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_curves__parametric_curve_sketching.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_curve_sketching"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_line.horizontal_vertical_tangent_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_tangent_line__horizontal_vertical_tangent_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "horizontal_vertical_tangent_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_line.parametric_second_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_tangent_line__parametric_second_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_second_derivative_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_line.parametric_tangent_slope_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.parametric_tangent_line__parametric_tangent_slope_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parametric_tangent_slope_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_arc_length_and_tangent.polar_arc_length_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_arc_length_and_tangent__polar_arc_length_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_arc_length_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_arc_length_and_tangent.polar_tangent_slope_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_arc_length_and_tangent__polar_tangent_slope_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_tangent_slope_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_arc_length_and_tangent.pole_tangent_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_arc_length_and_tangent__pole_tangent_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "pole_tangent_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.area_between_polar_curves.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_area__area_between_polar_curves.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "area_between_polar_curves"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.polar_area_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_area__polar_area_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_area_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_area.polar_curve_intersection.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_area__polar_curve_intersection.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_curve_intersection"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_coordinates.polar_cartesian_conversion.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_coordinates__polar_cartesian_conversion.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_cartesian_conversion"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_coordinates.polar_curve_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_coordinates__polar_curve_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_curve_identification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch09_parametric_equations_and_polar_coordinates.calculus.polar_coordinates.polar_symmetry_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch09_parametric_equations_and_polar_coordinates\\calculus.polar_coordinates__polar_symmetry_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "polar_symmetry_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.absolute_conditional_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.alternating_series_and_absolute_convergence__absolute_conditional_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "absolute_conditional_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.alternating_series_error_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.alternating_series_and_absolute_convergence__alternating_series_error_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "alternating_series_error_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.alternating_series_and_absolute_convergence.alternating_series_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.alternating_series_and_absolute_convergence__alternating_series_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "alternating_series_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.comparison_tests.comparison_series_construction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.comparison_tests__comparison_series_construction.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "comparison_series_construction"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.comparison_tests.direct_comparison_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.comparison_tests__direct_comparison_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "direct_comparison_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.comparison_tests.limit_comparison_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.comparison_tests__limit_comparison_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "limit_comparison_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.integral_test.integral_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.integral_test__integral_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "integral_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.integral_test.p_series_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.integral_test__p_series_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "p_series_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.integral_test.remainder_estimation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.integral_test__remainder_estimation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "remainder_estimation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.monotonic_and_bounded_sequence.monotonic_theorem_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.monotonic_and_bounded_sequence__monotonic_theorem_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "monotonic_theorem_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.monotonic_and_bounded_sequence.monotonicity_boundedness_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.monotonic_and_bounded_sequence__monotonicity_boundedness_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "monotonicity_boundedness_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.monotonic_and_bounded_sequence.recursive_sequence_limit_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.monotonic_and_bounded_sequence__recursive_sequence_limit_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "recursive_sequence_limit_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.ratio_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.ratio_and_root_tests__ratio_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "ratio_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.root_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.ratio_and_root_tests__root_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "root_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.test_selection_reasoning.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.ratio_and_root_tests__test_selection_reasoning.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "test_selection_reasoning"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.geometric_sequence_limit_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.sequence_limit__geometric_sequence_limit_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "geometric_sequence_limit_classification"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.sequence_convergence_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.sequence_limit__sequence_convergence_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "sequence_convergence_check"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.sequence_limit.sequence_limit_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.sequence_limit__sequence_limit_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "sequence_limit_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.divergence_test_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.series_convergence__divergence_test_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "divergence_test_application"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.geometric_series_sum_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.series_convergence__geometric_series_sum_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "geometric_series_sum_calculation"
+    },
+    {
+      "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.telescoping_series_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_1\\calc1_ch10_sequences_and_series\\calculus.series_convergence__telescoping_series_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "telescoping_series_calculation"
+    }
+  ],
+  "completed": 202,
+  "partial_failure": 0,
+  "skipped": 0,
+  "errors": 0,
+  "timed_out": 0
+}

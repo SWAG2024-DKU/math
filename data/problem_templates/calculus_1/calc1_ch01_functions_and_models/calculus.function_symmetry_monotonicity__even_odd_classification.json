@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch01_functions_and_models.calculus.function_symmetry_monotonicity.even_odd_classification.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.even_odd_classification.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -30,7 +30,7 @@
   },
   "classification": {
     "problem_type": "even_odd_classification",
-    "answer_type": "boolean",
+    "answer_type": "classification",
     "difficulty": {
       "base": 1,
       "min": 1,
@@ -44,63 +44,155 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "f": {
+      "type": "expression",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": {
+        "depends_on": [
+          "a",
+          "b"
+        ],
+        "expression": "a*x**2+b*x**3",
+        "engine": "sympy",
+        "selection": null
+      },
+      "generator": null,
+      "variable": "x"
+    }
+  },
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
   },
   "constraints": [
     {
-      "type": "concept_application_condition",
-      "expression": "domain_symmetric_about_origin equals True",
+      "type": "nonzero",
+      "expression": "a != 0 or b != 0",
       "required": true,
-      "description": "우함수·기함수 판정은 정의역이 원점에 대해 대칭일 때만 의미가 있다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "monotonicity_scope equals interval",
-      "required": true,
-      "description": "증가·감소는 전체 정의역이 아니라 특정 구간 기준으로 판단한다."
+      "description": null
     }
   ],
   "problem_builder": {
     "operation": "even_odd_classification",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "f",
+      "x"
     ],
     "semantic_structure": [
-      "주어진 함수가 우함수, 기함수, 또는 둘 다 아닌지 판별한다.",
-      "함수가 증가 또는 감소하는 구간을 판별한다."
+      "영함수는 우함수이면서 기함수이므로 두 계수 모두 0인 경우 제외"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'even odd classification' 문제를 해결하시오."
+      "f(x)={{ f }}가 우함수, 기함수, 둘 다 아님 중 어디에 해당하는지 판정하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "boolean",
-    "engine": "python",
-    "cas_template": null,
+    "answer_type": "classification",
+    "engine": "sympy",
+    "cas_template": "calculus_value({'a':a,'b':b,'f':f,'x':x},'parity')",
     "latex_template": null,
     "canonicalization": {
-      "method": null,
+      "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "domain_check",
-      "symbolic_equivalence"
+      "calculus_relation_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "even_function",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "even_function",
-        "cas_expression": null
+        "cas_expression": "calculus_value({'a':a,'b':b,'f':f,'x':x},'parity')"
       }
     ],
     "explanation_policy": {
@@ -112,17 +204,14 @@
   "validation": {
     "validators": [
       {
-        "name": "domain_check",
+        "name": "calculus_relation_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "parity"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -140,6 +229,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.even_odd_classification.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.even_odd_classification.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 영함수는 우함수이면서 기함수이므로 두 계수 모두 0인 경우 제외; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:7f0e97c004b6871cdffd303016b56906a5e66c6ca7632bd565561d073e042ed1"
   }
 }

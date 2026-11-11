@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.volume_by_disk_and_washer.washer_method_volume.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.washer_method_volume.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -29,7 +29,7 @@
   },
   "classification": {
     "problem_type": "washer_method_volume",
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 3,
       "min": 2,
@@ -43,71 +43,243 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "A": {
-      "type": "matrix",
-      "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-      "rows_min": 2,
-      "rows_max": 4,
-      "cols_min": 2,
-      "cols_max": 4,
-      "element_type": "integer",
-      "element_min": -5,
-      "element_max": 5
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "f": {
+      "type": "expression",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": {
+        "depends_on": [
+          "a",
+          "b"
+        ],
+        "expression": "a*x+b",
+        "engine": "sympy",
+        "selection": null
+      },
+      "generator": null,
+      "variable": "x"
+    },
+    "domain": {
+      "type": "interval",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "lower": 0,
+      "upper": 2
+    },
+    "lower": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [
+        0
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "upper": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    }
+  },
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
   },
   "constraints": [
     {
-      "type": "concept_application_condition",
-      "expression": "R greater_or_equal r",
+      "type": "domain_condition",
+      "expression": "is_defined_on_domain(f,x,domain)",
       "required": true,
-      "description": "고리법에서는 R≥r≥0이어야 하며, 외부반지름과 내부반지름 모두 회전축으로부터의 거리로 정의해야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "cross_section_perpendicular_to_rotation_axis equals True",
-      "required": true,
-      "description": "절단면은 회전축에 수직이어야 한다."
+      "description": "질문에서 사용하는 함수의 검사 구간 정의역"
     }
   ],
   "problem_builder": {
     "operation": "washer_method_volume",
     "required_objects": [
-      "A"
+      "a",
+      "b",
+      "f",
+      "domain",
+      "lower",
+      "upper",
+      "x"
     ],
     "semantic_structure": [
-      "영역과 회전축의 위치 관계로 원판법과 고리법을 구분한다.",
-      "회전축이 좌표축이 아닐 때 반지름을 축까지의 거리로 계산한다.",
-      "원판법 또는 고리법으로 회전체의 부피를 계산한다."
+      "외반지름≥내반지름=1"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'washer method volume' 문제를 해결하시오."
+      "0≤x≤{{ upper }}에서 위 곡선 y={{ f }}, 아래 곡선 y=1 사이를 x축 둘레로 회전한 부피를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_value({'a':a,'b':b,'f':f,'domain':domain,'lower':lower,'upper':upper,'x':x},'washer_volume')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "numeric_sampling",
-      "symbolic_equivalence"
+      "calculus_relation_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "washer_method",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "disk_method",
-        "cas_expression": null
+        "formula_id": "washer_method",
+        "cas_expression": "calculus_value({'a':a,'b':b,'f':f,'domain':domain,'lower':lower,'upper':upper,'x':x},'washer_volume')"
       }
     ],
     "explanation_policy": {
@@ -119,17 +291,14 @@
   "validation": {
     "validators": [
       {
-        "name": "numeric_sampling",
+        "name": "calculus_relation_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "washer_volume"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -147,6 +316,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.washer_method_volume.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.washer_method_volume.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 외반지름≥내반지름=1; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:16478347f3fcd487624b8fd0c20e6073e8a583d27773204aaa80eb5cb2f85f92"
   }
 }

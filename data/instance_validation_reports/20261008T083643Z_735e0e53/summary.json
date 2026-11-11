@@ -1,0 +1,10 @@
+{
+  "validator_version": "independent-linear-algebra-1.0.0",
+  "write": false,
+  "completed": true,
+  "counts": {
+    "passed": 10
+  },
+  "last_processed_id": "01785378-27de-478d-bfae-b5353835df1f",
+  "report_dir": "data\\instance_validation_reports\\20261008T083643Z_735e0e53"
+}

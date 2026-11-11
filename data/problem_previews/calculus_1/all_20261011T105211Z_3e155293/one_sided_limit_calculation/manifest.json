@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.one_sided_limit.one_sided_limit_calculation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch02_limits_and_derivatives/calculus.one_sided_limit__one_sided_limit_calculation.json",
+  "template_sha256": "16c7e01d6671040828060bc5143dfddf93ef37b1349cc650e6dfec2d37af93ec",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

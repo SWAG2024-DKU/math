@@ -1,0 +1,3002 @@
+{
+  "calculus_1": {
+    "templates": 202,
+    "all_ten_distinct": true,
+    "rows": [
+      {
+        "problem_type": "domain_range_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "vertical_line_test_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "difference_quotient_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "piecewise_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "domain_segment_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "even_odd_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "monotonic_interval_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "function_family_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "domain_by_family",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "transformation_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "graph_sketch_rule",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "heaviside_modeling",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "domain_of_combination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "composition_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "function_decomposition",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "exponent_law_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "monotonicity_from_base",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "graph_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "one_to_one_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "inverse_function_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "cancellation_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "log_law_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "change_of_base",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "natural_vs_common_log",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "inverse_trig_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "domain_range_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "trig_domain_range_period_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "reciprocal_trig_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 6,
+        "error": null
+      },
+      {
+        "problem_type": "secant_slope_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_line_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "instantaneous_velocity_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "limit_numeric_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "limit_existence_reasoning",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "one_sided_limit_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 5,
+        "error": null
+      },
+      {
+        "problem_type": "two_sided_limit_existence_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "infinite_limit_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "vertical_asymptote_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "limit_law_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "limit_law_precondition_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "direct_substitution_limit",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "indeterminate_form_resolution",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 5,
+        "error": null
+      },
+      {
+        "problem_type": "squeeze_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "continuity_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "discontinuity_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "continuity_algebra_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "composition_continuity_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "ivt_condition_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "root_interval_location",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "limit_at_infinity_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "horizontal_asymptote_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "rational_end_behavior_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "derivative_at_point_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_line_via_derivative",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "rate_of_change_interpretation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "derivative_from_definition",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "differentiability_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "differentiability_continuity_reasoning",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 6,
+        "error": null
+      },
+      {
+        "problem_type": "higher_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "position_derivative_interpretation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "power_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_normal_line_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "polynomial_differentiation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "horizontal_tangent_point_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "exponential_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 6,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_slope_interpretation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "product_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "repeated_product_rule",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "quotient_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "reciprocal_derivative",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "trig_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "trig_limit_via_substitution",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "chain_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "inner_outer_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "repeated_chain_rule",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "implicit_differentiation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "implicit_second_derivative",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_line_implicit",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "log_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "logarithmic_differentiation_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "inverse_trig_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "inverse_function_derivative_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "related_rates_equation_formulation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "related_rates_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "linearization_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "linear_approximation_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "error_propagation_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "hyperbolic_identity_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "hyperbolic_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "inverse_hyperbolic_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "critical_number_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "extrema_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "evt_condition_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 6,
+        "error": null
+      },
+      {
+        "problem_type": "closed_interval_extrema_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "rolle_condition_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "mvt_point_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "mvt_bound_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "increasing_decreasing_interval_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "first_derivative_test_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "concavity_interval_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "inflection_point_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "second_derivative_test_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "curve_sketching",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "lhopital_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "indeterminate_form_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "growth_rate_comparison",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "optimization_formulation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "optimization_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "economic_optimization",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "antiderivative_table_lookup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "initial_value_problem",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "motion_reconstruction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "riemann_sum_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "area_limit_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "integrability_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 6,
+        "error": null
+      },
+      {
+        "problem_type": "orientation_convention_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "integral_property_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "midpoint_rule_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "integral_inequality_proof",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "accumulation_function_derivative",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "variable_bound_integral_derivative",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "definite_integral_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "displacement_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "net_change_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "displacement_and_distance_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "indefinite_integral_substitution",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "definite_integral_substitution",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "symmetric_interval_shortcut",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "area_between_curves_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 10,
+        "error": null
+      },
+      {
+        "problem_type": "intersection_point_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "variable_choice_for_area",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "cross_section_area_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "volume_by_cross_section_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 8,
+        "error": null
+      },
+      {
+        "problem_type": "disk_method_volume",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "washer_method_volume",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 10,
+        "error": null
+      },
+      {
+        "problem_type": "axis_distance_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 6,
+        "error": null
+      },
+      {
+        "problem_type": "cylindrical_shell_volume_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "shell_vs_disk_method_selection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "integration_by_parts_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "reduction_formula_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "self_referential_integral_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "trig_power_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "trig_integral_strategy_selection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "trig_substitution_selection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "trig_substitution_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "partial_fraction_decomposition",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "partial_fraction_integration",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "improper_integral_type_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "improper_integral_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "comparison_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "arc_length_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "arc_length_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "surface_area_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "surface_area_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "width_function_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "hydrostatic_force_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "pappus_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "pappus_applicability_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "consumer_surplus_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "producer_surplus_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "numeric_integration_from_data",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "cardiac_output_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_curve_sketching",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parameter_elimination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_tangent_slope_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "horizontal_vertical_tangent_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_second_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_area_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_arc_length_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_surface_area_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "polar_cartesian_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "polar_symmetry_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_curve_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_area_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_curve_intersection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "area_between_polar_curves",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "polar_arc_length_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_tangent_slope_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "pole_tangent_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "conic_type_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "conic_element_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "general_to_standard_form_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "sequence_convergence_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "sequence_limit_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "geometric_sequence_limit_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "monotonicity_boundedness_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "monotonic_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "recursive_sequence_limit_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "geometric_series_sum_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "divergence_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "telescoping_series_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "integral_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "p_series_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "remainder_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "direct_comparison_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "limit_comparison_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "comparison_series_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "alternating_series_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "alternating_series_error_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "absolute_conditional_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "ratio_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "root_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "test_selection_reasoning",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      }
+    ]
+  },
+  "calculus_2": {
+    "templates": 167,
+    "all_ten_distinct": true,
+    "rows": [
+      {
+        "problem_type": "radius_of_convergence_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "interval_of_convergence_determination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "endpoint_convergence_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "geometric_power_series_representation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "power_series_combination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "cauchy_product_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "coefficient_determination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "term_by_term_differentiation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "term_by_term_integration",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "power_series_substitution",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "taylor_polynomial_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "taylor_series_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "taylor_coefficient_extraction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "common_series_recall",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "series_convergence_interval_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "taylor_error_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "required_degree_determination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "binomial_series_expansion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "series_based_integration",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "series_based_limit_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "parameter_elimination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "line_segment_parametrization",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_tangent_line_equation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parametric_concavity_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "surface_area_of_revolution_about_x_axis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "surface_area_of_revolution_about_y_axis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "polar_curve_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_symmetry_test_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_to_cartesian_circle_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "eccentricity_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "conic_polar_equation_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "discriminant_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_from_points_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "magnitude_and_unit_vector_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "direction_angle_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "3d_distance_midpoint_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "sphere_equation_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "dot_product_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "angle_or_orthogonality_determination",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "projection_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "work_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "cross_product_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parallelism_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "area_via_cross_product",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parallelepiped_volume_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "coplanarity_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "line_equation_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "two_lines_relation_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "plane_equation_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "two_planes_relation_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "angle_between_plane_and_line",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "point_plane_distance_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "point_line_distance_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "parallel_planes_distance_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "quadric_surface_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "cross_section_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "vector_function_domain_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "space_curve_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "curve_intersection_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_line_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "unit_tangent_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_differentiation_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_chain_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "constant_magnitude_orthogonality_proof",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_initial_value_problem",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "space_curve_arc_length_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "curvature_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "frenet_frame_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "osculating_circle_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "velocity_acceleration_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "displacement_vs_distance_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "position_reconstruction_from_acceleration",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "acceleration_decomposition",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "speed_change_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "uniform_circular_motion_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "projectile_position_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "projectile_motion_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "multivariable_domain_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "level_curve_sketching",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "path_test_limit_nonexistence",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_substitution_limit_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "continuity_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "partial_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "second_order_partial_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "clairaut_theorem_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "tangent_plane_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "linearization_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "total_differential_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "multivariable_chain_rule_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "multivariable_implicit_differentiation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "directional_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "max_increase_direction_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "level_surface_tangent_plane_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "normal_line_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "critical_point_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "second_derivative_test_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "absolute_extrema_on_closed_region",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "lagrange_system_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "constrained_optimization_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "double_integral_rectangle_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "average_value_2d_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "region_type_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "integration_order_swap",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "volume_between_surfaces_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "polar_double_integral_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "polar_double_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "triple_integral_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "triple_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "solid_volume_via_triple_integral",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "cylindrical_triple_integral_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "cylindrical_triple_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "spherical_triple_integral_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "spherical_triple_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "mass_and_moment_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "center_of_mass_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "moment_of_inertia_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "3d_mass_center_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "jacobian_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "change_of_variables_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_field_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "vector_field_domain_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "scalar_line_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "curve_mass_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "vector_line_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "work_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "conservativeness_test",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "potential_function_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "line_integral_via_potential",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "greens_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "area_via_greens_theorem",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "region_with_hole_line_integral",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "divergence_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "curl_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "fundamental_identity_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "surface_normal_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "surface_area_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "scalar_surface_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "flux_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "stokes_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "surface_choice_for_stokes",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "divergence_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "region_with_cavity_flux",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "homogeneous_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "wronskian_linear_independence_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "characteristic_equation_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "homogeneous_general_solution_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "second_order_ivp_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "general_solution_decomposition",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "undetermined_coefficients_ansatz_selection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "undetermined_coefficients_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "duplication_case_handling",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "variation_of_parameters_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "shm_equation_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "amplitude_phase_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "period_frequency_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "damping_type_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "damped_motion_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "forced_oscillation_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "resonance_condition_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "rlc_equation_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "rlc_analogy_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "recurrence_relation_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "power_series_solution_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "bessel_equation_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "bessel_series_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      }
+    ]
+  },
+  "engineering_mathematics": {
+    "templates": 104,
+    "all_ten_distinct": true,
+    "rows": [
+      {
+        "problem_type": "ode_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "ivp_uniqueness_test",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "separable_ode_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "homogeneous_ode_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "linear_ode_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "bernoulli_ode_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "exact_ode_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "exact_integrating_factor_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "autonomous_stability_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "applied_ode_modeling",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "higher_order_ode_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "superposition_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "wronskian_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "characteristic_equation_setup",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "homogeneous_ode_solution_construction",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "nonhomogeneous_solution_structure",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "undetermined_coefficients_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "variation_of_parameters_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "euler_cauchy_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "higher_order_ivp_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "mechanical_vibration_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "laplace_definition_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "basic_laplace_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "first_shifting_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "second_shifting_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "derivative_laplace_transformation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "s_differentiation_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "inverse_laplace_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "dirac_delta_laplace",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "convolution_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "laplace_ivp_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "system_matrix_form_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "state_space_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "eigenvalue_system_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "complex_eigenvalue_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "generalized_eigenvector_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "matrix_exponential_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "nonhomogeneous_system_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "phase_plane_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "linear_stability_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "nonlinear_linearization_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "field_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "gradient_directional_derivative_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "divergence_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "curl_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "laplacian_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "line_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "conservative_field_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "surface_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "green_theorem_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "stokes_theorem_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "divergence_theorem_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "coordinate_transformation_integration",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "fundamental_frequency_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "orthogonality_integral_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "fourier_series_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "half_range_expansion_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "complex_fourier_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "gibbs_phenomenon_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "parseval_identity_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "fourier_transform_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "fourier_properties_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "fourier_convolution_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "pde_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "boundary_condition_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "separation_of_variables_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "sturm_liouville_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "heat_equation_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "wave_equation_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "laplace_poisson_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "eigenfunction_expansion_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "steady_transient_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "complex_form_conversion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "demoivre_power_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "complex_limit_evaluation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "analyticity_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "cauchy_riemann_verification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "harmonic_conjugate_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "complex_elementary_function_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "complex_line_integral_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "cauchy_theorem_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "cauchy_integral_formula_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "laurent_series_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "singularity_classification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 4,
+        "error": null
+      },
+      {
+        "problem_type": "residue_theorem_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "error_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "condition_number_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "bisection_iteration",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "fixed_point_iteration_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "newton_method_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "secant_method_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "lagrange_interpolation_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "newton_divided_difference_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "interpolation_error_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "least_squares_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "numerical_differentiation_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "trapezoidal_rule_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "simpson_rule_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      },
+      {
+        "problem_type": "gaussian_elimination_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "lu_decomposition_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "iterative_solver_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "euler_method_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "runge_kutta_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "finite_difference_solving",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 2,
+        "error": null
+      }
+    ]
+  },
+  "probability_statistics": {
+    "templates": 23,
+    "all_ten_distinct": true,
+    "rows": [
+      {
+        "problem_type": "concept_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "assumption_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "formula_application",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "method_selection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "counting_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 3,
+        "error": null
+      },
+      {
+        "problem_type": "probability_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "distribution_identification",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "moment_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "estimator_derivation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "confidence_interval",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "hypothesis_decision",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "power_analysis",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "test_statistic_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "effect_measure_interpretation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "contingency_table_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "relationship_interpretation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "correlation_calculation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "diagnostic_check",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 1,
+        "error": null
+      },
+      {
+        "problem_type": "model_interpretation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "coefficient_estimation",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "post_hoc_selection",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "f_test",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      },
+      {
+        "problem_type": "anova_table_completion",
+        "distinct_previews": 10,
+        "max_duplicate_retries": 0,
+        "error": null
+      }
+    ]
+  }
+}

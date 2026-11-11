@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_12_estimation.ps.estimation.method_of_moments.estimator_derivation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_12_estimation/ps.estimation.method_of_moments__estimator_derivation.json",
+  "template_sha256": "3f29fe22ea5f69381ada71e4825142367755b72c6ff6378dda21340c39413d10",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

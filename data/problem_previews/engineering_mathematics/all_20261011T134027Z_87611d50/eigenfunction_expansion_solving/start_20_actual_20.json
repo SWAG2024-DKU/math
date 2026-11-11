@@ -1,0 +1,379 @@
+{
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.fourier_eigenfunction_expansion.eigenfunction_expansion_solving.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "engineering_mathematics.eigenfunction_expansion_solving.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "eigenfunction_expansion_solving",
+  "answer_type": "expression",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "열방정식 u_t=3u_xx의 한 고유함수 초기자료 2sin(2x), 구간(0,π), 영 Dirichlet 경계의 해를 구하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "a": 2,
+    "b": 3,
+    "c": 1,
+    "n": 2,
+    "k": -1
+  },
+  "expected_answer": "2*exp(-12*t)*sin(2*x)",
+  "seed": 20,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "engineering_mathematics_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 20,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.fourier_eigenfunction_expansion.eigenfunction_expansion_solving.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "engineering_mathematics.eigenfunction_expansion_solving.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "engineering_mathematics",
+      "subject_name_ko": "공학수학",
+      "unit_id": "em_07_partial_differential_equations",
+      "unit_name_ko": "편미분방정식",
+      "concept_ids": [
+        "em.pde.fourier_eigenfunction_expansion"
+      ],
+      "formula_ids": [
+        "eigenfunction_expansion_initial",
+        "pde_eigenfunction_series_solution"
+      ],
+      "tags": [
+        "eigenfunction_expansion",
+        "fourier_series",
+        "separation_of_variables"
+      ]
+    },
+    "classification": {
+      "problem_type": "eigenfunction_expansion_solving",
+      "answer_type": "expression",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "a": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "b": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "c": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "n": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 3,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "k": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": -1,
+        "max": 1,
+        "exclude": [],
+        "choices": [
+          -1,
+          1
+        ],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "y": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "z": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "t": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "s": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "C1": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "C2": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "w": {
+        "role": "independent_variable",
+        "assumptions": {},
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [],
+    "problem_builder": {
+      "operation": "eigenfunction_expansion_solving",
+      "required_objects": [
+        "a",
+        "b",
+        "c",
+        "n",
+        "k",
+        "x",
+        "y",
+        "z",
+        "t",
+        "s",
+        "C1",
+        "C2",
+        "w"
+      ],
+      "semantic_structure": [
+        "열방정식 u_t={{ b }}u_xx의 한 고유함수 초기자료 {{ a }}sin({{ n }}x), 구간(0,π), 영 Dirichlet 경계의 해를 구하시오."
+      ],
+      "text_templates_ko": [
+        "열방정식 u_t={{ b }}u_xx의 한 고유함수 초기자료 {{ a }}sin({{ n }}x), 구간(0,π), 영 Dirichlet 경계의 해를 구하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "a",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "expression",
+      "engine": "sympy",
+      "cas_template": "engineering_mathematics_value({'a':a,'b':b,'c':c,'n':n,'k':k,'x':x,'y':y,'z':z,'t':t,'s':s,'C1':C1,'C2':C2,'w':w},'eigenfunction_expansion_solving')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "engineering_mathematics_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": null,
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": null,
+          "cas_expression": "engineering_mathematics_value({'a':a,'b':b,'c':c,'n':n,'k':k,'x':x,'y':y,'z':z,'t':t,'s':s,'C1':C1,'C2':C2,'w':w},'eigenfunction_expansion_solving')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "engineering_mathematics_check",
+          "required": true,
+          "config": {
+            "operation": "eigenfunction_expansion_solving"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'engineering_mathematics.eigenfunction_expansion_solving.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [engineering_mathematics_execution_v1] 열방정식 u_t={{ b }}u_xx의 한 고유함수 초기자료 {{ a }}sin({{ n }}x), 구간(0,π), 영 Dirichlet 경계의 해를 구하시오.; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:ff0a2b69ef92ff5c31d4767a8acb85066879aae79430e8abb907660a3a1e1183"
+    }
+  }
+}

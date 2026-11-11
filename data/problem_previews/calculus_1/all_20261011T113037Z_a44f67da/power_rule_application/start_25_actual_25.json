@@ -1,0 +1,254 @@
+{
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.power_rule.power_rule_application.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "calculus_1.power_rule_application.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "power_rule_application",
+  "answer_type": "expression",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "다음 다항함수의 도함수 f'(x)를 구하시오.\nf(x) = -x - 2",
+  "statement_latex": "다항함수 \\(f(x)=- x - 2\\)의 도함수를 구하시오.",
+  "parameters": {
+    "f": "-x - 2",
+    "domain": "Interval(-5, 5)"
+  },
+  "expected_answer": -1,
+  "seed": 25,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": null,
+        "on_failure": "resample",
+        "message": "다항함수의 정의역을 검사한다.",
+        "observed": true
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "derivative_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 25,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.power_rule.power_rule_application.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "calculus_1.power_rule_application.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "calculus_1",
+      "subject_name_ko": "미분적분학 1",
+      "unit_id": "calc1_ch03_differentiation_rules",
+      "unit_name_ko": "미분법",
+      "concept_ids": [
+        "calculus.power_rule"
+      ],
+      "formula_ids": [
+        "constant_rule",
+        "power_rule"
+      ],
+      "tags": [
+        "power_rule",
+        "constant_rule",
+        "tangent_line",
+        "normal_line"
+      ]
+    },
+    "classification": {
+      "problem_type": "power_rule_application",
+      "answer_type": "expression",
+      "difficulty": {
+        "base": 1,
+        "min": 1,
+        "max": 2,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "f": {
+        "type": "expression",
+        "description": "작은 정수 계수의 1~3차 다항함수",
+        "required": true,
+        "min": -3,
+        "max": 3,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [
+          "polynomial"
+        ],
+        "element_type": "integer",
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null,
+        "variable": "x",
+        "degree_min": 1,
+        "degree_max": 3
+      },
+      "domain": {
+        "type": "interval",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null,
+        "lower": -5,
+        "upper": 5
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [
+      {
+        "type": "domain_condition",
+        "expression": "is_defined_on_domain(f,x,domain)",
+        "required": true,
+        "description": "다항함수의 정의역을 검사한다."
+      }
+    ],
+    "problem_builder": {
+      "operation": "power_rule_application",
+      "required_objects": [
+        "f",
+        "x"
+      ],
+      "semantic_structure": [
+        "각 항에 거듭제곱 미분 법칙을 적용한다."
+      ],
+      "text_templates_ko": [
+        "다음 다항함수의 도함수 f'(x)를 구하시오.\nf(x) = {{ f }}"
+      ],
+      "latex_templates": [
+        "다항함수 \\(f(x)={{ f }}\\)의 도함수를 구하시오."
+      ],
+      "cas_template": "f",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "expression",
+      "engine": "sympy",
+      "cas_template": "diff(f,x)",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "derivative_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "power_rule",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "power_rule",
+          "cas_expression": "diff(f,x)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "derivative_check",
+          "required": true,
+          "config": {
+            "function_key": "f",
+            "variable_key": "x",
+            "order": 1
+          }
+        }
+      ],
+      "generation_max_attempts": 20,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'calculus_1.power_rule_application.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [polynomial_power_rule_v1] 정수 지수 다항식 실행 계약 구현. 사람 검수 전이므로 manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    }
+  }
+}

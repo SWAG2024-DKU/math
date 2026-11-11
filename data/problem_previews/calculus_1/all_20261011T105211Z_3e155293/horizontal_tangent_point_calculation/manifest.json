@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.sum_difference_constant_multiple_rule.horizontal_tangent_point_calculation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch03_differentiation_rules/calculus.sum_difference_constant_multiple_rule__horizontal_tangent_point_calculation.json",
+  "template_sha256": "e82c4df32f8df91c66abff311a5564e6193b4d23f0c554a38050fc663751b917",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

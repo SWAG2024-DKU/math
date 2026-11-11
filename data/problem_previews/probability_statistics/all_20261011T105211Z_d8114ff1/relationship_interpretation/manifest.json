@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_15_correlation.ps.correlation.pearson_affine_transformation.relationship_interpretation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_15_correlation/ps.correlation.pearson_affine_transformation__relationship_interpretation.json",
+  "template_sha256": "c347c015513fc896fc90867d5bb3cc74cc68c854083677498d1f040365cf7508",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

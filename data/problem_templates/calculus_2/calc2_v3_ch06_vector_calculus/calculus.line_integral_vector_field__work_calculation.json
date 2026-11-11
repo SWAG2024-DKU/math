@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.line_integral_vector_field.work_calculation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_2.work_calculation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_2",
     "subject_name_ko": "미분적분학 2",
@@ -45,64 +45,271 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "d": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "both_vectors_nonzero equals True",
-      "required": true,
-      "description": "각도공식과 직교 조건은 두 벡터가 모두 영벡터가 아니어야 적용된다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "vector_line_integral_orientation_dependent equals True",
-      "required": true,
-      "description": "벡터장 선적분은 곡선의 방향에 의존한다(스칼라 선적분과 달리 방향을 바꾸면 부호가 반대가 됨)."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "z": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "t": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C1": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C2": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "work_calculation",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "d",
+      "k",
+      "N",
+      "x",
+      "y",
+      "z",
+      "t",
+      "C1",
+      "C2"
     ],
     "semantic_structure": [
-      "두 벡터의 내적을 계산한다.",
-      "내적으로 두 벡터 사이의 각을 구하거나 직교 여부를 판정한다.",
-      "한 벡터를 다른 벡터 방향으로 정사영한다.",
-      "힘벡터와 변위벡터의 내적으로 일을 계산한다."
+      "질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'work calculation' 문제를 해결하시오."
+      "일정한 힘 F=({{ a }},{{ b }},{{ c }})가 변위 d=({{ b }},-{{ a }},{{ k }}) 동안 한 일을 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'work_calculation')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "calculus_2_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": null,
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "vector_line_integral",
-        "cas_expression": null
+        "formula_id": null,
+        "cas_expression": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'work_calculation')"
       }
     ],
     "explanation_policy": {
@@ -114,12 +321,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "calculus_2_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "work_calculation"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -137,6 +346,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_2.work_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. 공유 draft_auto Rule의 answer_type을 현재 Concept의 지원 타입 'scalar'에 맞게 조정했으며, 정답식은 검토 전까지 비워둠. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_2.work_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_2_execution_v1] 질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:013723ebe0dc56002cdce8bc7a46e0b4a65c1a83d537429f81b87fcc2daea3b4"
   }
 }

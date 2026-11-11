@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.constant_coefficient_homogeneous.characteristic_equation_setup.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/engineering_mathematics/em_02_higher_order_linear_odes/em.ode.constant_coefficient_homogeneous__characteristic_equation_setup.json",
+  "template_sha256": "f691882f0ad3cc8a5e1b95cbaff811998aae38dfc190657f891c84a9e115f45e",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "object_type": "problem_template_manifest",
+  "subject_filter": "probability_statistics",
+  "ready_only": false,
+  "counts": {
+    "rule_warnings": 23,
+    "draft": 23,
+    "saved": 23,
+    "excluded_contract_pairs": 2769
+  },
+  "generated_files": [
+    "probability_statistics\\ps_01_foundations\\ps.foundations.observational_experimental_studies.f01__concept_identification.json",
+    "probability_statistics\\ps_02_descriptive_statistics\\ps.descriptive_statistics.sample_variance_standard_deviation.f01__assumption_check.json",
+    "probability_statistics\\ps_02_descriptive_statistics\\ps.descriptive_statistics.central_tendency.f01__formula_application.json",
+    "probability_statistics\\ps_03_counting\\ps.counting.permutation_without_repetition__method_selection.json",
+    "probability_statistics\\ps_03_counting\\ps.counting.ordinary_combination.f01__counting_calculation.json",
+    "probability_statistics\\ps_05_conditional_independence\\ps.conditional_independence.bayes_theorem__probability_calculation.json",
+    "probability_statistics\\ps_07_discrete_distributions\\ps.discrete_distributions.bernoulli.f01__distribution_identification.json",
+    "probability_statistics\\ps_07_discrete_distributions\\ps.discrete_distributions.binomial.f02__moment_calculation.json",
+    "probability_statistics\\ps_12_estimation\\ps.estimation.method_of_moments__estimator_derivation.json",
+    "probability_statistics\\ps_12_estimation\\ps.estimation.mean_ci_known_sigma__confidence_interval.json",
+    "probability_statistics\\ps_13_hypothesis_testing\\ps.hypothesis_testing.one_sample_z_mean_exact__hypothesis_decision.json",
+    "probability_statistics\\ps_13_hypothesis_testing\\ps.hypothesis_testing.one_sample_z_mean_exact__power_analysis.json",
+    "probability_statistics\\ps_13_hypothesis_testing\\ps.hypothesis_testing.one_sample_z_mean_statistic__test_statistic_calculation.json",
+    "probability_statistics\\ps_14_categorical_analysis\\ps.categorical_analysis.odds_ratio_2x2__effect_measure_interpretation.json",
+    "probability_statistics\\ps_14_categorical_analysis\\ps.categorical_analysis.independence_homogeneity.f01__contingency_table_calculation.json",
+    "probability_statistics\\ps_15_correlation\\ps.correlation.pearson_affine_transformation__relationship_interpretation.json",
+    "probability_statistics\\ps_15_correlation\\ps.correlation.sample_pearson_correlation__correlation_calculation.json",
+    "probability_statistics\\ps_16_simple_linear_regression\\ps.simple_linear_regression.raw_residual__diagnostic_check.json",
+    "probability_statistics\\ps_16_simple_linear_regression\\ps.simple_linear_regression.regression_model.f01__model_interpretation.json",
+    "probability_statistics\\ps_16_simple_linear_regression\\ps.simple_linear_regression.least_squares.f01__coefficient_estimation.json",
+    "probability_statistics\\ps_18_anova\\ps.anova.bonferroni_adjustment__post_hoc_selection.json",
+    "probability_statistics\\ps_18_anova\\ps.anova.oneway_exact_f_reference__f_test.json",
+    "probability_statistics\\ps_18_anova\\ps.anova.oneway_sums_of_squares_and_df.f01__anova_table_completion.json"
+  ]
+}

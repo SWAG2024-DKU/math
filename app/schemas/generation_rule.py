@@ -115,26 +115,10 @@ class ParameterSpec(BaseModel):
 
     @model_validator(mode="after")
     def validate_ranges_and_derivation(self) -> "ParameterSpec":
-        range_pairs = (
-            ("min", self.min, "max", self.max),
-            ("element_min", self.element_min, "element_max", self.element_max),
-            ("rows_min", self.rows_min, "rows_max", self.rows_max),
-            ("cols_min", self.cols_min, "cols_max", self.cols_max),
-            (
-                "dimension_min",
-                self.dimension_min,
-                "dimension_max",
-                self.dimension_max,
-            ),
-            ("size_min", self.size_min, "size_max", self.size_max),
-        )
-        for min_name, minimum, max_name, maximum in range_pairs:
-            if minimum is not None and maximum is not None and minimum > maximum:
-                raise ValueError(f"{min_name}은 {max_name}보다 클 수 없습니다.")
-
-        if self.type == "derived" and self.derived is None:
-            raise ValueError("type='derived' 파라미터에는 derived 설정이 필요합니다.")
-        return self
+        # TODO[LA-D024] validate_ranges_and_derivation 구현
+        # 1. 유리수 분자·분모 범위, 혼합 비율, 구조별 가중치를 ParameterSpec의 선택적 필드로 명시할지 결정한다.
+        # 2. 현재 extra=allow만으로 잘못된 설정이 통과하지 않게 검증하고 기존 카탈로그와 하위 호환한다.
+        raise NotImplementedError("TODO[LA-D024]: validate_ranges_and_derivation")
 
 
 class SymbolSpec(BaseModel):
@@ -217,6 +201,7 @@ class ValidationSpec(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     validators: list[str] = Field(default_factory=list)
+    validator_configs: dict[str, dict[str, Any]] = Field(default_factory=dict)
     all_required: bool = True
     max_generation_attempts: int = 100
 

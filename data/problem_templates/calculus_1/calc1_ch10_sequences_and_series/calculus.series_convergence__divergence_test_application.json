@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.series_convergence.divergence_test_application.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.divergence_test_application.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -45,65 +45,207 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "data": {
-      "type": "numeric_data",
-      "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-      "size_min": 3,
-      "size_max": 30
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -6,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "divergence_test_conclusion_direction equals divergence_only",
-      "required": true,
-      "description": "발산판정법은 발산만 보일 수 있다. lim a_n=0이라고 해서 급수가 수렴한다고 결론지을 수 없다(조화급수가 대표적 반례)."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "series_matches_geometric_form_and_r less_than 1",
-      "required": true,
-      "description": "기하급수 합 공식은 급수가 정확히 ar^{n-1} 꼴(첫 항 a, 공비 r)이고 |r|<1일 때만 바로 적용한다."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "divergence_test_application",
     "required_objects": [
-      "data"
+      "a",
+      "b",
+      "c",
+      "k",
+      "N",
+      "x",
+      "y"
     ],
     "semantic_structure": [
-      "기하급수의 합을 구한다.",
-      "발산판정법으로 급수의 발산을 판정한다.",
-      "망원급수의 부분합을 구해 급수의 합을 계산한다."
+      "질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'divergence test application' 문제를 해결하시오."
+      "급수 ∑( {{ a }}+1/n )에 일반항의 극한을 이용한 발산판정법으로 발산을 결론낼 수 있는가?"
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "boolean",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'divergence_test_application')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "calculus_remaining_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "divergence_test",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "series_sum_def",
-        "cas_expression": null
+        "formula_id": "divergence_test",
+        "cas_expression": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'divergence_test_application')"
       }
     ],
     "explanation_policy": {
@@ -115,12 +257,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "calculus_remaining_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "divergence_test_application"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -138,6 +282,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.divergence_test_application.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.divergence_test_application.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:b3f3bff7037ac3b5b96611b241a93df72387de79cd6534e93e5ae32f562243b3"
   }
 }

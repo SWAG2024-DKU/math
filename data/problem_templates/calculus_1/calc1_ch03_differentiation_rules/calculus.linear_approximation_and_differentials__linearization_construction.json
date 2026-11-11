@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.linear_approximation_and_differentials.linearization_construction.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.linearization_construction.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -44,64 +44,155 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "f": {
+      "type": "expression",
+      "description": null,
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [
+        "polynomial"
+      ],
+      "element_type": "integer",
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "variable": "x",
+      "degree_min": 1,
+      "degree_max": 3
+    },
+    "point": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [
+        0
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "domain": {
+      "type": "interval",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "lower": 1,
+      "upper": 3
+    }
+  },
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
   },
   "constraints": [
     {
-      "type": "concept_application_condition",
-      "expression": "f_differentiable_at_a equals True",
+      "type": "domain_condition",
+      "expression": "is_defined_on_domain(f,x,domain)",
       "required": true,
-      "description": "선형화·선형근사는 f가 a에서 미분가능해야 정의된다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "x_close_to_a equals True",
-      "required": true,
-      "description": "선형 근사는 x가 a에 충분히 가까울 때 좋은 근사를 제공하며, 멀어질수록 오차가 커진다."
+      "description": "질문에서 사용하는 함수의 검사 구간 정의역"
     }
   ],
   "problem_builder": {
     "operation": "linearization_construction",
     "required_objects": [
-      "input"
+      "f",
+      "point",
+      "domain",
+      "x"
     ],
     "semantic_structure": [
-      "주어진 점에서 함수의 선형화 L(x)를 구한다.",
-      "선형 근사로 함숫값을 추정한다.",
-      "미분을 이용해 측정오차로부터 계산값의 오차를 추정한다."
+      "f(x)={{ f }}의 x=0에서 선형화 L(x)를 구하시오."
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'linearization construction' 문제를 해결하시오."
+      "f(x)={{ f }}의 x=0에서 선형화 L(x)를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "expression",
-    "engine": "numpy",
-    "cas_template": null,
+    "engine": "sympy",
+    "cas_template": "calculus_value({'f':f,'point':point,'domain':domain,'x':x},'linearization')",
     "latex_template": null,
     "canonicalization": {
-      "method": null,
+      "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "numeric_tolerance",
-      "symbolic_equivalence"
+      "calculus_relation_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "linearization",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "linearization",
-        "cas_expression": null
+        "cas_expression": "calculus_value({'f':f,'point':point,'domain':domain,'x':x},'linearization')"
       }
     ],
     "explanation_policy": {
@@ -113,17 +204,14 @@
   "validation": {
     "validators": [
       {
-        "name": "numeric_tolerance",
+        "name": "calculus_relation_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "linearization"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -141,6 +229,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.linearization_construction.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.linearization_construction.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 문제에 명시한 제한 범위; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:b545d1b73108c4e9b96892c8a251136fa1b62ac0e42e807bd04857b7b63f967a"
   }
 }

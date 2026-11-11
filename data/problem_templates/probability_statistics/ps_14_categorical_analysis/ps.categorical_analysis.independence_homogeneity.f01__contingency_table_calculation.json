@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "probability_statistics.ps_14_categorical_analysis.ps.categorical_analysis.independence_homogeneity.f01.contingency_table_calculation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "probability_statistics.contingency_table_calculation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "probability_statistics",
     "subject_name_ko": "확률과 통계",
@@ -30,7 +30,7 @@
   },
   "classification": {
     "problem_type": "contingency_table_calculation",
-    "answer_type": "boolean",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 3,
       "min": 2,
@@ -44,129 +44,157 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "d": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "response_category_count greater_or_equal 2",
-      "required": true,
-      "description": "반응변수는 둘 이상의 상호배타적 범주를 가져야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "reference_category_defined equals True",
-      "required": true,
-      "description": "기준범주 $J$를 명시해야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "response_category_count_is_integer equals True",
-      "required": true,
-      "description": "`response_category_count`에 대응하는 값은 정수여야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "all_category_probabilities_positive equals True",
-      "required": true,
-      "description": "모든 범주확률은 양수여야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "category_probability_sum equals 1",
-      "required": true,
-      "description": "범주확률의 합은 1이어야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "response_categories_ordered equals True",
-      "required": true,
-      "description": "반응범주에는 명확한 순서가 있어야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "cutpoints_strictly_ordered equals True",
-      "required": true,
-      "description": "절단점은 순서대로 증가해야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "proportional_odds_assumption_plausible equals True",
-      "required": true,
-      "description": "비례오즈의 공통기울기 가정이 적절해야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "expected_count greater_than 0",
-      "required": true,
-      "description": "Pearson 잔차는 기대도수 $E_{ij}>0$인 셀에서 정의된다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "all_stratum_totals_positive equals True",
-      "required": true,
-      "description": "각 층의 전체도수는 $n_k>0$이어야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "mantel_haenszel_denominator greater_than 0",
-      "required": true,
-      "description": "분모 $\\sum_k b_kc_k/n_k$는 양수여야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "stratified_common_odds_ratio_model equals True",
-      "required": true,
-      "description": "층별 2×2 표와 공통 오즈비 모형이 의미 있어야 한다."
-    }
-  ],
+  "symbols": {},
+  "constraints": [],
   "problem_builder": {
     "operation": "contingency_table_calculation",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "d"
     ],
     "semantic_structure": [
-      "다항 로지스틱 회귀모형의 공식과 적용 조건을 구분하여 적용한다.",
-      "순서형 비례오즈 모형의 공식과 적용 조건을 구분하여 적용한다.",
-      "Pearson 잔차의 정의와 적용 조건을 식별한다.",
-      "Pearson 잔차의 핵심 공식을 적절한 상황에 적용한다."
+      "기대도수 계산만 수행; 작은 기대도수로 χ² 근사 검정을 실시하지 않음"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'contingency table calculation' 문제를 해결하시오."
+      "2×2 빈도표 [[{{ a }},{{ b }}],[{{ c }},{{ d }}]]에서 독립성 귀무가설 아래 첫 행·첫 열 셀의 기대도수를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "boolean",
-    "engine": "numpy",
-    "cas_template": null,
+    "answer_type": "scalar",
+    "engine": "sympy",
+    "cas_template": "probability_statistics_value({'a':a,'b':b,'c':c,'d':d},'contingency_table_calculation')",
     "latex_template": null,
     "canonicalization": {
-      "method": null,
+      "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "assumption_check",
-      "condition_rule_check",
-      "domain_check",
-      "numerical_tolerance",
-      "symbolic_equivalence",
-      "table_margin_check"
+      "probability_statistics_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "ps.categorical_analysis.independence_homogeneity.f01.formula_01",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "ps.categorical_analysis.independence_homogeneity.f01.formula_01",
-        "cas_expression": null
+        "cas_expression": "probability_statistics_value({'a':a,'b':b,'c':c,'d':d},'contingency_table_calculation')"
       }
     ],
     "explanation_policy": {
@@ -178,37 +206,14 @@
   "validation": {
     "validators": [
       {
-        "name": "assumption_check",
+        "name": "probability_statistics_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "condition_rule_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "domain_check",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "numerical_tolerance",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
-      },
-      {
-        "name": "table_margin_check",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "contingency_table_calculation"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -226,6 +231,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'probability_statistics.contingency_table_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'probability_statistics.contingency_table_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [probability_statistics_representatives_v1] 기대도수 계산만 수행; 작은 기대도수로 χ² 근사 검정을 실시하지 않음; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:78df451022746f5cdfce6511789a32537b30e85c5dbfa9c198cb008314ff7d5e"
   }
 }

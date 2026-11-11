@@ -1,0 +1,953 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "problem_type_filter": null,
+  "include_draft": true,
+  "seed_start": 17,
+  "seeds_per_template": 10,
+  "timeout_seconds": 300.0,
+  "templates": [
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.autonomous_equilibrium.autonomous_stability_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.autonomous_equilibrium__autonomous_stability_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "autonomous_stability_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.bernoulli.bernoulli_ode_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.bernoulli__bernoulli_ode_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "bernoulli_ode_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.exact.exact_ode_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.exact__exact_ode_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "exact_ode_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.exact_integrating_factor.exact_integrating_factor_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.exact_integrating_factor__exact_integrating_factor_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "exact_integrating_factor_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.first_order_intro.ode_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.first_order_intro__ode_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "ode_classification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.homogeneous.homogeneous_ode_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.homogeneous__homogeneous_ode_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "homogeneous_ode_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.ivp_existence_uniqueness.ivp_uniqueness_test.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.ivp_existence_uniqueness__ivp_uniqueness_test.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "ivp_uniqueness_test"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.linear_integrating_factor.linear_ode_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.linear_integrating_factor__linear_ode_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linear_ode_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.models_growth_logistic.applied_ode_modeling.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.models_growth_logistic__applied_ode_modeling.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "applied_ode_modeling"
+    },
+    {
+      "template_id": "engineering_mathematics.em_01_first_order_odes.em.ode.separable.separable_ode_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_01_first_order_odes\\em.ode.separable__separable_ode_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "separable_ode_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.characteristic_roots_solutions.homogeneous_ode_solution_construction.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.characteristic_roots_solutions__homogeneous_ode_solution_construction.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "homogeneous_ode_solution_construction"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.constant_coefficient_homogeneous.characteristic_equation_setup.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.constant_coefficient_homogeneous__characteristic_equation_setup.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "characteristic_equation_setup"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.euler_cauchy.euler_cauchy_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.euler_cauchy__euler_cauchy_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "euler_cauchy_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.higher_order_ivp.higher_order_ivp_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.higher_order_ivp__higher_order_ivp_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "higher_order_ivp_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.higher_order_linear.higher_order_ode_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.higher_order_linear__higher_order_ode_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "higher_order_ode_classification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.mechanical_vibrations.mechanical_vibration_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.mechanical_vibrations__mechanical_vibration_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "mechanical_vibration_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.method_of_undetermined_coefficients.undetermined_coefficients_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.method_of_undetermined_coefficients__undetermined_coefficients_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "undetermined_coefficients_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.nonhomogeneous_structure.nonhomogeneous_solution_structure.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.nonhomogeneous_structure__nonhomogeneous_solution_structure.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "nonhomogeneous_solution_structure"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.superposition_space.superposition_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.superposition_space__superposition_verification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "superposition_verification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.variation_of_parameters.variation_of_parameters_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.variation_of_parameters__variation_of_parameters_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "variation_of_parameters_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_02_higher_order_linear_odes.em.ode.wronskian.wronskian_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_02_higher_order_linear_odes\\em.ode.wronskian__wronskian_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "wronskian_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.convolution.convolution_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.convolution__convolution_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "convolution_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.definition_existence.laplace_definition_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.definition_existence__laplace_definition_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "laplace_definition_check"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.derivatives_transform.derivative_laplace_transformation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.derivatives_transform__derivative_laplace_transformation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "derivative_laplace_transformation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.dirac_delta.dirac_delta_laplace.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.dirac_delta__dirac_delta_laplace.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "dirac_delta_laplace"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.first_shifting_theorem.first_shifting_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.first_shifting_theorem__first_shifting_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "first_shifting_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.integration_s_differentiation.s_differentiation_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.integration_s_differentiation__s_differentiation_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "s_differentiation_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.inverse_partial_fractions.inverse_laplace_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.inverse_partial_fractions__inverse_laplace_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "inverse_laplace_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.ivp_solving.laplace_ivp_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.ivp_solving__laplace_ivp_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "laplace_ivp_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.linearity_table.basic_laplace_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.linearity_table__basic_laplace_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "basic_laplace_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.second_shifting_theorem.second_shifting_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.second_shifting_theorem__second_shifting_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "second_shifting_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.complex_eigenvalues.complex_eigenvalue_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.complex_eigenvalues__complex_eigenvalue_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_eigenvalue_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.eigenvalue_method.eigenvalue_system_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.eigenvalue_method__eigenvalue_system_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "eigenvalue_system_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.linear_stability.linear_stability_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.linear_stability__linear_stability_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "linear_stability_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.matrix_exponential.matrix_exponential_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.matrix_exponential__matrix_exponential_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "matrix_exponential_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.nonhomogeneous_systems.nonhomogeneous_system_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.nonhomogeneous_systems__nonhomogeneous_system_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "nonhomogeneous_system_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.nonlinear_linearization.nonlinear_linearization_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.nonlinear_linearization__nonlinear_linearization_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "nonlinear_linearization_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.phase_plane_equilibrium.phase_plane_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.phase_plane_equilibrium__phase_plane_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "phase_plane_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.repeated_eigenvalues_generalized.generalized_eigenvector_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.repeated_eigenvalues_generalized__generalized_eigenvector_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "generalized_eigenvector_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.state_space_conversion.state_space_conversion.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.state_space_conversion__state_space_conversion.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "state_space_conversion"
+    },
+    {
+      "template_id": "engineering_mathematics.em_04_systems_of_odes.em.ode.systems_matrix_form.system_matrix_form_conversion.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_04_systems_of_odes\\em.ode.systems_matrix_form__system_matrix_form_conversion.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "system_matrix_form_conversion"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.conservative_fields_potentials.conservative_field_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.conservative_fields_potentials__conservative_field_verification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "conservative_field_verification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.curl.curl_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.curl__curl_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "curl_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.cylindrical_spherical_coordinates.coordinate_transformation_integration.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.cylindrical_spherical_coordinates__coordinate_transformation_integration.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "coordinate_transformation_integration"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.divergence.divergence_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.divergence__divergence_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "divergence_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.divergence_theorem.divergence_theorem_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.divergence_theorem__divergence_theorem_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "divergence_theorem_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.gradient_directional_derivative.gradient_directional_derivative_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.gradient_directional_derivative__gradient_directional_derivative_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "gradient_directional_derivative_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.green_theorem.green_theorem_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.green_theorem__green_theorem_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "green_theorem_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.laplacian.laplacian_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.laplacian__laplacian_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "laplacian_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.line_integrals.line_integral_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.line_integrals__line_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "line_integral_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.scalar_vector_fields.field_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.scalar_vector_fields__field_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "field_identification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.stokes_theorem.stokes_theorem_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.stokes_theorem__stokes_theorem_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "stokes_theorem_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.surface_integrals_flux.surface_integral_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_05_vector_calculus\\em.vector.surface_integrals_flux__surface_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "surface_integral_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.complex_fourier_series.complex_fourier_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.complex_fourier_series__complex_fourier_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_fourier_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.convergence_gibbs_phenomenon.gibbs_phenomenon_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.convergence_gibbs_phenomenon__gibbs_phenomenon_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "gibbs_phenomenon_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.convolution_theorem.fourier_convolution_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.convolution_theorem__fourier_convolution_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fourier_convolution_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.even_odd_symmetry_half_range.half_range_expansion_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.even_odd_symmetry_half_range__half_range_expansion_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "half_range_expansion_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.parseval_identity.parseval_identity_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.parseval_identity__parseval_identity_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "parseval_identity_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.periodic_functions_fundamental_frequency.fundamental_frequency_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.periodic_functions_fundamental_frequency__fundamental_frequency_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fundamental_frequency_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.properties_shifting_scaling_differentiation.fourier_properties_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.properties_shifting_scaling_differentiation__fourier_properties_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fourier_properties_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.series_and_coefficients.fourier_series_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.series_and_coefficients__fourier_series_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fourier_series_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.transform_and_inverse.fourier_transform_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.transform_and_inverse__fourier_transform_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fourier_transform_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_06_fourier_analysis.em.fourier.trigonometric_orthogonality.orthogonality_integral_check.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_06_fourier_analysis\\em.fourier.trigonometric_orthogonality__orthogonality_integral_check.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "orthogonality_integral_check"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.boundary_initial_conditions.boundary_condition_identification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.boundary_initial_conditions__boundary_condition_identification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "boundary_condition_identification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.classification.pde_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.classification__pde_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "pde_classification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.fourier_eigenfunction_expansion.eigenfunction_expansion_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.fourier_eigenfunction_expansion__eigenfunction_expansion_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "eigenfunction_expansion_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.heat_equation.heat_equation_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.heat_equation__heat_equation_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "heat_equation_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.laplace_poisson.laplace_poisson_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.laplace_poisson__laplace_poisson_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "laplace_poisson_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.separation_of_variables.separation_of_variables_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.separation_of_variables__separation_of_variables_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "separation_of_variables_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.steady_state_transient.steady_transient_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.steady_state_transient__steady_transient_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "steady_transient_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.sturm_liouville.sturm_liouville_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.sturm_liouville__sturm_liouville_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "sturm_liouville_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.wave_equation.wave_equation_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_07_partial_differential_equations\\em.pde.wave_equation__wave_equation_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "wave_equation_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.cartesian_polar_form.complex_form_conversion.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.cartesian_polar_form__complex_form_conversion.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_form_conversion"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.cauchy_integral_formula.cauchy_integral_formula_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.cauchy_integral_formula__cauchy_integral_formula_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cauchy_integral_formula_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.cauchy_integral_theorem.cauchy_theorem_application.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.cauchy_integral_theorem__cauchy_theorem_application.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cauchy_theorem_application"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.cauchy_riemann.cauchy_riemann_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.cauchy_riemann__cauchy_riemann_verification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "cauchy_riemann_verification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.differentiation_analytic.analyticity_verification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.differentiation_analytic__analyticity_verification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "analyticity_verification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.elementary_functions.complex_elementary_function_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.elementary_functions__complex_elementary_function_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_elementary_function_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.euler_demoivre.demoivre_power_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.euler_demoivre__demoivre_power_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "demoivre_power_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.harmonic_conjugate.harmonic_conjugate_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.harmonic_conjugate__harmonic_conjugate_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "harmonic_conjugate_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.isolated_singularities.singularity_classification.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.isolated_singularities__singularity_classification.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "singularity_classification"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.limit_continuity.complex_limit_evaluation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.limit_continuity__complex_limit_evaluation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_limit_evaluation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.line_integrals.complex_line_integral_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.line_integrals__complex_line_integral_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "complex_line_integral_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.residue_theorem.residue_theorem_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.residue_theorem__residue_theorem_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "residue_theorem_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.taylor_laurent_series.laurent_series_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.taylor_laurent_series__laurent_series_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "laurent_series_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.bisection_method.bisection_iteration.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.bisection_method__bisection_iteration.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "bisection_iteration"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.condition_number_stability.condition_number_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.condition_number_stability__condition_number_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "condition_number_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.errors.error_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.errors__error_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "error_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.euler_improved_euler.euler_method_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.euler_improved_euler__euler_method_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "euler_method_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.finite_difference_method.finite_difference_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.finite_difference_method__finite_difference_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "finite_difference_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.fixed_point_iteration.fixed_point_iteration_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.fixed_point_iteration__fixed_point_iteration_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "fixed_point_iteration_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.gaussian_elimination_pivoting.gaussian_elimination_solving.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.gaussian_elimination_pivoting__gaussian_elimination_solving.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "gaussian_elimination_solving"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.interpolation_error_runge.interpolation_error_analysis.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.interpolation_error_runge__interpolation_error_analysis.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "interpolation_error_analysis"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.jacobi_gauss_seidel.iterative_solver_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.jacobi_gauss_seidel__iterative_solver_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "iterative_solver_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.lagrange_interpolation.lagrange_interpolation_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.lagrange_interpolation__lagrange_interpolation_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "lagrange_interpolation_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.least_squares_approximation.least_squares_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.least_squares_approximation__least_squares_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "least_squares_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.lu_decomposition.lu_decomposition_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.lu_decomposition__lu_decomposition_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "lu_decomposition_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.newton_divided_difference.newton_divided_difference_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.newton_divided_difference__newton_divided_difference_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "newton_divided_difference_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.newton_method.newton_method_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.newton_method__newton_method_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "newton_method_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.numerical_differentiation.numerical_differentiation_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.numerical_differentiation__numerical_differentiation_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "numerical_differentiation_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.runge_kutta_4th.runge_kutta_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.runge_kutta_4th__runge_kutta_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "runge_kutta_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.secant_method.secant_method_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.secant_method__secant_method_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "secant_method_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.simpson_rule.simpson_rule_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.simpson_rule__simpson_rule_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "simpson_rule_calculation"
+    },
+    {
+      "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.trapezoidal_rule.trapezoidal_rule_calculation.v1",
+      "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_09_numerical_analysis\\em.numerical.trapezoidal_rule__trapezoidal_rule_calculation.json",
+      "status": "completed",
+      "succeeded": 10,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "trapezoidal_rule_calculation"
+    }
+  ],
+  "completed": 104,
+  "partial_failure": 0,
+  "skipped": 0,
+  "errors": 0,
+  "timed_out": 0
+}

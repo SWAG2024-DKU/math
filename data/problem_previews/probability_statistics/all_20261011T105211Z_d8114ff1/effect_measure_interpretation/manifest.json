@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_14_categorical_analysis.ps.categorical_analysis.odds_ratio_2x2.effect_measure_interpretation.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_14_categorical_analysis/ps.categorical_analysis.odds_ratio_2x2__effect_measure_interpretation.json",
+  "template_sha256": "62989804c8cdf518858aecda860cf8b969f0acfc6d2d8e6f4009ea21a888e731",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

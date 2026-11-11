@@ -1,0 +1,326 @@
+{
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.surface_area_of_revolution.surface_area_setup.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "calculus_1.surface_area_setup.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "surface_area_setup",
+  "answer_type": "expression",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "y=10x, 0≤x≤1을 x축 둘레로 회전한 곡면의 넓이 적분에서 피적분함수를 구하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "a": 10,
+    "b": 2,
+    "c": 4,
+    "k": -1,
+    "N": 3
+  },
+  "expected_answer": "20*sqrt(101)*pi*x",
+  "seed": 33,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "calculus_remaining_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 33,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.surface_area_of_revolution.surface_area_setup.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "calculus_1.surface_area_setup.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "calculus_1",
+      "subject_name_ko": "미분적분학 1",
+      "unit_id": "calc1_ch08_further_applications_of_integration",
+      "unit_name_ko": "적분의 추가 응용",
+      "concept_ids": [
+        "calculus.surface_area_of_revolution"
+      ],
+      "formula_ids": [
+        "frustum_lateral_area",
+        "surface_area_x_axis",
+        "surface_area_y_axis"
+      ],
+      "tags": [
+        "surface_area_of_revolution"
+      ]
+    },
+    "classification": {
+      "problem_type": "surface_area_setup",
+      "answer_type": "expression",
+      "difficulty": {
+        "base": 4,
+        "min": 3,
+        "max": 5,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "a": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 12,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "b": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 6,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "c": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": -6,
+        "max": 6,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "k": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": -1,
+        "max": 1,
+        "exclude": [],
+        "choices": [
+          -1,
+          1
+        ],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "N": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 2,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      },
+      "y": {
+        "role": "unknown",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [],
+    "problem_builder": {
+      "operation": "surface_area_setup",
+      "required_objects": [
+        "a",
+        "b",
+        "c",
+        "k",
+        "N",
+        "x",
+        "y"
+      ],
+      "semantic_structure": [
+        "질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수"
+      ],
+      "text_templates_ko": [
+        "y={{ a }}x, 0≤x≤1을 x축 둘레로 회전한 곡면의 넓이 적분에서 피적분함수를 구하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "a",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "expression",
+      "engine": "sympy",
+      "cas_template": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'surface_area_setup')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "calculus_remaining_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "surface_area_x_axis",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "surface_area_x_axis",
+          "cas_expression": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'surface_area_setup')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "calculus_remaining_check",
+          "required": true,
+          "config": {
+            "operation": "surface_area_setup"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'calculus_1.surface_area_setup.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:95869135a15c030d8ad504c7506e1d3df33414c182eefc8bc75fe6413f434040"
+    }
+  }
+}

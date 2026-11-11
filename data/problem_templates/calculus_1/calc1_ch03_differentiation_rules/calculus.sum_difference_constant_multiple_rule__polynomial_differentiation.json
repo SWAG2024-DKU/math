@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.sum_difference_constant_multiple_rule.polynomial_differentiation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.polynomial_differentiation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -46,66 +46,123 @@
   "parameters": {
     "f": {
       "type": "expression",
-      "description": "문제 유형에 적합한 단순 함수/수식",
+      "description": null,
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
       "allowed_families": [
-        "polynomial",
-        "rational",
-        "exponential",
-        "logarithmic",
-        "trigonometric"
-      ]
+        "polynomial"
+      ],
+      "element_type": "integer",
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "variable": "x",
+      "degree_min": 1,
+      "degree_max": 3
     },
+    "domain": {
+      "type": "interval",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "lower": 1,
+      "upper": 3
+    }
+  },
+  "symbols": {
     "x": {
-      "type": "symbol",
-      "description": "주 독립변수"
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
   },
   "constraints": [
     {
-      "type": "concept_application_condition",
-      "expression": "f_and_g_differentiable equals True",
+      "type": "domain_condition",
+      "expression": "is_defined_on_domain(f,x,domain)",
       "required": true,
-      "description": "c는 상수이고 f(와 g)는 해당 점에서 미분가능해야 한다."
+      "description": "질문에서 사용하는 함수의 검사 구간 정의역"
     }
   ],
   "problem_builder": {
     "operation": "polynomial_differentiation",
     "required_objects": [
       "f",
+      "domain",
       "x"
     ],
     "semantic_structure": [
-      "다항식을 항별로 미분한다.",
-      "도함수가 0이 되는 점을 구해 수평접선의 위치를 찾는다."
+      "1~3차 다항식"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'polynomial differentiation' 문제를 해결하시오."
+      "함수 f(x)={{ f }}의 도함수를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "expression",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "diff(f,x)",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "derivative_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "polynomial_derivative",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "constant_multiple_rule",
-        "cas_expression": null
+        "formula_id": "polynomial_derivative",
+        "cas_expression": "diff(f,x)"
       }
     ],
     "explanation_policy": {
@@ -117,12 +174,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "derivative_check",
         "required": true,
-        "config": {}
+        "config": {
+          "order": 1
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -140,6 +199,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.polynomial_differentiation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.polynomial_differentiation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 1~3차 다항식; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:8ed06d77b58017c97bb4767841c6f256d97e31c2b587507c5c3916ded76c0178"
   }
 }

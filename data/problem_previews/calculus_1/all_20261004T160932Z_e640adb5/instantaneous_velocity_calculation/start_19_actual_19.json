@@ -1,0 +1,238 @@
+{
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.tangent_and_velocity_problem.instantaneous_velocity_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "calculus_1.instantaneous_velocity_calculation.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "instantaneous_velocity_calculation",
+  "answer_type": "scalar",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "시간 x에서 위치 s(x)=x**3 - 2*x**2 + x - 3이다. x=0에서 순간속도를 구하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "f": "x**3 - 2*x**2 + x - 3",
+    "point": 0
+  },
+  "expected_answer": 1,
+  "seed": 19,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "derivative_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 19,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "calculus_1.calc1_ch02_limits_and_derivatives.calculus.tangent_and_velocity_problem.instantaneous_velocity_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "calculus_1.instantaneous_velocity_calculation.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "calculus_1",
+      "subject_name_ko": "미분적분학 1",
+      "unit_id": "calc1_ch02_limits_and_derivatives",
+      "unit_name_ko": "극한과 도함수",
+      "concept_ids": [
+        "calculus.tangent_and_velocity_problem"
+      ],
+      "formula_ids": [
+        "secant_slope",
+        "tangent_slope",
+        "tangent_line_equation",
+        "average_velocity",
+        "instantaneous_velocity"
+      ],
+      "tags": [
+        "secant_line",
+        "tangent_line",
+        "velocity",
+        "difference_quotient"
+      ]
+    },
+    "classification": {
+      "problem_type": "instantaneous_velocity_calculation",
+      "answer_type": "scalar",
+      "difficulty": {
+        "base": 2,
+        "min": 1,
+        "max": 3,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "f": {
+        "type": "expression",
+        "description": null,
+        "required": true,
+        "min": -3,
+        "max": 3,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [
+          "polynomial"
+        ],
+        "element_type": "integer",
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null,
+        "variable": "x",
+        "degree_min": 1,
+        "degree_max": 3
+      },
+      "point": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": -2,
+        "max": 2,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [],
+    "problem_builder": {
+      "operation": "instantaneous_velocity_calculation",
+      "required_objects": [
+        "f",
+        "point",
+        "x"
+      ],
+      "semantic_structure": [
+        "시간 x에서 위치 s(x)={{ f }}이다. x={{ point }}에서 순간속도를 구하시오."
+      ],
+      "text_templates_ko": [
+        "시간 x에서 위치 s(x)={{ f }}이다. x={{ point }}에서 순간속도를 구하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "f",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "scalar",
+      "engine": "sympy",
+      "cas_template": "derivative_value(f,x,1,point)",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "derivative_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "instantaneous_velocity",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "instantaneous_velocity",
+          "cas_expression": "derivative_value(f,x,1,point)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "derivative_check",
+          "required": true,
+          "config": {
+            "order": 1,
+            "point_key": "point"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'calculus_1.instantaneous_velocity_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 문제에 명시한 제한 범위; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:e3c05556a87d83dfd4f59b05d307cadfaa30ecd05ea1c5103cf0a64bd7b14711"
+    }
+  }
+}

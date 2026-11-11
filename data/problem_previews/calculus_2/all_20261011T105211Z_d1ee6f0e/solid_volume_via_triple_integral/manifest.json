@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch05_multiple_integration.calculus.triple_integral.solid_volume_via_triple_integral.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch05_multiple_integration/calculus.triple_integral__solid_volume_via_triple_integral.json",
+  "template_sha256": "52479acf13624195af83e532d80ce901630cf132a7925be266a1e836bb223d19",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

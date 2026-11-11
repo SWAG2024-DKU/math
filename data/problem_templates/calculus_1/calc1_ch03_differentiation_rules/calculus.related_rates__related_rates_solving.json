@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.related_rates.related_rates_solving.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.related_rates_solving.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -28,7 +28,7 @@
   },
   "classification": {
     "problem_type": "related_rates_solving",
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 3,
       "min": 2,
@@ -42,64 +42,207 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -6,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "variables_are_differentiable_functions_of_t equals True",
-      "required": true,
-      "description": "관계식에 등장하는 각 변수는 시간의 미분가능한 함수여야 한다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "numeric_substitution_order equals after_differentiation",
-      "required": true,
-      "description": "특정 시각의 수치는 반드시 미분을 마친 뒤에 대입해야 한다."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "related_rates_solving",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "k",
+      "N",
+      "x",
+      "y"
     ],
     "semantic_structure": [
-      "문제 상황으로부터 변수 사이의 관계식을 세운다.",
-      "관계식의 양변을 시간에 관해 미분해 상관비율 방정식을 얻는다.",
-      "주어진 값을 대입해 구하는 변화율을 계산한다."
+      "질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'related rates solving' 문제를 해결하시오."
+      "구의 반지름이 {{ a }}이고 dr/dt=({{ k }})*{{ b }}일 때 dV/dt를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'related_rates_solving')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "numeric_sampling",
-      "symbolic_equivalence"
+      "calculus_remaining_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "related_rates_sphere",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "related_rates_sphere",
-        "cas_expression": null
+        "cas_expression": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'related_rates_solving')"
       }
     ],
     "explanation_policy": {
@@ -111,17 +254,14 @@
   "validation": {
     "validators": [
       {
-        "name": "numeric_sampling",
+        "name": "calculus_remaining_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "related_rates_solving"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -139,6 +279,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.related_rates_solving.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.related_rates_solving.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:1b8702a87c98b53c4e8ca3d5f4de41d9161cc29079231fc121edd4191bc789ee"
   }
 }

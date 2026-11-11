@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.simple_harmonic_motion.amplitude_phase_conversion.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_2.amplitude_phase_conversion.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_2",
     "subject_name_ko": "미분적분학 2",
@@ -29,7 +29,7 @@
   },
   "classification": {
     "problem_type": "amplitude_phase_conversion",
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 3,
       "min": 2,
@@ -43,64 +43,271 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "d": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "no_damping_and_no_external_force equals True",
-      "required": true,
-      "description": "단순조화운동 방정식은 마찰(감쇠)과 외력이 모두 없다고 가정한다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "within_elastic_limit equals True",
-      "required": true,
-      "description": "Hooke의 법칙은 탄성한계 안에서만 적용한다."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "z": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "t": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C1": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C2": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "amplitude_phase_conversion",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "d",
+      "k",
+      "N",
+      "x",
+      "y",
+      "z",
+      "t",
+      "C1",
+      "C2"
     ],
     "semantic_structure": [
-      "질량과 용수철상수로 단순조화운동 방정식을 세운다.",
-      "일반해를 진폭-위상 형태로 바꾼다.",
-      "각진동수로부터 주기와 진동수를 계산한다."
+      "질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'amplitude phase conversion' 문제를 해결하시오."
+      "y={{ a }}cos x+{{ b }}sin x의 진폭을 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'amplitude_phase_conversion')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "ode_residual",
-      "symbolic_equivalence"
+      "calculus_2_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "simple_harmonic_solution",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "hookes_law",
-        "cas_expression": null
+        "formula_id": "simple_harmonic_solution",
+        "cas_expression": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'amplitude_phase_conversion')"
       }
     ],
     "explanation_policy": {
@@ -112,17 +319,14 @@
   "validation": {
     "validators": [
       {
-        "name": "ode_residual",
+        "name": "calculus_2_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "amplitude_phase_conversion"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -140,6 +344,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_2.amplitude_phase_conversion.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_2.amplitude_phase_conversion.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_2_execution_v1] 질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:5f6f3561240da69e056a968b3be9f06f644ecc03334a7c23e40b82a70c8ce229"
   }
 }

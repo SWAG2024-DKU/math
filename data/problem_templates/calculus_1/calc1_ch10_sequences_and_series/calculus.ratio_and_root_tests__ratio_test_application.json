@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch10_sequences_and_series.calculus.ratio_and_root_tests.ratio_test_application.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.ratio_test_application.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -27,7 +27,7 @@
   },
   "classification": {
     "problem_type": "ratio_test_application",
-    "answer_type": "boolean",
+    "answer_type": "classification",
     "difficulty": {
       "base": 3,
       "min": 2,
@@ -41,65 +41,207 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "data": {
-      "type": "numeric_data",
-      "description": "통계 문제 유형에 맞는 표본 또는 요약 통계량",
-      "size_min": 3,
-      "size_max": 30
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -6,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "L equals 1",
-      "required": true,
-      "description": "L=1이면 두 판정법 모두 결론을 내릴 수 없다 — 다른 판정법을 시도해야 한다. 특히 p급수는 항상 L=1이 나온다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "ratio_test_L_equals_1_implies_root_test_L_equals_1 equals True",
-      "required": true,
-      "description": "비판정법에서 L=1이면 근판정법에서도 항상 L=1이다(둘 중 하나가 무효면 다른 하나도 무효)."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "ratio_test_application",
     "required_objects": [
-      "data"
+      "a",
+      "b",
+      "c",
+      "k",
+      "N",
+      "x",
+      "y"
     ],
     "semantic_structure": [
-      "비판정법으로 급수의 절대수렴·발산을 판정한다.",
-      "근판정법으로 급수의 절대수렴·발산을 판정한다.",
-      "급수의 형태(계승·지수·n제곱근)에 따라 적절한 판정법을 선택한다."
+      "질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'ratio test application' 문제를 해결하시오."
+      "급수 ∑({{ a }}/{{ b }})^n (n≥1)를 비율판정법으로 분류하시오: 수렴/발산/판정 불가."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "boolean",
-    "engine": "python",
-    "cas_template": null,
+    "answer_type": "classification",
+    "engine": "sympy",
+    "cas_template": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'ratio_test_application')",
     "latex_template": null,
     "canonicalization": {
-      "method": null,
+      "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "calculus_remaining_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "ratio_test",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "ratio_test",
-        "cas_expression": null
+        "cas_expression": "remaining_calculus_value({'a':a,'b':b,'c':c,'k':k,'N':N,'x':x,'y':y},'ratio_test_application')"
       }
     ],
     "explanation_policy": {
@@ -111,12 +253,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "calculus_remaining_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "ratio_test_application"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -134,6 +278,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.ratio_test_application.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.ratio_test_application.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 질문에 명시한 함수족과 구간의 최종 답만 검사; 서술 풀이/그림은 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:3ff871389e2a06ff73ef43190b786f53f1c07d57376c9391fa831a271a1fa44e"
   }
 }

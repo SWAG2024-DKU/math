@@ -10,7 +10,7 @@ import sympy as sp
 import pytest
 
 from app.schemas.problem_template import ProblemTemplate
-from scripts.problems.problem_instance_generator import generate_problem_instance
+from scripts.problems.common.problem_instance_generator import generate_problem_instance
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]

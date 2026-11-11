@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_07_partial_differential_equations.em.pde.separation_of_variables.separation_of_variables_solving.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/engineering_mathematics/em_07_partial_differential_equations/em.pde.separation_of_variables__separation_of_variables_solving.json",
+  "template_sha256": "b3918b1761896f21a653301e119b6f5b738ef89d52fe5c0a8fad9288f4a08f65",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

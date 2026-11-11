@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.indefinite_integral.initial_value_problem.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.initial_value_problem.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -30,7 +30,7 @@
   },
   "classification": {
     "problem_type": "initial_value_problem",
-    "answer_type": "equation",
+    "answer_type": "expression",
     "difficulty": {
       "base": 2,
       "min": 1,
@@ -44,70 +44,146 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "A": {
-      "type": "matrix",
-      "description": "문제 유형에 맞는 작은 정수/유리수 행렬",
-      "rows_min": 2,
-      "rows_max": 4,
-      "cols_min": 2,
-      "cols_max": 4,
+    "f": {
+      "type": "expression",
+      "description": null,
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [
+        "polynomial"
+      ],
       "element_type": "integer",
-      "element_min": -5,
-      "element_max": 5
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "variable": "x",
+      "degree_min": 1,
+      "degree_max": 3
+    },
+    "point": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [
+        0
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "initial": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "n not_equals -1",
-      "required": true,
-      "description": "x^n의 원시함수 공식은 n≠-1일 때만 성립하며, n=-1인 경우는 ln|x|이다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "constant_may_differ_across_disconnected_intervals equals True",
-      "required": true,
-      "description": "1/x의 원시함수는 0을 포함하지 않는 구간에서 ln|x|+C이며, (-∞,0)과 (0,∞)에서 상수 C가 서로 다를 수 있다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "initial_value_problem",
     "required_objects": [
-      "A"
+      "f",
+      "point",
+      "initial",
+      "x"
     ],
     "semantic_structure": [
-      "기본 공식표를 이용해 함수의 원시함수를 구한다.",
-      "초기조건을 이용해 적분상수를 결정하고 특정 원시함수를 구한다.",
-      "가속도와 초기 위치·속도로부터 위치함수를 구한다."
+      "다항식 원시함수의 적분상수 결정"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'initial value problem' 문제를 해결하시오."
+      "F'(x)={{ f }}, F(0)={{ initial }}이다. F(x)를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "equation",
+    "answer_type": "expression",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_value({'f':f,'point':point,'initial':initial,'x':x},'initial_antiderivative')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "calculus_relation_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "general_antiderivative",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "antiderivative_def",
-        "cas_expression": null
+        "formula_id": "general_antiderivative",
+        "cas_expression": "calculus_value({'f':f,'point':point,'initial':initial,'x':x},'initial_antiderivative')"
       }
     ],
     "explanation_policy": {
@@ -119,12 +195,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "calculus_relation_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "initial_antiderivative"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -142,6 +220,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.initial_value_problem.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.initial_value_problem.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 다항식 원시함수의 적분상수 결정; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:908c28a211b725a0fb72c7b20d820d652e061447ae5032d088eb5c441a45dea0"
   }
 }

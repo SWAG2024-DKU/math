@@ -5,7 +5,7 @@
 ## 실제 프로젝트와의 연결
 
 - 기존 `sql/005_create_problem_schema.sql`, `006_create_problem_templates.sql`, `007_create_template_concepts.sql`, `008_create_template_import_audit.sql`을 사용합니다. Template 테이블을 다시 만들지 않습니다.
-- 실제 적재는 `app.db.connection.get_connection`, `app.problems.template_importer`, `app.problems.template_repository`를 재사용하는 방향입니다. 현재 `scripts/problems/import_problem_templates.py`는 전체 과목 폴더를 읽으므로 선형대수 ZIP에 한정한 연결 작업이 TODO입니다.
+- 실제 적재는 `app.db.connection.get_connection`, `app.problems.template_importer`, `app.problems.template_repository`를 재사용하는 방향입니다. 현재 `scripts/problems/common/import_problem_templates.py`는 전체 과목 폴더를 읽으므로 선형대수 ZIP에 한정한 연결 작업이 TODO입니다.
 - ZIP 경로를 DB `source_path`에 어떻게 기록할지 정한 뒤 동일 키/버전의 기존 행과 content hash를 비교하세요. Concept FK를 참조하므로 `kb.concepts` 선행 적재도 확인해야 합니다.
 
 ## DB 연결 없는 파일 확인

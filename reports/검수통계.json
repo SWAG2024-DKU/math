@@ -1,0 +1,112 @@
+{
+  "source_file": "calculus_1.zip",
+  "source_sha256": "2b399eadcfcc7c5b0f4994fe0e80548dee32e0d6be931111343a0134351fdeb6",
+  "review_date": "2026-10-11",
+  "outer_instances": 10386,
+  "templates": 558,
+  "rule_types": 556,
+  "unique_math_payloads": 6180,
+  "math_and_method_passed": 10315,
+  "mathematical_literal_mismatches": 69,
+  "requested_method_impossible": 2,
+  "unresolved": 0,
+  "latest_total": 6200,
+  "latest_math_and_method_failed": 36,
+  "subjects": {
+    "calculus_1": {
+      "instances": 4242,
+      "types": 201,
+      "templates": 202,
+      "math_results": {
+        "passed": 4242
+      },
+      "latest_batch": "all_20261011T113037Z_a44f67da",
+      "latest_instances": 2020,
+      "latest_math_results": {
+        "passed": 2020
+      }
+    },
+    "calculus_2": {
+      "instances": 3507,
+      "types": 166,
+      "templates": 167,
+      "math_results": {
+        "passed": 3444,
+        "failed": 63
+      },
+      "latest_batch": "all_20261011T123952Z_e36b3f6b",
+      "latest_instances": 1670,
+      "latest_math_results": {
+        "passed": 1640,
+        "failed": 30
+      }
+    },
+    "engineering_mathematics": {
+      "instances": 1144,
+      "types": 104,
+      "templates": 104,
+      "math_results": {
+        "passed": 1144
+      },
+      "latest_batch": "all_20261011T134027Z_87611d50",
+      "latest_instances": 1040,
+      "latest_math_results": {
+        "passed": 1040
+      }
+    },
+    "linear_algebra": {
+      "instances": 1240,
+      "types": 62,
+      "templates": 62,
+      "math_results": {
+        "passed": 1238,
+        "failed": 2
+      },
+      "latest_batch": "all_20260930T130721Z_f5ed40c3",
+      "latest_instances": 1240,
+      "latest_math_results": {
+        "passed": 1238,
+        "failed": 2
+      }
+    },
+    "probability_statistics": {
+      "instances": 253,
+      "types": 23,
+      "templates": 23,
+      "math_results": {
+        "passed": 247,
+        "failed": 6
+      },
+      "latest_batch": "all_20261011T141047Z_ce88d904",
+      "latest_instances": 230,
+      "latest_math_results": {
+        "passed": 226,
+        "failed": 4
+      }
+    }
+  },
+  "quality_flag_counts": {
+    "cas_display": 1773,
+    "double_sign": 231,
+    "domain_metadata_mismatch": 84,
+    "formal_assumptions_clarity": 21,
+    "requested_answer_form": 21,
+    "degree_concatenation": 63,
+    "undefined_a_b_explanation": 21,
+    "undefined_frequency_index": 22,
+    "undefined_a": 11,
+    "fourier_convergence_assumption": 11,
+    "missing_parenthesis": 11,
+    "index_base_undefined": 60,
+    "float_rendering": 9,
+    "within_batch_duplicate": 84
+  },
+  "source_modified": false,
+  "limitations": [
+    "고정된 저장 문장 계약에 대한 독립 계산/항등식 검사이며 자유로운 한국어 의미의 완전한 증명은 아님",
+    "생성 가능한 모든 seed의 검증이 아니라 ZIP에 저장된 값의 검증",
+    "모든 유형 이름이 있어도 교과목 전체의 Concept/공식 범위를 보장하지 않음",
+    "DB 상태·화면의 실제 수식 렌더링·사람 승인 여부는 ZIP만으로 검증 불가",
+    "수학 통과와 문장·기호·답 형식 통과는 별도"
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.integration_by_parts.reduction_formula_application.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "calculus_1.reduction_formula_application.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "reduction_formula_application",
+  "answer_type": "expression",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "x>0에서 f(x)=sin(x)**3의 원시함수 하나를 구하시오. 새 기호 적분상수 C 없이 표현하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "n": 3,
+    "domain": "Interval(1, 3)",
+    "scale": 1,
+    "f": "sin(x)**3"
+  },
+  "expected_answer": "(cos(2*x) - 5)*cos(x)/6",
+  "seed": 23,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": null,
+        "on_failure": "resample",
+        "message": "질문에서 사용하는 함수의 검사 구간 정의역",
+        "observed": true
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "antiderivative_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 23,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "calculus_1.calc1_ch07_techniques_of_integration.calculus.integration_by_parts.reduction_formula_application.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "calculus_1.reduction_formula_application.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "calculus_1",
+      "subject_name_ko": "미분적분학 1",
+      "unit_id": "calc1_ch07_techniques_of_integration",
+      "unit_name_ko": "적분법",
+      "concept_ids": [
+        "calculus.integration_by_parts"
+      ],
+      "formula_ids": [
+        "integration_by_parts",
+        "integration_by_parts_definite",
+        "reduction_formula_sin"
+      ],
+      "tags": [
+        "integration_by_parts",
+        "reduction_formula"
+      ]
+    },
+    "classification": {
+      "problem_type": "reduction_formula_application",
+      "answer_type": "expression",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "n": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 2,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "f": {
+        "type": "expression",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": {
+          "depends_on": [
+            "n",
+            "scale"
+          ],
+          "expression": "scale*(sin(x)**n)",
+          "engine": "sympy",
+          "selection": null
+        },
+        "generator": null,
+        "variable": "x"
+      },
+      "domain": {
+        "type": "interval",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null,
+        "lower": 1,
+        "upper": 3
+      },
+      "scale": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 6,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [
+      {
+        "type": "domain_condition",
+        "expression": "is_defined_on_domain(f,x,domain)",
+        "required": true,
+        "description": "질문에서 사용하는 함수의 검사 구간 정의역"
+      }
+    ],
+    "problem_builder": {
+      "operation": "reduction_formula_application",
+      "required_objects": [
+        "n",
+        "f",
+        "domain",
+        "scale",
+        "x"
+      ],
+      "semantic_structure": [
+        "sin의 작은 정수 거듭제곱; 풀이 단계는 사람 검수"
+      ],
+      "text_templates_ko": [
+        "x>0에서 f(x)={{ f }}의 원시함수 하나를 구하시오. 새 기호 적분상수 C 없이 표현하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "f",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "expression",
+      "engine": "sympy",
+      "cas_template": "antiderivative(f,x)",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "antiderivative_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "reduction_formula_sin",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "reduction_formula_sin",
+          "cas_expression": "antiderivative(f,x)"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "antiderivative_check",
+          "required": true,
+          "config": {
+            "domain_key": "domain"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'calculus_1.reduction_formula_application.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] sin의 작은 정수 거듭제곱; 풀이 단계는 사람 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:e768b83c93c85e357e58e7fabdcf2254921147329d761eeed7d82d3aedc441ed"
+    }
+  }
+}

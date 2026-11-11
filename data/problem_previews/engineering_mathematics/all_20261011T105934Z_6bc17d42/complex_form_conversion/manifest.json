@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.cartesian_polar_form.complex_form_conversion.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/engineering_mathematics/em_08_complex_analysis/em.complex.cartesian_polar_form__complex_form_conversion.json",
+  "template_sha256": "ee2378d9546a845b5606c0ab4cef10def2ec7389d92f85398e5a982e105c6c75",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

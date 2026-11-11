@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.second_order_linear_ode_and_superposition.wronskian_linear_independence_check.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch07_second_order_differential_equations/calculus.second_order_linear_ode_and_superposition__wronskian_linear_independence_check.json",
+  "template_sha256": "e7b88dd6dbfc065121514db5f0eb715d95b42cd619ea2e57ce78a95296a3623d",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

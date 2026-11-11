@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_05_vector_calculus.em.vector.cylindrical_spherical_coordinates.coordinate_transformation_integration.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/engineering_mathematics/em_05_vector_calculus/em.vector.cylindrical_spherical_coordinates__coordinate_transformation_integration.json",
+  "template_sha256": "f7b7396df8b2b533bec315ac980b29da91d28740c5c387cc8ba816e51fde22d5",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

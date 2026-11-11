@@ -473,7 +473,7 @@ DB의 Concept를 과목·검색어·최대 개수로 조회하고 pandas 표로 
 
 ### scripts/problems
 
-#### `scripts/problems/build_problem_templates.py`
+#### `scripts/problems/common/build_problem_templates.py`
 
 **상태:** 구현 코드.
 
@@ -483,7 +483,7 @@ Concept에서 문제 유형을 추출하고 Registry의 Rule과 Builder를 연�
 
 주요 이름: `safe_filename`, `parse_args`, `main`.
 
-#### `scripts/problems/constraint_evaluator.py`
+#### `scripts/problems/common/constraint_evaluator.py`
 
 **상태:** 골격 — 실제 동작 함수 미구현.
 
@@ -493,7 +493,7 @@ Concept에서 문제 유형을 추출하고 Registry의 Rule과 Builder를 연�
 
 주요 이름: `evaluate_constraints`, `evaluate_structured_constraint`, `evaluate_string_constraint`, `resolve_operand`, `is_invertible`, `is_full_rank`, `is_symmetric`.
 
-#### `scripts/problems/generate_generation_rules.py`
+#### `scripts/problems/common/generate_generation_rules.py`
 
 **상태:** 구현 코드.
 
@@ -503,7 +503,7 @@ Concept의 생성 프로필을 과목·문제 유형별로 집계해 Rule catalo
 
 주요 이름: `build_rules`, `_new_draft_rule`, `_refresh_existing_rule`, `_migrate_draft_structure`, `_write_outputs`, `main`.
 
-#### `scripts/problems/generation_rule_validator.py`
+#### `scripts/problems/common/generation_rule_validator.py`
 
 **상태:** 구현 코드.
 
@@ -513,7 +513,7 @@ catalog 파일/폴더를 받아 error/warning/info 목록을 반환합니다. --
 
 주요 이름: `ValidationIssue`, `validate_generation_rule`, `ensure_generation_rule_valid`, `validate_catalog_files`, `main`.
 
-#### `scripts/problems/import_problem_templates.py`
+#### `scripts/problems/common/import_problem_templates.py`
 
 **상태:** 구현 코드.
 
@@ -523,7 +523,7 @@ Template importer로 파일을 스캔·중복 해결·검증한 뒤 repository�
 
 주요 이름: `import_to_database`, `main`.
 
-#### `scripts/problems/math_validators.py`
+#### `scripts/problems/common/math_validators.py`
 
 **상태:** 골격 — 실제 동작 함수 미구현.
 
@@ -533,7 +533,7 @@ Template importer로 파일을 스캔·중복 해결·검증한 뒤 repository�
 
 주요 이름: `compute_expected_answer`, `run_math_validators`, `register_validator`, `get_validator`, `canonicalize_answer`, `validate_eigenpair`, `validate_projection`.
 
-#### `scripts/problems/parameter_sampler.py`
+#### `scripts/problems/common/parameter_sampler.py`
 
 **상태:** 골격 — 실제 동작 함수 미구현.
 
@@ -543,7 +543,7 @@ Template importer로 파일을 스캔·중복 해결·검증한 뒤 repository�
 
 주요 이름: `sample_parameters`, `resolve_parameter_order`, `sample_parameter`, `resolve_shape`, `sample_scalar`, `sample_vector`, `sample_matrix`, `evaluate_derived_parameter`.
 
-#### `scripts/problems/problem_instance_generator.py`
+#### `scripts/problems/common/problem_instance_generator.py`
 
 **상태:** 골격 — 실제 동작 함수 미구현.
 
@@ -553,7 +553,7 @@ SUBJECT_CONTEXT_BUILDERS에는 linear_algebra만 등록되어 있습니다. 다�
 
 주요 이름: `GenerationAttempt`, `GenerationResult`, `generate_problem_instance`, `generate_problem_instances`, `build_instance_payload`, `prepare_subject_context`, `SUBJECT_CONTEXT_BUILDERS`.
 
-#### `scripts/problems/validate_generation_rules.py`
+#### `scripts/problems/common/validate_generation_rules.py`
 
 **상태:** 구현 코드.
 
@@ -563,7 +563,7 @@ generation_rule_validator.py의 정적 품질 검사와 목적이 다릅니다. 
 
 주요 이름: `main`.
 
-#### `scripts/problems/verify_problem_template_db.py`
+#### `scripts/problems/common/verify_problem_template_db.py`
 
 **상태:** 구현 코드.
 
@@ -670,12 +670,12 @@ Chunk는 `definition`, `formula`, `condition`, `property`, `learning`, `misconce
 ### GenerationRule에서 ProblemTemplate를 만드는 흐름
 
 1. `app/problems/problem_type_extractor.py`가 Concept의 `generation_profile.enabled`와 `supported_problem_types`를 읽어 `ProblemTypeInfo`를 만듭니다.
-2. `scripts/problems/generate_generation_rules.py`가 과목·문제 유형별 메타데이터를 모아 Rule catalog를 생성하거나 동기화합니다.
+2. `scripts/problems/common/generate_generation_rules.py`가 과목·문제 유형별 메타데이터를 모아 Rule catalog를 생성하거나 동기화합니다.
 3. `app/problems/generation_rule_registry.py`가 `data/generation_rules/{subject_id}.json`을 Pydantic으로 읽고 캐시합니다. `get_rule()`은 필요한 Rule이 없으면 `KeyError`를 발생시킵니다.
 4. `app/problems/template_builder.py`가 `ProblemTypeInfo`와 `GenerationRule`의 과목·유형·개념 연결을 확인하고 템플릿을 조립합니다.
-5. `scripts/problems/build_problem_templates.py`가 템플릿을 과목/단원별 JSON으로 저장하고 manifest를 작성합니다.
+5. `scripts/problems/common/build_problem_templates.py`가 템플릿을 과목/단원별 JSON으로 저장하고 manifest를 작성합니다.
 6. `app/problems/template_importer.py`가 동일 ID·버전의 후보를 비교하고, 선택된 템플릿을 스키마로 검증해 DB 레코드로 변환합니다.
-7. `scripts/problems/import_problem_templates.py`가 `app/problems/template_repository.py`를 사용해 템플릿·개념 연결·가져오기 이력을 저장합니다.
+7. `scripts/problems/common/import_problem_templates.py`가 `app/problems/template_repository.py`를 사용해 템플릿·개념 연결·가져오기 이력을 저장합니다.
 
 Builder의 주요 동작은 다음과 같습니다.
 
@@ -695,10 +695,10 @@ Importer는 상태, 실행 가능 표시, Rule 상태 순서로 중복 우선순
 
 | 파일 | 구현해야 할 역할 | 현재 상태 |
 | --- | --- | --- |
-| `scripts/problems/parameter_sampler.py` | seed와 파라미터 정의로 스칼라·벡터·행렬 생성, 크기·의존관계·파생값 처리 | 골격 |
-| `scripts/problems/constraint_evaluator.py` | 생성된 값의 크기, 가역성, rank, 대칭성 등 조건 검사 및 실패 사유 반환 | 골격 |
-| `scripts/problems/math_validators.py` | 정답 계산, 동치성 비교, 답 유형에 맞는 검증기 선택·실행 | 골격 |
-| `scripts/problems/problem_instance_generator.py` | 위 기능의 호출 순서·재시도·문장 렌더링·검증 기록·문제 payload 구성 | 골격 |
+| `scripts/problems/common/parameter_sampler.py` | seed와 파라미터 정의로 스칼라·벡터·행렬 생성, 크기·의존관계·파생값 처리 | 골격 |
+| `scripts/problems/common/constraint_evaluator.py` | 생성된 값의 크기, 가역성, rank, 대칭성 등 조건 검사 및 실패 사유 반환 | 골격 |
+| `scripts/problems/common/math_validators.py` | 정답 계산, 동치성 비교, 답 유형에 맞는 검증기 선택·실행 | 골격 |
+| `scripts/problems/common/problem_instance_generator.py` | 위 기능의 호출 순서·재시도·문장 렌더링·검증 기록·문제 payload 구성 | 골격 |
 
 과목 연결 설정은 `problem_instance_generator.py`의 `SUBJECT_CONTEXT_BUILDERS`가 담당합니다. 등록된 과목 키는 `linear_algebra` 하나이며, 다른 과목의 전용 함수는 주석으로 남아 있습니다. **선형대수도 실제 구현이 끝난 상태는 아닙니다.** 이 파일의 `GenerationAttempt`, `GenerationResult`는 생성 시도 기록과 결과를 표현하기 위한 자료형입니다.
 
@@ -763,15 +763,15 @@ Pydantic 코드는 `model_validate`, `model_dump`, `model_validator`를 사용�
 
 | 명령 | 동작·입출력 |
 | --- | --- |
-| `python -m scripts.problems.validate_generation_rules` | Concept에 필요한 과목·문제 유형의 Rule이 등록되어 있는지 검사. 수학적 정답 검증은 수행하지 않음 |
-| `python -m scripts.problems.generation_rule_validator --subject linear_algebra` | 선형대수 Rule의 스키마·변수·조건·검증기 설정을 정적으로 검사 |
-| `python -m scripts.problems.generation_rule_validator --subject linear_algebra --format json` | 같은 점검 결과를 JSON으로 표준출력에 표시 |
-| `python -m scripts.problems.generate_generation_rules --subject linear_algebra --check` | 파일을 쓰지 않고 현재 Rule catalog와 동기화 결과의 차이를 확인 |
-| `python -m scripts.problems.generate_generation_rules --subject linear_algebra` | 해당 과목 Rule catalog와 전체 manifest를 생성·갱신 |
-| `python -m scripts.problems.build_problem_templates --subject linear_algebra` | 해당 과목 템플릿 JSON과 manifest 생성. 기존 개별 템플릿은 기본적으로 건너뜀 |
-| `python -m scripts.problems.import_problem_templates` | 스캔·중복 선택·Pydantic 검증 후 DB에 템플릿·관계·audit 저장 |
-| `python -m scripts.problems.verify_problem_template_db --source-only` | DB 쿼리 없이 원본 템플릿 파일의 개수·중복·선택 결과를 검사. DB 연결 모듈 import에 필요한 패키지는 필요 |
-| `python -m scripts.problems.verify_problem_template_db` | 원본 파일 점검에 이어 DB 개수·관계·payload·해시·경로를 대조 |
+| `python -m scripts.problems.common.validate_generation_rules` | Concept에 필요한 과목·문제 유형의 Rule이 등록되어 있는지 검사. 수학적 정답 검증은 수행하지 않음 |
+| `python -m scripts.problems.common.generation_rule_validator --subject linear_algebra` | 선형대수 Rule의 스키마·변수·조건·검증기 설정을 정적으로 검사 |
+| `python -m scripts.problems.common.generation_rule_validator --subject linear_algebra --format json` | 같은 점검 결과를 JSON으로 표준출력에 표시 |
+| `python -m scripts.problems.common.generate_generation_rules --subject linear_algebra --check` | 파일을 쓰지 않고 현재 Rule catalog와 동기화 결과의 차이를 확인 |
+| `python -m scripts.problems.common.generate_generation_rules --subject linear_algebra` | 해당 과목 Rule catalog와 전체 manifest를 생성·갱신 |
+| `python -m scripts.problems.common.build_problem_templates --subject linear_algebra` | 해당 과목 템플릿 JSON과 manifest 생성. 기존 개별 템플릿은 기본적으로 건너뜀 |
+| `python -m scripts.problems.common.import_problem_templates` | 스캔·중복 선택·Pydantic 검증 후 DB에 템플릿·관계·audit 저장 |
+| `python -m scripts.problems.common.verify_problem_template_db --source-only` | DB 쿼리 없이 원본 템플릿 파일의 개수·중복·선택 결과를 검사. DB 연결 모듈 import에 필요한 패키지는 필요 |
+| `python -m scripts.problems.common.verify_problem_template_db` | 원본 파일 점검에 이어 DB 개수·관계·payload·해시·경로를 대조 |
 | `python -m pytest tests/test_problem_template_db.py` | DB 통합 테스트 실행. 설정된 DB를 사용하므로 별도 테스트 DB 설정이 필요 |
 
 `generation_rule_validator.py`의 `--strict`는 warning도 실패로 취급합니다. `--status curated`처럼 상태를 지정할 수 있고 여러 번 전달할 수 있습니다. `build_problem_templates.py`에는 `--concept-dir`, `--output-dir`, `--ready-only`, `--overwrite`도 있습니다. `--overwrite`는 기존 출력 파일을 갱신합니다.

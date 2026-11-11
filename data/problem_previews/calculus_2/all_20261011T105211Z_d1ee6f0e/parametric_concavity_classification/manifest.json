@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v2_ch07_parametric_equations_and_polar_coordinates.calculus.parametric_tangent_and_concavity.parametric_concavity_classification.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v2_ch07_parametric_equations_and_polar_coordinates/calculus.parametric_tangent_and_concavity__parametric_concavity_classification.json",
+  "template_sha256": "e478bfff3d4a2412b8bb961ec6c56e200df0a2bd18b8255233fcf8ea4b54eead",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

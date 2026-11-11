@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch03_vector_valued_functions.calculus.velocity_and_acceleration_in_space.position_reconstruction_from_acceleration.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_2/calc2_v3_ch03_vector_valued_functions/calculus.velocity_and_acceleration_in_space__position_reconstruction_from_acceleration.json",
+  "template_sha256": "a112af29cf60258ad109446d3a68e567b6d8b5d3afbc1f3a10d3a88e541d1ae5",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

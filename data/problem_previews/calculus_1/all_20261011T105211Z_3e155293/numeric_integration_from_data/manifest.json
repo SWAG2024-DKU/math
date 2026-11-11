@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch08_further_applications_of_integration.calculus.cardiac_output_dye_dilution.numeric_integration_from_data.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch08_further_applications_of_integration/calculus.cardiac_output_dye_dilution__numeric_integration_from_data.json",
+  "template_sha256": "f4f7433fcb2d7abc47ca0481fa4fcd64b0fdd7a80f94a18a5d0ed8304d412854",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

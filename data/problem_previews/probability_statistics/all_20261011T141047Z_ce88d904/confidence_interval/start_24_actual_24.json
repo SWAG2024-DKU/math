@@ -1,0 +1,244 @@
+{
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_12_estimation.ps.estimation.mean_ci_known_sigma.confidence_interval.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "probability_statistics.confidence_interval.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "confidence_interval",
+  "answer_type": "interval",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "정규 모집단의 독립 동일분포 표본에서 표본평균=7, 알려진 모집단 표준편차=2, 표본크기=4이다. 임계값 z=2, 신뢰수준 2Φ(2)-1(약 95.45%)인 모평균 양측 신뢰구간을 구하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "a": 7,
+    "b": 2,
+    "c": 2
+  },
+  "expected_answer": "Interval(5, 9)",
+  "seed": 24,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "probability_statistics_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 24,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "probability_statistics.ps_12_estimation.ps.estimation.mean_ci_known_sigma.confidence_interval.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "probability_statistics.confidence_interval.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "probability_statistics",
+      "subject_name_ko": "확률과 통계",
+      "unit_id": "ps_12_estimation",
+      "unit_name_ko": "추정이론",
+      "concept_ids": [
+        "ps.estimation.mean_ci_known_sigma"
+      ],
+      "formula_ids": [
+        "ps.estimation.mean_ci_known_sigma.formula_01"
+      ],
+      "tags": [
+        "confidence_interval"
+      ]
+    },
+    "classification": {
+      "problem_type": "confidence_interval",
+      "answer_type": "interval",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "a": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 8,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "b": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "c": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 5,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "confidence_interval",
+      "required_objects": [
+        "a",
+        "b",
+        "c"
+      ],
+      "semantic_structure": [
+        "알려진 σ의 정규 모평균 구간; 임계값 2를 명시, 95% 구간과 구분"
+      ],
+      "text_templates_ko": [
+        "정규 모집단의 독립 동일분포 표본에서 표본평균={{ a }}, 알려진 모집단 표준편차={{ b }}, 표본크기={{ c*c }}이다. 임계값 z=2, 신뢰수준 2Φ(2)-1(약 95.45%)인 모평균 양측 신뢰구간을 구하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "a",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "interval",
+      "engine": "sympy",
+      "cas_template": "probability_statistics_value({'a':a,'b':b,'c':c},'confidence_interval')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "probability_statistics_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "ps.estimation.mean_ci_known_sigma.formula_01",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "ps.estimation.mean_ci_known_sigma.formula_01",
+          "cas_expression": "probability_statistics_value({'a':a,'b':b,'c':c},'confidence_interval')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "required": true,
+          "config": {
+            "operation": "confidence_interval"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'probability_statistics.confidence_interval.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [probability_statistics_representatives_v1] 알려진 σ의 정규 모평균 구간; 임계값 2를 명시, 95% 구간과 구분; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:d3d98921c8a8d0955caddb54957ee563a886a4e844e7b99d1cbb7797a85cb0e8"
+    }
+  }
+}

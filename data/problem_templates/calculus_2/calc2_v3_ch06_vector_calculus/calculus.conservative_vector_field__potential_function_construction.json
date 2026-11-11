@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_2.calc2_v3_ch06_vector_calculus.calculus.conservative_vector_field.potential_function_construction.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_2.potential_function_construction.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_2",
     "subject_name_ko": "미분적분학 2",
@@ -31,7 +31,7 @@
   },
   "classification": {
     "problem_type": "potential_function_construction",
-    "answer_type": "boolean",
+    "answer_type": "expression",
     "difficulty": {
       "base": 4,
       "min": 3,
@@ -45,69 +45,271 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "f": {
-      "type": "expression",
-      "description": "문제 유형에 적합한 단순 함수/수식",
-      "allowed_families": [
-        "polynomial",
-        "rational",
-        "exponential",
-        "logarithmic",
-        "trigonometric"
-      ]
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
-    "x": {
-      "type": "symbol",
-      "description": "주 독립변수"
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "d": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "domain_simply_connected equals True",
-      "required": true,
-      "description": "P_y=Q_x만으로는 항상 보존성을 결론 낼 수 없으며, 정의역이 단순연결영역이어야 한다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "z": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "t": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C1": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C2": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "potential_function_construction",
     "required_objects": [
-      "f",
-      "x"
+      "a",
+      "b",
+      "c",
+      "d",
+      "k",
+      "N",
+      "x",
+      "y",
+      "z",
+      "t",
+      "C1",
+      "C2"
     ],
     "semantic_structure": [
-      "P_y=Q_x 조건(또는 회전=0)으로 벡터장의 보존성을 판정한다.",
-      "보존적 벡터장의 퍼텐셜 함수를 구한다.",
-      "선적분의 기본정리로 보존적 벡터장의 선적분을 끝점만으로 계산한다."
+      "질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'potential function construction' 문제를 해결하시오."
+      "F=(2*{{ a }}x,2*{{ b }}y,2*{{ c }}z)의 퍼텐셜 중 원점에서 0인 함수를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "boolean",
+    "answer_type": "expression",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'potential_function_construction')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "calculus_2_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "conservative_field_def",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "conservative_field_def",
-        "cas_expression": null
+        "cas_expression": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'potential_function_construction')"
       }
     ],
     "explanation_policy": {
@@ -119,12 +321,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "calculus_2_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "potential_function_construction"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -142,6 +346,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_2.potential_function_construction.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_2.potential_function_construction.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_2_execution_v1] 질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:df16316c6ad3c3b30c5ad041eaf53c2630d53d5a86bebca509757ca2415ec5ad"
   }
 }

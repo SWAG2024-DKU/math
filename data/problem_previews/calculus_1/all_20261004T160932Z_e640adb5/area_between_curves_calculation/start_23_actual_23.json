@@ -1,0 +1,373 @@
+{
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.area_between_curves.area_between_curves_calculation.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "calculus_1.area_between_curves_calculation.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "area_between_curves_calculation",
+  "answer_type": "scalar",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "0≤x≤1에서 y=2*x*(1 - x)*(x + 3)와 y=0 사이의 넓이를 구하시오.",
+  "statement_latex": null,
+  "parameters": {
+    "a": 2,
+    "lower": 0,
+    "upper": 1,
+    "domain": "Interval(0, 1)",
+    "b": 3,
+    "f": "2*x*(1 - x)*(x + 3)"
+  },
+  "expected_answer": "7/6",
+  "seed": 23,
+  "validation_trace": {
+    "constraints": [
+      {
+        "passed": true,
+        "constraint_id": null,
+        "on_failure": "resample",
+        "message": "질문에서 사용하는 함수의 검사 구간 정의역",
+        "observed": true
+      }
+    ],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "calculus_relation_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 23,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "calculus_1.calc1_ch06_applications_of_integration.calculus.area_between_curves.area_between_curves_calculation.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "calculus_1.area_between_curves_calculation.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "calculus_1",
+      "subject_name_ko": "미분적분학 1",
+      "unit_id": "calc1_ch06_applications_of_integration",
+      "unit_name_ko": "적분의 응용",
+      "concept_ids": [
+        "calculus.area_between_curves"
+      ],
+      "formula_ids": [
+        "area_between_curves_x",
+        "area_between_curves_abs",
+        "area_between_curves_y"
+      ],
+      "tags": [
+        "area_between_curves"
+      ]
+    },
+    "classification": {
+      "problem_type": "area_between_curves_calculation",
+      "answer_type": "scalar",
+      "difficulty": {
+        "base": 3,
+        "min": 2,
+        "max": 4,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "a": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 3,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "f": {
+        "type": "expression",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": {
+          "depends_on": [
+            "a",
+            "b"
+          ],
+          "expression": "a*x*(1-x)*(x+b)",
+          "engine": "sympy",
+          "selection": null
+        },
+        "generator": null,
+        "variable": "x"
+      },
+      "lower": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [
+          0
+        ],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "upper": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [
+          1
+        ],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "domain": {
+        "type": "interval",
+        "description": null,
+        "required": true,
+        "min": null,
+        "max": null,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null,
+        "lower": 0,
+        "upper": 1
+      },
+      "b": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 4,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {
+      "x": {
+        "role": "independent_variable",
+        "assumptions": {
+          "real": true
+        },
+        "dimension": null,
+        "description": null
+      }
+    },
+    "constraints": [
+      {
+        "type": "domain_condition",
+        "expression": "is_defined_on_domain(f,x,domain)",
+        "required": true,
+        "description": "질문에서 사용하는 함수의 검사 구간 정의역"
+      }
+    ],
+    "problem_builder": {
+      "operation": "area_between_curves_calculation",
+      "required_objects": [
+        "a",
+        "f",
+        "lower",
+        "upper",
+        "domain",
+        "b",
+        "x"
+      ],
+      "semantic_structure": [
+        "구간 내 위/아래 순서가 보장됨"
+      ],
+      "text_templates_ko": [
+        "0≤x≤1에서 y={{ f }}와 y=0 사이의 넓이를 구하시오."
+      ],
+      "latex_templates": [],
+      "cas_template": "f",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "scalar",
+      "engine": "sympy",
+      "cas_template": "calculus_value({'a':a,'f':f,'lower':lower,'upper':upper,'domain':domain,'b':b,'x':x},'area_between')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "calculus_relation_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "area_between_curves_x",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "area_between_curves_x",
+          "cas_expression": "calculus_value({'a':a,'f':f,'lower':lower,'upper':upper,'domain':domain,'b':b,'x':x},'area_between')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "calculus_relation_check",
+          "required": true,
+          "config": {
+            "operation": "area_between"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'calculus_1.area_between_curves_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 구간 내 위/아래 순서가 보장됨; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:7b6b47bcd6f65ade30a20fd0cd2e15934e1a462f7ef0a6b8716e446cfb5f3484"
+    }
+  }
+}

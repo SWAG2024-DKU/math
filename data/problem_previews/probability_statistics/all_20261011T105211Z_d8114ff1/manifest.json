@@ -1,0 +1,224 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "probability_statistics",
+  "problem_type_filter": null,
+  "include_draft": true,
+  "seed_start": 17,
+  "seeds_per_template": 1,
+  "timeout_seconds": 30.0,
+  "templates": [
+    {
+      "template_id": "probability_statistics.ps_01_foundations.ps.foundations.observational_experimental_studies.f01.concept_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_01_foundations/ps.foundations.observational_experimental_studies.f01__concept_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "concept_identification"
+    },
+    {
+      "template_id": "probability_statistics.ps_02_descriptive_statistics.ps.descriptive_statistics.central_tendency.f01.formula_application.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_02_descriptive_statistics/ps.descriptive_statistics.central_tendency.f01__formula_application.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "formula_application"
+    },
+    {
+      "template_id": "probability_statistics.ps_02_descriptive_statistics.ps.descriptive_statistics.sample_variance_standard_deviation.f01.assumption_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_02_descriptive_statistics/ps.descriptive_statistics.sample_variance_standard_deviation.f01__assumption_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "assumption_check"
+    },
+    {
+      "template_id": "probability_statistics.ps_03_counting.ps.counting.ordinary_combination.f01.counting_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_03_counting/ps.counting.ordinary_combination.f01__counting_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "counting_calculation"
+    },
+    {
+      "template_id": "probability_statistics.ps_03_counting.ps.counting.permutation_without_repetition.method_selection.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_03_counting/ps.counting.permutation_without_repetition__method_selection.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "method_selection"
+    },
+    {
+      "template_id": "probability_statistics.ps_05_conditional_independence.ps.conditional_independence.bayes_theorem.probability_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_05_conditional_independence/ps.conditional_independence.bayes_theorem__probability_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "probability_calculation"
+    },
+    {
+      "template_id": "probability_statistics.ps_07_discrete_distributions.ps.discrete_distributions.bernoulli.f01.distribution_identification.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_07_discrete_distributions/ps.discrete_distributions.bernoulli.f01__distribution_identification.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "distribution_identification"
+    },
+    {
+      "template_id": "probability_statistics.ps_07_discrete_distributions.ps.discrete_distributions.binomial.f02.moment_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_07_discrete_distributions/ps.discrete_distributions.binomial.f02__moment_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "moment_calculation"
+    },
+    {
+      "template_id": "probability_statistics.ps_12_estimation.ps.estimation.mean_ci_known_sigma.confidence_interval.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_12_estimation/ps.estimation.mean_ci_known_sigma__confidence_interval.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "confidence_interval"
+    },
+    {
+      "template_id": "probability_statistics.ps_12_estimation.ps.estimation.method_of_moments.estimator_derivation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_12_estimation/ps.estimation.method_of_moments__estimator_derivation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "estimator_derivation"
+    },
+    {
+      "template_id": "probability_statistics.ps_13_hypothesis_testing.ps.hypothesis_testing.one_sample_z_mean_exact.hypothesis_decision.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_13_hypothesis_testing/ps.hypothesis_testing.one_sample_z_mean_exact__hypothesis_decision.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "hypothesis_decision"
+    },
+    {
+      "template_id": "probability_statistics.ps_13_hypothesis_testing.ps.hypothesis_testing.one_sample_z_mean_exact.power_analysis.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_13_hypothesis_testing/ps.hypothesis_testing.one_sample_z_mean_exact__power_analysis.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "power_analysis"
+    },
+    {
+      "template_id": "probability_statistics.ps_13_hypothesis_testing.ps.hypothesis_testing.one_sample_z_mean_statistic.test_statistic_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_13_hypothesis_testing/ps.hypothesis_testing.one_sample_z_mean_statistic__test_statistic_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "test_statistic_calculation"
+    },
+    {
+      "template_id": "probability_statistics.ps_14_categorical_analysis.ps.categorical_analysis.independence_homogeneity.f01.contingency_table_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_14_categorical_analysis/ps.categorical_analysis.independence_homogeneity.f01__contingency_table_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "contingency_table_calculation"
+    },
+    {
+      "template_id": "probability_statistics.ps_14_categorical_analysis.ps.categorical_analysis.odds_ratio_2x2.effect_measure_interpretation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_14_categorical_analysis/ps.categorical_analysis.odds_ratio_2x2__effect_measure_interpretation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "effect_measure_interpretation"
+    },
+    {
+      "template_id": "probability_statistics.ps_15_correlation.ps.correlation.pearson_affine_transformation.relationship_interpretation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_15_correlation/ps.correlation.pearson_affine_transformation__relationship_interpretation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "relationship_interpretation"
+    },
+    {
+      "template_id": "probability_statistics.ps_15_correlation.ps.correlation.sample_pearson_correlation.correlation_calculation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_15_correlation/ps.correlation.sample_pearson_correlation__correlation_calculation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "correlation_calculation"
+    },
+    {
+      "template_id": "probability_statistics.ps_16_simple_linear_regression.ps.simple_linear_regression.least_squares.f01.coefficient_estimation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_16_simple_linear_regression/ps.simple_linear_regression.least_squares.f01__coefficient_estimation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "coefficient_estimation"
+    },
+    {
+      "template_id": "probability_statistics.ps_16_simple_linear_regression.ps.simple_linear_regression.raw_residual.diagnostic_check.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_16_simple_linear_regression/ps.simple_linear_regression.raw_residual__diagnostic_check.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "diagnostic_check"
+    },
+    {
+      "template_id": "probability_statistics.ps_16_simple_linear_regression.ps.simple_linear_regression.regression_model.f01.model_interpretation.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_16_simple_linear_regression/ps.simple_linear_regression.regression_model.f01__model_interpretation.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "model_interpretation"
+    },
+    {
+      "template_id": "probability_statistics.ps_18_anova.ps.anova.bonferroni_adjustment.post_hoc_selection.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_18_anova/ps.anova.bonferroni_adjustment__post_hoc_selection.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "post_hoc_selection"
+    },
+    {
+      "template_id": "probability_statistics.ps_18_anova.ps.anova.oneway_exact_f_reference.f_test.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_18_anova/ps.anova.oneway_exact_f_reference__f_test.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "f_test"
+    },
+    {
+      "template_id": "probability_statistics.ps_18_anova.ps.anova.oneway_sums_of_squares_and_df.f01.anova_table_completion.v1",
+      "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/probability_statistics/ps_18_anova/ps.anova.oneway_sums_of_squares_and_df.f01__anova_table_completion.json",
+      "status": "completed",
+      "succeeded": 1,
+      "failed": 0,
+      "timed_out": 0,
+      "result_dir": "anova_table_completion"
+    }
+  ],
+  "completed": 23,
+  "partial_failure": 0,
+  "skipped": 0,
+  "errors": 0,
+  "timed_out": 0
+}

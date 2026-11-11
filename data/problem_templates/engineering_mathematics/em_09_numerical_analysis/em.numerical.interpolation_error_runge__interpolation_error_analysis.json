@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "engineering_mathematics.em_09_numerical_analysis.em.numerical.interpolation_error_runge.interpolation_error_analysis.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "engineering_mathematics.interpolation_error_analysis.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "engineering_mathematics",
     "subject_name_ko": "공학수학",
@@ -27,7 +27,7 @@
   },
   "classification": {
     "problem_type": "interpolation_error_analysis",
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 3,
       "min": 2,
@@ -41,55 +41,259 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 20,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "n": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "f_n_plus_one_differentiable equals True",
-      "required": true,
-      "description": "f가 구간에서 (n+1)계 미분 가능해야 한다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "y": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "z": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "t": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "s": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C1": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C2": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "w": {
+      "role": "independent_variable",
+      "assumptions": {},
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "interpolation_error_analysis",
     "required_objects": [
-      "input"
+      "a",
+      "b",
+      "c",
+      "n",
+      "k",
+      "x",
+      "y",
+      "z",
+      "t",
+      "s",
+      "C1",
+      "C2",
+      "w"
     ],
     "semantic_structure": [
-      "보간 오차 공식을 이해하고 고차 등간격 보간에서 발생하는 룽게 현상을 분석한다."
+      "f(x)={{ a }}x²의 0,1 선형보간값 p(1/2)와 실제 f(1/2)의 절대오차를 구하시오."
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'interpolation error analysis' 문제를 해결하시오."
+      "f(x)={{ a }}x²의 0,1 선형보간값 p(1/2)와 실제 f(1/2)의 절대오차를 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": "Eq(f(x) - p_n(x), diff(f(x), (x, n+1)).subs(x, xi)/factorial(n+1) * Product(x - x_i, (i, 0, n)))",
+    "cas_template": "engineering_mathematics_value({'a':a,'b':b,'c':c,'n':n,'k':k,'x':x,'y':y,'z':z,'t':t,'s':s,'C1':C1,'C2':C2,'w':w},'interpolation_error_analysis')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "expression_equivalence"
+      "engineering_mathematics_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "interpolation_error_formula",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "interpolation_error_formula",
-        "cas_expression": "Eq(f(x) - p_n(x), diff(f(x), (x, n+1)).subs(x, xi)/factorial(n+1) * Product(x - x_i, (i, 0, n)))"
+        "cas_expression": "engineering_mathematics_value({'a':a,'b':b,'c':c,'n':n,'k':k,'x':x,'y':y,'z':z,'t':t,'s':s,'C1':C1,'C2':C2,'w':w},'interpolation_error_analysis')"
       }
     ],
     "explanation_policy": {
@@ -101,12 +305,14 @@
   "validation": {
     "validators": [
       {
-        "name": "expression_equivalence",
+        "name": "engineering_mathematics_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "interpolation_error_analysis"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -124,6 +330,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'engineering_mathematics.interpolation_error_analysis.v1'에서 생성. rule_status=draft_auto, executable=True, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'engineering_mathematics.interpolation_error_analysis.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [engineering_mathematics_execution_v1] f(x)={{ a }}x²의 0,1 선형보간값 p(1/2)와 실제 f(1/2)의 절대오차를 구하시오.; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:2912536225d4c8bf5a516baecb5011673ef7dc24afc40e5a015582ac1f64b78e"
   }
 }

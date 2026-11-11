@@ -1,0 +1,96 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_03_laplace_transform.em.laplace.second_shifting_theorem.second_shifting_calculation.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_03_laplace_transform\\em.laplace.second_shifting_theorem__second_shifting_calculation.json",
+  "template_sha256": "fab4d4e73bd31288a02069731bedd398c0bdb47fba6b2154794e28f18a787d6b",
+  "seed_start": 17,
+  "requested_count": 10,
+  "timeout_seconds": 300.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    },
+    {
+      "requested_seed": 18,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_18_actual_18.json"
+    },
+    {
+      "requested_seed": 19,
+      "actual_seed": 19,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_19_actual_19.json"
+    },
+    {
+      "requested_seed": 20,
+      "actual_seed": 21,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_20_actual_21.json"
+    },
+    {
+      "requested_seed": 22,
+      "actual_seed": 23,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_22_actual_23.json"
+    },
+    {
+      "requested_seed": 24,
+      "actual_seed": 24,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_24_actual_24.json"
+    },
+    {
+      "requested_seed": 25,
+      "actual_seed": 28,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 3,
+      "file": "start_25_actual_28.json"
+    },
+    {
+      "requested_seed": 29,
+      "actual_seed": 30,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_29_actual_30.json"
+    },
+    {
+      "requested_seed": 31,
+      "actual_seed": 34,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 3,
+      "file": "start_31_actual_34.json"
+    },
+    {
+      "requested_seed": 35,
+      "actual_seed": 39,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 4,
+      "file": "start_35_actual_39.json"
+    }
+  ],
+  "succeeded": 10,
+  "failed": 0,
+  "timed_out": 0
+}

@@ -1,0 +1,96 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_2",
+  "template_id": "calculus_2.calc2_v3_ch07_second_order_differential_equations.calculus.forced_oscillation_and_resonance.forced_oscillation_solving.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\calculus_2\\calc2_v3_ch07_second_order_differential_equations\\calculus.forced_oscillation_and_resonance__forced_oscillation_solving.json",
+  "template_sha256": "9cadde35a2e8fe6c6162183a1b8a8b4f2fdd39c0e42a66f692868dc61c751d0d",
+  "seed_start": 17,
+  "requested_count": 10,
+  "timeout_seconds": 300.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    },
+    {
+      "requested_seed": 18,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_18_actual_18.json"
+    },
+    {
+      "requested_seed": 19,
+      "actual_seed": 21,
+      "passed": true,
+      "attempts": 3,
+      "duplicate_retries": 0,
+      "file": "start_19_actual_21.json"
+    },
+    {
+      "requested_seed": 22,
+      "actual_seed": 22,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_22_actual_22.json"
+    },
+    {
+      "requested_seed": 23,
+      "actual_seed": 23,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_23_actual_23.json"
+    },
+    {
+      "requested_seed": 24,
+      "actual_seed": 25,
+      "passed": true,
+      "attempts": 2,
+      "duplicate_retries": 0,
+      "file": "start_24_actual_25.json"
+    },
+    {
+      "requested_seed": 26,
+      "actual_seed": 28,
+      "passed": true,
+      "attempts": 3,
+      "duplicate_retries": 0,
+      "file": "start_26_actual_28.json"
+    },
+    {
+      "requested_seed": 29,
+      "actual_seed": 29,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_29_actual_29.json"
+    },
+    {
+      "requested_seed": 30,
+      "actual_seed": 30,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_30_actual_30.json"
+    },
+    {
+      "requested_seed": 31,
+      "actual_seed": 31,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_31_actual_31.json"
+    }
+  ],
+  "succeeded": 10,
+  "failed": 0,
+  "timed_out": 0
+}

@@ -1,0 +1,219 @@
+{
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_07_discrete_distributions.ps.discrete_distributions.bernoulli.f01.distribution_identification.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "probability_statistics.distribution_identification.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "distribution_identification",
+  "answer_type": "single_choice",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "독립 시행 7회를 계획한다. 한 시행의 성공확률은 2/10이고 X는 그 한 시행의 성공 지시변수이다. X의 분포 번호를 답하시오: 1=Bernoulli, 2=Poisson, 3=정규분포.",
+  "statement_latex": null,
+  "parameters": {
+    "n": 7,
+    "a": 2
+  },
+  "expected_answer": 1,
+  "seed": 18,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "probability_statistics_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 18,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "probability_statistics.ps_07_discrete_distributions.ps.discrete_distributions.bernoulli.f01.distribution_identification.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "probability_statistics.distribution_identification.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "probability_statistics",
+      "subject_name_ko": "확률과 통계",
+      "unit_id": "ps_07_discrete_distributions",
+      "unit_name_ko": "주요 이산확률분포",
+      "concept_ids": [
+        "ps.discrete_distributions.bernoulli.f01"
+      ],
+      "formula_ids": [
+        "ps.discrete_distributions.bernoulli.f01.formula_01"
+      ],
+      "tags": [
+        "discrete_distributions",
+        "bernoulli",
+        "distribution",
+        "formula_atomic",
+        "core_formula"
+      ]
+    },
+    "classification": {
+      "problem_type": "distribution_identification",
+      "answer_type": "single_choice",
+      "difficulty": {
+        "base": 2,
+        "min": 1,
+        "max": 4,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "n": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 2,
+        "max": 20,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "a": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 9,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "distribution_identification",
+      "required_objects": [
+        "n",
+        "a"
+      ],
+      "semantic_structure": [
+        "한 시행 지시변수의 Bernoulli 분포 식별"
+      ],
+      "text_templates_ko": [
+        "독립 시행 {{ n }}회를 계획한다. 한 시행의 성공확률은 {{ a }}/10이고 X는 그 한 시행의 성공 지시변수이다. X의 분포 번호를 답하시오: 1=Bernoulli, 2=Poisson, 3=정규분포."
+      ],
+      "latex_templates": [],
+      "cas_template": "n",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "single_choice",
+      "engine": "sympy",
+      "cas_template": "probability_statistics_value({'n':n,'a':a},'distribution_identification')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "probability_statistics_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "ps.discrete_distributions.bernoulli.f01.formula_01",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "ps.discrete_distributions.bernoulli.f01.formula_01",
+          "cas_expression": "probability_statistics_value({'n':n,'a':a},'distribution_identification')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "required": true,
+          "config": {
+            "operation": "distribution_identification"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'probability_statistics.distribution_identification.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [probability_statistics_representatives_v1] 한 시행 지시변수의 Bernoulli 분포 식별; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:f72fcd1c8d5e8fa6c24bd34e2f120548864b430c6a0ea0db8ce48f575f11b118"
+    }
+  }
+}

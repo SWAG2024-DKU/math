@@ -1,0 +1,24 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "calculus_1",
+  "template_id": "calculus_1.calc1_ch04_applications_of_differentiation.calculus.increasing_decreasing_and_first_derivative_test.increasing_decreasing_interval_identification.v1",
+  "template_file": "/workspace/scratch/255c3f9a1a5b/work/all_subjects_latest/data/problem_templates/calculus_1/calc1_ch04_applications_of_differentiation/calculus.increasing_decreasing_and_first_derivative_test__increasing_decreasing_interval_identification.json",
+  "template_sha256": "43196c1e017f87f5402bf2a3e778b503172e63455b808cae8a2176023e22e080",
+  "seed_start": 17,
+  "requested_count": 1,
+  "timeout_seconds": 30.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    }
+  ],
+  "succeeded": 1,
+  "failed": 0,
+  "timed_out": 0
+}

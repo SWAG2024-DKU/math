@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.power_series_as_function.geometric_power_series_representation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_2.geometric_power_series_representation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_2",
     "subject_name_ko": "미분적분학 2",
@@ -41,68 +41,271 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "f": {
-      "type": "expression",
-      "description": "문제 유형에 적합한 단순 함수/수식",
-      "allowed_families": [
-        "polynomial",
-        "rational",
-        "exponential",
-        "logarithmic",
-        "trigonometric"
-      ]
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
-    "x": {
-      "type": "symbol",
-      "description": "주 독립변수"
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "d": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 2,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "x_within_interval_of_convergence equals True",
-      "required": true,
-      "description": "멱급수가 정의하는 함수 f(x)는 수렴구간 안에서만 의미를 가진다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "z": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "t": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C1": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C2": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "geometric_power_series_representation",
     "required_objects": [
-      "f",
-      "x"
+      "a",
+      "b",
+      "c",
+      "d",
+      "k",
+      "N",
+      "x",
+      "y",
+      "z",
+      "t",
+      "C1",
+      "C2"
     ],
     "semantic_structure": [
-      "간단한 유리함수를 기하급수 기본식으로부터 멱급수로 표현한다."
+      "질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'geometric power series representation' 문제를 해결하시오."
+      "|{{ a }}x|<1에서 ∑({{ a }}x)^n (n=0부터 무한대)의 합을 닫힌 함수로 나타내시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "expression",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'geometric_power_series_representation')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "domain_check",
-      "symbolic_equivalence"
+      "calculus_2_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "geometric_series_as_power_series",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "geometric_series_as_power_series",
-        "cas_expression": null
+        "cas_expression": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'geometric_power_series_representation')"
       }
     ],
     "explanation_policy": {
@@ -114,17 +317,14 @@
   "validation": {
     "validators": [
       {
-        "name": "domain_check",
+        "name": "calculus_2_check",
         "required": true,
-        "config": {}
-      },
-      {
-        "name": "symbolic_equivalence",
-        "required": true,
-        "config": {}
+        "config": {
+          "operation": "geometric_power_series_representation"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -142,6 +342,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_2.geometric_power_series_representation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_2.geometric_power_series_representation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_2_execution_v1] 질문에 명시한 모델/구간의 최종 답만 검사; 자유로운 그림과 서술 풀이는 별도 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:df18f416e101f47d1baa16cf42ab7521b3b3da102a02dcec9bb2c870aee76781"
   }
 }

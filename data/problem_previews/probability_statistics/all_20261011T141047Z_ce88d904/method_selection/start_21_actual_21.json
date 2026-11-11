@@ -1,0 +1,246 @@
+{
+  "subject_id": "probability_statistics",
+  "template_id": "probability_statistics.ps_03_counting.ps.counting.permutation_without_repetition.method_selection.v1",
+  "template_version": "1.0.0",
+  "generation_rule_id": "probability_statistics.method_selection.v1",
+  "generation_rule_version": "1.1.0",
+  "problem_type": "method_selection",
+  "answer_type": "boolean",
+  "template_status": "draft",
+  "review_status": "not_reviewed",
+  "publishable": false,
+  "statement": "서로 다른 8명 중 비복원으로 5명을 뽑는다. mode=2(1: 서로 다른 직책을 부여해 순서 중요, 2: 직책 없이 팀 구성)이다. 조합이 아니라 순열 nPk를 써야 하는가?",
+  "statement_latex": null,
+  "parameters": {
+    "n": 8,
+    "k": 5,
+    "mode": 2
+  },
+  "expected_answer": false,
+  "seed": 21,
+  "validation_trace": {
+    "constraints": [],
+    "validation_constraints": [],
+    "validators": [
+      {
+        "name": "probability_statistics_check",
+        "passed": true,
+        "message": ""
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "seed": 21,
+        "passed": true,
+        "stage": "validated",
+        "message": null
+      }
+    ]
+  },
+  "template_snapshot": {
+    "schema_version": "1.1.0",
+    "object_type": "problem_template",
+    "template_id": "probability_statistics.ps_03_counting.ps.counting.permutation_without_repetition.method_selection.v1",
+    "template_version": "1.0.0",
+    "status": "draft",
+    "generation_rule_id": "probability_statistics.method_selection.v1",
+    "generation_rule_version": "1.1.0",
+    "generation_rule_status": "curated",
+    "executable": true,
+    "taxonomy": {
+      "subject_id": "probability_statistics",
+      "subject_name_ko": "확률과 통계",
+      "unit_id": "ps_03_counting",
+      "unit_name_ko": "경우의 수",
+      "concept_ids": [
+        "ps.counting.permutation_without_repetition"
+      ],
+      "formula_ids": [
+        "ps.counting.permutation_without_repetition.formula_01"
+      ],
+      "tags": [
+        "counting",
+        "permutation",
+        "permutation_without_repetition"
+      ]
+    },
+    "classification": {
+      "problem_type": "method_selection",
+      "answer_type": "boolean",
+      "difficulty": {
+        "base": 2,
+        "min": 1,
+        "max": 3,
+        "factors": {
+          "parameter_complexity": "파라미터 범위/차원/항의 수를 증가시켜 조절",
+          "operation_steps": "필요 계산 단계 수를 증가시켜 조절"
+        }
+      },
+      "generation_strategy": "forward_generation",
+      "language": "ko-KR"
+    },
+    "parameters": {
+      "n": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 6,
+        "max": 18,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "k": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 2,
+        "max": 5,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      },
+      "mode": {
+        "type": "integer",
+        "description": null,
+        "required": true,
+        "min": 1,
+        "max": 2,
+        "exclude": [],
+        "choices": [],
+        "step": null,
+        "distribution": null,
+        "allowed_families": [],
+        "element_type": null,
+        "element_min": null,
+        "element_max": null,
+        "rows_min": null,
+        "rows_max": null,
+        "cols_min": null,
+        "cols_max": null,
+        "dimension_min": null,
+        "dimension_max": null,
+        "size_min": null,
+        "size_max": null,
+        "shape": null,
+        "depends_on": [],
+        "derived": null,
+        "generator": null
+      }
+    },
+    "symbols": {},
+    "constraints": [],
+    "problem_builder": {
+      "operation": "method_selection",
+      "required_objects": [
+        "n",
+        "k",
+        "mode"
+      ],
+      "semantic_structure": [
+        "순서 여부에 따른 비복원 순열 사용 판정"
+      ],
+      "text_templates_ko": [
+        "서로 다른 {{ n }}명 중 비복원으로 {{ k }}명을 뽑는다. mode={{ mode }}(1: 서로 다른 직책을 부여해 순서 중요, 2: 직책 없이 팀 구성)이다. 조합이 아니라 순열 nPk를 써야 하는가?"
+      ],
+      "latex_templates": [],
+      "cas_template": "n",
+      "render_engine": "jinja2"
+    },
+    "answer_spec": {
+      "answer_type": "boolean",
+      "engine": "sympy",
+      "cas_template": "probability_statistics_value({'n':n,'k':k,'mode':mode},'method_selection')",
+      "latex_template": null,
+      "canonicalization": {
+        "method": "simplify",
+        "exact_value_preferred": true
+      },
+      "required_checks": [
+        "probability_statistics_check"
+      ]
+    },
+    "solution_spec": {
+      "solution_strategy": "engine_then_explanation",
+      "primary_formula_id": "ps.counting.permutation_without_repetition.formula_01",
+      "solution_plan": [
+        {
+          "step": 1,
+          "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
+          "formula_id": "ps.counting.permutation_without_repetition.formula_01",
+          "cas_expression": "probability_statistics_value({'n':n,'k':k,'mode':mode},'method_selection')"
+        }
+      ],
+      "explanation_policy": {
+        "use_verified_answer_only": true,
+        "use_knowledge_base": true,
+        "allow_llm_calculation": false
+      }
+    },
+    "validation": {
+      "validators": [
+        {
+          "name": "probability_statistics_check",
+          "required": true,
+          "config": {
+            "operation": "method_selection"
+          }
+        }
+      ],
+      "generation_max_attempts": 40,
+      "all_required_must_pass": true
+    },
+    "quality_rules": {
+      "duplicate_check": true,
+      "answer_complexity_check": true,
+      "ambiguity_check": true,
+      "minimum_distinct_parameter_sets": 20
+    },
+    "storage_policy": {
+      "save_failed_generations": true,
+      "save_validation_trace": true,
+      "save_seed": true,
+      "save_template_snapshot": true
+    },
+    "metadata": {
+      "created_by": "template_builder.py",
+      "review_status": "not_reviewed",
+      "notes": "Generation Rule 'probability_statistics.method_selection.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [probability_statistics_representatives_v1] 순서 여부에 따른 비복원 순열 사용 판정; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:ea511b9b8bd52d8868dea3aa1f68df7c8839db42567a4dca8f97316320ba8cba"
+    }
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch05_integrals.calculus.net_change_theorem.net_change_calculation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.net_change_calculation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -42,62 +42,185 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "input": {
-      "type": "symbolic_input",
-      "description": "해당 problem_type에 필요한 입력값. 세부 샘플러 규칙은 후속 검토 필요"
+    "f": {
+      "type": "expression",
+      "description": null,
+      "required": true,
+      "min": -3,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [
+        "polynomial"
+      ],
+      "element_type": "integer",
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "variable": "x",
+      "degree_min": 1,
+      "degree_max": 3
+    },
+    "lower": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [
+        0
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "upper": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "domain": {
+      "type": "interval",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null,
+      "lower": 0,
+      "upper": 1
+    }
+  },
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
   },
   "constraints": [
     {
-      "type": "concept_application_condition",
-      "expression": "F_prime_continuous_on_a_b equals True",
+      "type": "domain_condition",
+      "expression": "is_defined_on_domain(f,x,domain)",
       "required": true,
-      "description": "순변화 정리는 F가 [a,b]에서 연속인 도함수 F'를 가질 때 성립한다(FTC2의 재구성)."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "velocity_sign_intervals_separated equals True",
-      "required": true,
-      "description": "이동 거리를 구하려면 v(t)≥0인 구간과 v(t)<0인 구간을 나누어 절댓값을 적분해야 한다."
+      "description": "질문에서 사용하는 함수의 검사 구간 정의역"
     }
   ],
   "problem_builder": {
     "operation": "net_change_calculation",
     "required_objects": [
-      "input"
+      "f",
+      "lower",
+      "upper",
+      "domain",
+      "x"
     ],
     "semantic_structure": [
-      "변화율을 적분해 순변화량을 구한다.",
-      "속도함수를 적분해 변위와 이동 거리를 각각 계산한다."
+      "시간 x에서 양 Q의 변화율 Q'(x)={{ f }}이다. 시간 0부터 1까지 Q의 순변화량을 구하시오."
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'net change calculation' 문제를 해결하시오."
+      "시간 x에서 양 Q의 변화율 Q'(x)={{ f }}이다. 시간 0부터 1까지 Q의 순변화량을 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "definite_integral(f,x,lower,upper)",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "definite_integral_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "net_change_theorem",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "net_change_theorem",
-        "cas_expression": null
+        "cas_expression": "definite_integral(f,x,lower,upper)"
       }
     ],
     "explanation_policy": {
@@ -109,12 +232,12 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "definite_integral_check",
         "required": true,
         "config": {}
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -132,6 +255,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.net_change_calculation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.net_change_calculation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 문제에 명시한 제한 범위; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:3cf8d95147b3dc892c377bbe41bc490348cc75f42c6a3870fdc1f00b83fab608"
   }
 }

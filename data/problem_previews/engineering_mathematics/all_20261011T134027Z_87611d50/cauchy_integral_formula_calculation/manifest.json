@@ -1,0 +1,96 @@
+{
+  "purpose": "temporary_human_review",
+  "publishable": false,
+  "subject_id": "engineering_mathematics",
+  "template_id": "engineering_mathematics.em_08_complex_analysis.em.complex.cauchy_integral_formula.cauchy_integral_formula_calculation.v1",
+  "template_file": "E:\\CODESTORE\\data_scienceProjects\\math_problem_platform\\data\\problem_templates\\engineering_mathematics\\em_08_complex_analysis\\em.complex.cauchy_integral_formula__cauchy_integral_formula_calculation.json",
+  "template_sha256": "110217e3a8354c1e3896bbff39ba4b4a42116e53c2db310811a3627ff79454ee",
+  "seed_start": 17,
+  "requested_count": 10,
+  "timeout_seconds": 300.0,
+  "results": [
+    {
+      "requested_seed": 17,
+      "actual_seed": 17,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_17_actual_17.json"
+    },
+    {
+      "requested_seed": 18,
+      "actual_seed": 18,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_18_actual_18.json"
+    },
+    {
+      "requested_seed": 19,
+      "actual_seed": 19,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_19_actual_19.json"
+    },
+    {
+      "requested_seed": 20,
+      "actual_seed": 20,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_20_actual_20.json"
+    },
+    {
+      "requested_seed": 21,
+      "actual_seed": 23,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 2,
+      "file": "start_21_actual_23.json"
+    },
+    {
+      "requested_seed": 24,
+      "actual_seed": 24,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_24_actual_24.json"
+    },
+    {
+      "requested_seed": 25,
+      "actual_seed": 26,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 1,
+      "file": "start_25_actual_26.json"
+    },
+    {
+      "requested_seed": 27,
+      "actual_seed": 27,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_27_actual_27.json"
+    },
+    {
+      "requested_seed": 28,
+      "actual_seed": 28,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_28_actual_28.json"
+    },
+    {
+      "requested_seed": 29,
+      "actual_seed": 29,
+      "passed": true,
+      "attempts": 1,
+      "duplicate_retries": 0,
+      "file": "start_29_actual_29.json"
+    }
+  ],
+  "succeeded": 10,
+  "failed": 0,
+  "timed_out": 0
+}

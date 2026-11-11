@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_2.calc2_v2_ch06_power_series.calculus.taylor_maclaurin_series.taylor_series_derivation.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_2.taylor_series_derivation.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_2",
     "subject_name_ko": "미분적분학 2",
@@ -44,75 +44,271 @@
     "language": "ko-KR"
   },
   "parameters": {
-    "f": {
-      "type": "expression",
-      "description": "문제 유형에 적합한 단순 함수/수식",
-      "allowed_families": [
-        "polynomial",
-        "rational",
-        "exponential",
-        "logarithmic",
-        "trigonometric"
-      ]
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 12,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     },
-    "x": {
-      "type": "symbol",
-      "description": "주 독립변수"
+    "b": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "c": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 4,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "d": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -2,
+      "max": 2,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "k": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": -1,
+      "max": 1,
+      "exclude": [],
+      "choices": [
+        -1,
+        1
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "N": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "f_infinitely_differentiable_at_a equals True",
-      "required": true,
-      "description": "Taylor 급수를 정의하려면 f가 x=a에서 무한번 미분가능해야 한다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     },
-    {
-      "type": "concept_application_condition",
-      "expression": "limit_of_remainder_is_zero equals True",
-      "required": true,
-      "description": "함수가 무한번 미분가능하더라도 Taylor 급수의 합이 반드시 원래 함수와 같지는 않다. 나머지 R_n(x)=f(x)-P_n(x)에 대해 lim R_n(x)=0이어야 Taylor 급수가 f(x)에 수렴한다."
+    "y": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "z": {
+      "role": "unknown",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "t": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C1": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
+    },
+    "C2": {
+      "role": "constant",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "taylor_series_derivation",
     "required_objects": [
-      "f",
-      "x"
+      "a",
+      "b",
+      "c",
+      "d",
+      "k",
+      "N",
+      "x",
+      "y",
+      "z",
+      "t",
+      "C1",
+      "C2"
     ],
     "semantic_structure": [
-      "주어진 함수와 중심으로 n차 Taylor 다항식을 구한다.",
-      "고계도함수로부터 함수의 Taylor(Maclaurin) 급수를 구한다.",
-      "주어진 멱급수 표현에서 Taylor 계수를 이용해 도함수 값을 역산한다."
+      "유도 결과의 유한 부분합만 검사; 무한 전개/서술 유도는 사람 검수"
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'taylor series derivation' 문제를 해결하시오."
+      "exp({{ a }}x)의 Maclaurin 급수를 유도하시오. 자동 채점 답은 0차부터 {{ N }}차까지의 다항식이다."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "a",
     "render_engine": "jinja2"
   },
   "answer_spec": {
     "answer_type": "expression",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'taylor_series_derivation')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "calculus_2_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "maclaurin_series",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
-        "formula_id": "taylor_polynomial",
-        "cas_expression": null
+        "formula_id": "maclaurin_series",
+        "cas_expression": "calculus_2_value({'a':a,'b':b,'c':c,'d':d,'k':k,'N':N,'x':x,'y':y,'z':z,'t':t,'C1':C1,'C2':C2},'taylor_series_derivation')"
       }
     ],
     "explanation_policy": {
@@ -124,12 +320,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "calculus_2_check",
         "required": true,
-        "config": {}
+        "config": {
+          "operation": "taylor_series_derivation"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -147,6 +345,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_2.taylor_series_derivation.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_2.taylor_series_derivation.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_2_execution_v1] 유도 결과의 유한 부분합만 검사; 무한 전개/서술 유도는 사람 검수; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:3144b0185510e0731de6503fc204d7a260a8f6799dd8f395903b5a533757e3bb"
   }
 }

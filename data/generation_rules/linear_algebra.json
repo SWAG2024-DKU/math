@@ -508,14 +508,14 @@
       "parameter_spec": {
         "A": {
           "type": "matrix",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
           "shape": {
             "rows": 2,
             "cols": 2
           },
-          "generator": "small_svd_matrix",
-          "element_type": "integer",
-          "element_min": -5,
-          "element_max": 5
+          "generator": "small_svd_matrix"
         }
       },
       "symbol_spec": {},
@@ -581,26 +581,26 @@
       "parameter_spec": {
         "u": {
           "type": "vector",
-          "shape": {
-            "dimension": 2
-          },
-          "generator": "small_gaussian_vector",
-          "element_type": "integer",
-          "element_min": -5,
-          "element_max": 5
-        },
-        "v": {
-          "type": "vector",
-          "shape": {
-            "dimension": 2
-          },
-          "generator": "complex_real_inner_partner",
           "element_type": "integer",
           "element_min": -5,
           "element_max": 5,
+          "shape": {
+            "dimension": 2
+          },
+          "generator": "small_gaussian_vector"
+        },
+        "v": {
+          "type": "vector",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
+          "shape": {
+            "dimension": 2
+          },
           "depends_on": [
             "u"
-          ]
+          ],
+          "generator": "complex_real_inner_partner"
         }
       },
       "symbol_spec": {},
@@ -2093,14 +2093,14 @@
       "parameter_spec": {
         "A": {
           "type": "matrix",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
           "shape": {
             "rows": 2,
             "cols": 2
           },
-          "generator": "defective_jordan_matrix",
-          "element_type": "integer",
-          "element_min": -5,
-          "element_max": 5
+          "generator": "defective_jordan_matrix"
         }
       },
       "symbol_spec": {},
@@ -3169,6 +3169,16 @@
           ]
         }
       },
+      "symbol_spec": {
+        "x": {
+          "role": "unknown",
+          "assumptions": {
+            "real": true
+          },
+          "dimension": "A.cols",
+          "description": "A의 열 개수와 같은 길이의 미지수 열벡터"
+        }
+      },
       "constraints": [],
       "construction": {
         "operation": "matrix_to_vector_equation",
@@ -3208,17 +3218,7 @@
         "max": 2,
         "factors": {}
       },
-      "notes": "기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule.",
-      "symbol_spec": {
-        "x": {
-          "role": "unknown",
-          "dimension": "A.cols",
-          "assumptions": {
-            "real": true
-          },
-          "description": "A의 열 개수와 같은 길이의 미지수 열벡터"
-        }
-      }
+      "notes": "기존 선형대수 ProblemTemplate에서 역추출한 Generation Rule."
     },
     {
       "rule_id": "linear_algebra.norm_distance_calculation.v1",
@@ -3854,14 +3854,14 @@
       "parameter_spec": {
         "A": {
           "type": "matrix",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
           "shape": {
             "rows": 4,
             "cols": 2
           },
-          "generator": "centered_pca_matrix",
-          "element_type": "integer",
-          "element_min": -5,
-          "element_max": 5
+          "generator": "centered_pca_matrix"
         }
       },
       "symbol_spec": {},
@@ -4022,14 +4022,14 @@
       "parameter_spec": {
         "A": {
           "type": "matrix",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
           "shape": {
             "rows": 2,
             "cols": 2
           },
-          "generator": "rank_one_pseudoinverse_matrix",
-          "element_type": "integer",
-          "element_min": -5,
-          "element_max": 5
+          "generator": "rank_one_pseudoinverse_matrix"
         }
       },
       "symbol_spec": {},
@@ -5163,14 +5163,14 @@
       "parameter_spec": {
         "A": {
           "type": "matrix",
+          "element_type": "integer",
+          "element_min": -5,
+          "element_max": 5,
           "shape": {
             "rows": 2,
             "cols": 2
           },
-          "generator": "small_svd_matrix",
-          "element_type": "integer",
-          "element_min": -5,
-          "element_max": 5
+          "generator": "small_svd_matrix"
         }
       },
       "symbol_spec": {},

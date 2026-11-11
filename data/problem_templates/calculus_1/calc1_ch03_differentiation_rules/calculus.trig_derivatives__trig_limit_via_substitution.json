@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "object_type": "problem_template",
   "template_id": "calculus_1.calc1_ch03_differentiation_rules.calculus.trig_derivatives.trig_limit_via_substitution.v1",
   "template_version": "1.0.0",
   "status": "draft",
   "generation_rule_id": "calculus_1.trig_limit_via_substitution.v1",
-  "generation_rule_version": "1.0.0",
-  "generation_rule_status": "draft_auto",
-  "executable": false,
+  "generation_rule_version": "1.1.0",
+  "generation_rule_status": "curated",
+  "executable": true,
   "taxonomy": {
     "subject_id": "calculus_1",
     "subject_name_ko": "미분적분학 1",
@@ -28,7 +28,7 @@
   },
   "classification": {
     "problem_type": "trig_limit_via_substitution",
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "difficulty": {
       "base": 2,
       "min": 1,
@@ -42,80 +42,178 @@
     "language": "ko-KR"
   },
   "parameters": {
+    "a": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 3,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
     "f": {
       "type": "expression",
-      "description": "문제 유형에 적합한 단순 함수/수식",
-      "allowed_families": [
-        "polynomial",
-        "rational",
-        "exponential",
-        "logarithmic",
-        "trigonometric"
-      ]
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": {
+        "depends_on": [
+          "a",
+          "scale"
+        ],
+        "expression": "scale*(sin(a*x)/x)",
+        "engine": "sympy",
+        "selection": null
+      },
+      "generator": null,
+      "variable": "x"
     },
-    "x": {
-      "type": "symbol",
-      "description": "주 독립변수"
+    "point": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": null,
+      "max": null,
+      "exclude": [],
+      "choices": [
+        0
+      ],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
+    },
+    "scale": {
+      "type": "integer",
+      "description": null,
+      "required": true,
+      "min": 1,
+      "max": 6,
+      "exclude": [],
+      "choices": [],
+      "step": null,
+      "distribution": null,
+      "allowed_families": [],
+      "element_type": null,
+      "element_min": null,
+      "element_max": null,
+      "rows_min": null,
+      "rows_max": null,
+      "cols_min": null,
+      "cols_max": null,
+      "dimension_min": null,
+      "dimension_max": null,
+      "size_min": null,
+      "size_max": null,
+      "shape": null,
+      "depends_on": [],
+      "derived": null,
+      "generator": null
     }
   },
-  "constraints": [
-    {
-      "type": "concept_application_condition",
-      "expression": "angle_unit equals radian",
-      "required": true,
-      "description": "x(또는 θ)의 단위는 라디안이어야 한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "cos_x not_equals 0",
-      "required": true,
-      "description": "tan x, sec x의 도함수는 cos x≠0인 점에서 성립한다."
-    },
-    {
-      "type": "concept_application_condition",
-      "expression": "sin_x not_equals 0",
-      "required": true,
-      "description": "cot x, csc x의 도함수는 sin x≠0인 점에서 성립한다."
+  "symbols": {
+    "x": {
+      "role": "independent_variable",
+      "assumptions": {
+        "real": true
+      },
+      "dimension": null,
+      "description": null
     }
-  ],
+  },
+  "constraints": [],
   "problem_builder": {
     "operation": "trig_limit_via_substitution",
     "required_objects": [
+      "a",
       "f",
+      "point",
+      "scale",
       "x"
     ],
     "semantic_structure": [
-      "여섯 삼각함수의 도함수를 계산한다.",
-      "치환을 이용해 sinθ/θ 형태의 삼각극한을 계산한다."
+      "f(x)={{ f }}일 때 x→{{ point }}에서 함수의 극한을 구하시오."
     ],
     "text_templates_ko": [
-      "다음 조건을 이용하여 'trig limit via substitution' 문제를 해결하시오."
+      "f(x)={{ f }}일 때 x→{{ point }}에서 함수의 극한을 구하시오."
     ],
     "latex_templates": [],
-    "cas_template": null,
+    "cas_template": "f",
     "render_engine": "jinja2"
   },
   "answer_spec": {
-    "answer_type": "expression",
+    "answer_type": "scalar",
     "engine": "sympy",
-    "cas_template": null,
+    "cas_template": "limit_value(f,x,point,'+-')",
     "latex_template": null,
     "canonicalization": {
       "method": "simplify",
       "exact_value_preferred": true
     },
     "required_checks": [
-      "symbolic_equivalence"
+      "limit_check"
     ]
   },
   "solution_spec": {
     "solution_strategy": "engine_then_explanation",
+    "primary_formula_id": "special_trig_limits",
     "solution_plan": [
       {
         "step": 1,
         "action": "Generation Rule의 계산식을 사용하여 정답을 계산하고 Validator로 결과를 검증한다.",
         "formula_id": "special_trig_limits",
-        "cas_expression": null
+        "cas_expression": "limit_value(f,x,point,'+-')"
       }
     ],
     "explanation_policy": {
@@ -127,12 +225,14 @@
   "validation": {
     "validators": [
       {
-        "name": "symbolic_equivalence",
+        "name": "limit_check",
         "required": true,
-        "config": {}
+        "config": {
+          "direction": "+-"
+        }
       }
     ],
-    "generation_max_attempts": 100,
+    "generation_max_attempts": 40,
     "all_required_must_pass": true
   },
   "quality_rules": {
@@ -150,6 +250,6 @@
   "metadata": {
     "created_by": "template_builder.py",
     "review_status": "not_reviewed",
-    "notes": "Generation Rule 'calculus_1.trig_limit_via_substitution.v1'에서 생성. rule_status=draft_auto, executable=False, manual_review_required=True. Concept generation_profile과 수학 메타데이터에서 자동 생성한 초안. parameter_spec, answer_spec.expression, construction을 실제 생성 엔진 연결 전에 검토해야 한다."
+    "notes": "Generation Rule 'calculus_1.trig_limit_via_substitution.v1'에서 생성. rule_status=curated, executable=True, manual_review_required=True. [calculus_1_execution_v1] 문제에 명시한 제한 범위; 자동 실행 검증 후에도 사람 검수 필요. contract_sha256:458287ade7f0a3c8e5deab24633b919471b204912920117f32b81090eae6616c"
   }
 }
