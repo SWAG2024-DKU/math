@@ -34,11 +34,134 @@ def require(condition, message):
         raise Invalid(message)
 
 
+
 def parse(value, names=None, *, symbols=False):
-    # TODO[LA-D031] parse 구현
-    # 1. 정확한 기약분수·복소수·행렬 값의 저장 표현을 기존 안전 AST 파서로 처리하는지 확인한다.
-    # 2. eval 또는 문자열 sympify로 우회하지 않는다.
-    raise NotImplementedError("TODO[LA-D031]: parse")
+    """제한된 AST 문법으로 저장된 수학 표현식을 안전하게 복원한다."""
+    names = {} if names is None else names
+
+    if not isinstance(names, dict):
+        raise Invalid("names는 딕셔너리여야 합니다")
+
+    if value is None or type(value) is bool:
+        return value
+
+    if type(value) is int:
+        if value.bit_length() > 1024:
+            raise Invalid("너무 큰 정수")
+        return s.Integer(value)
+
+    if type(value) is float:
+        if not math.isfinite(value):
+            raise Invalid("비유한 숫자")
+        return s.Rational(str(value))
+
+    if isinstance(value, list):
+        if len(value) > 64:
+            raise Invalid("배열 크기 초과")
+        return [parse(v, names, symbols=symbols) for v in value]
+
+    if not isinstance(value, str) or len(value) > 20000:
+        raise Invalid("미지원 직렬화 구조")
+
+    try:
+        tree = ast.parse(value, mode="eval")
+    except (SyntaxError, ValueError) as exc:
+        raise Invalid("잘못된 수식 문법") from exc
+
+    count = 0
+
+    def walk(node, depth=0):
+        nonlocal count
+        count += 1
+
+        if depth > 32 or count > 512:
+            raise Invalid("수식 복잡도 초과")
+
+        if isinstance(node, ast.Constant):
+            return parse(node.value, names, symbols=symbols)
+
+        if isinstance(node, ast.Name):
+            if node.id in names:
+                return names[node.id]
+            if node.id == "I":
+                return s.I
+            if node.id == "pi":
+                return s.pi
+            if node.id == "E":
+                return s.E
+            if symbols and node.id.isidentifier() and not node.id.startswith("_"):
+                return s.Symbol(node.id)
+            raise Unsupported("허용되지 않은 이름: " + node.id)
+
+        if isinstance(node, ast.List):
+            if len(node.elts) > 64:
+                raise Invalid("배열 크기 초과")
+            return [walk(x, depth + 1) for x in node.elts]
+
+        if isinstance(node, ast.Tuple):
+            if len(node.elts) > 64:
+                raise Invalid("튜플 크기 초과")
+            return tuple(walk(x, depth + 1) for x in node.elts)
+
+        if isinstance(node, ast.UnaryOp):
+            x = walk(node.operand, depth + 1)
+            if isinstance(node.op, ast.UAdd):
+                return +x
+            if isinstance(node.op, ast.USub):
+                return -x
+
+        if isinstance(node, ast.BinOp):
+            a = walk(node.left, depth + 1)
+            b = walk(node.right, depth + 1)
+
+            if isinstance(node.op, ast.Add):
+                return a + b
+            if isinstance(node.op, ast.Sub):
+                return a - b
+            if isinstance(node.op, ast.Mult):
+                return a * b
+            if isinstance(node.op, ast.Div):
+                if b == 0:
+                    raise Invalid("0으로 나눌 수 없음")
+                return a / b
+            if isinstance(node.op, ast.Pow):
+                if not isinstance(b, s.Integer) or abs(b) > 32:
+                    raise Unsupported("지원하지 않는 거듭제곱")
+                return a ** b
+
+        if isinstance(node, ast.Call):
+            if not isinstance(node.func, ast.Name) or node.keywords:
+                raise Unsupported("허용되지 않은 함수 호출")
+
+            fn = node.func.id
+            args = [walk(x, depth + 1) for x in node.args]
+
+            if fn == "Rational" and len(args) in (1, 2):
+                if not all(isinstance(x, s.Integer) for x in args):
+                    raise Invalid("Rational에는 정수가 필요")
+                if len(args) == 2 and args[1] == 0:
+                    raise Invalid("분모가 0")
+                return s.Rational(*args)
+
+            if fn == "sqrt" and len(args) == 1:
+                return s.sqrt(args[0])
+
+            if fn == "Matrix" and len(args) == 1:
+                return matrix(args[0])
+
+            raise Unsupported("미지원 함수: " + fn)
+
+        raise Unsupported("미지원 AST 표현")
+
+    try:
+        result = walk(tree.body)
+        finite(result)
+        return result
+    except (Invalid, Unsupported):
+        raise
+    except (ArithmeticError, TypeError, ValueError, RecursionError, OverflowError) as exc:
+        raise Invalid("수학 표현식 변환 실패") from exc
+
 
 
 def finite(v):
@@ -121,11 +244,87 @@ def extreme_2x2(M,high):
     return (M.trace()+(delta if high else -delta))/2
 
 
-def math_check(kind,p,answer):
-    # TODO[LA-D032] math_check 구현
-    # 1. 분수·조밀 행렬·유사변환 입력을 생성기의 helper를 호출하지 않고 재계산한다.
-    # 2. 기저/고유벡터/QR/SVD/PCA의 비유일한 정답은 해당 수학 조건과 동치로 검사한다.
-    raise NotImplementedError("TODO[LA-D032]: math_check")
+
+def math_check(kind, p, answer):
+    """문제 조건으로 정답의 수학적 타당성을 독립 검증한다."""
+
+    if not isinstance(p, dict):
+        raise Invalid("파라미터 딕셔너리 필요")
+
+    if kind == "matrix_multiplication":
+        require("A" in p and "B" in p, "A, B 필요")
+        A = matrix(p["A"])
+        B = matrix(p["B"])
+        require(A.cols == B.rows, "행렬 곱 차원 불일치")
+        require(eq(matrix(answer), A * B), "행렬 곱 정답 불일치")
+        return True
+
+    if kind in (
+        "determinant_by_ero",
+        "determinant_cofactor_expansion",
+    ):
+        require("A" in p, "A 필요")
+        A = square(matrix(p["A"]))
+        require(eq(answer, A.det()), "행렬식 정답 불일치")
+        return True
+
+    if kind == "rank_calculation":
+        require("A" in p, "A 필요")
+        A = matrix(p["A"])
+        require(eq(answer, s.Integer(A.rank())), "랭크 정답 불일치")
+        return True
+
+    if kind == "inverse_calculation":
+        require("A" in p, "A 필요")
+        A = square(matrix(p["A"]))
+        X = matrix(answer)
+        require(X.shape == A.shape, "역행렬 차원 불일치")
+        I = s.eye(A.rows)
+        require(
+            eq(A * X, I) and eq(X * A, I),
+            "역행렬 정답 불일치",
+        )
+        return True
+
+    if kind == "null_space_basis":
+        require("A" in p, "A 필요")
+        A = matrix(p["A"])
+        require(nullbasis(answer, A), "영공간 기저 불일치")
+        return True
+
+    if kind == "column_space_basis":
+        require("A" in p, "A 필요")
+        A = matrix(p["A"])
+        require(basis(answer, A), "열공간 기저 불일치")
+        return True
+
+    if kind == "row_space_basis":
+        require("A" in p, "A 필요")
+        A = matrix(p["A"])
+        require(basis(answer, A.T), "행공간 기저 불일치")
+        return True
+
+    if kind == "eigenvector_calculation":
+        require(
+            "A" in p and "lambda_val" in p,
+            "A와 lambda_val 필요",
+        )
+        A = square(matrix(p["A"]))
+        lam = p["lambda_val"]
+        require(
+            isinstance(lam, s.Expr) and not lam.free_symbols,
+            "스칼라 고윳값 필요",
+        )
+        N = A - lam * s.eye(A.rows)
+        require(N.det() == 0, "지정된 고윳값이 아님")
+        require(
+            nullbasis(answer, N),
+            "고유공간 기저 불일치",
+        )
+        return True
+
+    raise Unsupported("미구현 문제 유형: " + str(kind))
+
 
 
 def condition_value(text,p):
@@ -155,16 +354,462 @@ def condition_value(text,p):
     tree=ast.parse(text,mode='eval');return walk(tree.body)
 
 
-def parameter_checks(raw,p):
-    # TODO[LA-D033] parameter_checks 구현
-    # 1. 확장 정책의 범위·랭크·대칭·중심화·중복도·행렬 크기를 원본 문제 파라미터에서 확인한다.
-    # 2. 생성 시 validation_trace나 정책 label만으로 통과시키지 않는다.
-    raise NotImplementedError("TODO[LA-D033]: parameter_checks")
+
+def parameter_checks(raw, p):
+    """문제의 실제 파라미터와 명시된 정책을 독립적으로 검사한다."""
+
+    require(isinstance(raw, dict), "원본 payload 필요")
+    require(isinstance(p, dict), "파라미터 딕셔너리 필요")
+
+    def check_value(value, depth=0):
+        if depth > 16:
+            raise Invalid("파라미터 중첩 깊이 초과")
+
+        if isinstance(value, s.MatrixBase):
+            matrix(value)
+        elif isinstance(value, (list, tuple)):
+            require(len(value) <= 64, "배열 길이 초과")
+            for item in value:
+                check_value(item, depth + 1)
+        elif isinstance(value, dict):
+            require(len(value) <= 64, "딕셔너리 크기 초과")
+            for item in value.values():
+                check_value(item, depth + 1)
+        elif isinstance(value, s.Basic):
+            finite(value)
+        elif type(value) is float:
+            require(math.isfinite(value), "비유한 숫자")
+        elif value is None or type(value) in (bool, int, str):
+            pass
+        else:
+            raise Unsupported("미지원 파라미터 자료형")
+
+    check_value(p)
+
+    snapshot = raw.get("template_snapshot")
+    if not isinstance(snapshot, dict):
+        raise Unsupported("Template snapshot이 없어 정책 검증 불가")
+
+    specs = snapshot.get("parameters")
+    if not isinstance(specs, dict):
+        raise Unsupported("파라미터 정책이 없음")
+
+    def compare_bound(value, limit, lower):
+        a = parse(value) if type(value) in (int, float, str) else value
+        b = parse(limit)
+
+        if not isinstance(a, s.Expr) or not isinstance(b, s.Expr):
+            raise Unsupported("미지원 범위 자료형")
+
+        if a.is_real is not True or b.is_real is not True:
+            raise Unsupported("실수 범위 비교 불가")
+
+        comparison = s.Ge(a, b) if lower else s.Le(a, b)
+
+        if comparison is s.false:
+            raise Invalid("정책 범위 위반")
+        if comparison is not s.true:
+            raise Unsupported("범위 비교 결과가 불확정")
+
+    def check_range(value, spec, low, high):
+        if spec.get(low) is not None:
+            compare_bound(value, spec[low], True)
+        if spec.get(high) is not None:
+            compare_bound(value, spec[high], False)
+
+    def expected_dimension(rule):
+        if isinstance(rule, bool):
+            raise Invalid("잘못된 크기 정책")
+
+        if isinstance(rule, int):
+            return rule
+
+        if isinstance(rule, str):
+            result = condition_value(rule, p)
+            if isinstance(result, (int, s.Integer)):
+                return int(result)
+            raise Unsupported("미지원 크기 참조")
+
+        raise Unsupported("미지원 크기 정책")
+
+    def check_dimension(actual, rule):
+        if isinstance(rule, dict):
+            if set(rule) != {"min", "max"}:
+                raise Unsupported("미지원 크기 범위")
+            require(
+                rule["min"] <= actual <= rule["max"],
+                "크기 범위 위반",
+            )
+        else:
+            require(
+                actual == expected_dimension(rule),
+                "크기 조건 불일치",
+            )
+
+    for name, spec in specs.items():
+        if not isinstance(spec, dict):
+            raise Unsupported("파라미터 정책 형식 오류")
+
+        if name not in p:
+            require(
+                spec.get("required", True) is False,
+                "필수 파라미터 누락: " + name,
+            )
+            continue
+
+        value = p[name]
+        param_type = spec.get("type")
+
+        if param_type in ("matrix", "vector"):
+            M = vector(value) if param_type == "vector" else matrix(value)
+
+            shape = spec.get("shape") or {}
+            if not isinstance(shape, dict):
+                raise Unsupported("shape 정책 형식 오류")
+
+            actual = {
+                "rows": M.rows,
+                "cols": M.cols,
+                "dimension": M.rows,
+                "length": M.rows,
+            }
+
+            for field, rule in shape.items():
+                if field not in actual:
+                    raise Unsupported("미지원 shape 필드: " + field)
+                check_dimension(actual[field], rule)
+
+            legacy = {
+                "rows": M.rows,
+                "cols": M.cols,
+                "dimension": M.rows,
+            }
+
+            for field, current in legacy.items():
+                check_range(
+                    current, spec,
+                    field + "_min",
+                    field + "_max",
+                )
+
+            if spec.get("element_type") == "integer":
+                require(
+                    all(x.is_Integer is True for x in M),
+                    "정수 원소 조건 위반",
+                )
+            elif spec.get("element_type") not in (
+                None, "rational", "real", "number"
+            ):
+                raise Unsupported("미지원 행렬 원소 유형")
+
+            for element in M:
+                check_range(
+                    element, spec,
+                    "element_min", "element_max",
+                )
+
+        elif param_type in ("integer", "int"):
+            require(
+                isinstance(value, (int, s.Integer))
+                and not isinstance(value, bool),
+                "정수 파라미터 필요",
+            )
+            check_range(value, spec, "min", "max")
+
+        elif param_type in ("scalar", "number", "rational"):
+            require(
+                isinstance(value, (int, float, s.Expr))
+                and not isinstance(value, bool),
+                "스칼라 파라미터 필요",
+            )
+            check_range(value, spec, "min", "max")
+
+        else:
+            raise Unsupported(
+                "미지원 파라미터 유형: " + str(param_type)
+            )
+
+        if spec.get("choices") or spec.get("exclude"):
+            raise Unsupported("선택·제외 정책 검증 미구현")
+
+        if spec.get("derived") is not None:
+            raise Unsupported("파생 파라미터 검증 미구현")
+
+    if set(p) - set(specs):
+        raise Unsupported("정책에 정의되지 않은 파라미터 존재")
+
+    constraints = snapshot.get("constraints", [])
+    if not isinstance(constraints, list):
+        raise Unsupported("제약 조건 형식 오류")
+
+    
+    def resolve_operand(value):
+        if isinstance(value, str):
+            return condition_value(value, p)
+        if isinstance(value, (bool, int, float)):
+            return parse(value)
+        raise Unsupported("미지원 제약 조건 피연산자")
+
+    def check_rule(rule):
+        if not isinstance(rule, dict):
+            raise Unsupported("제약 조건 rule 형식 오류")
+
+        op = rule.get("operator")
+        if not isinstance(op, str):
+            raise Unsupported("제약 조건 연산자 누락")
+
+        op = op.strip().lower().replace("-", "_").replace(" ", "_")
+
+        aliases = {
+            "==": "equals",
+            "eq": "equals",
+            "!=": "not_equals",
+            "ne": "not_equals",
+            "<": "less_than",
+            "lt": "less_than",
+            "<=": "less_than_or_equal",
+            "le": "less_than_or_equal",
+            ">": "greater_than",
+            "gt": "greater_than",
+            ">=": "greater_than_or_equal",
+            "ge": "greater_than_or_equal",
+        }
+        op = aliases.get(op, op)
+
+        left = resolve_operand(rule.get("left"))
+        right_raw = rule.get("right")
+        args = rule.get("args", [])
+
+        if not isinstance(args, list) or args:
+            raise Unsupported("다중 인자 제약 조건 미지원")
+
+        properties = {
+            "square", "is_square",
+            "symmetric", "is_symmetric",
+            "invertible", "is_invertible",
+            "full_rank", "is_full_rank",
+        }
+
+        if op in properties:
+            M = matrix(left)
+            if op in ("square", "is_square"):
+                actual = M.rows == M.cols
+            elif op in ("symmetric", "is_symmetric"):
+                actual = M.rows == M.cols and eq(M, M.T)
+            elif op in ("invertible", "is_invertible"):
+                actual = M.rows == M.cols and M.rank() == M.rows
+            else:
+                actual = M.rank() == min(M.shape)
+
+            expected = True if right_raw is None else resolve_operand(right_raw)
+            if not isinstance(expected, (bool, s.logic.boolalg.BooleanAtom)):
+                raise Unsupported("속성 조건에는 불리언 값 필요")
+
+            return actual == bool(expected)
+
+        right = resolve_operand(right_raw)
+
+        if op == "equals":
+            return eq(left, right)
+
+        if op == "not_equals":
+            return not eq(left, right)
+
+        order_ops = {
+            "less_than": "negative",
+            "less_than_or_equal": "nonpositive",
+            "greater_than": "positive",
+            "greater_than_or_equal": "nonnegative",
+        }
+
+        if op in order_ops:
+            if not isinstance(left, (int, float, s.Expr)):
+                raise Unsupported("순서 비교는 스칼라만 지원")
+            if not isinstance(right, (int, float, s.Expr)):
+                raise Unsupported("순서 비교는 스칼라만 지원")
+
+            delta = s.simplify(left - right)
+            if delta.is_real is not True:
+                raise Unsupported("실수 순서 비교 불가")
+
+            attr = "is_" + order_ops[op]
+            result = getattr(delta, attr)
+
+            if result is None:
+                raise Unsupported("순서 비교 결과 불확정")
+            return bool(result)
+
+        raise Unsupported("미지원 제약 연산자: " + op)
+
+    for constraint in constraints:
+        if not isinstance(constraint, dict):
+            raise Unsupported("제약 조건 구조 오류")
+
+        if constraint.get("required", True) is False:
+            continue
+
+        expression = constraint.get("expression")
+
+        if not isinstance(expression, dict):
+            raise Unsupported("문자열/미지원 제약 조건")
+
+        rule = expression.get("rule")
+        if not check_rule(rule):
+            raise Invalid("필수 제약 조건 위반")
+
+    return True
+
+
 
 
 def validate_payload(payload):
-    # TODO[LA-D034] validate_payload 구현
-    # 1. 기존 문장 계약은 그대로 두고 숫자·행렬 표현이 바뀐 문제를 검증한다.
-    # 2. 문장 의미까지 바꾸는 확장은 별도 계약 작업으로 분리한다.
-    # 3. 미지원 유형/조건은 unsupported로 집계하고 성공률 분모에서 숨기지 않는다.
-    raise NotImplementedError("TODO[LA-D034]: validate_payload")
+    """저장된 선형대수 문제를 독립적으로 검증한다."""
+
+    checks = []
+
+    def record(name, passed, message):
+        checks.append({
+            "name": name,
+            "passed": passed,
+            "message": message,
+        })
+
+    def result(verdict):
+        return {
+            "validator_version": VALIDATOR_VERSION,
+            "result": verdict,
+            "report": {"checks": checks},
+        }
+
+    try:
+        # 1. 기본 payload 구조 확인
+        require(isinstance(payload, dict), "payload 딕셔너리 필요")
+        require(
+            payload.get("subject_id") == "linear_algebra",
+            "선형대수 문제가 아님",
+        )
+
+        kind = payload.get("problem_type")
+
+        if not isinstance(kind, str) or kind not in SUPPORTED_TYPES:
+            raise Unsupported("지원하지 않는 문제 유형")
+
+        raw_parameters = payload.get("parameters")
+        require(
+            isinstance(raw_parameters, dict),
+            "parameters 딕셔너리 필요",
+        )
+        require("expected_answer" in payload, "정답 누락")
+
+        record("payload_structure", True, "기본 구조 확인")
+        
+        # 2. 실제 검증 구현이 있는 문제 유형만 허용
+        implemented = {
+            "matrix_multiplication",
+            "determinant_by_ero",
+            "determinant_cofactor_expansion",
+            "rank_calculation",
+            "inverse_calculation",
+            "null_space_basis",
+            "column_space_basis",
+            "row_space_basis",
+            "eigenvector_calculation",
+        }
+
+        if kind not in implemented:
+            raise Unsupported("독립 수학 검사 미구현: " + kind)
+
+        # 3. 파라미터 복원
+        p = {
+            name: parse(value)
+            for name, value in raw_parameters.items()
+        }
+
+        record("parse_parameters", True, "파라미터 복원 완료")
+
+        # 4. Template 및 문장 계약 검사
+        snapshot = payload.get("template_snapshot")
+
+        if not isinstance(snapshot, dict):
+            raise Unsupported("Template snapshot 누락")
+
+        builder = snapshot.get("problem_builder")
+        if not isinstance(builder, dict):
+            raise Unsupported("문제 문장 템플릿 누락")
+
+        templates = builder.get("text_templates_ko")
+
+        if not isinstance(templates, list) or not templates:
+            raise Unsupported("문장 템플릿 없음")
+
+        contract = STATEMENTS[kind]
+
+        if templates[0] != contract:
+            raise Unsupported("등록된 문장 계약과 템플릿 불일치")
+
+        # 현재 구현은 단순 변수 치환 계약만 처리한다.
+        placeholder = re.compile(
+            r"\{\{\s*([A-Za-z_][A-Za-z0-9_]*)\s*\}\}"
+        )
+
+        def display(name):
+            if name not in p:
+                raise Unsupported("문장 변수 누락: " + name)
+
+            value = p[name]
+            spec = snapshot.get("parameters", {}).get(name, {})
+
+            if isinstance(spec, dict):
+                if spec.get("type") == "matrix":
+                    value = matrix(value)
+                elif spec.get("type") == "vector":
+                    value = vector(value)
+
+            return str(value)
+
+        rendered = placeholder.sub(
+            lambda match: display(match.group(1)),
+            contract,
+        )
+
+        if "{{" in rendered or "{%" in rendered:
+            raise Unsupported("미지원 문장 템플릿 구문")
+
+        if payload.get("statement") != rendered:
+            raise Unsupported("문장 렌더링 일치 여부 미확정")
+
+        record("statement_contract", True, "문장 계약 일치")
+
+        # 5. 문제 파라미터의 실제 정책 검사
+        parameter_checks(payload, p)
+        record("parameter_checks", True, "파라미터 조건 통과")
+
+        # 6. 저장된 정답 복원
+        answer = parse(payload["expected_answer"])
+
+        answer_type = payload.get("answer_type")
+
+        if answer_type == "matrix":
+            answer = matrix(answer)
+        elif answer_type == "vector":
+            answer = vector(answer)
+
+        record("parse_answer", True, "정답 복원 완료")
+
+        # 7. 독립 수학 검증
+        require(
+            math_check(kind, p, answer) is True,
+            "수학적 정답 검증 실패",
+        )
+
+        record("math_check", True, "수학적 정답 확인")
+
+        return result("passed")
+
+    except Unsupported as exc:
+        record("independent_validation", False, str(exc))
+        return result("unsupported")
+
+    except Invalid as exc:
+        record("independent_validation", False, str(exc))
+        return result("failed")

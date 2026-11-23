@@ -12,6 +12,7 @@ import argparse
 from collections import Counter
 from datetime import datetime, timezone
 import json
+import math
 import multiprocessing as mp
 from pathlib import Path
 import time
@@ -35,11 +36,90 @@ def _worker(connection, payload):
         connection.close()
 
 
+
 def validate_with_timeout(payload, seconds=30, *, worker=_worker):
-    # TODO[LA-D037] validate_with_timeout 구현
-    # 1. 확대된 유리수/행렬 구조에서도 제한 시간과 Windows spawn을 보장한다.
-    # 2. timeout을 unsupported 또는 성공으로 숨기지 않는다.
-    raise NotImplementedError("TODO[LA-D037]: validate_with_timeout")
+    """별도 spawn 프로세스에서 검증하고 시간 제한을 적용한다."""
+
+    if (
+        isinstance(seconds, bool)
+        or not isinstance(seconds, (int, float))
+        or not math.isfinite(seconds)
+        or seconds <= 0
+    ):
+        return failure("검증 제한 시간은 양수여야 합니다")
+
+    ctx = mp.get_context("spawn")
+    parent_conn, child_conn = ctx.Pipe(duplex=False)
+    process = None
+
+    try:
+        process = ctx.Process(
+            target=worker,
+            args=(child_conn, payload),
+        )
+        process.daemon = True
+        process.start()
+
+        # 부모는 수신 쪽만 사용한다.
+        child_conn.close()
+
+        # 설정된 시간 동안 결과를 기다린다.
+        if not parent_conn.poll(seconds):
+            if process.is_alive():
+                process.terminate()
+                process.join(timeout=1)
+
+                if process.is_alive():
+                    process.kill()
+                    process.join()
+
+                return failure(
+                    f"독립 검증 제한 시간 {seconds}초 초과",
+                    "timeout",
+                )
+
+            return failure(
+                "검증 프로세스가 결과 없이 종료됨",
+                "failed",
+            )
+
+        try:
+            result = parent_conn.recv()
+        except (EOFError, OSError) as exc:
+            return failure(
+                f"검증 결과 수신 실패: {type(exc).__name__}",
+                "failed",
+            )
+
+        if not isinstance(result, dict):
+            return failure("검증 결과 형식 오류", "failed")
+
+        if result.get("result") not in {
+            "passed", "failed", "unsupported", "timeout"
+        }:
+            return failure("알 수 없는 검증 결과", "failed")
+
+        if not isinstance(result.get("report"), dict):
+            return failure("검증 보고서 형식 오류", "failed")
+
+        return result
+
+    except (OSError, ValueError, RuntimeError, TypeError) as exc:
+        return failure(
+            f"검증 프로세스 실행 실패: {type(exc).__name__}: {exc}",
+            "failed",
+        )
+
+    finally:
+        parent_conn.close()
+        child_conn.close()
+
+        if process is not None:
+            if process.pid is not None:
+                if process.is_alive():
+                    process.terminate()
+                process.join()
+                process.close()
 
 
 def connection():
@@ -107,12 +187,269 @@ def positive(value):
     return number
 
 
+
+
 def main(argv=None):
-    # TODO[LA-D038] main 구현
-    # 1. 후보 Preview ZIP 전체에 독립 검증을 실행한다.
-    # 2. 단원·유형별 passed/failed/unsupported/timeout 및 누락된 유형을 집계한다.
-    # 3. 이번 워크플로에서는 DB --write를 사용하지 않고 별도 보고서에만 기록한다.
-    raise NotImplementedError("TODO[LA-D038]: main")
+    """Preview ZIP을 읽기 전용으로 독립 검증하고 보고서를 작성한다."""
+    from zipfile import BadZipFile
+
+    from scripts.problems.common.independent_instance_validator import (
+        SUPPORTED_TYPES,
+    )
+
+    parser = argparse.ArgumentParser(
+        description="선형대수 Preview ZIP 독립 검증 (DB 쓰기 없음)"
+    )
+    parser.add_argument(
+        "--preview-zip",
+        type=Path,
+        required=True,
+        help="검증할 Preview ZIP 파일",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path(
+            "data/reports/linear_algebra/"
+            "independent_validation_report.json"
+        ),
+        help="검증 결과 JSON 보고서 경로",
+    )
+    parser.add_argument(
+        "--seconds",
+        type=positive,
+        default=30,
+        help="문제당 최대 검증 시간(초)",
+    )
+
+    args = parser.parse_args(argv)
+
+    if not args.preview_zip.is_file():
+        parser.error("Preview ZIP 파일을 찾을 수 없습니다")
+
+    if args.output.suffix.lower() != ".json":
+        parser.error("보고서 파일은 .json이어야 합니다")
+
+    if args.preview_zip.resolve() == args.output.resolve():
+        parser.error("원본 ZIP을 보고서로 덮어쓸 수 없습니다")
+
+    statuses = ("passed", "failed", "unsupported", "timeout")
+
+    def empty_counts():
+        return {status: 0 for status in statuses}
+
+    totals = Counter()
+    by_unit = {}
+    by_type = {}
+    details = []
+    observed_types = set()
+
+    def add_result(source, unit, kind, result):
+        verdict = result.get("result", "failed")
+
+        if verdict not in statuses:
+            verdict = "failed"
+            result = failure("잘못된 검증 결과 상태")
+
+        totals[verdict] += 1
+
+        if unit not in by_unit:
+            by_unit[unit] = empty_counts()
+
+        if kind not in by_type:
+            by_type[kind] = empty_counts()
+
+        by_unit[unit][verdict] += 1
+        by_type[kind][verdict] += 1
+
+        details.append({
+            "source": source,
+            "unit_id": unit,
+            "problem_type": kind,
+            "result": verdict,
+            "report": result.get("report", {}),
+        })
+
+    try:
+        with ZipFile(args.preview_zip, "r") as archive:
+            # ZIP 내부의 Preview 문제 파일만 선택한다.
+            sources = sorted(
+                (
+                    info for info in archive.infolist()
+                    if not info.is_dir()
+                    and Path(info.filename).name.startswith("start_")
+                    and info.filename.endswith(".json")
+                ),
+                key=lambda info: info.filename,
+            )
+
+            if not sources:
+                parser.error(
+                    "ZIP 안에 start_*.json 문제 파일이 없습니다"
+                )
+
+            for info in sources:
+                source = info.filename
+                unit = "unknown"
+                kind = "unknown"
+
+                # ZIP 압축 해제 크기 상한
+                max_size = 10 * 1024 * 1024
+
+                if info.file_size > max_size:
+                    add_result(
+                        source,
+                        unit,
+                        kind,
+                        failure("문제 JSON 크기 제한 초과"),
+                    )
+                    continue
+
+                try:
+                    with archive.open(info) as stream:
+                        data = stream.read(max_size + 1)
+
+                    if len(data) > max_size:
+                        raise ValueError(
+                            "문제 파일 크기 제한 초과"
+                        )
+
+                    payload = json.loads(
+                        data.decode("utf-8")
+                    )
+
+                    if not isinstance(payload, dict):
+                        raise ValueError(
+                            "문제 JSON의 최상위는 객체여야 합니다"
+                        )
+
+                    kind_value = payload.get("problem_type")
+
+                    if isinstance(kind_value, str):
+                        kind = kind_value
+                        observed_types.add(kind)
+
+                    snapshot = payload.get("template_snapshot")
+
+                    if isinstance(snapshot, dict):
+                        taxonomy = snapshot.get("taxonomy")
+
+                        if isinstance(taxonomy, dict):
+                            unit_value = taxonomy.get("unit_id")
+
+                            if (
+                                isinstance(unit_value, str)
+                                and unit_value
+                            ):
+                                unit = unit_value
+
+                    # 각 문제에 독립 검증과 시간 제한 적용
+                    result = validate_with_timeout(
+                        payload,
+                        seconds=args.seconds,
+                    )
+
+                except (
+                    ValueError,
+                    UnicodeError,
+                    OSError,
+                    EOFError,
+                    RuntimeError,
+                    TypeError,
+                    BadZipFile,
+                ) as exc:
+                    result = failure(
+                        "문제 파일 처리 실패: "
+                        f"{type(exc).__name__}: {exc}"
+                    )
+
+                add_result(
+                    source,
+                    unit,
+                    kind,
+                    result,
+                )
+
+    except (OSError, ValueError, BadZipFile) as exc:
+        parser.error(
+            "ZIP 파일을 읽을 수 없습니다: "
+            f"{type(exc).__name__}: {exc}"
+        )
+
+    # 지원하는 문제 유형 중 ZIP에 없는 유형 집계
+    missing_types = sorted(
+        set(SUPPORTED_TYPES) - observed_types
+    )
+
+    # 계약에 정의되지 않은 문제 유형 집계
+    unexpected_types = sorted(
+        observed_types - set(SUPPORTED_TYPES)
+    )
+
+    total = sum(totals.values())
+
+    all_passed = (
+        total > 0
+        and totals["passed"] == total
+        and not missing_types
+        and not unexpected_types
+    )
+
+    report = {
+        "validator_version": VALIDATOR_VERSION,
+        "checked_at": datetime.now(
+            timezone.utc
+        ).isoformat(),
+        "source_zip": str(args.preview_zip),
+        "status": (
+            "passed" if all_passed else "failed"
+        ),
+        "total": total,
+        "counts": empty_counts(),
+        "by_unit": dict(sorted(by_unit.items())),
+        "by_type": dict(sorted(by_type.items())),
+        "missing_types": missing_types,
+        "unexpected_types": unexpected_types,
+        "details": details,
+        "database_write": False,
+    }
+
+    for status in statuses:
+        report["counts"][status] = totals[status]
+
+    # DB가 아닌 별도 JSON 보고서만 생성
+    args.output.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    args.output.write_text(
+        json.dumps(
+            report,
+            ensure_ascii=False,
+            indent=2,
+        ) + "\n",
+        encoding="utf-8",
+    )
+
+    print(
+        json.dumps(
+            {
+                "status": report["status"],
+                "total": report["total"],
+                "counts": report["counts"],
+                "missing_types": missing_types,
+                "unexpected_types": unexpected_types,
+                "output": str(args.output),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+
+    return 0 if all_passed else 2
+
+
 
 
 if __name__ == '__main__':
