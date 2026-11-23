@@ -139,7 +139,8 @@ def test_matrix_structure_invariants_and_diversity():
             ps.sample_matrix(bad, {"rows": 2, "cols": 2}, Random(0))
 
     # 실제 템플릿의 원소 범위(min/max, element_min/element_max)로 extended를 돌린다.
-    # 범위를 벗어난 생성값은 ParameterSamplingError(호출자 시도 기록 대상)여야 하고,
+    # extended 생성기는 범위 안 후보만 고르므로 seed별 범위 탈락은 0건이어야 한다.
+    # 범위 안 후보가 없는 구조 종류는 첫 호출에서 "후보가 없습니다" 오류로 드러난다.
     # 통과한 값 중에 조밀한 비대각 입력이 실제로 있어야 한다.
     import json
     import re
@@ -162,21 +163,19 @@ def test_matrix_structure_invariants_and_diversity():
             spec = ParameterSpec.model_construct(**fields, matrix_structure_mode="extended")
             (rows, cols), check = checks[name]
             element = ps._element_spec(spec)
-            accepted, rejected = [], 0
-            for seed in seeds:
-                try:
-                    a = ps.sample_matrix(spec, {"rows": rows, "cols": cols}, Random(seed))
-                except ps.ParameterSamplingError as error:
-                    assert "extended" in str(error)
-                    rejected += 1
-                    continue
+            try:
+                accepted = [ps.sample_matrix(spec, {"rows": rows, "cols": cols}, Random(seed)) for seed in seeds]
+            except ps.ParameterSamplingError as error:
+                assert "후보가 없습니다" in str(error), error  # 그 밖의 탈락은 생성기 결함
+                problems.append(f"{path.stem}/{name}: {error}")
+                continue
+            for a in accepted:
                 for x in a:
                     ps._validate_scalar(x, element)
                 check(a)
-                accepted.append(a)
             dense = [a for a in accepted if all(x != 0 for x in a) and not (rows == cols and a.is_diagonal())]
             if not dense:
-                problems.append(f"{path.stem}/{name}: 통과 {len(accepted)}, 범위 탈락 {rejected}, 조밀 비대각 0")
+                problems.append(f"{path.stem}/{name}: 통과 {len(accepted)}, 조밀 비대각 0")
                 continue
             # 정답식이 "함수(A)" 형태면 생성 단계 정답 계산기가 조밀 입력을 받는지도 본다.
             formula = re.fullmatch(r"(\w+)\(A\)", raw.get("answer_spec", {}).get("cas_template") or "")

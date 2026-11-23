@@ -25,7 +25,7 @@ from typing import Any
 
 from fractions import Fraction
 from functools import lru_cache
-from itertools import product
+from itertools import permutations, product
 from numbers import Integral
 import math
 
@@ -776,6 +776,9 @@ def _families(spec: ParameterSpec) -> list[str]:
 
 
 _MATRIX_STRUCTURE_MODES = ("legacy", "extended")
+# extended 후보의 원소는 모두 이 범위의 정수다(최대 |12|, SVD 회전).
+# 원소 조건을 통과하는 정수를 이 범위에서 미리 골라 생성기에 넘긴다.
+_EXTENDED_ENTRY_WINDOW = range(-12, 13)
 
 
 def _matrix_structure_mode(spec: ParameterSpec) -> str:
@@ -788,13 +791,25 @@ def _matrix_structure_mode(spec: ParameterSpec) -> str:
     return mode
 
 
+def _allowed_entries(element: ParameterSpec) -> frozenset[int]:
+    allowed = set()
+    for value in _EXTENDED_ENTRY_WINDOW:
+        try:
+            _validate_scalar(value, element)
+        except ParameterSamplingError:
+            continue  # 이 값은 원소 조건 밖이다. 허용 집합에서 뺀다.
+        allowed.add(value)
+    return frozenset(allowed)
+
+
 def sample_matrix(spec: ParameterSpec, shape: Mapping[str, int], rng: Random) -> Any:
     """행렬 파라미터를 생성한다.
 
     특수 generator는 spec의 matrix_structure_mode(기본 legacy)를 받는다.
     legacy는 이전 구현과 rng 호출 순서까지 같아 seed 결과가 보존된다.
-    extended는 같은 수학 조건을 지키는 더 넓은 구조를 만든다. 원소 조건을
-    벗어나면 다시 뽑지 않고 ParameterSamplingError를 낸다(호출자 시도 기록에 남는다).
+    extended는 원소 조건을 통과하는 정수 집합(allowed)을 받아, 같은 수학
+    조건을 지키는 후보 중 범위 안의 것만 고른다. 어떤 구조 종류에 범위 안
+    후보가 없으면 ParameterSamplingError로 설정 문제를 알린다.
     일반/정사각/대칭/대각 family 경로는 이전과 같다.
     """
     rows, cols = _integer(shape.get("rows"), "rows"), _integer(shape.get("cols"), "cols")
@@ -816,19 +831,22 @@ def sample_matrix(spec: ParameterSpec, shape: Mapping[str, int], rng: Random) ->
         generator = special[spec.generator]
         if generator is _elementary_matrix:
             result = generator(rows, cols, rng)
-        else:
+            element = _element_spec(spec)
+        elif mode == "legacy":
             result = generator(rows, cols, rng, mode=mode)
-        element = _element_spec(spec)
+            element = _element_spec(spec)
+        else:
+            element = _element_spec(spec)
+            result = generator(rows, cols, rng, mode=mode, allowed=_allowed_entries(element))
         try:
             for entry in result:
                 _validate_scalar(entry, element)
         except ParameterSamplingError as error:
-            if mode == "legacy":
+            if mode == "legacy" or generator is _elementary_matrix:
                 raise
-            # 여기서 다시 뽑지 않는다. 호출자의 시도 기록에 사유가 남아야
-            # 원소 범위 때문에 extended 구조가 걸러지는 비율이 보인다.
+            # extended 후보는 allowed로 걸렀으므로 여기 오면 생성기 결함이다.
             raise ParameterSamplingError(
-                f"{spec.generator}(extended) 생성값이 원소 조건을 벗어났습니다: {error}"
+                f"{spec.generator}(extended) 생성기 결함: 걸러진 후보가 원소 조건을 벗어났습니다: {error}"
             ) from error
         if spec.allowed_families:
             families = _families(spec)
@@ -862,17 +880,72 @@ def sample_matrix(spec: ParameterSpec, shape: Mapping[str, int], rng: Random) ->
     return result
 
 
+Candidates = dict[str, tuple[tuple[int, ...], ...]]
+# (생성기, 크기, 구조 종류, allowed) -> 걸러진 후보. 후보 목록이 고정이라 결과도 고정이다.
+# ponytail: 크기 제한 없는 캐시. 원소 조건 종류는 템플릿 수만큼이라 작다.
+_FILTERED_CANDIDATES: dict[tuple, tuple[tuple[int, ...], ...]] = {}
+
+
+def _pick_extended(name: str, candidates: Candidates, rows: int, cols: int,
+                   rng: Random, allowed: frozenset[int] | None) -> Any:
+    """구조 종류를 고른 뒤 그 종류의 후보(행 우선 정수 튜플) 하나를 고른다.
+
+    allowed가 있으면 모든 원소가 allowed에 드는 후보만 남긴다. 어떤 구조
+    종류든 남는 후보가 없으면 다른 종류로 넘어가지 않고 오류를 낸다.
+    """
+    if allowed is not None:
+        filtered = {}
+        for label, group in candidates.items():
+            key = (name, rows, label, allowed)
+            if key not in _FILTERED_CANDIDATES:
+                _FILTERED_CANDIDATES[key] = tuple(
+                    entries for entries in group if all(x in allowed for x in entries))
+            kept = _FILTERED_CANDIDATES[key]
+            if not kept:
+                raise ParameterSamplingError(
+                    f"{name}(extended): 원소 조건에서 '{label}' 후보가 없습니다 (범위 밖 {len(group)}개)"
+                )
+            filtered[label] = kept
+        candidates = filtered
+    label = rng.choice(list(candidates))
+    return Matrix(rows, cols, list(rng.choice(candidates[label])))
+
+
+def _unique(entries) -> tuple[tuple[int, ...], ...]:
+    return tuple(dict.fromkeys(tuple(int(x) for x in e) for e in entries))
+
+
 # (a, b, c): a^2 + b^2 = c^2. c=1은 부호 있는 순열(legacy 구조), c=5는 조밀한 회전.
 _PLANE_ROTATIONS = ((1, 0, 1), (0, 1, 1), (3, 4, 5), (4, 3, 5))
 
 
-def _small_svd_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+@lru_cache(maxsize=1)
+def _svd_candidates() -> Candidates:
+    """A = U·diag(c·k1, c·k2)·P. U = [[a, -f·b], [b, f·a]]/c라 U·Σ의 열은
+    k1·(a, b), k2·(-f·b, f·a)로 정수다. P는 열 교환과 열 부호."""
+    groups: dict[str, list] = {"부호 있는 순열": [], "회전": []}
+    for a, b, c in _PLANE_ROTATIONS:
+        for flip in (-1, 1):
+            for k1, k2 in permutations((1, 2, 3, 4) if c == 1 else (1, 2, 3), 2):
+                columns = [(a * k1, b * k1), (-flip * b * k2, flip * a * k2)]
+                for swap in (False, True):
+                    ordered = columns[::-1] if swap else columns
+                    for s1, s2 in product((-1, 1), repeat=2):
+                        (x1, y1), (x2, y2) = ordered
+                        groups["부호 있는 순열" if c == 1 else "회전"].append(
+                            (s1 * x1, s2 * x2, s1 * y1, s2 * y2))
+    return {label: _unique(group) for label, group in groups.items()}
+
+
+def _small_svd_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy",
+                      allowed: frozenset[int] | None = None) -> Any:
     """서로 다른 양의 정수 특이값을 가진 2x2 행렬.
 
     legacy: 부호 있는 대각/반대각 행렬.
     extended: A = U·diag(s1, s2)·P. U는 피타고라스 수 유리 회전·반사,
     P는 부호 있는 순열이다. s를 U 분모(1 또는 5)의 배수로 잡아 원소가 정수다.
-    s1 != s2 > 0이라 최적 rank-1 근사가 유일하다.
+    s1 != s2 > 0이라 최적 rank-1 근사가 유일하다. AᵀA가 대각이라 기존
+    정답 계산기(_advanced_svd)의 조건을 만족한다.
     """
     if (rows, cols) != (2, 2):
         raise ParameterSamplingError("small_svd_matrix는 2x2만 지원합니다.")
@@ -883,25 +956,19 @@ def _small_svd_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy"
                            [0, rng.choice((-1, 1)) * small]])
         return Matrix([[0, rng.choice((-1, 1)) * large],
                        [rng.choice((-1, 1)) * small, 0]])
-    a, b, c = rng.choice(_PLANE_ROTATIONS)
-    flip = rng.choice((-1, 1))  # -1이면 회전 대신 반사
-    u = Matrix([[a, -flip * b], [b, flip * a]]) / c
-    k1, k2 = rng.sample((1, 2, 3, 4) if c == 1 else (1, 2, 3), 2)
-    sigma = sp.diag(c * k1, c * k2)
-    p = sp.eye(2) if rng.randrange(2) else Matrix([[0, 1], [1, 0]])
-    p = p * sp.diag(rng.choice((-1, 1)), rng.choice((-1, 1)))
-    return u * sigma * p
+    return _pick_extended("small_svd_matrix", _svd_candidates(), rows, cols, rng, allowed)
 
 
-def _nonzero_vector(length: int, rng: Random, values: tuple[int, ...]) -> Any:
-    while True:
-        vector = Matrix([rng.choice(values) for _ in range(length)])
-        if any(entry != 0 for entry in vector):
-            return vector
+@lru_cache(maxsize=1)
+def _rank_one_candidates() -> Candidates:
+    vectors = [v for v in product(range(-3, 4), repeat=2) if any(v)]
+    return {"rank-1": _unique((u[0] * v[0], u[0] * v[1], u[1] * v[0], u[1] * v[1])
+                               for u in vectors for v in vectors)}
 
 
-def _rank_one_pseudoinverse_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
-    """rank 1 행렬. extended는 A = u·vᵀ (u, v는 비영 정수 벡터).
+def _rank_one_pseudoinverse_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy",
+                                   allowed: frozenset[int] | None = None) -> Any:
+    """rank 1 행렬. extended는 A = u·vᵀ (u, v는 성분 -3..3인 비영 정수 벡터).
 
     A⁺ = Aᵀ / (|u|²|v|²)라 정확한 유리수로 계산된다.
     성분에 0이 섞이므로 성긴 형태와 조밀한 형태가 함께 나온다.
@@ -912,15 +979,29 @@ def _rank_one_pseudoinverse_matrix(rows: int, cols: int, rng: Random, *, mode: s
         a, b = rng.sample((1, 2, 3), 2)
         a, b = rng.choice((-1, 1)) * a, rng.choice((-1, 1)) * b
         return Matrix([[a, 0], [b, 0]]) if rng.choice((True, False)) else Matrix([[0, a], [0, b]])
-    values = (-3, -2, -1, 0, 1, 2, 3)
-    return _nonzero_vector(rows, rng, values) * _nonzero_vector(cols, rng, values).T
+    return _pick_extended("rank_one_pseudoinverse_matrix", _rank_one_candidates(), rows, cols, rng, allowed)
 
 
 # 원시 정수 방향 (p, q). 직교 방향은 (-q, p)로 노름이 같다.
 _PCA_DIRECTIONS = ((1, 0), (1, 1), (1, 2), (2, 1), (1, 3), (3, 1))
 
 
-def _centered_pca_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+@lru_cache(maxsize=1)
+def _pca_candidates() -> Candidates:
+    """정렬 전 표본 행렬 (a·u, -a·u, b·v, -b·v)를 행 우선으로 펼친 것."""
+    samples = []
+    for a, b in permutations((1, 2, 3), 2):
+        for p, q in _PCA_DIRECTIONS:
+            for sign in (-1, 1):
+                u = (p, sign * q)
+                v = (-u[1], u[0])
+                samples.append((a * u[0], a * u[1], -a * u[0], -a * u[1],
+                                b * v[0], b * v[1], -b * v[0], -b * v[1]))
+    return {"주성분 방향": _unique(samples)}
+
+
+def _centered_pca_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy",
+                         allowed: frozenset[int] | None = None) -> Any:
     """표본 4개 x 변수 2개, 열 평균 0인 PCA 입력.
 
     표본은 ±a·u, ±b·v (u ⊥ v, |u| = |v|). 공분산 고윳값은 a²|u|², b²|u|²에
@@ -929,23 +1010,35 @@ def _centered_pca_matrix(rows: int, cols: int, rng: Random, *, mode: str = "lega
     """
     if (rows, cols) != (4, 2):
         raise ParameterSamplingError("centered_pca_matrix는 4x2만 지원합니다.")
-    a, b = rng.sample((1, 2, 3), 2)
     if mode == "legacy":
+        a, b = rng.sample((1, 2, 3), 2)
         # Both coordinate axes and 45-degree axes occur. Distinct scales avoid
         # ambiguous leading principal components.
         directions = ((1, 0), (0, 1)) if rng.choice((True, False)) else ((1, 1), (1, -1))
         u, v = directions
+        samples = [[a * u[0], a * u[1]], [-a * u[0], -a * u[1]],
+                   [b * v[0], b * v[1]], [-b * v[0], -b * v[1]]]
     else:
-        p, q = rng.choice(_PCA_DIRECTIONS)
-        u = (p, rng.choice((-1, 1)) * q)
-        v = (-u[1], u[0])
-    samples = [[a * u[0], a * u[1]], [-a * u[0], -a * u[1]],
-               [b * v[0], b * v[1]], [-b * v[0], -b * v[1]]]
+        samples = _pick_extended("centered_pca_matrix", _pca_candidates(), rows, cols, rng, allowed).tolist()
     rng.shuffle(samples)
     return Matrix(samples)
 
 
-def _defective_jordan_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+@lru_cache(maxsize=1)
+def _jordan_candidates() -> Candidates:
+    """A = λI + c·x·yᵀ, y = (x1, -x0). N = c·x·yᵀ의 원소는
+    (c·x0·x1, -c·x0², c·x1², -c·x0·x1)이다."""
+    entries = []
+    for lam in range(-3, 4):
+        for c in (-2, -1, 1, 2):
+            for x0, x1 in product(range(-2, 3), repeat=2):
+                if x0 or x1:
+                    entries.append((lam + c * x0 * x1, -c * x0 * x0, c * x1 * x1, lam - c * x0 * x1))
+    return {"결함 행렬": _unique(entries)}
+
+
+def _defective_jordan_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy",
+                             allowed: frozenset[int] | None = None) -> Any:
     """고윳값 λ 하나, 기하적 중복도 1인 2x2 결함 행렬.
 
     extended: A = λI + c·x·yᵀ, x = (p, q), y = (q, -p). yᵀx = 0이라
@@ -954,13 +1047,10 @@ def _defective_jordan_matrix(rows: int, cols: int, rng: Random, *, mode: str = "
     """
     if (rows, cols) != (2, 2):
         raise ParameterSamplingError("defective_jordan_matrix는 2x2만 지원합니다.")
-    lam = rng.randrange(-3, 4)
     if mode == "legacy":
+        lam = rng.randrange(-3, 4)
         return Matrix([[lam, rng.choice((-3, -2, -1, 1, 2, 3))], [0, lam]])
-    c = rng.choice((-2, -1, 1, 2))
-    x = _nonzero_vector(2, rng, (-2, -1, 0, 1, 2))
-    y = Matrix([x[1], -x[0]])
-    return lam * sp.eye(2) + c * x * y.T
+    return _pick_extended("defective_jordan_matrix", _jordan_candidates(), rows, cols, rng, allowed)
 
 
 _ORTHOGONAL_BASES = (
@@ -972,7 +1062,32 @@ _ORTHOGONAL_BASES = (
 _NORM_THREE_ROWS = ((1, 2, 2), (2, 1, -2), (2, -2, 1))
 
 
-def _easy_orthogonal_columns(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+def _orthogonal_arrangements(bases) -> tuple[tuple[int, ...], ...]:
+    """직교 열쌍에 행 순열·열 부호·열 순서를 적용한 3x2 행렬(행 우선)."""
+    result = []
+    for first, second in bases:
+        for perm in permutations(range(3)):
+            for s1, s2 in product((-1, 1), repeat=2):
+                c1 = [s1 * first[i] for i in perm]
+                c2 = [s2 * second[i] for i in perm]
+                for left, right in ((c1, c2), (c2, c1)):
+                    result.append(tuple(x for row in zip(left, right) for x in row))
+    return _unique(result)
+
+
+@lru_cache(maxsize=1)
+def _orthogonal_candidates() -> Candidates:
+    norm_three = [
+        (tuple(k1 * x for x in first), tuple(k2 * x for x in second))
+        for first, second in permutations(_NORM_THREE_ROWS, 2)
+        for k1, k2 in product((1, 2), repeat=2)  # 열마다 하나의 배율
+    ]
+    return {"기본 조합": _orthogonal_arrangements(_ORTHOGONAL_BASES),
+            "노름 3 쌍": _orthogonal_arrangements(norm_three)}
+
+
+def _easy_orthogonal_columns(rows: int, cols: int, rng: Random, *, mode: str = "legacy",
+                             allowed: frozenset[int] | None = None) -> Any:
     """작은 정수 성분과 정수 노름을 가진 직교 열벡터 2개 (3x2).
 
     legacy: 노름 1 또는 5인 기본 조합 3개.
@@ -981,13 +1096,10 @@ def _easy_orthogonal_columns(rows: int, cols: int, rng: Random, *, mode: str = "
     """
     if (rows, cols) != (3, 2):
         raise ParameterSamplingError("orthogonal_integer_norm_columns는 3x2만 지원합니다.")
-    if mode == "legacy" or rng.randrange(2):
-        base = rng.choice(_ORTHOGONAL_BASES)
-    else:
-        first, second = rng.sample(_NORM_THREE_ROWS, 2)
-        scales = (rng.choice((1, 2)), rng.choice((1, 2)))  # 열마다 하나의 배율
-        base = tuple(tuple(scale * entry for entry in row)
-                     for row, scale in zip((first, second), scales))
+    if mode != "legacy":
+        return _pick_extended("orthogonal_integer_norm_columns", _orthogonal_candidates(),
+                              rows, cols, rng, allowed)
+    base = rng.choice(_ORTHOGONAL_BASES)
     permutation = rng.sample(range(3), 3)
     columns = []
     for column in base:
@@ -1027,7 +1139,37 @@ def _dense_integer_spectrum_3x3() -> tuple[tuple[int, ...], ...]:
     return tuple(found)
 
 
-def _small_integer_spectrum_symmetric(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+def _permuted_symmetric(matrices) -> tuple[tuple[int, ...], ...]:
+    """대칭행렬마다 PᵀAP(모든 순열 P)를 펼친다. 대칭성과 고윳값이 유지된다."""
+    result = []
+    for matrix in matrices:
+        n = matrix.rows
+        for perm in permutations(range(n)):
+            result.append(tuple(matrix.extract(list(perm), list(perm))))
+    return _unique(result)
+
+
+@lru_cache(maxsize=2)
+def _symmetric_candidates(size: int) -> Candidates:
+    blocks = []
+    for d, b in _INTEGER_SPECTRUM_BLOCKS:
+        for a in range(-3, 4):
+            blocks.append((a, b, d))
+    if size == 2:
+        return {"정수 스펙트럼 블록": _permuted_symmetric(Matrix([[a, b], [b, a - d]]) for a, b, d in blocks)}
+    block_plus_scalar = []
+    for a, b, d in blocks:
+        m = math.isqrt(d * d + 4 * b * b)
+        block_eigenvalues = {(2 * a - d + m) // 2, (2 * a - d - m) // 2}
+        for e in range(-3, 4):
+            if e not in block_eigenvalues:  # 고윳값이 모두 단순
+                block_plus_scalar.append(Matrix([[a, b, 0], [b, a - d, 0], [0, 0, e]]))
+    dense = (Matrix([[a, d, e], [d, b, f], [e, f, c]]) for a, b, c, d, e, f in _dense_integer_spectrum_3x3())
+    return {"블록 ⊕ 스칼라": _permuted_symmetric(block_plus_scalar), "조밀": _permuted_symmetric(dense)}
+
+
+def _small_integer_spectrum_symmetric(rows: int, cols: int, rng: Random, *, mode: str = "legacy",
+                                      allowed: frozenset[int] | None = None) -> Any:
     """정수 고윳값을 가진 작은 대칭행렬 (2x2 / 3x3).
 
     legacy: [[d, b], [b, d]] 블록 (고윳값 d±b).
@@ -1038,26 +1180,16 @@ def _small_integer_spectrum_symmetric(rows: int, cols: int, rng: Random, *, mode
     """
     if rows != cols or rows not in (2, 3):
         raise ParameterSamplingError("small_integer_spectrum_symmetric는 2x2/3x3만 지원합니다.")
+    if mode != "legacy":
+        return _pick_extended("small_integer_spectrum_symmetric", _symmetric_candidates(rows),
+                              rows, cols, rng, allowed)
     result = sp.zeros(rows)
-    if mode != "legacy" and rows == 3 and rng.randrange(2):
-        a, b, c, d, e, f = rng.choice(_dense_integer_spectrum_3x3())
-        result = Matrix([[a, d, e], [d, b, f], [e, f, c]])
-    elif mode == "legacy":
-        diagonal = rng.randint(-2, 2)
-        off_diagonal = rng.choice((-2, -1, 1, 2))
-        result[0, 0] = result[1, 1] = diagonal
-        result[0, 1] = result[1, 0] = off_diagonal
-        if rows == 3:
-            result[2, 2] = rng.randint(-3, 3)
-    else:
-        d, b = rng.choice(_INTEGER_SPECTRUM_BLOCKS)
-        a = rng.randint(-3, 3)
-        result[0, 0], result[1, 1] = a, a - d
-        result[0, 1] = result[1, 0] = b
-        if rows == 3:
-            m = math.isqrt(d * d + 4 * b * b)
-            block_eigenvalues = {(2 * a - d + m) // 2, (2 * a - d - m) // 2}
-            result[2, 2] = rng.choice([e for e in range(-3, 4) if e not in block_eigenvalues])
+    diagonal = rng.randint(-2, 2)
+    off_diagonal = rng.choice((-2, -1, 1, 2))
+    result[0, 0] = result[1, 1] = diagonal
+    result[0, 1] = result[1, 0] = off_diagonal
+    if rows == 3:
+        result[2, 2] = rng.randint(-3, 3)
     permutation = rng.sample(range(rows), rows)
     return result.extract(permutation, permutation)
 
