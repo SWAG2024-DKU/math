@@ -24,6 +24,8 @@ from random import Random
 from typing import Any
 
 from fractions import Fraction
+from functools import lru_cache
+from itertools import product
 from numbers import Integral
 import math
 
@@ -773,55 +775,291 @@ def _families(spec: ParameterSpec) -> list[str]:
     return result
 
 
+_MATRIX_STRUCTURE_MODES = ("legacy", "extended")
+
+
+def _matrix_structure_mode(spec: ParameterSpec) -> str:
+    # ponytail: 필드 이름은 가칭이다. Part 4 정책 규격이 정해지면 이름만 맞춘다.
+    mode = getattr(spec, "matrix_structure_mode", None)
+    if mode is None:
+        return "legacy"
+    if mode not in _MATRIX_STRUCTURE_MODES:
+        raise ParameterSamplingError(f"미지원 matrix_structure_mode입니다: {mode!r}")
+    return mode
+
+
 def sample_matrix(spec: ParameterSpec, shape: Mapping[str, int], rng: Random) -> Any:
-    # TODO[LA-D012] sample_matrix 구현
-    # 1. 숫자 범위뿐 아니라 성긴/조밀/비대각 구조를 유형별로 선택한다.
-    # 2. SVD·대각화·양의 정부호 등의 전제조건은 생성 과정에서 보장한다.
-    # 3. 특수 생성기 호출에 spec/정책을 전달하는 인터페이스도 기존 호출과 호환되게 확장한다.
-    raise NotImplementedError("TODO[LA-D012]: sample_matrix")
+    """행렬 파라미터를 생성한다.
+
+    특수 generator는 spec의 matrix_structure_mode(기본 legacy)를 받는다.
+    legacy는 이전 구현과 rng 호출 순서까지 같아 seed 결과가 보존된다.
+    extended는 같은 수학 조건을 지키는 더 넓은 구조를 만든다. 원소 조건을
+    벗어나면 다시 뽑지 않고 ParameterSamplingError를 낸다(호출자 시도 기록에 남는다).
+    일반/정사각/대칭/대각 family 경로는 이전과 같다.
+    """
+    rows, cols = _integer(shape.get("rows"), "rows"), _integer(shape.get("cols"), "cols")
+    if rows < 1 or cols < 1:
+        raise ParameterSamplingError("행렬 크기는 1 이상이어야 합니다.")
+    # 선형대수에서 답의 계산 난이도를 제어하는 명시적 generator.
+    # 일반 행렬을 대량 생성한 뒤 정답만 거르는 방식은 사용하지 않는다.
+    special = {
+        "orthogonal_integer_norm_columns": _easy_orthogonal_columns,
+        "small_integer_spectrum_symmetric": _small_integer_spectrum_symmetric,
+        "elementary_matrix": _elementary_matrix,
+        "small_svd_matrix": _small_svd_matrix,
+        "rank_one_pseudoinverse_matrix": _rank_one_pseudoinverse_matrix,
+        "centered_pca_matrix": _centered_pca_matrix,
+        "defective_jordan_matrix": _defective_jordan_matrix,
+    }
+    if spec.generator in special:
+        mode = _matrix_structure_mode(spec)
+        generator = special[spec.generator]
+        if generator is _elementary_matrix:
+            result = generator(rows, cols, rng)
+        else:
+            result = generator(rows, cols, rng, mode=mode)
+        element = _element_spec(spec)
+        try:
+            for entry in result:
+                _validate_scalar(entry, element)
+        except ParameterSamplingError as error:
+            if mode == "legacy":
+                raise
+            # 여기서 다시 뽑지 않는다. 호출자의 시도 기록에 사유가 남아야
+            # 원소 범위 때문에 extended 구조가 걸러지는 비율이 보인다.
+            raise ParameterSamplingError(
+                f"{spec.generator}(extended) 생성값이 원소 조건을 벗어났습니다: {error}"
+            ) from error
+        if spec.allowed_families:
+            families = _families(spec)
+            if not any(
+                family == "general"
+                or (family == "square" and rows == cols)
+                or (family == "symmetric" and result == result.T)
+                or (family == "diagonal" and result.is_diagonal() is True)
+                for family in families
+            ):
+                raise ParameterSamplingError("전용 generator가 allowed_families와 충돌합니다.")
+        return result
+    families = [family for family in _families(spec) if family == "general" or rows == cols]
+    if not families:
+        raise ParameterSamplingError("지정한 행렬 family에는 정사각형 크기가 필요합니다.")
+    family = families[0] if len(families) == 1 else rng.choice(families)
+    element = _element_spec(spec)
+    if family in {"general", "square"}:
+        return Matrix(rows, cols, [sample_scalar(element, rng) for _ in range(rows * cols)])
+    result = sp.zeros(rows, cols)
+    if family == "symmetric":
+        for row in range(rows):
+            for col in range(row, cols):
+                result[row, col] = result[col, row] = sample_scalar(element, rng)
+    else:
+        if rows > 1:
+            # 구조상 필요한 0이 금지된 설정은 조용히 무시하지 않는다.
+            _validate_scalar(0, element)
+        for row in range(rows):
+            result[row, row] = sample_scalar(element, rng)
+    return result
 
 
-def _small_svd_matrix(rows: int, cols: int, rng: Random) -> Any:
-    # TODO[LA-D013] _small_svd_matrix 구현
-    # 1. 대각/반대각 형태만 생성하는 제한을 확장한다.
-    # 2. 합리적인 유리 직교변환과 분리된 특이값으로 조밀한 행렬도 생성한다.
-    # 3. 최적 rank-1 근사의 비유일성·계산량·원소 범위를 확인한다.
-    raise NotImplementedError("TODO[LA-D013]: _small_svd_matrix")
+# (a, b, c): a^2 + b^2 = c^2. c=1은 부호 있는 순열(legacy 구조), c=5는 조밀한 회전.
+_PLANE_ROTATIONS = ((1, 0, 1), (0, 1, 1), (3, 4, 5), (4, 3, 5))
 
 
-def _rank_one_pseudoinverse_matrix(rows: int, cols: int, rng: Random) -> Any:
-    # TODO[LA-D014] _rank_one_pseudoinverse_matrix 구현
-    # 1. 한 열 또는 한 행만 0이 아닌 제한을 넘어 A=u*v.T 형태로 조밀한 rank-1 예제를 생성한다.
-    # 2. u,v 비영 조건과 정확한 유리수 계산을 검증한다.
-    raise NotImplementedError("TODO[LA-D014]: _rank_one_pseudoinverse_matrix")
+def _small_svd_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+    """서로 다른 양의 정수 특이값을 가진 2x2 행렬.
+
+    legacy: 부호 있는 대각/반대각 행렬.
+    extended: A = U·diag(s1, s2)·P. U는 피타고라스 수 유리 회전·반사,
+    P는 부호 있는 순열이다. s를 U 분모(1 또는 5)의 배수로 잡아 원소가 정수다.
+    s1 != s2 > 0이라 최적 rank-1 근사가 유일하다.
+    """
+    if (rows, cols) != (2, 2):
+        raise ParameterSamplingError("small_svd_matrix는 2x2만 지원합니다.")
+    if mode == "legacy":
+        large, small = rng.sample((1, 2, 3, 4), 2)
+        if rng.choice((True, False)):
+            return Matrix([[rng.choice((-1, 1)) * large, 0],
+                           [0, rng.choice((-1, 1)) * small]])
+        return Matrix([[0, rng.choice((-1, 1)) * large],
+                       [rng.choice((-1, 1)) * small, 0]])
+    a, b, c = rng.choice(_PLANE_ROTATIONS)
+    flip = rng.choice((-1, 1))  # -1이면 회전 대신 반사
+    u = Matrix([[a, -flip * b], [b, flip * a]]) / c
+    k1, k2 = rng.sample((1, 2, 3, 4) if c == 1 else (1, 2, 3), 2)
+    sigma = sp.diag(c * k1, c * k2)
+    p = sp.eye(2) if rng.randrange(2) else Matrix([[0, 1], [1, 0]])
+    p = p * sp.diag(rng.choice((-1, 1)), rng.choice((-1, 1)))
+    return u * sigma * p
 
 
-def _centered_pca_matrix(rows: int, cols: int, rng: Random) -> Any:
-    # TODO[LA-D015] _centered_pca_matrix 구현
-    # 1. 축 방향/45도 방향 고정 조합을 확장한다.
-    # 2. 표본 중심화, 열 차원, 유일한 최대 고유값 및 주성분 부호 동치를 유지한다.
-    raise NotImplementedError("TODO[LA-D015]: _centered_pca_matrix")
+def _nonzero_vector(length: int, rng: Random, values: tuple[int, ...]) -> Any:
+    while True:
+        vector = Matrix([rng.choice(values) for _ in range(length)])
+        if any(entry != 0 for entry in vector):
+            return vector
 
 
-def _defective_jordan_matrix(rows: int, cols: int, rng: Random) -> Any:
-    # TODO[LA-D016] _defective_jordan_matrix 구현
-    # 1. 표준 Jordan 블록 외에 가역변환 P*J*P.inv()로 다양한 표현을 만든다.
-    # 2. 결함 행렬 조건과 기하적 중복도, 정확한 계수, 연산량을 확인한다.
-    raise NotImplementedError("TODO[LA-D016]: _defective_jordan_matrix")
+def _rank_one_pseudoinverse_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+    """rank 1 행렬. extended는 A = u·vᵀ (u, v는 비영 정수 벡터).
+
+    A⁺ = Aᵀ / (|u|²|v|²)라 정확한 유리수로 계산된다.
+    성분에 0이 섞이므로 성긴 형태와 조밀한 형태가 함께 나온다.
+    """
+    if (rows, cols) != (2, 2):
+        raise ParameterSamplingError("rank_one_pseudoinverse_matrix는 2x2만 지원합니다.")
+    if mode == "legacy":
+        a, b = rng.sample((1, 2, 3), 2)
+        a, b = rng.choice((-1, 1)) * a, rng.choice((-1, 1)) * b
+        return Matrix([[a, 0], [b, 0]]) if rng.choice((True, False)) else Matrix([[0, a], [0, b]])
+    values = (-3, -2, -1, 0, 1, 2, 3)
+    return _nonzero_vector(rows, rng, values) * _nonzero_vector(cols, rng, values).T
 
 
-def _easy_orthogonal_columns(rows: int, cols: int, rng: Random) -> Any:
-    # TODO[LA-D017] _easy_orthogonal_columns 구현
-    # 1. 세 기본 조합의 부호·순열 반복을 확장한다.
-    # 2. 정수/유리 직교 열벡터를 구성하고 full column rank·직교성·노름과 QR/Gram-Schmidt의 정답 난도 조건을 유지한다.
-    raise NotImplementedError("TODO[LA-D017]: _easy_orthogonal_columns")
+# 원시 정수 방향 (p, q). 직교 방향은 (-q, p)로 노름이 같다.
+_PCA_DIRECTIONS = ((1, 0), (1, 1), (1, 2), (2, 1), (1, 3), (3, 1))
 
 
-def _small_integer_spectrum_symmetric(rows: int, cols: int, rng: Random) -> Any:
-    # TODO[LA-D018] _small_integer_spectrum_symmetric 구현
-    # 1. 고정 2x2 대칭 블록·작은 정수 스펙트럼 제한을 opt-in 정책으로 확장한다.
-    # 2. 유리 직교 유사변환으로 대칭성을 유지하고 고유값 간격·중복도·검증기 지원 차원을 관리한다.
-    raise NotImplementedError("TODO[LA-D018]: _small_integer_spectrum_symmetric")
+def _centered_pca_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+    """표본 4개 x 변수 2개, 열 평균 0인 PCA 입력.
+
+    표본은 ±a·u, ±b·v (u ⊥ v, |u| = |v|). 공분산 고윳값은 a²|u|², b²|u|²에
+    비례하므로 a != b면 최대 고윳값이 유일하고 주성분은 ±u(부호 동치)다.
+    extended는 방향 u를 축·45도 외의 원시 정수 방향과 부호까지 넓힌다.
+    """
+    if (rows, cols) != (4, 2):
+        raise ParameterSamplingError("centered_pca_matrix는 4x2만 지원합니다.")
+    a, b = rng.sample((1, 2, 3), 2)
+    if mode == "legacy":
+        # Both coordinate axes and 45-degree axes occur. Distinct scales avoid
+        # ambiguous leading principal components.
+        directions = ((1, 0), (0, 1)) if rng.choice((True, False)) else ((1, 1), (1, -1))
+        u, v = directions
+    else:
+        p, q = rng.choice(_PCA_DIRECTIONS)
+        u = (p, rng.choice((-1, 1)) * q)
+        v = (-u[1], u[0])
+    samples = [[a * u[0], a * u[1]], [-a * u[0], -a * u[1]],
+               [b * v[0], b * v[1]], [-b * v[0], -b * v[1]]]
+    rng.shuffle(samples)
+    return Matrix(samples)
+
+
+def _defective_jordan_matrix(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+    """고윳값 λ 하나, 기하적 중복도 1인 2x2 결함 행렬.
+
+    extended: A = λI + c·x·yᵀ, x = (p, q), y = (q, -p). yᵀx = 0이라
+    N = c·x·yᵀ는 N ≠ 0, N² = 0인 멱영행렬이고 A는 Jordan 블록 J(λ)와
+    닮음(A = P·J·P⁻¹)이다. x = (1, 0)이면 legacy의 상삼각 형태가 된다.
+    """
+    if (rows, cols) != (2, 2):
+        raise ParameterSamplingError("defective_jordan_matrix는 2x2만 지원합니다.")
+    lam = rng.randrange(-3, 4)
+    if mode == "legacy":
+        return Matrix([[lam, rng.choice((-3, -2, -1, 1, 2, 3))], [0, lam]])
+    c = rng.choice((-2, -1, 1, 2))
+    x = _nonzero_vector(2, rng, (-2, -1, 0, 1, 2))
+    y = Matrix([x[1], -x[0]])
+    return lam * sp.eye(2) + c * x * y.T
+
+
+_ORTHOGONAL_BASES = (
+    ((1, 0, 0), (0, 1, 0)),
+    ((3, 4, 0), (4, -3, 0)),
+    ((3, 4, 0), (0, 0, 1)),
+)
+# 행끼리 직교하고 노름이 모두 3인 정수 행렬의 행. extended에서 두 개를 고른다.
+_NORM_THREE_ROWS = ((1, 2, 2), (2, 1, -2), (2, -2, 1))
+
+
+def _easy_orthogonal_columns(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+    """작은 정수 성분과 정수 노름을 가진 직교 열벡터 2개 (3x2).
+
+    legacy: 노름 1 또는 5인 기본 조합 3개.
+    extended: legacy 조합 + 노름 3인 조밀한 직교쌍(각 열 1배 또는 2배, 노름 3·6).
+    열 직교·full column rank·정수 노름이 유지되어 Q는 유리수다.
+    """
+    if (rows, cols) != (3, 2):
+        raise ParameterSamplingError("orthogonal_integer_norm_columns는 3x2만 지원합니다.")
+    if mode == "legacy" or rng.randrange(2):
+        base = rng.choice(_ORTHOGONAL_BASES)
+    else:
+        first, second = rng.sample(_NORM_THREE_ROWS, 2)
+        scales = (rng.choice((1, 2)), rng.choice((1, 2)))  # 열마다 하나의 배율
+        base = tuple(tuple(scale * entry for entry in row)
+                     for row, scale in zip((first, second), scales))
+    permutation = rng.sample(range(3), 3)
+    columns = []
+    for column in base:
+        sign = rng.choice((-1, 1))
+        columns.append(Matrix([sign * column[index] for index in permutation]))
+    if rng.randrange(2):
+        columns.reverse()
+    return Matrix.hstack(*columns)
+
+
+# [[a, b], [b, a-d]]의 판별식 d² + 4b²가 제곱수인 (d, b), b != 0.
+# 고윳값 (2a - d ± m)/2는 d ≡ m (mod 2)라 정수이고 b != 0이라 서로 다르다.
+_INTEGER_SPECTRUM_BLOCKS = tuple(
+    (d, b)
+    for d in range(-8, 9)
+    for b in (-4, -3, -2, -1, 1, 2, 3, 4)
+    if math.isqrt(d * d + 4 * b * b) ** 2 == d * d + 4 * b * b
+)
+
+
+@lru_cache(maxsize=1)
+def _dense_integer_spectrum_3x3() -> tuple[tuple[int, ...], ...]:
+    """대각 -3..3, 비대각 ±1..±3(0 없음)인 3x3 대칭행렬 중 고윳값이 서로 다른
+    정수인 것 (a, b, c, a01, a02, a12). 특성다항식의 정수근을 직접 센다.
+    Gershgorin 원판으로 |λ| <= 9라 -12..12 탐색으로 충분하다. 1,656개."""
+    found = []
+    diagonal = range(-3, 4)
+    off_diagonal = (-3, -2, -1, 1, 2, 3)
+    for a, b, c in product(diagonal, repeat=3):
+        for d, e, f in product(off_diagonal, repeat=3):
+            trace = a + b + c
+            minors = a * b + a * c + b * c - d * d - e * e - f * f
+            det = a * (b * c - f * f) - d * (d * c - f * e) + e * (d * f - b * e)
+            roots = [x for x in range(-12, 13) if x ** 3 - trace * x * x + minors * x - det == 0]
+            if len(roots) == 3:
+                found.append((a, b, c, d, e, f))
+    return tuple(found)
+
+
+def _small_integer_spectrum_symmetric(rows: int, cols: int, rng: Random, *, mode: str = "legacy") -> Any:
+    """정수 고윳값을 가진 작은 대칭행렬 (2x2 / 3x3).
+
+    legacy: [[d, b], [b, d]] 블록 (고윳값 d±b).
+    extended: 판별식이 제곱수인 [[a, b], [b, c]] 블록으로 대각 원소가 달라도
+    고윳값이 정수다. 3x3은 블록 ⊕ 스칼라(스칼라는 블록 고윳값과 겹치지 않음)
+    또는 비대각이 모두 0이 아닌 조밀한 후보 중 하나다. 어느 쪽이든
+    고윳값이 모두 단순(중복도 1)이다.
+    """
+    if rows != cols or rows not in (2, 3):
+        raise ParameterSamplingError("small_integer_spectrum_symmetric는 2x2/3x3만 지원합니다.")
+    result = sp.zeros(rows)
+    if mode != "legacy" and rows == 3 and rng.randrange(2):
+        a, b, c, d, e, f = rng.choice(_dense_integer_spectrum_3x3())
+        result = Matrix([[a, d, e], [d, b, f], [e, f, c]])
+    elif mode == "legacy":
+        diagonal = rng.randint(-2, 2)
+        off_diagonal = rng.choice((-2, -1, 1, 2))
+        result[0, 0] = result[1, 1] = diagonal
+        result[0, 1] = result[1, 0] = off_diagonal
+        if rows == 3:
+            result[2, 2] = rng.randint(-3, 3)
+    else:
+        d, b = rng.choice(_INTEGER_SPECTRUM_BLOCKS)
+        a = rng.randint(-3, 3)
+        result[0, 0], result[1, 1] = a, a - d
+        result[0, 1] = result[1, 0] = b
+        if rows == 3:
+            m = math.isqrt(d * d + 4 * b * b)
+            block_eigenvalues = {(2 * a - d + m) // 2, (2 * a - d - m) // 2}
+            result[2, 2] = rng.choice([e for e in range(-3, 4) if e not in block_eigenvalues])
+    permutation = rng.sample(range(rows), rows)
+    return result.extract(permutation, permutation)
 
 
 def _elementary_matrix(rows: int, cols: int, rng: Random) -> Any:
