@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Iterable
 
 from app.problems.problem_type_extractor import ProblemTypeInfo
+from app.problems.validator_policy import ALLOWED_VALIDATORS, validate_curated_mapping
 from app.schemas.generation_rule import GenerationRule
 from app.schemas.problem_template import ProblemTemplate
 
@@ -90,11 +91,44 @@ def _resolve_answer_type(
     return supported[0], True
 
 
+def _resolve_primary_formula_id(
+    problem_type: ProblemTypeInfo,
+    rule: GenerationRule,
+) -> str | None:
+    """현재 Concept에 실제로 속하는 대표 공식만 선택한다."""
+
+    formula_ids = _unique(problem_type.formula_ids)
+    primary_formula_id = rule.primary_formula_id
+
+    if primary_formula_id is not None:
+        if primary_formula_id not in formula_ids:
+            raise ValueError(
+                "Generation Rule의 primary_formula_id가 현재 Concept에 없습니다: "
+                f"{primary_formula_id} / {problem_type.concept_id}"
+            )
+        return primary_formula_id
+
+    # 공식이 정확히 하나일 때만 자동 선택한다. 여러 개라면 임의로 첫 번째
+    # 공식을 고르지 않고 None으로 남겨 후속 검토 대상으로 만든다.
+    return formula_ids[0] if len(formula_ids) == 1 else None
+
+
+def _dump_model(value: object) -> object:
+    model_dump = getattr(value, "model_dump", None)
+    if callable(model_dump):
+        return model_dump(mode="python", exclude_unset=True)
+    return value
+
+
 def build_template(
     problem_type: ProblemTypeInfo,
     rule: GenerationRule,
+    *,
+    candidate_mode: bool = False,
 ) -> ProblemTemplate:
-    """ProblemTypeInfo + GenerationRule을 하나의 ProblemTemplate로 조립한다."""
+    """Rule을 Template로 변환한다. 후보만 별도 검수 범위로 격리한다."""
+    if candidate_mode and rule.subject_id != "linear_algebra":
+        raise ValueError("후보 확장 모드는 선형대수 전용입니다.")
 
     _validate_pair(problem_type, rule)
 
@@ -113,8 +147,10 @@ def build_template(
         and not rule.manual_review_required
     )
 
-    template_status = "ready" if is_ready else "draft"
-    review_status = "reviewed" if rule.status == "reviewed" else "not_reviewed"
+    # 기존 Rule 검수 이력은 보존하지만 후보가 기존 검수 승인을 승계하지 않는다.
+    template_status = "draft" if candidate_mode else ("ready" if is_ready else "draft")
+    review_status = ("reviewed" if rule.status == "reviewed" and not candidate_mode
+                     else "not_reviewed")
 
     validator_names = _unique(
         [
@@ -124,10 +160,11 @@ def build_template(
     )
 
     formula_ids = _unique(problem_type.formula_ids)
-    first_formula_id = formula_ids[0] if formula_ids else None
+    first_formula_id = (_resolve_primary_formula_id(problem_type, rule) if candidate_mode
+                        else (formula_ids[0] if formula_ids else None))
 
     parameter_dict = {
-        name: spec.model_dump(mode="python")
+        name: (_dump_model(spec) if candidate_mode else spec.model_dump(mode="python"))
         for name, spec in rule.parameter_spec.items()
     }
 
@@ -148,6 +185,9 @@ def build_template(
             " 공유 draft_auto Rule의 answer_type을 현재 Concept의 "
             f"지원 타입 '{answer_type}'에 맞게 조정했으며, 정답식은 검토 전까지 비워둠."
         )
+    if candidate_mode:
+        notes += (" [검수 전 확장 후보] 기존 Rule 검수 이력은 원본에 보존되지만 "
+                  "새 파라미터 범위·행렬 구조는 별도 검수 전입니다.")
     if rule.notes:
         notes += f" {rule.notes}"
     if problem_type.generation_notes:
@@ -164,7 +204,8 @@ def build_template(
         generation_rule_id=rule.rule_id,
         generation_rule_version=rule.rule_version,
         generation_rule_status=rule.status,
-        executable=bool(rule.executable and is_ready),
+        executable=(bool(rule.executable and not answer_type_changed) if candidate_mode
+                    else bool(rule.executable and is_ready)),
         taxonomy={
             "subject_id": problem_type.subject_id,
             "subject_name_ko": problem_type.subject_name_ko,
@@ -187,10 +228,11 @@ def build_template(
             "language": problem_type.language,
         },
         parameters=parameter_dict,
+        symbols={name: _dump_model(spec) for name, spec in rule.symbol_spec.items()},
         constraints=[
             {
                 "type": constraint.type,
-                "expression": constraint.expression,
+                "expression": _dump_model(constraint.expression) if candidate_mode else constraint.expression,
                 "required": constraint.required,
                 "description": constraint.description,
             }
@@ -218,6 +260,7 @@ def build_template(
         },
         solution_spec={
             "solution_strategy": "engine_then_explanation",
+            **({"primary_formula_id": first_formula_id} if candidate_mode else {}),
             "solution_plan": [
                 {
                     "step": 1,
@@ -240,7 +283,8 @@ def build_template(
                 {
                     "name": name,
                     "required": True,
-                    "config": {},
+                    "config": (dict(rule.validation.validator_configs.get(name, {}))
+                               if candidate_mode else {}),
                 }
                 for name in validator_names
             ],
